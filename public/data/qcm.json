@@ -1,0 +1,759 @@
+{
+    "title": "QCM d'examen - Patron d'Embarcation",
+    "totalQuestions": 30,
+    "maxErrors": 5,
+    "timeLimit": 30,
+    "passingScore": 75,
+    "questions": [
+        {
+            "id": 1,
+            "moduleId": 1,
+            "module": "Balisage",
+            "question": "Quelle est la marque latérale de bâbord?",
+            "type": "single",
+            "options": [
+                {
+                    "text": "Cylindrique rouge avec feu rouge",
+                    "correct": true
+                },
+                {
+                    "text": "Conique verte avec feu vert",
+                    "correct": false
+                },
+                {
+                    "text": "Sphérique noir avec feu blanc",
+                    "correct": false
+                },
+                {
+                    "text": "Carrée jaune avec feu jaune",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "moduleId": 1,
+            "module": "Balisage",
+            "question": "Une marque cardinale Nord indique le passage sûr:",
+            "type": "single",
+            "options": [
+                {
+                    "text": "Au sud de la marque",
+                    "correct": false
+                },
+                {
+                    "text": "Au nord de la marque",
+                    "correct": true
+                },
+                {
+                    "text": "À l'est de la marque",
+                    "correct": false
+                },
+                {
+                    "text": "À l'ouest de la marque",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "moduleId": 1,
+            "module": "Balisage",
+            "question": "Quel est le feu d'une zone d'eaux saines?",
+            "type": "single",
+            "options": [
+                {
+                    "text": "Blanc isophase",
+                    "correct": true
+                },
+                {
+                    "text": "Rouge continu",
+                    "correct": false
+                },
+                {
+                    "text": "Vert scintillant",
+                    "correct": false
+                },
+                {
+                    "text": "Blanc à éclats rapides",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "id": 4,
+            "moduleId": 2,
+            "module": "Signalisation",
+            "question": "En brume, un navire à moteur émet quel signal?",
+            "type": "single",
+            "options": [
+                {
+                    "text": "Un coup de sifflet chaque minute",
+                    "correct": true
+                },
+                {
+                    "text": "Deux coups toutes les 2 minutes",
+                    "correct": false
+                },
+                {
+                    "text": "Trois coups toutes les 3 minutes",
+                    "correct": false
+                },
+                {
+                    "text": "Un son continu",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "id": 5,
+            "moduleId": 2,
+            "module": "Signalisation",
+            "question": "Que signifie le feu rouge d'un navire?",
+            "type": "single",
+            "options": [
+                {
+                    "text": "Feu de bâbord (port)",
+                    "correct": true
+                },
+                {
+                    "text": "Feu de tribord (starboard)",
+                    "correct": false
+                },
+                {
+                    "text": "Feu de mouillage",
+                    "correct": false
+                },
+                {
+                    "text": "Navire en détresse",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "id": 6,
+            "moduleId": 3,
+            "module": "RIPAM",
+            "question": "Deux voiliers face au vent se croisent. Qui s'écarte?",
+            "type": "single",
+            "options": [
+                {
+                    "text": "Celui avec le vent à bâbord",
+                    "correct": true
+                },
+                {
+                    "text": "Celui avec le vent à tribord",
+                    "correct": false
+                },
+                {
+                    "text": "Le plus petit navire",
+                    "correct": false
+                },
+                {
+                    "text": "Tous les deux s'écartent",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "id": 7,
+            "moduleId": 3,
+            "module": "RIPAM",
+            "question": "Un voilier et un bateau à moteur se croisent. Qui a priorité?",
+            "type": "single",
+            "options": [
+                {
+                    "text": "Le voilier (navigation à voile)",
+                    "correct": true
+                },
+                {
+                    "text": "Le bateau à moteur",
+                    "correct": false
+                },
+                {
+                    "text": "Le plus petit",
+                    "correct": false
+                },
+                {
+                    "text": "Dépend de la direction",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "id": 8,
+            "moduleId": 3,
+            "module": "RIPAM",
+            "question": "Deux navires à moteur se croisent face à face. Que faire?",
+            "type": "single",
+            "options": [
+                {
+                    "text": "Les deux s'écartent à bâbord",
+                    "correct": true
+                },
+                {
+                    "text": "Le plus gros s'écarte",
+                    "correct": false
+                },
+                {
+                    "text": "Le plus rapide s'écarte",
+                    "correct": false
+                },
+                {
+                    "text": "Continuer sa route",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "id": 9,
+            "moduleId": 3,
+            "module": "RIPAM",
+            "question": "Un navire qui double un autre doit:",
+            "type": "single",
+            "options": [
+                {
+                    "text": "S'écarter largement pour laisser la priorité",
+                    "correct": true
+                },
+                {
+                    "text": "Doubler rapidement",
+                    "correct": false
+                },
+                {
+                    "text": "Maintenir sa route",
+                    "correct": false
+                },
+                {
+                    "text": "Demander la permission",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "id": 10,
+            "moduleId": 3,
+            "module": "RIPAM",
+            "question": "Quel feu de bord pour un navire à moteur à bâbord?",
+            "type": "single",
+            "options": [
+                {
+                    "text": "Feu rouge (port)",
+                    "correct": true
+                },
+                {
+                    "text": "Feu vert (starboard)",
+                    "correct": false
+                },
+                {
+                    "text": "Feu blanc de mâture",
+                    "correct": false
+                },
+                {
+                    "text": "Pas de feu",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "id": 11,
+            "moduleId": 4,
+            "module": "Carte marine",
+            "question": "Quel symbole SHOM indique une épave?",
+            "type": "single",
+            "options": [
+                {
+                    "text": "Une croix avec un point",
+                    "correct": true
+                },
+                {
+                    "text": "Un point noir",
+                    "correct": false
+                },
+                {
+                    "text": "Une ligne pointillée",
+                    "correct": false
+                },
+                {
+                    "text": "Un triangle",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "id": 12,
+            "moduleId": 4,
+            "module": "Carte marine",
+            "question": "Comment mesurer une distance sur la carte?",
+            "type": "single",
+            "options": [
+                {
+                    "text": "Avec la règle Cras sur l'échelle des latitudes",
+                    "correct": true
+                },
+                {
+                    "text": "Avec une simple règle en cm",
+                    "correct": false
+                },
+                {
+                    "text": "En estimant à vue",
+                    "correct": false
+                },
+                {
+                    "text": "Avec un compas géographique",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "id": 13,
+            "moduleId": 4,
+            "module": "Carte marine",
+            "question": "Les coordonnées géographiques se mesurent en:",
+            "type": "single",
+            "options": [
+                {
+                    "text": "Degrés, minutes, secondes",
+                    "correct": true
+                },
+                {
+                    "text": "Kilomètres",
+                    "correct": false
+                },
+                {
+                    "text": "Milles nautiques",
+                    "correct": false
+                },
+                {
+                    "text": "Centimètres",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "id": 14,
+            "moduleId": 5,
+            "module": "Météo",
+            "question": "Quelle est la succession des nuages d'une dépression?",
+            "type": "single",
+            "options": [
+                {
+                    "text": "Cirrus → Cumulus → Stratus",
+                    "correct": true
+                },
+                {
+                    "text": "Cumulus → Cirrus → Stratus",
+                    "correct": false
+                },
+                {
+                    "text": "Stratus → Cumulus → Cirrus",
+                    "correct": false
+                },
+                {
+                    "text": "Altostratus d'abord",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "id": 15,
+            "moduleId": 5,
+            "module": "Météo",
+            "question": "Force 4 Beaufort =",
+            "type": "single",
+            "options": [
+                {
+                    "text": "Vent modéré 11-16 nœuds",
+                    "correct": true
+                },
+                {
+                    "text": "Vent faible 3-6 nœuds",
+                    "correct": false
+                },
+                {
+                    "text": "Vent frais 17-21 nœuds",
+                    "correct": false
+                },
+                {
+                    "text": "Tempête 40+ nœuds",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "id": 16,
+            "moduleId": 6,
+            "module": "Caps",
+            "question": "Déclinaison magnétique France =",
+            "type": "single",
+            "options": [
+                {
+                    "text": "0° à 2° Ouest",
+                    "correct": true
+                },
+                {
+                    "text": "10° Est",
+                    "correct": false
+                },
+                {
+                    "text": "5° Ouest",
+                    "correct": false
+                },
+                {
+                    "text": "Zéro, pas de déclinaison",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "id": 17,
+            "moduleId": 6,
+            "module": "Caps",
+            "question": "Cv = Cc + W. W représente:",
+            "type": "single",
+            "options": [
+                {
+                    "text": "La déclinaison magnétique",
+                    "correct": true
+                },
+                {
+                    "text": "La déviation du compas",
+                    "correct": false
+                },
+                {
+                    "text": "La dérive du vent",
+                    "correct": false
+                },
+                {
+                    "text": "La variation totale",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "id": 18,
+            "moduleId": 6,
+            "module": "Caps",
+            "question": "Cap compas 090°, décl. 2° W, dév. 3° E. Cap vrai?",
+            "type": "single",
+            "options": [
+                {
+                    "text": "091°",
+                    "correct": true
+                },
+                {
+                    "text": "085°",
+                    "correct": false
+                },
+                {
+                    "text": "095°",
+                    "correct": false
+                },
+                {
+                    "text": "090°",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "id": 19,
+            "moduleId": 7,
+            "module": "Courants",
+            "question": "Route fond = ",
+            "type": "single",
+            "options": [
+                {
+                    "text": "Route surface + courant",
+                    "correct": true
+                },
+                {
+                    "text": "Route surface + vent",
+                    "correct": false
+                },
+                {
+                    "text": "Cap magnétique seul",
+                    "correct": false
+                },
+                {
+                    "text": "Direction du vent",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "id": 20,
+            "moduleId": 7,
+            "module": "Courants",
+            "question": "Courant sur la carte se représente par:",
+            "type": "single",
+            "options": [
+                {
+                    "text": "Flèche avec direction et vitesse",
+                    "correct": true
+                },
+                {
+                    "text": "Ligne pointillée rouge",
+                    "correct": false
+                },
+                {
+                    "text": "Zone colorée",
+                    "correct": false
+                },
+                {
+                    "text": "Invisible sur la carte",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "id": 21,
+            "moduleId": 8,
+            "module": "Marées",
+            "question": "Règle douzièmes, 3e heure marée montante:",
+            "type": "single",
+            "options": [
+                {
+                    "text": "3/12 du marnage",
+                    "correct": true
+                },
+                {
+                    "text": "1/12 du marnage",
+                    "correct": false
+                },
+                {
+                    "text": "6/12 du marnage",
+                    "correct": false
+                },
+                {
+                    "text": "12/12 du marnage",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "id": 22,
+            "moduleId": 8,
+            "module": "Marées",
+            "question": "Marnage =",
+            "type": "single",
+            "options": [
+                {
+                    "text": "Différence PM et BM",
+                    "correct": true
+                },
+                {
+                    "text": "Heure de changement",
+                    "correct": false
+                },
+                {
+                    "text": "Durée d'une marée",
+                    "correct": false
+                },
+                {
+                    "text": "Vitesse courant",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "id": 23,
+            "moduleId": 8,
+            "module": "Marées",
+            "question": "Une marée dure:",
+            "type": "single",
+            "options": [
+                {
+                    "text": "6h montée + 6h descente",
+                    "correct": true
+                },
+                {
+                    "text": "12 heures continues",
+                    "correct": false
+                },
+                {
+                    "text": "24 heures",
+                    "correct": false
+                },
+                {
+                    "text": "3 heures",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "id": 24,
+            "moduleId": 8,
+            "module": "Marées",
+            "question": "Pied de pilote =",
+            "type": "single",
+            "options": [
+                {
+                    "text": "Réserve sécurité hauteur eau",
+                    "correct": true
+                },
+                {
+                    "text": "Officier sur navire",
+                    "correct": false
+                },
+                {
+                    "text": "Instrument navigation",
+                    "correct": false
+                },
+                {
+                    "text": "Formule mathématique",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "id": 25,
+            "moduleId": 9,
+            "module": "VHF",
+            "question": "Canal 16 VHF utilisé pour:",
+            "type": "single",
+            "options": [
+                {
+                    "text": "Appel détresse et sécurité",
+                    "correct": true
+                },
+                {
+                    "text": "Communications secondaires",
+                    "correct": false
+                },
+                {
+                    "text": "Conversations privées",
+                    "correct": false
+                },
+                {
+                    "text": "Données météo",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "id": 26,
+            "moduleId": 9,
+            "module": "VHF",
+            "question": "Procédure Mayday doit être:",
+            "type": "single",
+            "options": [
+                {
+                    "text": "Répétée 3 fois",
+                    "correct": true
+                },
+                {
+                    "text": "Dite une seule fois",
+                    "correct": false
+                },
+                {
+                    "text": "Accompagnée de feux",
+                    "correct": false
+                },
+                {
+                    "text": "En code morse",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "id": 27,
+            "moduleId": 10,
+            "module": "Sécurité",
+            "question": "Distance max SUF =",
+            "type": "single",
+            "options": [
+                {
+                    "text": "6 milles nautiques",
+                    "correct": true
+                },
+                {
+                    "text": "10 milles",
+                    "correct": false
+                },
+                {
+                    "text": "3 milles",
+                    "correct": false
+                },
+                {
+                    "text": "Aucune limite",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "id": 28,
+            "moduleId": 10,
+            "module": "Sécurité",
+            "question": "Force max SUF =",
+            "type": "single",
+            "options": [
+                {
+                    "text": "Beaufort 4-5",
+                    "correct": true
+                },
+                {
+                    "text": "Beaufort 2-3",
+                    "correct": false
+                },
+                {
+                    "text": "Beaufort 6-7",
+                    "correct": false
+                },
+                {
+                    "text": "Beaufort 1",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "id": 29,
+            "moduleId": 10,
+            "module": "Sécurité",
+            "question": "Matériel obligatoire bord:",
+            "type": "single",
+            "options": [
+                {
+                    "text": "Gilets, radeau, fusées",
+                    "correct": true
+                },
+                {
+                    "text": "Gilets seulement",
+                    "correct": false
+                },
+                {
+                    "text": "Rien obligatoire",
+                    "correct": false
+                },
+                {
+                    "text": "Radio uniquement",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "id": 30,
+            "moduleId": 3,
+            "module": "RIPAM",
+            "question": "Règle cédez-le-passage: navire à moteur en approche par:",
+            "type": "single",
+            "options": [
+                {
+                    "text": "L'arrière à l'avant = doit s'écarter",
+                    "correct": true
+                },
+                {
+                    "text": "L'avant à l'arrière = peut continuer",
+                    "correct": false
+                },
+                {
+                    "text": "Aucune importance",
+                    "correct": false
+                },
+                {
+                    "text": "Le plus lent cède",
+                    "correct": false
+                }
+            ]
+        }
+    ]
+}
