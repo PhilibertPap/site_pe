@@ -1,0 +1,17 @@
+{
+  "title": "Préparation au Patron d’Embarcation",
+  "modules": [
+    {
+      "name": "Balisage",
+      "description": "Comprendre les marques latérales et cardinales."
+    },
+    {
+      "name": "RIPAM",
+      "description": "Règles de priorité et feux des navires."
+    },
+    {
+      "name": "Marées",
+      "description": "Calcul par la règle des douzièmes."
+    }
+  ]
+}
