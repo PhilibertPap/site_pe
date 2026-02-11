@@ -32,124 +32,101 @@
         <h1 class="mb-4">🎯 Espace d'entraînement</h1>
 
 <div class="row mb-4">
-  <div class="col-md-4">
-    <p class="text-muted">Préparez-vous efficacement avec nos 929 QCM gratuits du permis côtier</p>
+  <div class="col-md-8">
+    <p class="lead">Préparez-vous efficacement avec nos <strong>31</strong> QCM gratuits</p>
   </div>
 </div>
 
-<!-- Cards des types d'entraînement -->
+<!-- Statistiques -->
+<div class="row mb-4">
+  <div class="col-md-3">
+    <div class="card bg-light">
+      <div class="card-body text-center">
+        <h5>Total QCM</h5>
+        <h3 class="text-primary">31</h3>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3">
+    <div class="card bg-light">
+      <div class="card-body text-center">
+        <h5>Catégories</h5>
+        <h3 class="text-success">6</h3>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3">
+    <div class="card bg-light">
+      <div class="card-body text-center">
+        <h5>Types de tests</h5>
+        <h3 class="text-info">4</h3>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3">
+    <div class="card bg-light">
+      <div class="card-body text-center">
+        <h5>Prix</h5>
+        <h3 class="text-warning">Gratuit</h3>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Sessions d'entraînement -->
 <div class="row mb-5">
-  <div class="col-md-4 mb-3">
-    <div class="card h-100 cursor-pointer" data-session="thematic">
+  <div class="col-md-6 mb-3">
+    <div class="card h-100 cursor-pointer training-card" data-session="thematic" style="cursor: pointer;">
       <div class="card-body">
         <div class="text-4xl mb-2">📚</div>
         <h5 class="card-title">Tests Thématiques</h5>
-        <p class="card-text text-muted">Maîtrisez chaque sujet progressivement</p>
-        <span class="badge badge-info">learning</span>
+        <p class="card-text">Maîtrisez chaque sujet progressivement</p>
+        <small class="text-muted">learning</small>
       </div>
     </div>
   </div>
-  <div class="col-md-4 mb-3">
-    <div class="card h-100 cursor-pointer" data-session="random">
+  <div class="col-md-6 mb-3">
+    <div class="card h-100 cursor-pointer training-card" data-session="random" style="cursor: pointer;">
       <div class="card-body">
         <div class="text-4xl mb-2">🎲</div>
         <h5 class="card-title">Tests Aléatoires</h5>
-        <p class="card-text text-muted">Testez-vous comme à l&#39;examen</p>
-        <span class="badge badge-info">simulation</span>
+        <p class="card-text">Testez-vous comme à l&#39;examen</p>
+        <small class="text-muted">simulation</small>
       </div>
     </div>
   </div>
-  <div class="col-md-4 mb-3">
-    <div class="card h-100 cursor-pointer" data-session="fixed">
+  <div class="col-md-6 mb-3">
+    <div class="card h-100 cursor-pointer training-card" data-session="fixed" style="cursor: pointer;">
       <div class="card-body">
         <div class="text-4xl mb-2">📋</div>
         <h5 class="card-title">Tests Fixes Examen</h5>
-        <p class="card-text text-muted">6 séries d&#39;examen officielles</p>
-        <span class="badge badge-info">exam</span>
+        <p class="card-text">6 séries d&#39;examen officielles</p>
+        <small class="text-muted">exam</small>
       </div>
     </div>
   </div>
-  <div class="col-md-4 mb-3">
-    <div class="card h-100 cursor-pointer" data-session="random-thematic">
+  <div class="col-md-6 mb-3">
+    <div class="card h-100 cursor-pointer training-card" data-session="random-thematic" style="cursor: pointer;">
       <div class="card-body">
         <div class="text-4xl mb-2">🔄</div>
         <h5 class="card-title">Tests Thématiques Aléatoires</h5>
-        <p class="card-text text-muted">Variations aléatoires par thème</p>
-        <span class="badge badge-info">revision</span>
+        <p class="card-text">Variations aléatoires par thème</p>
+        <small class="text-muted">revision</small>
       </div>
     </div>
   </div>
 </div>
 
-<!-- Contenu détaillé caché initialement -->
-<div id="session-details"></div>
+<!-- Détails de la session sélectionnée -->
+<div id="session-details" class="mb-5"></div>
 
-<!-- Zone d'exercices dynamique -->
-<div id="exercises-zone" class="mt-5">
-  <!-- Contenu chargé par JS -->
+<!-- Avis utiles -->
+<div class="alert alert-info alert-dismissible fade show">
+  <h4 class="alert-heading">💡 Conseils</h4>
+  <p>Si vous débutez, commencez par les <strong>tests thématiques</strong> pour un apprentissage progressif.</p>
 </div>
 
-<!-- Calculateur de cap -->
-<div class="row mb-4">
-  <div class="col-md-6">
-    <div class="card">
-      <div class="card-body">
-        <h5 class="card-title">⚓ Calculateur de caps</h5>
-        <p class="text-muted">Caps, dérives, marées</p>
-        <select class="form-select mb-2" id="cap-calculator-type">
-          <option value="">Choisir un outil...</option>
-          <option value="caps">Calcul de cap</option>
-          <option value="drifts">Calcul de dérive</option>
-        </select>
-        <button class="btn btn-info w-100" onclick="startCalculator()">Calculer</button>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- Mini-jeux -->
-<div class="row mb-4">
-  <div class="col-md-6">
-    <div class="card">
-      <div class="card-body">
-        <h5 class="card-title">🎮 Mini-jeux</h5>
-        <p class="text-muted">Priorités RIPAM, reconnaissance visuelle</p>
-        <select class="form-select mb-2" id="game-module">
-          <option value="">Choisir un module...</option>
-          <option value="ripam">Quiz RIPAM</option>
-          <option value="balisage">Quiz Balisage</option>
-        </select>
-        <button class="btn btn-success w-100" onclick="startGame()">Jouer</button>
-      </div>
-    </div>
-  </div>
-</div>
-
-
-<!-- Zone d'exercices dynamique -->
-<div id="exercices-zone" class="mt-5">
-    <!-- Contenu chargé dynamiquement par JS -->
-</div>
-
-<script>
-function startFlashcards() {
-    const moduleId = document.getElementById('flashcard-module').value;
-    if(!moduleId) { alert('Choisir un module'); return; }
-    // Logique flashcard chargée par JS
-}
-
-function startGame() {
-    const gameType = document.getElementById('game-module').value;
-    if(!gameType) { alert('Choisir un type'); return; }
-    // Logique jeu chargée par JS
-}
-
-function startCalculator() {
-    const calcType = document.getElementById('calculator-type').value;
-    if(!calcType) { alert('Choisir un outil'); return; }
-    // Logique calcul chargée par JS
-}
-</script>
+<script src="/js/training.js"></script>
 
     </main>
 

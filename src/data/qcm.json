@@ -759,67 +759,6 @@
             "questions": []
         }
     ],
-    "trainingSessions": [
-        {
-            "id": "thematic",
-            "name": "Tests Thématiques",
-            "description": "Maîtrisez chaque sujet progressivement",
-            "icon": "📚",
-            "type": "learning",
-            "totalQuestions": 46,
-            "estimatedTime": "45 min",
-            "topics": [
-                "Balisage latéral (régions A et B)",
-                "Balisage cardinal",
-                "Balisage des plages",
-                "Marques spéciales"
-            ]
-        },
-        {
-            "id": "random",
-            "name": "Tests Aléatoires",
-            "description": "Testez-vous comme à l'examen",
-            "icon": "🎲",
-            "type": "simulation",
-            "formats": [
-                {
-                    "name": "Test tablette (40 QCM)",
-                    "questions": 40,
-                    "vhf": 7,
-                    "timeLimit": 45,
-                    "format": "exam-real"
-                },
-                {
-                    "name": "Personnalisé",
-                    "questions": "5-40",
-                    "custom": true
-                }
-            ]
-        },
-        {
-            "id": "fixed",
-            "name": "Tests Fixes Examen",
-            "description": "6 séries d'examen officielles",
-            "icon": "📋",
-            "type": "exam",
-            "exams": [
-                {
-                    "id": 1,
-                    "name": "Test côtier 1",
-                    "questions": 40,
-                    "vhf": 7,
-                    "difficulty": 2
-                },
-                {
-                    "id": 2,
-                    "name": "Test côtier 2",
-                    "questions": 40,
-                    "vhf": 7,
-                    "difficulty": 3
-                }
-            ]
-        }
-    ],
     "metadata": {
         "version": "1.0",
         "source": "Loisirs Nautic + Cours QCM - Scouts Unitaires de France",
