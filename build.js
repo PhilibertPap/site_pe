@@ -19,7 +19,7 @@ async function build() {
         const templateDir = path.join(srcDir, 'templates');
         const cssDir = path.join(srcDir, 'css');
         const jsDir = path.join(srcDir, 'js');
-        const outputDir = path.join(__dirname, 'public');
+        const outputDir = path.join(__dirname, 'docs');
 
         console.log("📂 Chargement données...");
         const siteData = await loadJSON(path.join(dataDir, 'site.json'), { title: 'PE', modules: [], etapes: [] });
