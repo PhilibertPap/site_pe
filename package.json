@@ -1,15 +1,18 @@
 {
-  "name": "site_pe",
+  "name": "site-pe",
   "version": "1.0.0",
-  "description": "Site d'entraînement à l'examen du Patron d'Embarcation pour les scouts du groupe NDC.",
+  "description": "Site d'entraînement à l'examen du PE pour les scouts du groupe NDC",
   "main": "build.js",
   "scripts": {
-    "build": "node build.js"
+    "build": "node build.js",
+    "start": "npm run build && http-server public -p 8000 -o"
   },
-  "author": "",
+  "keywords": ["pe", "patron", "embarcation", "scout", "navigation"],
+  "author": "Philibert Pap",
   "license": "MIT",
   "dependencies": {
-    "fs-extra": "^11.3.3",
-    "mustache": "^4.2.0"
+    "fs-extra": "^11.2.0",
+    "mustache": "^4.2.0",
+    "http-server": "^14.1.1"
   }
 }

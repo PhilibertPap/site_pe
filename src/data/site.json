@@ -8,28 +8,42 @@
       "name": "LES FONDAMENTAUX VISUELS",
       "description": "Balisage, signalisation, réglementation - reconnaissance par l'image et la mémorisation",
       "moduleCount": 3,
-      "modules": [1, 2, 3]
+      "modules": [
+        1,
+        2,
+        3
+      ]
     },
     {
       "id": 2,
       "name": "LES OUTILS DU NAVIGATEUR",
       "description": "Cartes marines, météo, instruments - savoir utiliser les ressources du bord",
       "moduleCount": 2,
-      "modules": [4, 5]
+      "modules": [
+        4,
+        5
+      ]
     },
     {
       "id": 3,
       "name": "LA NAVIGATION CALCULATOIRE",
       "description": "Caps, dérives, courants, marées - calculs et constructions géométriques",
       "moduleCount": 3,
-      "modules": [6, 7, 8]
+      "modules": [
+        6,
+        7,
+        8
+      ]
     },
     {
       "id": 4,
       "name": "RESPONSABILITÉS ET SÉCURITÉ",
       "description": "VHF, communication, réglementation scout, gestion des avaries",
       "moduleCount": 2,
-      "modules": [9, 10]
+      "modules": [
+        9,
+        10
+      ]
     }
   ],
   "modules": [
