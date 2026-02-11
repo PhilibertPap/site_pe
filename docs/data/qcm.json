@@ -1,759 +1,834 @@
 {
-    "title": "QCM d'examen - Patron d'Embarcation",
-    "totalQuestions": 30,
-    "maxErrors": 5,
-    "timeLimit": 30,
-    "passingScore": 75,
-    "questions": [
+    "categories": [
         {
-            "id": 1,
-            "moduleId": 1,
-            "module": "Balisage",
-            "question": "Quelle est la marque latérale de bâbord?",
-            "type": "single",
-            "options": [
+            "id": "balisage",
+            "name": "Balisage",
+            "description": "Balisage latéral (régions A et B), balisage cardinal, balisage des plages, panneaux, marques, feux",
+            "module": 1,
+            "questions": [
                 {
-                    "text": "Cylindrique rouge avec feu rouge",
-                    "correct": true
+                    "id": 1,
+                    "text": "En entrant au port,",
+                    "image": "https://www.loisirs-nautic.fr/images/Q1.png",
+                    "answers": [
+                        {
+                            "id": "a",
+                            "text": "je laisse à tribord.",
+                            "correct": false
+                        },
+                        {
+                            "id": "b",
+                            "text": "je laisse à bâbord.",
+                            "correct": true
+                        },
+                        {
+                            "id": "c",
+                            "text": "je laisse indifféremment à tribord ou à bâbord.",
+                            "correct": false
+                        }
+                    ],
+                    "difficulty": 2
                 },
                 {
-                    "text": "Conique verte avec feu vert",
-                    "correct": false
+                    "id": 2,
+                    "text": "Ces petites bouées jaunes rapprochées indiquent :",
+                    "image": "https://www.loisirs-nautic.fr/images/Q29.png",
+                    "answers": [
+                        {
+                            "id": "a",
+                            "text": "un danger isolé.",
+                            "correct": false
+                        },
+                        {
+                            "id": "b",
+                            "text": "un danger nouveau.",
+                            "correct": true
+                        },
+                        {
+                            "id": "c",
+                            "text": "une cardinale sud.",
+                            "correct": false
+                        },
+                        {
+                            "id": "d",
+                            "text": "une zone réservée à la baignade.",
+                            "correct": false
+                        }
+                    ],
+                    "difficulty": 1
                 },
                 {
-                    "text": "Sphérique noir avec feu blanc",
-                    "correct": false
+                    "id": 3,
+                    "text": "Cap au 195 :",
+                    "image": "https://www.loisirs-nautic.fr/images/nc_12.png",
+                    "answers": [
+                        {
+                            "id": "a",
+                            "text": "je vais à droite.",
+                            "correct": false
+                        },
+                        {
+                            "id": "b",
+                            "text": "je vais à gauche.",
+                            "correct": true
+                        }
+                    ],
+                    "difficulty": 3
                 },
                 {
-                    "text": "Carrée jaune avec feu jaune",
-                    "correct": false
+                    "id": 4,
+                    "text": "Dans la bande côtière des 300 m, la vitesse est limitée à :",
+                    "image": null,
+                    "answers": [
+                        {
+                            "id": "a",
+                            "text": "3 nds.",
+                            "correct": false
+                        },
+                        {
+                            "id": "b",
+                            "text": "5 km/h.",
+                            "correct": false
+                        },
+                        {
+                            "id": "c",
+                            "text": "5 nds.",
+                            "correct": true
+                        },
+                        {
+                            "id": "d",
+                            "text": "9 km/h.",
+                            "correct": false
+                        }
+                    ],
+                    "difficulty": 2
+                },
+                {
+                    "id": 5,
+                    "text": "Cette marque indique :",
+                    "image": "https://www.loisirs-nautic.fr/images/Q4.png",
+                    "answers": [
+                        {
+                            "id": "a",
+                            "text": "un danger isolé.",
+                            "correct": false
+                        },
+                        {
+                            "id": "b",
+                            "text": "des eaux saines.",
+                            "correct": true
+                        },
+                        {
+                            "id": "c",
+                            "text": "une cardinale nord.",
+                            "correct": false
+                        },
+                        {
+                            "id": "d",
+                            "text": "une marque spéciale.",
+                            "correct": false
+                        }
+                    ],
+                    "difficulty": 2
+                },
+                {
+                    "id": 6,
+                    "text": "Sur le navire rouge, cap à l'est,",
+                    "image": "https://www.loisirs-nautic.fr/images/Q5.png",
+                    "answers": [
+                        {
+                            "id": "a",
+                            "text": "je viens à droite.",
+                            "correct": false
+                        },
+                        {
+                            "id": "b",
+                            "text": "Je viens à gauche.",
+                            "correct": true
+                        },
+                        {
+                            "id": "c",
+                            "text": "je viens indifféremment à droite ou à gauche.",
+                            "correct": false
+                        }
+                    ],
+                    "difficulty": 3
+                },
+                {
+                    "id": 7,
+                    "text": "Cap au 345 :",
+                    "image": "https://www.loisirs-nautic.fr/images/nc_6.png",
+                    "answers": [
+                        {
+                            "id": "a",
+                            "text": "Je laisse à ma droite.",
+                            "correct": true
+                        },
+                        {
+                            "id": "b",
+                            "text": "Je laisse à ma gauche.",
+                            "correct": false
+                        }
+                    ],
+                    "difficulty": 2
+                },
+                {
+                    "id": 8,
+                    "text": "En sortant du port :",
+                    "image": "https://www.loisirs-nautic.fr/images/Q6.png",
+                    "answers": [
+                        {
+                            "id": "a",
+                            "text": "je passe à tribord.",
+                            "correct": true
+                        },
+                        {
+                            "id": "b",
+                            "text": "je passe à bâbord.",
+                            "correct": false
+                        }
+                    ],
+                    "difficulty": 1
+                },
+                {
+                    "id": 9,
+                    "text": "Cette bouée délimite :",
+                    "image": "https://www.loisirs-nautic.fr/images/Q7.png",
+                    "answers": [
+                        {
+                            "id": "a",
+                            "text": "le côté tribord d'un chenal traversier.",
+                            "correct": true
+                        },
+                        {
+                            "id": "b",
+                            "text": "le côté bâbord d'un chenal traversier.",
+                            "correct": false
+                        },
+                        {
+                            "id": "c",
+                            "text": "la bande des 300 m.",
+                            "correct": false
+                        },
+                        {
+                            "id": "d",
+                            "text": "une zone réservée à la baignade.",
+                            "correct": false
+                        }
+                    ],
+                    "difficulty": 2
+                },
+                {
+                    "id": 10,
+                    "text": "À l'approche de cette marque :",
+                    "image": "https://www.loisirs-nautic.fr/images/Q8.png",
+                    "answers": [
+                        {
+                            "id": "a",
+                            "text": "je m'écarte largement.",
+                            "correct": false
+                        },
+                        {
+                            "id": "b",
+                            "text": "je passe obligatoirement au nord.",
+                            "correct": false
+                        },
+                        {
+                            "id": "c",
+                            "text": "je passe obligatoirement au sud.",
+                            "correct": false
+                        },
+                        {
+                            "id": "d",
+                            "text": "je continue, je peux passer au plus près.",
+                            "correct": true
+                        }
+                    ],
+                    "difficulty": 2
+                },
+                {
+                    "id": 11,
+                    "text": "Ce balisage représente :",
+                    "image": "https://www.loisirs-nautic.fr/images/Q9.png",
+                    "answers": [
+                        {
+                            "id": "a",
+                            "text": "le côté bâbord d'un chenal de plage.",
+                            "correct": false
+                        },
+                        {
+                            "id": "b",
+                            "text": "une marque spéciale.",
+                            "correct": false
+                        },
+                        {
+                            "id": "c",
+                            "text": "une cardinale Est.",
+                            "correct": false
+                        },
+                        {
+                            "id": "d",
+                            "text": "un danger nouveau.",
+                            "correct": true
+                        }
+                    ],
+                    "difficulty": 2
+                },
+                {
+                    "id": 12,
+                    "text": "En entrant au port, cette marque représente :",
+                    "image": "https://www.loisirs-nautic.fr/images/Q10.png",
+                    "answers": [
+                        {
+                            "id": "a",
+                            "text": "un chenal préféré à tribord.",
+                            "correct": false
+                        },
+                        {
+                            "id": "b",
+                            "text": "un chenal préféré à bâbord.",
+                            "correct": true
+                        }
+                    ],
+                    "difficulty": 1
+                },
+                {
+                    "id": 13,
+                    "text": "Que signifie ce panneau ?",
+                    "image": "https://www.loisirs-nautic.fr/images/Q11.png",
+                    "answers": [
+                        {
+                            "id": "a",
+                            "text": "Attention aux hélices !",
+                            "correct": false
+                        },
+                        {
+                            "id": "b",
+                            "text": "Navigation interdite aux engins à moteur.",
+                            "correct": true
+                        },
+                        {
+                            "id": "c",
+                            "text": "Navigation autorisée aux engins à moteur.",
+                            "correct": false
+                        }
+                    ],
+                    "difficulty": 2
+                },
+                {
+                    "id": 14,
+                    "text": "Ce navire se dirige :",
+                    "image": "https://www.loisirs-nautic.fr/images/Q12.png",
+                    "answers": [
+                        {
+                            "id": "a",
+                            "text": "vers le port.",
+                            "correct": false
+                        },
+                        {
+                            "id": "b",
+                            "text": "vers le large.",
+                            "correct": true
+                        }
+                    ],
+                    "difficulty": 1
+                },
+                {
+                    "id": 15,
+                    "text": "La nuit, cap au nord, je vois 3 scintillements :",
+                    "image": "https://www.loisirs-nautic.fr/images/nc_7.png",
+                    "answers": [
+                        {
+                            "id": "a",
+                            "text": "Je laisse sur mon tribord.",
+                            "correct": false
+                        },
+                        {
+                            "id": "b",
+                            "text": "Je laisse sur mon bâbord.",
+                            "correct": true
+                        }
+                    ],
+                    "difficulty": 2
+                },
+                {
+                    "id": 16,
+                    "text": "Quel est votre sens de navigation ?",
+                    "image": "https://www.loisirs-nautic.fr/images/q665.png",
+                    "answers": [
+                        {
+                            "id": "a",
+                            "text": "J'entre au port.",
+                            "correct": true
+                        },
+                        {
+                            "id": "b",
+                            "text": "Je sors du port.",
+                            "correct": false
+                        }
+                    ],
+                    "difficulty": 1
+                },
+                {
+                    "id": 17,
+                    "text": "Faisant route au 260 :",
+                    "image": "https://www.loisirs-nautic.fr/images/Q13.GIF",
+                    "answers": [
+                        {
+                            "id": "a",
+                            "text": "j'abats sur tribord.",
+                            "correct": false
+                        },
+                        {
+                            "id": "b",
+                            "text": "j'abats sur bâbord.",
+                            "correct": true
+                        },
+                        {
+                            "id": "c",
+                            "text": "Je passe de n'importe quel côté.",
+                            "correct": false
+                        }
+                    ],
+                    "difficulty": 3
+                },
+                {
+                    "id": 18,
+                    "text": "En entrant au port du Palais (Morbihan 56, France) :",
+                    "image": "https://www.loisirs-nautic.fr/images/Q14.GIF",
+                    "answers": [
+                        {
+                            "id": "a",
+                            "text": "je viens à droite.",
+                            "correct": false
+                        },
+                        {
+                            "id": "b",
+                            "text": "Je viens à gauche.",
+                            "correct": true
+                        }
+                    ],
+                    "difficulty": 3
+                },
+                {
+                    "id": 19,
+                    "text": "Venant du Sud, je vois cette bouée dont les voyants sont absents :",
+                    "image": "https://www.loisirs-nautic.fr/images/Q15.png",
+                    "answers": [
+                        {
+                            "id": "a",
+                            "text": "Je viens à droite.",
+                            "correct": true
+                        },
+                        {
+                            "id": "b",
+                            "text": "Je viens à gauche.",
+                            "correct": false
+                        }
+                    ],
+                    "difficulty": 3
+                },
+                {
+                    "id": 20,
+                    "text": "La bouée émettant ce signal représente :",
+                    "image": "https://www.loisirs-nautic.fr/images/Q16.GIF",
+                    "answers": [
+                        {
+                            "id": "a",
+                            "text": "l'entrée du port.",
+                            "correct": false
+                        },
+                        {
+                            "id": "b",
+                            "text": "une zone de pêche.",
+                            "correct": false
+                        },
+                        {
+                            "id": "c",
+                            "text": "une bouée cardinale Est.",
+                            "correct": false
+                        },
+                        {
+                            "id": "d",
+                            "text": "un danger isolé.",
+                            "correct": true
+                        }
+                    ],
+                    "difficulty": 1
+                },
+                {
+                    "id": 21,
+                    "text": "Cette bouée est une marque de :",
+                    "image": "https://www.loisirs-nautic.fr/images/Q17.png",
+                    "answers": [
+                        {
+                            "id": "a",
+                            "text": "chenal préféré à tribord.",
+                            "correct": false
+                        },
+                        {
+                            "id": "b",
+                            "text": "chenal préféré à bâbord.",
+                            "correct": true
+                        },
+                        {
+                            "id": "c",
+                            "text": "danger isolé.",
+                            "correct": false
+                        },
+                        {
+                            "id": "d",
+                            "text": "danger grave.",
+                            "correct": false
+                        }
+                    ],
+                    "difficulty": 2
+                },
+                {
+                    "id": 22,
+                    "text": "Ces 2 bouées signalent :",
+                    "image": "https://www.loisirs-nautic.fr/images/Q18.png",
+                    "answers": [
+                        {
+                            "id": "a",
+                            "text": "l'entrée d'un chenal obligatoire.",
+                            "correct": false
+                        },
+                        {
+                            "id": "b",
+                            "text": "une zone de pêche.",
+                            "correct": false
+                        },
+                        {
+                            "id": "c",
+                            "text": "un danger pas encore porté sur les cartes.",
+                            "correct": true
+                        }
+                    ],
+                    "difficulty": 2
+                },
+                {
+                    "id": 23,
+                    "text": "Cette bouée indique :",
+                    "image": "https://www.loisirs-nautic.fr/images/Q19.png",
+                    "answers": [
+                        {
+                            "id": "a",
+                            "text": "le côté tribord d'un chenal de plage.",
+                            "correct": true
+                        },
+                        {
+                            "id": "b",
+                            "text": "des eaux saines.",
+                            "correct": false
+                        },
+                        {
+                            "id": "c",
+                            "text": "un danger isolé.",
+                            "correct": false
+                        },
+                        {
+                            "id": "d",
+                            "text": "un danger nouveau.",
+                            "correct": false
+                        }
+                    ],
+                    "difficulty": 1
+                },
+                {
+                    "id": 24,
+                    "text": "Cap au sud :",
+                    "image": "https://www.loisirs-nautic.fr/images/Q20.GIF",
+                    "answers": [
+                        {
+                            "id": "a",
+                            "text": "je laisse à tribord.",
+                            "correct": false
+                        },
+                        {
+                            "id": "b",
+                            "text": "je laisse à bâbord.",
+                            "correct": true
+                        }
+                    ],
+                    "difficulty": 2
+                },
+                {
+                    "id": 25,
+                    "text": "Cette balise est :",
+                    "image": "https://www.loisirs-nautic.fr/images/Q30.png",
+                    "answers": [
+                        {
+                            "id": "a",
+                            "text": "Une bouée d'épave.",
+                            "correct": false
+                        },
+                        {
+                            "id": "b",
+                            "text": "Un danger isolé.",
+                            "correct": true
+                        },
+                        {
+                            "id": "c",
+                            "text": "Une marque spéciale.",
+                            "correct": false
+                        },
+                        {
+                            "id": "d",
+                            "text": "Un croisement de routes maritimes.",
+                            "correct": false
+                        }
+                    ],
+                    "difficulty": 2
+                },
+                {
+                    "id": 26,
+                    "text": "Ce feu est :",
+                    "image": "https://www.loisirs-nautic.fr/images/Q21.GIF",
+                    "answers": [
+                        {
+                            "id": "a",
+                            "text": "à éclat.",
+                            "correct": true
+                        },
+                        {
+                            "id": "b",
+                            "text": "isophase.",
+                            "correct": false
+                        },
+                        {
+                            "id": "c",
+                            "text": "à occultation.",
+                            "correct": false
+                        }
+                    ],
+                    "difficulty": 1
+                },
+                {
+                    "id": 27,
+                    "text": "Ce feu est :",
+                    "image": "https://www.loisirs-nautic.fr/images/Q22.GIF",
+                    "answers": [
+                        {
+                            "id": "a",
+                            "text": "à éclat.",
+                            "correct": false
+                        },
+                        {
+                            "id": "b",
+                            "text": "isophase.",
+                            "correct": false
+                        },
+                        {
+                            "id": "c",
+                            "text": "à occultation.",
+                            "correct": true
+                        }
+                    ],
+                    "difficulty": 1
+                },
+                {
+                    "id": 28,
+                    "text": "Ce feu est :",
+                    "image": "https://www.loisirs-nautic.fr/images/Q23.GIF",
+                    "answers": [
+                        {
+                            "id": "a",
+                            "text": "à éclat.",
+                            "correct": false
+                        },
+                        {
+                            "id": "b",
+                            "text": "isophase.",
+                            "correct": true
+                        },
+                        {
+                            "id": "c",
+                            "text": "à occultation.",
+                            "correct": false
+                        }
+                    ],
+                    "difficulty": 1
+                },
+                {
+                    "id": 29,
+                    "text": "Ce feu est :",
+                    "image": null,
+                    "answers": [
+                        {
+                            "id": "a",
+                            "text": "à éclat.",
+                            "correct": false
+                        },
+                        {
+                            "id": "b",
+                            "text": "isophase.",
+                            "correct": true
+                        },
+                        {
+                            "id": "c",
+                            "text": "à occultation.",
+                            "correct": false
+                        }
+                    ],
+                    "difficulty": 1
                 }
             ]
         },
         {
-            "id": 2,
-            "moduleId": 1,
-            "module": "Balisage",
-            "question": "Une marque cardinale Nord indique le passage sûr:",
-            "type": "single",
-            "options": [
+            "id": "signaux",
+            "name": "Signaux",
+            "description": "Signaux météo, signaux portuaires, signaux de détresse, plongeurs sous-marins",
+            "module": 2,
+            "questions": [
                 {
-                    "text": "Au sud de la marque",
-                    "correct": false
-                },
-                {
-                    "text": "Au nord de la marque",
-                    "correct": true
-                },
-                {
-                    "text": "À l'est de la marque",
-                    "correct": false
-                },
-                {
-                    "text": "À l'ouest de la marque",
-                    "correct": false
+                    "id": 1,
+                    "text": "Que signifie ce panneau ?",
+                    "image": null,
+                    "answers": [
+                        {
+                            "id": "a",
+                            "text": "Attention aux hélices !",
+                            "correct": false,
+                            "explanation": ""
+                        },
+                        {
+                            "id": "b",
+                            "text": "Navigation interdite aux engins à moteur.",
+                            "correct": true,
+                            "explanation": "Ce panneau interdit la navigation aux engins à moteur"
+                        },
+                        {
+                            "id": "c",
+                            "text": "Navigation autorisée aux engins à moteur.",
+                            "correct": false,
+                            "explanation": ""
+                        }
+                    ],
+                    "difficulty": 2
                 }
             ]
         },
         {
-            "id": 3,
-            "moduleId": 1,
-            "module": "Balisage",
-            "question": "Quel est le feu d'une zone d'eaux saines?",
-            "type": "single",
-            "options": [
+            "id": "regles_barre",
+            "name": "Règles de barre",
+            "description": "Règles de barre et de route, navires privilégiés, marques de jour des navires, signaux sonores de manœuvre",
+            "module": 3,
+            "questions": [
                 {
-                    "text": "Blanc isophase",
-                    "correct": true
-                },
-                {
-                    "text": "Rouge continu",
-                    "correct": false
-                },
-                {
-                    "text": "Vert scintillant",
-                    "correct": false
-                },
-                {
-                    "text": "Blanc à éclats rapides",
-                    "correct": false
+                    "id": 1,
+                    "text": "Cap au 195 :",
+                    "image": null,
+                    "answers": [
+                        {
+                            "id": "a",
+                            "text": "je vais à droite.",
+                            "correct": false,
+                            "explanation": ""
+                        },
+                        {
+                            "id": "b",
+                            "text": "je vais à gauche.",
+                            "correct": true,
+                            "explanation": "Cap 195 = sud-ouest, direction vers la gauche (ouest)"
+                        }
+                    ],
+                    "difficulty": 3
                 }
             ]
         },
         {
-            "id": 4,
-            "moduleId": 2,
-            "module": "Signalisation",
-            "question": "En brume, un navire à moteur émet quel signal?",
-            "type": "single",
-            "options": [
-                {
-                    "text": "Un coup de sifflet chaque minute",
-                    "correct": true
-                },
-                {
-                    "text": "Deux coups toutes les 2 minutes",
-                    "correct": false
-                },
-                {
-                    "text": "Trois coups toutes les 3 minutes",
-                    "correct": false
-                },
-                {
-                    "text": "Un son continu",
-                    "correct": false
-                }
-            ]
+            "id": "feux_marques",
+            "name": "Feux et marques des navires",
+            "description": "Feux de nuit des navires et autres marques de jour",
+            "module": 4,
+            "questions": []
         },
         {
-            "id": 5,
-            "moduleId": 2,
-            "module": "Signalisation",
-            "question": "Que signifie le feu rouge d'un navire?",
-            "type": "single",
-            "options": [
-                {
-                    "text": "Feu de bâbord (port)",
-                    "correct": true
-                },
-                {
-                    "text": "Feu de tribord (starboard)",
-                    "correct": false
-                },
-                {
-                    "text": "Feu de mouillage",
-                    "correct": false
-                },
-                {
-                    "text": "Navire en détresse",
-                    "correct": false
-                }
-            ]
+            "id": "carte_marine",
+            "name": "Carte marine",
+            "description": "Les symboles de la carte marine à connaître pour l'examen, latitude et longitude",
+            "module": 5,
+            "questions": []
         },
         {
-            "id": 6,
-            "moduleId": 3,
-            "module": "RIPAM",
-            "question": "Deux voiliers face au vent se croisent. Qui s'écarte?",
-            "type": "single",
-            "options": [
-                {
-                    "text": "Celui avec le vent à bâbord",
-                    "correct": true
-                },
-                {
-                    "text": "Celui avec le vent à tribord",
-                    "correct": false
-                },
-                {
-                    "text": "Le plus petit navire",
-                    "correct": false
-                },
-                {
-                    "text": "Tous les deux s'écartent",
-                    "correct": false
-                }
-            ]
-        },
-        {
-            "id": 7,
-            "moduleId": 3,
-            "module": "RIPAM",
-            "question": "Un voilier et un bateau à moteur se croisent. Qui a priorité?",
-            "type": "single",
-            "options": [
-                {
-                    "text": "Le voilier (navigation à voile)",
-                    "correct": true
-                },
-                {
-                    "text": "Le bateau à moteur",
-                    "correct": false
-                },
-                {
-                    "text": "Le plus petit",
-                    "correct": false
-                },
-                {
-                    "text": "Dépend de la direction",
-                    "correct": false
-                }
-            ]
-        },
-        {
-            "id": 8,
-            "moduleId": 3,
-            "module": "RIPAM",
-            "question": "Deux navires à moteur se croisent face à face. Que faire?",
-            "type": "single",
-            "options": [
-                {
-                    "text": "Les deux s'écartent à bâbord",
-                    "correct": true
-                },
-                {
-                    "text": "Le plus gros s'écarte",
-                    "correct": false
-                },
-                {
-                    "text": "Le plus rapide s'écarte",
-                    "correct": false
-                },
-                {
-                    "text": "Continuer sa route",
-                    "correct": false
-                }
-            ]
-        },
-        {
-            "id": 9,
-            "moduleId": 3,
-            "module": "RIPAM",
-            "question": "Un navire qui double un autre doit:",
-            "type": "single",
-            "options": [
-                {
-                    "text": "S'écarter largement pour laisser la priorité",
-                    "correct": true
-                },
-                {
-                    "text": "Doubler rapidement",
-                    "correct": false
-                },
-                {
-                    "text": "Maintenir sa route",
-                    "correct": false
-                },
-                {
-                    "text": "Demander la permission",
-                    "correct": false
-                }
-            ]
-        },
-        {
-            "id": 10,
-            "moduleId": 3,
-            "module": "RIPAM",
-            "question": "Quel feu de bord pour un navire à moteur à bâbord?",
-            "type": "single",
-            "options": [
-                {
-                    "text": "Feu rouge (port)",
-                    "correct": true
-                },
-                {
-                    "text": "Feu vert (starboard)",
-                    "correct": false
-                },
-                {
-                    "text": "Feu blanc de mâture",
-                    "correct": false
-                },
-                {
-                    "text": "Pas de feu",
-                    "correct": false
-                }
-            ]
-        },
-        {
-            "id": 11,
-            "moduleId": 4,
-            "module": "Carte marine",
-            "question": "Quel symbole SHOM indique une épave?",
-            "type": "single",
-            "options": [
-                {
-                    "text": "Une croix avec un point",
-                    "correct": true
-                },
-                {
-                    "text": "Un point noir",
-                    "correct": false
-                },
-                {
-                    "text": "Une ligne pointillée",
-                    "correct": false
-                },
-                {
-                    "text": "Un triangle",
-                    "correct": false
-                }
-            ]
-        },
-        {
-            "id": 12,
-            "moduleId": 4,
-            "module": "Carte marine",
-            "question": "Comment mesurer une distance sur la carte?",
-            "type": "single",
-            "options": [
-                {
-                    "text": "Avec la règle Cras sur l'échelle des latitudes",
-                    "correct": true
-                },
-                {
-                    "text": "Avec une simple règle en cm",
-                    "correct": false
-                },
-                {
-                    "text": "En estimant à vue",
-                    "correct": false
-                },
-                {
-                    "text": "Avec un compas géographique",
-                    "correct": false
-                }
-            ]
-        },
-        {
-            "id": 13,
-            "moduleId": 4,
-            "module": "Carte marine",
-            "question": "Les coordonnées géographiques se mesurent en:",
-            "type": "single",
-            "options": [
-                {
-                    "text": "Degrés, minutes, secondes",
-                    "correct": true
-                },
-                {
-                    "text": "Kilomètres",
-                    "correct": false
-                },
-                {
-                    "text": "Milles nautiques",
-                    "correct": false
-                },
-                {
-                    "text": "Centimètres",
-                    "correct": false
-                }
-            ]
-        },
-        {
-            "id": 14,
-            "moduleId": 5,
-            "module": "Météo",
-            "question": "Quelle est la succession des nuages d'une dépression?",
-            "type": "single",
-            "options": [
-                {
-                    "text": "Cirrus → Cumulus → Stratus",
-                    "correct": true
-                },
-                {
-                    "text": "Cumulus → Cirrus → Stratus",
-                    "correct": false
-                },
-                {
-                    "text": "Stratus → Cumulus → Cirrus",
-                    "correct": false
-                },
-                {
-                    "text": "Altostratus d'abord",
-                    "correct": false
-                }
-            ]
-        },
-        {
-            "id": 15,
-            "moduleId": 5,
-            "module": "Météo",
-            "question": "Force 4 Beaufort =",
-            "type": "single",
-            "options": [
-                {
-                    "text": "Vent modéré 11-16 nœuds",
-                    "correct": true
-                },
-                {
-                    "text": "Vent faible 3-6 nœuds",
-                    "correct": false
-                },
-                {
-                    "text": "Vent frais 17-21 nœuds",
-                    "correct": false
-                },
-                {
-                    "text": "Tempête 40+ nœuds",
-                    "correct": false
-                }
-            ]
-        },
-        {
-            "id": 16,
-            "moduleId": 6,
-            "module": "Caps",
-            "question": "Déclinaison magnétique France =",
-            "type": "single",
-            "options": [
-                {
-                    "text": "0° à 2° Ouest",
-                    "correct": true
-                },
-                {
-                    "text": "10° Est",
-                    "correct": false
-                },
-                {
-                    "text": "5° Ouest",
-                    "correct": false
-                },
-                {
-                    "text": "Zéro, pas de déclinaison",
-                    "correct": false
-                }
-            ]
-        },
-        {
-            "id": 17,
-            "moduleId": 6,
-            "module": "Caps",
-            "question": "Cv = Cc + W. W représente:",
-            "type": "single",
-            "options": [
-                {
-                    "text": "La déclinaison magnétique",
-                    "correct": true
-                },
-                {
-                    "text": "La déviation du compas",
-                    "correct": false
-                },
-                {
-                    "text": "La dérive du vent",
-                    "correct": false
-                },
-                {
-                    "text": "La variation totale",
-                    "correct": false
-                }
-            ]
-        },
-        {
-            "id": 18,
-            "moduleId": 6,
-            "module": "Caps",
-            "question": "Cap compas 090°, décl. 2° W, dév. 3° E. Cap vrai?",
-            "type": "single",
-            "options": [
-                {
-                    "text": "091°",
-                    "correct": true
-                },
-                {
-                    "text": "085°",
-                    "correct": false
-                },
-                {
-                    "text": "095°",
-                    "correct": false
-                },
-                {
-                    "text": "090°",
-                    "correct": false
-                }
-            ]
-        },
-        {
-            "id": 19,
-            "moduleId": 7,
-            "module": "Courants",
-            "question": "Route fond = ",
-            "type": "single",
-            "options": [
-                {
-                    "text": "Route surface + courant",
-                    "correct": true
-                },
-                {
-                    "text": "Route surface + vent",
-                    "correct": false
-                },
-                {
-                    "text": "Cap magnétique seul",
-                    "correct": false
-                },
-                {
-                    "text": "Direction du vent",
-                    "correct": false
-                }
-            ]
-        },
-        {
-            "id": 20,
-            "moduleId": 7,
-            "module": "Courants",
-            "question": "Courant sur la carte se représente par:",
-            "type": "single",
-            "options": [
-                {
-                    "text": "Flèche avec direction et vitesse",
-                    "correct": true
-                },
-                {
-                    "text": "Ligne pointillée rouge",
-                    "correct": false
-                },
-                {
-                    "text": "Zone colorée",
-                    "correct": false
-                },
-                {
-                    "text": "Invisible sur la carte",
-                    "correct": false
-                }
-            ]
-        },
-        {
-            "id": 21,
-            "moduleId": 8,
-            "module": "Marées",
-            "question": "Règle douzièmes, 3e heure marée montante:",
-            "type": "single",
-            "options": [
-                {
-                    "text": "3/12 du marnage",
-                    "correct": true
-                },
-                {
-                    "text": "1/12 du marnage",
-                    "correct": false
-                },
-                {
-                    "text": "6/12 du marnage",
-                    "correct": false
-                },
-                {
-                    "text": "12/12 du marnage",
-                    "correct": false
-                }
-            ]
-        },
-        {
-            "id": 22,
-            "moduleId": 8,
-            "module": "Marées",
-            "question": "Marnage =",
-            "type": "single",
-            "options": [
-                {
-                    "text": "Différence PM et BM",
-                    "correct": true
-                },
-                {
-                    "text": "Heure de changement",
-                    "correct": false
-                },
-                {
-                    "text": "Durée d'une marée",
-                    "correct": false
-                },
-                {
-                    "text": "Vitesse courant",
-                    "correct": false
-                }
-            ]
-        },
-        {
-            "id": 23,
-            "moduleId": 8,
-            "module": "Marées",
-            "question": "Une marée dure:",
-            "type": "single",
-            "options": [
-                {
-                    "text": "6h montée + 6h descente",
-                    "correct": true
-                },
-                {
-                    "text": "12 heures continues",
-                    "correct": false
-                },
-                {
-                    "text": "24 heures",
-                    "correct": false
-                },
-                {
-                    "text": "3 heures",
-                    "correct": false
-                }
-            ]
-        },
-        {
-            "id": 24,
-            "moduleId": 8,
-            "module": "Marées",
-            "question": "Pied de pilote =",
-            "type": "single",
-            "options": [
-                {
-                    "text": "Réserve sécurité hauteur eau",
-                    "correct": true
-                },
-                {
-                    "text": "Officier sur navire",
-                    "correct": false
-                },
-                {
-                    "text": "Instrument navigation",
-                    "correct": false
-                },
-                {
-                    "text": "Formule mathématique",
-                    "correct": false
-                }
-            ]
-        },
-        {
-            "id": 25,
-            "moduleId": 9,
+            "id": "vhf",
+            "name": "Radio VHF ASN",
+            "description": "Certificat de Radiotéléphoniste Restreint, communications VHF",
             "module": "VHF",
-            "question": "Canal 16 VHF utilisé pour:",
-            "type": "single",
-            "options": [
+            "questions": []
+        }
+    ],
+    "trainingSessions": [
+        {
+            "id": "thematic",
+            "name": "Tests Thématiques",
+            "description": "Maîtrisez chaque sujet progressivement",
+            "icon": "📚",
+            "type": "learning",
+            "totalQuestions": 46,
+            "estimatedTime": "45 min",
+            "topics": [
+                "Balisage latéral (régions A et B)",
+                "Balisage cardinal",
+                "Balisage des plages",
+                "Marques spéciales"
+            ]
+        },
+        {
+            "id": "random",
+            "name": "Tests Aléatoires",
+            "description": "Testez-vous comme à l'examen",
+            "icon": "🎲",
+            "type": "simulation",
+            "formats": [
                 {
-                    "text": "Appel détresse et sécurité",
-                    "correct": true
+                    "name": "Test tablette (40 QCM)",
+                    "questions": 40,
+                    "vhf": 7,
+                    "timeLimit": 45,
+                    "format": "exam-real"
                 },
                 {
-                    "text": "Communications secondaires",
-                    "correct": false
-                },
-                {
-                    "text": "Conversations privées",
-                    "correct": false
-                },
-                {
-                    "text": "Données météo",
-                    "correct": false
+                    "name": "Personnalisé",
+                    "questions": "5-40",
+                    "custom": true
                 }
             ]
         },
         {
-            "id": 26,
-            "moduleId": 9,
-            "module": "VHF",
-            "question": "Procédure Mayday doit être:",
-            "type": "single",
-            "options": [
+            "id": "fixed",
+            "name": "Tests Fixes Examen",
+            "description": "6 séries d'examen officielles",
+            "icon": "📋",
+            "type": "exam",
+            "exams": [
                 {
-                    "text": "Répétée 3 fois",
-                    "correct": true
+                    "id": 1,
+                    "name": "Test côtier 1",
+                    "questions": 40,
+                    "vhf": 7,
+                    "difficulty": 2
                 },
                 {
-                    "text": "Dite une seule fois",
-                    "correct": false
-                },
-                {
-                    "text": "Accompagnée de feux",
-                    "correct": false
-                },
-                {
-                    "text": "En code morse",
-                    "correct": false
-                }
-            ]
-        },
-        {
-            "id": 27,
-            "moduleId": 10,
-            "module": "Sécurité",
-            "question": "Distance max SUF =",
-            "type": "single",
-            "options": [
-                {
-                    "text": "6 milles nautiques",
-                    "correct": true
-                },
-                {
-                    "text": "10 milles",
-                    "correct": false
-                },
-                {
-                    "text": "3 milles",
-                    "correct": false
-                },
-                {
-                    "text": "Aucune limite",
-                    "correct": false
-                }
-            ]
-        },
-        {
-            "id": 28,
-            "moduleId": 10,
-            "module": "Sécurité",
-            "question": "Force max SUF =",
-            "type": "single",
-            "options": [
-                {
-                    "text": "Beaufort 4-5",
-                    "correct": true
-                },
-                {
-                    "text": "Beaufort 2-3",
-                    "correct": false
-                },
-                {
-                    "text": "Beaufort 6-7",
-                    "correct": false
-                },
-                {
-                    "text": "Beaufort 1",
-                    "correct": false
-                }
-            ]
-        },
-        {
-            "id": 29,
-            "moduleId": 10,
-            "module": "Sécurité",
-            "question": "Matériel obligatoire bord:",
-            "type": "single",
-            "options": [
-                {
-                    "text": "Gilets, radeau, fusées",
-                    "correct": true
-                },
-                {
-                    "text": "Gilets seulement",
-                    "correct": false
-                },
-                {
-                    "text": "Rien obligatoire",
-                    "correct": false
-                },
-                {
-                    "text": "Radio uniquement",
-                    "correct": false
-                }
-            ]
-        },
-        {
-            "id": 30,
-            "moduleId": 3,
-            "module": "RIPAM",
-            "question": "Règle cédez-le-passage: navire à moteur en approche par:",
-            "type": "single",
-            "options": [
-                {
-                    "text": "L'arrière à l'avant = doit s'écarter",
-                    "correct": true
-                },
-                {
-                    "text": "L'avant à l'arrière = peut continuer",
-                    "correct": false
-                },
-                {
-                    "text": "Aucune importance",
-                    "correct": false
-                },
-                {
-                    "text": "Le plus lent cède",
-                    "correct": false
+                    "id": 2,
+                    "name": "Test côtier 2",
+                    "questions": 40,
+                    "vhf": 7,
+                    "difficulty": 3
                 }
             ]
         }
-    ]
+    ],
+    "metadata": {
+        "version": "1.0",
+        "source": "Loisirs Nautic + Cours QCM - Scouts Unitaires de France",
+        "totalQuestions": 929,
+        "lastUpdated": "2026-02-11",
+        "levels": {
+            "1": "Facile",
+            "2": "Moyen",
+            "3": "Difficile"
+        }
+    }
 }

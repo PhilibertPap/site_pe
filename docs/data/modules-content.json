@@ -6,31 +6,47 @@
             "etape": 1,
             "objectifs": [
                 "Marques latérales",
-                "Marques cardinales",
-                "Zones eaux saines"
+                "Cardinales",
+                "Eaux saines",
+                "Lumière signaux"
             ],
             "keyPoints": [
-                "Bâbord=rouge cylindrique",
-                "Tribord=vert conique",
-                "Nord=cônes pointant haut"
+                "Bâbord: rouge cylindrique feu rouge",
+                "Tribord: vert conique feu vert",
+                "Chenal trib: rouge+bande verte, feu rouge 2+1",
+                "Chenal bâb: vert+bande rouge, feu vert 2+1",
+                "Eaux saines: bandes rouges/blanches, feu blanc",
+                "Spéciale: jaune, croix jaune",
+                "Danger isolé: noir+bandes rouges, 2 sphères",
+                "Nord: noir/jaune, cônes haut, continu blanc",
+                "Est: noir/jaune/noir, cônes opposés, 3 blancs/10s",
+                "Sud: jaune/noir, cônes bas, 6 blancs/10s"
             ],
-            "formulas": "Pas de formule - mémorisation visuelle"
+            "formulas": "Codes visuels RIPAM"
         },
         {
             "id": 2,
             "name": "Signalisation",
             "etape": 1,
             "objectifs": [
+                "Feux navigation",
+                "Marques jour",
                 "Signaux sonores",
-                "Feux de bord",
-                "Feux de port"
+                "Procédures brume"
             ],
             "keyPoints": [
-                "Brume: 1 coup/min moteur",
-                "Feu rouge=bâbord",
-                "Feu vert=tribord"
+                "Feu proue: blanc axial 225°",
+                "Feux route: rouge bâb, vert trib 112.5°",
+                "Feu arrière: blanc 135°",
+                "Mouillage: boule noire (j), feu blanc (n)",
+                "Non maître: 2 boules (j), feu+route (n)",
+                "Échoué: 3 boules (j), blanc+2 rouges (n)",
+                "Manœuvre trib: 1 coup",
+                "Manœuvre bâb: 2 coups",
+                "Arrière: 3 coups",
+                "Brume moteur erre: 1 long/2min"
             ],
-            "formulas": "Codes RIPAM standard"
+            "formulas": "Sons brefs 1s, longs 4-6s"
         },
         {
             "id": 3,
@@ -38,127 +54,179 @@
             "etape": 1,
             "objectifs": [
                 "Priorités passage",
-                "Feux de route",
-                "Marques jour"
+                "Manœuvres abordage",
+                "Cas spéciaux",
+                "Risque collision"
             ],
             "keyPoints": [
-                "Voilier > Moteur",
-                "Doubler=s'écarter",
-                "Face-à-face=tribord-tribord"
+                "Hiérarchie: Non-maître>Capacité>Tirant>Pêche>Voilier>Moteur",
+                "Routes opposées: tribord-tribord",
+                "Routes convergentes: priorité droite",
+                "Doublage: s'écarter",
+                "Voilier+moteur: traité moteur",
+                "Chalutier pêche: 2 cônes, feu vert/blanc",
+                "Remorqueur: feu blanc supplémentaire",
+                "Risque: gisement constant 3 temps"
             ],
-            "formulas": "Règles hiérarchiques"
+            "formulas": "Géométrie gisement"
         },
         {
             "id": 4,
+            "name": "Signaux Sonores",
+            "etape": 1,
+            "objectifs": [
+                "Manœuvre signaux",
+                "Avertissement",
+                "Détresse",
+                "Brume procédures"
+            ],
+            "keyPoints": [
+                "Je tribord: 1 bref",
+                "Je bâbord: 2 brefs",
+                "Je arrière: 3 brefs",
+                "Rattrapage trib: 2 brefs",
+                "Rattrapage bâb: 1long+2brefs",
+                "Accord dépass: 1long+1bref",
+                "Doute: 4 brefs rapides",
+                "Coude: 1 long",
+                "Moteur erre brume: 1 long/2min",
+                "Détresse: Mayday 3x, fusée, miroir, pavillon NC"
+            ],
+            "formulas": "Sons standards RIPAM"
+        },
+        {
+            "id": 5,
             "name": "Carte Marine",
             "etape": 2,
             "objectifs": [
                 "Symboles SHOM",
-                "Coordonnées",
-                "Règle Cras"
+                "Mesure distance",
+                "Profondeurs",
+                "Dangers"
             ],
             "keyPoints": [
-                "Distance = échelle latitudes",
-                "Epave=croix point",
-                "Haut-fond=point profondeur"
+                "Distance: échelle latitudes",
+                "Épave: croix+point",
+                "Haut-fond: point+profondeur",
+                "Parc: pointillés fermés",
+                "Câble: pointillé+AC",
+                "Phare: triangle+numéro",
+                "Balise: carré",
+                "Profondeur: mètres côtier",
+                "Règle Cras: mesurer caps distances"
             ],
-            "formulas": "Pas calcul - manipulation outils"
-        },
-        {
-            "id": 5,
-            "name": "Météo",
-            "etape": 2,
-            "objectifs": [
-                "Systèmes dépression",
-                "Nuages",
-                "Échelle Beaufort"
-            ],
-            "keyPoints": [
-                "Cirrus avant dépression",
-                "Force 4 = 11-16 kt",
-                "Fronts froids = orages"
-            ],
-            "formulas": "Beaufort: 1-12 (puissance 2)"
+            "formulas": "Outils Cras et compas"
         },
         {
             "id": 6,
+            "name": "Météo",
+            "etape": 2,
+            "objectifs": [
+                "Dépression",
+                "Nuages",
+                "Beaufort",
+                "Prévisions"
+            ],
+            "keyPoints": [
+                "Cirrus: -12-24h avant basse pression",
+                "Altocumulus: -12h",
+                "Force 0: <1kt",
+                "Force 4: 11-16kt, 1m",
+                "Force 5: 17-21kt, 2m",
+                "Force 6: 22-27kt, 3m",
+                "Front froid: orages",
+                "Front chaud: pluie progressive"
+            ],
+            "formulas": "Beaufort ≈ (V²)/2"
+        },
+        {
+            "id": 7,
             "name": "Caps",
             "etape": 3,
             "objectifs": [
                 "Déclinaison",
                 "Déviation",
-                "Cap vrai"
+                "Conversion caps",
+                "Formule Cox"
             ],
             "keyPoints": [
-                "Cv=Cc+W",
-                "France: 0-2°W",
-                "Déviation propre au compas"
+                "Cv: cap vrai",
+                "Cc: cap compas",
+                "W: déclinaison (W=-,E=+)",
+                "δ: déviation",
+                "Cv = Cc + W + δ",
+                "France: W 0-2°",
+                "Déviation: propre navire",
+                "Rose: 360°"
             ],
-            "formulas": "Cv=Cc+Déclinaison+Déviation"
-        },
-        {
-            "id": 7,
-            "name": "Courants",
-            "etape": 3,
-            "objectifs": [
-                "Vecteurs courant",
-                "Route fond",
-                "Construction"
-            ],
-            "keyPoints": [
-                "Route fond = surface + courant",
-                "Flèche direction+vitesse",
-                "Parallélogramme vectoriel"
-            ],
-            "formulas": "Addition vectorielle"
+            "formulas": "Cv = Cc + W + δ"
         },
         {
             "id": 8,
+            "name": "Courants",
+            "etape": 3,
+            "objectifs": [
+                "Vecteurs vitesse",
+                "Route fond",
+                "Dérive",
+                "Construction"
+            ],
+            "keyPoints": [
+                "Rs: route surface",
+                "Vc: vecteur courant",
+                "Rf: route fond",
+                "Rf = Rs + Vc",
+                "Parallélogramme vectoriel",
+                "Dérive: Rf - Rs",
+                "Courants tidals: tables marées",
+                "Triangle fermé vecteurs"
+            ],
+            "formulas": "Rf = Rs + Vc vectoriel"
+        },
+        {
+            "id": 9,
             "name": "Marées",
             "etape": 3,
             "objectifs": [
+                "Hauteurs marées",
                 "Douzièmes",
                 "Marnage",
                 "Pied pilote"
             ],
             "keyPoints": [
-                "Heures 1-2-3=1/12-2/12-3/12",
-                "BM+marnage=PM",
-                "Pied pilote sécurité"
+                "BM: basse mer",
+                "PM: pleine mer",
+                "Marnage: PM-BM",
+                "Douzièmes: 1,2,3,3,2,1",
+                "H1: 1/12",
+                "H2: 2/12 (cumul 3/12)",
+                "H3: 3/12 (cumul 6/12)",
+                "Heure marée: 50min",
+                "Pied pilote: sécurité 20cm"
             ],
-            "formulas": "1/12: 1,2,3,3,2,1"
-        },
-        {
-            "id": 9,
-            "name": "VHF",
-            "etape": 4,
-            "objectifs": [
-                "Canaux",
-                "Mayday",
-                "Procédures"
-            ],
-            "keyPoints": [
-                "Canal 16 détresse",
-                "Mayday x3",
-                "ASN obligatoire"
-            ],
-            "formulas": "Procédures standardisées RIPAM"
+            "formulas": "1/12, 2/12, 3/12, 3/12, 2/12, 1/12"
         },
         {
             "id": 10,
-            "name": "Sécurité",
+            "name": "Sécurité VHF",
             "etape": 4,
             "objectifs": [
-                "SUF règles",
-                "Équipement",
-                "Avaries"
+                "Canal 16",
+                "Mayday proc",
+                "ASN",
+                "Équipement obligatoire"
             ],
             "keyPoints": [
-                "Max 6 milles",
-                "Force 4-5",
-                "Gilets+radeau obligatoires"
+                "Canal 16: détresse urgence",
+                "Mayday: 3 fois",
+                "ASN: équipement obligatoire",
+                "Licence radio",
+                "Fréquence 156-162 MHz",
+                "Gilet autogonflant obligatoire",
+                "Balise SOLAS",
+                "Radeaux: selon tonnage"
             ],
-            "formulas": "Réglementation scout"
+            "formulas": "Procédures standardisées"
         }
     ]
 }

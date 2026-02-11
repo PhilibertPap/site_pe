@@ -1,52 +1,71 @@
 <h1 class="mb-4">🎯 Espace d'entraînement</h1>
 
 <div class="row mb-4">
-    <div class="col-md-4">
-        <div class="card">
-            <div class="card-body">
-                <h6 class="card-title">Flashcards</h6>
-                <p class="text-muted">Mémorise le balisage et la réglementation</p>
-                <select class="form-select mb-2" id="flashcard-module">
-                    <option value="">Choisir un module...</option>
-                    {{#modules}}
-                    <option value="{{id}}">{{name}}</option>
-                    {{/modules}}
-                </select>
-                <button class="btn btn-primary w-100" onclick="startFlashcards()">Démarrer</button>
-            </div>
-        </div>
-    </div>
-
-    <div class="col-md-4">
-        <div class="card">
-            <div class="card-body">
-                <h6 class="card-title">Mini-jeux</h6>
-                <p class="text-muted">Priorités RIPAM, reconnaissance visuelle</p>
-                <select class="form-select mb-2" id="game-module">
-                    <option value="">Choisir un type...</option>
-                    <option value="ripam">Quiz RIPAM</option>
-                    <option value="balisage">Quiz Balisage</option>
-                </select>
-                <button class="btn btn-success w-100" onclick="startGame()">Jouer</button>
-            </div>
-        </div>
-    </div>
-
-    <div class="col-md-4">
-        <div class="card">
-            <div class="card-body">
-                <h6 class="card-title">Calculateurs</h6>
-                <p class="text-muted">Caps, dérives, marées</p>
-                <select class="form-select mb-2" id="calculator-type">
-                    <option value="">Choisir un outil...</option>
-                    <option value="marées">Calcul de marée</option>
-                    <option value="caps">Calcul de cap</option>
-                </select>
-                <button class="btn btn-info w-100" onclick="startCalculator()">Calculer</button>
-            </div>
-        </div>
-    </div>
+  <div class="col-md-4">
+    <p class="text-muted">Préparez-vous efficacement avec nos 929 QCM gratuits du permis côtier</p>
+  </div>
 </div>
+
+<!-- Cards des types d'entraînement -->
+<div class="row mb-5">
+  {{#trainingSessions}}
+  <div class="col-md-4 mb-3">
+    <div class="card h-100 cursor-pointer" data-session="{{id}}">
+      <div class="card-body">
+        <div class="text-4xl mb-2">{{icon}}</div>
+        <h5 class="card-title">{{name}}</h5>
+        <p class="card-text text-muted">{{description}}</p>
+        <span class="badge badge-info">{{type}}</span>
+      </div>
+    </div>
+  </div>
+  {{/trainingSessions}}
+</div>
+
+<!-- Contenu détaillé caché initialement -->
+<div id="session-details"></div>
+
+<!-- Zone d'exercices dynamique -->
+<div id="exercises-zone" class="mt-5">
+  <!-- Contenu chargé par JS -->
+</div>
+
+<!-- Calculateur de cap -->
+<div class="row mb-4">
+  <div class="col-md-6">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">⚓ Calculateur de caps</h5>
+        <p class="text-muted">Caps, dérives, marées</p>
+        <select class="form-select mb-2" id="cap-calculator-type">
+          <option value="">Choisir un outil...</option>
+          <option value="caps">Calcul de cap</option>
+          <option value="drifts">Calcul de dérive</option>
+        </select>
+        <button class="btn btn-info w-100" onclick="startCalculator()">Calculer</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Mini-jeux -->
+<div class="row mb-4">
+  <div class="col-md-6">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">🎮 Mini-jeux</h5>
+        <p class="text-muted">Priorités RIPAM, reconnaissance visuelle</p>
+        <select class="form-select mb-2" id="game-module">
+          <option value="">Choisir un module...</option>
+          <option value="ripam">Quiz RIPAM</option>
+          <option value="balisage">Quiz Balisage</option>
+        </select>
+        <button class="btn btn-success w-100" onclick="startGame()">Jouer</button>
+      </div>
+    </div>
+  </div>
+</div>
+
 
 <!-- Zone d'exercices dynamique -->
 <div id="exercices-zone" class="mt-5">
