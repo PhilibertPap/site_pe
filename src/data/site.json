@@ -1,17 +1,241 @@
 {
-  "title": "Préparation au Patron d’Embarcation",
+  "title": "Préparation au Patron d'Embarcation",
+  "subtitle": "Pour les scouts du groupe NDC",
+  "totalModules": 10,
+  "etapes": [
+    {
+      "id": 1,
+      "name": "LES FONDAMENTAUX VISUELS",
+      "description": "Balisage, signalisation, réglementation - reconnaissance par l'image et la mémorisation",
+      "moduleCount": 3,
+      "modules": [1, 2, 3]
+    },
+    {
+      "id": 2,
+      "name": "LES OUTILS DU NAVIGATEUR",
+      "description": "Cartes marines, météo, instruments - savoir utiliser les ressources du bord",
+      "moduleCount": 2,
+      "modules": [4, 5]
+    },
+    {
+      "id": 3,
+      "name": "LA NAVIGATION CALCULATOIRE",
+      "description": "Caps, dérives, courants, marées - calculs et constructions géométriques",
+      "moduleCount": 3,
+      "modules": [6, 7, 8]
+    },
+    {
+      "id": 4,
+      "name": "RESPONSABILITÉS ET SÉCURITÉ",
+      "description": "VHF, communication, réglementation scout, gestion des avaries",
+      "moduleCount": 2,
+      "modules": [9, 10]
+    }
+  ],
   "modules": [
     {
-      "name": "Balisage",
-      "description": "Comprendre les marques latérales et cardinales."
+      "id": 1,
+      "moduleNumber": 1,
+      "etapeId": 1,
+      "name": "Balisage et Pictogrammes",
+      "description": "Comprendre les marques latérales, cardinales et les symboles de navigation en Région A",
+      "density": "Forte - beaucoup d'images et d'illustrations interactives",
+      "progress": 0,
+      "score": 0,
+      "isCompleted": false,
+      "objectifs": [
+        "Identifier les marques latérales (bâbord/tribord)",
+        "Reconnaître les marques cardinales et leurs caractéristiques",
+        "Distinguer les zones de danger et eaux saines",
+        "Connaître le système de balises français (Région A)"
+      ],
+      "content": "<h5>1. Les marques latérales</h5><p>Utilisées pour marquer les côtés d'une voie navigable...</p><p><strong>Bâbord (port) :</strong> Feu rouge, marque cylindrique</p><p><strong>Tribord (starboard) :</strong> Feu vert, marque conique</p><h5>2. Les marques cardinales</h5><p>Indiquent la direction du passage sûr par rapport à la marque...</p>",
+      "exercisesCount": 4,
+      "qcmQuestionCount": 3
     },
     {
-      "name": "RIPAM",
-      "description": "Règles de priorité et feux des navires."
+      "id": 2,
+      "moduleNumber": 2,
+      "etapeId": 1,
+      "name": "Signalisation (Sonore, Lumineuse, Portuaire)",
+      "description": "Signaux visuels et auditifs, feux et marques des ports",
+      "density": "Moyenne - codes et mémorisation",
+      "progress": 0,
+      "score": 0,
+      "isCompleted": false,
+      "objectifs": [
+        "Interpréter les signaux sonores en brume",
+        "Reconnaître les feux de navires",
+        "Comprendre les signaux portuaires",
+        "Identifier les feux de route (feux de bord)"
+      ],
+      "content": "<h5>Signaux sonores</h5><p>En cas de brume, les navires émettent des signaux spécifiques...</p><h5>Feux de port</h5><p>Chaque port possède des systèmes de balisage lumineux standardisés...</p>",
+      "exercisesCount": 3,
+      "qcmQuestionCount": 3
     },
     {
-      "name": "Marées",
-      "description": "Calcul par la règle des douzièmes."
+      "id": 3,
+      "moduleNumber": 3,
+      "etapeId": 1,
+      "name": "RIPAM et Marques des Navires",
+      "description": "Règles de priorité, feux de route et marques de jour - cœur du QCM (30 questions)",
+      "density": "Très Forte - fondamental pour l'examen",
+      "progress": 0,
+      "score": 0,
+      "isCompleted": false,
+      "objectifs": [
+        "Maîtriser les règles de barre (priorités de passage)",
+        "Identifier les feux de route des navires",
+        "Connaître les marques de jour",
+        "Appliquer la hiérarchie des privilèges entre navires"
+      ],
+      "content": "<h5>Les 5 règles de barre RIPAM</h5><p>1. Navire à voile face au vent: s'écarte</p><p>2. Deux navires à voile: s'écartent tribord à tribord</p><p>3. Navire à moteur: maintient sa route</p><p>4. Navigation de nuit: identifier par les feux</p><p>5. Tous: ralentir si nécessaire</p>",
+      "exercisesCount": 6,
+      "qcmQuestionCount": 10
+    },
+    {
+      "id": 4,
+      "moduleNumber": 4,
+      "etapeId": 2,
+      "name": "La Carte Marine et la Règle Cras",
+      "description": "Lire une carte SHOM, coordonnées, symboles, utiliser la règle rapporteur",
+      "density": "Moyenne - manipulation d'outils",
+      "progress": 0,
+      "score": 0,
+      "isCompleted": false,
+      "objectifs": [
+        "Lire et interpréter les symboles SHOM",
+        "Déterminer des coordonnées géographiques",
+        "Utiliser la règle Cras (rapporteur maritime)",
+        "Mesurer des distances sur la carte"
+      ],
+      "content": "<h5>Les symboles SHOM</h5><p>La carte marine contient de nombreux symboles normalisés...</p><h5>Utilisation de la règle Cras</h5><p>La règle rapporteur maritime (Cras) permet de...</p>",
+      "exercisesCount": 4,
+      "qcmQuestionCount": 3
+    },
+    {
+      "id": 5,
+      "moduleNumber": 5,
+      "etapeId": 2,
+      "name": "Météo et Environnement",
+      "description": "Pressions, fronts, nuages, échelle de Beaufort",
+      "density": "Moyenne - concepts et reconnaissance visuelle",
+      "progress": 0,
+      "score": 0,
+      "isCompleted": false,
+      "objectifs": [
+        "Interpréter les cartes de pression",
+        "Identifier les types de fronts météorologiques",
+        "Reconnaître les nuages par étage",
+        "Utiliser l'échelle de Beaufort"
+      ],
+      "content": "<h5>Système dépressionnaire</h5><p>Une dépression est une zone de basse pression...</p><h5>Échelle de Beaufort</h5><p>Force 0 (calme) à Force 12 (ouragan)</p>",
+      "exercisesCount": 3,
+      "qcmQuestionCount": 2
+    },
+    {
+      "id": 6,
+      "moduleNumber": 6,
+      "etapeId": 3,
+      "name": "Caps et Dérives",
+      "description": "Déclinaison, déviation, cap vrai, route surface, dérive du vent",
+      "density": "Forte - mathématiques navigatoires",
+      "progress": 0,
+      "score": 0,
+      "isCompleted": false,
+      "objectifs": [
+        "Comprendre déclinaison et déviation magnétiques",
+        "Calculer le cap vrai à partir du cap compas",
+        "Déterminer la route surface avec dérive",
+        "Appliquer les formules de variation"
+      ],
+      "content": "<h5>Formules essentielles</h5><p><strong>Cv = Cc + W</strong> (Cap vrai = Cap compas + Déclinaison)</p><p><strong>Cs = Cv + d</strong> (route surface avec dérive)</p>",
+      "exercisesCount": 5,
+      "qcmQuestionCount": 3
+    },
+    {
+      "id": 7,
+      "moduleNumber": 7,
+      "etapeId": 3,
+      "name": "Courants et Route Fond",
+      "description": "Vecteurs de courant, construction géométrique, route fond",
+      "density": "Moyenne - constructions sur carte",
+      "progress": 0,
+      "score": 0,
+      "isCompleted": false,
+      "objectifs": [
+        "Représenter les vecteurs de courant",
+        "Construire la route fond sur carte",
+        "Calculer la dérive due au courant",
+        "Vérifier la cohérence des routes (surface vs fond)"
+      ],
+      "content": "<h5>Construction de la route fond</h5><p>La route fond est l'addition vectorielle de la route surface et du courant...</p>",
+      "exercisesCount": 4,
+      "qcmQuestionCount": 2
+    },
+    {
+      "id": 8,
+      "moduleNumber": 8,
+      "etapeId": 3,
+      "name": "Calcul de Marée",
+      "description": "Règle des douzièmes, marnage, heure marée, pied de pilote",
+      "density": "Forte - méthodologie rigoureuse par étapes",
+      "progress": 0,
+      "score": 0,
+      "isCompleted": false,
+      "objectifs": [
+        "Comprendre les phénomènes de marée",
+        "Appliquer la règle des douzièmes",
+        "Calculer la hauteur d'eau à une heure donnée",
+        "Utiliser le pied de pilote (sécurité)"
+      ],
+      "content": "<h5>Règle des douzièmes</h5><p>La marée ne monte pas régulièrement. Pendant les 6 heures...</p><p>1ère heure: 1/12 du marnage</p><p>2e heure: 2/12 du marnage</p><p>3e heure: 3/12 du marnage (max)</p><p>4e heure: 3/12 du marnage</p><p>5e heure: 2/12 du marnage</p><p>6e heure: 1/12 du marnage</p>",
+      "exercisesCount": 5,
+      "qcmQuestionCount": 2
+    },
+    {
+      "id": 9,
+      "moduleNumber": 9,
+      "etapeId": 4,
+      "name": "VHF et Communication",
+      "description": "ASN, canaux, procédures de détresse (Mayday), sécurité radio",
+      "density": "Faible - procédures standardisées",
+      "progress": 0,
+      "score": 0,
+      "isCompleted": false,
+      "objectifs": [
+        "Connaître les canaux VHF importants (16, 9, 72)",
+        "Maîtriser la procédure Mayday",
+        "Comprendre les protocoles de communication",
+        "Utiliser l'alphabet phonétique"
+      ],
+      "content": "<h5>Canaux principaux</h5><p><strong>Canal 16:</strong> Appel de détresse et sécurité (obligatoire)</p><p><strong>Canal 9:</strong> Communications secondaires</p><p><strong>Canal 72:</strong> Communications à courte portée</p>",
+      "exercisesCount": 2,
+      "qcmQuestionCount": 2
+    },
+    {
+      "id": 10,
+      "moduleNumber": 10,
+      "etapeId": 4,
+      "name": "Cadre Scout et Sécurité de Bord",
+      "description": "Réglementation SUF, matériel d'armement, gestion des avaries",
+      "density": "Moyenne - préparation spécifique à l'oral",
+      "progress": 0,
+      "score": 0,
+      "isCompleted": false,
+      "objectifs": [
+        "Connaître la réglementation SUF (6 milles, force 4-5)",
+        "Lister l'équipement obligatoire à bord",
+        "Gérer une voie d'eau d'urgence",
+        "Réagir en cas d'incendie à bord"
+      ],
+      "content": "<h5>Réglementation SUF (Scoutisme Universitaire Français)</h5><p><strong>Distance max:</strong> 6 milles nautiques de la côte</p><p><strong>Force max:</strong> 4 à 5 Beaufort</p><p><strong>Matériel obligatoire:</strong> Gilets de sauvetage, radeau, fusées éclairantes</p>",
+      "exercisesCount": 3,
+      "qcmQuestionCount": 2
     }
-  ]
+  ],
+  "globalProgress": 0,
+  "examHistory": [],
+  "lastExam": null,
+  "qcmQuestionCount": 30
 }

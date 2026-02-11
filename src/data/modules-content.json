@@ -1,0 +1,164 @@
+{
+    "modules": [
+        {
+            "id": 1,
+            "name": "Balisage",
+            "etape": 1,
+            "objectifs": [
+                "Marques latérales",
+                "Marques cardinales",
+                "Zones eaux saines"
+            ],
+            "keyPoints": [
+                "Bâbord=rouge cylindrique",
+                "Tribord=vert conique",
+                "Nord=cônes pointant haut"
+            ],
+            "formulas": "Pas de formule - mémorisation visuelle"
+        },
+        {
+            "id": 2,
+            "name": "Signalisation",
+            "etape": 1,
+            "objectifs": [
+                "Signaux sonores",
+                "Feux de bord",
+                "Feux de port"
+            ],
+            "keyPoints": [
+                "Brume: 1 coup/min moteur",
+                "Feu rouge=bâbord",
+                "Feu vert=tribord"
+            ],
+            "formulas": "Codes RIPAM standard"
+        },
+        {
+            "id": 3,
+            "name": "RIPAM",
+            "etape": 1,
+            "objectifs": [
+                "Priorités passage",
+                "Feux de route",
+                "Marques jour"
+            ],
+            "keyPoints": [
+                "Voilier > Moteur",
+                "Doubler=s'écarter",
+                "Face-à-face=tribord-tribord"
+            ],
+            "formulas": "Règles hiérarchiques"
+        },
+        {
+            "id": 4,
+            "name": "Carte Marine",
+            "etape": 2,
+            "objectifs": [
+                "Symboles SHOM",
+                "Coordonnées",
+                "Règle Cras"
+            ],
+            "keyPoints": [
+                "Distance = échelle latitudes",
+                "Epave=croix point",
+                "Haut-fond=point profondeur"
+            ],
+            "formulas": "Pas calcul - manipulation outils"
+        },
+        {
+            "id": 5,
+            "name": "Météo",
+            "etape": 2,
+            "objectifs": [
+                "Systèmes dépression",
+                "Nuages",
+                "Échelle Beaufort"
+            ],
+            "keyPoints": [
+                "Cirrus avant dépression",
+                "Force 4 = 11-16 kt",
+                "Fronts froids = orages"
+            ],
+            "formulas": "Beaufort: 1-12 (puissance 2)"
+        },
+        {
+            "id": 6,
+            "name": "Caps",
+            "etape": 3,
+            "objectifs": [
+                "Déclinaison",
+                "Déviation",
+                "Cap vrai"
+            ],
+            "keyPoints": [
+                "Cv=Cc+W",
+                "France: 0-2°W",
+                "Déviation propre au compas"
+            ],
+            "formulas": "Cv=Cc+Déclinaison+Déviation"
+        },
+        {
+            "id": 7,
+            "name": "Courants",
+            "etape": 3,
+            "objectifs": [
+                "Vecteurs courant",
+                "Route fond",
+                "Construction"
+            ],
+            "keyPoints": [
+                "Route fond = surface + courant",
+                "Flèche direction+vitesse",
+                "Parallélogramme vectoriel"
+            ],
+            "formulas": "Addition vectorielle"
+        },
+        {
+            "id": 8,
+            "name": "Marées",
+            "etape": 3,
+            "objectifs": [
+                "Douzièmes",
+                "Marnage",
+                "Pied pilote"
+            ],
+            "keyPoints": [
+                "Heures 1-2-3=1/12-2/12-3/12",
+                "BM+marnage=PM",
+                "Pied pilote sécurité"
+            ],
+            "formulas": "1/12: 1,2,3,3,2,1"
+        },
+        {
+            "id": 9,
+            "name": "VHF",
+            "etape": 4,
+            "objectifs": [
+                "Canaux",
+                "Mayday",
+                "Procédures"
+            ],
+            "keyPoints": [
+                "Canal 16 détresse",
+                "Mayday x3",
+                "ASN obligatoire"
+            ],
+            "formulas": "Procédures standardisées RIPAM"
+        },
+        {
+            "id": 10,
+            "name": "Sécurité",
+            "etape": 4,
+            "objectifs": [
+                "SUF règles",
+                "Équipement",
+                "Avaries"
+            ],
+            "keyPoints": [
+                "Max 6 milles",
+                "Force 4-5",
+                "Gilets+radeau obligatoires"
+            ],
+            "formulas": "Réglementation scout"
+        }
+    ]
+}

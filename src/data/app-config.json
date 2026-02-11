@@ -1,0 +1,46 @@
+{
+    "app": {
+        "name": "Patron d'Embarcation",
+        "version": "1.0.0",
+        "language": "fr",
+        "organization": "Groupe NDC"
+    },
+    "exam": {
+        "qcm": {
+            "totalQuestions": 30,
+            "timeLimit": 30,
+            "maxErrors": 5,
+            "passingScore": 75,
+            "partWeight": 0.4
+        },
+        "navigationProblem": {
+            "totalPoints": 100,
+            "timeLimit": 60,
+            "partWeight": 0.6
+        }
+    },
+    "storage": {
+        "localStorage": true,
+        "syncCloud": false,
+        "storageKey": "sitepe_user_progress"
+    },
+    "modules": {
+        "totalModules": 10,
+        "etapes": 4,
+        "estimatedHours": 25,
+        "progressFormat": "percentage"
+    },
+    "ui": {
+        "theme": "light",
+        "bootstrapVersion": "5.3.2",
+        "language": "fr"
+    },
+    "features": {
+        "flashcards": true,
+        "miniGames": true,
+        "calculators": true,
+        "printableCards": true,
+        "progressTracking": true,
+        "examSimulation": true
+    }
+}
