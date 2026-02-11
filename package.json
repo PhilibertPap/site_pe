@@ -1,0 +1,14 @@
+{
+  "name": "site_pe",
+  "version": "1.0.0",
+  "description": "Site d'entraînement à l'examen du Patron d'Embarcation pour les scouts du groupe NDC.",
+  "main": "build.js",
+  "scripts": {
+    "build": "node build.js"
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "mustache": "^4.2.0"
+  }
+}
