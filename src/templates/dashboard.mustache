@@ -1,0 +1,51 @@
+<div class="row mb-5">
+    <div class="col-lg-8">
+        <h1 class="mb-4">Bienvenue, Scout! 🎖️</h1>
+        <p class="lead">Prépare-toi pour l'examen du <strong>Patron d'Embarcation</strong> avec ce cours interactif structuré en 4 étapes.</p>
+    </div>
+    <div class="col-lg-4">
+        <div class="card bg-primary text-white">
+            <div class="card-body">
+                <h5 class="card-title">Progression globale</h5>
+                <div class="progress bg-light" role="progressbar">
+                    <div class="progress-bar" style="width: {{globalProgress}}%"></div>
+                </div>
+                <p class="mt-2 mb-0"><strong>{{globalProgress}}%</strong> complété</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Stats des modules -->
+<h2 class="mb-4">Tes modules</h2>
+<div class="row">
+    {{#modules}}
+    <div class="col-md-6 col-lg-4 mb-4">
+        <div class="card h-100">
+            <div class="card-body">
+                <h5 class="card-title">{{name}}</h5>
+                <p class="card-text text-muted">{{description}}</p>
+                <div class="progress mb-2" role="progressbar">
+                    <div class="progress-bar" style="width: {{progress}}%"></div>
+                </div>
+                <small>{{progress}}% • Score: {{score}}/100</small><br>
+                <a href="parcours.html#module-{{id}}" class="btn btn-sm btn-primary mt-3">Continuer →</a>
+            </div>
+        </div>
+    </div>
+    {{/modules}}
+</div>
+
+<!-- Dernier examen -->
+{{#lastExam}}
+<div class="card border-warning mt-5">
+    <div class="card-header bg-warning">
+        <h5 class="mb-0">📊 Dernier examen blanc</h5>
+    </div>
+    <div class="card-body">
+        <p><strong>Score:</strong> {{lastExam.score}}/100</p>
+        <p><strong>Date:</strong> {{lastExam.date}}</p>
+        <a href="examens.html" class="btn btn-warning">Retenter →</a>
+    </div>
+</div>
+{{/lastExam}}

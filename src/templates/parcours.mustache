@@ -1,0 +1,98 @@
+<h1 class="mb-4">📚 Parcours d'apprentissage</h1>
+
+<div class="row">
+    <!-- Sidebar des étapes -->
+    <div class="col-lg-3 mb-4">
+        <div class="list-group sticky-top" style="top: 80px;">
+            {{#etapes}}
+            <div class="list-group-item list-group-item-action" style="cursor: pointer;" onclick="scrollToEtape('etape-{{id}}')">
+                <h6 class="mb-1">{{name}}</h6>
+                <small class="text-muted">{{moduleCount}} modules</small>
+            </div>
+            {{/etapes}}
+        </div>
+    </div>
+
+    <!-- Contenu des modules -->
+    <div class="col-lg-9">
+        {{#etapes}}
+        <section id="etape-{{id}}" class="mb-5 pb-5">
+            <h2 class="mb-3 border-bottom pb-2">{{name}}</h2>
+            <p class="text-muted">{{description}}</p>
+
+            <div class="row">
+                {{#modules}}
+                <div class="col-md-6 mb-4">
+                    <div class="card h-100" id="module-{{id}}">
+                        <div class="card-header bg-light">
+                            <h5 class="mb-0">Module {{moduleNumber}} - {{name}}</h5>
+                        </div>
+                        <div class="card-body">
+                            <p>{{description}}</p>
+                            
+                            <!-- Onglets du module -->
+                            <ul class="nav nav-tabs mt-3" role="tablist">
+                                <li class="nav-item">
+                                    <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#module-{{id}}-cours">
+                                        Cours
+                                    </button>
+                                </li>
+                                <li class="nav-item">
+                                    <button class="nav-link" data-bs-toggle="tab" data-bs-target="#module-{{id}}-exercices">
+                                        Exercices
+                                    </button>
+                                </li>
+                                <li class="nav-item">
+                                    <button class="nav-link" data-bs-toggle="tab" data-bs-target="#module-{{id}}-examen">
+                                        Mini-examen
+                                    </button>
+                                </li>
+                            </ul>
+
+                            <!-- Contenu des onglets -->
+                            <div class="tab-content mt-3">
+                                <!-- Cours -->
+                                <div id="module-{{id}}-cours" class="tab-pane fade show active">
+                                    <h6>Objectifs</h6>
+                                    <ul>
+                                        {{#objectifs}}
+                                        <li>{{.}}</li>
+                                        {{/objectifs}}
+                                    </ul>
+                                    <hr>
+                                    <h6>Contenu</h6>
+                                    {{{content}}}
+                                </div>
+
+                                <!-- Exercices -->
+                                <div id="module-{{id}}-exercices" class="tab-pane fade">
+                                    <div id="exercices-{{id}}" class="exercices-container">
+                                        <!-- Chargé par JS -->
+                                    </div>
+                                </div>
+
+                                <!-- Mini-examen -->
+                                <div id="module-{{id}}-examen" class="tab-pane fade">
+                                    <div id="mini-qcm-{{id}}" class="mini-qcm-container">
+                                        <!-- Chargé par JS -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            <small class="text-muted">Progression: {{progress}}% • Score: {{score}}/100</small>
+                        </div>
+                    </div>
+                </div>
+                {{/modules}}
+            </div>
+        </section>
+        {{/etapes}}
+    </div>
+</div>
+
+<script>
+function scrollToEtape(id) {
+    document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
+}
+</script>
