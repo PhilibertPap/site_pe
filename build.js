@@ -85,6 +85,14 @@ function enrichQCMData(qcmData) {
     return qcmData;
 }
 
+function sanitizeQCMData(qcmData) {
+    const sanitizedCategories = qcmEngine.sanitizeCategories(qcmData.categories || []);
+    return {
+        ...qcmData,
+        categories: sanitizedCategories
+    };
+}
+
 // ========== FONCTION PRINCIPALE DE BUILD ==========
 async function build() {
     try {
@@ -145,7 +153,8 @@ async function build() {
         console.log("🔄 Transformation des données...");
 
         // Enrichir les données QCM
-        const enrichedQCMData = enrichQCMData(qcmData);
+        const sanitizedQCMData = sanitizeQCMData(qcmData);
+        const enrichedQCMData = enrichQCMData(sanitizedQCMData);
         const qcmPool = qcmEngine.buildQuestionPool(enrichedQCMData);
         const qcmErrors = qcmEngine.validatePool(qcmPool);
         if (qcmErrors.length) {

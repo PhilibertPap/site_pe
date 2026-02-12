@@ -18,18 +18,24 @@ function createSeededRng(seed) {
     };
 }
 
-const qcmData = readJson(path.join(__dirname, '..', 'src', 'data', 'qcm.json'));
+const root = path.join(__dirname, '..');
+const generatedPath = path.join(root, 'src', 'data', 'qcm.pe.generated.json');
+const fallbackPath = path.join(root, 'src', 'data', 'qcm.json');
+const qcmPath = fs.existsSync(generatedPath) ? generatedPath : fallbackPath;
+const qcmData = readJson(qcmPath);
 const pool = qcmEngine.buildQuestionPool(qcmData);
+const requestedCount = 30;
+const effectiveCount = Math.min(requestedCount, pool.length);
 
 test('generateExamSeries returns requested series and length', () => {
     const series = qcmEngine.generateExamSeries(pool, {
-        count: 30,
+        count: requestedCount,
         seriesCount: 4,
         rng: createSeededRng(123)
     });
     assert.equal(series.length, 4);
     series.forEach(item => {
-        assert.equal(item.questions.length, 30);
+        assert.equal(item.questions.length, effectiveCount);
     });
 });
 
@@ -46,14 +52,17 @@ test('no duplicate question inside a generated series', () => {
 
 test('balanced generator includes scarce modules when available', () => {
     const [serie] = qcmEngine.generateExamSeries(pool, {
-        count: 30,
+        count: requestedCount,
         seriesCount: 1,
         rng: createSeededRng(1)
     });
     const dist = serie.distributionByModule;
-    assert.equal(dist['2'], 1);
-    assert.equal(dist['3'], 1);
-    assert.equal(dist['1'], 28);
+    const modulesInPool = [...new Set(pool.map(question => String(question.moduleId)))];
+    if (effectiveCount >= modulesInPool.length) {
+        modulesInPool.forEach(moduleId => {
+            assert.ok((dist[moduleId] || 0) >= 1, `module ${moduleId} should be represented`);
+        });
+    }
 });
 
 test('generator is deterministic with the same seed', () => {

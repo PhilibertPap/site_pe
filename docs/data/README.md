@@ -12,6 +12,8 @@
 - `qcm.pe.generated.json`: optionnel, genere via `npm run generate:pe:data`.
 - `course.generated.json`: optionnel, genere via `npm run generate:pe:data`.
 - `qcm.drive.merged.json`: optionnel, genere via `npm run import:attendus`.
+- `pe_qcm_bank.generated.json`: banque QCM intermediaire validee contre schema, generee via `npm run generate:pe:extracted`.
+- `qcm.pe.extracted.generated.json`: categories site derivees de la banque extraite, genere via `npm run generate:pe:extracted`.
 
 ## Convention QCM
 - Source de verite: `qcm.json`.

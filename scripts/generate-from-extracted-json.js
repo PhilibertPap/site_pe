@@ -1,5 +1,6 @@
 const fs = require('node:fs');
 const path = require('node:path');
+const qcmEngine = require('../src/js/qcm-engine.js');
 
 function readJson(filePath) {
     return JSON.parse(fs.readFileSync(filePath, 'utf8'));
@@ -94,96 +95,288 @@ function classifyM14TargetModule(text) {
     return 8;
 }
 
-function deriveFactsFromModule(module) {
-    const facts = [];
-
-    (module.sections || []).forEach(section => {
-        (section.key_points || []).forEach(point => {
-            facts.push({
-                text: point.trim(),
-                sectionId: section.id,
-                sectionTitle: section.title
-            });
-        });
-    });
-
-    (module.terms || []).forEach(term => {
-        facts.push({
-            text: `${term.term} : ${term.definition}`,
-            sectionId: `${module.id}-TERMS`,
-            sectionTitle: 'Termes et definitions'
-        });
-    });
-
-    (module.exercises || []).forEach(ex => {
-        const answers = ex.answers || {};
-        Object.keys(answers).forEach(key => {
-            facts.push({
-                text: `Exercice ${ex.id} - ${key}: ${answers[key]}`,
-                sectionId: `${module.id}-EX`,
-                sectionTitle: 'Exercices corriges'
-            });
-        });
-    });
-
-    return facts.filter(item => item.text.length > 8);
+function normalizeSpace(text) {
+    return String(text || '')
+        .replace(/\s+/g, ' ')
+        .replace(/\u00a0/g, ' ')
+        .trim();
 }
 
-function createQuestionStem(moduleName, sectionTitle, variant) {
-    const stems = [
-        `Selon le cours "${moduleName}", quelle affirmation est correcte ?`,
-        `Dans la section "${sectionTitle}", quelle proposition est juste ?`,
-        `Question PE (${moduleName}) : identifie l enonce exact.`,
-        `Choisis la bonne reponse pour ${moduleName}.`
-    ];
-    return stems[variant % stems.length];
+function cleanConcept(text) {
+    return normalizeSpace(text)
+        .replace(/^[\-\u2022\d\.\)\s]+/, '')
+        .replace(/^["'«]+|["'»]+$/g, '')
+        .trim();
+}
+
+function cleanDefinition(text) {
+    return normalizeSpace(text)
+        .replace(/^[\-\u2022\s]+/, '')
+        .trim();
+}
+
+function isHighQualityPair(concept, definition) {
+    if (!concept || !definition) return false;
+    if (concept.length < 2 || concept.length > 90) return false;
+    if (definition.length < 12 || definition.length > 260) return false;
+    if (/^(objectif|memo|rappel)$/i.test(concept)) return false;
+    if (/^questions? de revision/i.test(concept)) return false;
+    return true;
+}
+
+function isConceptLabel(text) {
+    const concept = cleanConcept(text);
+    if (!concept) return false;
+    if (concept.length > 55) return false;
+    if (/[;,.]/.test(concept)) return false;
+    const words = concept.split(/\s+/).filter(Boolean);
+    return words.length <= 8;
+}
+
+function extractDefinitionPairs(module) {
+    const pairs = [];
+    const sections = module.sections || [];
+
+    (module.terms || []).forEach(term => {
+        const concept = cleanConcept(term.term);
+        const definition = cleanDefinition(term.definition);
+        if (!isHighQualityPair(concept, definition)) return;
+        pairs.push({
+            moduleId: module.id,
+            moduleName: module.name,
+            sectionId: `${module.id}-TERMS`,
+            sectionTitle: 'Termes et definitions',
+            concept,
+            definition
+        });
+    });
+
+    sections.forEach(section => {
+        if (/objectif/i.test(section.title || '')) return;
+        (section.key_points || []).forEach(point => {
+            const normalized = normalizeSpace(point);
+            const m = normalized.match(/^([^:]{2,90})\s*:\s*(.+)$/);
+            if (!m) return;
+            const concept = cleanConcept(m[1]);
+            const definition = cleanDefinition(m[2]);
+            if (!isHighQualityPair(concept, definition)) return;
+            pairs.push({
+                moduleId: module.id,
+                moduleName: module.name,
+                sectionId: section.id,
+                sectionTitle: section.title,
+                concept,
+                definition
+            });
+        });
+    });
+
+    const seen = new Set();
+    return pairs.filter(pair => {
+        const key = `${pair.moduleId}|${pair.concept.toLowerCase()}|${pair.definition.toLowerCase()}`;
+        if (seen.has(key)) return false;
+        seen.add(key);
+        return true;
+    });
+}
+
+function pickDistractors(candidates, correct, count, rng) {
+    const filtered = candidates.filter(item => item && item !== correct);
+    const unique = [...new Set(filtered)];
+    return shuffle(unique, rng).slice(0, count);
+}
+
+function createQuestionEntry({
+    id,
+    moduleId,
+    stem,
+    choices,
+    answerIndex,
+    explanation,
+    tags,
+    sourcePages,
+    sourceText
+}) {
+    const siteModule = moduleId === 'M14'
+        ? classifyM14TargetModule(sourceText)
+        : moduleNumericIdFromSource(moduleId);
+
+    return {
+        id,
+        type: 'mcq_single',
+        module: moduleId,
+        site_module: siteModule,
+        tags,
+        stem,
+        choices,
+        answer_index: answerIndex,
+        explanation,
+        source_pages: sourcePages
+    };
+}
+
+function generateDefinitionMcq(pair, idx, allPairs, rng) {
+    const sameModuleDefinitions = allPairs
+        .filter(item => item.moduleId === pair.moduleId)
+        .map(item => item.definition);
+    const globalDefinitions = allPairs.map(item => item.definition);
+    const wrongLocal = pickDistractors(sameModuleDefinitions, pair.definition, 3, rng);
+    const wrongGlobal = pickDistractors(globalDefinitions, pair.definition, 6, rng)
+        .filter(item => !wrongLocal.includes(item));
+    const wrong = [...wrongLocal, ...wrongGlobal].slice(0, 3);
+    if (wrong.length < 3) return null;
+
+    const choices = shuffle([pair.definition, ...wrong], rng);
+    const answerIndex = choices.findIndex(choice => choice === pair.definition);
+
+    return createQuestionEntry({
+        id: `ext_${pair.moduleId}_def_${idx}`,
+        moduleId: pair.moduleId,
+        stem: `Que signifie "${pair.concept}" ?`,
+        choices,
+        answerIndex,
+        explanation: `Definition issue de ${pair.moduleName} / ${pair.sectionTitle}`,
+        tags: [pair.moduleId, pair.sectionId, 'definition'],
+        sourcePages: [],
+        sourceText: `${pair.concept} ${pair.definition}`
+    });
+}
+
+function generateTermMcq(pair, idx, allPairs, rng) {
+    if (!isConceptLabel(pair.concept)) return null;
+    const sameModuleConcepts = allPairs
+        .filter(item => item.moduleId === pair.moduleId)
+        .map(item => item.concept)
+        .filter(isConceptLabel);
+    const globalConcepts = allPairs
+        .map(item => item.concept)
+        .filter(isConceptLabel);
+    const wrongLocal = pickDistractors(sameModuleConcepts, pair.concept, 3, rng);
+    const wrongGlobal = pickDistractors(globalConcepts, pair.concept, 6, rng)
+        .filter(item => !wrongLocal.includes(item));
+    const wrong = [...wrongLocal, ...wrongGlobal].slice(0, 3);
+    if (wrong.length < 3) return null;
+
+    const choices = shuffle([pair.concept, ...wrong], rng);
+    const answerIndex = choices.findIndex(choice => choice === pair.concept);
+
+    return createQuestionEntry({
+        id: `ext_${pair.moduleId}_term_${idx}`,
+        moduleId: pair.moduleId,
+        stem: `Quel terme correspond a la definition suivante ? "${pair.definition}"`,
+        choices,
+        answerIndex,
+        explanation: `Definition issue de ${pair.moduleName} / ${pair.sectionTitle}`,
+        tags: [pair.moduleId, pair.sectionId, 'definition_inverse'],
+        sourcePages: [],
+        sourceText: `${pair.concept} ${pair.definition}`
+    });
+}
+
+function buildNumericVariants(rawValue) {
+    const value = normalizeSpace(rawValue);
+    const variants = new Set();
+
+    const decimal = value.match(/^(\d+)(?:[.,](\d+))?$/);
+    if (decimal) {
+        const base = Number.parseFloat(value.replace(',', '.'));
+        if (Number.isFinite(base)) {
+            variants.add((base + 1).toFixed(2));
+            variants.add((Math.max(0, base - 1)).toFixed(2));
+            variants.add((base + 0.5).toFixed(2));
+        }
+    }
+
+    const shortTime = value.match(/^(\d{1,2})h(\d{2})$/i);
+    if (shortTime) {
+        const hours = Number(shortTime[1]);
+        const mins = Number(shortTime[2]);
+        variants.add(`${String((hours + 1) % 24).padStart(2, '0')}h${String(mins).padStart(2, '0')}`);
+        variants.add(`${String(Math.max(0, hours - 1)).padStart(2, '0')}h${String(mins).padStart(2, '0')}`);
+        variants.add(`${String(hours).padStart(2, '0')}h${String((mins + 20) % 60).padStart(2, '0')}`);
+    }
+
+    const longTime = value.match(/^(\d{1,2})h(\d{2})m(\d{2})s/i);
+    if (longTime) {
+        const hours = Number(longTime[1]);
+        const mins = Number(longTime[2]);
+        const secs = Number(longTime[3]);
+        variants.add(`${String((hours + 1) % 24).padStart(2, '0')}h${String(mins).padStart(2, '0')}m${String(secs).padStart(2, '0')}s`);
+        variants.add(`${String(hours).padStart(2, '0')}h${String((mins + 10) % 60).padStart(2, '0')}m${String(secs).padStart(2, '0')}s`);
+        variants.add(`${String(hours).padStart(2, '0')}h${String(mins).padStart(2, '0')}m${String((secs + 20) % 60).padStart(2, '0')}s`);
+    }
+
+    return [...variants].filter(v => v !== value);
+}
+
+function labelFromAnswerKey(key) {
+    return String(key || '')
+        .replace(/_/g, ' ')
+        .replace(/\s+/g, ' ')
+        .trim();
+}
+
+function generateExerciseMcq(module, exercise, answerKey, answerValue, index, rng, allDefinitions) {
+    const cleanValue = normalizeSpace(answerValue);
+    if (!cleanValue) return null;
+
+    const localValues = Object.values(exercise.answers || {}).map(normalizeSpace).filter(Boolean);
+    const distractors = pickDistractors([
+        ...localValues,
+        ...buildNumericVariants(cleanValue),
+        ...allDefinitions
+    ], cleanValue, 3, rng);
+    if (distractors.length < 3) return null;
+
+    const choices = shuffle([cleanValue, ...distractors], rng);
+    const answerIndex = choices.findIndex(choice => choice === cleanValue);
+    const answerLabel = labelFromAnswerKey(answerKey);
+
+    return createQuestionEntry({
+        id: `ext_${module.id}_ex_${index}`,
+        moduleId: module.id,
+        stem: `Exercice ${exercise.id}: quelle est la valeur correcte pour "${answerLabel}" ?`,
+        choices,
+        answerIndex,
+        explanation: `Resultat issu de l'exercice ${exercise.id} (${module.name})`,
+        tags: [module.id, exercise.id, 'exercise_result'],
+        sourcePages: module.source?.page_range || [],
+        sourceText: `${answerLabel} ${cleanValue}`
+    });
 }
 
 function buildMcqBankFromNormalized(normalized, options) {
     const rng = options.rng;
-    const variantsPerFact = options.variantsPerFact;
+    const variantsPerFact = Math.max(1, options.variantsPerFact);
     const moduleFilters = new Set((normalized.modules || []).map(m => m.id));
-    const factsByModule = new Map();
+    const questions = [];
 
-    (normalized.modules || []).forEach(module => {
-        factsByModule.set(module.id, deriveFactsFromModule(module));
+    const allPairs = (normalized.modules || []).flatMap(module => extractDefinitionPairs(module));
+    const allDefinitions = allPairs.map(item => item.definition);
+    let definitionCounter = 1;
+
+    allPairs.forEach(pair => {
+        const q1 = generateDefinitionMcq(pair, definitionCounter, allPairs, rng);
+        if (q1) questions.push(q1);
+
+        if (variantsPerFact > 1) {
+            const q2 = generateTermMcq(pair, definitionCounter, allPairs, rng);
+            if (q2) questions.push(q2);
+        }
+
+        definitionCounter += 1;
     });
 
-    const allFacts = [...factsByModule.values()].flat().map(item => item.text);
-    const questions = [];
-    let questionCounter = 1;
-
-    for (const module of normalized.modules || []) {
-        const localFacts = factsByModule.get(module.id) || [];
-        const localTexts = localFacts.map(item => item.text);
-        const sourcePages = module.source?.page_range || [];
-
-        localFacts.forEach((fact, factIndex) => {
-            for (let v = 0; v < variantsPerFact; v += 1) {
-                const wrongLocal = shuffle(localTexts.filter(t => t !== fact.text), rng).slice(0, 2);
-                const wrongGlobal = shuffle(allFacts.filter(t => t !== fact.text && !wrongLocal.includes(t)), rng).slice(0, 2);
-                const wrong = [...wrongLocal, ...wrongGlobal].slice(0, 3);
-                if (wrong.length < 3) continue;
-
-                const choices = shuffle([fact.text, ...wrong], rng);
-                const answerIndex = choices.findIndex(c => c === fact.text);
-
-                questions.push({
-                    id: `ext_${module.id}_${factIndex + 1}_${v + 1}`,
-                    type: 'mcq_single',
-                    module: module.id,
-                    site_module: module.id === 'M14' ? classifyM14TargetModule(fact.text) : moduleNumericIdFromSource(module.id),
-                    tags: [module.id, fact.sectionId, 'extracted'],
-                    stem: createQuestionStem(module.name, fact.sectionTitle, v),
-                    choices,
-                    answer_index: answerIndex,
-                    explanation: `Base cours: ${module.name} / ${fact.sectionTitle}`,
-                    source_pages: sourcePages
-                });
-                questionCounter += 1;
-            }
+    let exerciseCounter = 1;
+    (normalized.modules || []).forEach(module => {
+        (module.exercises || []).forEach(exercise => {
+            Object.entries(exercise.answers || {}).forEach(([key, value]) => {
+                const q = generateExerciseMcq(module, exercise, key, value, exerciseCounter, rng, allDefinitions);
+                if (q) questions.push(q);
+                exerciseCounter += 1;
+            });
         });
-    }
+    });
 
     return {
         schema_version: normalized.schema_version || '1.0',
@@ -323,14 +516,14 @@ function mergeWithBaseQcm(baseQcm, extractedQcm) {
             base: 'qcm.json',
             extracted: extractedQcm.source
         },
-        categories
+        categories: qcmEngine.sanitizeCategories(categories)
     };
 }
 
 function main() {
     const args = parseArgs(process.argv.slice(2));
     const seed = toInt(args.seed, 20260212);
-    const variantsPerFact = toInt(args.variants, 5);
+    const variantsPerFact = toInt(args.variants, 2);
     const rng = createSeededRng(seed);
 
     const root = path.join(__dirname, '..');

@@ -5,6 +5,30 @@
         root.QcmEngine = factory();
     }
 }(typeof self !== 'undefined' ? self : this, function () {
+    const VISUAL_PATTERNS = [
+        /cette marque/i,
+        /ce bateau/i,
+        /ce navire/i,
+        /ce balisage/i,
+        /cette bou[eé]e/i,
+        /ces bou[eé]es/i,
+        /que signifie ce panneau/i,
+        /quelle est la balise/i,
+        /dans cette situation/i,
+        /route\s*[ab]/i,
+        /ce(?:s)? feux/i,
+        /sur le navire\s*[ab]/i,
+        /vous [eê]tes sur le navire\s*[ab]/i,
+        /quelle route suivez[- ]vous/i,
+        /quel est votre sens de navigation/i,
+        /quelle est la balise qui montre ces feux/i,
+        /vous voyez cette bou[eé]e/i,
+        /vous voyez ces/i,
+        /cap au\s*\d+/i,
+        /sur l[’']image/i,
+        /ci-contre/i
+    ];
+
     function shuffle(items, rng) {
         const random = typeof rng === 'function' ? rng : Math.random;
         const arr = [...items];
@@ -29,13 +53,46 @@
                 id: answer.id || String(index),
                 text: answer.text || '',
                 correct: Boolean(answer.correct)
-            }))
+            })),
+            explanation: raw.explanation || '',
+            tags: raw.tags || []
         };
+    }
+
+    function questionNeedsImage(questionText) {
+        const text = String(questionText || '');
+        return VISUAL_PATTERNS.some(pattern => pattern.test(text));
+    }
+
+    function hasExactlyOneCorrectAnswer(question) {
+        const answers = Array.isArray(question.answers) ? question.answers : [];
+        const correctCount = answers.filter(answer => answer.correct === true).length;
+        return correctCount === 1;
+    }
+
+    function isQuestionUsable(question) {
+        if (!question || typeof question.text !== 'string' || question.text.trim().length < 8) return false;
+        if (!Array.isArray(question.answers) || question.answers.length < 2) return false;
+        if (!hasExactlyOneCorrectAnswer(question)) return false;
+        if (questionNeedsImage(question.text) && !question.image) return false;
+        return true;
+    }
+
+    function sanitizeQuestions(questions) {
+        return (questions || []).filter(isQuestionUsable);
+    }
+
+    function sanitizeCategories(categories) {
+        return (categories || []).map(category => ({
+            ...category,
+            questions: sanitizeQuestions(category.questions || [])
+        })).filter(category => (category.questions || []).length > 0);
     }
 
     function buildQuestionPool(qcmData) {
         if (!qcmData || !Array.isArray(qcmData.categories)) return [];
-        return qcmData.categories.flatMap(category => {
+        const categories = sanitizeCategories(qcmData.categories);
+        return categories.flatMap(category => {
             const questions = Array.isArray(category.questions) ? category.questions : [];
             return questions.map(question => normalizeQuestion(question, category));
         });
@@ -202,6 +259,9 @@
             if (correctCount !== 1) {
                 errors.push(`Question avec ${correctCount} bonne(s) reponse(s): ${question.id}`);
             }
+            if (questionNeedsImage(question.text) && !question.image) {
+                errors.push(`Question visuelle sans image: ${question.id}`);
+            }
         });
 
         return errors;
@@ -209,6 +269,10 @@
 
     return {
         buildQuestionPool,
+        questionNeedsImage,
+        isQuestionUsable,
+        sanitizeQuestions,
+        sanitizeCategories,
         pickQuestions,
         pickBalancedQuestions,
         getDistributionByModule,

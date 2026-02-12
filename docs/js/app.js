@@ -210,6 +210,11 @@ class SitePE {
                 <label class="form-check-label" for="opt${this.qcm.idx}-${i}">${option.text}</label>
             </div>`;
         }).join('');
+        const imageHtml = question.image
+            ? `<figure class="qcm-media mt-3 mb-3">
+                <img class="img-fluid rounded qcm-illustration" src="${question.image}" alt="Illustration de la question ${this.qcm.idx + 1}" loading="lazy">
+            </figure>`
+            : '';
 
         const html = `<div class="qcm-question">
             <div class="progress mb-3"><div class="progress-bar" style="width:${progress}%"></div></div>
@@ -218,6 +223,7 @@ class SitePE {
                 ${this.getTimerBadgeHtml()}
             </div>
             <h4>${question.text}</h4>
+            ${imageHtml}
             <div class="options mt-4">${options}</div>
             <button class="btn btn-primary mt-4" onclick="window.sitePE.nextQCM()">Suivant</button>
         </div>`;
