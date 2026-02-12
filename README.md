@@ -10,6 +10,14 @@ Site d'entraînement à l'examen du PE pour les scouts du groupe NDC.
 - `npm run generate:pe:data` genere:
   - `src/data/qcm.pe.generated.json` (dataset QCM PE derive de slides + references web),
   - `src/data/course.generated.json` (contenu "cours" enrichi par module).
+- `npm run generate:pe:extracted` genere un dataset rigoureux depuis:
+  - `imports/drive/pe_course_dataset.normalized.json`
+  - `imports/drive/pe_qcm_bank.schema.json`
+  et produit:
+  - `src/data/pe_qcm_bank.generated.json`
+  - `src/data/qcm.pe.extracted.generated.json`
+  - `src/data/qcm.pe.generated.json` (fusion avec base)
+  - `src/data/course.generated.json`
 - `npm run import:attendus` fusionne `imports/drive/attendus-pe.json` vers `src/data/qcm.drive.merged.json`.
 
 ## Structure actuelle (5 pages)

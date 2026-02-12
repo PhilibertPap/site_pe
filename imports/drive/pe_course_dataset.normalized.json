@@ -1,0 +1,204 @@
+{
+  "schema_version": "1.0",
+  "modules": [
+    {
+      "id": "M1",
+      "name": "Le balisage",
+      "source": {
+        "file_id": "qcm",
+        "page_range": [
+          11,
+          22
+        ]
+      },
+      "sections": [
+        {
+          "id": "M1-S1",
+          "title": "Objectifs du module",
+          "key_points": [
+            "Reconnaître les différents types de marques de balisage.",
+            "Identifier les marques courantes : latérales (chenal d’accès et chenal préféré), eaux saines, spéciales, danger isolé, cardinales, dangers nouveaux et urgence épave.",
+            "Savoir comment on identifie une marque de jour (voyant, couleur, forme) et de nuit (couleur et rythme du feu)."
+          ]
+        },
+        {
+          "id": "M1-S2",
+          "title": "Identification d’une marque",
+          "key_points": [
+            "De jour : regarder le voyant (topmark), la couleur du corps, la forme de la marque.",
+            "De nuit : identifier la couleur du feu et son rythme (caractère)."
+          ]
+        },
+        {
+          "id": "M1-S3",
+          "title": "Marques latérales : chenal d’accès",
+          "key_points": [
+            "Système A (Europe, France) : en entrant depuis la mer vers le port : tribord = vert, bâbord = rouge.",
+            "Bâbord : corps rouge, voyant cylindrique, numéros pairs, feu rouge (rythme quelconque sauf 2+1).",
+            "Tribord : corps vert, voyant cône pointe en haut, numéros impairs, feu vert (rythme quelconque sauf 2+1).",
+            "Mémo : « Un tricot vert et deux bas si rouges » (Impair tribord cône vert / Pair bâbord cylindre rouge)."
+          ]
+        },
+        {
+          "id": "M1-S4",
+          "title": "Marques latérales : chenal préféré",
+          "key_points": [
+            "Indique la branche principale d’un chenal (bifurcation).",
+            "Chenal préféré à tribord : corps rouge avec bande verte; voyant cylindrique; feu rouge, rythme 2 éclats + 1 (2+1).",
+            "Chenal préféré à bâbord : corps vert avec bande rouge; voyant cône vert pointe en haut; feu vert, rythme 2 éclats + 1 (2+1)."
+          ]
+        },
+        {
+          "id": "M1-S5",
+          "title": "Marques d’eaux saines",
+          "key_points": [
+            "Indiquent une zone sans obstacle (eaux navigables). Peuvent marquer un atterrissage ou l’axe d’un chenal en l’absence de marques latérales.",
+            "Apparence : bandes verticales rouges et blanches; voyant sphère rouge.",
+            "Feux possibles : isophase, occultations, 1 éclat long (≥ 2 s au moins toutes les 10 s), ou lettre Morse « A »."
+          ]
+        },
+        {
+          "id": "M1-S6",
+          "title": "Marques spéciales",
+          "key_points": [
+            "Signalent des zones/objets particuliers (zone de mouillage, câbles/oléoducs, ouvrages, zones militaires/pêche, séparation de trafic, parcours nautiques, etc.).",
+            "Couleur : jaune; forme variable; voyant en « X » jaune pour les marques durables.",
+            "Feu : jaune, rythme différent de ceux des autres catégories."
+          ]
+        },
+        {
+          "id": "M1-S7",
+          "title": "Marques de danger isolé",
+          "key_points": [
+            "Signalent un danger isolé de faible étendue entouré d’eaux saines (ex. roche).",
+            "Corps : noir avec une ou plusieurs larges bandes horizontales rouges.",
+            "Voyant : deux sphères noires superposées.",
+            "Feu : blanc à 2 éclats groupés."
+          ]
+        },
+        {
+          "id": "M1-S8",
+          "title": "Marques cardinales",
+          "key_points": [
+            "Indiquent où passer par rapport à un danger : on passe au N/E/S/O de la marque selon son type.",
+            "Couleurs et voyants à deux cônes : la position des pointes indique où est la bande noire.",
+            "Rythmes de feu (blanc scintillant) mémotechnique cadran d’horloge : Est = 3, Sud = 6 + 1 long, Ouest = 9, Nord = scintillant continu."
+          ]
+        },
+        {
+          "id": "M1-S9",
+          "title": "Dangers nouveaux et urgence épave",
+          "key_points": [
+            "Danger nouveau : obstruction récente non encore portée sur les documents nautiques; balisage souvent par latérale ou cardinale; danger grave : marque doublée; feu scintillant rapide ou scintillant; possible balise radar codée Morse « D ».",
+            "Urgence épave : balise temporaire après naufrage; corps bandes verticales jaunes et bleues; voyant croix jaune droite; feu à éclats alternatifs bleu et jaune."
+          ]
+        },
+        {
+          "id": "M1-S10",
+          "title": "Balisage des plages (hors AISM)",
+          "key_points": [
+            "Ligne des 300 m : bouées sphériques jaunes (~1 m) espacées d’environ 200 m.",
+            "Chenaux traversiers : bouées coniques et cylindriques jaunes, de plus en plus serrées vers le rivage.",
+            "Zone réservée aux baigneurs : collier de bouées sphériques jaunes très rapprochées.",
+            "Bande des 300 m / limite de vitesse : généralement 5 kt (rappel local)."
+          ]
+        }
+      ],
+      "terms": [
+        {
+          "term": "Voyant",
+          "definition": "Partie supérieure (topmark) d’une marque, utile de jour."
+        },
+        {
+          "term": "Feu (caractère)",
+          "definition": "Signal lumineux (couleur + rythme) permettant d’identifier une marque la nuit."
+        }
+      ],
+      "page_text_coverage_note": "De nombreuses pages du PDF sont des diapositives avec texte intégré dans l’image : l’extraction brute contient parfois des textes vides. Utiliser l’extraction brute page par page pour compléter si nécessaire."
+    },
+    {
+      "id": "M14",
+      "name": "Courants & hauteurs d’eau (marées)",
+      "source": {
+        "file_id": "tide",
+        "page_range": [
+          1,
+          21
+        ]
+      },
+      "sections": [
+        {
+          "id": "M14-S1",
+          "title": "Principe (informatif)",
+          "key_points": [
+            "La marée résulte de l’effet combiné des attractions gravitationnelles de la Lune et du Soleil et du mouvement du système Terre–Lune–Soleil.",
+            "Les marées de vives-eaux sont plus amples quand Soleil et Lune sont alignés (Nouvelle Lune et Pleine Lune).",
+            "Les marées de mortes-eaux sont moins amples quand Soleil et Lune sont en quadrature (Premier et Dernier Quartier)."
+          ]
+        },
+        {
+          "id": "M14-S2",
+          "title": "Définitions essentielles",
+          "key_points": [
+            "Flux : durée pendant laquelle la mer monte (de BM à PM).",
+            "Reflux : durée pendant laquelle la mer descend (de PM à BM).",
+            "Flot : courant associé au flux.",
+            "Jusant : courant associé au reflux.",
+            "Marnage (amplitude) : différence de niveau entre une PM et une BM consécutives.",
+            "Coefficient : mesure de la « force » de la marée (≈ 20 à 120). >70 = vives-eaux; <70 = mortes-eaux.",
+            "Port de référence : port principal dont les tables donnent heures et hauteurs de PM/BM.",
+            "Port rattaché : port secondaire dont les horaires/hauteurs se déduisent par corrections.",
+            "Heure marée : 1/6 de la durée de flux ou de jusant."
+          ]
+        },
+        {
+          "id": "M14-S3",
+          "title": "Zéro des cartes et hauteur d’eau",
+          "key_points": [
+            "Zéro des cartes : niveau de référence des sondes (souvent proche des plus basses mers théoriques).",
+            "Profondeur (au-dessus du fond) : P = H + S (hauteur d’eau H + sonde S).",
+            "Attention : certaines sondes peuvent être négatives et signalent un fond découvrant aux très grandes basses mers."
+          ]
+        },
+        {
+          "id": "M14-S4",
+          "title": "Tirant d’eau et pied de pilote",
+          "key_points": [
+            "Le sondeur mesure sous la quille, pas le tirant d’eau total : bien distinguer profondeur, immersion (tirant d’eau) et lecture sondeur.",
+            "Toujours garder une marge de sécurité (pied de pilote), en règle générale 0,50 m.",
+            "Profondeur minimale nécessaire ≈ tirant d’eau + pied de pilote."
+          ]
+        },
+        {
+          "id": "M14-S5",
+          "title": "Annuaire des marées (SHOM) : lecture + corrections",
+          "key_points": [
+            "L’Annuaire donne : coefficients journaliers, heures et hauteurs de PM/BM des ports principaux, et tables de corrections pour ports rattachés.",
+            "Heures : dans le cours, rappel que l’annuaire est en Temps Universel + 1 (= heure d’hiver). En été, ajouter +1 h supplémentaire.",
+            "Certaines sources web affichent en UTC+2 : vérifier avant d’appliquer des corrections."
+          ]
+        },
+        {
+          "id": "M14-S6",
+          "title": "Règle des douzièmes (calcul au brevet)",
+          "key_points": [
+            "Approche du niveau d’eau entre BM et PM (ou inverse) par 6 'heures marées' de durée égale.",
+            "Répartition du marnage par tranches successives : 1/12, 2/12, 3/12, 3/12, 2/12, 1/12.",
+            "Permet d’estimer la hauteur à une heure donnée après BM (montant) ou après PM (descendant) en additionnant les fractions."
+          ]
+        }
+      ],
+      "exercises": [
+        {
+          "id": "M14-EX1",
+          "prompt": "PM à Brest à 07h46 hauteur 6,95 m; BM à 14h14 hauteur 2,45 m. Calculer (1) durée du jusant (2) heure marée (3) marnage.",
+          "answers": {
+            "duration_jusant": "06h28",
+            "heure_maree": "01h04m40s (≈ 64 min 40 s)",
+            "marnage_m": "4.50"
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,49 @@
+{
+  "schema_version": "1.0",
+  "question_types": [
+    {
+      "type": "mcq_single",
+      "fields": [
+        "id",
+        "module",
+        "tags",
+        "stem",
+        "choices",
+        "answer_index",
+        "explanation",
+        "source_pages"
+      ]
+    },
+    {
+      "type": "mcq_multi",
+      "fields": [
+        "id",
+        "module",
+        "tags",
+        "stem",
+        "choices",
+        "answer_indices",
+        "explanation",
+        "source_pages"
+      ]
+    },
+    {
+      "type": "numeric",
+      "fields": [
+        "id",
+        "module",
+        "tags",
+        "stem",
+        "unit",
+        "answer",
+        "tolerance",
+        "explanation",
+        "source_pages"
+      ]
+    }
+  ],
+  "generation_notes": [
+    "Pour générer des QCM automatiquement, utiliser le cours normalisé (sections/terms) et fabriquer des distracteurs plausibles (ex: inverser bâbord/tribord, couleur, voyant, rythme de feu).",
+    "Pour le calcul de marée, privilégier des questions 'numeric' (durée, heure marée, marnage, hauteur estimée via douzièmes)."
+  ]
+}

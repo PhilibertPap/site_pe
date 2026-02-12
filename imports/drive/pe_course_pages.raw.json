@@ -1,0 +1,2042 @@
+{
+  "source_files": [
+    {
+      "id": "qcm",
+      "path": "/mnt/data/Cours QCM.pdf",
+      "pages": 246
+    },
+    {
+      "id": "tide",
+      "path": "/mnt/data/Cours calcul de marée.pdf",
+      "pages": 21
+    }
+  ],
+  "qcm_course_pages": [
+    {
+      "page": 1,
+      "text": "Module 1LE BALISAGE\nCours de préparartion à l’examen théorique du brevet du PATRON D’EMBARCATION\n1Scouts Unitaires de France - Passerelle"
+    },
+    {
+      "page": 2,
+      "text": "Module 1LE BALISAGE\n2Scouts Unitaires de France - Passerelle"
+    },
+    {
+      "page": 3,
+      "text": "Module 1LE BALISAGE\n3Scouts Unitaires de France - Passerelle"
+    },
+    {
+      "page": 4,
+      "text": "Module 1LE BALISAGE\n4Scouts Unitaires de France - Passerelle"
+    },
+    {
+      "page": 5,
+      "text": "Module 1LE BALISAGE\n5Scouts Unitaires de France - Passerelle"
+    },
+    {
+      "page": 6,
+      "text": "Module 1LE BALISAGE\n6Scouts Unitaires de France - Passerelle"
+    },
+    {
+      "page": 7,
+      "text": "Module 1LE BALISAGE\n7Scouts Unitaires de France - Passerelle"
+    },
+    {
+      "page": 8,
+      "text": "Module 1LE BALISAGE\n8Scouts Unitaires de France - Passerelle"
+    },
+    {
+      "page": 9,
+      "text": "Module 1LE BALISAGE\n9Scouts Unitaires de France - Passerelle"
+    },
+    {
+      "page": 10,
+      "text": "Module 1LE BALISAGE\n10Scouts Unitaires de France - Passerelle"
+    },
+    {
+      "page": 11,
+      "text": "Module 1\n11Scouts Unitaires de France - Passerelle\nLE BALISAGE"
+    },
+    {
+      "page": 12,
+      "text": "Module 1LE BALISAGE\n12Scouts Unitaires de France - Passerelle"
+    },
+    {
+      "page": 13,
+      "text": "Module 1LE BALISAGE\n13Scouts Unitaires de France - Passerelle"
+    },
+    {
+      "page": 14,
+      "text": "Module 1LE BALISAGE\n14Scouts Unitaires de France - Passerelle"
+    },
+    {
+      "page": 15,
+      "text": "Module 1LE BALISAGE\n15Scouts Unitaires de France - Passerelle"
+    },
+    {
+      "page": 16,
+      "text": "Module 1LE BALISAGE\n16Scouts Unitaires de France - Passerelle"
+    },
+    {
+      "page": 17,
+      "text": "Module 1LE BALISAGE\n17Scouts Unitaires de France - Passerelle"
+    },
+    {
+      "page": 18,
+      "text": "Module 1LE BALISAGE\n18Scouts Unitaires de France - Passerelle"
+    },
+    {
+      "page": 19,
+      "text": "Module 1LE BALISAGE\n19Scouts Unitaires de France - Passerelle"
+    },
+    {
+      "page": 20,
+      "text": "Module 1LE BALISAGE\n20Scouts Unitaires de France - Passerelle"
+    },
+    {
+      "page": 21,
+      "text": "Module 1LE BALISAGE\n21Scouts Unitaires de France - Passerelle"
+    },
+    {
+      "page": 22,
+      "text": "Module 2LES SIGNAUX SONORES ET LUMINEUXportuaires, de détresse, et météo\n22Scouts Unitaires de France - Passerelle\nPhoto prise au port Haliguen lors de la semaine de navigation du camp 2023"
+    },
+    {
+      "page": 23,
+      "text": "Module 2\n23Scouts Unitaires de France - Passerelle\nLES SIGNAUX SONORES ET LUMINEUXportuaires, de détresse, et météo"
+    },
+    {
+      "page": 24,
+      "text": "Module 2LES SIGNAUX SONORES ET LUMINEUXportuaires, de détresse, et météo\n24Scouts Unitaires de France - Passerelle"
+    },
+    {
+      "page": 25,
+      "text": "Module 2LES SIGNAUX SONORES ET LUMINEUXportuaires, de détresse, et météo\n25Scouts Unitaires de France - Passerelle"
+    },
+    {
+      "page": 26,
+      "text": "Module 2LES SIGNAUX SONORES ET LUMINEUXportuaires, de détresse, et météo\n26Scouts Unitaires de France - Passerelle"
+    },
+    {
+      "page": 27,
+      "text": "Module 2LES SIGNAUX SONORES ET LUMINEUXportuaires, de détresse, et météo\n27Scouts Unitaires de France - Passerelle"
+    },
+    {
+      "page": 28,
+      "text": "Module 2LES SIGNAUX SONORES ET LUMINEUXportuaires, de détresse, et météo\n28Scouts Unitaires de France - Passerelle"
+    },
+    {
+      "page": 29,
+      "text": "Module 2LES SIGNAUX SONORES ET LUMINEUXportuaires, de détresse, et météo\n29Scouts Unitaires de France - Passerelle"
+    },
+    {
+      "page": 30,
+      "text": "Module 2LES SIGNAUX SONORES ET LUMINEUXportuaires, de détresse, et météo\n30Scouts Unitaires de France - Passerelle"
+    },
+    {
+      "page": 31,
+      "text": "Module 2LES SIGNAUX SONORES ET LUMINEUXportuaires, de détresse, et météo\n31Scouts Unitaires de France - Passerelle"
+    },
+    {
+      "page": 32,
+      "text": "Module 2LES SIGNAUX SONORES ET LUMINEUXportuaires, de détresse, et météo\n32Scouts Unitaires de France - Passerelle"
+    },
+    {
+      "page": 33,
+      "text": "Module 2LES SIGNAUX SONORES ET LUMINEUXportuaires, de détresse, et météo\n33Scouts Unitaires de France - Passerelle"
+    },
+    {
+      "page": 34,
+      "text": "Module 2LES SIGNAUX SONORES ET LUMINEUXportuaires, de détresse, et météo\n34Scouts Unitaires de France - Passerelle"
+    },
+    {
+      "page": 35,
+      "text": "Module 2LES SIGNAUX SONORES ET LUMINEUXportuaires, de détresse, et météo\n35Scouts Unitaires de France - Passerelle"
+    },
+    {
+      "page": 36,
+      "text": "Module 2LES SIGNAUX SONORES ET LUMINEUXportuaires, de détresse, et météo\n36Scouts Unitaires de France - Passerelle"
+    },
+    {
+      "page": 37,
+      "text": "Module 2LES SIGNAUX SONORES ET LUMINEUXportuaires, de détresse, et météo\n37Scouts Unitaires de France - Passerelle"
+    },
+    {
+      "page": 38,
+      "text": "Module 2LES SIGNAUX SONORES ET LUMINEUXportuaires, de détresse, et météo\n38Scouts Unitaires de France - Passerelle"
+    },
+    {
+      "page": 39,
+      "text": "Module 3LES RÈGLES DE BARRE ET DE ROUTE\n39Scouts Unitaires de France - Passerelle\nPhoto de l’équipage de l’Albatros lors de la semaine de navigation du camp 2023"
+    },
+    {
+      "page": 40,
+      "text": "Module 3LES RÈGLES DE BARRE ET DE ROUTE\n40Scouts Unitaires de France - Passerelle"
+    },
+    {
+      "page": 41,
+      "text": "Module 3LES RÈGLES DE BARRE ET DE ROUTE\n41Scouts Unitaires de France - Passerelle"
+    },
+    {
+      "page": 42,
+      "text": "Module 3LES RÈGLES DE BARRE ET DE ROUTE\n42Scouts Unitaires de France - Passerelle"
+    },
+    {
+      "page": 43,
+      "text": "Module 3LES RÈGLES DE BARRE ET DE ROUTE\n43Scouts Unitaires de France - Passerelle"
+    },
+    {
+      "page": 44,
+      "text": "Module 3LES RÈGLES DE BARRE ET DE ROUTE\n44Scouts Unitaires de France - Passerelle"
+    },
+    {
+      "page": 45,
+      "text": "Module 3LES RÈGLES DE BARRE ET DE ROUTE\n45Scouts Unitaires de France - Passerelle"
+    },
+    {
+      "page": 46,
+      "text": "Module 3LES RÈGLES DE BARRE ET DE ROUTE\n46Scouts Unitaires de France - Passerelle"
+    },
+    {
+      "page": 47,
+      "text": "Module 3LES RÈGLES DE BARRE ET DE ROUTE\n47Scouts Unitaires de France - Passerelle"
+    },
+    {
+      "page": 48,
+      "text": "Module 3LES RÈGLES DE BARRE ET DE ROUTE\n48Scouts Unitaires de France - Passerelle"
+    },
+    {
+      "page": 49,
+      "text": "Module 3LES RÈGLES DE BARRE ET DE ROUTE\n49Scouts Unitaires de France - Passerelle"
+    },
+    {
+      "page": 50,
+      "text": "Module 3LES RÈGLES DE BARRE ET DE ROUTE\n50Scouts Unitaires de France - Passerelle"
+    },
+    {
+      "page": 51,
+      "text": "Module 3LES RÈGLES DE BARRE ET DE ROUTE\n51Scouts Unitaires de France - Passerelle"
+    },
+    {
+      "page": 52,
+      "text": "Scouts Unitaires de France -\nModule 4\n1\nFEUX ET MARQUES DES NAVIRES\nPhoto des équipages de l’Espadon et du Rorqual lors de la semaine de navigation du camp 2023"
+    },
+    {
+      "page": 53,
+      "text": "Scouts Unitaires de France -\nModule 4\n2\nFEUX ET MARQUES DES NAVIRES"
+    },
+    {
+      "page": 54,
+      "text": "Scouts Unitaires de France -\nModule 4\n3\nFEUX ET MARQUES DES NAVIRES"
+    },
+    {
+      "page": 55,
+      "text": "Scouts Unitaires de France -\nModule 4\n4\nFEUX ET MARQUES DES NAVIRES"
+    },
+    {
+      "page": 56,
+      "text": "Scouts Unitaires de France -\nModule 4\n5\nFEUX ET MARQUES DES NAVIRES"
+    },
+    {
+      "page": 57,
+      "text": "Scouts Unitaires de France -\nModule 4\n6\nFEUX ET MARQUES DES NAVIRES"
+    },
+    {
+      "page": 58,
+      "text": "Scouts Unitaires de France -\nModule 4\n7\nFEUX ET MARQUES DES NAVIRES"
+    },
+    {
+      "page": 59,
+      "text": "Scouts Unitaires de France -\nModule 4\n8\nFEUX ET MARQUES DES NAVIRES"
+    },
+    {
+      "page": 60,
+      "text": "Scouts Unitaires de France -\nModule 4\n9\nFEUX ET MARQUES DES NAVIRES"
+    },
+    {
+      "page": 61,
+      "text": "Scouts Unitaires de France -\nModule 4\n10\nFEUX ET MARQUES DES NAVIRES"
+    },
+    {
+      "page": 62,
+      "text": "Scouts Unitaires de France -\nModule 4\n11\nFEUX ET MARQUES DES NAVIRES"
+    },
+    {
+      "page": 63,
+      "text": "Scouts Unitaires de France -\nModule 4\n12\nFEUX ET MARQUES DES NAVIRES"
+    },
+    {
+      "page": 64,
+      "text": "Scouts Unitaires de France -\nModule 4\n13\nFEUX ET MARQUES DES NAVIRES"
+    },
+    {
+      "page": 65,
+      "text": "Scouts Unitaires de France -\nModule 4\n14\nFEUX ET MARQUES DES NAVIRES"
+    },
+    {
+      "page": 66,
+      "text": "Scouts Unitaires de France -\nModule 4\n15\nFEUX ET MARQUES DES NAVIRES"
+    },
+    {
+      "page": 67,
+      "text": "Scouts Unitaires de France -\nModule 4\n16\nFEUX ET MARQUES DES NAVIRES"
+    },
+    {
+      "page": 68,
+      "text": "Scouts Unitaires de France -\nModule 4\n17\nFEUX ET MARQUES DES NAVIRES"
+    },
+    {
+      "page": 69,
+      "text": "Scouts Unitaires de France -\nModule 4\n18\nFEUX ET MARQUES DES NAVIRES"
+    },
+    {
+      "page": 70,
+      "text": "Scouts Unitaires de France -\nModule 4\n19\nFEUX ET MARQUES DES NAVIRES"
+    },
+    {
+      "page": 71,
+      "text": "Scouts Unitaires de France -\nModule 4\n20\nFEUX ET MARQUES DES NAVIRES"
+    },
+    {
+      "page": 72,
+      "text": "Scouts Unitaires de France -\nModule 4\n21\nFEUX ET MARQUES DES NAVIRES"
+    },
+    {
+      "page": 73,
+      "text": "Scouts Unitaires de France -\nModule 4\n22\nFEUX ET MARQUES DES NAVIRES"
+    },
+    {
+      "page": 74,
+      "text": "Scouts Unitaires de France -\nModule 4O p t i o n n el\n23\nFEUX ET MARQUES DES NAVIRES"
+    },
+    {
+      "page": 75,
+      "text": "Scouts Unitaires de France -\nModule 4O p t i o n n el\n24\nFEUX ET MARQUES DES NAVIRES"
+    },
+    {
+      "page": 76,
+      "text": "Scouts Unitaires de France -\nModule 4O p t i o n n el\n25\nFEUX ET MARQUES DES NAVIRES"
+    },
+    {
+      "page": 77,
+      "text": "Scouts Unitaires de France -\nModule 4\n26\nFEUX ET MARQUES DES NAVIRES"
+    },
+    {
+      "page": 78,
+      "text": "Scouts Unitaires de France -\nModule 4\n27\nFEUX ET MARQUES DES NAVIRES"
+    },
+    {
+      "page": 79,
+      "text": "Scouts Unitaires de France -\nModule 4\n28\nFEUX ET MARQUES DES NAVIRES"
+    },
+    {
+      "page": 80,
+      "text": "Scouts Unitaires de France -\nModule 4\n29\nFEUX ET MARQUES DES NAVIRES"
+    },
+    {
+      "page": 81,
+      "text": "Scouts Unitaires de France -\nModule 4\n30\nFEUX ET MARQUES DES NAVIRES"
+    },
+    {
+      "page": 82,
+      "text": "Scouts Unitaires de France -\nModule 4\n31\nFEUX ET MARQUES DES NAVIRES"
+    },
+    {
+      "page": 83,
+      "text": "Scouts Unitaires de France -\nModule 4\n32\nFEUX ET MARQUES DES NAVIRES"
+    },
+    {
+      "page": 84,
+      "text": "Scouts Unitaires de France -\nModule 4\n33\nFEUX ET MARQUES DES NAVIRES"
+    },
+    {
+      "page": 85,
+      "text": "Scouts Unitaires de France -\nModule 4\n34\nFEUX ET MARQUES DES NAVIRES"
+    },
+    {
+      "page": 86,
+      "text": "Scouts Unitaires de France -\nModule 4\n35\nFEUX ET MARQUES DES NAVIRES"
+    },
+    {
+      "page": 87,
+      "text": "Scouts Unitaires de France -\nModule 4\n36\nFEUX ET MARQUES DES NAVIRES"
+    },
+    {
+      "page": 88,
+      "text": "Scouts Unitaires de France -\nModule 4\n37\nFEUX ET MARQUES DES NAVIRES"
+    },
+    {
+      "page": 89,
+      "text": "Scouts Unitaires de France -\nModule 4O p t i o n n el\n38\nFEUX ET MARQUES DES NAVIRES"
+    },
+    {
+      "page": 90,
+      "text": "Scouts Unitaires de France -\nModule 4\n39\nFEUX ET MARQUES DES NAVIRES"
+    },
+    {
+      "page": 91,
+      "text": "Scouts Unitaires de France -\nModule 4\n40\nFEUX ET MARQUES DES NAVIRES"
+    },
+    {
+      "page": 92,
+      "text": "Scouts Unitaires de France -\nModule 4\n41\nFEUX ET MARQUES DES NAVIRES"
+    },
+    {
+      "page": 93,
+      "text": "Scouts Unitaires de France -Passerelle\nModule 5\n1\nLA CARTE MARINE\nPhoto prise au port Haliguen lors de la semaine de navigation du camp 2023"
+    },
+    {
+      "page": 94,
+      "text": "Scouts Unitaires de France -Passerelle\nModule 5\n2\nLA CARTE MARINE"
+    },
+    {
+      "page": 95,
+      "text": "Scouts Unitaires de France -Passerelle\nModule 5\n3\nLA CARTE MARINE"
+    },
+    {
+      "page": 96,
+      "text": "Scouts Unitaires de France -Passerelle\nModule 5\n4\nLA CARTE MARINE"
+    },
+    {
+      "page": 97,
+      "text": "Scouts Unitaires de France -Passerelle\nModule 5\n5\nLA CARTE MARINE"
+    },
+    {
+      "page": 98,
+      "text": "Scouts Unitaires de France -Passerelle\nModule 5\n6\nLA CARTE MARINE"
+    },
+    {
+      "page": 99,
+      "text": "Scouts Unitaires de France -Passerelle\nModule 5\n7\nLA CARTE MARINE"
+    },
+    {
+      "page": 100,
+      "text": "Scouts Unitaires de France -Passerelle\nModule 5\n8\nLA CARTE MARINE"
+    },
+    {
+      "page": 101,
+      "text": "Scouts Unitaires de France -Passerelle\nModule 5\n9\nLA CARTE MARINE"
+    },
+    {
+      "page": 102,
+      "text": "Scouts Unitaires de France -Passerelle\nModule 5\n10\nLA CARTE MARINE"
+    },
+    {
+      "page": 103,
+      "text": "Scouts Unitaires de France -Passerelle\nModule 5\n11\nLA CARTE MARINE"
+    },
+    {
+      "page": 104,
+      "text": "Scouts Unitaires de France -Passerelle\nModule 5\n12\nLA CARTE MARINE"
+    },
+    {
+      "page": 105,
+      "text": "Scouts Unitaires de France -Passerelle\nModule 5\n13\nLA CARTE MARINE"
+    },
+    {
+      "page": 106,
+      "text": "Scouts Unitaires de France -Passerelle\nModule 5\n14\nLA CARTE MARINE"
+    },
+    {
+      "page": 107,
+      "text": "Scouts Unitaires de France -Passerelle\nModule 5\n15\nLA CARTE MARINE"
+    },
+    {
+      "page": 108,
+      "text": "Scouts Unitaires de France -Passerelle\nModule 5\n16\nLA CARTE MARINE"
+    },
+    {
+      "page": 109,
+      "text": "Scouts Unitaires de France -Passerelle\nModule 5\n17\nLA CARTE MARINE"
+    },
+    {
+      "page": 110,
+      "text": "Scouts Unitaires de France -Passerelle\nModule 5\n18\nLA CARTE MARINE"
+    },
+    {
+      "page": 111,
+      "text": "Scouts Unitaires de France -Passerelle\nModule 5\n19\nLA CARTE MARINE"
+    },
+    {
+      "page": 112,
+      "text": "Scouts Unitaires de France -Passerelle\nModule 5\n20\nLA CARTE MARINE"
+    },
+    {
+      "page": 113,
+      "text": "Scouts Unitaires de France -Passerelle\nModule 5\n21\nLA CARTE MARINE"
+    },
+    {
+      "page": 114,
+      "text": "Scouts Unitaires de France -Passerelle\nModule 5\n22\nLA CARTE MARINE"
+    },
+    {
+      "page": 115,
+      "text": "Scouts Unitaires de France -Passerelle\nModule 5\n23\nLA CARTE MARINE"
+    },
+    {
+      "page": 116,
+      "text": "Scouts Unitaires de France -Passerelle\nModule 5\n24\nLA CARTE MARINE"
+    },
+    {
+      "page": 117,
+      "text": "Scouts Unitaires de France -Passerelle\nModule 5\n25\nLA CARTE MARINE"
+    },
+    {
+      "page": 118,
+      "text": "Scouts Unitaires de France -Passerelle\nModule 5\n26\nLA CARTE MARINE"
+    },
+    {
+      "page": 119,
+      "text": "Scouts Unitaires de France -Passerelle\nModule 5\n27\nLA CARTE MARINE"
+    },
+    {
+      "page": 120,
+      "text": "Scouts Unitaires de France -Passerelle\nModule 5\n28\nLA CARTE MARINE"
+    },
+    {
+      "page": 121,
+      "text": "Scouts Unitaires de France -Passerelle\nModule 5\n29\nLA CARTE MARINE"
+    },
+    {
+      "page": 122,
+      "text": "Scouts Unitaires de France -Passerelle\nModule 5\n30\nLA CARTE MARINE"
+    },
+    {
+      "page": 123,
+      "text": "Scouts Unitaires de France -Passerelle\nModule 5\n31\nLA CARTE MARINE"
+    },
+    {
+      "page": 124,
+      "text": "Scouts Unitaires de France -Passerelle\nModule 5\n32\nLA CARTE MARINE"
+    },
+    {
+      "page": 125,
+      "text": "Scouts Unitaires de France -Passerelle\nModule 6\n1\nIDENTIFICATION DES FEUX\nPhoto de l’équipage du Rorqual lors de la semaine de navigation du camp 2023"
+    },
+    {
+      "page": 126,
+      "text": "Scouts Unitaires de France -Passerelle\nModule 6\n2\nIDENTIFICATION DES FEUX"
+    },
+    {
+      "page": 127,
+      "text": "Scouts Unitaires de France -Passerelle\nModule 6\n3\nIDENTIFICATION DES FEUX"
+    },
+    {
+      "page": 128,
+      "text": "Scouts Unitaires de France -Passerelle\nModule 6\n4\nIDENTIFICATION DES FEUX"
+    },
+    {
+      "page": 129,
+      "text": "Scouts Unitaires de France -Passerelle\nModule 6\n5\nIDENTIFICATION DES FEUX"
+    },
+    {
+      "page": 130,
+      "text": "Scouts Unitaires de France -Passerelle\nModule 6\n6\nIDENTIFICATION DES FEUX"
+    },
+    {
+      "page": 131,
+      "text": "Scouts Unitaires de France -Passerelle\nModule 6\n7\nIDENTIFICATION DES FEUX"
+    },
+    {
+      "page": 132,
+      "text": "Scouts Unitaires de France -Passerelle\nModule 6\n8\nIDENTIFICATION DES FEUX"
+    },
+    {
+      "page": 133,
+      "text": "Scouts Unitaires de France -Passerelle\nModule 6\n9\nIDENTIFICATION DES FEUX"
+    },
+    {
+      "page": 134,
+      "text": "Scouts Unitaires de France -Passerelle\nModule 6\n10\nIDENTIFICATION DES FEUX"
+    },
+    {
+      "page": 135,
+      "text": "Scouts Unitaires de France -Passerelle\nModule 6\n11\nIDENTIFICATION DES FEUX"
+    },
+    {
+      "page": 136,
+      "text": "Scouts Unitaires de France -Passerelle\nModule 6\n12\nIDENTIFICATION DES FEUX"
+    },
+    {
+      "page": 137,
+      "text": "Scouts Unitaires de France -Passerelle\nModule 6\n13\nIDENTIFICATION DES FEUX"
+    },
+    {
+      "page": 138,
+      "text": "Scouts Unitaires de France -Passerelle\nModule 6\n14\nIDENTIFICATION DES FEUX"
+    },
+    {
+      "page": 139,
+      "text": "Scouts Unitaires de France -Passerelle\nModule 6\n15\nIDENTIFICATION DES FEUX"
+    },
+    {
+      "page": 140,
+      "text": "Scouts Unitaires de France -Passerelle\nModule 16\n1\nLA MÉTÉO - PARTIE 1\nPhoto de Matthieu Letouzé lors de la semaine de navigation du camp 2023"
+    },
+    {
+      "page": 141,
+      "text": "Scouts Unitaires de France -Passerelle\nModule 16\n2\nLA MÉTÉO - PARTIE 1"
+    },
+    {
+      "page": 142,
+      "text": "Scouts Unitaires de France -Passerelle\nModule 16\n3\nLA MÉTÉO - PARTIE 1"
+    },
+    {
+      "page": 143,
+      "text": "Scouts Unitaires de France -Passerelle\nModule 16\n4\nLA MÉTÉO - PARTIE 1"
+    },
+    {
+      "page": 144,
+      "text": "Scouts Unitaires de France -Passerelle\nModule 16O p t i o n n e l\n5\nLA MÉTÉO - PARTIE 1"
+    },
+    {
+      "page": 145,
+      "text": "Scouts Unitaires de France -Passerelle\nModule 16O p t i o n n e l\n6\nLA MÉTÉO - PARTIE 1"
+    },
+    {
+      "page": 146,
+      "text": "Scouts Unitaires de France -Passerelle\nModule 16O p t i o n n e l\n7\nLA MÉTÉO - PARTIE 1"
+    },
+    {
+      "page": 147,
+      "text": "Scouts Unitaires de France -Passerelle\nModule 16O p t i o n n e l\n8\nLA MÉTÉO - PARTIE 1"
+    },
+    {
+      "page": 148,
+      "text": "Scouts Unitaires de France -Passerelle\nModule 16O p t i o n n e l\n9\nLA MÉTÉO - PARTIE 1"
+    },
+    {
+      "page": 149,
+      "text": "Scouts Unitaires de France -Passerelle\nModule 16O p t i o n n e l\n10\nLA MÉTÉO - PARTIE 1"
+    },
+    {
+      "page": 150,
+      "text": "Scouts Unitaires de France -Passerelle\nModule 16O p t i o n n e l\n11\nLA MÉTÉO - PARTIE 1"
+    },
+    {
+      "page": 151,
+      "text": "Scouts Unitaires de France -Passerelle\nModule 16O p t i o n n e l\n12\nLA MÉTÉO - PARTIE 1"
+    },
+    {
+      "page": 152,
+      "text": "Scouts Unitaires de France -Passerelle\nModule 16O p t i o n n e l\n13\nLA MÉTÉO - PARTIE 1"
+    },
+    {
+      "page": 153,
+      "text": "Scouts Unitaires de France -Passerelle\nModule 16O p t i o n n e l\n14\nLA MÉTÉO - PARTIE 1"
+    },
+    {
+      "page": 154,
+      "text": "Scouts Unitaires de France -Passerelle\nModule 16O p t i o n n e l\n15\nLA MÉTÉO - PARTIE 1"
+    },
+    {
+      "page": 155,
+      "text": "Scouts Unitaires de France -Passerelle\nModule 16\n16\nLA MÉTÉO - PARTIE 1"
+    },
+    {
+      "page": 156,
+      "text": "Scouts Unitaires de France -Passerelle\nModule 16O p t i o n n e l\n17\nLA MÉTÉO - PARTIE 1"
+    },
+    {
+      "page": 157,
+      "text": "Scouts Unitaires de France -Passerelle\nModule 16O p t i o n n e l\n18\nLA MÉTÉO - PARTIE 1"
+    },
+    {
+      "page": 158,
+      "text": "Scouts Unitaires de France -Passerelle\nModule 16O p t i o n n e l\n19\nLA MÉTÉO - PARTIE 1"
+    },
+    {
+      "page": 159,
+      "text": "Scouts Unitaires de France -Passerelle\nModule 16\n20\nLA MÉTÉO - PARTIE 1"
+    },
+    {
+      "page": 160,
+      "text": "Scouts Unitaires de France -Passerelle\nModule 16\n21\nLA MÉTÉO - PARTIE 1"
+    },
+    {
+      "page": 161,
+      "text": "Scouts Unitaires de France -Passerelle\nModule 16O p t i o n n e l\n22\nLA MÉTÉO - PARTIE 1"
+    },
+    {
+      "page": 162,
+      "text": "Scouts Unitaires de France -Passerelle\nModule 16O p t i o n n e l\n23\nLA MÉTÉO - PARTIE 1"
+    },
+    {
+      "page": 163,
+      "text": "Scouts Unitaires de France -Passerelle\nModule 16O p t i o n n e l\n24\nLA MÉTÉO - PARTIE 1"
+    },
+    {
+      "page": 164,
+      "text": "Scouts Unitaires de France -Passerelle\nModule 16O p t i o n n e l\n25\nLA MÉTÉO - PARTIE 1"
+    },
+    {
+      "page": 165,
+      "text": "Scouts Unitaires de France -Passerelle\nModule 16O p t i o n n e l\n26\nLA MÉTÉO - PARTIE 1"
+    },
+    {
+      "page": 166,
+      "text": "Scouts Unitaires de France -Passerelle\nModule 16O p t i o n n e l\n27\nLA MÉTÉO - PARTIE 1"
+    },
+    {
+      "page": 167,
+      "text": "Scouts Unitaires de France -Passerelle\nModule 16O p t i o n n e l\n28\nLA MÉTÉO - PARTIE 1"
+    },
+    {
+      "page": 168,
+      "text": "Scouts Unitaires de France -Passerelle\nModule 16O p t i o n n e l\n29\nLA MÉTÉO - PARTIE 1"
+    },
+    {
+      "page": 169,
+      "text": "Scouts Unitaires de France -Passerelle\nModule 16O p t i o n n e l\n30\nLA MÉTÉO - PARTIE 1"
+    },
+    {
+      "page": 170,
+      "text": "Scouts Unitaires de France -Passerelle\nModule 16O p t i o n n e l\n31\nLA MÉTÉO - PARTIE 1"
+    },
+    {
+      "page": 171,
+      "text": "Scouts Unitaires de France -Passerelle\nModule 16O p t i o n n e l\n32\nLA MÉTÉO - PARTIE 1"
+    },
+    {
+      "page": 172,
+      "text": "Scouts Unitaires de France -Passerelle\nModule 16O p t i o n n e l\n33\nLA MÉTÉO - PARTIE 1"
+    },
+    {
+      "page": 173,
+      "text": "Scouts Unitaires de France -Passerelle\nModule 16O p t i o n n e l\n34\nLA MÉTÉO - PARTIE 1"
+    },
+    {
+      "page": 174,
+      "text": "Scouts Unitaires de France -Passerelle\nModule 16O p t i o n n e l\n35\nLA MÉTÉO - PARTIE 1"
+    },
+    {
+      "page": 175,
+      "text": "Scouts Unitaires de France -Passerelle\nModule 16O p t i o n n e l\n36\nLA MÉTÉO - PARTIE 1"
+    },
+    {
+      "page": 176,
+      "text": "Scouts Unitaires de France -Passerelle\nModule 16O p t i o n n e l\n37\nLA MÉTÉO - PARTIE 1"
+    },
+    {
+      "page": 177,
+      "text": "Scouts Unitaires de France -Passerelle\nModule 16\n38\nLA MÉTÉO - PARTIE 1"
+    },
+    {
+      "page": 178,
+      "text": "Scouts Unitaires de France -Passerelle\nModule 16\n39\nLA MÉTÉO - PARTIE 1"
+    },
+    {
+      "page": 179,
+      "text": "Scouts Unitaires de France -Passerelle\nModule 16\n40\nLA MÉTÉO - PARTIE 1"
+    },
+    {
+      "page": 180,
+      "text": "Scouts Unitaires de France -Passerelle\nModule 16\n41\nLA MÉTÉO - PARTIE 1"
+    },
+    {
+      "page": 181,
+      "text": "Scouts Unitaires de France -Passerelle\nModule 16\n42\nLA MÉTÉO - PARTIE 1"
+    },
+    {
+      "page": 182,
+      "text": "Scouts Unitaires de France -Passerelle\nModule 16O p t i o n n e l\n43\nLA MÉTÉO - PARTIE 1"
+    },
+    {
+      "page": 183,
+      "text": "Scouts Unitaires de France -Passerelle\nModule 16O p t i o n n e l\n44\nLA MÉTÉO - PARTIE 1"
+    },
+    {
+      "page": 184,
+      "text": "Scouts Unitaires de France -Passerelle\nModule 16O p t i o n n e l\n45\nLA MÉTÉO - PARTIE 1"
+    },
+    {
+      "page": 185,
+      "text": "Scouts Unitaires de France -Passerelle\nModule 16\n46\nLA MÉTÉO - PARTIE 1"
+    },
+    {
+      "page": 186,
+      "text": "Scouts Unitaires de France -Passerelle\nModule 16\n47\nLA MÉTÉO - PARTIE 1"
+    },
+    {
+      "page": 187,
+      "text": "Scouts Unitaires de France -Passerelle\nModule 16\n48\nLA MÉTÉO - PARTIE 1"
+    },
+    {
+      "page": 188,
+      "text": "Scouts Unitaires de France -Passerelle\nModule 16\n49\nLA MÉTÉO - PARTIE 1"
+    },
+    {
+      "page": 189,
+      "text": "Scouts Unitaires de France -Passerelle\nModule 16\n50\nLA MÉTÉO - PARTIE 1"
+    },
+    {
+      "page": 190,
+      "text": "Scouts Unitaires de France -Passerelle\nModule 16\n51\nLA MÉTÉO - PARTIE 1"
+    },
+    {
+      "page": 191,
+      "text": "Scouts Unitaires de France -Passerelle\nModule 16\n52\nLA MÉTÉO - PARTIE 1"
+    },
+    {
+      "page": 192,
+      "text": "Scouts Unitaires de France -Passerelle\nModule 17\n1\nLA MÉTÉO - PARTIE 2\nCours de préparartion à l’examen théorique du brevet du PATRON D’EMBARCATION"
+    },
+    {
+      "page": 193,
+      "text": "Scouts Unitaires de France -Passerelle\nModule 17\n2\nLA MÉTÉO - PARTIE 2"
+    },
+    {
+      "page": 194,
+      "text": "Scouts Unitaires de France -Passerelle\nModule 17\n3\nLA MÉTÉO - PARTIE 2"
+    },
+    {
+      "page": 195,
+      "text": "Scouts Unitaires de France -Passerelle\nModule 17\n4\nLA MÉTÉO - PARTIE 2"
+    },
+    {
+      "page": 196,
+      "text": "Scouts Unitaires de France -Passerelle\nModule 17\n5\nLA MÉTÉO - PARTIE 2"
+    },
+    {
+      "page": 197,
+      "text": "Scouts Unitaires de France -Passerelle\nModule 17\n6\nLA MÉTÉO - PARTIE 2"
+    },
+    {
+      "page": 198,
+      "text": "Scouts Unitaires de France -Passerelle\nModule 17\n7\nLA MÉTÉO - PARTIE 2"
+    },
+    {
+      "page": 199,
+      "text": "Scouts Unitaires de France -Passerelle\nModule 17\n8\nLA MÉTÉO - PARTIE 2"
+    },
+    {
+      "page": 200,
+      "text": "Scouts Unitaires de France -Passerelle\nModule 17\n9\nLA MÉTÉO - PARTIE 2"
+    },
+    {
+      "page": 201,
+      "text": "Scouts Unitaires de France -Passerelle\nModule 17\n10\nLA MÉTÉO - PARTIE 2"
+    },
+    {
+      "page": 202,
+      "text": "Scouts Unitaires de France -Passerelle\nModule 17\n11\nLA MÉTÉO - PARTIE 2"
+    },
+    {
+      "page": 203,
+      "text": "Scouts Unitaires de France -Passerelle\nModule 17\n12\nLA MÉTÉO - PARTIE 2"
+    },
+    {
+      "page": 204,
+      "text": "Scouts Unitaires de France -Passerelle\nModule 17\n13\nLA MÉTÉO - PARTIE 2"
+    },
+    {
+      "page": 205,
+      "text": "Scouts Unitaires de France -Passerelle\nModule 17\n14\nLA MÉTÉO - PARTIE 2"
+    },
+    {
+      "page": 206,
+      "text": "Scouts Unitaires de France -Passerelle\nModule 17\n15\nLA MÉTÉO - PARTIE 2"
+    },
+    {
+      "page": 207,
+      "text": "Scouts Unitaires de France -Passerelle\nModule 17\n16\nLA MÉTÉO - PARTIE 2"
+    },
+    {
+      "page": 208,
+      "text": "Scouts Unitaires de France -Passerelle\nModule 17\n17\nLA MÉTÉO - PARTIE 2"
+    },
+    {
+      "page": 209,
+      "text": "Scouts Unitaires de France -Passerelle\nModule 17\n18\nLA MÉTÉO - PARTIE 2"
+    },
+    {
+      "page": 210,
+      "text": "Scouts Unitaires de France -Passerelle\nModule 17\n19\nLA MÉTÉO - PARTIE 2"
+    },
+    {
+      "page": 211,
+      "text": "Scouts Unitaires de France -Passerelle\nModule 17\n20\nLA MÉTÉO - PARTIE 2"
+    },
+    {
+      "page": 212,
+      "text": "Scouts Unitaires de France -Passerelle\nModule 17\n21\nLA MÉTÉO - PARTIE 2"
+    },
+    {
+      "page": 213,
+      "text": "Scouts Unitaires de France -Passerelle\nModule 17\n22\nLA MÉTÉO - PARTIE 2"
+    },
+    {
+      "page": 214,
+      "text": "Scouts Unitaires de France -Passerelle\nModule 17\n23\nLA MÉTÉO - PARTIE 2"
+    },
+    {
+      "page": 215,
+      "text": "Scouts Unitaires de France -Passerelle\nModule 17\n24\nLA MÉTÉO - PARTIE 2"
+    },
+    {
+      "page": 216,
+      "text": "Scouts Unitaires de France -Passerelle\nModule 17\n25\nLA MÉTÉO - PARTIE 2"
+    },
+    {
+      "page": 217,
+      "text": "Scouts Unitaires de France -Passerelle\nModule 17\n26\nLA MÉTÉO - PARTIE 2"
+    },
+    {
+      "page": 218,
+      "text": "Scouts Unitaires de France -Passerelle\nModule 17\n27\nLA MÉTÉO - PARTIE 2"
+    },
+    {
+      "page": 219,
+      "text": "Scouts Unitaires de France -Passerelle\nModule 17\n28\nLA MÉTÉO - PARTIE 2"
+    },
+    {
+      "page": 220,
+      "text": "Scouts Unitaires de France -Passerelle\nModule 17\n29\nLA MÉTÉO - PARTIE 2"
+    },
+    {
+      "page": 221,
+      "text": "Scouts Unitaires de France -Passerelle\nModule 17\n30\nLA MÉTÉO - PARTIE 2"
+    },
+    {
+      "page": 222,
+      "text": "Scouts Unitaires de France -Passerelle\nModule 17\n31\nLA MÉTÉO - PARTIE 2"
+    },
+    {
+      "page": 223,
+      "text": "Scouts Unitaires de France -Passerelle\nModule 17\n32\nLA MÉTÉO - PARTIE 2"
+    },
+    {
+      "page": 224,
+      "text": "Scouts Unitaires de France -Passerelle\nModule 17\n33\nLA MÉTÉO - PARTIE 2"
+    },
+    {
+      "page": 225,
+      "text": "Scouts Unitaires de France -Passerelle\nModule 17\n34\nLA MÉTÉO - PARTIE 2"
+    },
+    {
+      "page": 226,
+      "text": "Scouts Unitaires de France -Passerelle\nModule 17\n35\nLA MÉTÉO - PARTIE 2"
+    },
+    {
+      "page": 227,
+      "text": "Scouts Unitaires de France -Passerelle\nModule 17\n36\nLA MÉTÉO - PARTIE 2"
+    },
+    {
+      "page": 228,
+      "text": "Scouts Unitaires de France -Passerelle\nModule 17\n37\nLA MÉTÉO - PARTIE 2"
+    },
+    {
+      "page": 229,
+      "text": "Scouts Unitaires de France -Passerelle\nModule 17\n38\nLA MÉTÉO - PARTIE 2"
+    },
+    {
+      "page": 230,
+      "text": "Scouts Unitaires de France -Passerelle\nModule 17\n39\nLA MÉTÉO - PARTIE 2"
+    },
+    {
+      "page": 231,
+      "text": "Scouts Unitaires de France -Passerelle\nModule 17\n40\nLA MÉTÉO - PARTIE 2"
+    },
+    {
+      "page": 232,
+      "text": "Scouts Unitaires de France -Passerelle\nModule 19\n1\nLA VHF\nPhoto prise lors de la semaine de formation du PE 2022"
+    },
+    {
+      "page": 233,
+      "text": "Scouts Unitaires de France -Passerelle\nModule 19\n2\nLA VHF"
+    },
+    {
+      "page": 234,
+      "text": "Scouts Unitaires de France -Passerelle\nModule 19\n3\nLA VHF"
+    },
+    {
+      "page": 235,
+      "text": "Scouts Unitaires de France -Passerelle\nModule 19\n4\nLA VHF"
+    },
+    {
+      "page": 236,
+      "text": "Scouts Unitaires de France -Passerelle\nModule 19\n5\nLA VHF"
+    },
+    {
+      "page": 237,
+      "text": "Scouts Unitaires de France -Passerelle\nModule 19\n6\nLA VHF"
+    },
+    {
+      "page": 238,
+      "text": "Scouts Unitaires de France -Passerelle\nModule 19\n7\nLA VHF"
+    },
+    {
+      "page": 239,
+      "text": "Scouts Unitaires de France -Passerelle\nModule 19\n8\nLA VHF"
+    },
+    {
+      "page": 240,
+      "text": "Scouts Unitaires de France -Passerelle\nModule 19\n9\nLA VHF"
+    },
+    {
+      "page": 241,
+      "text": "Scouts Unitaires de France -Passerelle\nModule 19\n10\nLA VHF"
+    },
+    {
+      "page": 242,
+      "text": "Scouts Unitaires de France -Passerelle\nModule 19\n11\nLA VHF"
+    },
+    {
+      "page": 243,
+      "text": "Scouts Unitaires de France -Passerelle\nModule 19\n12\nLA VHF"
+    },
+    {
+      "page": 244,
+      "text": "Scouts Unitaires de France -Passerelle\nModule 19\n13\nLA VHF"
+    },
+    {
+      "page": 245,
+      "text": "Scouts Unitaires de France -Passerelle\nModule 19\n14\nLA VHF"
+    },
+    {
+      "page": 246,
+      "text": "Réglementation de la navigation aux SUFDans tous les cas, tous les scouts doivent porter un gilet de sauvetage en permanence sur le bateau. L’âge minimumpour avoir le PE est de 16 ans. La navigation se fait uniquement de jour.Navigation sur habitable● Sous la surveillance d’un chef de flottille (qui est avec la flottille).● Un PE ou chef de quart valide par bateau.● Navigation à moins de 6 milles d’un abri.● Force 4 rafale à 5 beaufort.● Avoir un correspondant à terre.Navigation sur voile légère● Sous la surveillance d’un chef de quart (qui est avec la flottille).● Navigation à moins de 2 milles d’un abri.● Force 3 rafale à 4 beaufort.● Avoir un correspondant à terre.Un abri: lieu de la côte où son embarcation et son équipage peuvent se mettre en sécurité en mouillant ou en accostant,notamment à l’abris des mauvaises conditions météorologiques."
+    }
+  ],
+  "qcm_module_index": [
+    {
+      "module": 1,
+      "title": "LE BALISAGE",
+      "start_page": 11,
+      "end_page": 22
+    },
+    {
+      "module": 2,
+      "title": null,
+      "start_page": 23,
+      "end_page": 51
+    },
+    {
+      "module": 4,
+      "title": "FEUX ET MARQUES DES NAVIRES",
+      "start_page": 52,
+      "end_page": 52
+    },
+    {
+      "module": 4,
+      "title": "FEUX ET MARQUES DES NAVIRES",
+      "start_page": 53,
+      "end_page": 53
+    },
+    {
+      "module": 4,
+      "title": "FEUX ET MARQUES DES NAVIRES",
+      "start_page": 54,
+      "end_page": 54
+    },
+    {
+      "module": 4,
+      "title": "FEUX ET MARQUES DES NAVIRES",
+      "start_page": 55,
+      "end_page": 55
+    },
+    {
+      "module": 4,
+      "title": "FEUX ET MARQUES DES NAVIRES",
+      "start_page": 56,
+      "end_page": 56
+    },
+    {
+      "module": 4,
+      "title": "FEUX ET MARQUES DES NAVIRES",
+      "start_page": 57,
+      "end_page": 57
+    },
+    {
+      "module": 4,
+      "title": "FEUX ET MARQUES DES NAVIRES",
+      "start_page": 58,
+      "end_page": 58
+    },
+    {
+      "module": 4,
+      "title": "FEUX ET MARQUES DES NAVIRES",
+      "start_page": 59,
+      "end_page": 59
+    },
+    {
+      "module": 4,
+      "title": "FEUX ET MARQUES DES NAVIRES",
+      "start_page": 60,
+      "end_page": 60
+    },
+    {
+      "module": 4,
+      "title": "FEUX ET MARQUES DES NAVIRES",
+      "start_page": 61,
+      "end_page": 61
+    },
+    {
+      "module": 4,
+      "title": "FEUX ET MARQUES DES NAVIRES",
+      "start_page": 62,
+      "end_page": 62
+    },
+    {
+      "module": 4,
+      "title": "FEUX ET MARQUES DES NAVIRES",
+      "start_page": 63,
+      "end_page": 63
+    },
+    {
+      "module": 4,
+      "title": "FEUX ET MARQUES DES NAVIRES",
+      "start_page": 64,
+      "end_page": 64
+    },
+    {
+      "module": 4,
+      "title": "FEUX ET MARQUES DES NAVIRES",
+      "start_page": 65,
+      "end_page": 65
+    },
+    {
+      "module": 4,
+      "title": "FEUX ET MARQUES DES NAVIRES",
+      "start_page": 66,
+      "end_page": 66
+    },
+    {
+      "module": 4,
+      "title": "FEUX ET MARQUES DES NAVIRES",
+      "start_page": 67,
+      "end_page": 67
+    },
+    {
+      "module": 4,
+      "title": "FEUX ET MARQUES DES NAVIRES",
+      "start_page": 68,
+      "end_page": 68
+    },
+    {
+      "module": 4,
+      "title": "FEUX ET MARQUES DES NAVIRES",
+      "start_page": 69,
+      "end_page": 69
+    },
+    {
+      "module": 4,
+      "title": "FEUX ET MARQUES DES NAVIRES",
+      "start_page": 70,
+      "end_page": 70
+    },
+    {
+      "module": 4,
+      "title": "FEUX ET MARQUES DES NAVIRES",
+      "start_page": 71,
+      "end_page": 71
+    },
+    {
+      "module": 4,
+      "title": "FEUX ET MARQUES DES NAVIRES",
+      "start_page": 72,
+      "end_page": 72
+    },
+    {
+      "module": 4,
+      "title": "FEUX ET MARQUES DES NAVIRES",
+      "start_page": 73,
+      "end_page": 76
+    },
+    {
+      "module": 4,
+      "title": "FEUX ET MARQUES DES NAVIRES",
+      "start_page": 77,
+      "end_page": 77
+    },
+    {
+      "module": 4,
+      "title": "FEUX ET MARQUES DES NAVIRES",
+      "start_page": 78,
+      "end_page": 78
+    },
+    {
+      "module": 4,
+      "title": "FEUX ET MARQUES DES NAVIRES",
+      "start_page": 79,
+      "end_page": 79
+    },
+    {
+      "module": 4,
+      "title": "FEUX ET MARQUES DES NAVIRES",
+      "start_page": 80,
+      "end_page": 80
+    },
+    {
+      "module": 4,
+      "title": "FEUX ET MARQUES DES NAVIRES",
+      "start_page": 81,
+      "end_page": 81
+    },
+    {
+      "module": 4,
+      "title": "FEUX ET MARQUES DES NAVIRES",
+      "start_page": 82,
+      "end_page": 82
+    },
+    {
+      "module": 4,
+      "title": "FEUX ET MARQUES DES NAVIRES",
+      "start_page": 83,
+      "end_page": 83
+    },
+    {
+      "module": 4,
+      "title": "FEUX ET MARQUES DES NAVIRES",
+      "start_page": 84,
+      "end_page": 84
+    },
+    {
+      "module": 4,
+      "title": "FEUX ET MARQUES DES NAVIRES",
+      "start_page": 85,
+      "end_page": 85
+    },
+    {
+      "module": 4,
+      "title": "FEUX ET MARQUES DES NAVIRES",
+      "start_page": 86,
+      "end_page": 86
+    },
+    {
+      "module": 4,
+      "title": "FEUX ET MARQUES DES NAVIRES",
+      "start_page": 87,
+      "end_page": 87
+    },
+    {
+      "module": 4,
+      "title": "FEUX ET MARQUES DES NAVIRES",
+      "start_page": 88,
+      "end_page": 89
+    },
+    {
+      "module": 4,
+      "title": "FEUX ET MARQUES DES NAVIRES",
+      "start_page": 90,
+      "end_page": 90
+    },
+    {
+      "module": 4,
+      "title": "FEUX ET MARQUES DES NAVIRES",
+      "start_page": 91,
+      "end_page": 91
+    },
+    {
+      "module": 4,
+      "title": "FEUX ET MARQUES DES NAVIRES",
+      "start_page": 92,
+      "end_page": 92
+    },
+    {
+      "module": 5,
+      "title": "LA CARTE MARINE",
+      "start_page": 93,
+      "end_page": 93
+    },
+    {
+      "module": 5,
+      "title": "LA CARTE MARINE",
+      "start_page": 94,
+      "end_page": 94
+    },
+    {
+      "module": 5,
+      "title": "LA CARTE MARINE",
+      "start_page": 95,
+      "end_page": 95
+    },
+    {
+      "module": 5,
+      "title": "LA CARTE MARINE",
+      "start_page": 96,
+      "end_page": 96
+    },
+    {
+      "module": 5,
+      "title": "LA CARTE MARINE",
+      "start_page": 97,
+      "end_page": 97
+    },
+    {
+      "module": 5,
+      "title": "LA CARTE MARINE",
+      "start_page": 98,
+      "end_page": 98
+    },
+    {
+      "module": 5,
+      "title": "LA CARTE MARINE",
+      "start_page": 99,
+      "end_page": 99
+    },
+    {
+      "module": 5,
+      "title": "LA CARTE MARINE",
+      "start_page": 100,
+      "end_page": 100
+    },
+    {
+      "module": 5,
+      "title": "LA CARTE MARINE",
+      "start_page": 101,
+      "end_page": 101
+    },
+    {
+      "module": 5,
+      "title": "LA CARTE MARINE",
+      "start_page": 102,
+      "end_page": 102
+    },
+    {
+      "module": 5,
+      "title": "LA CARTE MARINE",
+      "start_page": 103,
+      "end_page": 103
+    },
+    {
+      "module": 5,
+      "title": "LA CARTE MARINE",
+      "start_page": 104,
+      "end_page": 104
+    },
+    {
+      "module": 5,
+      "title": "LA CARTE MARINE",
+      "start_page": 105,
+      "end_page": 105
+    },
+    {
+      "module": 5,
+      "title": "LA CARTE MARINE",
+      "start_page": 106,
+      "end_page": 106
+    },
+    {
+      "module": 5,
+      "title": "LA CARTE MARINE",
+      "start_page": 107,
+      "end_page": 107
+    },
+    {
+      "module": 5,
+      "title": "LA CARTE MARINE",
+      "start_page": 108,
+      "end_page": 108
+    },
+    {
+      "module": 5,
+      "title": "LA CARTE MARINE",
+      "start_page": 109,
+      "end_page": 109
+    },
+    {
+      "module": 5,
+      "title": "LA CARTE MARINE",
+      "start_page": 110,
+      "end_page": 110
+    },
+    {
+      "module": 5,
+      "title": "LA CARTE MARINE",
+      "start_page": 111,
+      "end_page": 111
+    },
+    {
+      "module": 5,
+      "title": "LA CARTE MARINE",
+      "start_page": 112,
+      "end_page": 112
+    },
+    {
+      "module": 5,
+      "title": "LA CARTE MARINE",
+      "start_page": 113,
+      "end_page": 113
+    },
+    {
+      "module": 5,
+      "title": "LA CARTE MARINE",
+      "start_page": 114,
+      "end_page": 114
+    },
+    {
+      "module": 5,
+      "title": "LA CARTE MARINE",
+      "start_page": 115,
+      "end_page": 115
+    },
+    {
+      "module": 5,
+      "title": "LA CARTE MARINE",
+      "start_page": 116,
+      "end_page": 116
+    },
+    {
+      "module": 5,
+      "title": "LA CARTE MARINE",
+      "start_page": 117,
+      "end_page": 117
+    },
+    {
+      "module": 5,
+      "title": "LA CARTE MARINE",
+      "start_page": 118,
+      "end_page": 118
+    },
+    {
+      "module": 5,
+      "title": "LA CARTE MARINE",
+      "start_page": 119,
+      "end_page": 119
+    },
+    {
+      "module": 5,
+      "title": "LA CARTE MARINE",
+      "start_page": 120,
+      "end_page": 120
+    },
+    {
+      "module": 5,
+      "title": "LA CARTE MARINE",
+      "start_page": 121,
+      "end_page": 121
+    },
+    {
+      "module": 5,
+      "title": "LA CARTE MARINE",
+      "start_page": 122,
+      "end_page": 122
+    },
+    {
+      "module": 5,
+      "title": "LA CARTE MARINE",
+      "start_page": 123,
+      "end_page": 123
+    },
+    {
+      "module": 5,
+      "title": "LA CARTE MARINE",
+      "start_page": 124,
+      "end_page": 124
+    },
+    {
+      "module": 6,
+      "title": "IDENTIFICATION DES FEUX",
+      "start_page": 125,
+      "end_page": 125
+    },
+    {
+      "module": 6,
+      "title": "IDENTIFICATION DES FEUX",
+      "start_page": 126,
+      "end_page": 126
+    },
+    {
+      "module": 6,
+      "title": "IDENTIFICATION DES FEUX",
+      "start_page": 127,
+      "end_page": 127
+    },
+    {
+      "module": 6,
+      "title": "IDENTIFICATION DES FEUX",
+      "start_page": 128,
+      "end_page": 128
+    },
+    {
+      "module": 6,
+      "title": "IDENTIFICATION DES FEUX",
+      "start_page": 129,
+      "end_page": 129
+    },
+    {
+      "module": 6,
+      "title": "IDENTIFICATION DES FEUX",
+      "start_page": 130,
+      "end_page": 130
+    },
+    {
+      "module": 6,
+      "title": "IDENTIFICATION DES FEUX",
+      "start_page": 131,
+      "end_page": 131
+    },
+    {
+      "module": 6,
+      "title": "IDENTIFICATION DES FEUX",
+      "start_page": 132,
+      "end_page": 132
+    },
+    {
+      "module": 6,
+      "title": "IDENTIFICATION DES FEUX",
+      "start_page": 133,
+      "end_page": 133
+    },
+    {
+      "module": 6,
+      "title": "IDENTIFICATION DES FEUX",
+      "start_page": 134,
+      "end_page": 134
+    },
+    {
+      "module": 6,
+      "title": "IDENTIFICATION DES FEUX",
+      "start_page": 135,
+      "end_page": 135
+    },
+    {
+      "module": 6,
+      "title": "IDENTIFICATION DES FEUX",
+      "start_page": 136,
+      "end_page": 136
+    },
+    {
+      "module": 6,
+      "title": "IDENTIFICATION DES FEUX",
+      "start_page": 137,
+      "end_page": 137
+    },
+    {
+      "module": 6,
+      "title": "IDENTIFICATION DES FEUX",
+      "start_page": 138,
+      "end_page": 138
+    },
+    {
+      "module": 6,
+      "title": "IDENTIFICATION DES FEUX",
+      "start_page": 139,
+      "end_page": 139
+    },
+    {
+      "module": 16,
+      "title": "LA MÉTÉO - PARTIE 1",
+      "start_page": 140,
+      "end_page": 140
+    },
+    {
+      "module": 16,
+      "title": "LA MÉTÉO - PARTIE 1",
+      "start_page": 141,
+      "end_page": 141
+    },
+    {
+      "module": 16,
+      "title": "LA MÉTÉO - PARTIE 1",
+      "start_page": 142,
+      "end_page": 142
+    },
+    {
+      "module": 16,
+      "title": "LA MÉTÉO - PARTIE 1",
+      "start_page": 143,
+      "end_page": 154
+    },
+    {
+      "module": 16,
+      "title": "LA MÉTÉO - PARTIE 1",
+      "start_page": 155,
+      "end_page": 158
+    },
+    {
+      "module": 16,
+      "title": "LA MÉTÉO - PARTIE 1",
+      "start_page": 159,
+      "end_page": 159
+    },
+    {
+      "module": 16,
+      "title": "LA MÉTÉO - PARTIE 1",
+      "start_page": 160,
+      "end_page": 176
+    },
+    {
+      "module": 16,
+      "title": "LA MÉTÉO - PARTIE 1",
+      "start_page": 177,
+      "end_page": 177
+    },
+    {
+      "module": 16,
+      "title": "LA MÉTÉO - PARTIE 1",
+      "start_page": 178,
+      "end_page": 178
+    },
+    {
+      "module": 16,
+      "title": "LA MÉTÉO - PARTIE 1",
+      "start_page": 179,
+      "end_page": 179
+    },
+    {
+      "module": 16,
+      "title": "LA MÉTÉO - PARTIE 1",
+      "start_page": 180,
+      "end_page": 180
+    },
+    {
+      "module": 16,
+      "title": "LA MÉTÉO - PARTIE 1",
+      "start_page": 181,
+      "end_page": 184
+    },
+    {
+      "module": 16,
+      "title": "LA MÉTÉO - PARTIE 1",
+      "start_page": 185,
+      "end_page": 185
+    },
+    {
+      "module": 16,
+      "title": "LA MÉTÉO - PARTIE 1",
+      "start_page": 186,
+      "end_page": 186
+    },
+    {
+      "module": 16,
+      "title": "LA MÉTÉO - PARTIE 1",
+      "start_page": 187,
+      "end_page": 187
+    },
+    {
+      "module": 16,
+      "title": "LA MÉTÉO - PARTIE 1",
+      "start_page": 188,
+      "end_page": 188
+    },
+    {
+      "module": 16,
+      "title": "LA MÉTÉO - PARTIE 1",
+      "start_page": 189,
+      "end_page": 189
+    },
+    {
+      "module": 16,
+      "title": "LA MÉTÉO - PARTIE 1",
+      "start_page": 190,
+      "end_page": 190
+    },
+    {
+      "module": 16,
+      "title": "LA MÉTÉO - PARTIE 1",
+      "start_page": 191,
+      "end_page": 191
+    },
+    {
+      "module": 17,
+      "title": "LA MÉTÉO - PARTIE 2",
+      "start_page": 192,
+      "end_page": 192
+    },
+    {
+      "module": 17,
+      "title": "LA MÉTÉO - PARTIE 2",
+      "start_page": 193,
+      "end_page": 193
+    },
+    {
+      "module": 17,
+      "title": "LA MÉTÉO - PARTIE 2",
+      "start_page": 194,
+      "end_page": 194
+    },
+    {
+      "module": 17,
+      "title": "LA MÉTÉO - PARTIE 2",
+      "start_page": 195,
+      "end_page": 195
+    },
+    {
+      "module": 17,
+      "title": "LA MÉTÉO - PARTIE 2",
+      "start_page": 196,
+      "end_page": 196
+    },
+    {
+      "module": 17,
+      "title": "LA MÉTÉO - PARTIE 2",
+      "start_page": 197,
+      "end_page": 197
+    },
+    {
+      "module": 17,
+      "title": "LA MÉTÉO - PARTIE 2",
+      "start_page": 198,
+      "end_page": 198
+    },
+    {
+      "module": 17,
+      "title": "LA MÉTÉO - PARTIE 2",
+      "start_page": 199,
+      "end_page": 199
+    },
+    {
+      "module": 17,
+      "title": "LA MÉTÉO - PARTIE 2",
+      "start_page": 200,
+      "end_page": 200
+    },
+    {
+      "module": 17,
+      "title": "LA MÉTÉO - PARTIE 2",
+      "start_page": 201,
+      "end_page": 201
+    },
+    {
+      "module": 17,
+      "title": "LA MÉTÉO - PARTIE 2",
+      "start_page": 202,
+      "end_page": 202
+    },
+    {
+      "module": 17,
+      "title": "LA MÉTÉO - PARTIE 2",
+      "start_page": 203,
+      "end_page": 203
+    },
+    {
+      "module": 17,
+      "title": "LA MÉTÉO - PARTIE 2",
+      "start_page": 204,
+      "end_page": 204
+    },
+    {
+      "module": 17,
+      "title": "LA MÉTÉO - PARTIE 2",
+      "start_page": 205,
+      "end_page": 205
+    },
+    {
+      "module": 17,
+      "title": "LA MÉTÉO - PARTIE 2",
+      "start_page": 206,
+      "end_page": 206
+    },
+    {
+      "module": 17,
+      "title": "LA MÉTÉO - PARTIE 2",
+      "start_page": 207,
+      "end_page": 207
+    },
+    {
+      "module": 17,
+      "title": "LA MÉTÉO - PARTIE 2",
+      "start_page": 208,
+      "end_page": 208
+    },
+    {
+      "module": 17,
+      "title": "LA MÉTÉO - PARTIE 2",
+      "start_page": 209,
+      "end_page": 209
+    },
+    {
+      "module": 17,
+      "title": "LA MÉTÉO - PARTIE 2",
+      "start_page": 210,
+      "end_page": 210
+    },
+    {
+      "module": 17,
+      "title": "LA MÉTÉO - PARTIE 2",
+      "start_page": 211,
+      "end_page": 211
+    },
+    {
+      "module": 17,
+      "title": "LA MÉTÉO - PARTIE 2",
+      "start_page": 212,
+      "end_page": 212
+    },
+    {
+      "module": 17,
+      "title": "LA MÉTÉO - PARTIE 2",
+      "start_page": 213,
+      "end_page": 213
+    },
+    {
+      "module": 17,
+      "title": "LA MÉTÉO - PARTIE 2",
+      "start_page": 214,
+      "end_page": 214
+    },
+    {
+      "module": 17,
+      "title": "LA MÉTÉO - PARTIE 2",
+      "start_page": 215,
+      "end_page": 215
+    },
+    {
+      "module": 17,
+      "title": "LA MÉTÉO - PARTIE 2",
+      "start_page": 216,
+      "end_page": 216
+    },
+    {
+      "module": 17,
+      "title": "LA MÉTÉO - PARTIE 2",
+      "start_page": 217,
+      "end_page": 217
+    },
+    {
+      "module": 17,
+      "title": "LA MÉTÉO - PARTIE 2",
+      "start_page": 218,
+      "end_page": 218
+    },
+    {
+      "module": 17,
+      "title": "LA MÉTÉO - PARTIE 2",
+      "start_page": 219,
+      "end_page": 219
+    },
+    {
+      "module": 17,
+      "title": "LA MÉTÉO - PARTIE 2",
+      "start_page": 220,
+      "end_page": 220
+    },
+    {
+      "module": 17,
+      "title": "LA MÉTÉO - PARTIE 2",
+      "start_page": 221,
+      "end_page": 221
+    },
+    {
+      "module": 17,
+      "title": "LA MÉTÉO - PARTIE 2",
+      "start_page": 222,
+      "end_page": 222
+    },
+    {
+      "module": 17,
+      "title": "LA MÉTÉO - PARTIE 2",
+      "start_page": 223,
+      "end_page": 223
+    },
+    {
+      "module": 17,
+      "title": "LA MÉTÉO - PARTIE 2",
+      "start_page": 224,
+      "end_page": 224
+    },
+    {
+      "module": 17,
+      "title": "LA MÉTÉO - PARTIE 2",
+      "start_page": 225,
+      "end_page": 225
+    },
+    {
+      "module": 17,
+      "title": "LA MÉTÉO - PARTIE 2",
+      "start_page": 226,
+      "end_page": 226
+    },
+    {
+      "module": 17,
+      "title": "LA MÉTÉO - PARTIE 2",
+      "start_page": 227,
+      "end_page": 227
+    },
+    {
+      "module": 17,
+      "title": "LA MÉTÉO - PARTIE 2",
+      "start_page": 228,
+      "end_page": 228
+    },
+    {
+      "module": 17,
+      "title": "LA MÉTÉO - PARTIE 2",
+      "start_page": 229,
+      "end_page": 229
+    },
+    {
+      "module": 17,
+      "title": "LA MÉTÉO - PARTIE 2",
+      "start_page": 230,
+      "end_page": 230
+    },
+    {
+      "module": 17,
+      "title": "LA MÉTÉO - PARTIE 2",
+      "start_page": 231,
+      "end_page": 231
+    },
+    {
+      "module": 19,
+      "title": "LA VHF",
+      "start_page": 232,
+      "end_page": 232
+    },
+    {
+      "module": 19,
+      "title": "LA VHF",
+      "start_page": 233,
+      "end_page": 233
+    },
+    {
+      "module": 19,
+      "title": "LA VHF",
+      "start_page": 234,
+      "end_page": 234
+    },
+    {
+      "module": 19,
+      "title": "LA VHF",
+      "start_page": 235,
+      "end_page": 235
+    },
+    {
+      "module": 19,
+      "title": "LA VHF",
+      "start_page": 236,
+      "end_page": 236
+    },
+    {
+      "module": 19,
+      "title": "LA VHF",
+      "start_page": 237,
+      "end_page": 237
+    },
+    {
+      "module": 19,
+      "title": "LA VHF",
+      "start_page": 238,
+      "end_page": 238
+    },
+    {
+      "module": 19,
+      "title": "LA VHF",
+      "start_page": 239,
+      "end_page": 239
+    },
+    {
+      "module": 19,
+      "title": "LA VHF",
+      "start_page": 240,
+      "end_page": 240
+    },
+    {
+      "module": 19,
+      "title": "LA VHF",
+      "start_page": 241,
+      "end_page": 241
+    },
+    {
+      "module": 19,
+      "title": "LA VHF",
+      "start_page": 242,
+      "end_page": 242
+    },
+    {
+      "module": 19,
+      "title": "LA VHF",
+      "start_page": 243,
+      "end_page": 243
+    },
+    {
+      "module": 19,
+      "title": "LA VHF",
+      "start_page": 244,
+      "end_page": 244
+    },
+    {
+      "module": 19,
+      "title": "LA VHF",
+      "start_page": 245,
+      "end_page": 246
+    }
+  ],
+  "tide_course_pages": [
+    {
+      "page": 1,
+      "text": "Scouts Unitaires de France - Passerelle\nModule 14\n1\nCOURANTS & HAUTEURS D’EAU\nCours de préparartion à\nl’examen théorique du brevet du\nPATRON D’EMBARCATION"
+    },
+    {
+      "page": 2,
+      "text": "Scouts Unitaires de France - Passerelle\nModule 14\n2\nCOURANTS & HAUTEURS D’EAU"
+    },
+    {
+      "page": 3,
+      "text": "Scouts Unitaires de France - Passerelle\nModule 14\n3\nCOURANTS & HAUTEURS D’EAU"
+    },
+    {
+      "page": 4,
+      "text": "Scouts Unitaires de France - Passerelle\nModule 14\n4\nCOURANTS & HAUTEURS D’EAU"
+    },
+    {
+      "page": 5,
+      "text": "Scouts Unitaires de France - Passerelle\nModule 14\n5\nCOURANTS & HAUTEURS D’EAU"
+    },
+    {
+      "page": 6,
+      "text": "Scouts Unitaires de France - Passerelle\nModule 14\n6\nCOURANTS & HAUTEURS D’EAU"
+    },
+    {
+      "page": 7,
+      "text": "Scouts Unitaires de France - Passerelle\nModule 14\n7\nCOURANTS & HAUTEURS D’EAU"
+    },
+    {
+      "page": 8,
+      "text": "Scouts Unitaires de France - Passerelle\nModule 14\n8\nCOURANTS & HAUTEURS D’EAU"
+    },
+    {
+      "page": 9,
+      "text": "Scouts Unitaires de France - Passerelle\nModule 14\n9\nCOURANTS & HAUTEURS D’EAU"
+    },
+    {
+      "page": 10,
+      "text": "Scouts Unitaires de France - Passerelle\nModule 14\n10\nCOURANTS & HAUTEURS D’EAU"
+    },
+    {
+      "page": 11,
+      "text": "Scouts Unitaires de France - Passerelle\nModule 14\n11\nCOURANTS & HAUTEURS D’EAU"
+    },
+    {
+      "page": 12,
+      "text": "Scouts Unitaires de France - Passerelle\nModule 14\n12\nCOURANTS & HAUTEURS D’EAU"
+    },
+    {
+      "page": 13,
+      "text": "Scouts Unitaires de France - Passerelle\nModule 14\n13\nCOURANTS & HAUTEURS D’EAU"
+    },
+    {
+      "page": 14,
+      "text": "Scouts Unitaires de France - Passerelle\nModule 14\n14\nCOURANTS & HAUTEURS D’EAU"
+    },
+    {
+      "page": 15,
+      "text": "Scouts Unitaires de France - Passerelle\nModule 14\n15\nCOURANTS & HAUTEURS D’EAU"
+    },
+    {
+      "page": 16,
+      "text": "Scouts Unitaires de France - Passerelle\nModule 14\n16\nCOURANTS & HAUTEURS D’EAU"
+    },
+    {
+      "page": 17,
+      "text": "Scouts Unitaires de France - Passerelle\nModule 14\n18\nCOURANTS & HAUTEURS D’EAU"
+    },
+    {
+      "page": 18,
+      "text": "Scouts Unitaires de France - Passerelle\nModule 14\n19\nCOURANTS & HAUTEURS D’EAU\nOptionnel"
+    },
+    {
+      "page": 19,
+      "text": "Scouts Unitaires de France - Passerelle\nModule 14\n20\nCOURANTS & HAUTEURS D’EAU\nOptionnel"
+    },
+    {
+      "page": 20,
+      "text": "Scouts Unitaires de France - Passerelle\nModule 14\n21\nCOURANTS & HAUTEURS D’EAU"
+    },
+    {
+      "page": 21,
+      "text": "Scouts Unitaires de France - Passerelle\nModule 14\n22\nCOURANTS & HAUTEURS D’EAU"
+    }
+  ]
+}
