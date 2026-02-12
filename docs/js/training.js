@@ -1,19 +1,45 @@
 // Charger les données d'entraînement
 async function loadTrainingData() {
+    const fallbackSessions = [
+        {
+            id: 'thematic',
+            name: 'Tests thématiques',
+            advice: 'Commence par un thème pour progresser de manière structurée.'
+        },
+        {
+            id: 'random',
+            name: 'Tests aléatoires',
+            advice: 'Excellente option pour simuler un examen réel.'
+        },
+        {
+            id: 'fixed',
+            name: 'Tests fixes examen',
+            advice: 'Travaille des séries proches du format officiel.'
+        },
+        {
+            id: 'random-thematic',
+            name: 'Tests thématiques aléatoires',
+            advice: 'Utile pour consolider un thème déjà étudié.'
+        }
+    ];
+
     try {
-        const response = await fetch('/data/qcm.json');
+        const response = await fetch('data/qcm.json');
         const data = await response.json();
 
         // Initialiser les sessions
-        const sessions = data.trainingSessions || [];
+        const sessions = data.trainingSessions || fallbackSessions;
         setupTrainingCards(sessions);
 
         // Initialiser les handlers pour les boutons d'entraînement
         initializeTrainingButtons();
 
-        return data;
+        return sessions;
     } catch (error) {
         console.error('Erreur lors du chargement des données:', error);
+        setupTrainingCards(fallbackSessions);
+        initializeTrainingButtons();
+        return fallbackSessions;
     }
 }
 
@@ -81,7 +107,9 @@ function showSessionDetails(sessionId, sessions) {
     if (!session) return;
 
     const detailsDiv = document.getElementById('session-details');
-    let html = `<h3>${session.name}</h3>`;
+    let html = `<div class="card"><div class="card-body">
+        <h3 class="h4">${session.name}</h3>
+        ${session.advice ? `<p class="mb-3">${session.advice}</p>` : ''}`;
 
     if (session.topics) {
         html += '<div class="list-group">';
@@ -99,6 +127,7 @@ function showSessionDetails(sessionId, sessions) {
         html += '</div>';
     }
 
+    html += '</div></div>';
     detailsDiv.innerHTML = html;
 }
 
@@ -106,7 +135,7 @@ function showSessionDetails(sessionId, sessions) {
 function startFlashcards(module) {
     console.log('Démarrage des flashcards pour le module:', module);
     // Option 1: Navigate vers une page flashcards
-    window.location.href = `/flashcards.html?module=${encodeURIComponent(module)}`;
+    window.location.href = `flashcards.html?module=${encodeURIComponent(module)}`;
     // Option 2: Ou afficher les flashcards sur la page actuelle
     // loadFlashcardsForModule(module);
 }
@@ -114,18 +143,18 @@ function startFlashcards(module) {
 // Lancer un mini-jeu
 function startGame(gameType) {
     console.log('Lancement du jeu:', gameType);
-    window.location.href = `/game.html?type=${encodeURIComponent(gameType)}`;
+    window.location.href = `game.html?type=${encodeURIComponent(gameType)}`;
 }
 
 // Lancer un examen
 function startExam(examId) {
-    window.location.href = `/examen.html?id=${examId}`;
+    window.location.href = `examens.html?id=${examId}`;
 }
 
 // Lancer le calculateur
 function startCalculator(calculatorType) {
     console.log('Lancement du calculateur:', calculatorType);
-    window.location.href = `/calculator.html?type=${encodeURIComponent(calculatorType)}`;
+    window.location.href = `calculator.html?type=${encodeURIComponent(calculatorType)}`;
 }
 
 // Initialiser quand la page charge

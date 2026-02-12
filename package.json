@@ -5,7 +5,7 @@
   "main": "build.js",
   "scripts": {
     "build": "node build.js",
-    "start": "npm run build && http-server public -p 8000 -o"
+    "start": "npm run build && http-server docs -p 8000 -o"
   },
   "keywords": ["pe", "patron", "embarcation", "scout", "navigation"],
   "author": "Philibert Pap",

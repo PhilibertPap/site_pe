@@ -167,10 +167,16 @@ async function build() {
         // ========== FONCTION UTILITAIRE POUR GÉNÉRER UNE PAGE ==========
         async function generatePage(filename, template, data) {
             const content = mustache.render(template, data);
+            const page = filename.replace('.html', '');
             const html = mustache.render(layoutTemplate, {
                 content,
                 title: data.title || 'PE',
-                page: filename.replace('.html', '') // Pour styliser la page active
+                page, // Pour styliser la page active
+                isIndex: page === 'index',
+                isParcours: page === 'parcours',
+                isEntrainement: page === 'entrainement',
+                isExamens: page === 'examens',
+                isCarnet: page === 'carnet'
             });
             await fs.writeFile(path.join(outputDir, filename), html);
             console.log(`✅ ${filename}`);

@@ -17,11 +17,21 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="index.html">Dashboard</a></li>
-                    <li class="nav-item"><a class="nav-link" href="parcours.html">Parcours</a></li>
-                    <li class="nav-item"><a class="nav-link" href="entrainement.html">Entraînement</a></li>
-                    <li class="nav-item"><a class="nav-link" href="examens.html">Examens</a></li>
-                    <li class="nav-item"><a class="nav-link" href="carnet.html">Carnet</a></li>
+                    <li class="nav-item">
+                        <a class="nav-link{{#isIndex}} active{{/isIndex}}" href="index.html" {{#isIndex}}aria-current="page"{{/isIndex}}>Dashboard</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link{{#isParcours}} active{{/isParcours}}" href="parcours.html" {{#isParcours}}aria-current="page"{{/isParcours}}>Parcours</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link{{#isEntrainement}} active{{/isEntrainement}}" href="entrainement.html" {{#isEntrainement}}aria-current="page"{{/isEntrainement}}>Entraînement</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link{{#isExamens}} active{{/isExamens}}" href="examens.html" {{#isExamens}}aria-current="page"{{/isExamens}}>Examens</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link{{#isCarnet}} active{{/isCarnet}}" href="carnet.html" {{#isCarnet}}aria-current="page"{{/isCarnet}}>Carnet</a>
+                    </li>
                 </ul>
             </div>
         </div>
