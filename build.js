@@ -1,6 +1,7 @@
 const fs = require('fs-extra');
 const path = require('path');
 const mustache = require('mustache');
+const qcmEngine = require('./src/js/qcm-engine.js');
 
 // ========== UTILITAIRES ==========
 async function loadJSON(filePath, defaultValue = {}) {
@@ -12,47 +13,30 @@ async function loadJSON(filePath, defaultValue = {}) {
     }
 }
 
+function createSeededRng(seed) {
+    let value = seed >>> 0;
+    return function seededRandom() {
+        value = (1664525 * value + 1013904223) % 4294967296;
+        return value / 4294967296;
+    };
+}
+
 // ========== TRANSFORMATION DES DONNÉES ==========
 
 /**
  * Prépare les données d'entraînement pour le template
  * Groupe les questions par catégorie et prépare les sessions
  */
-function prepareTrainingData(qcmData, siteData) {
-    const trainingSessions = [
-        {
-            id: 'thematic',
-            name: 'Tests Thématiques',
-            description: 'Maîtrisez chaque sujet progressivement',
-            icon: '📚',
-            type: 'learning',
-            advice: 'Idéal pour débuter. Apprentissage logique et progressif.'
-        },
-        {
-            id: 'random',
-            name: 'Tests Aléatoires',
-            description: 'Testez-vous comme à l\'examen',
-            icon: '🎲',
-            type: 'simulation',
-            advice: 'Pour progresser après les tests thématiques.'
-        },
-        {
-            id: 'fixed',
-            name: 'Tests Fixes Examen',
-            description: '6 séries d\'examen officielles',
-            icon: '📋',
-            type: 'exam',
-            advice: 'Simulations d\'examen blanc.'
-        },
-        {
-            id: 'random-thematic',
-            name: 'Tests Thématiques Aléatoires',
-            description: 'Variations aléatoires par thème',
-            icon: '🔄',
-            type: 'revision',
-            advice: 'Pour renforcer vos connaissances.'
-        }
+function prepareTrainingData(qcmData, trainingSessionsData = {}) {
+    const fallbackSessions = [
+        { id: 'thematic', name: 'Tests Thematiques', description: 'Maitrisez chaque sujet progressivement', icon: '📚', type: 'learning', advice: 'Ideal pour debuter.' },
+        { id: 'random', name: 'Tests Aleatoires', description: 'Testez-vous comme a l examen', icon: '🎲', type: 'simulation', advice: 'Bonne simulation.' },
+        { id: 'fixed', name: 'Tests Fixes Examen', description: 'Series proches de l examen', icon: '📋', type: 'exam', advice: 'Conditions realistes.' },
+        { id: 'random-thematic', name: 'Tests Thematiques Aleatoires', description: 'Variations aleatoires par theme', icon: '🔄', type: 'revision', advice: 'Consolider les acquis.' }
     ];
+    const trainingSessions = Array.isArray(trainingSessionsData.trainingSessions) && trainingSessionsData.trainingSessions.length
+        ? trainingSessionsData.trainingSessions
+        : fallbackSessions;
 
     // Compter les questions par catégorie
     const categories = qcmData.categories || [];
@@ -133,15 +117,34 @@ async function build() {
         });
 
         const configData = await loadJSON(path.join(dataDir, 'app-config.json'), {});
+        const trainingSessionsData = await loadJSON(path.join(dataDir, 'training-sessions.json'), {
+            trainingSessions: []
+        });
 
         // ========== TRANSFORMATION DES DONNÉES ==========
         console.log("🔄 Transformation des données...");
 
         // Enrichir les données QCM
         const enrichedQCMData = enrichQCMData(qcmData);
+        const qcmPool = qcmEngine.buildQuestionPool(enrichedQCMData);
+        const qcmErrors = qcmEngine.validatePool(qcmPool);
+        if (qcmErrors.length) {
+            throw new Error(`QCM invalide: ${qcmErrors[0]}`);
+        }
 
         // Préparer les données d'entraînement
-        const trainingData = prepareTrainingData(enrichedQCMData, siteData);
+        const trainingData = prepareTrainingData(enrichedQCMData, trainingSessionsData);
+        const examSeriesData = {
+            generatedAt: new Date().toISOString(),
+            algorithm: 'balanced_under_constraints_v1',
+            seed: 20260212,
+            totalQuestionsInPool: qcmPool.length,
+            series: qcmEngine.generateExamSeries(qcmPool, {
+                count: 30,
+                seriesCount: 6,
+                rng: createSeededRng(20260212)
+            })
+        };
 
         // ========== CHARGEMENT DES TEMPLATES ==========
         console.log("📄 Chargement templates...");
@@ -207,7 +210,8 @@ async function build() {
             // Ajouter les données QCM pour les templates
             categories: enrichedQCMData.categories,
             trainingSessions: trainingData.trainingSessions,
-            statistics: trainingData.statistics
+            statistics: trainingData.statistics,
+            trainingSessionsJson: JSON.stringify(trainingData.trainingSessions)
         };
         await generatePage('entrainement.html', entrainementTemplate, entrainementData);
 
@@ -244,12 +248,14 @@ async function build() {
         // Copier les données pour un accès dynamique côté client
         await fs.ensureDir(path.join(outputDir, 'data'));
         await fs.copy(dataDir, path.join(outputDir, 'data'));
+        await fs.writeJson(path.join(outputDir, 'data', 'exam-series.json'), examSeriesData, { spaces: 2 });
 
         console.log("✅ Build terminé avec succès!");
         console.log(`📊 Statistiques:`);
         console.log(`   - Total QCM: ${trainingData.statistics.totalQCM}`);
         console.log(`   - Catégories: ${trainingData.statistics.themes}`);
         console.log(`   - Types de tests: ${trainingData.statistics.typeOfTests}`);
+        console.log(`   - Séries examen générées: ${examSeriesData.series.length}`);
 
     } catch (error) {
         console.error("❌ Erreur build:", error.message);

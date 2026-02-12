@@ -4,6 +4,8 @@ Site d'entraînement à l'examen du PE pour les scouts du groupe NDC.
 ## Build et lancement
 - `npm run build` genere le site statique dans `docs/`.
 - `npm start` build puis sert `docs/` sur le port 8000.
+- `npm test` execute les tests d'integrite des donnees et du moteur QCM.
+- `npm run generate:series` genere `src/data/exam-series.json` (6 series de 30 questions).
 
 ## Structure actuelle (5 pages)
 - `docs/index.html`

@@ -67,7 +67,7 @@
       <div class="card h-100 kpi-card">
         <div class="card-body">
           <p class="kpi-label">Catégories</p>
-          <p class="kpi-value mb-0">6</p>
+          <p class="kpi-value mb-0">3</p>
         </div>
       </div>
     </div>
@@ -101,7 +101,7 @@
             <span class="badge text-bg-light">learning</span>
           </div>
           <h3 class="h5">Tests Thématiques</h3>
-          <p class="card-text mb-0">Maîtrisez chaque sujet progressivement</p>
+          <p class="card-text mb-0">Maitrisez chaque sujet progressivement</p>
         </div>
       </article>
     </div>
@@ -112,8 +112,8 @@
             <span class="icon-badge">🎲</span>
             <span class="badge text-bg-light">simulation</span>
           </div>
-          <h3 class="h5">Tests Aléatoires</h3>
-          <p class="card-text mb-0">Testez-vous comme à l&#39;examen</p>
+          <h3 class="h5">Tests Aleatoires</h3>
+          <p class="card-text mb-0">Testez-vous comme a l&#39;examen</p>
         </div>
       </article>
     </div>
@@ -125,7 +125,7 @@
             <span class="badge text-bg-light">exam</span>
           </div>
           <h3 class="h5">Tests Fixes Examen</h3>
-          <p class="card-text mb-0">6 séries d&#39;examen officielles</p>
+          <p class="card-text mb-0">Series proches d&#39;un examen officiel</p>
         </div>
       </article>
     </div>
@@ -136,8 +136,8 @@
             <span class="icon-badge">🔄</span>
             <span class="badge text-bg-light">revision</span>
           </div>
-          <h3 class="h5">Tests Thématiques Aléatoires</h3>
-          <p class="card-text mb-0">Variations aléatoires par thème</p>
+          <h3 class="h5">Tests Thematiques Aleatoires</h3>
+          <p class="card-text mb-0">Variations aleatoires par theme</p>
         </div>
       </article>
     </div>
@@ -151,6 +151,7 @@
   <p class="mb-0">Si tu débutes, commence par les <strong>tests thématiques</strong> puis bascule sur les séries aléatoires.</p>
 </section>
 
+<script id="training-sessions-data" type="application/json">[{"id":"thematic","name":"Tests Thématiques","description":"Maitrisez chaque sujet progressivement","icon":"📚","type":"learning","advice":"Ideal pour debuter. Apprentissage logique et progressif."},{"id":"random","name":"Tests Aleatoires","description":"Testez-vous comme a l'examen","icon":"🎲","type":"simulation","advice":"Pour progresser apres les tests thematiques."},{"id":"fixed","name":"Tests Fixes Examen","description":"Series proches d'un examen officiel","icon":"📋","type":"exam","advice":"Travaillez en conditions quasi reelles."},{"id":"random-thematic","name":"Tests Thematiques Aleatoires","description":"Variations aleatoires par theme","icon":"🔄","type":"revision","advice":"Utile pour renforcer les notions fragiles."}]</script>
 <script src="js/training.js"></script>
 
     </main>
@@ -163,6 +164,7 @@
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/qcm-engine.js"></script>
     <script src="js/app.js"></script>
 </body>
 </html>

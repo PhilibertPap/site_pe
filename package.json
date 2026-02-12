@@ -5,7 +5,9 @@
   "main": "build.js",
   "scripts": {
     "build": "node build.js",
-    "start": "npm run build && http-server docs -p 8000 -o"
+    "start": "npm run build && http-server docs -p 8000 -o",
+    "test": "node --test tests",
+    "generate:series": "node scripts/generate-exam-series.js"
   },
   "keywords": ["pe", "patron", "embarcation", "scout", "navigation"],
   "author": "Philibert Pap",

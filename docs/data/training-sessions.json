@@ -1,0 +1,36 @@
+{
+  "trainingSessions": [
+    {
+      "id": "thematic",
+      "name": "Tests Thématiques",
+      "description": "Maitrisez chaque sujet progressivement",
+      "icon": "📚",
+      "type": "learning",
+      "advice": "Ideal pour debuter. Apprentissage logique et progressif."
+    },
+    {
+      "id": "random",
+      "name": "Tests Aleatoires",
+      "description": "Testez-vous comme a l'examen",
+      "icon": "🎲",
+      "type": "simulation",
+      "advice": "Pour progresser apres les tests thematiques."
+    },
+    {
+      "id": "fixed",
+      "name": "Tests Fixes Examen",
+      "description": "Series proches d'un examen officiel",
+      "icon": "📋",
+      "type": "exam",
+      "advice": "Travaillez en conditions quasi reelles."
+    },
+    {
+      "id": "random-thematic",
+      "name": "Tests Thematiques Aleatoires",
+      "description": "Variations aleatoires par theme",
+      "icon": "🔄",
+      "type": "revision",
+      "advice": "Utile pour renforcer les notions fragiles."
+    }
+  ]
+}

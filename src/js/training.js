@@ -24,17 +24,17 @@ async function loadTrainingData() {
     ];
 
     try {
-        const response = await fetch('data/qcm.json');
-        const data = await response.json();
-
-        // Initialiser les sessions
-        const sessions = data.trainingSessions || fallbackSessions;
-        setupTrainingCards(sessions);
+        const dataNode = document.getElementById('training-sessions-data');
+        const sessions = dataNode
+            ? JSON.parse(dataNode.textContent || '[]')
+            : fallbackSessions;
+        const safeSessions = Array.isArray(sessions) && sessions.length ? sessions : fallbackSessions;
+        setupTrainingCards(safeSessions);
 
         // Initialiser les handlers pour les boutons d'entraînement
         initializeTrainingButtons();
 
-        return sessions;
+        return safeSessions;
     } catch (error) {
         console.error('Erreur lors du chargement des données:', error);
         setupTrainingCards(fallbackSessions);

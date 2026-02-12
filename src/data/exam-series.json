@@ -1,0 +1,5086 @@
+{
+  "generatedAt": "2026-02-12T22:17:56.485Z",
+  "algorithm": "balanced_under_constraints_v1",
+  "seed": 20260212,
+  "totalQuestionsInPool": 31,
+  "series": [
+    {
+      "id": 1,
+      "name": "Serie 1",
+      "questionIds": [
+        "balisage:29",
+        "balisage:12",
+        "balisage:5",
+        "balisage:23",
+        "balisage:10",
+        "balisage:9",
+        "balisage:22",
+        "balisage:15",
+        "balisage:28",
+        "balisage:17",
+        "balisage:24",
+        "balisage:21",
+        "balisage:8",
+        "balisage:6",
+        "balisage:11",
+        "regles_barre:1",
+        "balisage:26",
+        "balisage:19",
+        "balisage:1",
+        "balisage:25",
+        "balisage:16",
+        "balisage:3",
+        "balisage:20",
+        "balisage:14",
+        "balisage:13",
+        "balisage:27",
+        "balisage:2",
+        "signaux:1",
+        "balisage:18",
+        "balisage:7"
+      ],
+      "questions": [
+        {
+          "id": "balisage:29",
+          "sourceId": 29,
+          "categoryId": "balisage",
+          "categoryName": "Balisage",
+          "moduleId": 1,
+          "text": "Ce feu est :",
+          "image": null,
+          "difficulty": 1,
+          "answers": [
+            {
+              "id": "a",
+              "text": "à éclat.",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "isophase.",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "text": "à occultation.",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "balisage:12",
+          "sourceId": 12,
+          "categoryId": "balisage",
+          "categoryName": "Balisage",
+          "moduleId": 1,
+          "text": "En entrant au port, cette marque représente :",
+          "image": "https://www.loisirs-nautic.fr/images/Q10.png",
+          "difficulty": 1,
+          "answers": [
+            {
+              "id": "a",
+              "text": "un chenal préféré à tribord.",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "un chenal préféré à bâbord.",
+              "correct": true
+            }
+          ]
+        },
+        {
+          "id": "balisage:5",
+          "sourceId": 5,
+          "categoryId": "balisage",
+          "categoryName": "Balisage",
+          "moduleId": 1,
+          "text": "Cette marque indique :",
+          "image": "https://www.loisirs-nautic.fr/images/Q4.png",
+          "difficulty": 2,
+          "answers": [
+            {
+              "id": "a",
+              "text": "un danger isolé.",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "des eaux saines.",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "text": "une cardinale nord.",
+              "correct": false
+            },
+            {
+              "id": "d",
+              "text": "une marque spéciale.",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "balisage:23",
+          "sourceId": 23,
+          "categoryId": "balisage",
+          "categoryName": "Balisage",
+          "moduleId": 1,
+          "text": "Cette bouée indique :",
+          "image": "https://www.loisirs-nautic.fr/images/Q19.png",
+          "difficulty": 1,
+          "answers": [
+            {
+              "id": "a",
+              "text": "le côté tribord d'un chenal de plage.",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "text": "des eaux saines.",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "text": "un danger isolé.",
+              "correct": false
+            },
+            {
+              "id": "d",
+              "text": "un danger nouveau.",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "balisage:10",
+          "sourceId": 10,
+          "categoryId": "balisage",
+          "categoryName": "Balisage",
+          "moduleId": 1,
+          "text": "À l'approche de cette marque :",
+          "image": "https://www.loisirs-nautic.fr/images/Q8.png",
+          "difficulty": 2,
+          "answers": [
+            {
+              "id": "a",
+              "text": "je m'écarte largement.",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "je passe obligatoirement au nord.",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "text": "je passe obligatoirement au sud.",
+              "correct": false
+            },
+            {
+              "id": "d",
+              "text": "je continue, je peux passer au plus près.",
+              "correct": true
+            }
+          ]
+        },
+        {
+          "id": "balisage:9",
+          "sourceId": 9,
+          "categoryId": "balisage",
+          "categoryName": "Balisage",
+          "moduleId": 1,
+          "text": "Cette bouée délimite :",
+          "image": "https://www.loisirs-nautic.fr/images/Q7.png",
+          "difficulty": 2,
+          "answers": [
+            {
+              "id": "a",
+              "text": "le côté tribord d'un chenal traversier.",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "text": "le côté bâbord d'un chenal traversier.",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "text": "la bande des 300 m.",
+              "correct": false
+            },
+            {
+              "id": "d",
+              "text": "une zone réservée à la baignade.",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "balisage:22",
+          "sourceId": 22,
+          "categoryId": "balisage",
+          "categoryName": "Balisage",
+          "moduleId": 1,
+          "text": "Ces 2 bouées signalent :",
+          "image": "https://www.loisirs-nautic.fr/images/Q18.png",
+          "difficulty": 2,
+          "answers": [
+            {
+              "id": "a",
+              "text": "l'entrée d'un chenal obligatoire.",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "une zone de pêche.",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "text": "un danger pas encore porté sur les cartes.",
+              "correct": true
+            }
+          ]
+        },
+        {
+          "id": "balisage:15",
+          "sourceId": 15,
+          "categoryId": "balisage",
+          "categoryName": "Balisage",
+          "moduleId": 1,
+          "text": "La nuit, cap au nord, je vois 3 scintillements :",
+          "image": "https://www.loisirs-nautic.fr/images/nc_7.png",
+          "difficulty": 2,
+          "answers": [
+            {
+              "id": "a",
+              "text": "Je laisse sur mon tribord.",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "Je laisse sur mon bâbord.",
+              "correct": true
+            }
+          ]
+        },
+        {
+          "id": "balisage:28",
+          "sourceId": 28,
+          "categoryId": "balisage",
+          "categoryName": "Balisage",
+          "moduleId": 1,
+          "text": "Ce feu est :",
+          "image": "https://www.loisirs-nautic.fr/images/Q23.GIF",
+          "difficulty": 1,
+          "answers": [
+            {
+              "id": "a",
+              "text": "à éclat.",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "isophase.",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "text": "à occultation.",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "balisage:17",
+          "sourceId": 17,
+          "categoryId": "balisage",
+          "categoryName": "Balisage",
+          "moduleId": 1,
+          "text": "Faisant route au 260 :",
+          "image": "https://www.loisirs-nautic.fr/images/Q13.GIF",
+          "difficulty": 3,
+          "answers": [
+            {
+              "id": "a",
+              "text": "j'abats sur tribord.",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "j'abats sur bâbord.",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "text": "Je passe de n'importe quel côté.",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "balisage:24",
+          "sourceId": 24,
+          "categoryId": "balisage",
+          "categoryName": "Balisage",
+          "moduleId": 1,
+          "text": "Cap au sud :",
+          "image": "https://www.loisirs-nautic.fr/images/Q20.GIF",
+          "difficulty": 2,
+          "answers": [
+            {
+              "id": "a",
+              "text": "je laisse à tribord.",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "je laisse à bâbord.",
+              "correct": true
+            }
+          ]
+        },
+        {
+          "id": "balisage:21",
+          "sourceId": 21,
+          "categoryId": "balisage",
+          "categoryName": "Balisage",
+          "moduleId": 1,
+          "text": "Cette bouée est une marque de :",
+          "image": "https://www.loisirs-nautic.fr/images/Q17.png",
+          "difficulty": 2,
+          "answers": [
+            {
+              "id": "a",
+              "text": "chenal préféré à tribord.",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "chenal préféré à bâbord.",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "text": "danger isolé.",
+              "correct": false
+            },
+            {
+              "id": "d",
+              "text": "danger grave.",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "balisage:8",
+          "sourceId": 8,
+          "categoryId": "balisage",
+          "categoryName": "Balisage",
+          "moduleId": 1,
+          "text": "En sortant du port :",
+          "image": "https://www.loisirs-nautic.fr/images/Q6.png",
+          "difficulty": 1,
+          "answers": [
+            {
+              "id": "a",
+              "text": "je passe à tribord.",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "text": "je passe à bâbord.",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "balisage:6",
+          "sourceId": 6,
+          "categoryId": "balisage",
+          "categoryName": "Balisage",
+          "moduleId": 1,
+          "text": "Sur le navire rouge, cap à l'est,",
+          "image": "https://www.loisirs-nautic.fr/images/Q5.png",
+          "difficulty": 3,
+          "answers": [
+            {
+              "id": "a",
+              "text": "je viens à droite.",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "Je viens à gauche.",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "text": "je viens indifféremment à droite ou à gauche.",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "balisage:11",
+          "sourceId": 11,
+          "categoryId": "balisage",
+          "categoryName": "Balisage",
+          "moduleId": 1,
+          "text": "Ce balisage représente :",
+          "image": "https://www.loisirs-nautic.fr/images/Q9.png",
+          "difficulty": 2,
+          "answers": [
+            {
+              "id": "a",
+              "text": "le côté bâbord d'un chenal de plage.",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "une marque spéciale.",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "text": "une cardinale Est.",
+              "correct": false
+            },
+            {
+              "id": "d",
+              "text": "un danger nouveau.",
+              "correct": true
+            }
+          ]
+        },
+        {
+          "id": "regles_barre:1",
+          "sourceId": 1,
+          "categoryId": "regles_barre",
+          "categoryName": "Règles de barre",
+          "moduleId": 3,
+          "text": "Cap au 195 :",
+          "image": null,
+          "difficulty": 3,
+          "answers": [
+            {
+              "id": "a",
+              "text": "je vais à droite.",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "je vais à gauche.",
+              "correct": true
+            }
+          ]
+        },
+        {
+          "id": "balisage:26",
+          "sourceId": 26,
+          "categoryId": "balisage",
+          "categoryName": "Balisage",
+          "moduleId": 1,
+          "text": "Ce feu est :",
+          "image": "https://www.loisirs-nautic.fr/images/Q21.GIF",
+          "difficulty": 1,
+          "answers": [
+            {
+              "id": "a",
+              "text": "à éclat.",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "text": "isophase.",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "text": "à occultation.",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "balisage:19",
+          "sourceId": 19,
+          "categoryId": "balisage",
+          "categoryName": "Balisage",
+          "moduleId": 1,
+          "text": "Venant du Sud, je vois cette bouée dont les voyants sont absents :",
+          "image": "https://www.loisirs-nautic.fr/images/Q15.png",
+          "difficulty": 3,
+          "answers": [
+            {
+              "id": "a",
+              "text": "Je viens à droite.",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "text": "Je viens à gauche.",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "balisage:1",
+          "sourceId": 1,
+          "categoryId": "balisage",
+          "categoryName": "Balisage",
+          "moduleId": 1,
+          "text": "En entrant au port,",
+          "image": "https://www.loisirs-nautic.fr/images/Q1.png",
+          "difficulty": 2,
+          "answers": [
+            {
+              "id": "a",
+              "text": "je laisse à tribord.",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "je laisse à bâbord.",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "text": "je laisse indifféremment à tribord ou à bâbord.",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "balisage:25",
+          "sourceId": 25,
+          "categoryId": "balisage",
+          "categoryName": "Balisage",
+          "moduleId": 1,
+          "text": "Cette balise est :",
+          "image": "https://www.loisirs-nautic.fr/images/Q30.png",
+          "difficulty": 2,
+          "answers": [
+            {
+              "id": "a",
+              "text": "Une bouée d'épave.",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "Un danger isolé.",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "text": "Une marque spéciale.",
+              "correct": false
+            },
+            {
+              "id": "d",
+              "text": "Un croisement de routes maritimes.",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "balisage:16",
+          "sourceId": 16,
+          "categoryId": "balisage",
+          "categoryName": "Balisage",
+          "moduleId": 1,
+          "text": "Quel est votre sens de navigation ?",
+          "image": "https://www.loisirs-nautic.fr/images/q665.png",
+          "difficulty": 1,
+          "answers": [
+            {
+              "id": "a",
+              "text": "J'entre au port.",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "text": "Je sors du port.",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "balisage:3",
+          "sourceId": 3,
+          "categoryId": "balisage",
+          "categoryName": "Balisage",
+          "moduleId": 1,
+          "text": "Cap au 195 :",
+          "image": "https://www.loisirs-nautic.fr/images/nc_12.png",
+          "difficulty": 3,
+          "answers": [
+            {
+              "id": "a",
+              "text": "je vais à droite.",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "je vais à gauche.",
+              "correct": true
+            }
+          ]
+        },
+        {
+          "id": "balisage:20",
+          "sourceId": 20,
+          "categoryId": "balisage",
+          "categoryName": "Balisage",
+          "moduleId": 1,
+          "text": "La bouée émettant ce signal représente :",
+          "image": "https://www.loisirs-nautic.fr/images/Q16.GIF",
+          "difficulty": 1,
+          "answers": [
+            {
+              "id": "a",
+              "text": "l'entrée du port.",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "une zone de pêche.",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "text": "une bouée cardinale Est.",
+              "correct": false
+            },
+            {
+              "id": "d",
+              "text": "un danger isolé.",
+              "correct": true
+            }
+          ]
+        },
+        {
+          "id": "balisage:14",
+          "sourceId": 14,
+          "categoryId": "balisage",
+          "categoryName": "Balisage",
+          "moduleId": 1,
+          "text": "Ce navire se dirige :",
+          "image": "https://www.loisirs-nautic.fr/images/Q12.png",
+          "difficulty": 1,
+          "answers": [
+            {
+              "id": "a",
+              "text": "vers le port.",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "vers le large.",
+              "correct": true
+            }
+          ]
+        },
+        {
+          "id": "balisage:13",
+          "sourceId": 13,
+          "categoryId": "balisage",
+          "categoryName": "Balisage",
+          "moduleId": 1,
+          "text": "Que signifie ce panneau ?",
+          "image": "https://www.loisirs-nautic.fr/images/Q11.png",
+          "difficulty": 2,
+          "answers": [
+            {
+              "id": "a",
+              "text": "Attention aux hélices !",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "Navigation interdite aux engins à moteur.",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "text": "Navigation autorisée aux engins à moteur.",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "balisage:27",
+          "sourceId": 27,
+          "categoryId": "balisage",
+          "categoryName": "Balisage",
+          "moduleId": 1,
+          "text": "Ce feu est :",
+          "image": "https://www.loisirs-nautic.fr/images/Q22.GIF",
+          "difficulty": 1,
+          "answers": [
+            {
+              "id": "a",
+              "text": "à éclat.",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "isophase.",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "text": "à occultation.",
+              "correct": true
+            }
+          ]
+        },
+        {
+          "id": "balisage:2",
+          "sourceId": 2,
+          "categoryId": "balisage",
+          "categoryName": "Balisage",
+          "moduleId": 1,
+          "text": "Ces petites bouées jaunes rapprochées indiquent :",
+          "image": "https://www.loisirs-nautic.fr/images/Q29.png",
+          "difficulty": 1,
+          "answers": [
+            {
+              "id": "a",
+              "text": "un danger isolé.",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "un danger nouveau.",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "text": "une cardinale sud.",
+              "correct": false
+            },
+            {
+              "id": "d",
+              "text": "une zone réservée à la baignade.",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "signaux:1",
+          "sourceId": 1,
+          "categoryId": "signaux",
+          "categoryName": "Signaux",
+          "moduleId": 2,
+          "text": "Que signifie ce panneau ?",
+          "image": null,
+          "difficulty": 2,
+          "answers": [
+            {
+              "id": "a",
+              "text": "Attention aux hélices !",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "Navigation interdite aux engins à moteur.",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "text": "Navigation autorisée aux engins à moteur.",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "balisage:18",
+          "sourceId": 18,
+          "categoryId": "balisage",
+          "categoryName": "Balisage",
+          "moduleId": 1,
+          "text": "En entrant au port du Palais (Morbihan 56, France) :",
+          "image": "https://www.loisirs-nautic.fr/images/Q14.GIF",
+          "difficulty": 3,
+          "answers": [
+            {
+              "id": "a",
+              "text": "je viens à droite.",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "Je viens à gauche.",
+              "correct": true
+            }
+          ]
+        },
+        {
+          "id": "balisage:7",
+          "sourceId": 7,
+          "categoryId": "balisage",
+          "categoryName": "Balisage",
+          "moduleId": 1,
+          "text": "Cap au 345 :",
+          "image": "https://www.loisirs-nautic.fr/images/nc_6.png",
+          "difficulty": 2,
+          "answers": [
+            {
+              "id": "a",
+              "text": "Je laisse à ma droite.",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "text": "Je laisse à ma gauche.",
+              "correct": false
+            }
+          ]
+        }
+      ],
+      "distributionByModule": {
+        "1": 28,
+        "2": 1,
+        "3": 1
+      }
+    },
+    {
+      "id": 2,
+      "name": "Serie 2",
+      "questionIds": [
+        "balisage:25",
+        "balisage:24",
+        "balisage:21",
+        "balisage:11",
+        "balisage:17",
+        "balisage:20",
+        "signaux:1",
+        "balisage:5",
+        "balisage:7",
+        "balisage:16",
+        "balisage:9",
+        "balisage:23",
+        "balisage:26",
+        "balisage:14",
+        "regles_barre:1",
+        "balisage:28",
+        "balisage:29",
+        "balisage:4",
+        "balisage:1",
+        "balisage:10",
+        "balisage:22",
+        "balisage:8",
+        "balisage:6",
+        "balisage:3",
+        "balisage:13",
+        "balisage:19",
+        "balisage:2",
+        "balisage:15",
+        "balisage:27",
+        "balisage:12"
+      ],
+      "questions": [
+        {
+          "id": "balisage:25",
+          "sourceId": 25,
+          "categoryId": "balisage",
+          "categoryName": "Balisage",
+          "moduleId": 1,
+          "text": "Cette balise est :",
+          "image": "https://www.loisirs-nautic.fr/images/Q30.png",
+          "difficulty": 2,
+          "answers": [
+            {
+              "id": "a",
+              "text": "Une bouée d'épave.",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "Un danger isolé.",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "text": "Une marque spéciale.",
+              "correct": false
+            },
+            {
+              "id": "d",
+              "text": "Un croisement de routes maritimes.",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "balisage:24",
+          "sourceId": 24,
+          "categoryId": "balisage",
+          "categoryName": "Balisage",
+          "moduleId": 1,
+          "text": "Cap au sud :",
+          "image": "https://www.loisirs-nautic.fr/images/Q20.GIF",
+          "difficulty": 2,
+          "answers": [
+            {
+              "id": "a",
+              "text": "je laisse à tribord.",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "je laisse à bâbord.",
+              "correct": true
+            }
+          ]
+        },
+        {
+          "id": "balisage:21",
+          "sourceId": 21,
+          "categoryId": "balisage",
+          "categoryName": "Balisage",
+          "moduleId": 1,
+          "text": "Cette bouée est une marque de :",
+          "image": "https://www.loisirs-nautic.fr/images/Q17.png",
+          "difficulty": 2,
+          "answers": [
+            {
+              "id": "a",
+              "text": "chenal préféré à tribord.",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "chenal préféré à bâbord.",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "text": "danger isolé.",
+              "correct": false
+            },
+            {
+              "id": "d",
+              "text": "danger grave.",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "balisage:11",
+          "sourceId": 11,
+          "categoryId": "balisage",
+          "categoryName": "Balisage",
+          "moduleId": 1,
+          "text": "Ce balisage représente :",
+          "image": "https://www.loisirs-nautic.fr/images/Q9.png",
+          "difficulty": 2,
+          "answers": [
+            {
+              "id": "a",
+              "text": "le côté bâbord d'un chenal de plage.",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "une marque spéciale.",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "text": "une cardinale Est.",
+              "correct": false
+            },
+            {
+              "id": "d",
+              "text": "un danger nouveau.",
+              "correct": true
+            }
+          ]
+        },
+        {
+          "id": "balisage:17",
+          "sourceId": 17,
+          "categoryId": "balisage",
+          "categoryName": "Balisage",
+          "moduleId": 1,
+          "text": "Faisant route au 260 :",
+          "image": "https://www.loisirs-nautic.fr/images/Q13.GIF",
+          "difficulty": 3,
+          "answers": [
+            {
+              "id": "a",
+              "text": "j'abats sur tribord.",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "j'abats sur bâbord.",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "text": "Je passe de n'importe quel côté.",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "balisage:20",
+          "sourceId": 20,
+          "categoryId": "balisage",
+          "categoryName": "Balisage",
+          "moduleId": 1,
+          "text": "La bouée émettant ce signal représente :",
+          "image": "https://www.loisirs-nautic.fr/images/Q16.GIF",
+          "difficulty": 1,
+          "answers": [
+            {
+              "id": "a",
+              "text": "l'entrée du port.",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "une zone de pêche.",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "text": "une bouée cardinale Est.",
+              "correct": false
+            },
+            {
+              "id": "d",
+              "text": "un danger isolé.",
+              "correct": true
+            }
+          ]
+        },
+        {
+          "id": "signaux:1",
+          "sourceId": 1,
+          "categoryId": "signaux",
+          "categoryName": "Signaux",
+          "moduleId": 2,
+          "text": "Que signifie ce panneau ?",
+          "image": null,
+          "difficulty": 2,
+          "answers": [
+            {
+              "id": "a",
+              "text": "Attention aux hélices !",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "Navigation interdite aux engins à moteur.",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "text": "Navigation autorisée aux engins à moteur.",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "balisage:5",
+          "sourceId": 5,
+          "categoryId": "balisage",
+          "categoryName": "Balisage",
+          "moduleId": 1,
+          "text": "Cette marque indique :",
+          "image": "https://www.loisirs-nautic.fr/images/Q4.png",
+          "difficulty": 2,
+          "answers": [
+            {
+              "id": "a",
+              "text": "un danger isolé.",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "des eaux saines.",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "text": "une cardinale nord.",
+              "correct": false
+            },
+            {
+              "id": "d",
+              "text": "une marque spéciale.",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "balisage:7",
+          "sourceId": 7,
+          "categoryId": "balisage",
+          "categoryName": "Balisage",
+          "moduleId": 1,
+          "text": "Cap au 345 :",
+          "image": "https://www.loisirs-nautic.fr/images/nc_6.png",
+          "difficulty": 2,
+          "answers": [
+            {
+              "id": "a",
+              "text": "Je laisse à ma droite.",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "text": "Je laisse à ma gauche.",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "balisage:16",
+          "sourceId": 16,
+          "categoryId": "balisage",
+          "categoryName": "Balisage",
+          "moduleId": 1,
+          "text": "Quel est votre sens de navigation ?",
+          "image": "https://www.loisirs-nautic.fr/images/q665.png",
+          "difficulty": 1,
+          "answers": [
+            {
+              "id": "a",
+              "text": "J'entre au port.",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "text": "Je sors du port.",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "balisage:9",
+          "sourceId": 9,
+          "categoryId": "balisage",
+          "categoryName": "Balisage",
+          "moduleId": 1,
+          "text": "Cette bouée délimite :",
+          "image": "https://www.loisirs-nautic.fr/images/Q7.png",
+          "difficulty": 2,
+          "answers": [
+            {
+              "id": "a",
+              "text": "le côté tribord d'un chenal traversier.",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "text": "le côté bâbord d'un chenal traversier.",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "text": "la bande des 300 m.",
+              "correct": false
+            },
+            {
+              "id": "d",
+              "text": "une zone réservée à la baignade.",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "balisage:23",
+          "sourceId": 23,
+          "categoryId": "balisage",
+          "categoryName": "Balisage",
+          "moduleId": 1,
+          "text": "Cette bouée indique :",
+          "image": "https://www.loisirs-nautic.fr/images/Q19.png",
+          "difficulty": 1,
+          "answers": [
+            {
+              "id": "a",
+              "text": "le côté tribord d'un chenal de plage.",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "text": "des eaux saines.",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "text": "un danger isolé.",
+              "correct": false
+            },
+            {
+              "id": "d",
+              "text": "un danger nouveau.",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "balisage:26",
+          "sourceId": 26,
+          "categoryId": "balisage",
+          "categoryName": "Balisage",
+          "moduleId": 1,
+          "text": "Ce feu est :",
+          "image": "https://www.loisirs-nautic.fr/images/Q21.GIF",
+          "difficulty": 1,
+          "answers": [
+            {
+              "id": "a",
+              "text": "à éclat.",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "text": "isophase.",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "text": "à occultation.",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "balisage:14",
+          "sourceId": 14,
+          "categoryId": "balisage",
+          "categoryName": "Balisage",
+          "moduleId": 1,
+          "text": "Ce navire se dirige :",
+          "image": "https://www.loisirs-nautic.fr/images/Q12.png",
+          "difficulty": 1,
+          "answers": [
+            {
+              "id": "a",
+              "text": "vers le port.",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "vers le large.",
+              "correct": true
+            }
+          ]
+        },
+        {
+          "id": "regles_barre:1",
+          "sourceId": 1,
+          "categoryId": "regles_barre",
+          "categoryName": "Règles de barre",
+          "moduleId": 3,
+          "text": "Cap au 195 :",
+          "image": null,
+          "difficulty": 3,
+          "answers": [
+            {
+              "id": "a",
+              "text": "je vais à droite.",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "je vais à gauche.",
+              "correct": true
+            }
+          ]
+        },
+        {
+          "id": "balisage:28",
+          "sourceId": 28,
+          "categoryId": "balisage",
+          "categoryName": "Balisage",
+          "moduleId": 1,
+          "text": "Ce feu est :",
+          "image": "https://www.loisirs-nautic.fr/images/Q23.GIF",
+          "difficulty": 1,
+          "answers": [
+            {
+              "id": "a",
+              "text": "à éclat.",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "isophase.",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "text": "à occultation.",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "balisage:29",
+          "sourceId": 29,
+          "categoryId": "balisage",
+          "categoryName": "Balisage",
+          "moduleId": 1,
+          "text": "Ce feu est :",
+          "image": null,
+          "difficulty": 1,
+          "answers": [
+            {
+              "id": "a",
+              "text": "à éclat.",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "isophase.",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "text": "à occultation.",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "balisage:4",
+          "sourceId": 4,
+          "categoryId": "balisage",
+          "categoryName": "Balisage",
+          "moduleId": 1,
+          "text": "Dans la bande côtière des 300 m, la vitesse est limitée à :",
+          "image": null,
+          "difficulty": 2,
+          "answers": [
+            {
+              "id": "a",
+              "text": "3 nds.",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "5 km/h.",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "text": "5 nds.",
+              "correct": true
+            },
+            {
+              "id": "d",
+              "text": "9 km/h.",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "balisage:1",
+          "sourceId": 1,
+          "categoryId": "balisage",
+          "categoryName": "Balisage",
+          "moduleId": 1,
+          "text": "En entrant au port,",
+          "image": "https://www.loisirs-nautic.fr/images/Q1.png",
+          "difficulty": 2,
+          "answers": [
+            {
+              "id": "a",
+              "text": "je laisse à tribord.",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "je laisse à bâbord.",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "text": "je laisse indifféremment à tribord ou à bâbord.",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "balisage:10",
+          "sourceId": 10,
+          "categoryId": "balisage",
+          "categoryName": "Balisage",
+          "moduleId": 1,
+          "text": "À l'approche de cette marque :",
+          "image": "https://www.loisirs-nautic.fr/images/Q8.png",
+          "difficulty": 2,
+          "answers": [
+            {
+              "id": "a",
+              "text": "je m'écarte largement.",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "je passe obligatoirement au nord.",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "text": "je passe obligatoirement au sud.",
+              "correct": false
+            },
+            {
+              "id": "d",
+              "text": "je continue, je peux passer au plus près.",
+              "correct": true
+            }
+          ]
+        },
+        {
+          "id": "balisage:22",
+          "sourceId": 22,
+          "categoryId": "balisage",
+          "categoryName": "Balisage",
+          "moduleId": 1,
+          "text": "Ces 2 bouées signalent :",
+          "image": "https://www.loisirs-nautic.fr/images/Q18.png",
+          "difficulty": 2,
+          "answers": [
+            {
+              "id": "a",
+              "text": "l'entrée d'un chenal obligatoire.",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "une zone de pêche.",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "text": "un danger pas encore porté sur les cartes.",
+              "correct": true
+            }
+          ]
+        },
+        {
+          "id": "balisage:8",
+          "sourceId": 8,
+          "categoryId": "balisage",
+          "categoryName": "Balisage",
+          "moduleId": 1,
+          "text": "En sortant du port :",
+          "image": "https://www.loisirs-nautic.fr/images/Q6.png",
+          "difficulty": 1,
+          "answers": [
+            {
+              "id": "a",
+              "text": "je passe à tribord.",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "text": "je passe à bâbord.",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "balisage:6",
+          "sourceId": 6,
+          "categoryId": "balisage",
+          "categoryName": "Balisage",
+          "moduleId": 1,
+          "text": "Sur le navire rouge, cap à l'est,",
+          "image": "https://www.loisirs-nautic.fr/images/Q5.png",
+          "difficulty": 3,
+          "answers": [
+            {
+              "id": "a",
+              "text": "je viens à droite.",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "Je viens à gauche.",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "text": "je viens indifféremment à droite ou à gauche.",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "balisage:3",
+          "sourceId": 3,
+          "categoryId": "balisage",
+          "categoryName": "Balisage",
+          "moduleId": 1,
+          "text": "Cap au 195 :",
+          "image": "https://www.loisirs-nautic.fr/images/nc_12.png",
+          "difficulty": 3,
+          "answers": [
+            {
+              "id": "a",
+              "text": "je vais à droite.",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "je vais à gauche.",
+              "correct": true
+            }
+          ]
+        },
+        {
+          "id": "balisage:13",
+          "sourceId": 13,
+          "categoryId": "balisage",
+          "categoryName": "Balisage",
+          "moduleId": 1,
+          "text": "Que signifie ce panneau ?",
+          "image": "https://www.loisirs-nautic.fr/images/Q11.png",
+          "difficulty": 2,
+          "answers": [
+            {
+              "id": "a",
+              "text": "Attention aux hélices !",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "Navigation interdite aux engins à moteur.",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "text": "Navigation autorisée aux engins à moteur.",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "balisage:19",
+          "sourceId": 19,
+          "categoryId": "balisage",
+          "categoryName": "Balisage",
+          "moduleId": 1,
+          "text": "Venant du Sud, je vois cette bouée dont les voyants sont absents :",
+          "image": "https://www.loisirs-nautic.fr/images/Q15.png",
+          "difficulty": 3,
+          "answers": [
+            {
+              "id": "a",
+              "text": "Je viens à droite.",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "text": "Je viens à gauche.",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "balisage:2",
+          "sourceId": 2,
+          "categoryId": "balisage",
+          "categoryName": "Balisage",
+          "moduleId": 1,
+          "text": "Ces petites bouées jaunes rapprochées indiquent :",
+          "image": "https://www.loisirs-nautic.fr/images/Q29.png",
+          "difficulty": 1,
+          "answers": [
+            {
+              "id": "a",
+              "text": "un danger isolé.",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "un danger nouveau.",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "text": "une cardinale sud.",
+              "correct": false
+            },
+            {
+              "id": "d",
+              "text": "une zone réservée à la baignade.",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "balisage:15",
+          "sourceId": 15,
+          "categoryId": "balisage",
+          "categoryName": "Balisage",
+          "moduleId": 1,
+          "text": "La nuit, cap au nord, je vois 3 scintillements :",
+          "image": "https://www.loisirs-nautic.fr/images/nc_7.png",
+          "difficulty": 2,
+          "answers": [
+            {
+              "id": "a",
+              "text": "Je laisse sur mon tribord.",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "Je laisse sur mon bâbord.",
+              "correct": true
+            }
+          ]
+        },
+        {
+          "id": "balisage:27",
+          "sourceId": 27,
+          "categoryId": "balisage",
+          "categoryName": "Balisage",
+          "moduleId": 1,
+          "text": "Ce feu est :",
+          "image": "https://www.loisirs-nautic.fr/images/Q22.GIF",
+          "difficulty": 1,
+          "answers": [
+            {
+              "id": "a",
+              "text": "à éclat.",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "isophase.",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "text": "à occultation.",
+              "correct": true
+            }
+          ]
+        },
+        {
+          "id": "balisage:12",
+          "sourceId": 12,
+          "categoryId": "balisage",
+          "categoryName": "Balisage",
+          "moduleId": 1,
+          "text": "En entrant au port, cette marque représente :",
+          "image": "https://www.loisirs-nautic.fr/images/Q10.png",
+          "difficulty": 1,
+          "answers": [
+            {
+              "id": "a",
+              "text": "un chenal préféré à tribord.",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "un chenal préféré à bâbord.",
+              "correct": true
+            }
+          ]
+        }
+      ],
+      "distributionByModule": {
+        "1": 28,
+        "2": 1,
+        "3": 1
+      }
+    },
+    {
+      "id": 3,
+      "name": "Serie 3",
+      "questionIds": [
+        "balisage:12",
+        "balisage:1",
+        "balisage:26",
+        "balisage:18",
+        "balisage:20",
+        "balisage:13",
+        "balisage:23",
+        "balisage:28",
+        "balisage:4",
+        "balisage:17",
+        "balisage:24",
+        "balisage:11",
+        "balisage:3",
+        "balisage:21",
+        "balisage:10",
+        "balisage:29",
+        "balisage:2",
+        "signaux:1",
+        "balisage:6",
+        "balisage:22",
+        "balisage:15",
+        "regles_barre:1",
+        "balisage:5",
+        "balisage:27",
+        "balisage:7",
+        "balisage:8",
+        "balisage:19",
+        "balisage:14",
+        "balisage:25",
+        "balisage:16"
+      ],
+      "questions": [
+        {
+          "id": "balisage:12",
+          "sourceId": 12,
+          "categoryId": "balisage",
+          "categoryName": "Balisage",
+          "moduleId": 1,
+          "text": "En entrant au port, cette marque représente :",
+          "image": "https://www.loisirs-nautic.fr/images/Q10.png",
+          "difficulty": 1,
+          "answers": [
+            {
+              "id": "a",
+              "text": "un chenal préféré à tribord.",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "un chenal préféré à bâbord.",
+              "correct": true
+            }
+          ]
+        },
+        {
+          "id": "balisage:1",
+          "sourceId": 1,
+          "categoryId": "balisage",
+          "categoryName": "Balisage",
+          "moduleId": 1,
+          "text": "En entrant au port,",
+          "image": "https://www.loisirs-nautic.fr/images/Q1.png",
+          "difficulty": 2,
+          "answers": [
+            {
+              "id": "a",
+              "text": "je laisse à tribord.",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "je laisse à bâbord.",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "text": "je laisse indifféremment à tribord ou à bâbord.",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "balisage:26",
+          "sourceId": 26,
+          "categoryId": "balisage",
+          "categoryName": "Balisage",
+          "moduleId": 1,
+          "text": "Ce feu est :",
+          "image": "https://www.loisirs-nautic.fr/images/Q21.GIF",
+          "difficulty": 1,
+          "answers": [
+            {
+              "id": "a",
+              "text": "à éclat.",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "text": "isophase.",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "text": "à occultation.",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "balisage:18",
+          "sourceId": 18,
+          "categoryId": "balisage",
+          "categoryName": "Balisage",
+          "moduleId": 1,
+          "text": "En entrant au port du Palais (Morbihan 56, France) :",
+          "image": "https://www.loisirs-nautic.fr/images/Q14.GIF",
+          "difficulty": 3,
+          "answers": [
+            {
+              "id": "a",
+              "text": "je viens à droite.",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "Je viens à gauche.",
+              "correct": true
+            }
+          ]
+        },
+        {
+          "id": "balisage:20",
+          "sourceId": 20,
+          "categoryId": "balisage",
+          "categoryName": "Balisage",
+          "moduleId": 1,
+          "text": "La bouée émettant ce signal représente :",
+          "image": "https://www.loisirs-nautic.fr/images/Q16.GIF",
+          "difficulty": 1,
+          "answers": [
+            {
+              "id": "a",
+              "text": "l'entrée du port.",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "une zone de pêche.",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "text": "une bouée cardinale Est.",
+              "correct": false
+            },
+            {
+              "id": "d",
+              "text": "un danger isolé.",
+              "correct": true
+            }
+          ]
+        },
+        {
+          "id": "balisage:13",
+          "sourceId": 13,
+          "categoryId": "balisage",
+          "categoryName": "Balisage",
+          "moduleId": 1,
+          "text": "Que signifie ce panneau ?",
+          "image": "https://www.loisirs-nautic.fr/images/Q11.png",
+          "difficulty": 2,
+          "answers": [
+            {
+              "id": "a",
+              "text": "Attention aux hélices !",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "Navigation interdite aux engins à moteur.",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "text": "Navigation autorisée aux engins à moteur.",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "balisage:23",
+          "sourceId": 23,
+          "categoryId": "balisage",
+          "categoryName": "Balisage",
+          "moduleId": 1,
+          "text": "Cette bouée indique :",
+          "image": "https://www.loisirs-nautic.fr/images/Q19.png",
+          "difficulty": 1,
+          "answers": [
+            {
+              "id": "a",
+              "text": "le côté tribord d'un chenal de plage.",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "text": "des eaux saines.",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "text": "un danger isolé.",
+              "correct": false
+            },
+            {
+              "id": "d",
+              "text": "un danger nouveau.",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "balisage:28",
+          "sourceId": 28,
+          "categoryId": "balisage",
+          "categoryName": "Balisage",
+          "moduleId": 1,
+          "text": "Ce feu est :",
+          "image": "https://www.loisirs-nautic.fr/images/Q23.GIF",
+          "difficulty": 1,
+          "answers": [
+            {
+              "id": "a",
+              "text": "à éclat.",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "isophase.",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "text": "à occultation.",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "balisage:4",
+          "sourceId": 4,
+          "categoryId": "balisage",
+          "categoryName": "Balisage",
+          "moduleId": 1,
+          "text": "Dans la bande côtière des 300 m, la vitesse est limitée à :",
+          "image": null,
+          "difficulty": 2,
+          "answers": [
+            {
+              "id": "a",
+              "text": "3 nds.",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "5 km/h.",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "text": "5 nds.",
+              "correct": true
+            },
+            {
+              "id": "d",
+              "text": "9 km/h.",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "balisage:17",
+          "sourceId": 17,
+          "categoryId": "balisage",
+          "categoryName": "Balisage",
+          "moduleId": 1,
+          "text": "Faisant route au 260 :",
+          "image": "https://www.loisirs-nautic.fr/images/Q13.GIF",
+          "difficulty": 3,
+          "answers": [
+            {
+              "id": "a",
+              "text": "j'abats sur tribord.",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "j'abats sur bâbord.",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "text": "Je passe de n'importe quel côté.",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "balisage:24",
+          "sourceId": 24,
+          "categoryId": "balisage",
+          "categoryName": "Balisage",
+          "moduleId": 1,
+          "text": "Cap au sud :",
+          "image": "https://www.loisirs-nautic.fr/images/Q20.GIF",
+          "difficulty": 2,
+          "answers": [
+            {
+              "id": "a",
+              "text": "je laisse à tribord.",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "je laisse à bâbord.",
+              "correct": true
+            }
+          ]
+        },
+        {
+          "id": "balisage:11",
+          "sourceId": 11,
+          "categoryId": "balisage",
+          "categoryName": "Balisage",
+          "moduleId": 1,
+          "text": "Ce balisage représente :",
+          "image": "https://www.loisirs-nautic.fr/images/Q9.png",
+          "difficulty": 2,
+          "answers": [
+            {
+              "id": "a",
+              "text": "le côté bâbord d'un chenal de plage.",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "une marque spéciale.",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "text": "une cardinale Est.",
+              "correct": false
+            },
+            {
+              "id": "d",
+              "text": "un danger nouveau.",
+              "correct": true
+            }
+          ]
+        },
+        {
+          "id": "balisage:3",
+          "sourceId": 3,
+          "categoryId": "balisage",
+          "categoryName": "Balisage",
+          "moduleId": 1,
+          "text": "Cap au 195 :",
+          "image": "https://www.loisirs-nautic.fr/images/nc_12.png",
+          "difficulty": 3,
+          "answers": [
+            {
+              "id": "a",
+              "text": "je vais à droite.",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "je vais à gauche.",
+              "correct": true
+            }
+          ]
+        },
+        {
+          "id": "balisage:21",
+          "sourceId": 21,
+          "categoryId": "balisage",
+          "categoryName": "Balisage",
+          "moduleId": 1,
+          "text": "Cette bouée est une marque de :",
+          "image": "https://www.loisirs-nautic.fr/images/Q17.png",
+          "difficulty": 2,
+          "answers": [
+            {
+              "id": "a",
+              "text": "chenal préféré à tribord.",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "chenal préféré à bâbord.",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "text": "danger isolé.",
+              "correct": false
+            },
+            {
+              "id": "d",
+              "text": "danger grave.",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "balisage:10",
+          "sourceId": 10,
+          "categoryId": "balisage",
+          "categoryName": "Balisage",
+          "moduleId": 1,
+          "text": "À l'approche de cette marque :",
+          "image": "https://www.loisirs-nautic.fr/images/Q8.png",
+          "difficulty": 2,
+          "answers": [
+            {
+              "id": "a",
+              "text": "je m'écarte largement.",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "je passe obligatoirement au nord.",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "text": "je passe obligatoirement au sud.",
+              "correct": false
+            },
+            {
+              "id": "d",
+              "text": "je continue, je peux passer au plus près.",
+              "correct": true
+            }
+          ]
+        },
+        {
+          "id": "balisage:29",
+          "sourceId": 29,
+          "categoryId": "balisage",
+          "categoryName": "Balisage",
+          "moduleId": 1,
+          "text": "Ce feu est :",
+          "image": null,
+          "difficulty": 1,
+          "answers": [
+            {
+              "id": "a",
+              "text": "à éclat.",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "isophase.",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "text": "à occultation.",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "balisage:2",
+          "sourceId": 2,
+          "categoryId": "balisage",
+          "categoryName": "Balisage",
+          "moduleId": 1,
+          "text": "Ces petites bouées jaunes rapprochées indiquent :",
+          "image": "https://www.loisirs-nautic.fr/images/Q29.png",
+          "difficulty": 1,
+          "answers": [
+            {
+              "id": "a",
+              "text": "un danger isolé.",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "un danger nouveau.",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "text": "une cardinale sud.",
+              "correct": false
+            },
+            {
+              "id": "d",
+              "text": "une zone réservée à la baignade.",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "signaux:1",
+          "sourceId": 1,
+          "categoryId": "signaux",
+          "categoryName": "Signaux",
+          "moduleId": 2,
+          "text": "Que signifie ce panneau ?",
+          "image": null,
+          "difficulty": 2,
+          "answers": [
+            {
+              "id": "a",
+              "text": "Attention aux hélices !",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "Navigation interdite aux engins à moteur.",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "text": "Navigation autorisée aux engins à moteur.",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "balisage:6",
+          "sourceId": 6,
+          "categoryId": "balisage",
+          "categoryName": "Balisage",
+          "moduleId": 1,
+          "text": "Sur le navire rouge, cap à l'est,",
+          "image": "https://www.loisirs-nautic.fr/images/Q5.png",
+          "difficulty": 3,
+          "answers": [
+            {
+              "id": "a",
+              "text": "je viens à droite.",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "Je viens à gauche.",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "text": "je viens indifféremment à droite ou à gauche.",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "balisage:22",
+          "sourceId": 22,
+          "categoryId": "balisage",
+          "categoryName": "Balisage",
+          "moduleId": 1,
+          "text": "Ces 2 bouées signalent :",
+          "image": "https://www.loisirs-nautic.fr/images/Q18.png",
+          "difficulty": 2,
+          "answers": [
+            {
+              "id": "a",
+              "text": "l'entrée d'un chenal obligatoire.",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "une zone de pêche.",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "text": "un danger pas encore porté sur les cartes.",
+              "correct": true
+            }
+          ]
+        },
+        {
+          "id": "balisage:15",
+          "sourceId": 15,
+          "categoryId": "balisage",
+          "categoryName": "Balisage",
+          "moduleId": 1,
+          "text": "La nuit, cap au nord, je vois 3 scintillements :",
+          "image": "https://www.loisirs-nautic.fr/images/nc_7.png",
+          "difficulty": 2,
+          "answers": [
+            {
+              "id": "a",
+              "text": "Je laisse sur mon tribord.",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "Je laisse sur mon bâbord.",
+              "correct": true
+            }
+          ]
+        },
+        {
+          "id": "regles_barre:1",
+          "sourceId": 1,
+          "categoryId": "regles_barre",
+          "categoryName": "Règles de barre",
+          "moduleId": 3,
+          "text": "Cap au 195 :",
+          "image": null,
+          "difficulty": 3,
+          "answers": [
+            {
+              "id": "a",
+              "text": "je vais à droite.",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "je vais à gauche.",
+              "correct": true
+            }
+          ]
+        },
+        {
+          "id": "balisage:5",
+          "sourceId": 5,
+          "categoryId": "balisage",
+          "categoryName": "Balisage",
+          "moduleId": 1,
+          "text": "Cette marque indique :",
+          "image": "https://www.loisirs-nautic.fr/images/Q4.png",
+          "difficulty": 2,
+          "answers": [
+            {
+              "id": "a",
+              "text": "un danger isolé.",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "des eaux saines.",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "text": "une cardinale nord.",
+              "correct": false
+            },
+            {
+              "id": "d",
+              "text": "une marque spéciale.",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "balisage:27",
+          "sourceId": 27,
+          "categoryId": "balisage",
+          "categoryName": "Balisage",
+          "moduleId": 1,
+          "text": "Ce feu est :",
+          "image": "https://www.loisirs-nautic.fr/images/Q22.GIF",
+          "difficulty": 1,
+          "answers": [
+            {
+              "id": "a",
+              "text": "à éclat.",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "isophase.",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "text": "à occultation.",
+              "correct": true
+            }
+          ]
+        },
+        {
+          "id": "balisage:7",
+          "sourceId": 7,
+          "categoryId": "balisage",
+          "categoryName": "Balisage",
+          "moduleId": 1,
+          "text": "Cap au 345 :",
+          "image": "https://www.loisirs-nautic.fr/images/nc_6.png",
+          "difficulty": 2,
+          "answers": [
+            {
+              "id": "a",
+              "text": "Je laisse à ma droite.",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "text": "Je laisse à ma gauche.",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "balisage:8",
+          "sourceId": 8,
+          "categoryId": "balisage",
+          "categoryName": "Balisage",
+          "moduleId": 1,
+          "text": "En sortant du port :",
+          "image": "https://www.loisirs-nautic.fr/images/Q6.png",
+          "difficulty": 1,
+          "answers": [
+            {
+              "id": "a",
+              "text": "je passe à tribord.",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "text": "je passe à bâbord.",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "balisage:19",
+          "sourceId": 19,
+          "categoryId": "balisage",
+          "categoryName": "Balisage",
+          "moduleId": 1,
+          "text": "Venant du Sud, je vois cette bouée dont les voyants sont absents :",
+          "image": "https://www.loisirs-nautic.fr/images/Q15.png",
+          "difficulty": 3,
+          "answers": [
+            {
+              "id": "a",
+              "text": "Je viens à droite.",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "text": "Je viens à gauche.",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "balisage:14",
+          "sourceId": 14,
+          "categoryId": "balisage",
+          "categoryName": "Balisage",
+          "moduleId": 1,
+          "text": "Ce navire se dirige :",
+          "image": "https://www.loisirs-nautic.fr/images/Q12.png",
+          "difficulty": 1,
+          "answers": [
+            {
+              "id": "a",
+              "text": "vers le port.",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "vers le large.",
+              "correct": true
+            }
+          ]
+        },
+        {
+          "id": "balisage:25",
+          "sourceId": 25,
+          "categoryId": "balisage",
+          "categoryName": "Balisage",
+          "moduleId": 1,
+          "text": "Cette balise est :",
+          "image": "https://www.loisirs-nautic.fr/images/Q30.png",
+          "difficulty": 2,
+          "answers": [
+            {
+              "id": "a",
+              "text": "Une bouée d'épave.",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "Un danger isolé.",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "text": "Une marque spéciale.",
+              "correct": false
+            },
+            {
+              "id": "d",
+              "text": "Un croisement de routes maritimes.",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "balisage:16",
+          "sourceId": 16,
+          "categoryId": "balisage",
+          "categoryName": "Balisage",
+          "moduleId": 1,
+          "text": "Quel est votre sens de navigation ?",
+          "image": "https://www.loisirs-nautic.fr/images/q665.png",
+          "difficulty": 1,
+          "answers": [
+            {
+              "id": "a",
+              "text": "J'entre au port.",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "text": "Je sors du port.",
+              "correct": false
+            }
+          ]
+        }
+      ],
+      "distributionByModule": {
+        "1": 28,
+        "2": 1,
+        "3": 1
+      }
+    },
+    {
+      "id": 4,
+      "name": "Serie 4",
+      "questionIds": [
+        "balisage:17",
+        "balisage:10",
+        "balisage:16",
+        "balisage:25",
+        "balisage:29",
+        "regles_barre:1",
+        "balisage:3",
+        "balisage:27",
+        "balisage:13",
+        "balisage:19",
+        "balisage:22",
+        "balisage:7",
+        "balisage:8",
+        "balisage:9",
+        "balisage:1",
+        "balisage:14",
+        "balisage:20",
+        "signaux:1",
+        "balisage:23",
+        "balisage:5",
+        "balisage:28",
+        "balisage:21",
+        "balisage:26",
+        "balisage:18",
+        "balisage:6",
+        "balisage:11",
+        "balisage:24",
+        "balisage:4",
+        "balisage:15",
+        "balisage:2"
+      ],
+      "questions": [
+        {
+          "id": "balisage:17",
+          "sourceId": 17,
+          "categoryId": "balisage",
+          "categoryName": "Balisage",
+          "moduleId": 1,
+          "text": "Faisant route au 260 :",
+          "image": "https://www.loisirs-nautic.fr/images/Q13.GIF",
+          "difficulty": 3,
+          "answers": [
+            {
+              "id": "a",
+              "text": "j'abats sur tribord.",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "j'abats sur bâbord.",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "text": "Je passe de n'importe quel côté.",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "balisage:10",
+          "sourceId": 10,
+          "categoryId": "balisage",
+          "categoryName": "Balisage",
+          "moduleId": 1,
+          "text": "À l'approche de cette marque :",
+          "image": "https://www.loisirs-nautic.fr/images/Q8.png",
+          "difficulty": 2,
+          "answers": [
+            {
+              "id": "a",
+              "text": "je m'écarte largement.",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "je passe obligatoirement au nord.",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "text": "je passe obligatoirement au sud.",
+              "correct": false
+            },
+            {
+              "id": "d",
+              "text": "je continue, je peux passer au plus près.",
+              "correct": true
+            }
+          ]
+        },
+        {
+          "id": "balisage:16",
+          "sourceId": 16,
+          "categoryId": "balisage",
+          "categoryName": "Balisage",
+          "moduleId": 1,
+          "text": "Quel est votre sens de navigation ?",
+          "image": "https://www.loisirs-nautic.fr/images/q665.png",
+          "difficulty": 1,
+          "answers": [
+            {
+              "id": "a",
+              "text": "J'entre au port.",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "text": "Je sors du port.",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "balisage:25",
+          "sourceId": 25,
+          "categoryId": "balisage",
+          "categoryName": "Balisage",
+          "moduleId": 1,
+          "text": "Cette balise est :",
+          "image": "https://www.loisirs-nautic.fr/images/Q30.png",
+          "difficulty": 2,
+          "answers": [
+            {
+              "id": "a",
+              "text": "Une bouée d'épave.",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "Un danger isolé.",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "text": "Une marque spéciale.",
+              "correct": false
+            },
+            {
+              "id": "d",
+              "text": "Un croisement de routes maritimes.",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "balisage:29",
+          "sourceId": 29,
+          "categoryId": "balisage",
+          "categoryName": "Balisage",
+          "moduleId": 1,
+          "text": "Ce feu est :",
+          "image": null,
+          "difficulty": 1,
+          "answers": [
+            {
+              "id": "a",
+              "text": "à éclat.",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "isophase.",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "text": "à occultation.",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "regles_barre:1",
+          "sourceId": 1,
+          "categoryId": "regles_barre",
+          "categoryName": "Règles de barre",
+          "moduleId": 3,
+          "text": "Cap au 195 :",
+          "image": null,
+          "difficulty": 3,
+          "answers": [
+            {
+              "id": "a",
+              "text": "je vais à droite.",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "je vais à gauche.",
+              "correct": true
+            }
+          ]
+        },
+        {
+          "id": "balisage:3",
+          "sourceId": 3,
+          "categoryId": "balisage",
+          "categoryName": "Balisage",
+          "moduleId": 1,
+          "text": "Cap au 195 :",
+          "image": "https://www.loisirs-nautic.fr/images/nc_12.png",
+          "difficulty": 3,
+          "answers": [
+            {
+              "id": "a",
+              "text": "je vais à droite.",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "je vais à gauche.",
+              "correct": true
+            }
+          ]
+        },
+        {
+          "id": "balisage:27",
+          "sourceId": 27,
+          "categoryId": "balisage",
+          "categoryName": "Balisage",
+          "moduleId": 1,
+          "text": "Ce feu est :",
+          "image": "https://www.loisirs-nautic.fr/images/Q22.GIF",
+          "difficulty": 1,
+          "answers": [
+            {
+              "id": "a",
+              "text": "à éclat.",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "isophase.",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "text": "à occultation.",
+              "correct": true
+            }
+          ]
+        },
+        {
+          "id": "balisage:13",
+          "sourceId": 13,
+          "categoryId": "balisage",
+          "categoryName": "Balisage",
+          "moduleId": 1,
+          "text": "Que signifie ce panneau ?",
+          "image": "https://www.loisirs-nautic.fr/images/Q11.png",
+          "difficulty": 2,
+          "answers": [
+            {
+              "id": "a",
+              "text": "Attention aux hélices !",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "Navigation interdite aux engins à moteur.",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "text": "Navigation autorisée aux engins à moteur.",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "balisage:19",
+          "sourceId": 19,
+          "categoryId": "balisage",
+          "categoryName": "Balisage",
+          "moduleId": 1,
+          "text": "Venant du Sud, je vois cette bouée dont les voyants sont absents :",
+          "image": "https://www.loisirs-nautic.fr/images/Q15.png",
+          "difficulty": 3,
+          "answers": [
+            {
+              "id": "a",
+              "text": "Je viens à droite.",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "text": "Je viens à gauche.",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "balisage:22",
+          "sourceId": 22,
+          "categoryId": "balisage",
+          "categoryName": "Balisage",
+          "moduleId": 1,
+          "text": "Ces 2 bouées signalent :",
+          "image": "https://www.loisirs-nautic.fr/images/Q18.png",
+          "difficulty": 2,
+          "answers": [
+            {
+              "id": "a",
+              "text": "l'entrée d'un chenal obligatoire.",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "une zone de pêche.",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "text": "un danger pas encore porté sur les cartes.",
+              "correct": true
+            }
+          ]
+        },
+        {
+          "id": "balisage:7",
+          "sourceId": 7,
+          "categoryId": "balisage",
+          "categoryName": "Balisage",
+          "moduleId": 1,
+          "text": "Cap au 345 :",
+          "image": "https://www.loisirs-nautic.fr/images/nc_6.png",
+          "difficulty": 2,
+          "answers": [
+            {
+              "id": "a",
+              "text": "Je laisse à ma droite.",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "text": "Je laisse à ma gauche.",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "balisage:8",
+          "sourceId": 8,
+          "categoryId": "balisage",
+          "categoryName": "Balisage",
+          "moduleId": 1,
+          "text": "En sortant du port :",
+          "image": "https://www.loisirs-nautic.fr/images/Q6.png",
+          "difficulty": 1,
+          "answers": [
+            {
+              "id": "a",
+              "text": "je passe à tribord.",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "text": "je passe à bâbord.",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "balisage:9",
+          "sourceId": 9,
+          "categoryId": "balisage",
+          "categoryName": "Balisage",
+          "moduleId": 1,
+          "text": "Cette bouée délimite :",
+          "image": "https://www.loisirs-nautic.fr/images/Q7.png",
+          "difficulty": 2,
+          "answers": [
+            {
+              "id": "a",
+              "text": "le côté tribord d'un chenal traversier.",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "text": "le côté bâbord d'un chenal traversier.",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "text": "la bande des 300 m.",
+              "correct": false
+            },
+            {
+              "id": "d",
+              "text": "une zone réservée à la baignade.",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "balisage:1",
+          "sourceId": 1,
+          "categoryId": "balisage",
+          "categoryName": "Balisage",
+          "moduleId": 1,
+          "text": "En entrant au port,",
+          "image": "https://www.loisirs-nautic.fr/images/Q1.png",
+          "difficulty": 2,
+          "answers": [
+            {
+              "id": "a",
+              "text": "je laisse à tribord.",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "je laisse à bâbord.",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "text": "je laisse indifféremment à tribord ou à bâbord.",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "balisage:14",
+          "sourceId": 14,
+          "categoryId": "balisage",
+          "categoryName": "Balisage",
+          "moduleId": 1,
+          "text": "Ce navire se dirige :",
+          "image": "https://www.loisirs-nautic.fr/images/Q12.png",
+          "difficulty": 1,
+          "answers": [
+            {
+              "id": "a",
+              "text": "vers le port.",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "vers le large.",
+              "correct": true
+            }
+          ]
+        },
+        {
+          "id": "balisage:20",
+          "sourceId": 20,
+          "categoryId": "balisage",
+          "categoryName": "Balisage",
+          "moduleId": 1,
+          "text": "La bouée émettant ce signal représente :",
+          "image": "https://www.loisirs-nautic.fr/images/Q16.GIF",
+          "difficulty": 1,
+          "answers": [
+            {
+              "id": "a",
+              "text": "l'entrée du port.",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "une zone de pêche.",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "text": "une bouée cardinale Est.",
+              "correct": false
+            },
+            {
+              "id": "d",
+              "text": "un danger isolé.",
+              "correct": true
+            }
+          ]
+        },
+        {
+          "id": "signaux:1",
+          "sourceId": 1,
+          "categoryId": "signaux",
+          "categoryName": "Signaux",
+          "moduleId": 2,
+          "text": "Que signifie ce panneau ?",
+          "image": null,
+          "difficulty": 2,
+          "answers": [
+            {
+              "id": "a",
+              "text": "Attention aux hélices !",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "Navigation interdite aux engins à moteur.",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "text": "Navigation autorisée aux engins à moteur.",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "balisage:23",
+          "sourceId": 23,
+          "categoryId": "balisage",
+          "categoryName": "Balisage",
+          "moduleId": 1,
+          "text": "Cette bouée indique :",
+          "image": "https://www.loisirs-nautic.fr/images/Q19.png",
+          "difficulty": 1,
+          "answers": [
+            {
+              "id": "a",
+              "text": "le côté tribord d'un chenal de plage.",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "text": "des eaux saines.",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "text": "un danger isolé.",
+              "correct": false
+            },
+            {
+              "id": "d",
+              "text": "un danger nouveau.",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "balisage:5",
+          "sourceId": 5,
+          "categoryId": "balisage",
+          "categoryName": "Balisage",
+          "moduleId": 1,
+          "text": "Cette marque indique :",
+          "image": "https://www.loisirs-nautic.fr/images/Q4.png",
+          "difficulty": 2,
+          "answers": [
+            {
+              "id": "a",
+              "text": "un danger isolé.",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "des eaux saines.",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "text": "une cardinale nord.",
+              "correct": false
+            },
+            {
+              "id": "d",
+              "text": "une marque spéciale.",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "balisage:28",
+          "sourceId": 28,
+          "categoryId": "balisage",
+          "categoryName": "Balisage",
+          "moduleId": 1,
+          "text": "Ce feu est :",
+          "image": "https://www.loisirs-nautic.fr/images/Q23.GIF",
+          "difficulty": 1,
+          "answers": [
+            {
+              "id": "a",
+              "text": "à éclat.",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "isophase.",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "text": "à occultation.",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "balisage:21",
+          "sourceId": 21,
+          "categoryId": "balisage",
+          "categoryName": "Balisage",
+          "moduleId": 1,
+          "text": "Cette bouée est une marque de :",
+          "image": "https://www.loisirs-nautic.fr/images/Q17.png",
+          "difficulty": 2,
+          "answers": [
+            {
+              "id": "a",
+              "text": "chenal préféré à tribord.",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "chenal préféré à bâbord.",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "text": "danger isolé.",
+              "correct": false
+            },
+            {
+              "id": "d",
+              "text": "danger grave.",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "balisage:26",
+          "sourceId": 26,
+          "categoryId": "balisage",
+          "categoryName": "Balisage",
+          "moduleId": 1,
+          "text": "Ce feu est :",
+          "image": "https://www.loisirs-nautic.fr/images/Q21.GIF",
+          "difficulty": 1,
+          "answers": [
+            {
+              "id": "a",
+              "text": "à éclat.",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "text": "isophase.",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "text": "à occultation.",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "balisage:18",
+          "sourceId": 18,
+          "categoryId": "balisage",
+          "categoryName": "Balisage",
+          "moduleId": 1,
+          "text": "En entrant au port du Palais (Morbihan 56, France) :",
+          "image": "https://www.loisirs-nautic.fr/images/Q14.GIF",
+          "difficulty": 3,
+          "answers": [
+            {
+              "id": "a",
+              "text": "je viens à droite.",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "Je viens à gauche.",
+              "correct": true
+            }
+          ]
+        },
+        {
+          "id": "balisage:6",
+          "sourceId": 6,
+          "categoryId": "balisage",
+          "categoryName": "Balisage",
+          "moduleId": 1,
+          "text": "Sur le navire rouge, cap à l'est,",
+          "image": "https://www.loisirs-nautic.fr/images/Q5.png",
+          "difficulty": 3,
+          "answers": [
+            {
+              "id": "a",
+              "text": "je viens à droite.",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "Je viens à gauche.",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "text": "je viens indifféremment à droite ou à gauche.",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "balisage:11",
+          "sourceId": 11,
+          "categoryId": "balisage",
+          "categoryName": "Balisage",
+          "moduleId": 1,
+          "text": "Ce balisage représente :",
+          "image": "https://www.loisirs-nautic.fr/images/Q9.png",
+          "difficulty": 2,
+          "answers": [
+            {
+              "id": "a",
+              "text": "le côté bâbord d'un chenal de plage.",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "une marque spéciale.",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "text": "une cardinale Est.",
+              "correct": false
+            },
+            {
+              "id": "d",
+              "text": "un danger nouveau.",
+              "correct": true
+            }
+          ]
+        },
+        {
+          "id": "balisage:24",
+          "sourceId": 24,
+          "categoryId": "balisage",
+          "categoryName": "Balisage",
+          "moduleId": 1,
+          "text": "Cap au sud :",
+          "image": "https://www.loisirs-nautic.fr/images/Q20.GIF",
+          "difficulty": 2,
+          "answers": [
+            {
+              "id": "a",
+              "text": "je laisse à tribord.",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "je laisse à bâbord.",
+              "correct": true
+            }
+          ]
+        },
+        {
+          "id": "balisage:4",
+          "sourceId": 4,
+          "categoryId": "balisage",
+          "categoryName": "Balisage",
+          "moduleId": 1,
+          "text": "Dans la bande côtière des 300 m, la vitesse est limitée à :",
+          "image": null,
+          "difficulty": 2,
+          "answers": [
+            {
+              "id": "a",
+              "text": "3 nds.",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "5 km/h.",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "text": "5 nds.",
+              "correct": true
+            },
+            {
+              "id": "d",
+              "text": "9 km/h.",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "balisage:15",
+          "sourceId": 15,
+          "categoryId": "balisage",
+          "categoryName": "Balisage",
+          "moduleId": 1,
+          "text": "La nuit, cap au nord, je vois 3 scintillements :",
+          "image": "https://www.loisirs-nautic.fr/images/nc_7.png",
+          "difficulty": 2,
+          "answers": [
+            {
+              "id": "a",
+              "text": "Je laisse sur mon tribord.",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "Je laisse sur mon bâbord.",
+              "correct": true
+            }
+          ]
+        },
+        {
+          "id": "balisage:2",
+          "sourceId": 2,
+          "categoryId": "balisage",
+          "categoryName": "Balisage",
+          "moduleId": 1,
+          "text": "Ces petites bouées jaunes rapprochées indiquent :",
+          "image": "https://www.loisirs-nautic.fr/images/Q29.png",
+          "difficulty": 1,
+          "answers": [
+            {
+              "id": "a",
+              "text": "un danger isolé.",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "un danger nouveau.",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "text": "une cardinale sud.",
+              "correct": false
+            },
+            {
+              "id": "d",
+              "text": "une zone réservée à la baignade.",
+              "correct": false
+            }
+          ]
+        }
+      ],
+      "distributionByModule": {
+        "1": 28,
+        "2": 1,
+        "3": 1
+      }
+    },
+    {
+      "id": 5,
+      "name": "Serie 5",
+      "questionIds": [
+        "balisage:27",
+        "balisage:7",
+        "balisage:3",
+        "signaux:1",
+        "balisage:6",
+        "balisage:8",
+        "balisage:12",
+        "regles_barre:1",
+        "balisage:19",
+        "balisage:22",
+        "balisage:18",
+        "balisage:10",
+        "balisage:5",
+        "balisage:15",
+        "balisage:26",
+        "balisage:1",
+        "balisage:14",
+        "balisage:9",
+        "balisage:11",
+        "balisage:4",
+        "balisage:28",
+        "balisage:23",
+        "balisage:13",
+        "balisage:29",
+        "balisage:16",
+        "balisage:24",
+        "balisage:25",
+        "balisage:21",
+        "balisage:17",
+        "balisage:20"
+      ],
+      "questions": [
+        {
+          "id": "balisage:27",
+          "sourceId": 27,
+          "categoryId": "balisage",
+          "categoryName": "Balisage",
+          "moduleId": 1,
+          "text": "Ce feu est :",
+          "image": "https://www.loisirs-nautic.fr/images/Q22.GIF",
+          "difficulty": 1,
+          "answers": [
+            {
+              "id": "a",
+              "text": "à éclat.",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "isophase.",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "text": "à occultation.",
+              "correct": true
+            }
+          ]
+        },
+        {
+          "id": "balisage:7",
+          "sourceId": 7,
+          "categoryId": "balisage",
+          "categoryName": "Balisage",
+          "moduleId": 1,
+          "text": "Cap au 345 :",
+          "image": "https://www.loisirs-nautic.fr/images/nc_6.png",
+          "difficulty": 2,
+          "answers": [
+            {
+              "id": "a",
+              "text": "Je laisse à ma droite.",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "text": "Je laisse à ma gauche.",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "balisage:3",
+          "sourceId": 3,
+          "categoryId": "balisage",
+          "categoryName": "Balisage",
+          "moduleId": 1,
+          "text": "Cap au 195 :",
+          "image": "https://www.loisirs-nautic.fr/images/nc_12.png",
+          "difficulty": 3,
+          "answers": [
+            {
+              "id": "a",
+              "text": "je vais à droite.",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "je vais à gauche.",
+              "correct": true
+            }
+          ]
+        },
+        {
+          "id": "signaux:1",
+          "sourceId": 1,
+          "categoryId": "signaux",
+          "categoryName": "Signaux",
+          "moduleId": 2,
+          "text": "Que signifie ce panneau ?",
+          "image": null,
+          "difficulty": 2,
+          "answers": [
+            {
+              "id": "a",
+              "text": "Attention aux hélices !",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "Navigation interdite aux engins à moteur.",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "text": "Navigation autorisée aux engins à moteur.",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "balisage:6",
+          "sourceId": 6,
+          "categoryId": "balisage",
+          "categoryName": "Balisage",
+          "moduleId": 1,
+          "text": "Sur le navire rouge, cap à l'est,",
+          "image": "https://www.loisirs-nautic.fr/images/Q5.png",
+          "difficulty": 3,
+          "answers": [
+            {
+              "id": "a",
+              "text": "je viens à droite.",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "Je viens à gauche.",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "text": "je viens indifféremment à droite ou à gauche.",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "balisage:8",
+          "sourceId": 8,
+          "categoryId": "balisage",
+          "categoryName": "Balisage",
+          "moduleId": 1,
+          "text": "En sortant du port :",
+          "image": "https://www.loisirs-nautic.fr/images/Q6.png",
+          "difficulty": 1,
+          "answers": [
+            {
+              "id": "a",
+              "text": "je passe à tribord.",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "text": "je passe à bâbord.",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "balisage:12",
+          "sourceId": 12,
+          "categoryId": "balisage",
+          "categoryName": "Balisage",
+          "moduleId": 1,
+          "text": "En entrant au port, cette marque représente :",
+          "image": "https://www.loisirs-nautic.fr/images/Q10.png",
+          "difficulty": 1,
+          "answers": [
+            {
+              "id": "a",
+              "text": "un chenal préféré à tribord.",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "un chenal préféré à bâbord.",
+              "correct": true
+            }
+          ]
+        },
+        {
+          "id": "regles_barre:1",
+          "sourceId": 1,
+          "categoryId": "regles_barre",
+          "categoryName": "Règles de barre",
+          "moduleId": 3,
+          "text": "Cap au 195 :",
+          "image": null,
+          "difficulty": 3,
+          "answers": [
+            {
+              "id": "a",
+              "text": "je vais à droite.",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "je vais à gauche.",
+              "correct": true
+            }
+          ]
+        },
+        {
+          "id": "balisage:19",
+          "sourceId": 19,
+          "categoryId": "balisage",
+          "categoryName": "Balisage",
+          "moduleId": 1,
+          "text": "Venant du Sud, je vois cette bouée dont les voyants sont absents :",
+          "image": "https://www.loisirs-nautic.fr/images/Q15.png",
+          "difficulty": 3,
+          "answers": [
+            {
+              "id": "a",
+              "text": "Je viens à droite.",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "text": "Je viens à gauche.",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "balisage:22",
+          "sourceId": 22,
+          "categoryId": "balisage",
+          "categoryName": "Balisage",
+          "moduleId": 1,
+          "text": "Ces 2 bouées signalent :",
+          "image": "https://www.loisirs-nautic.fr/images/Q18.png",
+          "difficulty": 2,
+          "answers": [
+            {
+              "id": "a",
+              "text": "l'entrée d'un chenal obligatoire.",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "une zone de pêche.",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "text": "un danger pas encore porté sur les cartes.",
+              "correct": true
+            }
+          ]
+        },
+        {
+          "id": "balisage:18",
+          "sourceId": 18,
+          "categoryId": "balisage",
+          "categoryName": "Balisage",
+          "moduleId": 1,
+          "text": "En entrant au port du Palais (Morbihan 56, France) :",
+          "image": "https://www.loisirs-nautic.fr/images/Q14.GIF",
+          "difficulty": 3,
+          "answers": [
+            {
+              "id": "a",
+              "text": "je viens à droite.",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "Je viens à gauche.",
+              "correct": true
+            }
+          ]
+        },
+        {
+          "id": "balisage:10",
+          "sourceId": 10,
+          "categoryId": "balisage",
+          "categoryName": "Balisage",
+          "moduleId": 1,
+          "text": "À l'approche de cette marque :",
+          "image": "https://www.loisirs-nautic.fr/images/Q8.png",
+          "difficulty": 2,
+          "answers": [
+            {
+              "id": "a",
+              "text": "je m'écarte largement.",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "je passe obligatoirement au nord.",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "text": "je passe obligatoirement au sud.",
+              "correct": false
+            },
+            {
+              "id": "d",
+              "text": "je continue, je peux passer au plus près.",
+              "correct": true
+            }
+          ]
+        },
+        {
+          "id": "balisage:5",
+          "sourceId": 5,
+          "categoryId": "balisage",
+          "categoryName": "Balisage",
+          "moduleId": 1,
+          "text": "Cette marque indique :",
+          "image": "https://www.loisirs-nautic.fr/images/Q4.png",
+          "difficulty": 2,
+          "answers": [
+            {
+              "id": "a",
+              "text": "un danger isolé.",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "des eaux saines.",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "text": "une cardinale nord.",
+              "correct": false
+            },
+            {
+              "id": "d",
+              "text": "une marque spéciale.",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "balisage:15",
+          "sourceId": 15,
+          "categoryId": "balisage",
+          "categoryName": "Balisage",
+          "moduleId": 1,
+          "text": "La nuit, cap au nord, je vois 3 scintillements :",
+          "image": "https://www.loisirs-nautic.fr/images/nc_7.png",
+          "difficulty": 2,
+          "answers": [
+            {
+              "id": "a",
+              "text": "Je laisse sur mon tribord.",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "Je laisse sur mon bâbord.",
+              "correct": true
+            }
+          ]
+        },
+        {
+          "id": "balisage:26",
+          "sourceId": 26,
+          "categoryId": "balisage",
+          "categoryName": "Balisage",
+          "moduleId": 1,
+          "text": "Ce feu est :",
+          "image": "https://www.loisirs-nautic.fr/images/Q21.GIF",
+          "difficulty": 1,
+          "answers": [
+            {
+              "id": "a",
+              "text": "à éclat.",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "text": "isophase.",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "text": "à occultation.",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "balisage:1",
+          "sourceId": 1,
+          "categoryId": "balisage",
+          "categoryName": "Balisage",
+          "moduleId": 1,
+          "text": "En entrant au port,",
+          "image": "https://www.loisirs-nautic.fr/images/Q1.png",
+          "difficulty": 2,
+          "answers": [
+            {
+              "id": "a",
+              "text": "je laisse à tribord.",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "je laisse à bâbord.",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "text": "je laisse indifféremment à tribord ou à bâbord.",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "balisage:14",
+          "sourceId": 14,
+          "categoryId": "balisage",
+          "categoryName": "Balisage",
+          "moduleId": 1,
+          "text": "Ce navire se dirige :",
+          "image": "https://www.loisirs-nautic.fr/images/Q12.png",
+          "difficulty": 1,
+          "answers": [
+            {
+              "id": "a",
+              "text": "vers le port.",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "vers le large.",
+              "correct": true
+            }
+          ]
+        },
+        {
+          "id": "balisage:9",
+          "sourceId": 9,
+          "categoryId": "balisage",
+          "categoryName": "Balisage",
+          "moduleId": 1,
+          "text": "Cette bouée délimite :",
+          "image": "https://www.loisirs-nautic.fr/images/Q7.png",
+          "difficulty": 2,
+          "answers": [
+            {
+              "id": "a",
+              "text": "le côté tribord d'un chenal traversier.",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "text": "le côté bâbord d'un chenal traversier.",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "text": "la bande des 300 m.",
+              "correct": false
+            },
+            {
+              "id": "d",
+              "text": "une zone réservée à la baignade.",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "balisage:11",
+          "sourceId": 11,
+          "categoryId": "balisage",
+          "categoryName": "Balisage",
+          "moduleId": 1,
+          "text": "Ce balisage représente :",
+          "image": "https://www.loisirs-nautic.fr/images/Q9.png",
+          "difficulty": 2,
+          "answers": [
+            {
+              "id": "a",
+              "text": "le côté bâbord d'un chenal de plage.",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "une marque spéciale.",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "text": "une cardinale Est.",
+              "correct": false
+            },
+            {
+              "id": "d",
+              "text": "un danger nouveau.",
+              "correct": true
+            }
+          ]
+        },
+        {
+          "id": "balisage:4",
+          "sourceId": 4,
+          "categoryId": "balisage",
+          "categoryName": "Balisage",
+          "moduleId": 1,
+          "text": "Dans la bande côtière des 300 m, la vitesse est limitée à :",
+          "image": null,
+          "difficulty": 2,
+          "answers": [
+            {
+              "id": "a",
+              "text": "3 nds.",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "5 km/h.",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "text": "5 nds.",
+              "correct": true
+            },
+            {
+              "id": "d",
+              "text": "9 km/h.",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "balisage:28",
+          "sourceId": 28,
+          "categoryId": "balisage",
+          "categoryName": "Balisage",
+          "moduleId": 1,
+          "text": "Ce feu est :",
+          "image": "https://www.loisirs-nautic.fr/images/Q23.GIF",
+          "difficulty": 1,
+          "answers": [
+            {
+              "id": "a",
+              "text": "à éclat.",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "isophase.",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "text": "à occultation.",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "balisage:23",
+          "sourceId": 23,
+          "categoryId": "balisage",
+          "categoryName": "Balisage",
+          "moduleId": 1,
+          "text": "Cette bouée indique :",
+          "image": "https://www.loisirs-nautic.fr/images/Q19.png",
+          "difficulty": 1,
+          "answers": [
+            {
+              "id": "a",
+              "text": "le côté tribord d'un chenal de plage.",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "text": "des eaux saines.",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "text": "un danger isolé.",
+              "correct": false
+            },
+            {
+              "id": "d",
+              "text": "un danger nouveau.",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "balisage:13",
+          "sourceId": 13,
+          "categoryId": "balisage",
+          "categoryName": "Balisage",
+          "moduleId": 1,
+          "text": "Que signifie ce panneau ?",
+          "image": "https://www.loisirs-nautic.fr/images/Q11.png",
+          "difficulty": 2,
+          "answers": [
+            {
+              "id": "a",
+              "text": "Attention aux hélices !",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "Navigation interdite aux engins à moteur.",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "text": "Navigation autorisée aux engins à moteur.",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "balisage:29",
+          "sourceId": 29,
+          "categoryId": "balisage",
+          "categoryName": "Balisage",
+          "moduleId": 1,
+          "text": "Ce feu est :",
+          "image": null,
+          "difficulty": 1,
+          "answers": [
+            {
+              "id": "a",
+              "text": "à éclat.",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "isophase.",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "text": "à occultation.",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "balisage:16",
+          "sourceId": 16,
+          "categoryId": "balisage",
+          "categoryName": "Balisage",
+          "moduleId": 1,
+          "text": "Quel est votre sens de navigation ?",
+          "image": "https://www.loisirs-nautic.fr/images/q665.png",
+          "difficulty": 1,
+          "answers": [
+            {
+              "id": "a",
+              "text": "J'entre au port.",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "text": "Je sors du port.",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "balisage:24",
+          "sourceId": 24,
+          "categoryId": "balisage",
+          "categoryName": "Balisage",
+          "moduleId": 1,
+          "text": "Cap au sud :",
+          "image": "https://www.loisirs-nautic.fr/images/Q20.GIF",
+          "difficulty": 2,
+          "answers": [
+            {
+              "id": "a",
+              "text": "je laisse à tribord.",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "je laisse à bâbord.",
+              "correct": true
+            }
+          ]
+        },
+        {
+          "id": "balisage:25",
+          "sourceId": 25,
+          "categoryId": "balisage",
+          "categoryName": "Balisage",
+          "moduleId": 1,
+          "text": "Cette balise est :",
+          "image": "https://www.loisirs-nautic.fr/images/Q30.png",
+          "difficulty": 2,
+          "answers": [
+            {
+              "id": "a",
+              "text": "Une bouée d'épave.",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "Un danger isolé.",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "text": "Une marque spéciale.",
+              "correct": false
+            },
+            {
+              "id": "d",
+              "text": "Un croisement de routes maritimes.",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "balisage:21",
+          "sourceId": 21,
+          "categoryId": "balisage",
+          "categoryName": "Balisage",
+          "moduleId": 1,
+          "text": "Cette bouée est une marque de :",
+          "image": "https://www.loisirs-nautic.fr/images/Q17.png",
+          "difficulty": 2,
+          "answers": [
+            {
+              "id": "a",
+              "text": "chenal préféré à tribord.",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "chenal préféré à bâbord.",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "text": "danger isolé.",
+              "correct": false
+            },
+            {
+              "id": "d",
+              "text": "danger grave.",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "balisage:17",
+          "sourceId": 17,
+          "categoryId": "balisage",
+          "categoryName": "Balisage",
+          "moduleId": 1,
+          "text": "Faisant route au 260 :",
+          "image": "https://www.loisirs-nautic.fr/images/Q13.GIF",
+          "difficulty": 3,
+          "answers": [
+            {
+              "id": "a",
+              "text": "j'abats sur tribord.",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "j'abats sur bâbord.",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "text": "Je passe de n'importe quel côté.",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "balisage:20",
+          "sourceId": 20,
+          "categoryId": "balisage",
+          "categoryName": "Balisage",
+          "moduleId": 1,
+          "text": "La bouée émettant ce signal représente :",
+          "image": "https://www.loisirs-nautic.fr/images/Q16.GIF",
+          "difficulty": 1,
+          "answers": [
+            {
+              "id": "a",
+              "text": "l'entrée du port.",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "une zone de pêche.",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "text": "une bouée cardinale Est.",
+              "correct": false
+            },
+            {
+              "id": "d",
+              "text": "un danger isolé.",
+              "correct": true
+            }
+          ]
+        }
+      ],
+      "distributionByModule": {
+        "1": 28,
+        "2": 1,
+        "3": 1
+      }
+    },
+    {
+      "id": 6,
+      "name": "Serie 6",
+      "questionIds": [
+        "balisage:18",
+        "regles_barre:1",
+        "balisage:14",
+        "balisage:27",
+        "balisage:21",
+        "balisage:4",
+        "balisage:22",
+        "balisage:29",
+        "balisage:6",
+        "balisage:19",
+        "balisage:5",
+        "balisage:3",
+        "balisage:11",
+        "balisage:24",
+        "balisage:9",
+        "balisage:1",
+        "balisage:28",
+        "balisage:17",
+        "balisage:2",
+        "balisage:25",
+        "balisage:26",
+        "balisage:13",
+        "balisage:12",
+        "balisage:8",
+        "signaux:1",
+        "balisage:20",
+        "balisage:23",
+        "balisage:7",
+        "balisage:16",
+        "balisage:15"
+      ],
+      "questions": [
+        {
+          "id": "balisage:18",
+          "sourceId": 18,
+          "categoryId": "balisage",
+          "categoryName": "Balisage",
+          "moduleId": 1,
+          "text": "En entrant au port du Palais (Morbihan 56, France) :",
+          "image": "https://www.loisirs-nautic.fr/images/Q14.GIF",
+          "difficulty": 3,
+          "answers": [
+            {
+              "id": "a",
+              "text": "je viens à droite.",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "Je viens à gauche.",
+              "correct": true
+            }
+          ]
+        },
+        {
+          "id": "regles_barre:1",
+          "sourceId": 1,
+          "categoryId": "regles_barre",
+          "categoryName": "Règles de barre",
+          "moduleId": 3,
+          "text": "Cap au 195 :",
+          "image": null,
+          "difficulty": 3,
+          "answers": [
+            {
+              "id": "a",
+              "text": "je vais à droite.",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "je vais à gauche.",
+              "correct": true
+            }
+          ]
+        },
+        {
+          "id": "balisage:14",
+          "sourceId": 14,
+          "categoryId": "balisage",
+          "categoryName": "Balisage",
+          "moduleId": 1,
+          "text": "Ce navire se dirige :",
+          "image": "https://www.loisirs-nautic.fr/images/Q12.png",
+          "difficulty": 1,
+          "answers": [
+            {
+              "id": "a",
+              "text": "vers le port.",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "vers le large.",
+              "correct": true
+            }
+          ]
+        },
+        {
+          "id": "balisage:27",
+          "sourceId": 27,
+          "categoryId": "balisage",
+          "categoryName": "Balisage",
+          "moduleId": 1,
+          "text": "Ce feu est :",
+          "image": "https://www.loisirs-nautic.fr/images/Q22.GIF",
+          "difficulty": 1,
+          "answers": [
+            {
+              "id": "a",
+              "text": "à éclat.",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "isophase.",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "text": "à occultation.",
+              "correct": true
+            }
+          ]
+        },
+        {
+          "id": "balisage:21",
+          "sourceId": 21,
+          "categoryId": "balisage",
+          "categoryName": "Balisage",
+          "moduleId": 1,
+          "text": "Cette bouée est une marque de :",
+          "image": "https://www.loisirs-nautic.fr/images/Q17.png",
+          "difficulty": 2,
+          "answers": [
+            {
+              "id": "a",
+              "text": "chenal préféré à tribord.",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "chenal préféré à bâbord.",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "text": "danger isolé.",
+              "correct": false
+            },
+            {
+              "id": "d",
+              "text": "danger grave.",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "balisage:4",
+          "sourceId": 4,
+          "categoryId": "balisage",
+          "categoryName": "Balisage",
+          "moduleId": 1,
+          "text": "Dans la bande côtière des 300 m, la vitesse est limitée à :",
+          "image": null,
+          "difficulty": 2,
+          "answers": [
+            {
+              "id": "a",
+              "text": "3 nds.",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "5 km/h.",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "text": "5 nds.",
+              "correct": true
+            },
+            {
+              "id": "d",
+              "text": "9 km/h.",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "balisage:22",
+          "sourceId": 22,
+          "categoryId": "balisage",
+          "categoryName": "Balisage",
+          "moduleId": 1,
+          "text": "Ces 2 bouées signalent :",
+          "image": "https://www.loisirs-nautic.fr/images/Q18.png",
+          "difficulty": 2,
+          "answers": [
+            {
+              "id": "a",
+              "text": "l'entrée d'un chenal obligatoire.",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "une zone de pêche.",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "text": "un danger pas encore porté sur les cartes.",
+              "correct": true
+            }
+          ]
+        },
+        {
+          "id": "balisage:29",
+          "sourceId": 29,
+          "categoryId": "balisage",
+          "categoryName": "Balisage",
+          "moduleId": 1,
+          "text": "Ce feu est :",
+          "image": null,
+          "difficulty": 1,
+          "answers": [
+            {
+              "id": "a",
+              "text": "à éclat.",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "isophase.",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "text": "à occultation.",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "balisage:6",
+          "sourceId": 6,
+          "categoryId": "balisage",
+          "categoryName": "Balisage",
+          "moduleId": 1,
+          "text": "Sur le navire rouge, cap à l'est,",
+          "image": "https://www.loisirs-nautic.fr/images/Q5.png",
+          "difficulty": 3,
+          "answers": [
+            {
+              "id": "a",
+              "text": "je viens à droite.",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "Je viens à gauche.",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "text": "je viens indifféremment à droite ou à gauche.",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "balisage:19",
+          "sourceId": 19,
+          "categoryId": "balisage",
+          "categoryName": "Balisage",
+          "moduleId": 1,
+          "text": "Venant du Sud, je vois cette bouée dont les voyants sont absents :",
+          "image": "https://www.loisirs-nautic.fr/images/Q15.png",
+          "difficulty": 3,
+          "answers": [
+            {
+              "id": "a",
+              "text": "Je viens à droite.",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "text": "Je viens à gauche.",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "balisage:5",
+          "sourceId": 5,
+          "categoryId": "balisage",
+          "categoryName": "Balisage",
+          "moduleId": 1,
+          "text": "Cette marque indique :",
+          "image": "https://www.loisirs-nautic.fr/images/Q4.png",
+          "difficulty": 2,
+          "answers": [
+            {
+              "id": "a",
+              "text": "un danger isolé.",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "des eaux saines.",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "text": "une cardinale nord.",
+              "correct": false
+            },
+            {
+              "id": "d",
+              "text": "une marque spéciale.",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "balisage:3",
+          "sourceId": 3,
+          "categoryId": "balisage",
+          "categoryName": "Balisage",
+          "moduleId": 1,
+          "text": "Cap au 195 :",
+          "image": "https://www.loisirs-nautic.fr/images/nc_12.png",
+          "difficulty": 3,
+          "answers": [
+            {
+              "id": "a",
+              "text": "je vais à droite.",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "je vais à gauche.",
+              "correct": true
+            }
+          ]
+        },
+        {
+          "id": "balisage:11",
+          "sourceId": 11,
+          "categoryId": "balisage",
+          "categoryName": "Balisage",
+          "moduleId": 1,
+          "text": "Ce balisage représente :",
+          "image": "https://www.loisirs-nautic.fr/images/Q9.png",
+          "difficulty": 2,
+          "answers": [
+            {
+              "id": "a",
+              "text": "le côté bâbord d'un chenal de plage.",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "une marque spéciale.",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "text": "une cardinale Est.",
+              "correct": false
+            },
+            {
+              "id": "d",
+              "text": "un danger nouveau.",
+              "correct": true
+            }
+          ]
+        },
+        {
+          "id": "balisage:24",
+          "sourceId": 24,
+          "categoryId": "balisage",
+          "categoryName": "Balisage",
+          "moduleId": 1,
+          "text": "Cap au sud :",
+          "image": "https://www.loisirs-nautic.fr/images/Q20.GIF",
+          "difficulty": 2,
+          "answers": [
+            {
+              "id": "a",
+              "text": "je laisse à tribord.",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "je laisse à bâbord.",
+              "correct": true
+            }
+          ]
+        },
+        {
+          "id": "balisage:9",
+          "sourceId": 9,
+          "categoryId": "balisage",
+          "categoryName": "Balisage",
+          "moduleId": 1,
+          "text": "Cette bouée délimite :",
+          "image": "https://www.loisirs-nautic.fr/images/Q7.png",
+          "difficulty": 2,
+          "answers": [
+            {
+              "id": "a",
+              "text": "le côté tribord d'un chenal traversier.",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "text": "le côté bâbord d'un chenal traversier.",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "text": "la bande des 300 m.",
+              "correct": false
+            },
+            {
+              "id": "d",
+              "text": "une zone réservée à la baignade.",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "balisage:1",
+          "sourceId": 1,
+          "categoryId": "balisage",
+          "categoryName": "Balisage",
+          "moduleId": 1,
+          "text": "En entrant au port,",
+          "image": "https://www.loisirs-nautic.fr/images/Q1.png",
+          "difficulty": 2,
+          "answers": [
+            {
+              "id": "a",
+              "text": "je laisse à tribord.",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "je laisse à bâbord.",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "text": "je laisse indifféremment à tribord ou à bâbord.",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "balisage:28",
+          "sourceId": 28,
+          "categoryId": "balisage",
+          "categoryName": "Balisage",
+          "moduleId": 1,
+          "text": "Ce feu est :",
+          "image": "https://www.loisirs-nautic.fr/images/Q23.GIF",
+          "difficulty": 1,
+          "answers": [
+            {
+              "id": "a",
+              "text": "à éclat.",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "isophase.",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "text": "à occultation.",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "balisage:17",
+          "sourceId": 17,
+          "categoryId": "balisage",
+          "categoryName": "Balisage",
+          "moduleId": 1,
+          "text": "Faisant route au 260 :",
+          "image": "https://www.loisirs-nautic.fr/images/Q13.GIF",
+          "difficulty": 3,
+          "answers": [
+            {
+              "id": "a",
+              "text": "j'abats sur tribord.",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "j'abats sur bâbord.",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "text": "Je passe de n'importe quel côté.",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "balisage:2",
+          "sourceId": 2,
+          "categoryId": "balisage",
+          "categoryName": "Balisage",
+          "moduleId": 1,
+          "text": "Ces petites bouées jaunes rapprochées indiquent :",
+          "image": "https://www.loisirs-nautic.fr/images/Q29.png",
+          "difficulty": 1,
+          "answers": [
+            {
+              "id": "a",
+              "text": "un danger isolé.",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "un danger nouveau.",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "text": "une cardinale sud.",
+              "correct": false
+            },
+            {
+              "id": "d",
+              "text": "une zone réservée à la baignade.",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "balisage:25",
+          "sourceId": 25,
+          "categoryId": "balisage",
+          "categoryName": "Balisage",
+          "moduleId": 1,
+          "text": "Cette balise est :",
+          "image": "https://www.loisirs-nautic.fr/images/Q30.png",
+          "difficulty": 2,
+          "answers": [
+            {
+              "id": "a",
+              "text": "Une bouée d'épave.",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "Un danger isolé.",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "text": "Une marque spéciale.",
+              "correct": false
+            },
+            {
+              "id": "d",
+              "text": "Un croisement de routes maritimes.",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "balisage:26",
+          "sourceId": 26,
+          "categoryId": "balisage",
+          "categoryName": "Balisage",
+          "moduleId": 1,
+          "text": "Ce feu est :",
+          "image": "https://www.loisirs-nautic.fr/images/Q21.GIF",
+          "difficulty": 1,
+          "answers": [
+            {
+              "id": "a",
+              "text": "à éclat.",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "text": "isophase.",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "text": "à occultation.",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "balisage:13",
+          "sourceId": 13,
+          "categoryId": "balisage",
+          "categoryName": "Balisage",
+          "moduleId": 1,
+          "text": "Que signifie ce panneau ?",
+          "image": "https://www.loisirs-nautic.fr/images/Q11.png",
+          "difficulty": 2,
+          "answers": [
+            {
+              "id": "a",
+              "text": "Attention aux hélices !",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "Navigation interdite aux engins à moteur.",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "text": "Navigation autorisée aux engins à moteur.",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "balisage:12",
+          "sourceId": 12,
+          "categoryId": "balisage",
+          "categoryName": "Balisage",
+          "moduleId": 1,
+          "text": "En entrant au port, cette marque représente :",
+          "image": "https://www.loisirs-nautic.fr/images/Q10.png",
+          "difficulty": 1,
+          "answers": [
+            {
+              "id": "a",
+              "text": "un chenal préféré à tribord.",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "un chenal préféré à bâbord.",
+              "correct": true
+            }
+          ]
+        },
+        {
+          "id": "balisage:8",
+          "sourceId": 8,
+          "categoryId": "balisage",
+          "categoryName": "Balisage",
+          "moduleId": 1,
+          "text": "En sortant du port :",
+          "image": "https://www.loisirs-nautic.fr/images/Q6.png",
+          "difficulty": 1,
+          "answers": [
+            {
+              "id": "a",
+              "text": "je passe à tribord.",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "text": "je passe à bâbord.",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "signaux:1",
+          "sourceId": 1,
+          "categoryId": "signaux",
+          "categoryName": "Signaux",
+          "moduleId": 2,
+          "text": "Que signifie ce panneau ?",
+          "image": null,
+          "difficulty": 2,
+          "answers": [
+            {
+              "id": "a",
+              "text": "Attention aux hélices !",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "Navigation interdite aux engins à moteur.",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "text": "Navigation autorisée aux engins à moteur.",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "balisage:20",
+          "sourceId": 20,
+          "categoryId": "balisage",
+          "categoryName": "Balisage",
+          "moduleId": 1,
+          "text": "La bouée émettant ce signal représente :",
+          "image": "https://www.loisirs-nautic.fr/images/Q16.GIF",
+          "difficulty": 1,
+          "answers": [
+            {
+              "id": "a",
+              "text": "l'entrée du port.",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "une zone de pêche.",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "text": "une bouée cardinale Est.",
+              "correct": false
+            },
+            {
+              "id": "d",
+              "text": "un danger isolé.",
+              "correct": true
+            }
+          ]
+        },
+        {
+          "id": "balisage:23",
+          "sourceId": 23,
+          "categoryId": "balisage",
+          "categoryName": "Balisage",
+          "moduleId": 1,
+          "text": "Cette bouée indique :",
+          "image": "https://www.loisirs-nautic.fr/images/Q19.png",
+          "difficulty": 1,
+          "answers": [
+            {
+              "id": "a",
+              "text": "le côté tribord d'un chenal de plage.",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "text": "des eaux saines.",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "text": "un danger isolé.",
+              "correct": false
+            },
+            {
+              "id": "d",
+              "text": "un danger nouveau.",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "balisage:7",
+          "sourceId": 7,
+          "categoryId": "balisage",
+          "categoryName": "Balisage",
+          "moduleId": 1,
+          "text": "Cap au 345 :",
+          "image": "https://www.loisirs-nautic.fr/images/nc_6.png",
+          "difficulty": 2,
+          "answers": [
+            {
+              "id": "a",
+              "text": "Je laisse à ma droite.",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "text": "Je laisse à ma gauche.",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "balisage:16",
+          "sourceId": 16,
+          "categoryId": "balisage",
+          "categoryName": "Balisage",
+          "moduleId": 1,
+          "text": "Quel est votre sens de navigation ?",
+          "image": "https://www.loisirs-nautic.fr/images/q665.png",
+          "difficulty": 1,
+          "answers": [
+            {
+              "id": "a",
+              "text": "J'entre au port.",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "text": "Je sors du port.",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "balisage:15",
+          "sourceId": 15,
+          "categoryId": "balisage",
+          "categoryName": "Balisage",
+          "moduleId": 1,
+          "text": "La nuit, cap au nord, je vois 3 scintillements :",
+          "image": "https://www.loisirs-nautic.fr/images/nc_7.png",
+          "difficulty": 2,
+          "answers": [
+            {
+              "id": "a",
+              "text": "Je laisse sur mon tribord.",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "Je laisse sur mon bâbord.",
+              "correct": true
+            }
+          ]
+        }
+      ],
+      "distributionByModule": {
+        "1": 28,
+        "2": 1,
+        "3": 1
+      }
+    }
+  ]
+}

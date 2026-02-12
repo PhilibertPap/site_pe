@@ -62,14 +62,23 @@ class SitePE {
     }
 
     startQCM(moduleFilter = null) {
-        const allQuestions = this.data.qcm.questions || [];
-        let questions = [...allQuestions];
-        if (moduleFilter) {
-            questions = questions.filter(question => question.moduleId == moduleFilter);
+        const pool = window.QcmEngine
+            ? window.QcmEngine.buildQuestionPool(this.data.qcm)
+            : [];
+        const questions = window.QcmEngine
+            ? window.QcmEngine.pickQuestions(pool, {
+                moduleId: moduleFilter || null,
+                count: moduleFilter ? 15 : 30
+            })
+            : [];
+
+        if (!questions.length) {
+            alert('Aucune question disponible pour ce mode.');
+            return;
         }
 
         this.qcm = {
-            q: questions.sort(() => Math.random() - 0.5),
+            q: questions,
             idx: 0,
             answers: [],
             start: Date.now(),
@@ -87,7 +96,7 @@ class SitePE {
         }
 
         const progress = ((this.qcm.idx + 1) / this.qcm.q.length) * 100;
-        const options = question.options.map((option, i) => {
+        const options = question.answers.map((option, i) => {
             return `<div class="form-check">
                 <input class="form-check-input" type="radio" name="ans" value="${i}" id="opt${this.qcm.idx}-${i}">
                 <label class="form-check-label" for="opt${this.qcm.idx}-${i}">${option.text}</label>
@@ -114,7 +123,7 @@ class SitePE {
         }
 
         const question = this.qcm.q[this.qcm.idx];
-        const correctIndex = question.options.findIndex(option => option.correct);
+        const correctIndex = question.answers.findIndex(option => option.correct);
         const isCorrect = Number.parseInt(selected.value, 10) === correctIndex;
 
         if (isCorrect) {
