@@ -68,7 +68,7 @@
                     <li>Partie 1 : QCM 30 questions (5 fautes admises)</li>
                     <li>Partie 2 : problème navigation + marée</li>
                 </ul>
-                <button class="btn btn-primary btn-lg" onclick="startFullExam()">Démarrer l'examen complet</button>
+                <button class="btn btn-primary btn-lg" id="start-full-exam-btn">Démarrer l'examen complet</button>
             </div>
         </article>
 
@@ -87,9 +87,19 @@
                         </select>
                     </div>
                     <div class="col-md-4 d-grid">
-                        <button class="btn btn-success" onclick="startQuickQCM()">Démarrer</button>
+                        <button class="btn btn-success" id="start-quick-qcm-btn">Démarrer</button>
                     </div>
                 </div>
+            </div>
+        </article>
+
+        <article class="card mb-4 reveal reveal-delay-3">
+            <header class="card-header bg-secondary text-white">
+                <h2 class="h5 mb-0 section-head"><span class="icon-badge">📚</span>Séries fixes d'examen</h2>
+            </header>
+            <div class="card-body">
+                <p class="text-muted">Lance une série prédéfinie de 30 questions.</p>
+                <div id="fixed-series-list" class="row g-2"></div>
             </div>
         </article>
 
@@ -100,7 +110,7 @@
             <div class="card-body">
                 <p>Travaille un cas complet : cartographie, marée, route et sécurité.</p>
                 <p class="text-muted"><small>La carte 9999 est utile pour suivre toutes les étapes.</small></p>
-                <button class="btn btn-info" onclick="startNavigationProblem()">Démarrer le problème</button>
+                <button class="btn btn-info" id="start-navigation-problem-btn">Démarrer le problème</button>
                 <a href="#" class="btn btn-outline-info ms-2">Télécharger la carte 9999</a>
             </div>
         </article>
@@ -134,27 +144,7 @@
 </div>
 
 <div id="exam-container" class="mt-5 soft-panel p-3 reveal reveal-delay-4" style="display:none;"></div>
-
-<script>
-function startFullExam() {
-    document.getElementById('exam-container').style.display = 'block';
-    // Logique examen chargée par JS/app.js
-    console.log('Démarrage examen complet');
-}
-
-function startQuickQCM() {
-    const filter = document.getElementById('qcm-filter').value;
-    document.getElementById('exam-container').style.display = 'block';
-    // Logique QCM chargée par JS
-    console.log('Démarrage QCM rapide:', filter);
-}
-
-function startNavigationProblem() {
-    document.getElementById('exam-container').style.display = 'block';
-    // Logique problème navigation chargée par JS
-    console.log('Démarrage problème navigation');
-}
-</script>
+<script src="js/examens.js"></script>
 
     </main>
 

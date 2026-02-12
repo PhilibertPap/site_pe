@@ -3,6 +3,7 @@ class SitePE {
         this.storageKey = 'sitepe_progress';
         this.progress = { modules: {}, examHistory: [] };
         this.data = { site: {}, qcm: {}, exercises: {}, problems: {} };
+        this.qcmTimer = null;
         this.init();
     }
 
@@ -62,6 +63,7 @@ class SitePE {
     }
 
     startQCM(moduleFilter = null) {
+        this.stopQcmTimer();
         const pool = window.QcmEngine
             ? window.QcmEngine.buildQuestionPool(this.data.qcm)
             : [];
@@ -83,9 +85,103 @@ class SitePE {
             answers: [],
             start: Date.now(),
             score: 0,
-            errors: 0
+            errors: 0,
+            isFinished: false,
+            metadata: {
+                mode: moduleFilter ? 'quick-module' : 'quick',
+                timeLimitMinutes: null
+            }
         };
         this.displayQCM();
+    }
+
+    startQCMFromQuestions(questions, metadata = {}) {
+        this.stopQcmTimer();
+        if (!Array.isArray(questions) || !questions.length) {
+            alert('Aucune question disponible dans cette serie.');
+            return;
+        }
+
+        this.qcm = {
+            q: [...questions],
+            idx: 0,
+            answers: [],
+            start: Date.now(),
+            score: 0,
+            errors: 0,
+            metadata: {
+                mode: metadata.mode || 'custom',
+                timeLimitMinutes: Number.isFinite(metadata.timeLimitMinutes) ? metadata.timeLimitMinutes : null,
+                seriesId: metadata.seriesId || null
+            },
+            isFinished: false
+        };
+        this.startQcmTimerIfNeeded();
+        this.displayQCM();
+    }
+
+    startQcmTimerIfNeeded() {
+        const minutes = this.qcm?.metadata?.timeLimitMinutes;
+        if (!Number.isFinite(minutes) || minutes <= 0) return;
+
+        this.qcm.deadline = Date.now() + Math.floor(minutes * 60 * 1000);
+        this.qcmTimer = setInterval(() => {
+            if (!this.qcm || this.qcm.isFinished) {
+                this.stopQcmTimer();
+                return;
+            }
+            const remaining = this.getRemainingSeconds();
+            if (remaining <= 0) {
+                this.forceEndQcmByTimeout();
+                return;
+            }
+            this.renderQcmTimerOnly();
+        }, 1000);
+    }
+
+    stopQcmTimer() {
+        if (this.qcmTimer) {
+            clearInterval(this.qcmTimer);
+            this.qcmTimer = null;
+        }
+    }
+
+    getRemainingSeconds() {
+        if (!this.qcm?.deadline) return null;
+        return Math.max(0, Math.floor((this.qcm.deadline - Date.now()) / 1000));
+    }
+
+    formatRemainingTime(seconds) {
+        const mins = Math.floor(seconds / 60).toString().padStart(2, '0');
+        const secs = (seconds % 60).toString().padStart(2, '0');
+        return `${mins}:${secs}`;
+    }
+
+    getTimerBadgeHtml() {
+        const seconds = this.getRemainingSeconds();
+        if (seconds == null) return '';
+        const cls = seconds <= 60 ? 'text-bg-danger' : seconds <= 300 ? 'text-bg-warning' : 'text-bg-secondary';
+        return `<span id="qcm-timer" class="badge ${cls}">Temps restant: ${this.formatRemainingTime(seconds)}</span>`;
+    }
+
+    renderQcmTimerOnly() {
+        const timerEl = document.getElementById('qcm-timer');
+        if (!timerEl) return;
+        const seconds = this.getRemainingSeconds();
+        if (seconds == null) return;
+        timerEl.textContent = `Temps restant: ${this.formatRemainingTime(seconds)}`;
+        timerEl.classList.remove('text-bg-secondary', 'text-bg-warning', 'text-bg-danger');
+        if (seconds <= 60) timerEl.classList.add('text-bg-danger');
+        else if (seconds <= 300) timerEl.classList.add('text-bg-warning');
+        else timerEl.classList.add('text-bg-secondary');
+    }
+
+    forceEndQcmByTimeout() {
+        this.endQCM({ timedOut: true });
+    }
+
+    getQcmContainer() {
+        return document.getElementById('qcm-container') || document.getElementById('exam-container');
     }
 
     displayQCM() {
@@ -105,17 +201,27 @@ class SitePE {
 
         const html = `<div class="qcm-question">
             <div class="progress mb-3"><div class="progress-bar" style="width:${progress}%"></div></div>
-            <h5>${this.qcm.idx + 1}/${this.qcm.q.length}</h5>
-            <h4>${question.question}</h4>
+            <div class="d-flex justify-content-between align-items-center mb-2">
+                <h5 class="mb-0">${this.qcm.idx + 1}/${this.qcm.q.length}</h5>
+                ${this.getTimerBadgeHtml()}
+            </div>
+            <h4>${question.text}</h4>
             <div class="options mt-4">${options}</div>
             <button class="btn btn-primary mt-4" onclick="window.sitePE.nextQCM()">Suivant</button>
         </div>`;
 
-        const container = document.getElementById('qcm-container');
+        const container = this.getQcmContainer();
         if (container) container.innerHTML = html;
     }
 
     nextQCM() {
+        if (this.qcm?.isFinished) return;
+        const remaining = this.getRemainingSeconds();
+        if (remaining != null && remaining <= 0) {
+            this.forceEndQcmByTimeout();
+            return;
+        }
+
         const selected = document.querySelector('input[name="ans"]:checked');
         if (!selected) {
             alert('Selectionne une reponse.');
@@ -136,14 +242,20 @@ class SitePE {
         this.displayQCM();
     }
 
-    endQCM() {
+    endQCM(options = {}) {
+        if (!this.qcm || this.qcm.isFinished) return;
+        this.qcm.isFinished = true;
+        this.stopQcmTimer();
+
         const score = Math.round(this.qcm.score);
         const passed = score >= 75 && this.qcm.errors <= 5;
+        const timedOut = Boolean(options.timedOut);
         const exam = {
             date: new Date().toLocaleString('fr-FR'),
             score,
             errors: this.qcm.errors,
-            passed
+            passed,
+            timedOut
         };
 
         this.progress.examHistory.push(exam);
@@ -151,12 +263,13 @@ class SitePE {
 
         const html = `<div class="alert ${passed ? 'alert-success' : 'alert-danger'}">
             <h3>${passed ? 'Reussi' : 'A retenter'}</h3>
+            ${timedOut ? '<p><strong>Temps écoulé:</strong> la série a été arrêtée automatiquement.</p>' : ''}
             <p><strong>Score: ${score}/100</strong></p>
             <p>Erreurs: ${this.qcm.errors}/5</p>
             <button class="btn btn-primary mt-3" onclick="location.reload()">Recommencer</button>
         </div>`;
 
-        const container = document.getElementById('qcm-container');
+        const container = this.getQcmContainer();
         if (container) container.innerHTML = html;
     }
 
