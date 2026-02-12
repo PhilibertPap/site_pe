@@ -7,6 +7,9 @@ Site d'entraînement à l'examen du PE pour les scouts du groupe NDC.
 - `npm test` execute les tests d'integrite des donnees et du moteur QCM.
 - `npm run generate:series` genere `src/data/exam-series.json` (6 series de 30 questions).
 - `npm run generate:qcm:large` genere `src/data/qcm.large.generated.json` (dataset massif).
+- `npm run generate:pe:data` genere:
+  - `src/data/qcm.pe.generated.json` (dataset QCM PE derive de slides + references web),
+  - `src/data/course.generated.json` (contenu "cours" enrichi par module).
 - `npm run import:attendus` fusionne `imports/drive/attendus-pe.json` vers `src/data/qcm.drive.merged.json`.
 
 ## Structure actuelle (5 pages)

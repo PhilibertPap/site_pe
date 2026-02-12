@@ -106,11 +106,16 @@ async function build() {
             modules: [],
             etapes: []
         });
+        const courseGeneratedData = await loadJSON(path.join(dataDir, 'course.generated.json'), {
+            modules: []
+        });
 
+        const qcmPeGeneratedPath = path.join(dataDir, 'qcm.pe.generated.json');
         const qcmMergedPath = path.join(dataDir, 'qcm.drive.merged.json');
         const qcmLargePath = path.join(dataDir, 'qcm.large.generated.json');
         let qcmSourcePath = path.join(dataDir, 'qcm.json');
         if (await fs.pathExists(qcmMergedPath)) qcmSourcePath = qcmMergedPath;
+        else if (await fs.pathExists(qcmPeGeneratedPath)) qcmSourcePath = qcmPeGeneratedPath;
         else if (await fs.pathExists(qcmLargePath)) qcmSourcePath = qcmLargePath;
         const qcmData = await loadJSON(qcmSourcePath, {
             categories: [],
@@ -126,6 +131,16 @@ async function build() {
             trainingSessions: []
         });
 
+        // Enrichissement optionnel du contenu de cours (sans toucher au fichier source site.json)
+        const overridesById = new Map((courseGeneratedData.modules || []).map(module => [module.id, module]));
+        const enrichedSiteData = {
+            ...siteData,
+            modules: (siteData.modules || []).map(module => ({
+                ...module,
+                ...(overridesById.get(module.id) || {})
+            }))
+        };
+
         // ========== TRANSFORMATION DES DONNÉES ==========
         console.log("🔄 Transformation des données...");
 
@@ -139,6 +154,7 @@ async function build() {
 
         // Préparer les données d'entraînement
         const trainingData = prepareTrainingData(enrichedQCMData, trainingSessionsData);
+        const totalQcmCount = trainingData.statistics.totalQCM;
         const examSeriesData = {
             generatedAt: new Date().toISOString(),
             algorithm: 'balanced_under_constraints_v1',
@@ -189,21 +205,21 @@ async function build() {
 
         // Dashboard
         const dashboardData = {
-            ...siteData,
+            ...enrichedSiteData,
             title: "Dashboard",
             globalProgress: 0,
-            modules: siteData.modules.slice(0, 3),
+            modules: enrichedSiteData.modules.slice(0, 3),
             ...trainingData.statistics
         };
         await generatePage('index.html', dashboardTemplate, dashboardData);
 
         // Parcours
         const parcoursData = {
-            ...siteData,
+            ...enrichedSiteData,
             title: "Parcours",
-            etapes: siteData.etapes.map(e => ({
+            etapes: enrichedSiteData.etapes.map(e => ({
                 ...e,
-                modules: siteData.modules.filter(m => e.modules.includes(m.id))
+                modules: enrichedSiteData.modules.filter(m => e.modules.includes(m.id))
             }))
         };
         await generatePage('parcours.html', parcoursTemplate, parcoursData);
@@ -211,7 +227,7 @@ async function build() {
         // ========== PAGE ENTRAÎNEMENT (MODIFIÉE) ==========
         const entrainementData = {
             title: "Entraînement",
-            modules: siteData.modules,
+            modules: enrichedSiteData.modules,
             ...trainingData,           // ✅ Données d'entraînement
             ...exercisesData,
             // Ajouter les données QCM pour les templates
@@ -225,8 +241,8 @@ async function build() {
         // Examens
         const examensData = {
             title: "Examens",
-            modules: siteData.modules,
-            qcmQuestionCount: enrichedQCMData.totalQuestions || 0,
+            modules: enrichedSiteData.modules,
+            qcmQuestionCount: totalQcmCount,
             examHistory: [],
             ...configData,
             categories: enrichedQCMData.categories // ✅ Ajouter les catégories
@@ -236,13 +252,13 @@ async function build() {
         // Carnet
         const carnetData = {
             title: "Carnet",
-            modules: siteData.modules.map(m => ({
+            modules: enrichedSiteData.modules.map(m => ({
                 ...m,
                 isCompleted: false,
                 keyPoints: ['Point 1', 'Point 2']
             })),
             completedModulesCount: 0,
-            totalModulesCount: siteData.modules.length
+            totalModulesCount: enrichedSiteData.modules.length
         };
         await generatePage('carnet.html', carnetTemplate, carnetData);
 

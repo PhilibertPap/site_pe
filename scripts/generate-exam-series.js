@@ -20,12 +20,15 @@ function createSeededRng(seed) {
 
 function main() {
     const rootDir = path.join(__dirname, '..');
+    const qcmPePath = path.join(rootDir, 'src', 'data', 'qcm.pe.generated.json');
     const qcmMergedPath = path.join(rootDir, 'src', 'data', 'qcm.drive.merged.json');
     const qcmLargePath = path.join(rootDir, 'src', 'data', 'qcm.large.generated.json');
     const qcmBasePath = path.join(rootDir, 'src', 'data', 'qcm.json');
     const qcmPath = fs.existsSync(qcmMergedPath)
         ? qcmMergedPath
-        : (fs.existsSync(qcmLargePath) ? qcmLargePath : qcmBasePath);
+        : (fs.existsSync(qcmPePath)
+            ? qcmPePath
+            : (fs.existsSync(qcmLargePath) ? qcmLargePath : qcmBasePath));
     const outputPath = path.join(rootDir, 'src', 'data', 'exam-series.json');
 
     const qcmData = readJson(qcmPath);

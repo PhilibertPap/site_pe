@@ -1,0 +1,236 @@
+{
+  "generatedAt": "2026-02-12T23:04:03.257Z",
+  "source": "pe_knowledge_bank",
+  "modules": [
+    {
+      "id": 1,
+      "description": "Fondamentaux de balisage IALA region A pour l approche, la sortie de port et les marques speciales.",
+      "objectifs": [
+        "Identifier rapidement les marques laterales et cardinales",
+        "Connaitre le sens de passage en region A",
+        "Distinguer marques de danger, eaux saines et marques speciales"
+      ],
+      "content": "<p>Fondamentaux de balisage IALA region A pour l approche, la sortie de port et les marques speciales.</p><h5>Laterales region A</h5><ul><li>En entrant au port: rouge a babord, vert a tribord</li><li>Marque babord: rouge, forme plutot cylindrique</li><li>Marque tribord: verte, forme plutot conique</li></ul><h5>Cardinales</h5><ul><li>Cardinale Nord: passer au Nord</li><li>Cardinale Est: passer a l Est</li><li>Cardinale Sud: passer au Sud</li><li>Cardinale Ouest: passer a l Ouest</li></ul><h5>Autres marques</h5><ul><li>Danger isole: noir/rouge avec deux boules noires</li><li>Eaux saines: bandes verticales rouge/blanc, sphere rouge</li><li>Marque speciale: jaune, topmark en X</li></ul><h6>References</h6><ul><li><a href=\"https://www.iala-aism.org/technical/maritime-buoyage/\" target=\"_blank\" rel=\"noopener noreferrer\">IALA Maritime Buoyage System</a></li></ul>",
+      "keyPoints": [
+        "En region A, en entrant au port, on laisse le rouge a babord.",
+        "En region A, en entrant au port, on laisse le vert a tribord.",
+        "La marque laterale babord est rouge.",
+        "La marque laterale tribord est verte.",
+        "La cardinale nord indique de passer au nord de la marque.",
+        "La cardinale est indique de passer a l est de la marque.",
+        "La cardinale sud indique de passer au sud de la marque.",
+        "La cardinale ouest indique de passer a l ouest de la marque.",
+        "Une marque de danger isole est noire et rouge avec deux boules noires.",
+        "Une marque d eaux saines est rouge et blanche avec une sphere rouge."
+      ],
+      "qcmQuestionCount": 96
+    },
+    {
+      "id": 2,
+      "description": "Signaux sonores de manœuvre et feux reglementaires utiles au QCM PE.",
+      "objectifs": [
+        "Memoriser les signaux sonores essentiels RIPAM",
+        "Reconnaitre les secteurs des feux de navigation",
+        "Appliquer les signaux en visibilite reduite"
+      ],
+      "content": "<p>Signaux sonores de manœuvre et feux reglementaires utiles au QCM PE.</p><h5>Signaux sonores</h5><ul><li>1 bref: je viens sur tribord</li><li>2 brefs: je viens sur babord</li><li>3 brefs: je bats en arriere</li><li>Un bref dure environ 1 seconde</li></ul><h5>Visibilite reduite</h5><ul><li>Navire a machine faisant route: 1 son prolonge toutes les 2 min max</li><li>Navire a machine en route sans erre: 2 sons prolonges</li></ul><h5>Feux</h5><ul><li>Feu de babord: rouge</li><li>Feu de tribord: vert</li><li>Feu de tete de mat: 225 degres</li><li>Feu de poupe: 135 degres</li></ul><h6>References</h6><ul><li><a href=\"https://www.imo.org/en/About/Conventions/Pages/COLREG.aspx\" target=\"_blank\" rel=\"noopener noreferrer\">IMO COLREG</a></li></ul>",
+      "keyPoints": [
+        "Un son bref dure environ une seconde.",
+        "Un son prolonge dure de quatre a six secondes.",
+        "Un son bref signifie intention de venir sur tribord.",
+        "Deux sons brefs signifient intention de venir sur babord.",
+        "Trois sons brefs signifient propulsion en arriere.",
+        "En visibilite reduite, un navire a machine faisant route emet un son prolonge toutes les deux minutes au maximum.",
+        "En visibilite reduite, un navire a machine en route sans erre emet deux sons prolonges.",
+        "Le feu de cote babord est rouge.",
+        "Le feu de cote tribord est vert.",
+        "Le feu de tete de mat couvre 225 degres."
+      ],
+      "qcmQuestionCount": 96
+    },
+    {
+      "id": 3,
+      "description": "Priorites et prevention des abordages conformes aux regles RIPAM.",
+      "objectifs": [
+        "Appliquer les priorites en routes de collision",
+        "Identifier le navire qui doit manœuvrer",
+        "Connaitre les regles fondamentales de prevention"
+      ],
+      "content": "<p>Priorites et prevention des abordages conformes aux regles RIPAM.</p><h5>Principes generaux</h5><ul><li>Veille visuelle et auditive permanente</li><li>Vitesse de securite adaptee</li><li>Action franche et precoce pour eviter la collision</li></ul><h5>Situations typiques</h5><ul><li>Route opposee: les deux navires viennent sur tribord</li><li>Croisement: navire ayant l autre sur tribord doit s ecarter</li><li>Depassement: navire depassant garde ses distances</li></ul><h6>References</h6><ul><li><a href=\"https://www.imo.org/en/About/Conventions/Pages/COLREG.aspx\" target=\"_blank\" rel=\"noopener noreferrer\">IMO COLREG</a></li></ul>",
+      "keyPoints": [
+        "La veille visuelle et auditive doit etre assuree en permanence.",
+        "La vitesse doit rester une vitesse de securite.",
+        "Un gisement pratiquement constant peut indiquer un risque de collision.",
+        "En route opposee, deux navires a machine doivent venir sur tribord.",
+        "En croisement, le navire qui voit l autre sur tribord doit s ecarter.",
+        "Le navire depassant doit se maintenir a l ecart du navire depasse.",
+        "Le navire privilegie garde en principe son cap et sa vitesse.",
+        "Une action d evitement doit etre franche et prise a temps.",
+        "Dans un chenal etroit, on se tient du cote tribord du chenal.",
+        "Une action tardive augmente le risque d abordage."
+      ],
+      "qcmQuestionCount": 96
+    },
+    {
+      "id": 4,
+      "description": "Identifier les navires particuliers de nuit (feux) et de jour (marques).",
+      "objectifs": [
+        "Reconnaître les feux des navires speciaux",
+        "Connaitre les marques de jour associees",
+        "Adapter la conduite selon le statut du navire observe"
+      ],
+      "content": "<p>Identifier les navires particuliers de nuit (feux) et de jour (marques).</p><h5>Cas particuliers</h5><ul><li>NUC: deux feux rouges superposes</li><li>RAM: rouge-blanc-rouge</li><li>Pilotage: blanc sur rouge</li></ul><h5>Marques de jour</h5><ul><li>NUC: deux boules noires</li><li>RAM: boule losange boule</li><li>Mouillage: une boule noire</li></ul><h6>References</h6><ul><li><a href=\"https://www.imo.org/en/About/Conventions/Pages/COLREG.aspx\" target=\"_blank\" rel=\"noopener noreferrer\">IMO COLREG</a></li></ul>",
+      "keyPoints": [
+        "Un navire non maitre de sa manœuvre montre deux feux rouges superposes.",
+        "Un navire a capacite de manœuvre restreinte montre rouge-blanc-rouge.",
+        "Un navire pilote montre blanc sur rouge.",
+        "Un navire en peche autre que chalut montre rouge sur blanc.",
+        "Un chalutier montre vert sur blanc.",
+        "Un navire au mouillage montre au moins un feu blanc omnidirectionnel.",
+        "Un navire echoue montre les marques du mouillage et deux feux rouges superposes.",
+        "La marque de jour NUC est deux boules noires.",
+        "La marque de jour RAM est boule-losange-boule.",
+        "La marque de jour d un navire au mouillage est une boule noire."
+      ],
+      "qcmQuestionCount": 96
+    },
+    {
+      "id": 5,
+      "description": "Lecture de carte SHOM, echelles, profondeurs et mesures de route.",
+      "objectifs": [
+        "Lire les informations essentielles d une carte marine",
+        "Mesurer cap et distance correctement",
+        "Identifier les limitations liees aux profondeurs"
+      ],
+      "content": "<p>Lecture de carte SHOM, echelles, profondeurs et mesures de route.</p><h5>Mesures</h5><ul><li>1 minute de latitude vaut 1 mille nautique</li><li>La distance se lit sur l echelle des latitudes</li><li>La regle Cras sert a mesurer un relèvement/cap</li></ul><h5>Profondeurs et symboles</h5><ul><li>Les sondes sont referencees a un zero hydrographique</li><li>Les isobathes relient des profondeurs egales</li><li>Les symboles SHOM signalent dangers et ouvrages</li></ul><h6>References</h6><ul><li><a href=\"https://www.shom.fr/fr/marees/marees-la-carte\" target=\"_blank\" rel=\"noopener noreferrer\">SHOM - prediction et donnees marines</a></li></ul>",
+      "keyPoints": [
+        "Une minute de latitude correspond a un mille nautique.",
+        "La distance sur carte marine se mesure sur l echelle des latitudes.",
+        "La regle Cras sert a mesurer les caps et les relèvements.",
+        "Les sondes de carte sont referencees au zero hydrographique de la carte.",
+        "Les isobathes relient des points de meme profondeur.",
+        "La variation magnetique locale est indiquee sur la carte.",
+        "Le nord geographique est donne par les meridiens.",
+        "Les informations de carte doivent etre recoupees avec les avis de navigation.",
+        "Un danger cartographie peut etre balise ou non selon la zone.",
+        "La precision de navigation depend de l echelle de carte."
+      ],
+      "qcmQuestionCount": 96
+    },
+    {
+      "id": 6,
+      "description": "Lecture meteo utile a la securite en navigation cotiere.",
+      "objectifs": [
+        "Interpréter les tendances de pression",
+        "Relier types de nuages et evolution probable",
+        "Utiliser l echelle de Beaufort"
+      ],
+      "content": "<p>Lecture meteo utile a la securite en navigation cotiere.</p><h5>Pression et fronts</h5><ul><li>Pression en baisse: degration probable</li><li>Front froid: rafales et averses</li><li>Front chaud: pluie plus continue</li></ul><h5>Echelle de Beaufort</h5><ul><li>F4: 11-16 nds</li><li>F5: 17-21 nds</li><li>Les rafales peuvent depasser le vent moyen</li></ul><h6>References</h6><ul><li><a href=\"https://www.meteo-marine.com/\" target=\"_blank\" rel=\"noopener noreferrer\">Meteo marine (France)</a></li></ul>",
+      "keyPoints": [
+        "Une pression en baisse est un signal de possible degration.",
+        "Une pression en hausse signale souvent une amelioration relative.",
+        "Un front froid est souvent associe a des averses et a une bascule du vent.",
+        "Un front chaud apporte souvent une couverture nuageuse et des pluies progressives.",
+        "Un cumulonimbus est un nuage d orage.",
+        "Le brouillard peut se former avec air humide sur eau plus froide.",
+        "Force 4 Beaufort correspond environ a 11-16 nœuds.",
+        "Force 5 Beaufort correspond environ a 17-21 nœuds.",
+        "La direction du vent est nommee par son origine.",
+        "Le vent reel et les rafales doivent etre surveilles avant appareillage."
+      ],
+      "qcmQuestionCount": 96
+    },
+    {
+      "id": 7,
+      "description": "Calculs de cap compas/vrai et construction de route surface/fond.",
+      "objectifs": [
+        "Appliquer les conversions de cap",
+        "Prendre en compte courant et derive",
+        "Verifier la coherence des calculs de route"
+      ],
+      "content": "<p>Calculs de cap compas/vrai et construction de route surface/fond.</p><h5>Conversions</h5><ul><li>Convention courante: Est positif, Ouest negatif</li><li>Cv = Cc + declinaison + deviation</li></ul><h5>Vecteurs</h5><ul><li>Route fond = route surface + vecteur courant</li><li>Set: direction du courant</li><li>Drift: vitesse du courant</li></ul><h6>References</h6><ul><li><a href=\"c:/Users/phili/Documents/scout/PE/Cours/Cours QCM.pdf\" target=\"_blank\" rel=\"noopener noreferrer\">Cours SUF PE - modules navigation</a></li></ul>",
+      "keyPoints": [
+        "Une conversion complete peut s ecrire Cv = Cc + declinaison + deviation.",
+        "Avec la convention E positif / W negatif, il faut respecter les signes.",
+        "La route fond est la somme vectorielle de la route surface et du courant.",
+        "Le set du courant est sa direction.",
+        "La drift du courant est sa vitesse.",
+        "Un nœud correspond a un mille nautique par heure.",
+        "La derive de vent decale la route vers le sous-le-vent.",
+        "Un calcul de navigation se verifie par coherence geometrique.",
+        "Un cap compas non corrige peut mener a une route fausse.",
+        "Le temps est indispensable pour convertir vitesse en distance."
+      ],
+      "qcmQuestionCount": 96
+    },
+    {
+      "id": 8,
+      "description": "Calcul pratique des hauteurs d eau, marnage, coefficients et securite sous quille.",
+      "objectifs": [
+        "Calculer une hauteur d eau avec methode adaptee",
+        "Interpréter PM/BM et marnage",
+        "Utiliser les donnees de maree pour la securite"
+      ],
+      "content": "<p>Calcul pratique des hauteurs d eau, marnage, coefficients et securite sous quille.</p><h5>Definitions</h5><ul><li>PM: pleine mer</li><li>BM: basse mer</li><li>Marnage = PM - BM</li><li>Flot: BM vers PM, jusant: PM vers BM</li></ul><h5>Calcul</h5><ul><li>Regle des douziemes: 1-2-3-3-2-1</li><li>3e et 4e heures les plus actives</li><li>Verifier le pied de pilote avant passage</li></ul><h5>Documents</h5><ul><li>Consulter annuaire et previsions de maree SHOM</li><li>Recouper heure locale et references de carte</li></ul><h6>References</h6><ul><li><a href=\"https://www.shom.fr/fr/marees/marees-la-carte\" target=\"_blank\" rel=\"noopener noreferrer\">SHOM - Marees la carte</a></li><li><a href=\"https://refmar.shom.fr/fr/previsions-maree\" target=\"_blank\" rel=\"noopener noreferrer\">Refmar SHOM - Previsions de maree</a></li><li><a href=\"c:/Users/phili/Documents/scout/PE/Cours/Cours calcul de marée.pdf\" target=\"_blank\" rel=\"noopener noreferrer\">Cours SUF PE - module 14</a></li></ul>",
+      "keyPoints": [
+        "PM signifie pleine mer.",
+        "BM signifie basse mer.",
+        "Le marnage est la difference PM moins BM.",
+        "Le flot est la phase montante entre BM et PM.",
+        "Le jusant est la phase descendante entre PM et BM.",
+        "La regle des douziemes suit 1/12, 2/12, 3/12, 3/12, 2/12, 1/12.",
+        "Les troisieme et quatrieme heures concentrent la plus grande variation.",
+        "Le coefficient de maree reflète l amplitude relative de la maree.",
+        "Les vives-eaux sont en general plus marquées que les mortes-eaux.",
+        "Le calcul du pied de pilote vise a garantir la securite sous la quille."
+      ],
+      "qcmQuestionCount": 96
+    },
+    {
+      "id": 9,
+      "description": "Procedures radio de securite, urgence et detresse en navigation cotiere.",
+      "objectifs": [
+        "Distinguer Mayday, Pan-Pan et Securite",
+        "Utiliser correctement les canaux de detresse",
+        "Structurer un message radio clair"
+      ],
+      "content": "<p>Procedures radio de securite, urgence et detresse en navigation cotiere.</p><h5>Canaux</h5><ul><li>Canal 16: detresse, urgence, appel</li><li>Canal 70: appel selectif numerique (DSC)</li></ul><h5>Messages</h5><ul><li>MAYDAY: danger grave et imminent</li><li>PAN-PAN: urgence</li><li>SECURITE: message de securite</li></ul><h6>References</h6><ul><li><a href=\"https://www.imo.org/en/OurWork/Safety/Pages/GMDSS.aspx\" target=\"_blank\" rel=\"noopener noreferrer\">IMO - GMDSS</a></li></ul>",
+      "keyPoints": [
+        "Le canal VHF 16 est le canal international de detresse et d appel.",
+        "Le canal 70 est reserve a l appel selectif numerique (DSC).",
+        "MAYDAY est utilise en cas de danger grave et imminent.",
+        "PAN-PAN correspond a une urgence sans detresse immediate.",
+        "SECURITE sert a diffuser un message de securite nautique ou meteo.",
+        "Un message de detresse doit inclure la position du navire.",
+        "L identification du navire doit etre annoncee clairement.",
+        "La discipline radio est essentielle sur les canaux de securite.",
+        "Un faux MAYDAY est interdit et sanctionnable.",
+        "Le message doit rester court, clair et standardise."
+      ],
+      "qcmQuestionCount": 96
+    },
+    {
+      "id": 10,
+      "description": "Regles operationnelles SUF de navigation et securite des equipages.",
+      "objectifs": [
+        "Appliquer les limites SUF en navigation",
+        "Respecter les exigences d encadrement",
+        "Prioriser la securite equipage et materiel"
+      ],
+      "content": "<p>Regles operationnelles SUF de navigation et securite des equipages.</p><h5>Regles SUF (slide)</h5><ul><li>Gilet de sauvetage en permanence</li><li>Age minimum PE: 16 ans</li><li>Navigation de jour uniquement</li></ul><h5>Habitable</h5><ul><li>Sous surveillance d un chef de flottille</li><li>Moins de 6 milles d un abri</li><li>Force 4 rafale 5 max</li><li>Correspondant a terre</li></ul><h5>Voile legere</h5><ul><li>Sous surveillance d un chef de quart</li><li>Moins de 2 milles d un abri</li><li>Force 3 rafale 4 max</li><li>Correspondant a terre</li></ul><h6>References</h6><ul><li><a href=\"c:/Users/phili/Documents/scout/PE/Cours/Cours QCM.pdf\" target=\"_blank\" rel=\"noopener noreferrer\">Cours SUF PE - Reglementation navigation</a></li></ul>",
+      "keyPoints": [
+        "Dans le cadre SUF, le port du gilet est permanent en navigation.",
+        "L age minimum mentionne pour le PE est 16 ans.",
+        "La navigation est prevue de jour.",
+        "En habitable, la flottille est sous surveillance d un chef de flottille.",
+        "En habitable, la limite est 6 milles d un abri.",
+        "En habitable, la limite meteo indiquee est force 4 rafale 5.",
+        "En voile legere, la limite est 2 milles d un abri.",
+        "En voile legere, la limite meteo indiquee est force 3 rafale 4.",
+        "Un correspondant a terre est requis.",
+        "Un abri est un lieu de cote permettant mise en securite du bateau et de l equipage."
+      ],
+      "qcmQuestionCount": 96
+    }
+  ]
+}

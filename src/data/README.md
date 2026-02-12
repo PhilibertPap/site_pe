@@ -9,6 +9,8 @@
 - `app-config.json`: configuration generale de l'application.
 - `exam-series.json`: optionnel, genere via `npm run generate:series`.
 - `qcm.large.generated.json`: optionnel, genere via `npm run generate:qcm:large`.
+- `qcm.pe.generated.json`: optionnel, genere via `npm run generate:pe:data`.
+- `course.generated.json`: optionnel, genere via `npm run generate:pe:data`.
 - `qcm.drive.merged.json`: optionnel, genere via `npm run import:attendus`.
 
 ## Convention QCM
