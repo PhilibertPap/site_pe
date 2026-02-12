@@ -1,126 +1,130 @@
 :root {
-    --primary: #0d6efd;
+    --primary: #001F3F;
     --danger: #dc3545;
-    --success: #198754;
-    --warning: #ffc107;
-    --info: #0dcaf0
+    --success: #FF851B;
+    --warning: #D2B48C;
+    --info: #4682B4;
 }
 
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: #f8f9fa
+    font-family: 'Georgia', serif;
+    background: #F5F5DC;
 }
 
 nav.navbar {
-    box-shadow: 0 2px 8px rgba(0, 0, 0, .1)
+    box-shadow: 0 2px 10px rgba(0, 31, 63, .3);
+    background: var(--primary) !important;
 }
 
 main.container {
     max-width: 1200px;
-    margin-top: 2rem
+    margin-top: 2rem;
 }
 
 .navbar-brand {
     font-size: 1.5rem;
-    font-weight: 700
+    font-weight: 700;
 }
 
 .card {
     border: none;
     box-shadow: 0 1px 4px rgba(0, 0, 0, .1);
-    transition: transform .2s, box-shadow .2s
+    transition: transform .2s, box-shadow .2s;
+    border-left: 4px solid var(--success);
 }
 
 .card:hover {
     transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, .15)
+    box-shadow: 0 4px 12px rgba(0, 0, 0, .15);
 }
 
 .progress {
     height: 10px;
-    border-radius: 10px
+    border-radius: 10px;
 }
 
 .progress-bar {
-    background: linear-gradient(90deg, var(--primary), var(--info))
+    background: linear-gradient(90deg, var(--primary), var(--info));
 }
 
 .btn {
     border-radius: 8px;
     font-weight: 600;
-    padding: .6rem 1.2rem
+    padding: .6rem 1.2rem;
 }
 
 .btn-primary {
     background: var(--primary);
-    border: none
+    border: none;
 }
 
 .btn-primary:hover {
-    background: #0b5ed7
+    background: #0b5ed7;
 }
 
 .btn-success {
     background: var(--success);
-    border: none
+    border: none;
 }
 
 .btn-success:hover {
-    background: #157347
+    background: #e46f09;
 }
 
 .qcm-question {
     padding: 2rem;
     background: white;
     border-radius: 12px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, .1)
+    box-shadow: 0 2px 8px rgba(0, 0, 0, .1);
+    border-left: 4px solid var(--success);
 }
 
 .qcm-question h4 {
     color: var(--primary);
-    margin-bottom: 1.5rem
+    margin-bottom: 1.5rem;
 }
 
 .form-check {
     padding: .75rem;
     border-radius: 8px;
     cursor: pointer;
-    transition: background .2s
+    transition: background .2s;
 }
 
 .form-check:hover {
-    background: #f0f0f0
+    background: #f0f0f0;
 }
 
 .form-check-input:checked {
     background-color: var(--primary);
-    border-color: var(--primary)
+    border-color: var(--primary);
 }
 
 .flashcard {
     perspective: 1000px;
-    min-height: 400px
+    min-height: 400px;
 }
 
 .flashcard:active {
-    transform: scaleY(-1)
+    transform: scaleY(-1);
 }
 
 .nav-tabs .nav-link {
     color: #666;
     border: none;
-    border-bottom: 3px solid transparent
+    border-bottom: 3px solid transparent;
 }
 
 .nav-tabs .nav-link.active {
     border-bottom-color: var(--primary);
     color: var(--primary);
-    font-weight: 600
+    font-weight: 600;
+    background: rgba(255, 133, 27, 0.1);
 }
 
 .sidebar {
     position: sticky;
-    top: 100px
+    top: 100px;
 }
 
 .list-group-item {
@@ -128,47 +132,47 @@ main.container {
     padding: 1rem;
     border-left: 4px solid transparent;
     cursor: pointer;
-    transition: all .2s
+    transition: all .2s;
 }
 
 .list-group-item:hover {
     background: #f8f9fa;
-    border-left-color: var(--primary)
+    border-left-color: var(--primary);
 }
 
 .list-group-item.active {
     border-left-color: var(--primary);
-    background: #f0f0ff
+    background: rgba(255, 133, 27, 0.1);
 }
 
 .badge {
     border-radius: 50px;
     padding: .4rem .8rem;
-    font-weight: 600
+    font-weight: 600;
 }
 
 .fiche-printable {
     background: white;
     border-radius: 8px;
-    page-break-inside: avoid
+    page-break-inside: avoid;
 }
 
 @media(max-width:768px) {
     main.container {
-        padding: .5rem
+        padding: .5rem;
     }
 
     .card {
-        margin-bottom: 1rem
+        margin-bottom: 1rem;
     }
 
     .sidebar {
-        position: static
+        position: static;
     }
 
     .btn {
         width: 100%;
-        margin-bottom: .5rem
+        margin-bottom: .5rem;
     }
 }
 
@@ -178,21 +182,21 @@ main.container {
     footer,
     .btn-group,
     .form-check {
-        display: none
+        display: none;
     }
 
     body {
-        background: white
+        background: white;
     }
 
     main.container {
         max-width: 100%;
-        margin: 0
+        margin: 0;
     }
 
     .fiche-printable {
         border: none;
         box-shadow: none;
-        page-break-after: always
+        page-break-after: always;
     }
 }
