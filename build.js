@@ -155,6 +155,8 @@ async function build() {
         const entrainementTemplate = await fs.readFile(path.join(templateDir, 'entrainement.mustache'), 'utf8');
         const examensTemplate = await fs.readFile(path.join(templateDir, 'examens.mustache'), 'utf8');
         const carnetTemplate = await fs.readFile(path.join(templateDir, 'carnet.mustache'), 'utf8');
+        const sessionTemplate = await fs.readFile(path.join(templateDir, 'session.mustache'), 'utf8');
+        const navigationTemplate = await fs.readFile(path.join(templateDir, 'navigation.mustache'), 'utf8');
 
         // Nettoyer puis recréer le dossier de sortie pour éviter les fichiers obsolètes
         await fs.emptyDir(outputDir);
@@ -238,6 +240,18 @@ async function build() {
             totalModulesCount: siteData.modules.length
         };
         await generatePage('carnet.html', carnetTemplate, carnetData);
+
+        // Session QCM (page cible des redirections)
+        const sessionData = {
+            title: "Session"
+        };
+        await generatePage('session.html', sessionTemplate, sessionData);
+
+        // Navigation problem (page dédiée)
+        const navigationData = {
+            title: "Navigation"
+        };
+        await generatePage('navigation.html', navigationTemplate, navigationData);
 
         // ========== COPIE DES ASSETS STATIQUES ==========
         console.log("📋 Copie des assets...");
