@@ -201,6 +201,60 @@ a:hover {
     justify-content: space-between;
 }
 
+.page-hero {
+    background: linear-gradient(135deg, rgba(10, 47, 87, 0.96), rgba(24, 79, 131, 0.9));
+    border-radius: 16px;
+    color: #fff;
+    padding: 2rem;
+    box-shadow: 0 10px 24px rgba(10, 47, 87, 0.2);
+}
+
+.page-hero p {
+    color: rgba(255, 255, 255, 0.92);
+}
+
+.kpi-card {
+    border-left: 0;
+    border-top: 4px solid var(--success);
+}
+
+.kpi-label {
+    color: var(--text-muted);
+    font-size: .9rem;
+    margin-bottom: .25rem;
+    text-transform: uppercase;
+    letter-spacing: .03em;
+}
+
+.kpi-value {
+    color: var(--primary);
+    font-size: 1.8rem;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.section-title {
+    color: var(--primary);
+    margin-bottom: 1.25rem;
+}
+
+.soft-panel {
+    background: var(--surface);
+    border-radius: 14px;
+    border: 1px solid rgba(10, 47, 87, 0.08);
+}
+
+.icon-badge {
+    width: 2.25rem;
+    height: 2.25rem;
+    border-radius: 999px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 133, 27, 0.18);
+    font-size: 1.1rem;
+}
+
 /* Visibilité clavier pour l'accessibilité */
 a:focus-visible,
 button:focus-visible,

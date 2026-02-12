@@ -39,74 +39,61 @@
 
     <!-- Contenu principal -->
     <main class="container py-5">
-        <h1 class="mb-4">📔 Carnet de bord pratique</h1>
+        <section class="page-hero mb-4">
+    <div class="row g-3 align-items-center">
+        <div class="col-lg-8">
+            <h1 class="display-6 mb-2">Carnet de bord</h1>
+            <p class="mb-0">Prépare des fiches de révision imprimables pour les modules validés.</p>
+        </div>
+        <div class="col-lg-4">
+            <div class="soft-panel p-3">
+                <p class="kpi-label">Modules validés</p>
+                <p class="kpi-value mb-0">0 / 10</p>
+            </div>
+        </div>
+    </div>
+</section>
 
-<p class="lead">Imprime des fiches de révision condensées au format poche après chaque module validé.</p>
-
-<div class="row mb-5">
-    <div class="col-md-6">
-        <div class="card">
+<div class="row g-4 mb-5">
+    <section class="col-lg-6">
+        <div class="card h-100">
             <div class="card-header bg-success text-white">
-                <h5 class="mb-0">🎓 Fiches disponibles</h5>
+                <h2 class="h5 mb-0">Fiches disponibles</h2>
             </div>
             <div class="card-body">
-                <p class="text-muted">Modules validés : 0/10</p>
                 <div class="list-group">
-                    <span class="list-group-item text-muted">
-                        🔒 Balisage et Pictogrammes (À compléter)
-                    </span>
-                    <span class="list-group-item text-muted">
-                        🔒 Signalisation (Sonore, Lumineuse, Portuaire) (À compléter)
-                    </span>
-                    <span class="list-group-item text-muted">
-                        🔒 RIPAM et Marques des Navires (À compléter)
-                    </span>
-                    <span class="list-group-item text-muted">
-                        🔒 La Carte Marine et la Règle Cras (À compléter)
-                    </span>
-                    <span class="list-group-item text-muted">
-                        🔒 Météo et Environnement (À compléter)
-                    </span>
-                    <span class="list-group-item text-muted">
-                        🔒 Caps et Dérives (À compléter)
-                    </span>
-                    <span class="list-group-item text-muted">
-                        🔒 Courants et Route Fond (À compléter)
-                    </span>
-                    <span class="list-group-item text-muted">
-                        🔒 Calcul de Marée (À compléter)
-                    </span>
-                    <span class="list-group-item text-muted">
-                        🔒 VHF et Communication (À compléter)
-                    </span>
-                    <span class="list-group-item text-muted">
-                        🔒 Cadre Scout et Sécurité de Bord (À compléter)
-                    </span>
+                    <span class="list-group-item text-muted">🔒 Balisage et Pictogrammes (à compléter)</span>
+                    <span class="list-group-item text-muted">🔒 Signalisation (Sonore, Lumineuse, Portuaire) (à compléter)</span>
+                    <span class="list-group-item text-muted">🔒 RIPAM et Marques des Navires (à compléter)</span>
+                    <span class="list-group-item text-muted">🔒 La Carte Marine et la Règle Cras (à compléter)</span>
+                    <span class="list-group-item text-muted">🔒 Météo et Environnement (à compléter)</span>
+                    <span class="list-group-item text-muted">🔒 Caps et Dérives (à compléter)</span>
+                    <span class="list-group-item text-muted">🔒 Courants et Route Fond (à compléter)</span>
+                    <span class="list-group-item text-muted">🔒 Calcul de Marée (à compléter)</span>
+                    <span class="list-group-item text-muted">🔒 VHF et Communication (à compléter)</span>
+                    <span class="list-group-item text-muted">🔒 Cadre Scout et Sécurité de Bord (à compléter)</span>
                 </div>
             </div>
         </div>
-    </div>
+    </section>
 
-    <div class="col-md-6">
-        <div class="card">
+    <section class="col-lg-6">
+        <div class="card h-100">
             <div class="card-header bg-info text-white">
-                <h5 class="mb-0">📋 Imprimer</h5>
+                <h2 class="h5 mb-0">Impression</h2>
             </div>
             <div class="card-body">
-                <p>Sélectionne les fiches à imprimer :</p>
-                <form>
+                <p class="mb-3">Sélectionne les fiches à imprimer :</p>
+                <form class="soft-panel p-3">
                 </form>
-                <button class="btn btn-info mt-3 w-100" onclick="printSelectedFiches()">
-                    🖨️ Imprimer les fiches sélectionnées
-                </button>
+                <button class="btn btn-info mt-3 w-100" onclick="printSelectedFiches()">Imprimer les fiches sélectionnées</button>
             </div>
         </div>
-    </div>
+    </section>
 </div>
 
-<!-- Fiches (masquées, affichées à la demande) -->
-<div id="fiches-content">
-</div>
+<section id="fiches-content">
+</section>
 
 <script>
 function printSelectedFiches() {

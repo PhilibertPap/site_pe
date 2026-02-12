@@ -1,94 +1,95 @@
-<h1 class="mb-4">📚 Parcours d'apprentissage</h1>
-
-<div class="row">
-    <!-- Sidebar des étapes -->
-    <div class="col-lg-3 mb-4">
-        <div class="list-group sticky-top" style="top: 80px;">
-            {{#etapes}}
-            <div class="list-group-item list-group-item-action" style="cursor: pointer;" onclick="scrollToEtape('etape-{{id}}')">
-                <h6 class="mb-1">{{name}}</h6>
-                <small class="text-muted">{{moduleCount}} modules</small>
-            </div>
-            {{/etapes}}
+<section class="page-hero mb-4">
+    <div class="row g-3 align-items-center">
+        <div class="col-lg-9">
+            <h1 class="display-6 mb-2">Parcours d'apprentissage</h1>
+            <p class="mb-0">Avance étape par étape, module par module, avec du contenu, des exercices et des mini-examens.</p>
+        </div>
+        <div class="col-lg-3 text-lg-end">
+            <a href="entrainement.html" class="btn btn-light btn-sm">Passer en mode entraînement</a>
         </div>
     </div>
+</section>
 
-    <!-- Contenu des modules -->
-    <div class="col-lg-9">
+<div class="row g-4">
+    <aside class="col-lg-3">
+        <div class="soft-panel p-3 sticky-top" style="top: 90px;">
+            <h2 class="h6 section-title">Étapes</h2>
+            <div class="list-group">
+                {{#etapes}}
+                <button type="button" class="list-group-item list-group-item-action" onclick="scrollToEtape('etape-{{id}}')">
+                    <strong>{{name}}</strong><br>
+                    <small class="text-muted">{{moduleCount}} modules</small>
+                </button>
+                {{/etapes}}
+            </div>
+        </div>
+    </aside>
+
+    <section class="col-lg-9">
         {{#etapes}}
-        <section id="etape-{{id}}" class="mb-5 pb-5">
-            <h2 class="mb-3 border-bottom pb-2">{{name}}</h2>
-            <p class="text-muted">{{description}}</p>
+        <section id="etape-{{id}}" class="mb-5">
+            <div class="d-flex justify-content-between align-items-start mb-3">
+                <div>
+                    <h2 class="section-title h4 mb-1">{{name}}</h2>
+                    <p class="text-muted mb-0">{{description}}</p>
+                </div>
+                <span class="badge text-bg-light">{{moduleCount}} modules</span>
+            </div>
 
-            <div class="row">
+            <div class="row g-4">
                 {{#modules}}
-                <div class="col-md-6 mb-4">
-                    <div class="card h-100" id="module-{{id}}">
-                        <div class="card-header bg-light">
-                            <h5 class="mb-0">Module {{moduleNumber}} - {{name}}</h5>
-                        </div>
+                <div class="col-xl-6">
+                    <article class="card h-100" id="module-{{id}}">
+                        <header class="card-header bg-light-subtle">
+                            <h3 class="h5 mb-0">Module {{moduleNumber}} - {{name}}</h3>
+                        </header>
                         <div class="card-body">
-                            <p>{{description}}</p>
-                            
-                            <!-- Onglets du module -->
+                            <p class="text-muted">{{description}}</p>
+
                             <ul class="nav nav-tabs mt-3" role="tablist">
                                 <li class="nav-item">
-                                    <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#module-{{id}}-cours">
-                                        Cours
-                                    </button>
+                                    <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#module-{{id}}-cours" type="button">Cours</button>
                                 </li>
                                 <li class="nav-item">
-                                    <button class="nav-link" data-bs-toggle="tab" data-bs-target="#module-{{id}}-exercices">
-                                        Exercices
-                                    </button>
+                                    <button class="nav-link" data-bs-toggle="tab" data-bs-target="#module-{{id}}-exercices" type="button">Exercices</button>
                                 </li>
                                 <li class="nav-item">
-                                    <button class="nav-link" data-bs-toggle="tab" data-bs-target="#module-{{id}}-examen">
-                                        Mini-examen
-                                    </button>
+                                    <button class="nav-link" data-bs-toggle="tab" data-bs-target="#module-{{id}}-examen" type="button">Mini-examen</button>
                                 </li>
                             </ul>
 
-                            <!-- Contenu des onglets -->
                             <div class="tab-content mt-3">
-                                <!-- Cours -->
                                 <div id="module-{{id}}-cours" class="tab-pane fade show active">
-                                    <h6>Objectifs</h6>
-                                    <ul>
+                                    <h4 class="h6">Objectifs</h4>
+                                    <ul class="mb-3">
                                         {{#objectifs}}
                                         <li>{{.}}</li>
                                         {{/objectifs}}
                                     </ul>
-                                    <hr>
-                                    <h6>Contenu</h6>
+                                    <h4 class="h6">Contenu</h4>
                                     {{{content}}}
                                 </div>
-
-                                <!-- Exercices -->
                                 <div id="module-{{id}}-exercices" class="tab-pane fade">
-                                    <div id="exercices-{{id}}" class="exercices-container">
-                                        <!-- Chargé par JS -->
-                                    </div>
+                                    <div id="exercices-{{id}}" class="exercices-container"></div>
                                 </div>
-
-                                <!-- Mini-examen -->
                                 <div id="module-{{id}}-examen" class="tab-pane fade">
-                                    <div id="mini-qcm-{{id}}" class="mini-qcm-container">
-                                        <!-- Chargé par JS -->
-                                    </div>
+                                    <div id="mini-qcm-{{id}}" class="mini-qcm-container"></div>
                                 </div>
                             </div>
                         </div>
-                        <div class="card-footer">
-                            <small class="text-muted">Progression: {{progress}}% • Score: {{score}}/100</small>
-                        </div>
-                    </div>
+                        <footer class="card-footer bg-transparent">
+                            <div class="progress mb-2" role="progressbar">
+                                <div class="progress-bar" style="width: {{progress}}%"></div>
+                            </div>
+                            <small class="text-muted">Progression {{progress}}% • Score {{score}}/100</small>
+                        </footer>
+                    </article>
                 </div>
                 {{/modules}}
             </div>
         </section>
         {{/etapes}}
-    </div>
+    </section>
 </div>
 
 <script>

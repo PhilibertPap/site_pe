@@ -39,692 +39,573 @@
 
     <!-- Contenu principal -->
     <main class="container py-5">
-        <h1 class="mb-4">📚 Parcours d'apprentissage</h1>
-
-<div class="row">
-    <!-- Sidebar des étapes -->
-    <div class="col-lg-3 mb-4">
-        <div class="list-group sticky-top" style="top: 80px;">
-            <div class="list-group-item list-group-item-action" style="cursor: pointer;" onclick="scrollToEtape('etape-1')">
-                <h6 class="mb-1">LES FONDAMENTAUX VISUELS</h6>
-                <small class="text-muted">3 modules</small>
-            </div>
-            <div class="list-group-item list-group-item-action" style="cursor: pointer;" onclick="scrollToEtape('etape-2')">
-                <h6 class="mb-1">LES OUTILS DU NAVIGATEUR</h6>
-                <small class="text-muted">2 modules</small>
-            </div>
-            <div class="list-group-item list-group-item-action" style="cursor: pointer;" onclick="scrollToEtape('etape-3')">
-                <h6 class="mb-1">LA NAVIGATION CALCULATOIRE</h6>
-                <small class="text-muted">3 modules</small>
-            </div>
-            <div class="list-group-item list-group-item-action" style="cursor: pointer;" onclick="scrollToEtape('etape-4')">
-                <h6 class="mb-1">RESPONSABILITÉS ET SÉCURITÉ</h6>
-                <small class="text-muted">2 modules</small>
-            </div>
+        <section class="page-hero mb-4">
+    <div class="row g-3 align-items-center">
+        <div class="col-lg-9">
+            <h1 class="display-6 mb-2">Parcours d'apprentissage</h1>
+            <p class="mb-0">Avance étape par étape, module par module, avec du contenu, des exercices et des mini-examens.</p>
+        </div>
+        <div class="col-lg-3 text-lg-end">
+            <a href="entrainement.html" class="btn btn-light btn-sm">Passer en mode entraînement</a>
         </div>
     </div>
+</section>
 
-    <!-- Contenu des modules -->
-    <div class="col-lg-9">
-        <section id="etape-1" class="mb-5 pb-5">
-            <h2 class="mb-3 border-bottom pb-2">LES FONDAMENTAUX VISUELS</h2>
-            <p class="text-muted">Balisage, signalisation, réglementation - reconnaissance par l&#39;image et la mémorisation</p>
+<div class="row g-4">
+    <aside class="col-lg-3">
+        <div class="soft-panel p-3 sticky-top" style="top: 90px;">
+            <h2 class="h6 section-title">Étapes</h2>
+            <div class="list-group">
+                <button type="button" class="list-group-item list-group-item-action" onclick="scrollToEtape('etape-1')">
+                    <strong>LES FONDAMENTAUX VISUELS</strong><br>
+                    <small class="text-muted">3 modules</small>
+                </button>
+                <button type="button" class="list-group-item list-group-item-action" onclick="scrollToEtape('etape-2')">
+                    <strong>LES OUTILS DU NAVIGATEUR</strong><br>
+                    <small class="text-muted">2 modules</small>
+                </button>
+                <button type="button" class="list-group-item list-group-item-action" onclick="scrollToEtape('etape-3')">
+                    <strong>LA NAVIGATION CALCULATOIRE</strong><br>
+                    <small class="text-muted">3 modules</small>
+                </button>
+                <button type="button" class="list-group-item list-group-item-action" onclick="scrollToEtape('etape-4')">
+                    <strong>RESPONSABILITÉS ET SÉCURITÉ</strong><br>
+                    <small class="text-muted">2 modules</small>
+                </button>
+            </div>
+        </div>
+    </aside>
 
-            <div class="row">
-                <div class="col-md-6 mb-4">
-                    <div class="card h-100" id="module-1">
-                        <div class="card-header bg-light">
-                            <h5 class="mb-0">Module 1 - Balisage et Pictogrammes</h5>
-                        </div>
+    <section class="col-lg-9">
+        <section id="etape-1" class="mb-5">
+            <div class="d-flex justify-content-between align-items-start mb-3">
+                <div>
+                    <h2 class="section-title h4 mb-1">LES FONDAMENTAUX VISUELS</h2>
+                    <p class="text-muted mb-0">Balisage, signalisation, réglementation - reconnaissance par l&#39;image et la mémorisation</p>
+                </div>
+                <span class="badge text-bg-light">3 modules</span>
+            </div>
+
+            <div class="row g-4">
+                <div class="col-xl-6">
+                    <article class="card h-100" id="module-1">
+                        <header class="card-header bg-light-subtle">
+                            <h3 class="h5 mb-0">Module 1 - Balisage et Pictogrammes</h3>
+                        </header>
                         <div class="card-body">
-                            <p>Comprendre les marques latérales, cardinales et les symboles de navigation en Région A</p>
-                            
-                            <!-- Onglets du module -->
+                            <p class="text-muted">Comprendre les marques latérales, cardinales et les symboles de navigation en Région A</p>
+
                             <ul class="nav nav-tabs mt-3" role="tablist">
                                 <li class="nav-item">
-                                    <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#module-1-cours">
-                                        Cours
-                                    </button>
+                                    <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#module-1-cours" type="button">Cours</button>
                                 </li>
                                 <li class="nav-item">
-                                    <button class="nav-link" data-bs-toggle="tab" data-bs-target="#module-1-exercices">
-                                        Exercices
-                                    </button>
+                                    <button class="nav-link" data-bs-toggle="tab" data-bs-target="#module-1-exercices" type="button">Exercices</button>
                                 </li>
                                 <li class="nav-item">
-                                    <button class="nav-link" data-bs-toggle="tab" data-bs-target="#module-1-examen">
-                                        Mini-examen
-                                    </button>
+                                    <button class="nav-link" data-bs-toggle="tab" data-bs-target="#module-1-examen" type="button">Mini-examen</button>
                                 </li>
                             </ul>
 
-                            <!-- Contenu des onglets -->
                             <div class="tab-content mt-3">
-                                <!-- Cours -->
                                 <div id="module-1-cours" class="tab-pane fade show active">
-                                    <h6>Objectifs</h6>
-                                    <ul>
+                                    <h4 class="h6">Objectifs</h4>
+                                    <ul class="mb-3">
                                         <li>Identifier les marques latérales (bâbord&#x2F;tribord)</li>
                                         <li>Reconnaître les marques cardinales et leurs caractéristiques</li>
                                         <li>Distinguer les zones de danger et eaux saines</li>
                                         <li>Connaître le système de balises français (Région A)</li>
                                     </ul>
-                                    <hr>
-                                    <h6>Contenu</h6>
+                                    <h4 class="h6">Contenu</h4>
                                     <h5>1. Les marques latérales</h5><p>Utilisées pour marquer les côtés d'une voie navigable...</p><p><strong>Bâbord (port) :</strong> Feu rouge, marque cylindrique</p><p><strong>Tribord (starboard) :</strong> Feu vert, marque conique</p><h5>2. Les marques cardinales</h5><p>Indiquent la direction du passage sûr par rapport à la marque...</p>
                                 </div>
-
-                                <!-- Exercices -->
                                 <div id="module-1-exercices" class="tab-pane fade">
-                                    <div id="exercices-1" class="exercices-container">
-                                        <!-- Chargé par JS -->
-                                    </div>
+                                    <div id="exercices-1" class="exercices-container"></div>
                                 </div>
-
-                                <!-- Mini-examen -->
                                 <div id="module-1-examen" class="tab-pane fade">
-                                    <div id="mini-qcm-1" class="mini-qcm-container">
-                                        <!-- Chargé par JS -->
-                                    </div>
+                                    <div id="mini-qcm-1" class="mini-qcm-container"></div>
                                 </div>
                             </div>
                         </div>
-                        <div class="card-footer">
-                            <small class="text-muted">Progression: 0% • Score: 0/100</small>
-                        </div>
-                    </div>
+                        <footer class="card-footer bg-transparent">
+                            <div class="progress mb-2" role="progressbar">
+                                <div class="progress-bar" style="width: 0%"></div>
+                            </div>
+                            <small class="text-muted">Progression 0% • Score 0/100</small>
+                        </footer>
+                    </article>
                 </div>
-                <div class="col-md-6 mb-4">
-                    <div class="card h-100" id="module-2">
-                        <div class="card-header bg-light">
-                            <h5 class="mb-0">Module 2 - Signalisation (Sonore, Lumineuse, Portuaire)</h5>
-                        </div>
+                <div class="col-xl-6">
+                    <article class="card h-100" id="module-2">
+                        <header class="card-header bg-light-subtle">
+                            <h3 class="h5 mb-0">Module 2 - Signalisation (Sonore, Lumineuse, Portuaire)</h3>
+                        </header>
                         <div class="card-body">
-                            <p>Signaux visuels et auditifs, feux et marques des ports</p>
-                            
-                            <!-- Onglets du module -->
+                            <p class="text-muted">Signaux visuels et auditifs, feux et marques des ports</p>
+
                             <ul class="nav nav-tabs mt-3" role="tablist">
                                 <li class="nav-item">
-                                    <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#module-2-cours">
-                                        Cours
-                                    </button>
+                                    <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#module-2-cours" type="button">Cours</button>
                                 </li>
                                 <li class="nav-item">
-                                    <button class="nav-link" data-bs-toggle="tab" data-bs-target="#module-2-exercices">
-                                        Exercices
-                                    </button>
+                                    <button class="nav-link" data-bs-toggle="tab" data-bs-target="#module-2-exercices" type="button">Exercices</button>
                                 </li>
                                 <li class="nav-item">
-                                    <button class="nav-link" data-bs-toggle="tab" data-bs-target="#module-2-examen">
-                                        Mini-examen
-                                    </button>
+                                    <button class="nav-link" data-bs-toggle="tab" data-bs-target="#module-2-examen" type="button">Mini-examen</button>
                                 </li>
                             </ul>
 
-                            <!-- Contenu des onglets -->
                             <div class="tab-content mt-3">
-                                <!-- Cours -->
                                 <div id="module-2-cours" class="tab-pane fade show active">
-                                    <h6>Objectifs</h6>
-                                    <ul>
+                                    <h4 class="h6">Objectifs</h4>
+                                    <ul class="mb-3">
                                         <li>Interpréter les signaux sonores en brume</li>
                                         <li>Reconnaître les feux de navires</li>
                                         <li>Comprendre les signaux portuaires</li>
                                         <li>Identifier les feux de route (feux de bord)</li>
                                     </ul>
-                                    <hr>
-                                    <h6>Contenu</h6>
+                                    <h4 class="h6">Contenu</h4>
                                     <h5>Signaux sonores</h5><p>En cas de brume, les navires émettent des signaux spécifiques...</p><h5>Feux de port</h5><p>Chaque port possède des systèmes de balisage lumineux standardisés...</p>
                                 </div>
-
-                                <!-- Exercices -->
                                 <div id="module-2-exercices" class="tab-pane fade">
-                                    <div id="exercices-2" class="exercices-container">
-                                        <!-- Chargé par JS -->
-                                    </div>
+                                    <div id="exercices-2" class="exercices-container"></div>
                                 </div>
-
-                                <!-- Mini-examen -->
                                 <div id="module-2-examen" class="tab-pane fade">
-                                    <div id="mini-qcm-2" class="mini-qcm-container">
-                                        <!-- Chargé par JS -->
-                                    </div>
+                                    <div id="mini-qcm-2" class="mini-qcm-container"></div>
                                 </div>
                             </div>
                         </div>
-                        <div class="card-footer">
-                            <small class="text-muted">Progression: 0% • Score: 0/100</small>
-                        </div>
-                    </div>
+                        <footer class="card-footer bg-transparent">
+                            <div class="progress mb-2" role="progressbar">
+                                <div class="progress-bar" style="width: 0%"></div>
+                            </div>
+                            <small class="text-muted">Progression 0% • Score 0/100</small>
+                        </footer>
+                    </article>
                 </div>
-                <div class="col-md-6 mb-4">
-                    <div class="card h-100" id="module-3">
-                        <div class="card-header bg-light">
-                            <h5 class="mb-0">Module 3 - RIPAM et Marques des Navires</h5>
-                        </div>
+                <div class="col-xl-6">
+                    <article class="card h-100" id="module-3">
+                        <header class="card-header bg-light-subtle">
+                            <h3 class="h5 mb-0">Module 3 - RIPAM et Marques des Navires</h3>
+                        </header>
                         <div class="card-body">
-                            <p>Règles de priorité, feux de route et marques de jour - cœur du QCM (30 questions)</p>
-                            
-                            <!-- Onglets du module -->
+                            <p class="text-muted">Règles de priorité, feux de route et marques de jour - cœur du QCM (30 questions)</p>
+
                             <ul class="nav nav-tabs mt-3" role="tablist">
                                 <li class="nav-item">
-                                    <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#module-3-cours">
-                                        Cours
-                                    </button>
+                                    <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#module-3-cours" type="button">Cours</button>
                                 </li>
                                 <li class="nav-item">
-                                    <button class="nav-link" data-bs-toggle="tab" data-bs-target="#module-3-exercices">
-                                        Exercices
-                                    </button>
+                                    <button class="nav-link" data-bs-toggle="tab" data-bs-target="#module-3-exercices" type="button">Exercices</button>
                                 </li>
                                 <li class="nav-item">
-                                    <button class="nav-link" data-bs-toggle="tab" data-bs-target="#module-3-examen">
-                                        Mini-examen
-                                    </button>
+                                    <button class="nav-link" data-bs-toggle="tab" data-bs-target="#module-3-examen" type="button">Mini-examen</button>
                                 </li>
                             </ul>
 
-                            <!-- Contenu des onglets -->
                             <div class="tab-content mt-3">
-                                <!-- Cours -->
                                 <div id="module-3-cours" class="tab-pane fade show active">
-                                    <h6>Objectifs</h6>
-                                    <ul>
+                                    <h4 class="h6">Objectifs</h4>
+                                    <ul class="mb-3">
                                         <li>Maîtriser les règles de barre (priorités de passage)</li>
                                         <li>Identifier les feux de route des navires</li>
                                         <li>Connaître les marques de jour</li>
                                         <li>Appliquer la hiérarchie des privilèges entre navires</li>
                                     </ul>
-                                    <hr>
-                                    <h6>Contenu</h6>
+                                    <h4 class="h6">Contenu</h4>
                                     <h5>Les 5 règles de barre RIPAM</h5><p>1. Navire à voile face au vent: s'écarte</p><p>2. Deux navires à voile: s'écartent tribord à tribord</p><p>3. Navire à moteur: maintient sa route</p><p>4. Navigation de nuit: identifier par les feux</p><p>5. Tous: ralentir si nécessaire</p>
                                 </div>
-
-                                <!-- Exercices -->
                                 <div id="module-3-exercices" class="tab-pane fade">
-                                    <div id="exercices-3" class="exercices-container">
-                                        <!-- Chargé par JS -->
-                                    </div>
+                                    <div id="exercices-3" class="exercices-container"></div>
                                 </div>
-
-                                <!-- Mini-examen -->
                                 <div id="module-3-examen" class="tab-pane fade">
-                                    <div id="mini-qcm-3" class="mini-qcm-container">
-                                        <!-- Chargé par JS -->
-                                    </div>
+                                    <div id="mini-qcm-3" class="mini-qcm-container"></div>
                                 </div>
                             </div>
                         </div>
-                        <div class="card-footer">
-                            <small class="text-muted">Progression: 0% • Score: 0/100</small>
-                        </div>
-                    </div>
+                        <footer class="card-footer bg-transparent">
+                            <div class="progress mb-2" role="progressbar">
+                                <div class="progress-bar" style="width: 0%"></div>
+                            </div>
+                            <small class="text-muted">Progression 0% • Score 0/100</small>
+                        </footer>
+                    </article>
                 </div>
             </div>
         </section>
-        <section id="etape-2" class="mb-5 pb-5">
-            <h2 class="mb-3 border-bottom pb-2">LES OUTILS DU NAVIGATEUR</h2>
-            <p class="text-muted">Cartes marines, météo, instruments - savoir utiliser les ressources du bord</p>
+        <section id="etape-2" class="mb-5">
+            <div class="d-flex justify-content-between align-items-start mb-3">
+                <div>
+                    <h2 class="section-title h4 mb-1">LES OUTILS DU NAVIGATEUR</h2>
+                    <p class="text-muted mb-0">Cartes marines, météo, instruments - savoir utiliser les ressources du bord</p>
+                </div>
+                <span class="badge text-bg-light">2 modules</span>
+            </div>
 
-            <div class="row">
-                <div class="col-md-6 mb-4">
-                    <div class="card h-100" id="module-4">
-                        <div class="card-header bg-light">
-                            <h5 class="mb-0">Module 4 - La Carte Marine et la Règle Cras</h5>
-                        </div>
+            <div class="row g-4">
+                <div class="col-xl-6">
+                    <article class="card h-100" id="module-4">
+                        <header class="card-header bg-light-subtle">
+                            <h3 class="h5 mb-0">Module 4 - La Carte Marine et la Règle Cras</h3>
+                        </header>
                         <div class="card-body">
-                            <p>Lire une carte SHOM, coordonnées, symboles, utiliser la règle rapporteur</p>
-                            
-                            <!-- Onglets du module -->
+                            <p class="text-muted">Lire une carte SHOM, coordonnées, symboles, utiliser la règle rapporteur</p>
+
                             <ul class="nav nav-tabs mt-3" role="tablist">
                                 <li class="nav-item">
-                                    <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#module-4-cours">
-                                        Cours
-                                    </button>
+                                    <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#module-4-cours" type="button">Cours</button>
                                 </li>
                                 <li class="nav-item">
-                                    <button class="nav-link" data-bs-toggle="tab" data-bs-target="#module-4-exercices">
-                                        Exercices
-                                    </button>
+                                    <button class="nav-link" data-bs-toggle="tab" data-bs-target="#module-4-exercices" type="button">Exercices</button>
                                 </li>
                                 <li class="nav-item">
-                                    <button class="nav-link" data-bs-toggle="tab" data-bs-target="#module-4-examen">
-                                        Mini-examen
-                                    </button>
+                                    <button class="nav-link" data-bs-toggle="tab" data-bs-target="#module-4-examen" type="button">Mini-examen</button>
                                 </li>
                             </ul>
 
-                            <!-- Contenu des onglets -->
                             <div class="tab-content mt-3">
-                                <!-- Cours -->
                                 <div id="module-4-cours" class="tab-pane fade show active">
-                                    <h6>Objectifs</h6>
-                                    <ul>
+                                    <h4 class="h6">Objectifs</h4>
+                                    <ul class="mb-3">
                                         <li>Lire et interpréter les symboles SHOM</li>
                                         <li>Déterminer des coordonnées géographiques</li>
                                         <li>Utiliser la règle Cras (rapporteur maritime)</li>
                                         <li>Mesurer des distances sur la carte</li>
                                     </ul>
-                                    <hr>
-                                    <h6>Contenu</h6>
+                                    <h4 class="h6">Contenu</h4>
                                     <h5>Les symboles SHOM</h5><p>La carte marine contient de nombreux symboles normalisés...</p><h5>Utilisation de la règle Cras</h5><p>La règle rapporteur maritime (Cras) permet de...</p>
                                 </div>
-
-                                <!-- Exercices -->
                                 <div id="module-4-exercices" class="tab-pane fade">
-                                    <div id="exercices-4" class="exercices-container">
-                                        <!-- Chargé par JS -->
-                                    </div>
+                                    <div id="exercices-4" class="exercices-container"></div>
                                 </div>
-
-                                <!-- Mini-examen -->
                                 <div id="module-4-examen" class="tab-pane fade">
-                                    <div id="mini-qcm-4" class="mini-qcm-container">
-                                        <!-- Chargé par JS -->
-                                    </div>
+                                    <div id="mini-qcm-4" class="mini-qcm-container"></div>
                                 </div>
                             </div>
                         </div>
-                        <div class="card-footer">
-                            <small class="text-muted">Progression: 0% • Score: 0/100</small>
-                        </div>
-                    </div>
+                        <footer class="card-footer bg-transparent">
+                            <div class="progress mb-2" role="progressbar">
+                                <div class="progress-bar" style="width: 0%"></div>
+                            </div>
+                            <small class="text-muted">Progression 0% • Score 0/100</small>
+                        </footer>
+                    </article>
                 </div>
-                <div class="col-md-6 mb-4">
-                    <div class="card h-100" id="module-5">
-                        <div class="card-header bg-light">
-                            <h5 class="mb-0">Module 5 - Météo et Environnement</h5>
-                        </div>
+                <div class="col-xl-6">
+                    <article class="card h-100" id="module-5">
+                        <header class="card-header bg-light-subtle">
+                            <h3 class="h5 mb-0">Module 5 - Météo et Environnement</h3>
+                        </header>
                         <div class="card-body">
-                            <p>Pressions, fronts, nuages, échelle de Beaufort</p>
-                            
-                            <!-- Onglets du module -->
+                            <p class="text-muted">Pressions, fronts, nuages, échelle de Beaufort</p>
+
                             <ul class="nav nav-tabs mt-3" role="tablist">
                                 <li class="nav-item">
-                                    <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#module-5-cours">
-                                        Cours
-                                    </button>
+                                    <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#module-5-cours" type="button">Cours</button>
                                 </li>
                                 <li class="nav-item">
-                                    <button class="nav-link" data-bs-toggle="tab" data-bs-target="#module-5-exercices">
-                                        Exercices
-                                    </button>
+                                    <button class="nav-link" data-bs-toggle="tab" data-bs-target="#module-5-exercices" type="button">Exercices</button>
                                 </li>
                                 <li class="nav-item">
-                                    <button class="nav-link" data-bs-toggle="tab" data-bs-target="#module-5-examen">
-                                        Mini-examen
-                                    </button>
+                                    <button class="nav-link" data-bs-toggle="tab" data-bs-target="#module-5-examen" type="button">Mini-examen</button>
                                 </li>
                             </ul>
 
-                            <!-- Contenu des onglets -->
                             <div class="tab-content mt-3">
-                                <!-- Cours -->
                                 <div id="module-5-cours" class="tab-pane fade show active">
-                                    <h6>Objectifs</h6>
-                                    <ul>
+                                    <h4 class="h6">Objectifs</h4>
+                                    <ul class="mb-3">
                                         <li>Interpréter les cartes de pression</li>
                                         <li>Identifier les types de fronts météorologiques</li>
                                         <li>Reconnaître les nuages par étage</li>
                                         <li>Utiliser l&#39;échelle de Beaufort</li>
                                     </ul>
-                                    <hr>
-                                    <h6>Contenu</h6>
+                                    <h4 class="h6">Contenu</h4>
                                     <h5>Système dépressionnaire</h5><p>Une dépression est une zone de basse pression...</p><h5>Échelle de Beaufort</h5><p>Force 0 (calme) à Force 12 (ouragan)</p>
                                 </div>
-
-                                <!-- Exercices -->
                                 <div id="module-5-exercices" class="tab-pane fade">
-                                    <div id="exercices-5" class="exercices-container">
-                                        <!-- Chargé par JS -->
-                                    </div>
+                                    <div id="exercices-5" class="exercices-container"></div>
                                 </div>
-
-                                <!-- Mini-examen -->
                                 <div id="module-5-examen" class="tab-pane fade">
-                                    <div id="mini-qcm-5" class="mini-qcm-container">
-                                        <!-- Chargé par JS -->
-                                    </div>
+                                    <div id="mini-qcm-5" class="mini-qcm-container"></div>
                                 </div>
                             </div>
                         </div>
-                        <div class="card-footer">
-                            <small class="text-muted">Progression: 0% • Score: 0/100</small>
-                        </div>
-                    </div>
+                        <footer class="card-footer bg-transparent">
+                            <div class="progress mb-2" role="progressbar">
+                                <div class="progress-bar" style="width: 0%"></div>
+                            </div>
+                            <small class="text-muted">Progression 0% • Score 0/100</small>
+                        </footer>
+                    </article>
                 </div>
             </div>
         </section>
-        <section id="etape-3" class="mb-5 pb-5">
-            <h2 class="mb-3 border-bottom pb-2">LA NAVIGATION CALCULATOIRE</h2>
-            <p class="text-muted">Caps, dérives, courants, marées - calculs et constructions géométriques</p>
+        <section id="etape-3" class="mb-5">
+            <div class="d-flex justify-content-between align-items-start mb-3">
+                <div>
+                    <h2 class="section-title h4 mb-1">LA NAVIGATION CALCULATOIRE</h2>
+                    <p class="text-muted mb-0">Caps, dérives, courants, marées - calculs et constructions géométriques</p>
+                </div>
+                <span class="badge text-bg-light">3 modules</span>
+            </div>
 
-            <div class="row">
-                <div class="col-md-6 mb-4">
-                    <div class="card h-100" id="module-6">
-                        <div class="card-header bg-light">
-                            <h5 class="mb-0">Module 6 - Caps et Dérives</h5>
-                        </div>
+            <div class="row g-4">
+                <div class="col-xl-6">
+                    <article class="card h-100" id="module-6">
+                        <header class="card-header bg-light-subtle">
+                            <h3 class="h5 mb-0">Module 6 - Caps et Dérives</h3>
+                        </header>
                         <div class="card-body">
-                            <p>Déclinaison, déviation, cap vrai, route surface, dérive du vent</p>
-                            
-                            <!-- Onglets du module -->
+                            <p class="text-muted">Déclinaison, déviation, cap vrai, route surface, dérive du vent</p>
+
                             <ul class="nav nav-tabs mt-3" role="tablist">
                                 <li class="nav-item">
-                                    <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#module-6-cours">
-                                        Cours
-                                    </button>
+                                    <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#module-6-cours" type="button">Cours</button>
                                 </li>
                                 <li class="nav-item">
-                                    <button class="nav-link" data-bs-toggle="tab" data-bs-target="#module-6-exercices">
-                                        Exercices
-                                    </button>
+                                    <button class="nav-link" data-bs-toggle="tab" data-bs-target="#module-6-exercices" type="button">Exercices</button>
                                 </li>
                                 <li class="nav-item">
-                                    <button class="nav-link" data-bs-toggle="tab" data-bs-target="#module-6-examen">
-                                        Mini-examen
-                                    </button>
+                                    <button class="nav-link" data-bs-toggle="tab" data-bs-target="#module-6-examen" type="button">Mini-examen</button>
                                 </li>
                             </ul>
 
-                            <!-- Contenu des onglets -->
                             <div class="tab-content mt-3">
-                                <!-- Cours -->
                                 <div id="module-6-cours" class="tab-pane fade show active">
-                                    <h6>Objectifs</h6>
-                                    <ul>
+                                    <h4 class="h6">Objectifs</h4>
+                                    <ul class="mb-3">
                                         <li>Comprendre déclinaison et déviation magnétiques</li>
                                         <li>Calculer le cap vrai à partir du cap compas</li>
                                         <li>Déterminer la route surface avec dérive</li>
                                         <li>Appliquer les formules de variation</li>
                                     </ul>
-                                    <hr>
-                                    <h6>Contenu</h6>
+                                    <h4 class="h6">Contenu</h4>
                                     <h5>Formules essentielles</h5><p><strong>Cv = Cc + W</strong> (Cap vrai = Cap compas + Déclinaison)</p><p><strong>Cs = Cv + d</strong> (route surface avec dérive)</p>
                                 </div>
-
-                                <!-- Exercices -->
                                 <div id="module-6-exercices" class="tab-pane fade">
-                                    <div id="exercices-6" class="exercices-container">
-                                        <!-- Chargé par JS -->
-                                    </div>
+                                    <div id="exercices-6" class="exercices-container"></div>
                                 </div>
-
-                                <!-- Mini-examen -->
                                 <div id="module-6-examen" class="tab-pane fade">
-                                    <div id="mini-qcm-6" class="mini-qcm-container">
-                                        <!-- Chargé par JS -->
-                                    </div>
+                                    <div id="mini-qcm-6" class="mini-qcm-container"></div>
                                 </div>
                             </div>
                         </div>
-                        <div class="card-footer">
-                            <small class="text-muted">Progression: 0% • Score: 0/100</small>
-                        </div>
-                    </div>
+                        <footer class="card-footer bg-transparent">
+                            <div class="progress mb-2" role="progressbar">
+                                <div class="progress-bar" style="width: 0%"></div>
+                            </div>
+                            <small class="text-muted">Progression 0% • Score 0/100</small>
+                        </footer>
+                    </article>
                 </div>
-                <div class="col-md-6 mb-4">
-                    <div class="card h-100" id="module-7">
-                        <div class="card-header bg-light">
-                            <h5 class="mb-0">Module 7 - Courants et Route Fond</h5>
-                        </div>
+                <div class="col-xl-6">
+                    <article class="card h-100" id="module-7">
+                        <header class="card-header bg-light-subtle">
+                            <h3 class="h5 mb-0">Module 7 - Courants et Route Fond</h3>
+                        </header>
                         <div class="card-body">
-                            <p>Vecteurs de courant, construction géométrique, route fond</p>
-                            
-                            <!-- Onglets du module -->
+                            <p class="text-muted">Vecteurs de courant, construction géométrique, route fond</p>
+
                             <ul class="nav nav-tabs mt-3" role="tablist">
                                 <li class="nav-item">
-                                    <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#module-7-cours">
-                                        Cours
-                                    </button>
+                                    <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#module-7-cours" type="button">Cours</button>
                                 </li>
                                 <li class="nav-item">
-                                    <button class="nav-link" data-bs-toggle="tab" data-bs-target="#module-7-exercices">
-                                        Exercices
-                                    </button>
+                                    <button class="nav-link" data-bs-toggle="tab" data-bs-target="#module-7-exercices" type="button">Exercices</button>
                                 </li>
                                 <li class="nav-item">
-                                    <button class="nav-link" data-bs-toggle="tab" data-bs-target="#module-7-examen">
-                                        Mini-examen
-                                    </button>
+                                    <button class="nav-link" data-bs-toggle="tab" data-bs-target="#module-7-examen" type="button">Mini-examen</button>
                                 </li>
                             </ul>
 
-                            <!-- Contenu des onglets -->
                             <div class="tab-content mt-3">
-                                <!-- Cours -->
                                 <div id="module-7-cours" class="tab-pane fade show active">
-                                    <h6>Objectifs</h6>
-                                    <ul>
+                                    <h4 class="h6">Objectifs</h4>
+                                    <ul class="mb-3">
                                         <li>Représenter les vecteurs de courant</li>
                                         <li>Construire la route fond sur carte</li>
                                         <li>Calculer la dérive due au courant</li>
                                         <li>Vérifier la cohérence des routes (surface vs fond)</li>
                                     </ul>
-                                    <hr>
-                                    <h6>Contenu</h6>
+                                    <h4 class="h6">Contenu</h4>
                                     <h5>Construction de la route fond</h5><p>La route fond est l'addition vectorielle de la route surface et du courant...</p>
                                 </div>
-
-                                <!-- Exercices -->
                                 <div id="module-7-exercices" class="tab-pane fade">
-                                    <div id="exercices-7" class="exercices-container">
-                                        <!-- Chargé par JS -->
-                                    </div>
+                                    <div id="exercices-7" class="exercices-container"></div>
                                 </div>
-
-                                <!-- Mini-examen -->
                                 <div id="module-7-examen" class="tab-pane fade">
-                                    <div id="mini-qcm-7" class="mini-qcm-container">
-                                        <!-- Chargé par JS -->
-                                    </div>
+                                    <div id="mini-qcm-7" class="mini-qcm-container"></div>
                                 </div>
                             </div>
                         </div>
-                        <div class="card-footer">
-                            <small class="text-muted">Progression: 0% • Score: 0/100</small>
-                        </div>
-                    </div>
+                        <footer class="card-footer bg-transparent">
+                            <div class="progress mb-2" role="progressbar">
+                                <div class="progress-bar" style="width: 0%"></div>
+                            </div>
+                            <small class="text-muted">Progression 0% • Score 0/100</small>
+                        </footer>
+                    </article>
                 </div>
-                <div class="col-md-6 mb-4">
-                    <div class="card h-100" id="module-8">
-                        <div class="card-header bg-light">
-                            <h5 class="mb-0">Module 8 - Calcul de Marée</h5>
-                        </div>
+                <div class="col-xl-6">
+                    <article class="card h-100" id="module-8">
+                        <header class="card-header bg-light-subtle">
+                            <h3 class="h5 mb-0">Module 8 - Calcul de Marée</h3>
+                        </header>
                         <div class="card-body">
-                            <p>Règle des douzièmes, marnage, heure marée, pied de pilote</p>
-                            
-                            <!-- Onglets du module -->
+                            <p class="text-muted">Règle des douzièmes, marnage, heure marée, pied de pilote</p>
+
                             <ul class="nav nav-tabs mt-3" role="tablist">
                                 <li class="nav-item">
-                                    <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#module-8-cours">
-                                        Cours
-                                    </button>
+                                    <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#module-8-cours" type="button">Cours</button>
                                 </li>
                                 <li class="nav-item">
-                                    <button class="nav-link" data-bs-toggle="tab" data-bs-target="#module-8-exercices">
-                                        Exercices
-                                    </button>
+                                    <button class="nav-link" data-bs-toggle="tab" data-bs-target="#module-8-exercices" type="button">Exercices</button>
                                 </li>
                                 <li class="nav-item">
-                                    <button class="nav-link" data-bs-toggle="tab" data-bs-target="#module-8-examen">
-                                        Mini-examen
-                                    </button>
+                                    <button class="nav-link" data-bs-toggle="tab" data-bs-target="#module-8-examen" type="button">Mini-examen</button>
                                 </li>
                             </ul>
 
-                            <!-- Contenu des onglets -->
                             <div class="tab-content mt-3">
-                                <!-- Cours -->
                                 <div id="module-8-cours" class="tab-pane fade show active">
-                                    <h6>Objectifs</h6>
-                                    <ul>
+                                    <h4 class="h6">Objectifs</h4>
+                                    <ul class="mb-3">
                                         <li>Comprendre les phénomènes de marée</li>
                                         <li>Appliquer la règle des douzièmes</li>
                                         <li>Calculer la hauteur d&#39;eau à une heure donnée</li>
                                         <li>Utiliser le pied de pilote (sécurité)</li>
                                     </ul>
-                                    <hr>
-                                    <h6>Contenu</h6>
+                                    <h4 class="h6">Contenu</h4>
                                     <h5>Règle des douzièmes</h5><p>La marée ne monte pas régulièrement. Pendant les 6 heures...</p><p>1ère heure: 1/12 du marnage</p><p>2e heure: 2/12 du marnage</p><p>3e heure: 3/12 du marnage (max)</p><p>4e heure: 3/12 du marnage</p><p>5e heure: 2/12 du marnage</p><p>6e heure: 1/12 du marnage</p>
                                 </div>
-
-                                <!-- Exercices -->
                                 <div id="module-8-exercices" class="tab-pane fade">
-                                    <div id="exercices-8" class="exercices-container">
-                                        <!-- Chargé par JS -->
-                                    </div>
+                                    <div id="exercices-8" class="exercices-container"></div>
                                 </div>
-
-                                <!-- Mini-examen -->
                                 <div id="module-8-examen" class="tab-pane fade">
-                                    <div id="mini-qcm-8" class="mini-qcm-container">
-                                        <!-- Chargé par JS -->
-                                    </div>
+                                    <div id="mini-qcm-8" class="mini-qcm-container"></div>
                                 </div>
                             </div>
                         </div>
-                        <div class="card-footer">
-                            <small class="text-muted">Progression: 0% • Score: 0/100</small>
-                        </div>
-                    </div>
+                        <footer class="card-footer bg-transparent">
+                            <div class="progress mb-2" role="progressbar">
+                                <div class="progress-bar" style="width: 0%"></div>
+                            </div>
+                            <small class="text-muted">Progression 0% • Score 0/100</small>
+                        </footer>
+                    </article>
                 </div>
             </div>
         </section>
-        <section id="etape-4" class="mb-5 pb-5">
-            <h2 class="mb-3 border-bottom pb-2">RESPONSABILITÉS ET SÉCURITÉ</h2>
-            <p class="text-muted">VHF, communication, réglementation scout, gestion des avaries</p>
+        <section id="etape-4" class="mb-5">
+            <div class="d-flex justify-content-between align-items-start mb-3">
+                <div>
+                    <h2 class="section-title h4 mb-1">RESPONSABILITÉS ET SÉCURITÉ</h2>
+                    <p class="text-muted mb-0">VHF, communication, réglementation scout, gestion des avaries</p>
+                </div>
+                <span class="badge text-bg-light">2 modules</span>
+            </div>
 
-            <div class="row">
-                <div class="col-md-6 mb-4">
-                    <div class="card h-100" id="module-9">
-                        <div class="card-header bg-light">
-                            <h5 class="mb-0">Module 9 - VHF et Communication</h5>
-                        </div>
+            <div class="row g-4">
+                <div class="col-xl-6">
+                    <article class="card h-100" id="module-9">
+                        <header class="card-header bg-light-subtle">
+                            <h3 class="h5 mb-0">Module 9 - VHF et Communication</h3>
+                        </header>
                         <div class="card-body">
-                            <p>ASN, canaux, procédures de détresse (Mayday), sécurité radio</p>
-                            
-                            <!-- Onglets du module -->
+                            <p class="text-muted">ASN, canaux, procédures de détresse (Mayday), sécurité radio</p>
+
                             <ul class="nav nav-tabs mt-3" role="tablist">
                                 <li class="nav-item">
-                                    <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#module-9-cours">
-                                        Cours
-                                    </button>
+                                    <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#module-9-cours" type="button">Cours</button>
                                 </li>
                                 <li class="nav-item">
-                                    <button class="nav-link" data-bs-toggle="tab" data-bs-target="#module-9-exercices">
-                                        Exercices
-                                    </button>
+                                    <button class="nav-link" data-bs-toggle="tab" data-bs-target="#module-9-exercices" type="button">Exercices</button>
                                 </li>
                                 <li class="nav-item">
-                                    <button class="nav-link" data-bs-toggle="tab" data-bs-target="#module-9-examen">
-                                        Mini-examen
-                                    </button>
+                                    <button class="nav-link" data-bs-toggle="tab" data-bs-target="#module-9-examen" type="button">Mini-examen</button>
                                 </li>
                             </ul>
 
-                            <!-- Contenu des onglets -->
                             <div class="tab-content mt-3">
-                                <!-- Cours -->
                                 <div id="module-9-cours" class="tab-pane fade show active">
-                                    <h6>Objectifs</h6>
-                                    <ul>
+                                    <h4 class="h6">Objectifs</h4>
+                                    <ul class="mb-3">
                                         <li>Connaître les canaux VHF importants (16, 9, 72)</li>
                                         <li>Maîtriser la procédure Mayday</li>
                                         <li>Comprendre les protocoles de communication</li>
                                         <li>Utiliser l&#39;alphabet phonétique</li>
                                     </ul>
-                                    <hr>
-                                    <h6>Contenu</h6>
+                                    <h4 class="h6">Contenu</h4>
                                     <h5>Canaux principaux</h5><p><strong>Canal 16:</strong> Appel de détresse et sécurité (obligatoire)</p><p><strong>Canal 9:</strong> Communications secondaires</p><p><strong>Canal 72:</strong> Communications à courte portée</p>
                                 </div>
-
-                                <!-- Exercices -->
                                 <div id="module-9-exercices" class="tab-pane fade">
-                                    <div id="exercices-9" class="exercices-container">
-                                        <!-- Chargé par JS -->
-                                    </div>
+                                    <div id="exercices-9" class="exercices-container"></div>
                                 </div>
-
-                                <!-- Mini-examen -->
                                 <div id="module-9-examen" class="tab-pane fade">
-                                    <div id="mini-qcm-9" class="mini-qcm-container">
-                                        <!-- Chargé par JS -->
-                                    </div>
+                                    <div id="mini-qcm-9" class="mini-qcm-container"></div>
                                 </div>
                             </div>
                         </div>
-                        <div class="card-footer">
-                            <small class="text-muted">Progression: 0% • Score: 0/100</small>
-                        </div>
-                    </div>
+                        <footer class="card-footer bg-transparent">
+                            <div class="progress mb-2" role="progressbar">
+                                <div class="progress-bar" style="width: 0%"></div>
+                            </div>
+                            <small class="text-muted">Progression 0% • Score 0/100</small>
+                        </footer>
+                    </article>
                 </div>
-                <div class="col-md-6 mb-4">
-                    <div class="card h-100" id="module-10">
-                        <div class="card-header bg-light">
-                            <h5 class="mb-0">Module 10 - Cadre Scout et Sécurité de Bord</h5>
-                        </div>
+                <div class="col-xl-6">
+                    <article class="card h-100" id="module-10">
+                        <header class="card-header bg-light-subtle">
+                            <h3 class="h5 mb-0">Module 10 - Cadre Scout et Sécurité de Bord</h3>
+                        </header>
                         <div class="card-body">
-                            <p>Réglementation SUF, matériel d&#39;armement, gestion des avaries</p>
-                            
-                            <!-- Onglets du module -->
+                            <p class="text-muted">Réglementation SUF, matériel d&#39;armement, gestion des avaries</p>
+
                             <ul class="nav nav-tabs mt-3" role="tablist">
                                 <li class="nav-item">
-                                    <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#module-10-cours">
-                                        Cours
-                                    </button>
+                                    <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#module-10-cours" type="button">Cours</button>
                                 </li>
                                 <li class="nav-item">
-                                    <button class="nav-link" data-bs-toggle="tab" data-bs-target="#module-10-exercices">
-                                        Exercices
-                                    </button>
+                                    <button class="nav-link" data-bs-toggle="tab" data-bs-target="#module-10-exercices" type="button">Exercices</button>
                                 </li>
                                 <li class="nav-item">
-                                    <button class="nav-link" data-bs-toggle="tab" data-bs-target="#module-10-examen">
-                                        Mini-examen
-                                    </button>
+                                    <button class="nav-link" data-bs-toggle="tab" data-bs-target="#module-10-examen" type="button">Mini-examen</button>
                                 </li>
                             </ul>
 
-                            <!-- Contenu des onglets -->
                             <div class="tab-content mt-3">
-                                <!-- Cours -->
                                 <div id="module-10-cours" class="tab-pane fade show active">
-                                    <h6>Objectifs</h6>
-                                    <ul>
+                                    <h4 class="h6">Objectifs</h4>
+                                    <ul class="mb-3">
                                         <li>Connaître la réglementation SUF (6 milles, force 4-5)</li>
                                         <li>Lister l&#39;équipement obligatoire à bord</li>
                                         <li>Gérer une voie d&#39;eau d&#39;urgence</li>
                                         <li>Réagir en cas d&#39;incendie à bord</li>
                                     </ul>
-                                    <hr>
-                                    <h6>Contenu</h6>
+                                    <h4 class="h6">Contenu</h4>
                                     <h5>Réglementation SUF (Scoutisme Universitaire Français)</h5><p><strong>Distance max:</strong> 6 milles nautiques de la côte</p><p><strong>Force max:</strong> 4 à 5 Beaufort</p><p><strong>Matériel obligatoire:</strong> Gilets de sauvetage, radeau, fusées éclairantes</p>
                                 </div>
-
-                                <!-- Exercices -->
                                 <div id="module-10-exercices" class="tab-pane fade">
-                                    <div id="exercices-10" class="exercices-container">
-                                        <!-- Chargé par JS -->
-                                    </div>
+                                    <div id="exercices-10" class="exercices-container"></div>
                                 </div>
-
-                                <!-- Mini-examen -->
                                 <div id="module-10-examen" class="tab-pane fade">
-                                    <div id="mini-qcm-10" class="mini-qcm-container">
-                                        <!-- Chargé par JS -->
-                                    </div>
+                                    <div id="mini-qcm-10" class="mini-qcm-container"></div>
                                 </div>
                             </div>
                         </div>
-                        <div class="card-footer">
-                            <small class="text-muted">Progression: 0% • Score: 0/100</small>
-                        </div>
-                    </div>
+                        <footer class="card-footer bg-transparent">
+                            <div class="progress mb-2" role="progressbar">
+                                <div class="progress-bar" style="width: 0%"></div>
+                            </div>
+                            <small class="text-muted">Progression 0% • Score 0/100</small>
+                        </footer>
+                    </article>
                 </div>
             </div>
         </section>
-    </div>
+    </section>
 </div>
 
 <script>

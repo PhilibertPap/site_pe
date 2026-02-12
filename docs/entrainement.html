@@ -39,104 +39,118 @@
 
     <!-- Contenu principal -->
     <main class="container py-5">
-        <h1 class="mb-4">🎯 Espace d'entraînement</h1>
+        <section class="page-hero mb-4">
+  <div class="row g-3 align-items-center">
+    <div class="col-lg-9">
+      <h1 class="display-6 mb-2">Espace d'entraînement</h1>
+      <p class="lead mb-0">Choisis un mode de test, renforce tes acquis et simule les conditions d'examen.</p>
+    </div>
+    <div class="col-lg-3 text-lg-end">
+      <a href="examens.html" class="btn btn-light btn-sm">Passer en mode examen</a>
+    </div>
+  </div>
+</section>
 
-<div class="row mb-4">
-  <div class="col-md-8">
-    <p class="lead">Préparez-vous efficacement avec nos <strong>31</strong> QCM gratuits</p>
+<section class="mb-5">
+  <h2 class="section-title h4">Statistiques</h2>
+  <div class="row g-3">
+    <div class="col-6 col-lg-3">
+      <div class="card h-100 kpi-card">
+        <div class="card-body">
+          <p class="kpi-label">Total QCM</p>
+          <p class="kpi-value mb-0">31</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-6 col-lg-3">
+      <div class="card h-100 kpi-card">
+        <div class="card-body">
+          <p class="kpi-label">Catégories</p>
+          <p class="kpi-value mb-0">6</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-6 col-lg-3">
+      <div class="card h-100 kpi-card">
+        <div class="card-body">
+          <p class="kpi-label">Types de tests</p>
+          <p class="kpi-value mb-0">4</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-6 col-lg-3">
+      <div class="card h-100 kpi-card">
+        <div class="card-body">
+          <p class="kpi-label">Prix</p>
+          <p class="kpi-value mb-0">Gratuit</p>
+        </div>
+      </div>
+    </div>
   </div>
-</div>
+</section>
 
-<!-- Statistiques -->
-<div class="row mb-4">
-  <div class="col-md-3">
-    <div class="card bg-light">
-      <div class="card-body text-center">
-        <h5>Total QCM</h5>
-        <h3 class="text-primary">31</h3>
-      </div>
+<section class="mb-5">
+  <h2 class="section-title h4">Modes d'entraînement</h2>
+  <div class="row g-4">
+    <div class="col-md-6">
+      <article class="card h-100 training-card" data-session="thematic" role="button" tabindex="0">
+        <div class="card-body">
+          <div class="d-flex align-items-center justify-content-between mb-2">
+            <span class="icon-badge">📚</span>
+            <span class="badge text-bg-light">learning</span>
+          </div>
+          <h3 class="h5">Tests Thématiques</h3>
+          <p class="card-text mb-0">Maîtrisez chaque sujet progressivement</p>
+        </div>
+      </article>
+    </div>
+    <div class="col-md-6">
+      <article class="card h-100 training-card" data-session="random" role="button" tabindex="0">
+        <div class="card-body">
+          <div class="d-flex align-items-center justify-content-between mb-2">
+            <span class="icon-badge">🎲</span>
+            <span class="badge text-bg-light">simulation</span>
+          </div>
+          <h3 class="h5">Tests Aléatoires</h3>
+          <p class="card-text mb-0">Testez-vous comme à l&#39;examen</p>
+        </div>
+      </article>
+    </div>
+    <div class="col-md-6">
+      <article class="card h-100 training-card" data-session="fixed" role="button" tabindex="0">
+        <div class="card-body">
+          <div class="d-flex align-items-center justify-content-between mb-2">
+            <span class="icon-badge">📋</span>
+            <span class="badge text-bg-light">exam</span>
+          </div>
+          <h3 class="h5">Tests Fixes Examen</h3>
+          <p class="card-text mb-0">6 séries d&#39;examen officielles</p>
+        </div>
+      </article>
+    </div>
+    <div class="col-md-6">
+      <article class="card h-100 training-card" data-session="random-thematic" role="button" tabindex="0">
+        <div class="card-body">
+          <div class="d-flex align-items-center justify-content-between mb-2">
+            <span class="icon-badge">🔄</span>
+            <span class="badge text-bg-light">revision</span>
+          </div>
+          <h3 class="h5">Tests Thématiques Aléatoires</h3>
+          <p class="card-text mb-0">Variations aléatoires par thème</p>
+        </div>
+      </article>
     </div>
   </div>
-  <div class="col-md-3">
-    <div class="card bg-light">
-      <div class="card-body text-center">
-        <h5>Catégories</h5>
-        <h3 class="text-success">6</h3>
-      </div>
-    </div>
-  </div>
-  <div class="col-md-3">
-    <div class="card bg-light">
-      <div class="card-body text-center">
-        <h5>Types de tests</h5>
-        <h3 class="text-info">4</h3>
-      </div>
-    </div>
-  </div>
-  <div class="col-md-3">
-    <div class="card bg-light">
-      <div class="card-body text-center">
-        <h5>Prix</h5>
-        <h3 class="text-warning">Gratuit</h3>
-      </div>
-    </div>
-  </div>
-</div>
+</section>
 
-<!-- Sessions d'entraînement -->
-<div class="row mb-5">
-  <div class="col-md-6 mb-3">
-    <div class="card h-100 cursor-pointer training-card" data-session="thematic" style="cursor: pointer;">
-      <div class="card-body">
-        <div class="text-4xl mb-2">📚</div>
-        <h5 class="card-title">Tests Thématiques</h5>
-        <p class="card-text">Maîtrisez chaque sujet progressivement</p>
-        <small class="text-muted">learning</small>
-      </div>
-    </div>
-  </div>
-  <div class="col-md-6 mb-3">
-    <div class="card h-100 cursor-pointer training-card" data-session="random" style="cursor: pointer;">
-      <div class="card-body">
-        <div class="text-4xl mb-2">🎲</div>
-        <h5 class="card-title">Tests Aléatoires</h5>
-        <p class="card-text">Testez-vous comme à l&#39;examen</p>
-        <small class="text-muted">simulation</small>
-      </div>
-    </div>
-  </div>
-  <div class="col-md-6 mb-3">
-    <div class="card h-100 cursor-pointer training-card" data-session="fixed" style="cursor: pointer;">
-      <div class="card-body">
-        <div class="text-4xl mb-2">📋</div>
-        <h5 class="card-title">Tests Fixes Examen</h5>
-        <p class="card-text">6 séries d&#39;examen officielles</p>
-        <small class="text-muted">exam</small>
-      </div>
-    </div>
-  </div>
-  <div class="col-md-6 mb-3">
-    <div class="card h-100 cursor-pointer training-card" data-session="random-thematic" style="cursor: pointer;">
-      <div class="card-body">
-        <div class="text-4xl mb-2">🔄</div>
-        <h5 class="card-title">Tests Thématiques Aléatoires</h5>
-        <p class="card-text">Variations aléatoires par thème</p>
-        <small class="text-muted">revision</small>
-      </div>
-    </div>
-  </div>
-</div>
+<section id="session-details" class="mb-5"></section>
 
-<!-- Détails de la session sélectionnée -->
-<div id="session-details" class="mb-5"></div>
+<section class="alert alert-info mb-0">
+  <h2 class="h5 alert-heading">Conseil de progression</h2>
+  <p class="mb-0">Si tu débutes, commence par les <strong>tests thématiques</strong> puis bascule sur les séries aléatoires.</p>
+</section>
 
-<!-- Avis utiles -->
-<div class="alert alert-info alert-dismissible fade show">
-  <h4 class="alert-heading">💡 Conseils</h4>
-  <p>Si vous débutez, commencez par les <strong>tests thématiques</strong> pour un apprentissage progressif.</p>
-</div>
-
-<script src="/js/training.js"></script>
+<script src="js/training.js"></script>
 
     </main>
 

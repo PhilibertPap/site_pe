@@ -1,8 +1,17 @@
-<h1 class="mb-4">🎮 Mini-jeu - {{gameType}}</h1>
+<section class="page-hero mb-4">
+  <div class="row g-3 align-items-center">
+    <div class="col-lg-9">
+      <h1 class="display-6 mb-2">Mini-jeu</h1>
+      <p class="mb-0">Type de jeu : <strong>{{gameType}}</strong></p>
+    </div>
+    <div class="col-lg-3 text-lg-end">
+      <a href="entrainement.html" class="btn btn-light btn-sm">Retour entraînement</a>
+    </div>
+  </div>
+</section>
 
-<div class="row">
-  <div class="col-md-8">
-    <!-- Zone de jeu -->
+<div class="row g-4">
+  <section class="col-lg-8">
     <div id="game-container" class="card">
       <div class="card-body">
         <div id="game-content" style="min-height: 400px; display: flex; align-items: center; justify-content: center;">
@@ -10,19 +19,14 @@
         </div>
       </div>
     </div>
+  </section>
 
-    <div class="mt-3">
-      <a href="/entrainement.html" class="btn btn-secondary">← Retour à l'entraînement</a>
-    </div>
-  </div>
-
-  <!-- Barre latérale -->
-  <div class="col-md-4">
-    <div class="card bg-light">
+  <aside class="col-lg-4">
+    <div class="card mb-3">
       <div class="card-body">
-        <h5 class="card-title">📊 Score</h5>
+        <h2 class="h5">Score</h2>
         <div class="text-center mb-3">
-          <h3 id="score" class="text-success">0 / 0</h3>
+          <p id="score" class="kpi-value mb-0">0 / 0</p>
         </div>
         <div class="progress">
           <div id="score-bar" class="progress-bar bg-success" style="width: 0%"></div>
@@ -30,13 +34,13 @@
       </div>
     </div>
 
-    <div class="card mt-3">
+    <div class="card soft-panel">
       <div class="card-body">
-        <h5 class="card-title">ℹ️ Informations</h5>
-        <p id="game-info" class="mb-0">Type: {{gameType}}</p>
+        <h2 class="h5">Informations</h2>
+        <p id="game-info" class="mb-0">Type : {{gameType}}</p>
       </div>
     </div>
-  </div>
+  </aside>
 </div>
 
-<script src="/js/game.js"></script>
+<script src="js/game.js"></script>

@@ -1,70 +1,78 @@
-<h1 class="mb-4">🎯 Espace d'entraînement</h1>
-
-<div class="row mb-4">
-  <div class="col-md-8">
-    <p class="lead">Préparez-vous efficacement avec nos <strong>{{statistics.totalQCM}}</strong> QCM gratuits</p>
+<section class="page-hero mb-4">
+  <div class="row g-3 align-items-center">
+    <div class="col-lg-9">
+      <h1 class="display-6 mb-2">Espace d'entraînement</h1>
+      <p class="lead mb-0">Choisis un mode de test, renforce tes acquis et simule les conditions d'examen.</p>
+    </div>
+    <div class="col-lg-3 text-lg-end">
+      <a href="examens.html" class="btn btn-light btn-sm">Passer en mode examen</a>
+    </div>
   </div>
-</div>
+</section>
 
-<!-- Statistiques -->
-<div class="row mb-4">
-  <div class="col-md-3">
-    <div class="card bg-light">
-      <div class="card-body text-center">
-        <h5>Total QCM</h5>
-        <h3 class="text-primary">{{statistics.totalQCM}}</h3>
+<section class="mb-5">
+  <h2 class="section-title h4">Statistiques</h2>
+  <div class="row g-3">
+    <div class="col-6 col-lg-3">
+      <div class="card h-100 kpi-card">
+        <div class="card-body">
+          <p class="kpi-label">Total QCM</p>
+          <p class="kpi-value mb-0">{{statistics.totalQCM}}</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-6 col-lg-3">
+      <div class="card h-100 kpi-card">
+        <div class="card-body">
+          <p class="kpi-label">Catégories</p>
+          <p class="kpi-value mb-0">{{statistics.themes}}</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-6 col-lg-3">
+      <div class="card h-100 kpi-card">
+        <div class="card-body">
+          <p class="kpi-label">Types de tests</p>
+          <p class="kpi-value mb-0">{{statistics.typeOfTests}}</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-6 col-lg-3">
+      <div class="card h-100 kpi-card">
+        <div class="card-body">
+          <p class="kpi-label">Prix</p>
+          <p class="kpi-value mb-0">{{statistics.price}}</p>
+        </div>
       </div>
     </div>
   </div>
-  <div class="col-md-3">
-    <div class="card bg-light">
-      <div class="card-body text-center">
-        <h5>Catégories</h5>
-        <h3 class="text-success">{{statistics.themes}}</h3>
-      </div>
-    </div>
-  </div>
-  <div class="col-md-3">
-    <div class="card bg-light">
-      <div class="card-body text-center">
-        <h5>Types de tests</h5>
-        <h3 class="text-info">{{statistics.typeOfTests}}</h3>
-      </div>
-    </div>
-  </div>
-  <div class="col-md-3">
-    <div class="card bg-light">
-      <div class="card-body text-center">
-        <h5>Prix</h5>
-        <h3 class="text-warning">{{statistics.price}}</h3>
-      </div>
-    </div>
-  </div>
-</div>
+</section>
 
-<!-- Sessions d'entraînement -->
-<div class="row mb-5">
-  {{#trainingSessions}}
-  <div class="col-md-6 mb-3">
-    <div class="card h-100 cursor-pointer training-card" data-session="{{id}}" style="cursor: pointer;">
-      <div class="card-body">
-        <div class="text-4xl mb-2">{{icon}}</div>
-        <h5 class="card-title">{{name}}</h5>
-        <p class="card-text">{{description}}</p>
-        <small class="text-muted">{{type}}</small>
-      </div>
+<section class="mb-5">
+  <h2 class="section-title h4">Modes d'entraînement</h2>
+  <div class="row g-4">
+    {{#trainingSessions}}
+    <div class="col-md-6">
+      <article class="card h-100 training-card" data-session="{{id}}" role="button" tabindex="0">
+        <div class="card-body">
+          <div class="d-flex align-items-center justify-content-between mb-2">
+            <span class="icon-badge">{{icon}}</span>
+            <span class="badge text-bg-light">{{type}}</span>
+          </div>
+          <h3 class="h5">{{name}}</h3>
+          <p class="card-text mb-0">{{description}}</p>
+        </div>
+      </article>
     </div>
+    {{/trainingSessions}}
   </div>
-  {{/trainingSessions}}
-</div>
+</section>
 
-<!-- Détails de la session sélectionnée -->
-<div id="session-details" class="mb-5"></div>
+<section id="session-details" class="mb-5"></section>
 
-<!-- Avis utiles -->
-<div class="alert alert-info alert-dismissible fade show">
-  <h4 class="alert-heading">💡 Conseils</h4>
-  <p>Si vous débutez, commencez par les <strong>tests thématiques</strong> pour un apprentissage progressif.</p>
-</div>
+<section class="alert alert-info mb-0">
+  <h2 class="h5 alert-heading">Conseil de progression</h2>
+  <p class="mb-0">Si tu débutes, commence par les <strong>tests thématiques</strong> puis bascule sur les séries aléatoires.</p>
+</section>
 
-<script src="/js/training.js"></script>
+<script src="js/training.js"></script>

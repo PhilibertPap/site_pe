@@ -1,93 +1,93 @@
-<h1 class="mb-4">📔 Carnet de bord pratique</h1>
+<section class="page-hero mb-4">
+    <div class="row g-3 align-items-center">
+        <div class="col-lg-8">
+            <h1 class="display-6 mb-2">Carnet de bord</h1>
+            <p class="mb-0">Prépare des fiches de révision imprimables pour les modules validés.</p>
+        </div>
+        <div class="col-lg-4">
+            <div class="soft-panel p-3">
+                <p class="kpi-label">Modules validés</p>
+                <p class="kpi-value mb-0">{{completedModulesCount}} / {{totalModulesCount}}</p>
+            </div>
+        </div>
+    </div>
+</section>
 
-<p class="lead">Imprime des fiches de révision condensées au format poche après chaque module validé.</p>
-
-<div class="row mb-5">
-    <div class="col-md-6">
-        <div class="card">
+<div class="row g-4 mb-5">
+    <section class="col-lg-6">
+        <div class="card h-100">
             <div class="card-header bg-success text-white">
-                <h5 class="mb-0">🎓 Fiches disponibles</h5>
+                <h2 class="h5 mb-0">Fiches disponibles</h2>
             </div>
             <div class="card-body">
-                <p class="text-muted">Modules validés : {{completedModulesCount}}/{{totalModulesCount}}</p>
                 <div class="list-group">
                     {{#modules}}
                     {{#isCompleted}}
-                    <a href="#fiche-{{id}}" class="list-group-item list-group-item-action">
-                        ✅ {{name}}
-                    </a>
+                    <a href="#fiche-{{id}}" class="list-group-item list-group-item-action">✅ {{name}}</a>
                     {{/isCompleted}}
                     {{^isCompleted}}
-                    <span class="list-group-item text-muted">
-                        🔒 {{name}} (À compléter)
-                    </span>
+                    <span class="list-group-item text-muted">🔒 {{name}} (à compléter)</span>
                     {{/isCompleted}}
                     {{/modules}}
                 </div>
             </div>
         </div>
-    </div>
+    </section>
 
-    <div class="col-md-6">
-        <div class="card">
+    <section class="col-lg-6">
+        <div class="card h-100">
             <div class="card-header bg-info text-white">
-                <h5 class="mb-0">📋 Imprimer</h5>
+                <h2 class="h5 mb-0">Impression</h2>
             </div>
             <div class="card-body">
-                <p>Sélectionne les fiches à imprimer :</p>
-                <form>
+                <p class="mb-3">Sélectionne les fiches à imprimer :</p>
+                <form class="soft-panel p-3">
                     {{#modules}}
                     {{#isCompleted}}
                     <div class="form-check">
                         <input class="form-check-input" type="checkbox" id="fiche-check-{{id}}" value="{{id}}" checked>
-                        <label class="form-check-label" for="fiche-check-{{id}}">
-                            {{name}}
-                        </label>
+                        <label class="form-check-label" for="fiche-check-{{id}}">{{name}}</label>
                     </div>
                     {{/isCompleted}}
                     {{/modules}}
                 </form>
-                <button class="btn btn-info mt-3 w-100" onclick="printSelectedFiches()">
-                    🖨️ Imprimer les fiches sélectionnées
-                </button>
+                <button class="btn btn-info mt-3 w-100" onclick="printSelectedFiches()">Imprimer les fiches sélectionnées</button>
             </div>
         </div>
-    </div>
+    </section>
 </div>
 
-<!-- Fiches (masquées, affichées à la demande) -->
-<div id="fiches-content">
+<section id="fiches-content">
     {{#modules}}
     {{#isCompleted}}
-    <div id="fiche-{{id}}" class="fiche-printable mb-5 p-4" style="page-break-after: always; border: 1px solid #ddd; background: white;">
-        <h3 class="mb-2">{{name}}</h3>
+    <article id="fiche-{{id}}" class="fiche-printable mb-5 p-4 border">
+        <h2 class="h4 mb-2">{{name}}</h2>
         <p class="text-muted small"><strong>Module {{moduleNumber}}</strong> • {{description}}</p>
-        
-        <hr class="my-2">
-        
-        <h6><strong>Objectifs clés</strong></h6>
+        <hr class="my-3">
+
+        <h3 class="h6"><strong>Objectifs clés</strong></h3>
         <ul class="small mb-3">
             {{#objectifs}}
             <li>{{.}}</li>
             {{/objectifs}}
         </ul>
 
-        <h6><strong>Points à retenir</strong></h6>
+        <h3 class="h6"><strong>Points à retenir</strong></h3>
         <ul class="small mb-3">
             {{#keyPoints}}
             <li>{{.}}</li>
             {{/keyPoints}}
         </ul>
 
-        <h6><strong>Formules/Concepts</strong></h6>
-        <pre class="small bg-light p-2 rounded">de>{{formulas}}</code></pre>
+        <h3 class="h6"><strong>Formules / Concepts</strong></h3>
+        <pre class="small bg-light p-2 rounded"><code>{{formulas}}</code></pre>
 
-        <hr class="my-2">
-        <p class="text-muted tiny"><small>Carnet de bord - Préparation PE - NDC</small></p>
-    </div>
+        <hr class="my-3">
+        <p class="text-muted mb-0"><small>Carnet de bord - Préparation PE - NDC</small></p>
+    </article>
     {{/isCompleted}}
     {{/modules}}
-</div>
+</section>
 
 <script>
 function printSelectedFiches() {

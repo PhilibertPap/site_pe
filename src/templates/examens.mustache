@@ -1,72 +1,78 @@
-<h1 class="mb-4">🧪 Pont d'examen (Examens blancs)</h1>
-
-<div class="alert alert-info">
-    <strong>ℹ️ Format réel :</strong> 30 questions en 30 minutes (QCM) + 1 problème de navigation
-</div>
-
-<div class="row">
-    <div class="col-lg-8">
-        <div class="card mb-4">
-            <div class="card-header bg-primary text-white">
-                <h5 class="mb-0">📝 Examen blanc complet</h5>
-            </div>
-            <div class="card-body">
-                <p><strong>Durée totale :</strong> ~1h30</p>
-                <ul>
-                    <li><strong>Partie 1 :</strong> QCM 30 questions (30 min) - 5 fautes admises</li>
-                    <li><strong>Partie 2 :</strong> Problème navigation + marée (60 min)</li>
-                </ul>
-                <p class="mt-3 mb-0">
-                    <button class="btn btn-primary btn-lg" onclick="startFullExam()">
-                        ▶️ Démarrer l'examen complet
-                    </button>
-                </p>
-            </div>
+<section class="page-hero mb-4">
+    <div class="row g-3 align-items-center">
+        <div class="col-lg-9">
+            <h1 class="display-6 mb-2">Pont d'examen</h1>
+            <p class="mb-0">Simule les conditions réelles : QCM chronométré, erreurs limitées, navigation complète.</p>
         </div>
-
-        <div class="card mb-4">
-            <div class="card-header">
-                <h5 class="mb-0">📊 QCM rapide (Révision)</h5>
-            </div>
-            <div class="card-body">
-                <p>Teste-toi sur {{qcmQuestionCount}} questions</p>
-                <select class="form-select mb-3" id="qcm-filter">
-                    <option value="">Tous les modules</option>
-                    {{#modules}}
-                    <option value="{{id}}">{{name}}</option>
-                    {{/modules}}
-                </select>
-                <button class="btn btn-success" onclick="startQuickQCM()">
-                    ▶️ Démarrer le QCM rapide
-                </button>
-            </div>
-        </div>
-
-        <div class="card">
-            <div class="card-header">
-                <h5 class="mb-0">🗺️ Problème de navigation</h5>
-            </div>
-            <div class="card-body">
-                <p>Résous un problème complet : cartographie + marée + route</p>
-                <p class="text-muted"><small>Télécharge la carte 9999 pour suivre les étapes</small></p>
-                <button class="btn btn-info" onclick="startNavigationProblem()">
-                    ▶️ Démarrer le problème
-                </button>
-                <a href="#" class="btn btn-outline-info ms-2">
-                    📄 Télécharger la carte 9999
-                </a>
-            </div>
+        <div class="col-lg-3 text-lg-end">
+            <span class="badge text-bg-light">30 questions / 30 minutes</span>
         </div>
     </div>
+</section>
 
-    <!-- Sidebar statistiques -->
-    <div class="col-lg-4">
+<div class="alert alert-info">
+    <strong>Format réel :</strong> 30 questions QCM + 1 problème de navigation/marée.
+</div>
+
+<div class="row g-4">
+    <section class="col-lg-8">
+        <article class="card mb-4">
+            <header class="card-header bg-primary text-white">
+                <h2 class="h5 mb-0">Examen blanc complet</h2>
+            </header>
+            <div class="card-body">
+                <p><strong>Durée totale :</strong> environ 1h30.</p>
+                <ul class="mb-4">
+                    <li>Partie 1 : QCM 30 questions (5 fautes admises)</li>
+                    <li>Partie 2 : problème navigation + marée</li>
+                </ul>
+                <button class="btn btn-primary btn-lg" onclick="startFullExam()">Démarrer l'examen complet</button>
+            </div>
+        </article>
+
+        <article class="card mb-4">
+            <header class="card-header bg-success text-white">
+                <h2 class="h5 mb-0">QCM rapide</h2>
+            </header>
+            <div class="card-body">
+                <p>Révise rapidement sur <strong>{{qcmQuestionCount}}</strong> questions.</p>
+                <div class="row g-2 align-items-end">
+                    <div class="col-md-8">
+                        <label class="form-label" for="qcm-filter">Filtre par module</label>
+                        <select class="form-select" id="qcm-filter">
+                            <option value="">Tous les modules</option>
+                            {{#modules}}
+                            <option value="{{id}}">{{name}}</option>
+                            {{/modules}}
+                        </select>
+                    </div>
+                    <div class="col-md-4 d-grid">
+                        <button class="btn btn-success" onclick="startQuickQCM()">Démarrer</button>
+                    </div>
+                </div>
+            </div>
+        </article>
+
+        <article class="card">
+            <header class="card-header bg-info text-white">
+                <h2 class="h5 mb-0">Problème de navigation</h2>
+            </header>
+            <div class="card-body">
+                <p>Travaille un cas complet : cartographie, marée, route et sécurité.</p>
+                <p class="text-muted"><small>La carte 9999 est utile pour suivre toutes les étapes.</small></p>
+                <button class="btn btn-info" onclick="startNavigationProblem()">Démarrer le problème</button>
+                <a href="#" class="btn btn-outline-info ms-2">Télécharger la carte 9999</a>
+            </div>
+        </article>
+    </section>
+
+    <aside class="col-lg-4">
         <div class="card mb-4">
-            <div class="card-header bg-light">
-                <h6 class="mb-0">📈 Tes statistiques</h6>
+            <div class="card-header bg-light-subtle">
+                <h2 class="h6 mb-0">Tes statistiques</h2>
             </div>
             <div class="card-body">
-                <p><strong>Derniers examens :</strong></p>
+                <p class="mb-3"><strong>Historique récent</strong></p>
                 {{#examHistory}}
                 <div class="mb-3 pb-3 border-bottom">
                     <small class="text-muted">{{date}}</small><br>
@@ -77,31 +83,28 @@
                 </div>
                 {{/examHistory}}
                 {{^examHistory}}
-                <p class="text-muted">Aucun examen effectué pour le moment</p>
+                <p class="text-muted mb-0">Aucun examen enregistré pour le moment.</p>
                 {{/examHistory}}
             </div>
         </div>
 
         <div class="card">
-            <div class="card-header bg-light">
-                <h6 class="mb-0">⚠️ À retenir</h6>
+            <div class="card-header bg-light-subtle">
+                <h2 class="h6 mb-0">Points clés</h2>
             </div>
             <div class="card-body">
-                <ul class="list-unstyled">
-                    <li><strong>✓ 5 fautes max</strong> au QCM</li>
-                    <li><strong>⏱️ 30 min</strong> pour le QCM</li>
-                    <li><strong>📍 50%</strong> de régulation</li>
-                    <li><strong>🌊</strong> Vérifier les marées</li>
+                <ul class="list-unstyled mb-0">
+                    <li class="mb-2"><strong>5 fautes max</strong> au QCM</li>
+                    <li class="mb-2"><strong>30 minutes</strong> de temps imparti</li>
+                    <li class="mb-2"><strong>50%</strong> minimum en régulation</li>
+                    <li><strong>Marées</strong> à contrôler systématiquement</li>
                 </ul>
             </div>
         </div>
-    </div>
+    </aside>
 </div>
 
-<!-- Zone d'examen (caché, affiché au démarrage) -->
-<div id="exam-container" class="mt-5" style="display:none;">
-    <!-- Contenu exam chargé dynamiquement -->
-</div>
+<div id="exam-container" class="mt-5 soft-panel p-3" style="display:none;"></div>
 
 <script>
 function startFullExam() {

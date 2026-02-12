@@ -1,51 +1,101 @@
-<div class="row mb-5">
-    <div class="col-lg-8">
-        <h1 class="mb-4">Bienvenue, Scout! 🎖️</h1>
-        <p class="lead">Prépare-toi pour l'examen du <strong>Patron d'Embarcation</strong> avec ce cours interactif structuré en 4 étapes.</p>
-    </div>
-    <div class="col-lg-4">
-        <div class="card bg-primary text-white">
-            <div class="card-body">
-                <h5 class="card-title">Progression globale</h5>
+<section class="page-hero mb-4">
+    <div class="row g-3 align-items-center">
+        <div class="col-lg-8">
+            <h1 class="display-6 mb-2">Tableau de bord PE</h1>
+            <p class="lead mb-3">Prépare l'examen du <strong>Patron d'Embarcation</strong> étape par étape avec un suivi clair.</p>
+            <a href="parcours.html" class="btn btn-light btn-sm">Voir mon parcours</a>
+            <a href="entrainement.html" class="btn btn-outline-light btn-sm ms-2">Lancer un entraînement</a>
+        </div>
+        <div class="col-lg-4">
+            <div class="soft-panel p-3">
+                <div class="d-flex justify-content-between align-items-center mb-2">
+                    <h2 class="h6 text-dark mb-0">Progression globale</h2>
+                    <span class="badge text-bg-light">{{globalProgress}}%</span>
+                </div>
                 <div class="progress bg-light" role="progressbar">
                     <div class="progress-bar" style="width: {{globalProgress}}%"></div>
                 </div>
-                <p class="mt-2 mb-0"><strong>{{globalProgress}}%</strong> complété</p>
             </div>
         </div>
     </div>
-</div>
+</section>
 
-<!-- Stats des modules -->
-<h2 class="mb-4">Tes modules</h2>
-<div class="row">
-    {{#modules}}
-    <div class="col-md-6 col-lg-4 mb-4">
-        <div class="card h-100">
-            <div class="card-body">
-                <h5 class="card-title">{{name}}</h5>
-                <p class="card-text text-muted">{{description}}</p>
-                <div class="progress mb-2" role="progressbar">
-                    <div class="progress-bar" style="width: {{progress}}%"></div>
+<section class="mb-5">
+    <h2 class="section-title h4">Vue rapide</h2>
+    <div class="row g-3">
+        <div class="col-6 col-lg-3">
+            <div class="card h-100 kpi-card">
+                <div class="card-body">
+                    <p class="kpi-label">Progression</p>
+                    <p class="kpi-value mb-0">{{globalProgress}}%</p>
                 </div>
-                <small>{{progress}}% • Score: {{score}}/100</small><br>
-                <a href="parcours.html#module-{{id}}" class="btn btn-sm btn-primary mt-3">Continuer →</a>
+            </div>
+        </div>
+        <div class="col-6 col-lg-3">
+            <div class="card h-100 kpi-card">
+                <div class="card-body">
+                    <p class="kpi-label">QCM disponibles</p>
+                    <p class="kpi-value mb-0">{{totalQCM}}</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-6 col-lg-3">
+            <div class="card h-100 kpi-card">
+                <div class="card-body">
+                    <p class="kpi-label">Catégories</p>
+                    <p class="kpi-value mb-0">{{themes}}</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-6 col-lg-3">
+            <div class="card h-100 kpi-card">
+                <div class="card-body">
+                    <p class="kpi-label">Types de test</p>
+                    <p class="kpi-value mb-0">{{typeOfTests}}</p>
+                </div>
             </div>
         </div>
     </div>
-    {{/modules}}
-</div>
+</section>
 
-<!-- Dernier examen -->
+<section class="mb-5">
+    <div class="d-flex justify-content-between align-items-center mb-3">
+        <h2 class="section-title h4 mb-0">Tes modules</h2>
+        <a href="parcours.html" class="btn btn-outline-primary btn-sm">Voir tout</a>
+    </div>
+    <div class="row g-4">
+        {{#modules}}
+        <div class="col-md-6 col-xl-4">
+            <article class="card h-100">
+                <div class="card-body d-flex flex-column">
+                    <div class="d-flex align-items-center mb-2">
+                        <span class="icon-badge me-2">⚓</span>
+                        <h3 class="h5 mb-0">{{name}}</h3>
+                    </div>
+                    <p class="text-muted mb-3">{{description}}</p>
+                    <div class="progress mb-2" role="progressbar">
+                        <div class="progress-bar" style="width: {{progress}}%"></div>
+                    </div>
+                    <small class="text-muted">{{progress}}% • Score {{score}}/100</small>
+                    <a href="parcours.html#module-{{id}}" class="btn btn-primary btn-sm mt-3">Continuer</a>
+                </div>
+            </article>
+        </div>
+        {{/modules}}
+    </div>
+</section>
+
 {{#lastExam}}
-<div class="card border-warning mt-5">
-    <div class="card-header bg-warning">
-        <h5 class="mb-0">📊 Dernier examen blanc</h5>
+<section>
+    <div class="card border-0">
+        <div class="card-header bg-warning-subtle">
+            <h2 class="h5 mb-0">Dernier examen blanc</h2>
+        </div>
+        <div class="card-body">
+            <p class="mb-2"><strong>Score :</strong> {{lastExam.score}}/100</p>
+            <p class="text-muted mb-3"><strong>Date :</strong> {{lastExam.date}}</p>
+            <a href="examens.html" class="btn btn-warning">Reprendre un examen</a>
+        </div>
     </div>
-    <div class="card-body">
-        <p><strong>Score:</strong> {{lastExam.score}}/100</p>
-        <p><strong>Date:</strong> {{lastExam.date}}</p>
-        <a href="examens.html" class="btn btn-warning">Retenter →</a>
-    </div>
-</div>
+</section>
 {{/lastExam}}
