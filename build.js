@@ -132,15 +132,7 @@ async function build() {
             flashcards: []
         });
 
-        const navProblemsData = await loadJSON(path.join(dataDir, 'navigation-problems.json'), {
-            problems: []
-        });
-
         const configData = await loadJSON(path.join(dataDir, 'app-config.json'), {});
-
-        const modulesData = await loadJSON(path.join(dataDir, 'modules-content.json'), {
-            modules: []
-        });
 
         // ========== TRANSFORMATION DES DONNÉES ==========
         console.log("🔄 Transformation des données...");
@@ -161,8 +153,8 @@ async function build() {
         const examensTemplate = await fs.readFile(path.join(templateDir, 'examens.mustache'), 'utf8');
         const carnetTemplate = await fs.readFile(path.join(templateDir, 'carnet.mustache'), 'utf8');
 
-        // Créer le dossier de sortie
-        await fs.ensureDir(outputDir);
+        // Nettoyer puis recréer le dossier de sortie pour éviter les fichiers obsolètes
+        await fs.emptyDir(outputDir);
 
         // ========== FONCTION UTILITAIRE POUR GÉNÉRER UNE PAGE ==========
         async function generatePage(filename, template, data) {
