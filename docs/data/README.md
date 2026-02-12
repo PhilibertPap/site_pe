@@ -8,6 +8,8 @@
 - `navigation-problems.json`: problemes longs de navigation.
 - `app-config.json`: configuration generale de l'application.
 - `exam-series.json`: optionnel, genere via `npm run generate:series`.
+- `qcm.large.generated.json`: optionnel, genere via `npm run generate:qcm:large`.
+- `qcm.drive.merged.json`: optionnel, genere via `npm run import:attendus`.
 
 ## Convention QCM
 - Source de verite: `qcm.json`.

@@ -107,7 +107,12 @@ async function build() {
             etapes: []
         });
 
-        const qcmData = await loadJSON(path.join(dataDir, 'qcm.json'), {
+        const qcmMergedPath = path.join(dataDir, 'qcm.drive.merged.json');
+        const qcmLargePath = path.join(dataDir, 'qcm.large.generated.json');
+        let qcmSourcePath = path.join(dataDir, 'qcm.json');
+        if (await fs.pathExists(qcmMergedPath)) qcmSourcePath = qcmMergedPath;
+        else if (await fs.pathExists(qcmLargePath)) qcmSourcePath = qcmLargePath;
+        const qcmData = await loadJSON(qcmSourcePath, {
             categories: [],
             totalQuestions: 0
         });
@@ -266,6 +271,7 @@ async function build() {
 
         console.log("✅ Build terminé avec succès!");
         console.log(`📊 Statistiques:`);
+        console.log(`   - Source QCM: ${path.basename(qcmSourcePath)}`);
         console.log(`   - Total QCM: ${trainingData.statistics.totalQCM}`);
         console.log(`   - Catégories: ${trainingData.statistics.themes}`);
         console.log(`   - Types de tests: ${trainingData.statistics.typeOfTests}`);

@@ -16,9 +16,21 @@ class SitePE {
 
     async loadData() {
         try {
+            const fetchFirstJson = async (paths) => {
+                for (const p of paths) {
+                    try {
+                        const response = await fetch(p);
+                        if (response.ok) return response.json();
+                    } catch (_) {
+                        // Fallback on next path
+                    }
+                }
+                throw new Error(`Impossible de charger ${paths.join(' ou ')}`);
+            };
+
             const [site, qcm, exercises, problems] = await Promise.all([
                 fetch('data/site.json').then(r => r.json()),
-                fetch('data/qcm.json').then(r => r.json()),
+                fetchFirstJson(['data/qcm.drive.merged.json', 'data/qcm.large.generated.json', 'data/qcm.json']),
                 fetch('data/exercises.json').then(r => r.json()),
                 fetch('data/navigation-problems.json').then(r => r.json())
             ]);

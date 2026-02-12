@@ -7,7 +7,9 @@
     "build": "node build.js",
     "start": "npm run build && http-server docs -p 8000 -o",
     "test": "node --test tests",
-    "generate:series": "node scripts/generate-exam-series.js"
+    "generate:series": "node scripts/generate-exam-series.js",
+    "generate:qcm:large": "node scripts/generate-large-qcm.js --variants=150 --objectiveVariants=3 --seed=20260212",
+    "import:attendus": "node scripts/import-attendus-json.js"
   },
   "keywords": ["pe", "patron", "embarcation", "scout", "navigation"],
   "author": "Philibert Pap",
