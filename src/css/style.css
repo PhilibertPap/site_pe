@@ -255,6 +255,62 @@ a:hover {
     font-size: 1.1rem;
 }
 
+.section-head {
+    display: flex;
+    align-items: center;
+    gap: .6rem;
+}
+
+.page-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: .35rem;
+    background: rgba(255, 255, 255, 0.15);
+    color: #fff;
+    border: 1px solid rgba(255, 255, 255, 0.32);
+    border-radius: 999px;
+    padding: .3rem .7rem;
+    font-size: .85rem;
+    font-weight: 600;
+}
+
+.reveal {
+    opacity: 0;
+    transform: translateY(16px);
+    animation: revealUp .55s ease-out forwards;
+}
+
+.reveal-delay-1 {
+    animation-delay: .08s;
+}
+
+.reveal-delay-2 {
+    animation-delay: .16s;
+}
+
+.reveal-delay-3 {
+    animation-delay: .24s;
+}
+
+.reveal-delay-4 {
+    animation-delay: .32s;
+}
+
+@keyframes revealUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .reveal {
+        opacity: 1;
+        transform: none;
+        animation: none;
+    }
+}
+
 /* Visibilité clavier pour l'accessibilité */
 a:focus-visible,
 button:focus-visible,
@@ -268,7 +324,8 @@ button:focus-visible,
 
 @media(max-width:768px) {
     main.container {
-        padding: .5rem;
+        padding: .6rem;
+        margin-top: 1rem;
     }
 
     .card {
@@ -280,8 +337,7 @@ button:focus-visible,
     }
 
     .btn {
-        width: 100%;
-        margin-bottom: .5rem;
+        padding: .55rem .95rem;
     }
 
     .navbar-brand {
@@ -290,6 +346,49 @@ button:focus-visible,
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
+    }
+
+    .page-hero {
+        padding: 1.35rem;
+        border-radius: 12px;
+    }
+
+    .page-hero .lead {
+        font-size: 1rem;
+    }
+
+    .section-title {
+        margin-bottom: .8rem;
+    }
+
+    .kpi-value {
+        font-size: 1.4rem;
+    }
+}
+
+@media(max-width:576px) {
+    .navbar .nav-link {
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    .card-body {
+        padding: .9rem;
+    }
+
+    .icon-badge {
+        width: 2rem;
+        height: 2rem;
+        font-size: 1rem;
+    }
+
+    .btn-sm,
+    .btn.btn-sm {
+        width: 100%;
+    }
+
+    .d-flex.gap-2 .btn {
+        width: 100%;
     }
 }
 

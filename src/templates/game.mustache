@@ -1,17 +1,18 @@
-<section class="page-hero mb-4">
+<section class="page-hero mb-4 reveal">
   <div class="row g-3 align-items-center">
     <div class="col-lg-9">
       <h1 class="display-6 mb-2">Mini-jeu</h1>
       <p class="mb-0">Type de jeu : <strong>{{gameType}}</strong></p>
     </div>
     <div class="col-lg-3 text-lg-end">
+      <p class="page-tag mb-2">🎮 Jeu</p>
       <a href="entrainement.html" class="btn btn-light btn-sm">Retour entraînement</a>
     </div>
   </div>
 </section>
 
-<div class="row g-4">
-  <section class="col-lg-8">
+<div class="row g-4 reveal reveal-delay-1">
+  <section class="col-lg-8 reveal reveal-delay-2">
     <div id="game-container" class="card">
       <div class="card-body">
         <div id="game-content" style="min-height: 400px; display: flex; align-items: center; justify-content: center;">
@@ -21,10 +22,10 @@
     </div>
   </section>
 
-  <aside class="col-lg-4">
+  <aside class="col-lg-4 reveal reveal-delay-3">
     <div class="card mb-3">
       <div class="card-body">
-        <h2 class="h5">Score</h2>
+        <h2 class="h5 section-head"><span class="icon-badge">🏁</span>Score</h2>
         <div class="text-center mb-3">
           <p id="score" class="kpi-value mb-0">0 / 0</p>
         </div>
@@ -36,7 +37,7 @@
 
     <div class="card soft-panel">
       <div class="card-body">
-        <h2 class="h5">Informations</h2>
+        <h2 class="h5 section-head"><span class="icon-badge">ℹ️</span>Informations</h2>
         <p id="game-info" class="mb-0">Type : {{gameType}}</p>
       </div>
     </div>

@@ -1,19 +1,20 @@
-<section class="page-hero mb-4">
+<section class="page-hero mb-4 reveal">
     <div class="row g-3 align-items-center">
         <div class="col-lg-9">
             <h1 class="display-6 mb-2">Parcours d'apprentissage</h1>
             <p class="mb-0">Avance étape par étape, module par module, avec du contenu, des exercices et des mini-examens.</p>
         </div>
         <div class="col-lg-3 text-lg-end">
+            <p class="page-tag mb-2">📚 Cursus guidé</p>
             <a href="entrainement.html" class="btn btn-light btn-sm">Passer en mode entraînement</a>
         </div>
     </div>
 </section>
 
-<div class="row g-4">
-    <aside class="col-lg-3">
+<div class="row g-4 reveal reveal-delay-1">
+    <aside class="col-lg-3 reveal reveal-delay-1">
         <div class="soft-panel p-3 sticky-top" style="top: 90px;">
-            <h2 class="h6 section-title">Étapes</h2>
+            <h2 class="h6 section-title section-head"><span class="icon-badge">🪜</span>Étapes</h2>
             <div class="list-group">
                 {{#etapes}}
                 <button type="button" class="list-group-item list-group-item-action" onclick="scrollToEtape('etape-{{id}}')">
@@ -25,12 +26,12 @@
         </div>
     </aside>
 
-    <section class="col-lg-9">
+    <section class="col-lg-9 reveal reveal-delay-2">
         {{#etapes}}
-        <section id="etape-{{id}}" class="mb-5">
+        <section id="etape-{{id}}" class="mb-5 reveal reveal-delay-3">
             <div class="d-flex justify-content-between align-items-start mb-3">
                 <div>
-                    <h2 class="section-title h4 mb-1">{{name}}</h2>
+                    <h2 class="section-title h4 mb-1 section-head"><span class="icon-badge">⚓</span>{{name}}</h2>
                     <p class="text-muted mb-0">{{description}}</p>
                 </div>
                 <span class="badge text-bg-light">{{moduleCount}} modules</span>

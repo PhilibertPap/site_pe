@@ -39,27 +39,28 @@
 
     <!-- Contenu principal -->
     <main class="container py-5">
-        <section class="page-hero mb-4">
+        <section class="page-hero mb-4 reveal">
     <div class="row g-3 align-items-center">
         <div class="col-lg-9">
             <h1 class="display-6 mb-2">Pont d'examen</h1>
             <p class="mb-0">Simule les conditions réelles : QCM chronométré, erreurs limitées, navigation complète.</p>
         </div>
         <div class="col-lg-3 text-lg-end">
+            <p class="page-tag mb-2">🧭 Simulation</p>
             <span class="badge text-bg-light">30 questions / 30 minutes</span>
         </div>
     </div>
 </section>
 
-<div class="alert alert-info">
+<div class="alert alert-info reveal reveal-delay-1">
     <strong>Format réel :</strong> 30 questions QCM + 1 problème de navigation/marée.
 </div>
 
-<div class="row g-4">
-    <section class="col-lg-8">
-        <article class="card mb-4">
+<div class="row g-4 reveal reveal-delay-1">
+    <section class="col-lg-8 reveal reveal-delay-2">
+        <article class="card mb-4 reveal reveal-delay-2">
             <header class="card-header bg-primary text-white">
-                <h2 class="h5 mb-0">Examen blanc complet</h2>
+                <h2 class="h5 mb-0 section-head"><span class="icon-badge">📝</span>Examen blanc complet</h2>
             </header>
             <div class="card-body">
                 <p><strong>Durée totale :</strong> environ 1h30.</p>
@@ -71,9 +72,9 @@
             </div>
         </article>
 
-        <article class="card mb-4">
+        <article class="card mb-4 reveal reveal-delay-3">
             <header class="card-header bg-success text-white">
-                <h2 class="h5 mb-0">QCM rapide</h2>
+                <h2 class="h5 mb-0 section-head"><span class="icon-badge">⚡</span>QCM rapide</h2>
             </header>
             <div class="card-body">
                 <p>Révise rapidement sur <strong>0</strong> questions.</p>
@@ -92,9 +93,9 @@
             </div>
         </article>
 
-        <article class="card">
+        <article class="card reveal reveal-delay-4">
             <header class="card-header bg-info text-white">
-                <h2 class="h5 mb-0">Problème de navigation</h2>
+                <h2 class="h5 mb-0 section-head"><span class="icon-badge">🗺️</span>Problème de navigation</h2>
             </header>
             <div class="card-body">
                 <p>Travaille un cas complet : cartographie, marée, route et sécurité.</p>
@@ -105,10 +106,10 @@
         </article>
     </section>
 
-    <aside class="col-lg-4">
-        <div class="card mb-4">
+    <aside class="col-lg-4 reveal reveal-delay-3">
+        <div class="card mb-4 reveal reveal-delay-3">
             <div class="card-header bg-light-subtle">
-                <h2 class="h6 mb-0">Tes statistiques</h2>
+                <h2 class="h6 mb-0 section-head"><span class="icon-badge">📊</span>Tes statistiques</h2>
             </div>
             <div class="card-body">
                 <p class="mb-3"><strong>Historique récent</strong></p>
@@ -116,9 +117,9 @@
             </div>
         </div>
 
-        <div class="card">
+        <div class="card reveal reveal-delay-4">
             <div class="card-header bg-light-subtle">
-                <h2 class="h6 mb-0">Points clés</h2>
+                <h2 class="h6 mb-0 section-head"><span class="icon-badge">✅</span>Points clés</h2>
             </div>
             <div class="card-body">
                 <ul class="list-unstyled mb-0">
@@ -132,7 +133,7 @@
     </aside>
 </div>
 
-<div id="exam-container" class="mt-5 soft-panel p-3" style="display:none;"></div>
+<div id="exam-container" class="mt-5 soft-panel p-3 reveal reveal-delay-4" style="display:none;"></div>
 
 <script>
 function startFullExam() {
