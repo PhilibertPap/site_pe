@@ -30,7 +30,13 @@ class SitePE {
 
             const [site, qcm, exercises, problems] = await Promise.all([
                 fetch('data/site.json').then(r => r.json()),
-                fetchFirstJson(['data/qcm.drive.merged.json', 'data/qcm.json', 'data/qcm.pe.generated.json', 'data/qcm.large.generated.json']),
+                fetchFirstJson([
+                    'data/qcm.drive.merged.json',
+                    'data/qcm.web.curated.json',
+                    'data/qcm.json',
+                    'data/qcm.pe.generated.json',
+                    'data/qcm.large.generated.json'
+                ]),
                 fetch('data/exercises.json').then(r => r.json()),
                 fetch('data/navigation-problems.json').then(r => r.json())
             ]);

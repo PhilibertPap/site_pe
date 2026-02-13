@@ -12,6 +12,7 @@
         /ce balisage/i,
         /cette bou[eé]e/i,
         /ces bou[eé]es/i,
+        /cette balise/i,
         /que signifie ce panneau/i,
         /quelle est la balise/i,
         /dans cette situation/i,
@@ -24,9 +25,17 @@
         /quelle est la balise qui montre ces feux/i,
         /vous voyez cette bou[eé]e/i,
         /vous voyez ces/i,
+        /venant d[eu]/i,
+        /en entrant au port/i,
+        /en sortant du port/i,
         /cap au\s*\d+/i,
         /sur l[’']image/i,
         /ci-contre/i
+    ];
+
+    const LOW_QUALITY_QUESTION_PATTERNS = [
+        /^que signifie\s*["']?de jour["']?\s*\?*$/i,
+        /^que signifie\s*["']?de nuit["']?\s*\?*$/i
     ];
 
     function shuffle(items, rng) {
@@ -70,9 +79,34 @@
         return correctCount === 1;
     }
 
+    function normalizeText(value) {
+        return String(value || '')
+            .toLowerCase()
+            .normalize('NFD')
+            .replace(/[\u0300-\u036f]/g, '')
+            .replace(/[^a-z0-9\s]/g, ' ')
+            .replace(/\s+/g, ' ')
+            .trim();
+    }
+
+    function hasUsableAnswerSet(question) {
+        const answers = Array.isArray(question.answers) ? question.answers : [];
+        if (answers.length < 2) return false;
+        const normalizedAnswers = answers.map(answer => normalizeText(answer.text));
+        if (normalizedAnswers.some(text => text.length < 2)) return false;
+        return new Set(normalizedAnswers).size === normalizedAnswers.length;
+    }
+
+    function isLowQualityQuestionText(questionText) {
+        const text = String(questionText || '').trim();
+        if (!text) return true;
+        return LOW_QUALITY_QUESTION_PATTERNS.some(pattern => pattern.test(text));
+    }
+
     function isQuestionUsable(question) {
         if (!question || typeof question.text !== 'string' || question.text.trim().length < 8) return false;
-        if (!Array.isArray(question.answers) || question.answers.length < 2) return false;
+        if (isLowQualityQuestionText(question.text)) return false;
+        if (!hasUsableAnswerSet(question)) return false;
         if (!hasExactlyOneCorrectAnswer(question)) return false;
         if (questionNeedsImage(question.text) && !question.image) return false;
         return true;

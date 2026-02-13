@@ -641,11 +641,13 @@ async function build() {
             path.join(__dirname, 'imports', 'drive', 'theorie', 'Théorie')
         );
 
+        const qcmWebCuratedPath = path.join(dataDir, 'qcm.web.curated.json');
         const qcmPeGeneratedPath = path.join(dataDir, 'qcm.pe.generated.json');
         const qcmMergedPath = path.join(dataDir, 'qcm.drive.merged.json');
         const qcmLargePath = path.join(dataDir, 'qcm.large.generated.json');
         let qcmSourcePath = path.join(dataDir, 'qcm.json');
         if (await fs.pathExists(qcmMergedPath)) qcmSourcePath = qcmMergedPath;
+        else if (await fs.pathExists(qcmWebCuratedPath)) qcmSourcePath = qcmWebCuratedPath;
         else if (await fs.pathExists(path.join(dataDir, 'qcm.json'))) qcmSourcePath = path.join(dataDir, 'qcm.json');
         else if (await fs.pathExists(qcmPeGeneratedPath)) qcmSourcePath = qcmPeGeneratedPath;
         else if (await fs.pathExists(qcmLargePath)) qcmSourcePath = qcmLargePath;
