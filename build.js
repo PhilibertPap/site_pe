@@ -68,9 +68,157 @@ function escapeHtml(text) {
         .replace(/'/g, '&#39;');
 }
 
+function splitConceptPoint(text) {
+    const match = String(text || '').match(/^([^:]{2,120})\s*:\s*(.+)$/);
+    if (!match) return null;
+    return {
+        concept: String(match[1]).trim(),
+        detail: String(match[2]).trim()
+    };
+}
+
+function modulePedagogyBlocks(moduleId) {
+    const byModule = {
+        1: {
+            method: [
+                'Identifier d abord le type de marque (laterale, cardinale, danger isole, eaux saines, speciale).',
+                'Verifier ensuite sa couleur, sa forme et sa marque de sommet.',
+                'Appliquer la conduite associee: laisser la marque du bon cote ou s en ecarter.'
+            ],
+            traps: [
+                'Confondre le sens "entrant au port" et "sortant du port".',
+                'Se fier uniquement a la couleur sans verifier la forme.',
+                'Ignorer les secteurs d un feu cardinal.'
+            ]
+        },
+        2: {
+            method: [
+                'De nuit, identifier la combinaison des feux (couleur, nombre, ordre vertical).',
+                'Relier la combinaison au statut du navire (mouillage, peche, capacite restreinte, etc.).',
+                'Adapter la route et la vitesse en fonction du statut identifie.'
+            ],
+            traps: [
+                'Prendre un feu de mouillage pour un feu de route.',
+                'Confondre un navire de peche et un navire non maitre de sa manœuvre.',
+                'Oublier que l orientation d observation modifie la perception des feux.'
+            ]
+        },
+        3: {
+            method: [
+                'Identifier le type de rencontre: route opposee, croisement, rattrapage.',
+                'Determiner le navire privilegie selon RIPAM.',
+                'Executer une manœuvre franche, precoce et lisible.'
+            ],
+            traps: [
+                'Attendre trop longtemps avant de manœuvrer.',
+                'Penser qu un navire privilegie ne doit rien surveiller.',
+                'Confondre priorite voile/moteur avec les cas particuliers.'
+            ]
+        },
+        4: {
+            method: [
+                'Associer chaque signal sonore a l intention du navire.',
+                'Dans la brume, reconnaitre les signaux prolonges et leur periodicite.',
+                'Croiser signal entendu et situation de route avant d agir.'
+            ],
+            traps: [
+                'Confondre les signaux de manœuvre (1, 2, 3 sons brefs).',
+                'Ignorer la notion d erre en visibilite reduite.',
+                'Ne pas reduire l allure en cas de doute.'
+            ]
+        },
+        5: {
+            method: [
+                'Lire la carte marine avec methode: legendes, sondes, dangers, alignements.',
+                'Tracer route et relèvements avec les outils de navigation.',
+                'Verifier en permanence la marge de securite sous quille.'
+            ],
+            traps: [
+                'Mesurer les distances hors echelle des latitudes.',
+                'Ne pas tenir compte de la date de mise a jour de la carte.',
+                'Confondre sonde qui decouvre et sonde toujours immergee.'
+            ]
+        },
+        6: {
+            method: [
+                'Poser les donnees dans l ordre: cap compas, deviation, declinaison, cap vrai.',
+                'Appliquer une convention de signe unique (Est positif, Ouest negatif).',
+                'Verifier la coherence du resultat avec la route observee.'
+            ],
+            traps: [
+                'Inverser declinaison et deviation.',
+                'Additionner les corrections dans le mauvais sens.',
+                'Ne pas controler la plausibilite du cap final.'
+            ]
+        },
+        7: {
+            method: [
+                'Tracer le vecteur surface puis le vecteur courant.',
+                'Fermer le triangle des vitesses pour obtenir route et vitesse fond.',
+                'Verifier le resultat avec la distance franchie sur le fond.'
+            ],
+            traps: [
+                'Confondre route surface et route fond.',
+                'Utiliser une echelle de vitesse incoherente sur les vecteurs.',
+                'Oublier l influence de la derive vent.'
+            ]
+        },
+        8: {
+            method: [
+                'Relever PM/BM, coefficients et marnage dans l annuaire.',
+                'Appliquer la regle des douziemes sur la bonne tranche horaire.',
+                'Conclure avec une marge de securite de hauteur d eau.'
+            ],
+            traps: [
+                'Appliquer les douziemes sur une duree differente de 6 h sans adaptation.',
+                'Confondre hauteur d eau et profondeur sondee carte.',
+                'Oublier l heure legale/UTC selon la source utilisee.'
+            ]
+        },
+        9: {
+            method: [
+                'Choisir le bon type de message: detresse, urgence, securite.',
+                'Emettre sur le canal adapte (notamment 16 en detresse vocale).',
+                'Structurer le message: identite, position, nature du probleme, assistance demandee.'
+            ],
+            traps: [
+                'Utiliser un canal non reglementaire pour la detresse.',
+                'Donner une position incomplete ou ambiguë.',
+                'Melanger proceduren ASN et message vocal.'
+            ]
+        },
+        10: {
+            method: [
+                'Verifier les limites SUF avant la sortie (meteo, distance a un abri, equipage).',
+                'Confirmer l equipement de securite et les moyens d alerte.',
+                'Maintenir une surveillance active et un plan de repli permanent.'
+            ],
+            traps: [
+                'Minimiser la meteo reelle au regard de la prevision.',
+                'Sortir sans correspondant a terre ou plan de route clair.',
+                'Retarder la decision d interrompre la navigation.'
+            ]
+        }
+    };
+    return byModule[moduleId] || { method: [], traps: [] };
+}
+
 function buildFallbackCourseHtml(module, objectifs, keyPoints, formulas) {
+    const defs = keyPoints
+        .map(splitConceptPoint)
+        .filter(Boolean)
+        .slice(0, 18);
+    const plainPoints = keyPoints
+        .filter(item => !splitConceptPoint(item))
+        .slice(0, 18);
     const objectifsHtml = objectifs.map(item => `<li>${escapeHtml(item)}</li>`).join('');
-    const pointsHtml = keyPoints.map(item => `<li>${escapeHtml(item)}</li>`).join('');
+    const defsHtml = defs
+        .map(item => `<li><strong>${escapeHtml(item.concept)}</strong> : ${escapeHtml(item.detail)}</li>`)
+        .join('');
+    const pointsHtml = plainPoints.map(item => `<li>${escapeHtml(item)}</li>`).join('');
+    const pedagogy = modulePedagogyBlocks(Number(module.id));
+    const methodHtml = pedagogy.method.map(item => `<li>${escapeHtml(item)}</li>`).join('');
+    const trapsHtml = pedagogy.traps.map(item => `<li>${escapeHtml(item)}</li>`).join('');
     const formulasHtml = formulas
         ? `<h5>Formules et reperes</h5><p><code>${escapeHtml(formulas)}</code></p>`
         : '';
@@ -78,7 +226,10 @@ function buildFallbackCourseHtml(module, objectifs, keyPoints, formulas) {
     return [
         `<p>${escapeHtml(module.description || '')}</p>`,
         objectifsHtml ? `<h5>Objectifs de progression</h5><ul>${objectifsHtml}</ul>` : '',
-        pointsHtml ? `<h5>Points cle a memoriser</h5><ul>${pointsHtml}</ul>` : '',
+        defsHtml ? `<h5>Notions et definitions essentielles</h5><ul>${defsHtml}</ul>` : '',
+        pointsHtml ? `<h5>Points cle a maitriser</h5><ul>${pointsHtml}</ul>` : '',
+        methodHtml ? `<h5>Methode de resolution en examen</h5><ol>${methodHtml}</ol>` : '',
+        trapsHtml ? `<h5>Erreurs frequentes a eviter</h5><ul>${trapsHtml}</ul>` : '',
         formulasHtml
     ].filter(Boolean).join('');
 }
@@ -335,9 +486,13 @@ function enrichModulesForLearning({
             ...toArray(module.objectifs)
         ]);
         const formulas = moduleContent.formulas || '';
-        const courseContentHtml = override.content && String(override.content).trim().length > 40
+        const fallbackCourseContentHtml = buildFallbackCourseHtml(module, objectifs, keyPoints, formulas);
+        const overrideCourseContentHtml = override.content && String(override.content).trim().length > 40
             ? String(override.content)
-            : buildFallbackCourseHtml(module, objectifs, keyPoints, formulas);
+            : '';
+        const courseContentHtml = overrideCourseContentHtml.length >= fallbackCourseContentHtml.length
+            ? overrideCourseContentHtml
+            : fallbackCourseContentHtml;
         const domain = getAnnalesDomainByModule(moduleId);
         const annalesSeries = toArray(annalesByDomain[domain]).slice(0, 8);
         const annalesExamples = pickAnnalesExamples(moduleId, annalesQcm2022);

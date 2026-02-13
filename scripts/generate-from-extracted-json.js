@@ -145,6 +145,8 @@ function isHighQualityPair(concept, definition) {
     if (!concept || !definition) return false;
     if (concept.length < 2 || concept.length > 90) return false;
     if (definition.length < 12 || definition.length > 260) return false;
+    if (/sources?\s+web/i.test(concept) || /sources?\s+web/i.test(definition)) return false;
+    if (/^source\b/i.test(concept) || /^source\b/i.test(definition)) return false;
     if (/^(objectif|memo|rappel)$/i.test(concept)) return false;
     if (/^questions? de revision/i.test(concept)) return false;
     return true;
@@ -261,7 +263,7 @@ function generateDefinitionMcq(pair, idx, allPairs, rng) {
         stem: `Que signifie "${pair.concept}" ?`,
         choices,
         answerIndex,
-        explanation: `Definition issue de ${pair.moduleName} / ${pair.sectionTitle}`,
+        explanation: `"${pair.concept}" se definit par: ${pair.definition}`,
         tags: [pair.moduleId, pair.sectionId, 'definition'],
         sourcePages: [],
         sourceText: `${pair.concept} ${pair.definition}`
@@ -292,7 +294,7 @@ function generateTermMcq(pair, idx, allPairs, rng) {
         stem: `Quel terme correspond a la definition suivante ? "${pair.definition}"`,
         choices,
         answerIndex,
-        explanation: `Definition issue de ${pair.moduleName} / ${pair.sectionTitle}`,
+        explanation: `La definition donnee correspond au terme: ${pair.concept}`,
         tags: [pair.moduleId, pair.sectionId, 'definition_inverse'],
         sourcePages: [],
         sourceText: `${pair.concept} ${pair.definition}`
@@ -364,7 +366,7 @@ function generateExerciseMcq(module, exercise, answerKey, answerValue, index, rn
         stem: `Exercice ${exercise.id}: quelle est la valeur correcte pour "${answerLabel}" ?`,
         choices,
         answerIndex,
-        explanation: `Resultat issu de l'exercice ${exercise.id} (${module.name})`,
+        explanation: `En appliquant la methode de l exercice ${exercise.id}, la valeur correcte est "${cleanValue}".`,
         tags: [module.id, exercise.id, 'exercise_result'],
         sourcePages: module.source?.page_range || [],
         sourceText: `${answerLabel} ${cleanValue}`
@@ -450,7 +452,6 @@ function convertBankToSiteQcm(bank) {
             })),
             difficulty: 2,
             explanation: question.explanation,
-            source_pages: question.source_pages,
             tags: question.tags
         });
     });
@@ -467,8 +468,12 @@ function toCourseOverrideModules(normalized) {
 
     (normalized.modules || []).forEach(module => {
         const sections = module.sections || [];
-        const pageRange = module.source?.page_range || [];
-        const pageText = pageRange.length ? `Pages source: ${pageRange[0]}-${pageRange[1]}.` : '';
+        const sanitizePoint = point => {
+            const text = normalizeSpace(point);
+            if (!text) return null;
+            if (/sources?\s+web/i.test(text)) return null;
+            return text;
+        };
 
         if (module.id === 'M14') {
             const currentSections = sections.filter(section => /(courant|flot|jusant)/i.test(JSON.stringify(section)));
@@ -476,15 +481,23 @@ function toCourseOverrideModules(normalized) {
 
             const makeOverride = (id, label, pickedSections) => {
                 const sectionHtml = pickedSections.map(section => {
-                    const points = (section.key_points || []).map(point => `<li>${point}</li>`).join('');
+                    const points = (section.key_points || [])
+                        .map(sanitizePoint)
+                        .filter(Boolean)
+                        .map(point => `<li>${point}</li>`)
+                        .join('');
                     return `<h5>${section.title}</h5><ul>${points}</ul>`;
                 }).join('');
-                const keyPoints = pickedSections.flatMap(section => section.key_points || []).slice(0, 12);
+                const keyPoints = pickedSections
+                    .flatMap(section => section.key_points || [])
+                    .map(sanitizePoint)
+                    .filter(Boolean)
+                    .slice(0, 12);
                 return {
                     id,
                     description: label,
                     objectifs: keyPoints.slice(0, 6),
-                    content: `<p>${pageText}</p>${sectionHtml}`,
+                    content: sectionHtml,
                     keyPoints
                 };
             };
@@ -500,21 +513,32 @@ function toCourseOverrideModules(normalized) {
 
         const moduleId = moduleNumericIdFromSource(module.id);
         const sectionHtml = sections.map(section => {
-            const points = (section.key_points || []).map(point => `<li>${point}</li>`).join('');
+            const points = (section.key_points || [])
+                .map(sanitizePoint)
+                .filter(Boolean)
+                .map(point => `<li>${point}</li>`)
+                .join('');
             return `<h5>${section.title}</h5><ul>${points}</ul>`;
         }).join('');
 
         const terms = (module.terms || []).map(t => `<li><strong>${t.term}</strong> : ${t.definition}</li>`).join('');
         const termsHtml = terms ? `<h5>Termes</h5><ul>${terms}</ul>` : '';
         const objectifsSection = sections.find(s => /objectif/i.test(s.title || ''));
-        const objectifs = (objectifsSection?.key_points || []).slice(0, 6);
-        const keyPoints = sections.flatMap(section => section.key_points || []).slice(0, 12);
+        const objectifs = (objectifsSection?.key_points || [])
+            .map(sanitizePoint)
+            .filter(Boolean)
+            .slice(0, 6);
+        const keyPoints = sections
+            .flatMap(section => section.key_points || [])
+            .map(sanitizePoint)
+            .filter(Boolean)
+            .slice(0, 12);
 
         overrides.push({
             id: moduleId,
             description: module.name,
             objectifs: objectifs.length ? objectifs : keyPoints.slice(0, 4),
-            content: `<p>${pageText}</p>${sectionHtml}${termsHtml}`,
+            content: `${sectionHtml}${termsHtml}`,
             keyPoints
         });
     });
@@ -578,6 +602,66 @@ function splitConceptDefinition(point) {
     };
 }
 
+function cleanAnnalesStem(text) {
+    return String(text || '')
+        .replace(/\s*\|\s*/g, ' ')
+        .replace(/\s+/g, ' ')
+        .replace(/Question\s*\d+\s*$/i, '')
+        .trim();
+}
+
+function toArray(value) {
+    return Array.isArray(value) ? value : (value ? [value] : []);
+}
+
+function toPublicMediaPath(mediaPath) {
+    return String(mediaPath || '').replace(/\\/g, '/').trim();
+}
+
+function isUsableVisualMedia(mediaPath) {
+    const normalized = toPublicMediaPath(mediaPath);
+    if (!normalized) return false;
+    if (/\/image1\.png$/i.test(normalized)) return false;
+    return /\.(png|jpg|jpeg|webp|svg)$/i.test(normalized);
+}
+
+function inferModuleFromAnnalesText(text) {
+    const t = cleanAnnalesStem(text).toLowerCase();
+    if (/(brassi[eè]re|navigation scoute|limite m[eé]t[eé]o.*scout|patron d.?embarcation|abri)/.test(t)) return 10;
+    if (/(vhf|canal|cross|d[eé]tresse|mayday|pan[- ]?pan|asn)/.test(t)) return 9;
+    if (/(douzi[eè]me|marnage|pleine mer|basse mer|hauteur d.?eau|coefficient|sondes?)/.test(t)) return 8;
+    if (/(courant|route fond|triangle des vitesses|d[eé]rive)/.test(t)) return 7;
+    if (/(cap\\s*\\d+|cap plein|d[eé]clinaison|d[eé]viation|cap compas|cap vrai)/.test(t)) return 6;
+    if (/(grand frais|beaufort|bulletin m[eé]t[eé]o|d[eé]pression|front|anticyclone)/.test(t)) return 5;
+    if (/(carte marine|rocher|shom|r[eè]gle cras|distance sur carte|carte 9999)/.test(t)) return 4;
+    if (/(signal sonore|sons brefs|brume|prolong[eé] [àa] intervalles|entendez ce signal)/.test(t)) return 2;
+    if (/(privil[eé]gi|crois|rattrap|route de collision|abordage|tribord amure|man[œo]uvr)/.test(t)) return 3;
+    if (/(feux|m[âa]ture|scintillement|mouillage|chalutier|navire non ma[iî]tre|navire [ée]chou[ée])/i.test(t)) return 2;
+    if (/(bou[ée]e|balise|chenal|cardinale|marque|entrant au port)/.test(t)) return 1;
+    return 1;
+}
+
+function buildAnnalesImagePools(annalesRaw) {
+    const pools = new Map();
+    (annalesRaw.questions || []).forEach(question => {
+        const moduleId = inferModuleFromAnnalesText(question.text);
+        if (![1, 2, 3].includes(moduleId)) return;
+        const media = toArray(question.mediaAssets)
+            .map(toPublicMediaPath)
+            .filter(isUsableVisualMedia);
+        if (!media.length) return;
+        if (!pools.has(moduleId)) pools.set(moduleId, []);
+        const arr = pools.get(moduleId);
+        const stemText = cleanAnnalesStem(question.text).toLowerCase();
+        media.forEach(path => {
+            if (!arr.some(item => item.path === path)) {
+                arr.push({ path, stemText });
+            }
+        });
+    });
+    return pools;
+}
+
 function resolveModulePoints(module, modulesContentById) {
     const moduleId = Number(module.id);
     const sourceIds = MODULE_CONTENT_LINKS[moduleId] || [moduleId];
@@ -593,59 +677,65 @@ function resolveModulePoints(module, modulesContentById) {
 function getStemTemplates(moduleId, moduleName) {
     const templates = {
         1: [
-            'En entrant au port, quelle proposition est exacte ?',
-            'Concernant le balisage, quelle proposition est correcte ?',
-            'Pour suivre le chenal, quelle regle est juste ?'
+            { text: 'En entrant au port,', visual: true },
+            { text: 'Que signifie cette marque ?', visual: true },
+            { text: 'Que dois-je faire en apercevant cette marque ?', visual: true },
+            { text: 'Pour entrer au port en évitant les écueils, il faut naviguer :', visual: true },
+            { text: 'Ces petites bouées jaunes rapprochées indiquent :', visual: true },
+            { text: 'A propos de "{concept}", quelle affirmation est exacte ?', visual: false }
         ],
         2: [
-            'Dans la brume, quel signal est correct ?',
-            'Concernant les feux de navigation, quelle proposition est exacte ?',
-            'Que signifie ce signal maritime ?'
+            { text: 'En observant la situation ci-contre, quelle affirmation est exacte ?', visual: true },
+            { text: 'De nuit, en observant les feux visibles, quelle affirmation est exacte ?', visual: true },
+            { text: 'A partir de ce signal visuel, quelle affirmation est exacte ?', visual: true },
+            { text: 'Que signifie le signal montre sur l image ?', visual: true },
+            { text: 'A propos de "{concept}", quelle affirmation est exacte ?', visual: false }
         ],
         3: [
-            'En risque d abordage, quelle manœuvre est correcte ?',
-            'En croisement, quelle priorite est exacte ?',
-            'En route de collision, quelle regle est juste ?'
+            { text: 'Dans la situation ci-contre, quelle regle de priorite s applique ?', visual: true },
+            { text: 'A partir de la situation illustree, quelle manœuvre est correcte ?', visual: true },
+            { text: 'En croisement, quelle priorité est exacte ?', visual: false },
+            { text: 'A propos de "{concept}", quelle regle est exacte ?', visual: false }
         ],
         4: [
-            'Sur une carte marine, quelle proposition est exacte ?',
-            'Avec la regle Cras, quelle methode est correcte ?',
-            'Concernant les symboles SHOM, quelle interpretation est juste ?'
+            { text: 'Sur une carte marine, quelle proposition est exacte ?', visual: false },
+            { text: 'Avec la regle Cras, quelle methode est correcte ?', visual: false },
+            { text: 'A propos de "{concept}", quelle interpretation est juste ?', visual: false }
         ],
         5: [
-            'Avant appareillage, quelle interpretation meteo est correcte ?',
-            'Concernant Beaufort et les fronts, quelle proposition est exacte ?',
-            'En meteorologie marine, quelle reponse est conforme ?'
+            { text: 'Le bulletin météo annonce un avis de grand frais. Quelle force de vent correspond ?', visual: false },
+            { text: 'Avant appareillage, quelle interprétation météo est correcte ?', visual: false },
+            { text: 'A propos de "{concept}", quelle affirmation meteo est exacte ?', visual: false }
         ],
         6: [
-            'Lors d un calcul de cap, quelle relation est correcte ?',
-            'En navigation estimee, quelle proposition est exacte ?',
-            'Concernant les conversions de cap, quelle reponse est juste ?'
+            { text: 'Pour convertir un cap compas en cap vrai, quelle relation est correcte ?', visual: false },
+            { text: 'En navigation estimée, quelle proposition est exacte ?', visual: false },
+            { text: 'A propos de "{concept}", quelle relation de cap est correcte ?', visual: false }
         ],
         7: [
-            'Pour calculer la route fond, quelle relation est correcte ?',
-            'Dans le triangle des vitesses, quelle proposition est exacte ?',
-            'Concernant courant et derive, quelle reponse est juste ?'
+            { text: 'Pour calculer la route fond, quelle relation est correcte ?', visual: false },
+            { text: 'Dans le triangle des vitesses, quelle proposition est exacte ?', visual: false },
+            { text: 'A propos de "{concept}", quelle affirmation est exacte ?', visual: false }
         ],
         8: [
-            'Pour estimer la hauteur d eau, quelle proposition est correcte ?',
-            'Concernant la regle des douziemes, quelle reponse est exacte ?',
-            'En calcul de maree, quelle relation est juste ?'
+            { text: 'Pour estimer la hauteur d’eau à une heure donnée, quelle méthode est correcte ?', visual: false },
+            { text: 'Concernant la règle des douzièmes, quelle réponse est exacte ?', visual: false },
+            { text: 'A propos de "{concept}", quelle relation est juste ?', visual: false }
         ],
         9: [
-            'A la VHF, quelle procedure est correcte ?',
-            'Concernant les canaux de securite, quelle reponse est exacte ?',
-            'Pour un message radio de detresse, quelle proposition est juste ?'
+            { text: 'À la VHF, quel canal permet de signaler une détresse ?', visual: false },
+            { text: 'Pour un message radio de détresse, quelle procédure est correcte ?', visual: false },
+            { text: 'A propos de "{concept}", quelle procedure radio est correcte ?', visual: false }
         ],
         10: [
-            'Le port de la brassiere est obligatoire :',
-            'Pour une navigation scoute, quelle limite est correcte ?',
-            'Concernant la securite de bord, quelle proposition est exacte ?'
+            { text: 'Lors d’une navigation scoute, le port de la brassière est obligatoire :', visual: false },
+            { text: 'Pour une navigation scoute, quelle limite est correcte ?', visual: false },
+            { text: 'A propos de "{concept}", quelle regle de securite s applique ?', visual: false }
         ]
     };
     return templates[moduleId] || [
-        `Concernant ${moduleName}, quelle proposition est juste ?`,
-        `Pour l examen PE, quelle reponse est exacte ?`
+        { text: `Dans le module ${moduleName}, quelle proposition est exacte ?`, visual: false },
+        { text: 'A propos de "{concept}", quelle est la reponse correcte ?', visual: false }
     ];
 }
 
@@ -658,7 +748,46 @@ function factToStatement(fact) {
     return text.endsWith('.') ? text : `${text}.`;
 }
 
-function buildPedagogicalQuestion(module, fact, variantIndex, localPool, globalPool, rng, questionId) {
+function buildDetailedExplanation(module, fact, correctStatement, isVisual) {
+    const split = splitConceptDefinition(fact);
+    const reminder = split
+        ? `Rappel: ${split.concept} signifie ${split.definition}.`
+        : `Rappel de cours: ${correctStatement}`;
+    const intro = isVisual
+        ? 'La situation illustrée doit être identifiée avant d appliquer la règle réglementaire.'
+        : 'La réponse correcte applique directement la règle de cours.';
+    return `${intro} ${reminder} Les autres propositions modifient un élément clé et deviennent réglementairement fausses.`;
+}
+
+function renderStem(templateText, fact) {
+    const split = splitConceptDefinition(fact);
+    const concept = split?.concept || cleanConcept(fact);
+    return String(templateText || '').replace('{concept}', concept);
+}
+
+function pickImageForFact(module, fact, variantIndex, imagePools) {
+    const entries = imagePools.get(Number(module.id)) || [];
+    if (!entries.length) return null;
+
+    const split = splitConceptDefinition(fact);
+    const concept = (split?.concept || cleanConcept(fact)).toLowerCase();
+    const conceptWords = concept.split(/[^a-z0-9àâäéèêëîïôöùûüç]+/i).filter(word => word.length >= 4);
+    const specificMatches = entries.filter(entry => conceptWords.some(word => entry.stemText.includes(word)));
+    const pool = specificMatches.length ? specificMatches : entries;
+    const selected = pool[variantIndex % pool.length];
+    return selected?.path || null;
+}
+
+function buildPedagogicalQuestion(
+    module,
+    fact,
+    variantIndex,
+    localPool,
+    globalPool,
+    rng,
+    questionId,
+    imagePools
+) {
     const answerIds = ['a', 'b', 'c', 'd', 'e'];
 
     const wrongLocal = pickDistractors(localPool, fact, 2, rng);
@@ -675,26 +804,36 @@ function buildPedagogicalQuestion(module, fact, variantIndex, localPool, globalP
     const wrongStatements = wrong.map(factToStatement);
     const choices = shuffle([correctStatement, ...wrongStatements], rng);
     const answerIndex = choices.findIndex(choice => choice === correctStatement);
-    const stems = getStemTemplates(Number(module.id), module.name);
-    const questionText = stems[variantIndex % stems.length];
+    const defaultStems = getStemTemplates(Number(module.id), module.name);
+    const stems = defaultStems;
+    const preferred = stems[variantIndex % stems.length];
+    const nonVisualFallback = stems.find(item => !item.visual) || preferred;
+    let selected = preferred;
+    let image = null;
+    if (preferred.visual) {
+        image = pickImageForFact(module, fact, variantIndex, imagePools);
+        if (!image) selected = nonVisualFallback;
+    }
+    const questionText = renderStem(selected.text, fact);
 
     return {
         id: questionId,
         text: questionText,
-        image: null,
+        image,
         answers: choices.map((choice, idx) => ({
             id: answerIds[idx] || String(idx),
             text: choice,
             correct: idx === answerIndex
         })),
         difficulty: 2,
-        explanation: `Point de cours valide (module ${module.moduleNumber})`,
+        explanation: buildDetailedExplanation(module, fact, correctStatement, Boolean(image)),
         tags: [`module_${module.id}`, 'pedagogical_quality']
     };
 }
 
-function buildTheoryCoverageCategories(modulesContent, siteData, existingCounts, rng) {
+function buildTheoryCoverageCategories(modulesContent, siteData, existingCounts, rng, annalesRaw) {
     const modulesContentById = new Map((modulesContent.modules || []).map(m => [Number(m.id), m]));
+    const imagePools = buildAnnalesImagePools(annalesRaw);
     const modules = (siteData.modules || []).map(module => ({
         ...module,
         facts: resolveModulePoints(module, modulesContentById)
@@ -728,7 +867,8 @@ function buildTheoryCoverageCategories(modulesContent, siteData, existingCounts,
                 localFacts,
                 globalFacts.filter(item => !localFacts.includes(item)),
                 rng,
-                questionId
+                questionId,
+                imagePools
             );
             cursor += 1;
             guard += 1;
@@ -772,6 +912,7 @@ function main() {
     const baseQcmPath = path.join(root, 'src', 'data', 'qcm.json');
     const modulesContentPath = path.join(root, 'src', 'data', 'modules-content.json');
     const sitePath = path.join(root, 'src', 'data', 'site.json');
+    const annalesRawPath = path.join(root, 'imports', 'drive', 'annales', 'annales.qcm.2022.raw.json');
     const bankOutPath = path.join(root, 'src', 'data', 'pe_qcm_bank.generated.json');
     const extractedQcmOutPath = path.join(root, 'src', 'data', 'qcm.pe.extracted.generated.json');
     const mergedQcmOutPath = path.join(root, 'src', 'data', 'qcm.pe.generated.json');
@@ -785,13 +926,22 @@ function main() {
     const baseQcm = readJson(baseQcmPath);
     const modulesContent = readJson(modulesContentPath);
     const siteData = readJson(sitePath);
+    const annalesRaw = fs.existsSync(annalesRawPath)
+        ? readJson(annalesRawPath)
+        : { questions: [] };
 
     const bank = buildMcqBankFromNormalized(normalized, { rng, variantsPerFact });
     assertBankSchema(bank, schema);
     const extractedQcm = convertBankToSiteQcm(bank);
     const mergedBaseQcm = mergeWithBaseQcm(baseQcm, extractedQcm);
     const existingCounts = countQuestionsByModule(mergedBaseQcm.categories);
-    const theoryCoverageCategories = buildTheoryCoverageCategories(modulesContent, siteData, existingCounts, rng);
+    const theoryCoverageCategories = buildTheoryCoverageCategories(
+        modulesContent,
+        siteData,
+        existingCounts,
+        rng,
+        annalesRaw
+    );
     const mergedQcm = {
         ...mergedBaseQcm,
         source: {
