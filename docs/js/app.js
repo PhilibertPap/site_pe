@@ -160,7 +160,38 @@ class SitePE {
     buildQuestionContextHtml(question) {
         const context = String(question?.context || '').trim();
         if (!context) return '';
-        return `<div class="alert alert-info qcm-context">${context}</div>`;
+        return `<div class="alert alert-info qcm-context">${this.escapeHtml(context)}</div>`;
+    }
+
+    escapeHtml(value) {
+        return String(value || '')
+            .replace(/&/g, '&amp;')
+            .replace(/</g, '&lt;')
+            .replace(/>/g, '&gt;')
+            .replace(/"/g, '&quot;')
+            .replace(/'/g, '&#39;');
+    }
+
+    buildAnswerReviewList(question, selectedIndex, correctIndex) {
+        return question.answers.map((answer, index) => {
+            const isSelected = selectedIndex === index;
+            const isCorrect = correctIndex === index;
+            let className = 'qcm-answer-item';
+            let badge = '';
+            if (isCorrect) {
+                className += ' qcm-answer-correct';
+                badge = '<span class="badge text-bg-success ms-2">Bonne</span>';
+            }
+            if (isSelected && !isCorrect) {
+                className += ' qcm-answer-selected-wrong';
+                badge = '<span class="badge text-bg-danger ms-2">Ta reponse</span>';
+            }
+            if (isSelected && isCorrect) {
+                className += ' qcm-answer-selected-correct';
+                badge = '<span class="badge text-bg-success ms-2">Ta reponse</span>';
+            }
+            return `<li class="${className}">${this.escapeHtml(answer.text)}${badge}</li>`;
+        }).join('');
     }
 
     generateFallbackExplanation(question, correctIndex) {
@@ -388,18 +419,10 @@ class SitePE {
             return;
         }
 
-        const answerLines = question.answers.map((answer, idx) => {
-            const classes = [];
-            if (idx === correctIndex) classes.push('text-success', 'fw-semibold');
-            if (idx === selectedIndex && idx !== correctIndex) classes.push('text-danger', 'fw-semibold');
-            const classAttr = classes.length ? ` class="${classes.join(' ')}"` : '';
-            return `<li${classAttr}>${answer.text}</li>`;
-        }).join('');
-
         const statusClass = isCorrect ? 'alert-success' : 'alert-warning';
         const statusText = isCorrect ? 'Bonne reponse.' : 'Reponse incorrecte.';
         const explanationText = String(question.explanation || '').trim() || this.generateFallbackExplanation(question, correctIndex);
-        const explanation = `<p class="mb-0"><strong>Explication:</strong> ${explanationText}</p>`;
+        const explanation = `<p class="mb-0"><strong>Explication:</strong> ${this.escapeHtml(explanationText)}</p>`;
         const imageHtml = this.buildQcmImageHtml(question);
         const contextHtml = this.buildQuestionContextHtml(question);
 
@@ -410,10 +433,10 @@ class SitePE {
                 ${this.getTimerBadgeHtml()}
             </div>
             ${contextHtml}
-            <h4>${question.text}</h4>
+            <h4>${this.escapeHtml(question.text)}</h4>
             ${imageHtml}
             <div class="alert ${statusClass} mt-3">${statusText}</div>
-            <ul class="mb-3">${answerLines}</ul>
+            <ul class="mb-3 qcm-answer-list">${this.buildAnswerReviewList(question, selectedIndex, correctIndex)}</ul>
             ${explanation}
             <button class="btn btn-primary mt-4" onclick="window.sitePE.continueQCM()">Question suivante</button>
         </div>`;
@@ -479,16 +502,18 @@ class SitePE {
             const selectedText = Number.isInteger(selectedIndex) ? question.answers[selectedIndex]?.text : 'Aucune reponse';
             const correctText = question.answers[correctIndex]?.text || '';
             const explanation = String(question.explanation || '').trim() || this.generateFallbackExplanation(question, correctIndex);
-            const stateClass = selectedIndex === correctIndex ? 'text-success' : 'text-danger';
-            return `<details class="qcm-review-item mb-2">
-                <summary><strong>Q${index + 1}.</strong> ${question.text}</summary>
-                ${question.context ? `<p class="small text-muted mb-1">${question.context}</p>` : ''}
-                <p class="mb-1 ${stateClass}"><strong>Ta reponse:</strong> ${selectedText || 'Aucune reponse'}</p>
-                <p class="mb-1"><strong>Bonne reponse:</strong> ${correctText}</p>
-                <p class="mb-0 small"><strong>Pourquoi:</strong> ${explanation}</p>
-            </details>`;
+            const stateClass = selectedIndex === correctIndex ? 'qcm-review-ok' : 'qcm-review-ko';
+            const answerList = this.buildAnswerReviewList(question, selectedIndex, correctIndex);
+            return `<article class="qcm-review-item ${stateClass} mb-3 p-3 rounded border">
+                <p class="mb-2"><strong>Q${index + 1}.</strong> ${this.escapeHtml(question.text)}</p>
+                ${question.context ? `<p class="small text-muted mb-2">${this.escapeHtml(question.context)}</p>` : ''}
+                <ul class="mb-2 qcm-answer-list">${answerList}</ul>
+                <p class="mb-1 ${selectedIndex === correctIndex ? 'text-success' : 'text-danger'}"><strong>Ta reponse:</strong> ${this.escapeHtml(selectedText || 'Aucune reponse')}</p>
+                <p class="mb-1"><strong>Bonne reponse:</strong> ${this.escapeHtml(correctText)}</p>
+                <p class="mb-0 small"><strong>Explication:</strong> ${this.escapeHtml(explanation)}</p>
+            </article>`;
         }).join('');
-        return `<section class="card mt-4"><div class="card-body"><h4 class="h6 mb-3">Correction detaillee</h4>${rows}</div></section>`;
+        return `<section class="card mt-4"><div class="card-body"><h4 class="h6 mb-3">Correction detaillee immediate</h4>${rows}</div></section>`;
     }
 
     updateModuleProgress(moduleIds, score, passed) {

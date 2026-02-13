@@ -221,66 +221,172 @@ function mapThemeToModule(theme) {
 
 function themeExplanationHint(theme) {
     const hints = {
-        1: 'Applique la logique du balisage lateral/cardinal: couleur, forme, marque de sommet et sens de navigation.',
-        2: 'Sur les cardinales, combine couleur, topmark et rythme du feu blanc pour identifier la direction de passage.',
-        3: 'La lecture carte repose sur la signification officielle des symboles SHOM et de leur legende.',
-        4: 'Identifie un navire de nuit par la combinaison complete des feux (couleur, position et secteur).',
-        5: 'En securite, retiens les limites reglementaires de categorie de navire, meteo et equipement embarque.',
-        6: 'En regles de barre, determine d abord le type de rencontre puis applique la manœuvre prescrite par le RIPAM.',
-        7: 'En reglementation, la bonne reponse depend de l obligation legale du chef de bord.',
-        8: 'En signaux sonores, il faut associer exactement le nombre et la duree des sons a la manœuvre.',
-        9: 'En meteo, il faut traduire les termes du bulletin en force/etat de mer concret.',
-        10: 'En VHF, le choix du canal et de la procedure depend du niveau d urgence.',
-        11: 'En environnement, la conduite correcte est celle qui limite le risque pour les personnes et le milieu.'
+        1: 'Balisage: raisonner avec le triplet couleur + forme + sens conventionnel de navigation.',
+        2: 'Feux/signaux: identifier un navire par la combinaison complete (couleur, position, secteur, portee).',
+        3: 'Regles de barre: commencer par qualifier la rencontre, puis appliquer la priorite RIPAM correspondante.',
+        4: 'Cartographie: associer chaque symbole a sa definition officielle SHOM, sans interpretation libre.',
+        5: 'Meteo: convertir les termes du bulletin (force/avis) en consequences navigation concretes.',
+        6: 'RIPAM pratique: privilegie ou non, la manœuvre doit rester franche, precoce et comprehensible.',
+        7: 'Reglementation plaisance: la bonne reponse est celle qui respecte l obligation legale explicite.',
+        8: 'Signaux sonores: compter exactement les sons et leur duree, sans approximation.',
+        9: 'Radio: choisir le bon canal et le bon niveau d urgence avant tout message.',
+        10: 'Securite equipage/navire: verifier categorie, zone, equipement et responsabilite du chef de bord.',
+        11: 'Environnement: retenir la conduite limitant le risque pour les personnes et le milieu.'
     };
-    return hints[theme] || 'Applique la regle du cours et elimine les propositions qui ne respectent pas cette regle.';
+    return hints[theme] || 'Applique la regle de reference du cours, puis elimine les propositions incoherentes.';
+}
+
+function inferSpecificRule(fullText) {
+    const rules = [
+        {
+            test: /entrant au port/,
+            reason: 'En region A, en entrant depuis le large, on laisse les marques rouges a babord et vertes a tribord.',
+            trap: "Le piege classique est d'inverser avec la logique de sortie de port."
+        },
+        {
+            test: /sortant du port/,
+            reason: 'En sortie, la lecture du balisage est inversee par rapport au sens conventionnel d entree.',
+            trap: "Ne pas reutiliser automatiquement la regle d'entree."
+        },
+        {
+            test: /angle du feu blanc de tete de mat/,
+            reason: "Le feu blanc de tete de mat d'un navire a moteur couvre 225 deg.",
+            trap: '135 deg correspond au feu de poupe, pas au feu de tete.'
+        },
+        {
+            test: /angle du feu de poupe/,
+            reason: "Le feu de poupe couvre 135 deg vers l'arriere.",
+            trap: '225 deg correspond au feu de tete de mat.'
+        },
+        {
+            test: /angle d un feu de cote|angle d'un feu de cote/,
+            reason: 'Chaque feu de cote couvre 112,5 deg.',
+            trap: 'Ne pas confondre avec 135 deg (poupe) ou 225 deg (tete de mat).'
+        },
+        {
+            test: /portee des feux de cote.*moins de 12/,
+            reason: 'Pour un navire de plaisance de moins de 12 m, la portee minimale des feux de cote est de 1 mille.',
+            trap: 'Les portees plus grandes concernent d autres categories de navires.'
+        },
+        {
+            test: /portee du feu de tete de mat.*moins de 12/,
+            reason: "Pour un navire a moteur de moins de 12 m, la portee du feu de tete de mat est de 2 milles.",
+            trap: '300 m est insuffisant, 5 ou 10 milles correspondent a de plus gros navires.'
+        },
+        {
+            test: /canal.*detresse|mayday|\bvhf\b/,
+            reason: 'En detresse vocale, l appel initial se fait sur le canal 16.',
+            trap: 'Ne pas confondre canal d appel de detresse et canaux de travail.'
+        },
+        {
+            test: /cross|secours en mer/,
+            reason: 'La coordination des secours en mer releve du CROSS.',
+            trap: 'La SNSM intervient en sauvetage mais ne coordonne pas les operations.'
+        },
+        {
+            test: /300 m|bande cotiere|dans les ports, la vitesse/,
+            reason: 'La vitesse est reglementee pour la securite des usagers; la limite usuelle est 5 nds sauf signalisation locale.',
+            trap: 'Ne pas melanger unites (km/h et nds) ni generaliser hors zone reglementee.'
+        },
+        {
+            test: /rattrap/,
+            reason: "Est rattrapant le navire situe dans le secteur de 135 deg arriere de l'autre navire.",
+            trap: '90 deg ou 112,5 deg ne couvrent pas toute la definition RIPAM.'
+        },
+        {
+            test: /releve au 65.*70.*67|risque d abordage|risque d'abordage/,
+            reason: "Une variation faible et non franche du relèvement impose de retenir un risque d'abordage.",
+            trap: 'En securite, le doute se traite comme un risque et non comme une absence de danger.'
+        },
+        {
+            test: /veille sur un navire/,
+            reason: 'La veille visuelle et auditive est permanente en navigation.',
+            trap: 'Elle ne se limite pas a la nuit, a la brume, ou au trafic dense.'
+        },
+        {
+            test: /categorie de conception c.*force 8|force 6.*categorie de conception c/,
+            reason: 'La categorie C ne couvre pas des conditions de mer correspondant a force 8.',
+            trap: 'Toujours confronter meteo annoncee et limites de conception du navire.'
+        },
+        {
+            test: /categorie de conception b.*force/,
+            reason: 'La categorie B est prevue jusqu a des conditions de vent force 8.',
+            trap: "Au-dela, la condition sort du domaine nominal de conception."
+        },
+        {
+            test: /zone de navigation basique.*2 milles/,
+            reason: 'La zone basique (2 milles) concerne des vehicules nautiques a moteur mono-place.',
+            trap: 'Ne pas extrapoler aux navires a moteur classiques.'
+        },
+        {
+            test: /coupe[- ]circuit/,
+            reason: "Le coupe-circuit est obligatoire sur VNM a partir de 6 cv.",
+            trap: "Ne pas attendre des puissances superieures: l'obligation commence des 6 cv."
+        },
+        {
+            test: /feu a occultation/,
+            reason: "Un feu a occultation a des periodes de lumiere plus longues que les periodes d'obscurite.",
+            trap: 'Les durees egales caracterisent un autre type de feu.'
+        },
+        {
+            test: /feu a eclat/,
+            reason: "Un feu a eclat presente des periodes d'obscurite plus longues que les periodes lumineuses.",
+            trap: "Ne pas inverser avec la definition du feu a occultation."
+        },
+        {
+            test: /chenal traversier d acces a la plage|chenal traversier d'acces a la plage/,
+            reason: "Le chenal traversier est balise en jaune par conique a tribord et cylindrique a babord (sens d'entree).",
+            trap: 'Ne pas appliquer le rouge/vert du balisage lateral de chenal classique.'
+        },
+        {
+            test: /minute sur l echelle des latitudes|minute sur l'echelle des latitudes/,
+            reason: "Sur carte marine, la minute se lit sur les echelles verticales de latitude (gauche/droite).",
+            trap: "Les bords haut/bas servent a la longitude."
+        }
+    ];
+    return rules.find(rule => rule.test.test(fullText)) || null;
+}
+
+function explainWrongChoices(fullText, wrongAnswers, correctText) {
+    const wrong = wrongAnswers.filter(Boolean);
+    if (!wrong.length) return 'Les autres propositions ne respectent pas la regle de reference.';
+
+    if (/[0-9]+\s*deg|°/.test(`${correctText} ${wrong.join(' ')}`)) {
+        return 'Les autres valeurs correspondent a d autres feux/secteurs et non a la situation demandee.';
+    }
+    if (/vrai|faux/i.test(`${correctText} ${wrong.join(' ')}`)) {
+        return "L'alternative inverse contredit directement la regle ou l'obligation visee par la question.";
+    }
+    if (/canal|vhf|cross|detresse/.test(fullText)) {
+        return 'Les autres choix confondent acteur de coordination, canal d appel ou niveau d urgence.';
+    }
+    if (/vitesse|300 m|ports/.test(fullText)) {
+        return 'Les autres choix melangent unites ou valeurs hors cadre reglementaire.';
+    }
+    if (/categorie de conception|force/.test(fullText)) {
+        return 'Les autres choix ignorent les limites de conception et le niveau de vent annonce.';
+    }
+    return 'Les autres propositions soit inversent la regle, soit decrivent un cas voisin mais different.';
 }
 
 function buildExplanation({ text, context, answers, correctIndex, theme }) {
     const correctText = String(answers[correctIndex] || '').trim();
     const questionText = String(text || '').trim();
     const fullText = normalize(`${questionText} ${context || ''}`);
+    const matched = inferSpecificRule(fullText);
+    const baseReason = matched ? matched.reason : themeExplanationHint(theme);
+    const trap = matched ? matched.trap : 'Piege frequent: confondre une regle generale avec un cas particulier non demande.';
+    const wrongAnswers = answers.filter((_, index) => index !== correctIndex);
+    const wrongReason = explainWrongChoices(fullText, wrongAnswers, correctText);
+    const contextReason = context ? `Contexte a exploiter: ${context}.` : '';
 
-    const specificRules = [
-        {
-            test: /entrant au port/,
-            reason: 'En region A, en entrant du large vers le port, on laisse les marques rouges a babord et vertes a tribord.'
-        },
-        {
-            test: /sortant du port/,
-            reason: 'En sortie, on inverse la logique d entree: la disposition des marques se lit en sens contraire.'
-        },
-        {
-            test: /angle du feu blanc de tete de mat/,
-            reason: 'Le feu de tete de mat d un navire a moteur couvre 225 deg.'
-        },
-        {
-            test: /angle du feu de poupe/,
-            reason: 'Le feu de poupe couvre un secteur de 135 deg vers l arriere.'
-        },
-        {
-            test: /portee des feux de cote.*moins de 12/,
-            reason: 'Pour un navire de plaisance de moins de 12 m, la portee minimale usuelle des feux de cote est de 1 mille.'
-        },
-        {
-            test: /canal.*detresse|mayday|\bvhf\b/,
-            reason: 'En detresse vocale, le canal 16 est la voie d appel initiale obligatoire.'
-        },
-        {
-            test: /300 m|bande cotiere/,
-            reason: 'Dans la bande des 300 m, la vitesse est strictement limitee pour proteger les usagers et baigneurs.'
-        },
-        {
-            test: /regle des douziemes|marnage|hauteur d eau|maree/,
-            reason: 'Le calcul se fait avec les donnees PM/BM et la repartition 1/12, 2/12, 3/12, 3/12, 2/12, 1/12.'
-        }
-    ];
-
-    const matched = specificRules.find(rule => rule.test.test(fullText));
-    const contextReason = context ? `Contexte utile: ${context}.` : '';
-    const fallbackReason = matched ? matched.reason : themeExplanationHint(theme);
-
-    return `Bonne reponse: ${correctText}. ${fallbackReason}${contextReason ? ` ${contextReason}` : ''}`;
+    return [
+        `Bonne reponse: ${correctText}.`,
+        `Regle: ${baseReason}`,
+        `Pourquoi les autres non: ${wrongReason}`,
+        `Piege examen: ${trap}`,
+        contextReason
+    ].filter(Boolean).join(' ');
 }
 
 function synthesizeTheoryContext(questionText, moduleId) {

@@ -167,6 +167,41 @@ main.container {
     display: block;
 }
 
+.qcm-answer-list {
+    list-style: none;
+    padding-left: 0;
+}
+
+.qcm-answer-item {
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 0.55rem 0.7rem;
+    margin-bottom: 0.45rem;
+    background: #fff;
+}
+
+.qcm-answer-correct {
+    background: #e9f8ef;
+    border-color: #69be8b;
+}
+
+.qcm-answer-selected-wrong {
+    background: #fdebec;
+    border-color: #d36270;
+}
+
+.qcm-answer-selected-correct {
+    box-shadow: inset 0 0 0 1px #2f9f5b;
+}
+
+.qcm-review-item.qcm-review-ok {
+    border-left: 4px solid #2f9f5b !important;
+}
+
+.qcm-review-item.qcm-review-ko {
+    border-left: 4px solid #d36270 !important;
+}
+
 .form-check {
     padding: 0.7rem 0.75rem;
     border-radius: 6px;

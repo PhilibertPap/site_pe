@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-02-13T20:21:57.994Z",
+  "generatedAt": "2026-02-13T20:38:49.127Z",
   "source": {
     "base": "src/data/qcm.json",
     "web": "https://www.loisirs-nautic.fr/"
@@ -34,7 +34,7 @@
           ],
           "difficulty": 2,
           "context": null,
-          "explanation": "Bonne reponse: je laisse à bâbord.. En region A, en entrant du large vers le port, on laisse les marques rouges a babord et vertes a tribord."
+          "explanation": "Bonne reponse: je laisse à bâbord.. Regle: En region A, en entrant depuis le large, on laisse les marques rouges a babord et vertes a tribord. Pourquoi les autres non: Les autres propositions soit inversent la regle, soit decrivent un cas voisin mais different. Piege examen: Le piege classique est d'inverser avec la logique de sortie de port."
         },
         {
           "id": 2,
@@ -64,7 +64,7 @@
           ],
           "difficulty": 1,
           "context": null,
-          "explanation": "Bonne reponse: un danger nouveau.. Applique la logique du balisage lateral/cardinal: couleur, forme, marque de sommet et sens de navigation."
+          "explanation": "Bonne reponse: un danger nouveau.. Regle: Balisage: raisonner avec le triplet couleur + forme + sens conventionnel de navigation. Pourquoi les autres non: Les autres propositions soit inversent la regle, soit decrivent un cas voisin mais different. Piege examen: Piege frequent: confondre une regle generale avec un cas particulier non demande."
         },
         {
           "id": 3,
@@ -84,7 +84,7 @@
           ],
           "difficulty": 3,
           "context": null,
-          "explanation": "Bonne reponse: je vais à gauche.. Applique la logique du balisage lateral/cardinal: couleur, forme, marque de sommet et sens de navigation."
+          "explanation": "Bonne reponse: je vais à gauche.. Regle: Balisage: raisonner avec le triplet couleur + forme + sens conventionnel de navigation. Pourquoi les autres non: Les autres propositions soit inversent la regle, soit decrivent un cas voisin mais different. Piege examen: Piege frequent: confondre une regle generale avec un cas particulier non demande."
         },
         {
           "id": 4,
@@ -114,7 +114,7 @@
           ],
           "difficulty": 2,
           "context": "Question de reglementation de vitesse en plaisance (France), sauf indication locale plus restrictive.",
-          "explanation": "Bonne reponse: 5 nds.. Dans la bande des 300 m, la vitesse est strictement limitee pour proteger les usagers et baigneurs."
+          "explanation": "Bonne reponse: 5 nds.. Regle: La vitesse est reglementee pour la securite des usagers; la limite usuelle est 5 nds sauf signalisation locale. Pourquoi les autres non: Les autres choix melangent unites ou valeurs hors cadre reglementaire. Piege examen: Ne pas melanger unites (km/h et nds) ni generaliser hors zone reglementee."
         },
         {
           "id": 5,
@@ -144,7 +144,7 @@
           ],
           "difficulty": 2,
           "context": null,
-          "explanation": "Bonne reponse: des eaux saines.. Applique la logique du balisage lateral/cardinal: couleur, forme, marque de sommet et sens de navigation."
+          "explanation": "Bonne reponse: des eaux saines.. Regle: Balisage: raisonner avec le triplet couleur + forme + sens conventionnel de navigation. Pourquoi les autres non: Les autres propositions soit inversent la regle, soit decrivent un cas voisin mais different. Piege examen: Piege frequent: confondre une regle generale avec un cas particulier non demande."
         },
         {
           "id": 6,
@@ -169,7 +169,7 @@
           ],
           "difficulty": 3,
           "context": null,
-          "explanation": "Bonne reponse: Je viens à gauche.. Applique la logique du balisage lateral/cardinal: couleur, forme, marque de sommet et sens de navigation."
+          "explanation": "Bonne reponse: Je viens à gauche.. Regle: Balisage: raisonner avec le triplet couleur + forme + sens conventionnel de navigation. Pourquoi les autres non: Les autres propositions soit inversent la regle, soit decrivent un cas voisin mais different. Piege examen: Piege frequent: confondre une regle generale avec un cas particulier non demande."
         },
         {
           "id": 7,
@@ -189,7 +189,7 @@
           ],
           "difficulty": 2,
           "context": null,
-          "explanation": "Bonne reponse: Je laisse à ma droite.. Applique la logique du balisage lateral/cardinal: couleur, forme, marque de sommet et sens de navigation."
+          "explanation": "Bonne reponse: Je laisse à ma droite.. Regle: Balisage: raisonner avec le triplet couleur + forme + sens conventionnel de navigation. Pourquoi les autres non: Les autres propositions soit inversent la regle, soit decrivent un cas voisin mais different. Piege examen: Piege frequent: confondre une regle generale avec un cas particulier non demande."
         },
         {
           "id": 8,
@@ -209,7 +209,7 @@
           ],
           "difficulty": 1,
           "context": null,
-          "explanation": "Bonne reponse: je passe à tribord.. En sortie, on inverse la logique d entree: la disposition des marques se lit en sens contraire."
+          "explanation": "Bonne reponse: je passe à tribord.. Regle: En sortie, la lecture du balisage est inversee par rapport au sens conventionnel d entree. Pourquoi les autres non: Les autres propositions soit inversent la regle, soit decrivent un cas voisin mais different. Piege examen: Ne pas reutiliser automatiquement la regle d'entree."
         },
         {
           "id": 9,
@@ -239,7 +239,7 @@
           ],
           "difficulty": 2,
           "context": null,
-          "explanation": "Bonne reponse: le côté tribord d'un chenal traversier.. Applique la logique du balisage lateral/cardinal: couleur, forme, marque de sommet et sens de navigation."
+          "explanation": "Bonne reponse: le côté tribord d'un chenal traversier.. Regle: Balisage: raisonner avec le triplet couleur + forme + sens conventionnel de navigation. Pourquoi les autres non: Les autres propositions soit inversent la regle, soit decrivent un cas voisin mais different. Piege examen: Piege frequent: confondre une regle generale avec un cas particulier non demande."
         },
         {
           "id": 10,
@@ -269,7 +269,7 @@
           ],
           "difficulty": 2,
           "context": null,
-          "explanation": "Bonne reponse: je continue, je peux passer au plus près.. Applique la logique du balisage lateral/cardinal: couleur, forme, marque de sommet et sens de navigation."
+          "explanation": "Bonne reponse: je continue, je peux passer au plus près.. Regle: Balisage: raisonner avec le triplet couleur + forme + sens conventionnel de navigation. Pourquoi les autres non: Les autres propositions soit inversent la regle, soit decrivent un cas voisin mais different. Piege examen: Piege frequent: confondre une regle generale avec un cas particulier non demande."
         },
         {
           "id": 11,
@@ -299,7 +299,7 @@
           ],
           "difficulty": 2,
           "context": null,
-          "explanation": "Bonne reponse: un danger nouveau.. Applique la logique du balisage lateral/cardinal: couleur, forme, marque de sommet et sens de navigation."
+          "explanation": "Bonne reponse: un danger nouveau.. Regle: Balisage: raisonner avec le triplet couleur + forme + sens conventionnel de navigation. Pourquoi les autres non: Les autres propositions soit inversent la regle, soit decrivent un cas voisin mais different. Piege examen: Piege frequent: confondre une regle generale avec un cas particulier non demande."
         },
         {
           "id": 12,
@@ -319,7 +319,7 @@
           ],
           "difficulty": 1,
           "context": null,
-          "explanation": "Bonne reponse: un chenal préféré à bâbord.. En region A, en entrant du large vers le port, on laisse les marques rouges a babord et vertes a tribord."
+          "explanation": "Bonne reponse: un chenal préféré à bâbord.. Regle: En region A, en entrant depuis le large, on laisse les marques rouges a babord et vertes a tribord. Pourquoi les autres non: Les autres propositions soit inversent la regle, soit decrivent un cas voisin mais different. Piege examen: Le piege classique est d'inverser avec la logique de sortie de port."
         },
         {
           "id": 13,
@@ -344,7 +344,7 @@
           ],
           "difficulty": 2,
           "context": null,
-          "explanation": "Bonne reponse: Navigation interdite aux engins à moteur.. Applique la logique du balisage lateral/cardinal: couleur, forme, marque de sommet et sens de navigation."
+          "explanation": "Bonne reponse: Navigation interdite aux engins à moteur.. Regle: Balisage: raisonner avec le triplet couleur + forme + sens conventionnel de navigation. Pourquoi les autres non: Les autres propositions soit inversent la regle, soit decrivent un cas voisin mais different. Piege examen: Piege frequent: confondre une regle generale avec un cas particulier non demande."
         },
         {
           "id": 14,
@@ -364,7 +364,7 @@
           ],
           "difficulty": 1,
           "context": null,
-          "explanation": "Bonne reponse: vers le large.. Applique la logique du balisage lateral/cardinal: couleur, forme, marque de sommet et sens de navigation."
+          "explanation": "Bonne reponse: vers le large.. Regle: Balisage: raisonner avec le triplet couleur + forme + sens conventionnel de navigation. Pourquoi les autres non: Les autres propositions soit inversent la regle, soit decrivent un cas voisin mais different. Piege examen: Piege frequent: confondre une regle generale avec un cas particulier non demande."
         },
         {
           "id": 15,
@@ -384,7 +384,7 @@
           ],
           "difficulty": 2,
           "context": null,
-          "explanation": "Bonne reponse: Je laisse sur mon bâbord.. Applique la logique du balisage lateral/cardinal: couleur, forme, marque de sommet et sens de navigation."
+          "explanation": "Bonne reponse: Je laisse sur mon bâbord.. Regle: Balisage: raisonner avec le triplet couleur + forme + sens conventionnel de navigation. Pourquoi les autres non: Les autres propositions soit inversent la regle, soit decrivent un cas voisin mais different. Piege examen: Piege frequent: confondre une regle generale avec un cas particulier non demande."
         },
         {
           "id": 16,
@@ -404,7 +404,7 @@
           ],
           "difficulty": 1,
           "context": null,
-          "explanation": "Bonne reponse: J'entre au port.. Applique la logique du balisage lateral/cardinal: couleur, forme, marque de sommet et sens de navigation."
+          "explanation": "Bonne reponse: J'entre au port.. Regle: Balisage: raisonner avec le triplet couleur + forme + sens conventionnel de navigation. Pourquoi les autres non: Les autres propositions soit inversent la regle, soit decrivent un cas voisin mais different. Piege examen: Piege frequent: confondre une regle generale avec un cas particulier non demande."
         },
         {
           "id": 17,
@@ -429,7 +429,7 @@
           ],
           "difficulty": 3,
           "context": null,
-          "explanation": "Bonne reponse: j'abats sur bâbord.. Applique la logique du balisage lateral/cardinal: couleur, forme, marque de sommet et sens de navigation."
+          "explanation": "Bonne reponse: j'abats sur bâbord.. Regle: Balisage: raisonner avec le triplet couleur + forme + sens conventionnel de navigation. Pourquoi les autres non: Les autres propositions soit inversent la regle, soit decrivent un cas voisin mais different. Piege examen: Piege frequent: confondre une regle generale avec un cas particulier non demande."
         },
         {
           "id": 18,
@@ -449,7 +449,7 @@
           ],
           "difficulty": 3,
           "context": null,
-          "explanation": "Bonne reponse: Je viens à gauche.. En region A, en entrant du large vers le port, on laisse les marques rouges a babord et vertes a tribord."
+          "explanation": "Bonne reponse: Je viens à gauche.. Regle: En region A, en entrant depuis le large, on laisse les marques rouges a babord et vertes a tribord. Pourquoi les autres non: Les autres propositions soit inversent la regle, soit decrivent un cas voisin mais different. Piege examen: Le piege classique est d'inverser avec la logique de sortie de port."
         },
         {
           "id": 19,
@@ -469,7 +469,7 @@
           ],
           "difficulty": 3,
           "context": null,
-          "explanation": "Bonne reponse: Je viens à droite.. Applique la logique du balisage lateral/cardinal: couleur, forme, marque de sommet et sens de navigation."
+          "explanation": "Bonne reponse: Je viens à droite.. Regle: Balisage: raisonner avec le triplet couleur + forme + sens conventionnel de navigation. Pourquoi les autres non: Les autres propositions soit inversent la regle, soit decrivent un cas voisin mais different. Piege examen: Piege frequent: confondre une regle generale avec un cas particulier non demande."
         },
         {
           "id": 20,
@@ -499,7 +499,7 @@
           ],
           "difficulty": 1,
           "context": null,
-          "explanation": "Bonne reponse: un danger isolé.. Applique la logique du balisage lateral/cardinal: couleur, forme, marque de sommet et sens de navigation."
+          "explanation": "Bonne reponse: un danger isolé.. Regle: Balisage: raisonner avec le triplet couleur + forme + sens conventionnel de navigation. Pourquoi les autres non: Les autres propositions soit inversent la regle, soit decrivent un cas voisin mais different. Piege examen: Piege frequent: confondre une regle generale avec un cas particulier non demande."
         },
         {
           "id": 21,
@@ -529,7 +529,7 @@
           ],
           "difficulty": 2,
           "context": null,
-          "explanation": "Bonne reponse: chenal préféré à bâbord.. Applique la logique du balisage lateral/cardinal: couleur, forme, marque de sommet et sens de navigation."
+          "explanation": "Bonne reponse: chenal préféré à bâbord.. Regle: Balisage: raisonner avec le triplet couleur + forme + sens conventionnel de navigation. Pourquoi les autres non: Les autres propositions soit inversent la regle, soit decrivent un cas voisin mais different. Piege examen: Piege frequent: confondre une regle generale avec un cas particulier non demande."
         },
         {
           "id": 22,
@@ -554,7 +554,7 @@
           ],
           "difficulty": 2,
           "context": null,
-          "explanation": "Bonne reponse: un danger pas encore porté sur les cartes.. Applique la logique du balisage lateral/cardinal: couleur, forme, marque de sommet et sens de navigation."
+          "explanation": "Bonne reponse: un danger pas encore porté sur les cartes.. Regle: Balisage: raisonner avec le triplet couleur + forme + sens conventionnel de navigation. Pourquoi les autres non: Les autres propositions soit inversent la regle, soit decrivent un cas voisin mais different. Piege examen: Piege frequent: confondre une regle generale avec un cas particulier non demande."
         },
         {
           "id": 23,
@@ -584,7 +584,7 @@
           ],
           "difficulty": 1,
           "context": null,
-          "explanation": "Bonne reponse: le côté tribord d'un chenal de plage.. Applique la logique du balisage lateral/cardinal: couleur, forme, marque de sommet et sens de navigation."
+          "explanation": "Bonne reponse: le côté tribord d'un chenal de plage.. Regle: Balisage: raisonner avec le triplet couleur + forme + sens conventionnel de navigation. Pourquoi les autres non: Les autres propositions soit inversent la regle, soit decrivent un cas voisin mais different. Piege examen: Piege frequent: confondre une regle generale avec un cas particulier non demande."
         },
         {
           "id": 24,
@@ -604,7 +604,7 @@
           ],
           "difficulty": 2,
           "context": null,
-          "explanation": "Bonne reponse: je laisse à bâbord.. Applique la logique du balisage lateral/cardinal: couleur, forme, marque de sommet et sens de navigation."
+          "explanation": "Bonne reponse: je laisse à bâbord.. Regle: Balisage: raisonner avec le triplet couleur + forme + sens conventionnel de navigation. Pourquoi les autres non: Les autres propositions soit inversent la regle, soit decrivent un cas voisin mais different. Piege examen: Piege frequent: confondre une regle generale avec un cas particulier non demande."
         },
         {
           "id": 25,
@@ -634,7 +634,7 @@
           ],
           "difficulty": 2,
           "context": null,
-          "explanation": "Bonne reponse: Un danger isolé.. Applique la logique du balisage lateral/cardinal: couleur, forme, marque de sommet et sens de navigation."
+          "explanation": "Bonne reponse: Un danger isolé.. Regle: Balisage: raisonner avec le triplet couleur + forme + sens conventionnel de navigation. Pourquoi les autres non: Les autres propositions soit inversent la regle, soit decrivent un cas voisin mais different. Piege examen: Piege frequent: confondre une regle generale avec un cas particulier non demande."
         }
       ]
     },
@@ -661,7 +661,7 @@
               "correct": true
             }
           ],
-          "explanation": "Bonne reponse: je viens à gauche.. Sur les cardinales, combine couleur, topmark et rythme du feu blanc pour identifier la direction de passage.",
+          "explanation": "Bonne reponse: je viens à gauche.. Regle: Feux/signaux: identifier un navire par la combinaison complete (couleur, position, secteur, portee). Pourquoi les autres non: Les autres propositions soit inversent la regle, soit decrivent un cas voisin mais different. Piege examen: Piege frequent: confondre une regle generale avec un cas particulier non demande.",
           "difficulty": 2,
           "tags": [
             "web_annales",
@@ -687,7 +687,7 @@
               "correct": true
             }
           ],
-          "explanation": "Bonne reponse: Je vais à gauche.. Sur les cardinales, combine couleur, topmark et rythme du feu blanc pour identifier la direction de passage.",
+          "explanation": "Bonne reponse: Je vais à gauche.. Regle: Feux/signaux: identifier un navire par la combinaison complete (couleur, position, secteur, portee). Pourquoi les autres non: Les autres propositions soit inversent la regle, soit decrivent un cas voisin mais different. Piege examen: Piege frequent: confondre une regle generale avec un cas particulier non demande.",
           "difficulty": 2,
           "tags": [
             "web_annales",
@@ -713,7 +713,7 @@
               "correct": true
             }
           ],
-          "explanation": "Bonne reponse: je laisse à bâbord.. En sortie, on inverse la logique d entree: la disposition des marques se lit en sens contraire.",
+          "explanation": "Bonne reponse: je laisse à bâbord.. Regle: En sortie, la lecture du balisage est inversee par rapport au sens conventionnel d entree. Pourquoi les autres non: Les autres propositions soit inversent la regle, soit decrivent un cas voisin mais different. Piege examen: Ne pas reutiliser automatiquement la regle d'entree.",
           "difficulty": 2,
           "tags": [
             "web_annales",
@@ -749,7 +749,7 @@
               "correct": false
             }
           ],
-          "explanation": "Bonne reponse: à l'est.. Sur les cardinales, combine couleur, topmark et rythme du feu blanc pour identifier la direction de passage.",
+          "explanation": "Bonne reponse: à l'est.. Regle: Feux/signaux: identifier un navire par la combinaison complete (couleur, position, secteur, portee). Pourquoi les autres non: Les autres propositions soit inversent la regle, soit decrivent un cas voisin mais different. Piege examen: Piege frequent: confondre une regle generale avec un cas particulier non demande.",
           "difficulty": 2,
           "tags": [
             "web_annales",
@@ -785,7 +785,7 @@
               "correct": false
             }
           ],
-          "explanation": "Bonne reponse: le côté tribord d'un chenal traversier.. Applique la logique du balisage lateral/cardinal: couleur, forme, marque de sommet et sens de navigation.",
+          "explanation": "Bonne reponse: le côté tribord d'un chenal traversier.. Regle: Balisage: raisonner avec le triplet couleur + forme + sens conventionnel de navigation. Pourquoi les autres non: Les autres propositions soit inversent la regle, soit decrivent un cas voisin mais different. Piege examen: Piege frequent: confondre une regle generale avec un cas particulier non demande.",
           "difficulty": 2,
           "tags": [
             "web_annales",
@@ -811,7 +811,7 @@
               "correct": false
             }
           ],
-          "explanation": "Bonne reponse: chenal préféré à tribord.. En region A, en entrant du large vers le port, on laisse les marques rouges a babord et vertes a tribord.",
+          "explanation": "Bonne reponse: chenal préféré à tribord.. Regle: En region A, en entrant depuis le large, on laisse les marques rouges a babord et vertes a tribord. Pourquoi les autres non: Les autres propositions soit inversent la regle, soit decrivent un cas voisin mais different. Piege examen: Le piege classique est d'inverser avec la logique de sortie de port.",
           "difficulty": 2,
           "tags": [
             "web_annales",
@@ -842,7 +842,7 @@
               "correct": true
             }
           ],
-          "explanation": "Bonne reponse: La route C.. Applique la logique du balisage lateral/cardinal: couleur, forme, marque de sommet et sens de navigation.",
+          "explanation": "Bonne reponse: La route C.. Regle: Balisage: raisonner avec le triplet couleur + forme + sens conventionnel de navigation. Pourquoi les autres non: Les autres propositions soit inversent la regle, soit decrivent un cas voisin mais different. Piege examen: Piege frequent: confondre une regle generale avec un cas particulier non demande.",
           "difficulty": 2,
           "tags": [
             "web_annales",
@@ -873,7 +873,7 @@
               "correct": false
             }
           ],
-          "explanation": "Bonne reponse: je viens à droite.. Sur les cardinales, combine couleur, topmark et rythme du feu blanc pour identifier la direction de passage.",
+          "explanation": "Bonne reponse: je viens à droite.. Regle: Feux/signaux: identifier un navire par la combinaison complete (couleur, position, secteur, portee). Pourquoi les autres non: Les autres propositions soit inversent la regle, soit decrivent un cas voisin mais different. Piege examen: Piege frequent: confondre une regle generale avec un cas particulier non demande.",
           "difficulty": 2,
           "tags": [
             "web_annales",
@@ -899,7 +899,7 @@
               "correct": true
             }
           ],
-          "explanation": "Bonne reponse: un chenal préféré à bâbord.. En region A, en entrant du large vers le port, on laisse les marques rouges a babord et vertes a tribord.",
+          "explanation": "Bonne reponse: un chenal préféré à bâbord.. Regle: En region A, en entrant depuis le large, on laisse les marques rouges a babord et vertes a tribord. Pourquoi les autres non: Les autres propositions soit inversent la regle, soit decrivent un cas voisin mais different. Piege examen: Le piege classique est d'inverser avec la logique de sortie de port.",
           "difficulty": 2,
           "tags": [
             "web_annales",
@@ -935,7 +935,7 @@
               "correct": true
             }
           ],
-          "explanation": "Bonne reponse: passez indifféremment à tribord ou bâbord en faisant un écart.. Applique la logique du balisage lateral/cardinal: couleur, forme, marque de sommet et sens de navigation.",
+          "explanation": "Bonne reponse: passez indifféremment à tribord ou bâbord en faisant un écart.. Regle: Balisage: raisonner avec le triplet couleur + forme + sens conventionnel de navigation. Pourquoi les autres non: Les autres propositions soit inversent la regle, soit decrivent un cas voisin mais different. Piege examen: Piege frequent: confondre une regle generale avec un cas particulier non demande.",
           "difficulty": 2,
           "tags": [
             "web_annales",
@@ -971,7 +971,7 @@
               "correct": false
             }
           ],
-          "explanation": "Bonne reponse: des bouées coniques jaunes à tribord et cylindriques jaunes à bâbord.. Applique la logique du balisage lateral/cardinal: couleur, forme, marque de sommet et sens de navigation.",
+          "explanation": "Bonne reponse: des bouées coniques jaunes à tribord et cylindriques jaunes à bâbord.. Regle: Le chenal traversier est balise en jaune par conique a tribord et cylindrique a babord (sens d'entree). Pourquoi les autres non: Les autres propositions soit inversent la regle, soit decrivent un cas voisin mais different. Piege examen: Ne pas appliquer le rouge/vert du balisage lateral de chenal classique.",
           "difficulty": 2,
           "tags": [
             "web_annales",
@@ -997,7 +997,7 @@
               "correct": true
             }
           ],
-          "explanation": "Bonne reponse: je viens à bâbord.. Sur les cardinales, combine couleur, topmark et rythme du feu blanc pour identifier la direction de passage.",
+          "explanation": "Bonne reponse: je viens à bâbord.. Regle: Feux/signaux: identifier un navire par la combinaison complete (couleur, position, secteur, portee). Pourquoi les autres non: Les autres propositions soit inversent la regle, soit decrivent un cas voisin mais different. Piege examen: Piege frequent: confondre une regle generale avec un cas particulier non demande.",
           "difficulty": 2,
           "tags": [
             "web_annales",
@@ -1023,7 +1023,7 @@
               "correct": false
             }
           ],
-          "explanation": "Bonne reponse: Je laisse la marque à droite.. Sur les cardinales, combine couleur, topmark et rythme du feu blanc pour identifier la direction de passage.",
+          "explanation": "Bonne reponse: Je laisse la marque à droite.. Regle: Feux/signaux: identifier un navire par la combinaison complete (couleur, position, secteur, portee). Pourquoi les autres non: Les autres propositions soit inversent la regle, soit decrivent un cas voisin mais different. Piege examen: Piege frequent: confondre une regle generale avec un cas particulier non demande.",
           "difficulty": 2,
           "tags": [
             "web_annales",
@@ -1049,7 +1049,7 @@
               "correct": false
             }
           ],
-          "explanation": "Bonne reponse: Je viens à droite.. Sur les cardinales, combine couleur, topmark et rythme du feu blanc pour identifier la direction de passage.",
+          "explanation": "Bonne reponse: Je viens à droite.. Regle: Feux/signaux: identifier un navire par la combinaison complete (couleur, position, secteur, portee). Pourquoi les autres non: Les autres propositions soit inversent la regle, soit decrivent un cas voisin mais different. Piege examen: Piege frequent: confondre une regle generale avec un cas particulier non demande.",
           "difficulty": 2,
           "tags": [
             "web_annales",
@@ -1080,7 +1080,7 @@
               "correct": false
             }
           ],
-          "explanation": "Bonne reponse: je viens à gauche.. Sur les cardinales, combine couleur, topmark et rythme du feu blanc pour identifier la direction de passage.",
+          "explanation": "Bonne reponse: je viens à gauche.. Regle: Feux/signaux: identifier un navire par la combinaison complete (couleur, position, secteur, portee). Pourquoi les autres non: Les autres propositions soit inversent la regle, soit decrivent un cas voisin mais different. Piege examen: Piege frequent: confondre une regle generale avec un cas particulier non demande.",
           "difficulty": 2,
           "tags": [
             "web_annales",
@@ -1111,7 +1111,7 @@
               "correct": false
             }
           ],
-          "explanation": "Bonne reponse: je passe à bâbord.. En region A, en entrant du large vers le port, on laisse les marques rouges a babord et vertes a tribord.",
+          "explanation": "Bonne reponse: je passe à bâbord.. Regle: En region A, en entrant depuis le large, on laisse les marques rouges a babord et vertes a tribord. Pourquoi les autres non: Les autres propositions soit inversent la regle, soit decrivent un cas voisin mais different. Piege examen: Le piege classique est d'inverser avec la logique de sortie de port.",
           "difficulty": 2,
           "tags": [
             "web_annales",
@@ -1142,7 +1142,7 @@
               "correct": true
             }
           ],
-          "explanation": "Bonne reponse: Je laisse sur mon bâbord.. Sur les cardinales, combine couleur, topmark et rythme du feu blanc pour identifier la direction de passage.",
+          "explanation": "Bonne reponse: Je laisse sur mon bâbord.. Regle: Feux/signaux: identifier un navire par la combinaison complete (couleur, position, secteur, portee). Pourquoi les autres non: Les autres propositions soit inversent la regle, soit decrivent un cas voisin mais different. Piege examen: Piege frequent: confondre une regle generale avec un cas particulier non demande.",
           "difficulty": 2,
           "tags": [
             "web_annales",
@@ -1178,7 +1178,7 @@
               "correct": false
             }
           ],
-          "explanation": "Bonne reponse: je passe indifféremment à tribord ou bâbord.. Applique la logique du balisage lateral/cardinal: couleur, forme, marque de sommet et sens de navigation.",
+          "explanation": "Bonne reponse: je passe indifféremment à tribord ou bâbord.. Regle: Balisage: raisonner avec le triplet couleur + forme + sens conventionnel de navigation. Pourquoi les autres non: Les autres propositions soit inversent la regle, soit decrivent un cas voisin mais different. Piege examen: Piege frequent: confondre une regle generale avec un cas particulier non demande.",
           "difficulty": 2,
           "tags": [
             "web_annales",
@@ -1209,7 +1209,7 @@
               "correct": false
             }
           ],
-          "explanation": "Bonne reponse: périodes lumineuses plus longues que celles d'obscurité.. Applique la logique du balisage lateral/cardinal: couleur, forme, marque de sommet et sens de navigation.",
+          "explanation": "Bonne reponse: périodes lumineuses plus longues que celles d'obscurité.. Regle: Un feu a occultation a des periodes de lumiere plus longues que les periodes d'obscurite. Pourquoi les autres non: Les autres propositions soit inversent la regle, soit decrivent un cas voisin mais different. Piege examen: Les durees egales caracterisent un autre type de feu.",
           "difficulty": 2,
           "tags": [
             "web_annales",
@@ -1245,7 +1245,7 @@
               "correct": true
             }
           ],
-          "explanation": "Bonne reponse: le côté bâbord d'un chenal d'accès à la plage.. Applique la logique du balisage lateral/cardinal: couleur, forme, marque de sommet et sens de navigation.",
+          "explanation": "Bonne reponse: le côté bâbord d'un chenal d'accès à la plage.. Regle: Balisage: raisonner avec le triplet couleur + forme + sens conventionnel de navigation. Pourquoi les autres non: Les autres propositions soit inversent la regle, soit decrivent un cas voisin mais different. Piege examen: Piege frequent: confondre une regle generale avec un cas particulier non demande.",
           "difficulty": 2,
           "tags": [
             "web_annales",
@@ -1271,7 +1271,7 @@
               "correct": false
             }
           ],
-          "explanation": "Bonne reponse: Je passe à tribord.. Sur les cardinales, combine couleur, topmark et rythme du feu blanc pour identifier la direction de passage.",
+          "explanation": "Bonne reponse: Je passe à tribord.. Regle: Feux/signaux: identifier un navire par la combinaison complete (couleur, position, secteur, portee). Pourquoi les autres non: Les autres propositions soit inversent la regle, soit decrivent un cas voisin mais different. Piege examen: Piege frequent: confondre une regle generale avec un cas particulier non demande.",
           "difficulty": 2,
           "tags": [
             "web_annales",
@@ -1302,7 +1302,7 @@
               "correct": false
             }
           ],
-          "explanation": "Bonne reponse: Je passe en B.. Applique la logique du balisage lateral/cardinal: couleur, forme, marque de sommet et sens de navigation.",
+          "explanation": "Bonne reponse: Je passe en B.. Regle: Balisage: raisonner avec le triplet couleur + forme + sens conventionnel de navigation. Pourquoi les autres non: Les autres propositions soit inversent la regle, soit decrivent un cas voisin mais different. Piege examen: Piege frequent: confondre une regle generale avec un cas particulier non demande.",
           "difficulty": 2,
           "tags": [
             "web_annales",
@@ -1338,7 +1338,7 @@
               "correct": false
             }
           ],
-          "explanation": "Bonne reponse: Véhicules nautiques à moteur interdits.. Applique la logique du balisage lateral/cardinal: couleur, forme, marque de sommet et sens de navigation.",
+          "explanation": "Bonne reponse: Véhicules nautiques à moteur interdits.. Regle: Balisage: raisonner avec le triplet couleur + forme + sens conventionnel de navigation. Pourquoi les autres non: Les autres propositions soit inversent la regle, soit decrivent un cas voisin mais different. Piege examen: Piege frequent: confondre une regle generale avec un cas particulier non demande.",
           "difficulty": 2,
           "tags": [
             "web_annales",
@@ -1364,7 +1364,7 @@
               "correct": false
             }
           ],
-          "explanation": "Bonne reponse: Je laisse à ma droite.. Sur les cardinales, combine couleur, topmark et rythme du feu blanc pour identifier la direction de passage.",
+          "explanation": "Bonne reponse: Je laisse à ma droite.. Regle: Feux/signaux: identifier un navire par la combinaison complete (couleur, position, secteur, portee). Pourquoi les autres non: Les autres propositions soit inversent la regle, soit decrivent un cas voisin mais different. Piege examen: Piege frequent: confondre une regle generale avec un cas particulier non demande.",
           "difficulty": 2,
           "tags": [
             "web_annales",
@@ -1395,7 +1395,7 @@
               "correct": false
             }
           ],
-          "explanation": "Bonne reponse: Abattre sur son tribord.. Sur les cardinales, combine couleur, topmark et rythme du feu blanc pour identifier la direction de passage.",
+          "explanation": "Bonne reponse: Abattre sur son tribord.. Regle: Feux/signaux: identifier un navire par la combinaison complete (couleur, position, secteur, portee). Pourquoi les autres non: Les autres propositions soit inversent la regle, soit decrivent un cas voisin mais different. Piege examen: Piege frequent: confondre une regle generale avec un cas particulier non demande.",
           "difficulty": 2,
           "tags": [
             "web_annales",
@@ -1431,7 +1431,7 @@
               "correct": false
             }
           ],
-          "explanation": "Bonne reponse: un danger isolé.. Applique la logique du balisage lateral/cardinal: couleur, forme, marque de sommet et sens de navigation.",
+          "explanation": "Bonne reponse: un danger isolé.. Regle: Balisage: raisonner avec le triplet couleur + forme + sens conventionnel de navigation. Pourquoi les autres non: Les autres propositions soit inversent la regle, soit decrivent un cas voisin mais different. Piege examen: Piege frequent: confondre une regle generale avec un cas particulier non demande.",
           "difficulty": 2,
           "tags": [
             "web_annales",
@@ -1467,7 +1467,7 @@
               "correct": false
             }
           ],
-          "explanation": "Bonne reponse: Je conserve mon cap et ma vitesse.. Sur les cardinales, combine couleur, topmark et rythme du feu blanc pour identifier la direction de passage.",
+          "explanation": "Bonne reponse: Je conserve mon cap et ma vitesse.. Regle: Feux/signaux: identifier un navire par la combinaison complete (couleur, position, secteur, portee). Pourquoi les autres non: Les autres propositions soit inversent la regle, soit decrivent un cas voisin mais different. Piege examen: Piege frequent: confondre une regle generale avec un cas particulier non demande.",
           "difficulty": 2,
           "tags": [
             "web_annales",
@@ -1493,7 +1493,7 @@
               "correct": false
             }
           ],
-          "explanation": "Bonne reponse: À tribord.. En region A, en entrant du large vers le port, on laisse les marques rouges a babord et vertes a tribord.",
+          "explanation": "Bonne reponse: À tribord.. Regle: En region A, en entrant depuis le large, on laisse les marques rouges a babord et vertes a tribord. Pourquoi les autres non: Les autres propositions soit inversent la regle, soit decrivent un cas voisin mais different. Piege examen: Le piege classique est d'inverser avec la logique de sortie de port.",
           "difficulty": 2,
           "tags": [
             "web_annales",
@@ -1519,7 +1519,7 @@
               "correct": false
             }
           ],
-          "explanation": "Bonne reponse: En A.. Applique la logique du balisage lateral/cardinal: couleur, forme, marque de sommet et sens de navigation.",
+          "explanation": "Bonne reponse: En A.. Regle: Balisage: raisonner avec le triplet couleur + forme + sens conventionnel de navigation. Pourquoi les autres non: Les autres propositions soit inversent la regle, soit decrivent un cas voisin mais different. Piege examen: Piege frequent: confondre une regle generale avec un cas particulier non demande.",
           "difficulty": 2,
           "tags": [
             "web_annales",
@@ -1550,7 +1550,7 @@
               "correct": false
             }
           ],
-          "explanation": "Bonne reponse: La forme au dessus du corps de la bouée.. Applique la logique du balisage lateral/cardinal: couleur, forme, marque de sommet et sens de navigation.",
+          "explanation": "Bonne reponse: La forme au dessus du corps de la bouée.. Regle: Balisage: raisonner avec le triplet couleur + forme + sens conventionnel de navigation. Pourquoi les autres non: Les autres propositions soit inversent la regle, soit decrivent un cas voisin mais different. Piege examen: Piege frequent: confondre une regle generale avec un cas particulier non demande.",
           "difficulty": 2,
           "tags": [
             "web_annales",
@@ -1581,7 +1581,7 @@
               "correct": true
             }
           ],
-          "explanation": "Bonne reponse: Je passe indifféremment à droite ou à gauche.. Applique la logique du balisage lateral/cardinal: couleur, forme, marque de sommet et sens de navigation.",
+          "explanation": "Bonne reponse: Je passe indifféremment à droite ou à gauche.. Regle: Balisage: raisonner avec le triplet couleur + forme + sens conventionnel de navigation. Pourquoi les autres non: Les autres propositions soit inversent la regle, soit decrivent un cas voisin mais different. Piege examen: Piege frequent: confondre une regle generale avec un cas particulier non demande.",
           "difficulty": 2,
           "tags": [
             "web_annales",
@@ -1617,7 +1617,7 @@
               "correct": false
             }
           ],
-          "explanation": "Bonne reponse: une zone de pêche.. Applique la logique du balisage lateral/cardinal: couleur, forme, marque de sommet et sens de navigation.",
+          "explanation": "Bonne reponse: une zone de pêche.. Regle: Balisage: raisonner avec le triplet couleur + forme + sens conventionnel de navigation. Pourquoi les autres non: Les autres propositions soit inversent la regle, soit decrivent un cas voisin mais different. Piege examen: Piege frequent: confondre une regle generale avec un cas particulier non demande.",
           "difficulty": 2,
           "tags": [
             "web_annales",
@@ -1653,7 +1653,7 @@
               "correct": true
             }
           ],
-          "explanation": "Bonne reponse: d'une bouée de danger isolé.. Applique la logique du balisage lateral/cardinal: couleur, forme, marque de sommet et sens de navigation.",
+          "explanation": "Bonne reponse: d'une bouée de danger isolé.. Regle: Balisage: raisonner avec le triplet couleur + forme + sens conventionnel de navigation. Pourquoi les autres non: Les autres propositions soit inversent la regle, soit decrivent un cas voisin mais different. Piege examen: Piege frequent: confondre une regle generale avec un cas particulier non demande.",
           "difficulty": 2,
           "tags": [
             "web_annales",
@@ -1684,7 +1684,7 @@
               "correct": false
             }
           ],
-          "explanation": "Bonne reponse: je la laisse à droite.. Sur les cardinales, combine couleur, topmark et rythme du feu blanc pour identifier la direction de passage.",
+          "explanation": "Bonne reponse: je la laisse à droite.. Regle: Feux/signaux: identifier un navire par la combinaison complete (couleur, position, secteur, portee). Pourquoi les autres non: Les autres propositions soit inversent la regle, soit decrivent un cas voisin mais different. Piege examen: Piege frequent: confondre une regle generale avec un cas particulier non demande.",
           "difficulty": 2,
           "tags": [
             "web_annales",
@@ -1715,7 +1715,7 @@
               "correct": false
             }
           ],
-          "explanation": "Bonne reponse: je viens à droite.. Sur les cardinales, combine couleur, topmark et rythme du feu blanc pour identifier la direction de passage.",
+          "explanation": "Bonne reponse: je viens à droite.. Regle: Feux/signaux: identifier un navire par la combinaison complete (couleur, position, secteur, portee). Pourquoi les autres non: Les autres propositions soit inversent la regle, soit decrivent un cas voisin mais different. Piege examen: Piege frequent: confondre une regle generale avec un cas particulier non demande.",
           "difficulty": 2,
           "tags": [
             "web_annales",
@@ -1746,7 +1746,7 @@
               "correct": true
             }
           ],
-          "explanation": "Bonne reponse: Je ne dépasse pas les bouées et je recherche un chenal traversier.. Applique la logique du balisage lateral/cardinal: couleur, forme, marque de sommet et sens de navigation.",
+          "explanation": "Bonne reponse: Je ne dépasse pas les bouées et je recherche un chenal traversier.. Regle: Balisage: raisonner avec le triplet couleur + forme + sens conventionnel de navigation. Pourquoi les autres non: Les autres propositions soit inversent la regle, soit decrivent un cas voisin mais different. Piege examen: Piege frequent: confondre une regle generale avec un cas particulier non demande.",
           "difficulty": 2,
           "tags": [
             "web_annales",
@@ -1772,7 +1772,7 @@
               "correct": false
             }
           ],
-          "explanation": "Bonne reponse: Je viens à tribord.. Sur les cardinales, combine couleur, topmark et rythme du feu blanc pour identifier la direction de passage.",
+          "explanation": "Bonne reponse: Je viens à tribord.. Regle: Feux/signaux: identifier un navire par la combinaison complete (couleur, position, secteur, portee). Pourquoi les autres non: Les autres propositions soit inversent la regle, soit decrivent un cas voisin mais different. Piege examen: Piege frequent: confondre une regle generale avec un cas particulier non demande.",
           "difficulty": 2,
           "tags": [
             "web_annales",
@@ -1803,7 +1803,7 @@
               "correct": false
             }
           ],
-          "explanation": "Bonne reponse: de couleurs inversées à celles de la métropole.. Applique la logique du balisage lateral/cardinal: couleur, forme, marque de sommet et sens de navigation.",
+          "explanation": "Bonne reponse: de couleurs inversées à celles de la métropole.. Regle: Balisage: raisonner avec le triplet couleur + forme + sens conventionnel de navigation. Pourquoi les autres non: Les autres propositions soit inversent la regle, soit decrivent un cas voisin mais different. Piege examen: Piege frequent: confondre une regle generale avec un cas particulier non demande.",
           "difficulty": 2,
           "tags": [
             "web_annales",
@@ -1834,7 +1834,7 @@
               "correct": false
             }
           ],
-          "explanation": "Bonne reponse: Je viens à droite.. Sur les cardinales, combine couleur, topmark et rythme du feu blanc pour identifier la direction de passage.",
+          "explanation": "Bonne reponse: Je viens à droite.. Regle: Feux/signaux: identifier un navire par la combinaison complete (couleur, position, secteur, portee). Pourquoi les autres non: Les autres propositions soit inversent la regle, soit decrivent un cas voisin mais different. Piege examen: Piege frequent: confondre une regle generale avec un cas particulier non demande.",
           "difficulty": 2,
           "tags": [
             "web_annales",
@@ -1865,7 +1865,7 @@
               "correct": false
             }
           ],
-          "explanation": "Bonne reponse: Période d'obscurité plus longue que période de lumière.. Applique la logique du balisage lateral/cardinal: couleur, forme, marque de sommet et sens de navigation.",
+          "explanation": "Bonne reponse: Période d'obscurité plus longue que période de lumière.. Regle: Un feu a eclat presente des periodes d'obscurite plus longues que les periodes lumineuses. Pourquoi les autres non: Les autres propositions soit inversent la regle, soit decrivent un cas voisin mais different. Piege examen: Ne pas inverser avec la definition du feu a occultation.",
           "difficulty": 2,
           "tags": [
             "web_annales",
@@ -1896,7 +1896,7 @@
               "correct": false
             }
           ],
-          "explanation": "Bonne reponse: je viens à droite.. Sur les cardinales, combine couleur, topmark et rythme du feu blanc pour identifier la direction de passage.",
+          "explanation": "Bonne reponse: je viens à droite.. Regle: Feux/signaux: identifier un navire par la combinaison complete (couleur, position, secteur, portee). Pourquoi les autres non: Les autres propositions soit inversent la regle, soit decrivent un cas voisin mais different. Piege examen: Piege frequent: confondre une regle generale avec un cas particulier non demande.",
           "difficulty": 2,
           "tags": [
             "web_annales",
@@ -1927,7 +1927,7 @@
               "correct": false
             }
           ],
-          "explanation": "Bonne reponse: je viens à gauche.. En region A, en entrant du large vers le port, on laisse les marques rouges a babord et vertes a tribord.",
+          "explanation": "Bonne reponse: je viens à gauche.. Regle: En region A, en entrant depuis le large, on laisse les marques rouges a babord et vertes a tribord. Pourquoi les autres non: Les autres propositions soit inversent la regle, soit decrivent un cas voisin mais different. Piege examen: Le piege classique est d'inverser avec la logique de sortie de port.",
           "difficulty": 2,
           "tags": [
             "web_annales",
@@ -1958,7 +1958,7 @@
               "correct": false
             }
           ],
-          "explanation": "Bonne reponse: de danger isolé.. Applique la logique du balisage lateral/cardinal: couleur, forme, marque de sommet et sens de navigation.",
+          "explanation": "Bonne reponse: de danger isolé.. Regle: Balisage: raisonner avec le triplet couleur + forme + sens conventionnel de navigation. Pourquoi les autres non: Les autres propositions soit inversent la regle, soit decrivent un cas voisin mais different. Piege examen: Piege frequent: confondre une regle generale avec un cas particulier non demande.",
           "difficulty": 2,
           "tags": [
             "web_annales",
@@ -1994,7 +1994,7 @@
               "correct": true
             }
           ],
-          "explanation": "Bonne reponse: Une cale immergée à marée haute.. Applique la logique du balisage lateral/cardinal: couleur, forme, marque de sommet et sens de navigation.",
+          "explanation": "Bonne reponse: Une cale immergée à marée haute.. Regle: Balisage: raisonner avec le triplet couleur + forme + sens conventionnel de navigation. Pourquoi les autres non: Les autres propositions soit inversent la regle, soit decrivent un cas voisin mais different. Piege examen: Piege frequent: confondre une regle generale avec un cas particulier non demande.",
           "difficulty": 2,
           "tags": [
             "web_annales",
@@ -2020,7 +2020,7 @@
               "correct": false
             }
           ],
-          "explanation": "Bonne reponse: Je laisse sur mon tribord.. Sur les cardinales, combine couleur, topmark et rythme du feu blanc pour identifier la direction de passage.",
+          "explanation": "Bonne reponse: Je laisse sur mon tribord.. Regle: Feux/signaux: identifier un navire par la combinaison complete (couleur, position, secteur, portee). Pourquoi les autres non: Les autres propositions soit inversent la regle, soit decrivent un cas voisin mais different. Piege examen: Piege frequent: confondre une regle generale avec un cas particulier non demande.",
           "difficulty": 2,
           "tags": [
             "web_annales",
@@ -2059,7 +2059,7 @@
               "correct": false
             }
           ],
-          "explanation": "Bonne reponse: je viens à gauche.. En signaux sonores, il faut associer exactement le nombre et la duree des sons a la manœuvre.",
+          "explanation": "Bonne reponse: je viens à gauche.. Regle: Signaux sonores: compter exactement les sons et leur duree, sans approximation. Pourquoi les autres non: Les autres propositions soit inversent la regle, soit decrivent un cas voisin mais different. Piege examen: Piege frequent: confondre une regle generale avec un cas particulier non demande.",
           "difficulty": 2,
           "tags": [
             "web_annales",
@@ -2090,7 +2090,7 @@
               "correct": true
             }
           ],
-          "explanation": "Bonne reponse: Handicapé par son tirant d'eau vu par tribord.. Identifie un navire de nuit par la combinaison complete des feux (couleur, position et secteur).",
+          "explanation": "Bonne reponse: Handicapé par son tirant d'eau vu par tribord.. Regle: Cartographie: associer chaque symbole a sa definition officielle SHOM, sans interpretation libre. Pourquoi les autres non: Les autres propositions soit inversent la regle, soit decrivent un cas voisin mais different. Piege examen: Piege frequent: confondre une regle generale avec un cas particulier non demande.",
           "difficulty": 2,
           "tags": [
             "web_annales",
@@ -2121,7 +2121,7 @@
               "correct": false
             }
           ],
-          "explanation": "Bonne reponse: navire en détresse.. En signaux sonores, il faut associer exactement le nombre et la duree des sons a la manœuvre.",
+          "explanation": "Bonne reponse: navire en détresse.. Regle: Signaux sonores: compter exactement les sons et leur duree, sans approximation. Pourquoi les autres non: Les autres propositions soit inversent la regle, soit decrivent un cas voisin mais different. Piege examen: Piege frequent: confondre une regle generale avec un cas particulier non demande.",
           "difficulty": 2,
           "tags": [
             "web_annales",
@@ -2157,7 +2157,7 @@
               "correct": false
             }
           ],
-          "explanation": "Bonne reponse: 225°.. Le feu de tete de mat d un navire a moteur couvre 225 deg.",
+          "explanation": "Bonne reponse: 225°.. Regle: Le feu blanc de tete de mat d'un navire a moteur couvre 225 deg. Pourquoi les autres non: Les autres valeurs correspondent a d autres feux/secteurs et non a la situation demandee. Piege examen: 135 deg correspond au feu de poupe, pas au feu de tete.",
           "difficulty": 2,
           "tags": [
             "web_annales",
@@ -2188,7 +2188,7 @@
               "correct": true
             }
           ],
-          "explanation": "Bonne reponse: la présence de plongeurs.. En signaux sonores, il faut associer exactement le nombre et la duree des sons a la manœuvre.",
+          "explanation": "Bonne reponse: la présence de plongeurs.. Regle: Signaux sonores: compter exactement les sons et leur duree, sans approximation. Pourquoi les autres non: Les autres propositions soit inversent la regle, soit decrivent un cas voisin mais different. Piege examen: Piege frequent: confondre une regle generale avec un cas particulier non demande.",
           "difficulty": 2,
           "tags": [
             "web_annales",
@@ -2224,7 +2224,7 @@
               "correct": false
             }
           ],
-          "explanation": "Bonne reponse: traction d'un engin pneumatique.. En signaux sonores, il faut associer exactement le nombre et la duree des sons a la manœuvre.",
+          "explanation": "Bonne reponse: traction d'un engin pneumatique.. Regle: Signaux sonores: compter exactement les sons et leur duree, sans approximation. Pourquoi les autres non: Les autres propositions soit inversent la regle, soit decrivent un cas voisin mais different. Piege examen: Piege frequent: confondre une regle generale avec un cas particulier non demande.",
           "difficulty": 2,
           "tags": [
             "web_annales",
@@ -2255,7 +2255,7 @@
               "correct": true
             }
           ],
-          "explanation": "Bonne reponse: Avis de coup de vent par le Nord-Ouest.. En signaux sonores, il faut associer exactement le nombre et la duree des sons a la manœuvre.",
+          "explanation": "Bonne reponse: Avis de coup de vent par le Nord-Ouest.. Regle: Signaux sonores: compter exactement les sons et leur duree, sans approximation. Pourquoi les autres non: Les autres propositions soit inversent la regle, soit decrivent un cas voisin mais different. Piege examen: Piege frequent: confondre une regle generale avec un cas particulier non demande.",
           "difficulty": 2,
           "tags": [
             "web_annales",
@@ -2286,7 +2286,7 @@
               "correct": false
             }
           ],
-          "explanation": "Bonne reponse: chalutier vu par bâbord.. Identifie un navire de nuit par la combinaison complete des feux (couleur, position et secteur).",
+          "explanation": "Bonne reponse: chalutier vu par bâbord.. Regle: Cartographie: associer chaque symbole a sa definition officielle SHOM, sans interpretation libre. Pourquoi les autres non: Les autres propositions soit inversent la regle, soit decrivent un cas voisin mais different. Piege examen: Piege frequent: confondre une regle generale avec un cas particulier non demande.",
           "difficulty": 2,
           "tags": [
             "web_annales",
@@ -2317,7 +2317,7 @@
               "correct": false
             }
           ],
-          "explanation": "Bonne reponse: un remorqueur.. En signaux sonores, il faut associer exactement le nombre et la duree des sons a la manœuvre.",
+          "explanation": "Bonne reponse: un remorqueur.. Regle: Signaux sonores: compter exactement les sons et leur duree, sans approximation. Pourquoi les autres non: Les autres propositions soit inversent la regle, soit decrivent un cas voisin mais different. Piege examen: Piege frequent: confondre une regle generale avec un cas particulier non demande.",
           "difficulty": 2,
           "tags": [
             "web_annales",
@@ -2348,7 +2348,7 @@
               "correct": true
             }
           ],
-          "explanation": "Bonne reponse: Je passe hors du chenal principal.. En signaux sonores, il faut associer exactement le nombre et la duree des sons a la manœuvre.",
+          "explanation": "Bonne reponse: Je passe hors du chenal principal.. Regle: Signaux sonores: compter exactement les sons et leur duree, sans approximation. Pourquoi les autres non: Les autres propositions soit inversent la regle, soit decrivent un cas voisin mais different. Piege examen: Piege frequent: confondre une regle generale avec un cas particulier non demande.",
           "difficulty": 2,
           "tags": [
             "web_annales",
@@ -2384,7 +2384,7 @@
               "correct": true
             }
           ],
-          "explanation": "Bonne reponse: je passe à au moins 100m.. En signaux sonores, il faut associer exactement le nombre et la duree des sons a la manœuvre.",
+          "explanation": "Bonne reponse: je passe à au moins 100m.. Regle: Signaux sonores: compter exactement les sons et leur duree, sans approximation. Pourquoi les autres non: Les autres propositions soit inversent la regle, soit decrivent un cas voisin mais different. Piege examen: Piege frequent: confondre une regle generale avec un cas particulier non demande.",
           "difficulty": 2,
           "tags": [
             "web_annales",
@@ -2415,7 +2415,7 @@
               "correct": false
             }
           ],
-          "explanation": "Bonne reponse: je passe et il peut y avoir des bateaux en sens inverse.. En signaux sonores, il faut associer exactement le nombre et la duree des sons a la manœuvre.",
+          "explanation": "Bonne reponse: je passe et il peut y avoir des bateaux en sens inverse.. Regle: Signaux sonores: compter exactement les sons et leur duree, sans approximation. Pourquoi les autres non: Les autres propositions soit inversent la regle, soit decrivent un cas voisin mais different. Piege examen: Piege frequent: confondre une regle generale avec un cas particulier non demande.",
           "difficulty": 2,
           "tags": [
             "web_annales",
@@ -2446,7 +2446,7 @@
               "correct": false
             }
           ],
-          "explanation": "Bonne reponse: il va faire marche arrière.. En signaux sonores, il faut associer exactement le nombre et la duree des sons a la manœuvre.",
+          "explanation": "Bonne reponse: il va faire marche arrière.. Regle: Signaux sonores: compter exactement les sons et leur duree, sans approximation. Pourquoi les autres non: Les autres propositions soit inversent la regle, soit decrivent un cas voisin mais different. Piege examen: Piege frequent: confondre une regle generale avec un cas particulier non demande.",
           "difficulty": 2,
           "tags": [
             "web_annales",
@@ -2477,7 +2477,7 @@
               "correct": true
             }
           ],
-          "explanation": "Bonne reponse: d'un signal de détresse.. En signaux sonores, il faut associer exactement le nombre et la duree des sons a la manœuvre.",
+          "explanation": "Bonne reponse: d'un signal de détresse.. Regle: Signaux sonores: compter exactement les sons et leur duree, sans approximation. Pourquoi les autres non: Les autres propositions soit inversent la regle, soit decrivent un cas voisin mais different. Piege examen: Piege frequent: confondre une regle generale avec un cas particulier non demande.",
           "difficulty": 2,
           "tags": [
             "web_annales",
@@ -2508,7 +2508,7 @@
               "correct": true
             }
           ],
-          "explanation": "Bonne reponse: un navire à capacité de manoeuvre restreinte avec passage libre à tribord.. Identifie un navire de nuit par la combinaison complete des feux (couleur, position et secteur).",
+          "explanation": "Bonne reponse: un navire à capacité de manoeuvre restreinte avec passage libre à tribord.. Regle: Cartographie: associer chaque symbole a sa definition officielle SHOM, sans interpretation libre. Pourquoi les autres non: Les autres propositions soit inversent la regle, soit decrivent un cas voisin mais different. Piege examen: Piege frequent: confondre une regle generale avec un cas particulier non demande.",
           "difficulty": 2,
           "tags": [
             "web_annales",
@@ -2539,7 +2539,7 @@
               "correct": false
             }
           ],
-          "explanation": "Bonne reponse: d'un navire au mouillage.. En signaux sonores, il faut associer exactement le nombre et la duree des sons a la manœuvre.",
+          "explanation": "Bonne reponse: d'un navire au mouillage.. Regle: Signaux sonores: compter exactement les sons et leur duree, sans approximation. Pourquoi les autres non: Les autres propositions soit inversent la regle, soit decrivent un cas voisin mais different. Piege examen: Piege frequent: confondre une regle generale avec un cas particulier non demande.",
           "difficulty": 2,
           "tags": [
             "web_annales",
@@ -2575,7 +2575,7 @@
               "correct": false
             }
           ],
-          "explanation": "Bonne reponse: 135°.. Le feu de poupe couvre un secteur de 135 deg vers l arriere.",
+          "explanation": "Bonne reponse: 135°.. Regle: Le feu de poupe couvre 135 deg vers l'arriere. Pourquoi les autres non: Les autres valeurs correspondent a d autres feux/secteurs et non a la situation demandee. Piege examen: 225 deg correspond au feu de tete de mat.",
           "difficulty": 2,
           "tags": [
             "web_annales",
@@ -2606,7 +2606,7 @@
               "correct": false
             }
           ],
-          "explanation": "Bonne reponse: vous portez assistance.. En signaux sonores, il faut associer exactement le nombre et la duree des sons a la manœuvre.",
+          "explanation": "Bonne reponse: vous portez assistance.. Regle: Signaux sonores: compter exactement les sons et leur duree, sans approximation. Pourquoi les autres non: Les autres propositions soit inversent la regle, soit decrivent un cas voisin mais different. Piege examen: Piege frequent: confondre une regle generale avec un cas particulier non demande.",
           "difficulty": 2,
           "tags": [
             "web_annales",
@@ -2637,7 +2637,7 @@
               "correct": false
             }
           ],
-          "explanation": "Bonne reponse: Navire en action de pêche.. Identifie un navire de nuit par la combinaison complete des feux (couleur, position et secteur).",
+          "explanation": "Bonne reponse: Navire en action de pêche.. Regle: Cartographie: associer chaque symbole a sa definition officielle SHOM, sans interpretation libre. Pourquoi les autres non: Les autres propositions soit inversent la regle, soit decrivent un cas voisin mais different. Piege examen: Piege frequent: confondre une regle generale avec un cas particulier non demande.",
           "difficulty": 2,
           "tags": [
             "web_annales",
@@ -2668,7 +2668,7 @@
               "correct": false
             }
           ],
-          "explanation": "Bonne reponse: Avis de coup de vent.. En signaux sonores, il faut associer exactement le nombre et la duree des sons a la manœuvre.",
+          "explanation": "Bonne reponse: Avis de coup de vent.. Regle: Signaux sonores: compter exactement les sons et leur duree, sans approximation. Pourquoi les autres non: Les autres propositions soit inversent la regle, soit decrivent un cas voisin mais different. Piege examen: Piege frequent: confondre une regle generale avec un cas particulier non demande.",
           "difficulty": 2,
           "tags": [
             "web_annales",
@@ -2699,7 +2699,7 @@
               "correct": true
             }
           ],
-          "explanation": "Bonne reponse: non maître de sa manœuvre sans erre.. Identifie un navire de nuit par la combinaison complete des feux (couleur, position et secteur).",
+          "explanation": "Bonne reponse: non maître de sa manœuvre sans erre.. Regle: Cartographie: associer chaque symbole a sa definition officielle SHOM, sans interpretation libre. Pourquoi les autres non: Les autres propositions soit inversent la regle, soit decrivent un cas voisin mais different. Piege examen: Piege frequent: confondre une regle generale avec un cas particulier non demande.",
           "difficulty": 2,
           "tags": [
             "web_annales",
@@ -2730,7 +2730,7 @@
               "correct": true
             }
           ],
-          "explanation": "Bonne reponse: d'un navire à moteur en route avec de l'erre.. En signaux sonores, il faut associer exactement le nombre et la duree des sons a la manœuvre. Contexte utile: Son prolongé.",
+          "explanation": "Bonne reponse: d'un navire à moteur en route avec de l'erre.. Regle: Signaux sonores: compter exactement les sons et leur duree, sans approximation. Pourquoi les autres non: Les autres propositions soit inversent la regle, soit decrivent un cas voisin mais different. Piege examen: Piege frequent: confondre une regle generale avec un cas particulier non demande. Contexte a exploiter: Son prolongé.",
           "difficulty": 2,
           "tags": [
             "web_annales",
@@ -2761,7 +2761,7 @@
               "correct": false
             }
           ],
-          "explanation": "Bonne reponse: 1 mille.. Pour un navire de plaisance de moins de 12 m, la portee minimale usuelle des feux de cote est de 1 mille.",
+          "explanation": "Bonne reponse: 1 mille.. Regle: Pour un navire de plaisance de moins de 12 m, la portee minimale des feux de cote est de 1 mille. Pourquoi les autres non: Les autres propositions soit inversent la regle, soit decrivent un cas voisin mais different. Piege examen: Les portees plus grandes concernent d autres categories de navires.",
           "difficulty": 2,
           "tags": [
             "web_annales",
@@ -2797,7 +2797,7 @@
               "correct": true
             }
           ],
-          "explanation": "Bonne reponse: la présence d'un plongeur sous-marin.. En signaux sonores, il faut associer exactement le nombre et la duree des sons a la manœuvre.",
+          "explanation": "Bonne reponse: la présence d'un plongeur sous-marin.. Regle: Signaux sonores: compter exactement les sons et leur duree, sans approximation. Pourquoi les autres non: Les autres propositions soit inversent la regle, soit decrivent un cas voisin mais different. Piege examen: Piege frequent: confondre une regle generale avec un cas particulier non demande.",
           "difficulty": 2,
           "tags": [
             "web_annales",
@@ -2833,7 +2833,7 @@
               "correct": true
             }
           ],
-          "explanation": "Bonne reponse: échoué.. En signaux sonores, il faut associer exactement le nombre et la duree des sons a la manœuvre.",
+          "explanation": "Bonne reponse: échoué.. Regle: Signaux sonores: compter exactement les sons et leur duree, sans approximation. Pourquoi les autres non: Les autres propositions soit inversent la regle, soit decrivent un cas voisin mais different. Piege examen: Piege frequent: confondre une regle generale avec un cas particulier non demande.",
           "difficulty": 2,
           "tags": [
             "web_annales",
@@ -2869,7 +2869,7 @@
               "correct": true
             }
           ],
-          "explanation": "Bonne reponse: d'un remorqueur.. Identifie un navire de nuit par la combinaison complete des feux (couleur, position et secteur).",
+          "explanation": "Bonne reponse: d'un remorqueur.. Regle: Cartographie: associer chaque symbole a sa definition officielle SHOM, sans interpretation libre. Pourquoi les autres non: Les autres propositions soit inversent la regle, soit decrivent un cas voisin mais different. Piege examen: Piege frequent: confondre une regle generale avec un cas particulier non demande.",
           "difficulty": 2,
           "tags": [
             "web_annales",
@@ -2905,7 +2905,7 @@
               "correct": false
             }
           ],
-          "explanation": "Bonne reponse: Navire qui vire sur tribord.. En signaux sonores, il faut associer exactement le nombre et la duree des sons a la manœuvre. Contexte utile: Un son bref..",
+          "explanation": "Bonne reponse: Navire qui vire sur tribord.. Regle: Signaux sonores: compter exactement les sons et leur duree, sans approximation. Pourquoi les autres non: Les autres propositions soit inversent la regle, soit decrivent un cas voisin mais different. Piege examen: Piege frequent: confondre une regle generale avec un cas particulier non demande. Contexte a exploiter: Un son bref..",
           "difficulty": 2,
           "tags": [
             "web_annales",
@@ -2936,7 +2936,7 @@
               "correct": true
             }
           ],
-          "explanation": "Bonne reponse: Je sors avec prudence.. En sortie, on inverse la logique d entree: la disposition des marques se lit en sens contraire.",
+          "explanation": "Bonne reponse: Je sors avec prudence.. Regle: En sortie, la lecture du balisage est inversee par rapport au sens conventionnel d entree. Pourquoi les autres non: Les autres propositions soit inversent la regle, soit decrivent un cas voisin mais different. Piege examen: Ne pas reutiliser automatiquement la regle d'entree.",
           "difficulty": 2,
           "tags": [
             "web_annales",
@@ -2972,7 +2972,7 @@
               "correct": true
             }
           ],
-          "explanation": "Bonne reponse: Avis de coup de vent du Nord-Est.. En signaux sonores, il faut associer exactement le nombre et la duree des sons a la manœuvre.",
+          "explanation": "Bonne reponse: Avis de coup de vent du Nord-Est.. Regle: Signaux sonores: compter exactement les sons et leur duree, sans approximation. Pourquoi les autres non: Les autres propositions soit inversent la regle, soit decrivent un cas voisin mais different. Piege examen: Piege frequent: confondre une regle generale avec un cas particulier non demande.",
           "difficulty": 2,
           "tags": [
             "web_annales",
@@ -2998,7 +2998,7 @@
               "correct": false
             }
           ],
-          "explanation": "Bonne reponse: Vrai.. En signaux sonores, il faut associer exactement le nombre et la duree des sons a la manœuvre.",
+          "explanation": "Bonne reponse: Vrai.. Regle: Signaux sonores: compter exactement les sons et leur duree, sans approximation. Pourquoi les autres non: L'alternative inverse contredit directement la regle ou l'obligation visee par la question. Piege examen: Piege frequent: confondre une regle generale avec un cas particulier non demande.",
           "difficulty": 2,
           "tags": [
             "web_annales",
@@ -3029,7 +3029,7 @@
               "correct": true
             }
           ],
-          "explanation": "Bonne reponse: d'un chalutier qui remonte son chalut.. Identifie un navire de nuit par la combinaison complete des feux (couleur, position et secteur).",
+          "explanation": "Bonne reponse: d'un chalutier qui remonte son chalut.. Regle: Cartographie: associer chaque symbole a sa definition officielle SHOM, sans interpretation libre. Pourquoi les autres non: Les autres propositions soit inversent la regle, soit decrivent un cas voisin mais different. Piege examen: Piege frequent: confondre une regle generale avec un cas particulier non demande.",
           "difficulty": 2,
           "tags": [
             "web_annales",
@@ -3065,7 +3065,7 @@
               "correct": false
             }
           ],
-          "explanation": "Bonne reponse: Présence de plongeurs sous-marin.. En signaux sonores, il faut associer exactement le nombre et la duree des sons a la manœuvre.",
+          "explanation": "Bonne reponse: Présence de plongeurs sous-marin.. Regle: Signaux sonores: compter exactement les sons et leur duree, sans approximation. Pourquoi les autres non: Les autres propositions soit inversent la regle, soit decrivent un cas voisin mais different. Piege examen: Piege frequent: confondre une regle generale avec un cas particulier non demande.",
           "difficulty": 2,
           "tags": [
             "web_annales",
@@ -3096,7 +3096,7 @@
               "correct": false
             }
           ],
-          "explanation": "Bonne reponse: d'un navire en action de pêche.. En signaux sonores, il faut associer exactement le nombre et la duree des sons a la manœuvre.",
+          "explanation": "Bonne reponse: d'un navire en action de pêche.. Regle: Signaux sonores: compter exactement les sons et leur duree, sans approximation. Pourquoi les autres non: Les autres propositions soit inversent la regle, soit decrivent un cas voisin mais different. Piege examen: Piege frequent: confondre une regle generale avec un cas particulier non demande.",
           "difficulty": 2,
           "tags": [
             "web_annales",
@@ -3132,7 +3132,7 @@
               "correct": true
             }
           ],
-          "explanation": "Bonne reponse: vous vous dirigez vers lui.. En signaux sonores, il faut associer exactement le nombre et la duree des sons a la manœuvre.",
+          "explanation": "Bonne reponse: vous vous dirigez vers lui.. Regle: Signaux sonores: compter exactement les sons et leur duree, sans approximation. Pourquoi les autres non: Les autres propositions soit inversent la regle, soit decrivent un cas voisin mais different. Piege examen: Piege frequent: confondre une regle generale avec un cas particulier non demande.",
           "difficulty": 2,
           "tags": [
             "web_annales",
@@ -3168,7 +3168,7 @@
               "correct": false
             }
           ],
-          "explanation": "Bonne reponse: Il passe hors du chenal sans demander d'instructions.. En region A, en entrant du large vers le port, on laisse les marques rouges a babord et vertes a tribord.",
+          "explanation": "Bonne reponse: Il passe hors du chenal sans demander d'instructions.. Regle: En region A, en entrant depuis le large, on laisse les marques rouges a babord et vertes a tribord. Pourquoi les autres non: Les autres propositions soit inversent la regle, soit decrivent un cas voisin mais different. Piege examen: Le piege classique est d'inverser avec la logique de sortie de port.",
           "difficulty": 2,
           "tags": [
             "web_annales",
@@ -3199,7 +3199,7 @@
               "correct": true
             }
           ],
-          "explanation": "Bonne reponse: pêcheur.. En signaux sonores, il faut associer exactement le nombre et la duree des sons a la manœuvre.",
+          "explanation": "Bonne reponse: pêcheur.. Regle: Signaux sonores: compter exactement les sons et leur duree, sans approximation. Pourquoi les autres non: Les autres propositions soit inversent la regle, soit decrivent un cas voisin mais different. Piege examen: Piege frequent: confondre une regle generale avec un cas particulier non demande.",
           "difficulty": 2,
           "tags": [
             "web_annales",
@@ -3230,7 +3230,7 @@
               "correct": false
             }
           ],
-          "explanation": "Bonne reponse: Un feu blanc.. Identifie un navire de nuit par la combinaison complete des feux (couleur, position et secteur).",
+          "explanation": "Bonne reponse: Un feu blanc.. Regle: Cartographie: associer chaque symbole a sa definition officielle SHOM, sans interpretation libre. Pourquoi les autres non: Les autres propositions soit inversent la regle, soit decrivent un cas voisin mais different. Piege examen: Piege frequent: confondre une regle generale avec un cas particulier non demande.",
           "difficulty": 2,
           "tags": [
             "web_annales",
@@ -3261,7 +3261,7 @@
               "correct": false
             }
           ],
-          "explanation": "Bonne reponse: 112,5°.. Identifie un navire de nuit par la combinaison complete des feux (couleur, position et secteur).",
+          "explanation": "Bonne reponse: 112,5°.. Regle: Chaque feu de cote couvre 112,5 deg. Pourquoi les autres non: Les autres valeurs correspondent a d autres feux/secteurs et non a la situation demandee. Piege examen: Ne pas confondre avec 135 deg (poupe) ou 225 deg (tete de mat).",
           "difficulty": 2,
           "tags": [
             "web_annales",
@@ -3297,7 +3297,7 @@
               "correct": false
             }
           ],
-          "explanation": "Bonne reponse: 100 m.. En signaux sonores, il faut associer exactement le nombre et la duree des sons a la manœuvre.",
+          "explanation": "Bonne reponse: 100 m.. Regle: Signaux sonores: compter exactement les sons et leur duree, sans approximation. Pourquoi les autres non: Les autres propositions soit inversent la regle, soit decrivent un cas voisin mais different. Piege examen: Piege frequent: confondre une regle generale avec un cas particulier non demande.",
           "difficulty": 2,
           "tags": [
             "web_annales",
@@ -3333,7 +3333,7 @@
               "correct": false
             }
           ],
-          "explanation": "Bonne reponse: un avis de grand frais.. En signaux sonores, il faut associer exactement le nombre et la duree des sons a la manœuvre.",
+          "explanation": "Bonne reponse: un avis de grand frais.. Regle: Signaux sonores: compter exactement les sons et leur duree, sans approximation. Pourquoi les autres non: Les autres propositions soit inversent la regle, soit decrivent un cas voisin mais different. Piege examen: Piege frequent: confondre une regle generale avec un cas particulier non demande.",
           "difficulty": 2,
           "tags": [
             "web_annales",
@@ -3369,7 +3369,7 @@
               "correct": true
             }
           ],
-          "explanation": "Bonne reponse: dépasser par la gauche.. En signaux sonores, il faut associer exactement le nombre et la duree des sons a la manœuvre.",
+          "explanation": "Bonne reponse: dépasser par la gauche.. Regle: Signaux sonores: compter exactement les sons et leur duree, sans approximation. Pourquoi les autres non: Les autres propositions soit inversent la regle, soit decrivent un cas voisin mais different. Piege examen: Piege frequent: confondre une regle generale avec un cas particulier non demande.",
           "difficulty": 2,
           "tags": [
             "web_annales",
@@ -3400,7 +3400,7 @@
               "correct": true
             }
           ],
-          "explanation": "Bonne reponse: je dois attendre.. En sortie, on inverse la logique d entree: la disposition des marques se lit en sens contraire.",
+          "explanation": "Bonne reponse: je dois attendre.. Regle: En sortie, la lecture du balisage est inversee par rapport au sens conventionnel d entree. Pourquoi les autres non: Les autres propositions soit inversent la regle, soit decrivent un cas voisin mais different. Piege examen: Ne pas reutiliser automatiquement la regle d'entree.",
           "difficulty": 2,
           "tags": [
             "web_annales",
@@ -3431,7 +3431,7 @@
               "correct": true
             }
           ],
-          "explanation": "Bonne reponse: J'émets une série d'au moins 5 sons brefs.. En signaux sonores, il faut associer exactement le nombre et la duree des sons a la manœuvre.",
+          "explanation": "Bonne reponse: J'émets une série d'au moins 5 sons brefs.. Regle: Signaux sonores: compter exactement les sons et leur duree, sans approximation. Pourquoi les autres non: Les autres propositions soit inversent la regle, soit decrivent un cas voisin mais different. Piege examen: Piege frequent: confondre une regle generale avec un cas particulier non demande.",
           "difficulty": 2,
           "tags": [
             "web_annales",
@@ -3462,7 +3462,7 @@
               "correct": false
             }
           ],
-          "explanation": "Bonne reponse: Vous passez, trafic à sens unique.. En signaux sonores, il faut associer exactement le nombre et la duree des sons a la manœuvre.",
+          "explanation": "Bonne reponse: Vous passez, trafic à sens unique.. Regle: Signaux sonores: compter exactement les sons et leur duree, sans approximation. Pourquoi les autres non: Les autres propositions soit inversent la regle, soit decrivent un cas voisin mais different. Piege examen: Piege frequent: confondre une regle generale avec un cas particulier non demande.",
           "difficulty": 2,
           "tags": [
             "web_annales",
@@ -3498,7 +3498,7 @@
               "correct": false
             }
           ],
-          "explanation": "Bonne reponse: un navire en détresse.. En signaux sonores, il faut associer exactement le nombre et la duree des sons a la manœuvre.",
+          "explanation": "Bonne reponse: un navire en détresse.. Regle: Signaux sonores: compter exactement les sons et leur duree, sans approximation. Pourquoi les autres non: Les autres propositions soit inversent la regle, soit decrivent un cas voisin mais different. Piege examen: Piege frequent: confondre une regle generale avec un cas particulier non demande.",
           "difficulty": 2,
           "tags": [
             "web_annales",
@@ -3529,7 +3529,7 @@
               "correct": true
             }
           ],
-          "explanation": "Bonne reponse: Un navire à capacité de manoeuvre restreinte.. Identifie un navire de nuit par la combinaison complete des feux (couleur, position et secteur).",
+          "explanation": "Bonne reponse: Un navire à capacité de manoeuvre restreinte.. Regle: Cartographie: associer chaque symbole a sa definition officielle SHOM, sans interpretation libre. Pourquoi les autres non: Les autres propositions soit inversent la regle, soit decrivent un cas voisin mais different. Piege examen: Piege frequent: confondre une regle generale avec un cas particulier non demande.",
           "difficulty": 2,
           "tags": [
             "web_annales",
@@ -3565,7 +3565,7 @@
               "correct": false
             }
           ],
-          "explanation": "Bonne reponse: un avis de coup de vent ou tempête par le sud-ouest.. En signaux sonores, il faut associer exactement le nombre et la duree des sons a la manœuvre.",
+          "explanation": "Bonne reponse: un avis de coup de vent ou tempête par le sud-ouest.. Regle: Signaux sonores: compter exactement les sons et leur duree, sans approximation. Pourquoi les autres non: Les autres propositions soit inversent la regle, soit decrivent un cas voisin mais different. Piege examen: Piege frequent: confondre une regle generale avec un cas particulier non demande.",
           "difficulty": 2,
           "tags": [
             "web_annales",
@@ -3601,7 +3601,7 @@
               "correct": false
             }
           ],
-          "explanation": "Bonne reponse: dépasser par la droite.. En signaux sonores, il faut associer exactement le nombre et la duree des sons a la manœuvre.",
+          "explanation": "Bonne reponse: dépasser par la droite.. Regle: Signaux sonores: compter exactement les sons et leur duree, sans approximation. Pourquoi les autres non: Les autres propositions soit inversent la regle, soit decrivent un cas voisin mais different. Piege examen: Piege frequent: confondre une regle generale avec un cas particulier non demande.",
           "difficulty": 2,
           "tags": [
             "web_annales",
@@ -3637,7 +3637,7 @@
               "correct": false
             }
           ],
-          "explanation": "Bonne reponse: 2 milles.. Identifie un navire de nuit par la combinaison complete des feux (couleur, position et secteur).",
+          "explanation": "Bonne reponse: 2 milles.. Regle: Pour un navire a moteur de moins de 12 m, la portee du feu de tete de mat est de 2 milles. Pourquoi les autres non: Les autres propositions soit inversent la regle, soit decrivent un cas voisin mais different. Piege examen: 300 m est insuffisant, 5 ou 10 milles correspondent a de plus gros navires.",
           "difficulty": 2,
           "tags": [
             "web_annales",
@@ -3671,7 +3671,7 @@
               "correct": true
             }
           ],
-          "explanation": "Bonne reponse: doit s'écarter.. En regles de barre, determine d abord le type de rencontre puis applique la manœuvre prescrite par le RIPAM.",
+          "explanation": "Bonne reponse: doit s'écarter.. Regle: Est rattrapant le navire situe dans le secteur de 135 deg arriere de l'autre navire. Pourquoi les autres non: Les autres propositions soit inversent la regle, soit decrivent un cas voisin mais different. Piege examen: 90 deg ou 112,5 deg ne couvrent pas toute la definition RIPAM.",
           "difficulty": 2,
           "tags": [
             "web_annales",
@@ -3702,7 +3702,7 @@
               "correct": false
             }
           ],
-          "explanation": "Bonne reponse: un navire en action de pêche.. En regles de barre, determine d abord le type de rencontre puis applique la manœuvre prescrite par le RIPAM.",
+          "explanation": "Bonne reponse: un navire en action de pêche.. Regle: RIPAM pratique: privilegie ou non, la manœuvre doit rester franche, precoce et comprehensible. Pourquoi les autres non: Les autres propositions soit inversent la regle, soit decrivent un cas voisin mais different. Piege examen: Piege frequent: confondre une regle generale avec un cas particulier non demande.",
           "difficulty": 2,
           "tags": [
             "web_annales",
@@ -3728,7 +3728,7 @@
               "correct": true
             }
           ],
-          "explanation": "Bonne reponse: Le navire de commerce B.. En regles de barre, determine d abord le type de rencontre puis applique la manœuvre prescrite par le RIPAM.",
+          "explanation": "Bonne reponse: Le navire de commerce B.. Regle: RIPAM pratique: privilegie ou non, la manœuvre doit rester franche, precoce et comprehensible. Pourquoi les autres non: Les autres propositions soit inversent la regle, soit decrivent un cas voisin mais different. Piege examen: Piege frequent: confondre une regle generale avec un cas particulier non demande.",
           "difficulty": 2,
           "tags": [
             "web_annales",
@@ -3754,7 +3754,7 @@
               "correct": true
             }
           ],
-          "explanation": "Bonne reponse: B.. En regles de barre, determine d abord le type de rencontre puis applique la manœuvre prescrite par le RIPAM.",
+          "explanation": "Bonne reponse: B.. Regle: RIPAM pratique: privilegie ou non, la manœuvre doit rester franche, precoce et comprehensible. Pourquoi les autres non: Les autres propositions soit inversent la regle, soit decrivent un cas voisin mais different. Piege examen: Piege frequent: confondre une regle generale avec un cas particulier non demande.",
           "difficulty": 2,
           "tags": [
             "web_annales",
@@ -3790,7 +3790,7 @@
               "correct": false
             }
           ],
-          "explanation": "Bonne reponse: il est à capacité de manoeuvre restreinte.. En regles de barre, determine d abord le type de rencontre puis applique la manœuvre prescrite par le RIPAM.",
+          "explanation": "Bonne reponse: il est à capacité de manoeuvre restreinte.. Regle: RIPAM pratique: privilegie ou non, la manœuvre doit rester franche, precoce et comprehensible. Pourquoi les autres non: Les autres propositions soit inversent la regle, soit decrivent un cas voisin mais different. Piege examen: Piege frequent: confondre une regle generale avec un cas particulier non demande.",
           "difficulty": 2,
           "tags": [
             "web_annales",
@@ -3821,7 +3821,7 @@
               "correct": true
             }
           ],
-          "explanation": "Bonne reponse: vous manœuvrez pour doubler l'autre navire.. En regles de barre, determine d abord le type de rencontre puis applique la manœuvre prescrite par le RIPAM.",
+          "explanation": "Bonne reponse: vous manœuvrez pour doubler l'autre navire.. Regle: Est rattrapant le navire situe dans le secteur de 135 deg arriere de l'autre navire. Pourquoi les autres non: Les autres propositions soit inversent la regle, soit decrivent un cas voisin mais different. Piege examen: 90 deg ou 112,5 deg ne couvrent pas toute la definition RIPAM.",
           "difficulty": 2,
           "tags": [
             "web_annales",
@@ -3852,7 +3852,7 @@
               "correct": true
             }
           ],
-          "explanation": "Bonne reponse: La vitesse du navire par rapport à l'eau.. En regles de barre, determine d abord le type de rencontre puis applique la manœuvre prescrite par le RIPAM. Contexte utile: ERRE.",
+          "explanation": "Bonne reponse: La vitesse du navire par rapport à l'eau.. Regle: RIPAM pratique: privilegie ou non, la manœuvre doit rester franche, precoce et comprehensible. Pourquoi les autres non: Les autres propositions soit inversent la regle, soit decrivent un cas voisin mais different. Piege examen: Piege frequent: confondre une regle generale avec un cas particulier non demande. Contexte a exploiter: ERRE.",
           "difficulty": 2,
           "tags": [
             "web_annales",
@@ -3883,7 +3883,7 @@
               "correct": true
             }
           ],
-          "explanation": "Bonne reponse: je laisse passer le navire B.. En regles de barre, determine d abord le type de rencontre puis applique la manœuvre prescrite par le RIPAM.",
+          "explanation": "Bonne reponse: je laisse passer le navire B.. Regle: RIPAM pratique: privilegie ou non, la manœuvre doit rester franche, precoce et comprehensible. Pourquoi les autres non: Les autres propositions soit inversent la regle, soit decrivent un cas voisin mais different. Piege examen: Piege frequent: confondre une regle generale avec un cas particulier non demande.",
           "difficulty": 2,
           "tags": [
             "web_annales",
@@ -3919,7 +3919,7 @@
               "correct": false
             }
           ],
-          "explanation": "Bonne reponse: au mouillage.. En regles de barre, determine d abord le type de rencontre puis applique la manœuvre prescrite par le RIPAM.",
+          "explanation": "Bonne reponse: au mouillage.. Regle: RIPAM pratique: privilegie ou non, la manœuvre doit rester franche, precoce et comprehensible. Pourquoi les autres non: Les autres propositions soit inversent la regle, soit decrivent un cas voisin mais different. Piege examen: Piege frequent: confondre une regle generale avec un cas particulier non demande.",
           "difficulty": 2,
           "tags": [
             "web_annales",
@@ -3950,7 +3950,7 @@
               "correct": false
             }
           ],
-          "explanation": "Bonne reponse: Le navire B.. En regles de barre, determine d abord le type de rencontre puis applique la manœuvre prescrite par le RIPAM.",
+          "explanation": "Bonne reponse: Le navire B.. Regle: RIPAM pratique: privilegie ou non, la manœuvre doit rester franche, precoce et comprehensible. Pourquoi les autres non: Les autres propositions soit inversent la regle, soit decrivent un cas voisin mais different. Piege examen: Piege frequent: confondre une regle generale avec un cas particulier non demande.",
           "difficulty": 2,
           "tags": [
             "web_annales",
@@ -3976,7 +3976,7 @@
               "correct": true
             }
           ],
-          "explanation": "Bonne reponse: B.. En regles de barre, determine d abord le type de rencontre puis applique la manœuvre prescrite par le RIPAM.",
+          "explanation": "Bonne reponse: B.. Regle: RIPAM pratique: privilegie ou non, la manœuvre doit rester franche, precoce et comprehensible. Pourquoi les autres non: Les autres propositions soit inversent la regle, soit decrivent un cas voisin mais different. Piege examen: Piege frequent: confondre une regle generale avec un cas particulier non demande.",
           "difficulty": 2,
           "tags": [
             "web_annales",
@@ -4007,7 +4007,7 @@
               "correct": false
             }
           ],
-          "explanation": "Bonne reponse: je viens à droite.. En regles de barre, determine d abord le type de rencontre puis applique la manœuvre prescrite par le RIPAM.",
+          "explanation": "Bonne reponse: je viens à droite.. Regle: RIPAM pratique: privilegie ou non, la manœuvre doit rester franche, precoce et comprehensible. Pourquoi les autres non: Les autres propositions soit inversent la regle, soit decrivent un cas voisin mais different. Piege examen: Piege frequent: confondre une regle generale avec un cas particulier non demande.",
           "difficulty": 2,
           "tags": [
             "web_annales",
@@ -4038,7 +4038,7 @@
               "correct": true
             }
           ],
-          "explanation": "Bonne reponse: je viens à gauche.. En regles de barre, determine d abord le type de rencontre puis applique la manœuvre prescrite par le RIPAM.",
+          "explanation": "Bonne reponse: je viens à gauche.. Regle: RIPAM pratique: privilegie ou non, la manœuvre doit rester franche, precoce et comprehensible. Pourquoi les autres non: Les autres propositions soit inversent la regle, soit decrivent un cas voisin mais different. Piege examen: Piege frequent: confondre une regle generale avec un cas particulier non demande.",
           "difficulty": 2,
           "tags": [
             "web_annales",
@@ -4069,7 +4069,7 @@
               "correct": false
             }
           ],
-          "explanation": "Bonne reponse: A.. En regles de barre, determine d abord le type de rencontre puis applique la manœuvre prescrite par le RIPAM.",
+          "explanation": "Bonne reponse: A.. Regle: RIPAM pratique: privilegie ou non, la manœuvre doit rester franche, precoce et comprehensible. Pourquoi les autres non: Les autres propositions soit inversent la regle, soit decrivent un cas voisin mais different. Piege examen: Piege frequent: confondre une regle generale avec un cas particulier non demande.",
           "difficulty": 2,
           "tags": [
             "web_annales",
@@ -4105,7 +4105,7 @@
               "correct": false
             }
           ],
-          "explanation": "Bonne reponse: Uniquement dans les 135° de son arrière.. En regles de barre, determine d abord le type de rencontre puis applique la manœuvre prescrite par le RIPAM.",
+          "explanation": "Bonne reponse: Uniquement dans les 135° de son arrière.. Regle: Est rattrapant le navire situe dans le secteur de 135 deg arriere de l'autre navire. Pourquoi les autres non: Les autres valeurs correspondent a d autres feux/secteurs et non a la situation demandee. Piege examen: 90 deg ou 112,5 deg ne couvrent pas toute la definition RIPAM.",
           "difficulty": 2,
           "tags": [
             "web_annales",
@@ -4131,7 +4131,7 @@
               "correct": true
             }
           ],
-          "explanation": "Bonne reponse: je tourne à gauche.. En regles de barre, determine d abord le type de rencontre puis applique la manœuvre prescrite par le RIPAM.",
+          "explanation": "Bonne reponse: je tourne à gauche.. Regle: RIPAM pratique: privilegie ou non, la manœuvre doit rester franche, precoce et comprehensible. Pourquoi les autres non: Les autres propositions soit inversent la regle, soit decrivent un cas voisin mais different. Piege examen: Piege frequent: confondre une regle generale avec un cas particulier non demande.",
           "difficulty": 2,
           "tags": [
             "web_annales",
@@ -4157,7 +4157,7 @@
               "correct": false
             }
           ],
-          "explanation": "Bonne reponse: vous êtes privilégié.. En regles de barre, determine d abord le type de rencontre puis applique la manœuvre prescrite par le RIPAM.",
+          "explanation": "Bonne reponse: vous êtes privilégié.. Regle: RIPAM pratique: privilegie ou non, la manœuvre doit rester franche, precoce et comprehensible. Pourquoi les autres non: Les autres propositions soit inversent la regle, soit decrivent un cas voisin mais different. Piege examen: Piege frequent: confondre une regle generale avec un cas particulier non demande.",
           "difficulty": 2,
           "tags": [
             "web_annales",
@@ -4188,7 +4188,7 @@
               "correct": false
             }
           ],
-          "explanation": "Bonne reponse: handicapé par son tirant d'eau.. En regles de barre, determine d abord le type de rencontre puis applique la manœuvre prescrite par le RIPAM.",
+          "explanation": "Bonne reponse: handicapé par son tirant d'eau.. Regle: RIPAM pratique: privilegie ou non, la manœuvre doit rester franche, precoce et comprehensible. Pourquoi les autres non: Les autres propositions soit inversent la regle, soit decrivent un cas voisin mais different. Piege examen: Piege frequent: confondre une regle generale avec un cas particulier non demande.",
           "difficulty": 2,
           "tags": [
             "web_annales",
@@ -4214,7 +4214,7 @@
               "correct": true
             }
           ],
-          "explanation": "Bonne reponse: Il y a risque d'abordage.. En regles de barre, determine d abord le type de rencontre puis applique la manœuvre prescrite par le RIPAM.",
+          "explanation": "Bonne reponse: Il y a risque d'abordage.. Regle: RIPAM pratique: privilegie ou non, la manœuvre doit rester franche, precoce et comprehensible. Pourquoi les autres non: Les autres propositions soit inversent la regle, soit decrivent un cas voisin mais different. Piege examen: Piege frequent: confondre une regle generale avec un cas particulier non demande.",
           "difficulty": 2,
           "tags": [
             "web_annales",
@@ -4245,7 +4245,7 @@
               "correct": false
             }
           ],
-          "explanation": "Bonne reponse: B - Le navire non maître de sa manoeuvre.. En regles de barre, determine d abord le type de rencontre puis applique la manœuvre prescrite par le RIPAM.",
+          "explanation": "Bonne reponse: B - Le navire non maître de sa manoeuvre.. Regle: RIPAM pratique: privilegie ou non, la manœuvre doit rester franche, precoce et comprehensible. Pourquoi les autres non: Les autres propositions soit inversent la regle, soit decrivent un cas voisin mais different. Piege examen: Piege frequent: confondre une regle generale avec un cas particulier non demande.",
           "difficulty": 2,
           "tags": [
             "web_annales",
@@ -4281,7 +4281,7 @@
               "correct": true
             }
           ],
-          "explanation": "Bonne reponse: J'effectue une manœuvre.. En regles de barre, determine d abord le type de rencontre puis applique la manœuvre prescrite par le RIPAM.",
+          "explanation": "Bonne reponse: J'effectue une manœuvre.. Regle: RIPAM pratique: privilegie ou non, la manœuvre doit rester franche, precoce et comprehensible. Pourquoi les autres non: Les autres propositions soit inversent la regle, soit decrivent un cas voisin mais different. Piege examen: Piege frequent: confondre une regle generale avec un cas particulier non demande.",
           "difficulty": 2,
           "tags": [
             "web_annales",
@@ -4317,7 +4317,7 @@
               "correct": false
             }
           ],
-          "explanation": "Bonne reponse: non maître de sa manoeuvre.. En regles de barre, determine d abord le type de rencontre puis applique la manœuvre prescrite par le RIPAM.",
+          "explanation": "Bonne reponse: non maître de sa manoeuvre.. Regle: RIPAM pratique: privilegie ou non, la manœuvre doit rester franche, precoce et comprehensible. Pourquoi les autres non: Les autres propositions soit inversent la regle, soit decrivent un cas voisin mais different. Piege examen: Piege frequent: confondre une regle generale avec un cas particulier non demande.",
           "difficulty": 2,
           "tags": [
             "web_annales",
@@ -4353,7 +4353,7 @@
               "correct": true
             }
           ],
-          "explanation": "Bonne reponse: Tout le temps.. En regles de barre, determine d abord le type de rencontre puis applique la manœuvre prescrite par le RIPAM.",
+          "explanation": "Bonne reponse: Tout le temps.. Regle: La veille visuelle et auditive est permanente en navigation. Pourquoi les autres non: Les autres propositions soit inversent la regle, soit decrivent un cas voisin mais different. Piege examen: Elle ne se limite pas a la nuit, a la brume, ou au trafic dense.",
           "difficulty": 2,
           "tags": [
             "web_annales",
@@ -4384,7 +4384,7 @@
               "correct": false
             }
           ],
-          "explanation": "Bonne reponse: Le navire B.. En regles de barre, determine d abord le type de rencontre puis applique la manœuvre prescrite par le RIPAM.",
+          "explanation": "Bonne reponse: Le navire B.. Regle: Est rattrapant le navire situe dans le secteur de 135 deg arriere de l'autre navire. Pourquoi les autres non: Les autres propositions soit inversent la regle, soit decrivent un cas voisin mais different. Piege examen: 90 deg ou 112,5 deg ne couvrent pas toute la definition RIPAM.",
           "difficulty": 2,
           "tags": [
             "web_annales",
@@ -4423,7 +4423,7 @@
               "correct": false
             }
           ],
-          "explanation": "Bonne reponse: Un château d'eau visible de la mer.. La lecture carte repose sur la signification officielle des symboles SHOM et de leur legende. Contexte utile: Sur une carte marine.",
+          "explanation": "Bonne reponse: Un château d'eau visible de la mer.. Regle: Regles de barre: commencer par qualifier la rencontre, puis appliquer la priorite RIPAM correspondante. Pourquoi les autres non: Les autres propositions soit inversent la regle, soit decrivent un cas voisin mais different. Piege examen: Piege frequent: confondre une regle generale avec un cas particulier non demande. Contexte a exploiter: Sur une carte marine.",
           "difficulty": 2,
           "tags": [
             "web_annales",
@@ -4449,7 +4449,7 @@
               "correct": true
             }
           ],
-          "explanation": "Bonne reponse: Non, je vais m'échouer.. Le calcul se fait avec les donnees PM/BM et la repartition 1/12, 2/12, 3/12, 3/12, 2/12, 1/12. Contexte utile: La sonde indiquée sur la carte est de 1 mètre souligné. la hauteur d'eau à la prochaine marée basse sera de 0,6 mètre..",
+          "explanation": "Bonne reponse: Non, je vais m'échouer.. Regle: Regles de barre: commencer par qualifier la rencontre, puis appliquer la priorite RIPAM correspondante. Pourquoi les autres non: Les autres propositions soit inversent la regle, soit decrivent un cas voisin mais different. Piege examen: Piege frequent: confondre une regle generale avec un cas particulier non demande. Contexte a exploiter: La sonde indiquée sur la carte est de 1 mètre souligné. la hauteur d'eau à la prochaine marée basse sera de 0,6 mètre..",
           "difficulty": 2,
           "tags": [
             "web_annales",
@@ -4480,7 +4480,7 @@
               "correct": true
             }
           ],
-          "explanation": "Bonne reponse: Le symbole C.. La lecture carte repose sur la signification officielle des symboles SHOM et de leur legende.",
+          "explanation": "Bonne reponse: Le symbole C.. Regle: Regles de barre: commencer par qualifier la rencontre, puis appliquer la priorite RIPAM correspondante. Pourquoi les autres non: Les autres propositions soit inversent la regle, soit decrivent un cas voisin mais different. Piege examen: Piege frequent: confondre une regle generale avec un cas particulier non demande.",
           "difficulty": 2,
           "tags": [
             "web_annales",
@@ -4506,7 +4506,7 @@
               "correct": true
             }
           ],
-          "explanation": "Bonne reponse: Sur les échelles à gauche et à droite de la carte.. La lecture carte repose sur la signification officielle des symboles SHOM et de leur legende.",
+          "explanation": "Bonne reponse: Sur les échelles à gauche et à droite de la carte.. Regle: Sur carte marine, la minute se lit sur les echelles verticales de latitude (gauche/droite). Pourquoi les autres non: Les autres propositions soit inversent la regle, soit decrivent un cas voisin mais different. Piege examen: Les bords haut/bas servent a la longitude.",
           "difficulty": 2,
           "tags": [
             "web_annales",
@@ -4532,7 +4532,7 @@
               "correct": true
             }
           ],
-          "explanation": "Bonne reponse: Une balise flottante latérale bâbord.. La lecture carte repose sur la signification officielle des symboles SHOM et de leur legende.",
+          "explanation": "Bonne reponse: Une balise flottante latérale bâbord.. Regle: Regles de barre: commencer par qualifier la rencontre, puis appliquer la priorite RIPAM correspondante. Pourquoi les autres non: Les autres propositions soit inversent la regle, soit decrivent un cas voisin mais different. Piege examen: Piege frequent: confondre une regle generale avec un cas particulier non demande.",
           "difficulty": 2,
           "tags": [
             "web_annales",
@@ -4576,7 +4576,7 @@
               "correct": false
             }
           ],
-          "explanation": "Bonne reponse: 8 Beaufort.. En meteo, il faut traduire les termes du bulletin en force/etat de mer concret. Contexte utile: La météo annonce un avis de coup de vent..",
+          "explanation": "Bonne reponse: 8 Beaufort.. Regle: Radio: choisir le bon canal et le bon niveau d urgence avant tout message. Pourquoi les autres non: Les autres choix ignorent les limites de conception et le niveau de vent annonce. Piege examen: Piege frequent: confondre une regle generale avec un cas particulier non demande. Contexte a exploiter: La météo annonce un avis de coup de vent..",
           "difficulty": 2,
           "tags": [
             "web_annales",
@@ -4602,7 +4602,7 @@
               "correct": true
             }
           ],
-          "explanation": "Bonne reponse: La météo va devenir mauvaise.. En meteo, il faut traduire les termes du bulletin en force/etat de mer concret.",
+          "explanation": "Bonne reponse: La météo va devenir mauvaise.. Regle: Radio: choisir le bon canal et le bon niveau d urgence avant tout message. Pourquoi les autres non: Les autres propositions soit inversent la regle, soit decrivent un cas voisin mais different. Piege examen: Piege frequent: confondre une regle generale avec un cas particulier non demande.",
           "difficulty": 2,
           "tags": [
             "web_annales",
@@ -4628,7 +4628,7 @@
               "correct": false
             }
           ],
-          "explanation": "Bonne reponse: Vrai.. En meteo, il faut traduire les termes du bulletin en force/etat de mer concret.",
+          "explanation": "Bonne reponse: Vrai.. Regle: Radio: choisir le bon canal et le bon niveau d urgence avant tout message. Pourquoi les autres non: L'alternative inverse contredit directement la regle ou l'obligation visee par la question. Piege examen: Piege frequent: confondre une regle generale avec un cas particulier non demande.",
           "difficulty": 2,
           "tags": [
             "web_annales",
@@ -4654,7 +4654,7 @@
               "correct": false
             }
           ],
-          "explanation": "Bonne reponse: Oui.. Le calcul se fait avec les donnees PM/BM et la repartition 1/12, 2/12, 3/12, 3/12, 2/12, 1/12.",
+          "explanation": "Bonne reponse: Oui.. Regle: Radio: choisir le bon canal et le bon niveau d urgence avant tout message. Pourquoi les autres non: Les autres propositions soit inversent la regle, soit decrivent un cas voisin mais different. Piege examen: Piege frequent: confondre une regle generale avec un cas particulier non demande.",
           "difficulty": 2,
           "tags": [
             "web_annales",
@@ -4680,7 +4680,7 @@
               "correct": true
             }
           ],
-          "explanation": "Bonne reponse: Faux.. En meteo, il faut traduire les termes du bulletin en force/etat de mer concret.",
+          "explanation": "Bonne reponse: Faux.. Regle: Radio: choisir le bon canal et le bon niveau d urgence avant tout message. Pourquoi les autres non: L'alternative inverse contredit directement la regle ou l'obligation visee par la question. Piege examen: Piege frequent: confondre une regle generale avec un cas particulier non demande.",
           "difficulty": 2,
           "tags": [
             "web_annales",
@@ -4716,7 +4716,7 @@
               "correct": false
             }
           ],
-          "explanation": "Bonne reponse: 7 Beaufort.. En meteo, il faut traduire les termes du bulletin en force/etat de mer concret. Contexte utile: La météo annonce un avis de grand frais..",
+          "explanation": "Bonne reponse: 7 Beaufort.. Regle: Radio: choisir le bon canal et le bon niveau d urgence avant tout message. Pourquoi les autres non: Les autres choix ignorent les limites de conception et le niveau de vent annonce. Piege examen: Piege frequent: confondre une regle generale avec un cas particulier non demande. Contexte a exploiter: La météo annonce un avis de grand frais..",
           "difficulty": 2,
           "tags": [
             "web_annales",
@@ -4742,7 +4742,7 @@
               "correct": false
             }
           ],
-          "explanation": "Bonne reponse: selon la direction d'où vient le vent.. En meteo, il faut traduire les termes du bulletin en force/etat de mer concret.",
+          "explanation": "Bonne reponse: selon la direction d'où vient le vent.. Regle: Radio: choisir le bon canal et le bon niveau d urgence avant tout message. Pourquoi les autres non: Les autres propositions soit inversent la regle, soit decrivent un cas voisin mais different. Piege examen: Piege frequent: confondre une regle generale avec un cas particulier non demande.",
           "difficulty": 2,
           "tags": [
             "web_annales",
@@ -4781,7 +4781,7 @@
               "correct": false
             }
           ],
-          "explanation": "Bonne reponse: 25 watts.. En detresse vocale, le canal 16 est la voie d appel initiale obligatoire.",
+          "explanation": "Bonne reponse: 25 watts.. Regle: En detresse vocale, l appel initial se fait sur le canal 16. Pourquoi les autres non: Les autres choix confondent acteur de coordination, canal d appel ou niveau d urgence. Piege examen: Ne pas confondre canal d appel de detresse et canaux de travail.",
           "difficulty": 2,
           "tags": [
             "web_annales",
@@ -4817,7 +4817,7 @@
               "correct": false
             }
           ],
-          "explanation": "Bonne reponse: simplex.. En VHF, le choix du canal et de la procedure depend du niveau d urgence.",
+          "explanation": "Bonne reponse: simplex.. Regle: Securite equipage/navire: verifier categorie, zone, equipement et responsabilite du chef de bord. Pourquoi les autres non: Les autres choix confondent acteur de coordination, canal d appel ou niveau d urgence. Piege examen: Piege frequent: confondre une regle generale avec un cas particulier non demande.",
           "difficulty": 2,
           "tags": [
             "web_annales",
@@ -4848,7 +4848,7 @@
               "correct": true
             }
           ],
-          "explanation": "Bonne reponse: Non, en aucun cas.. En VHF, le choix du canal et de la procedure depend du niveau d urgence.",
+          "explanation": "Bonne reponse: Non, en aucun cas.. Regle: Securite equipage/navire: verifier categorie, zone, equipement et responsabilite du chef de bord. Pourquoi les autres non: Les autres choix confondent acteur de coordination, canal d appel ou niveau d urgence. Piege examen: Piege frequent: confondre une regle generale avec un cas particulier non demande.",
           "difficulty": 2,
           "tags": [
             "web_annales",
@@ -4884,7 +4884,7 @@
               "correct": false
             }
           ],
-          "explanation": "Bonne reponse: MAYDAY.. En detresse vocale, le canal 16 est la voie d appel initiale obligatoire.",
+          "explanation": "Bonne reponse: MAYDAY.. Regle: En detresse vocale, l appel initial se fait sur le canal 16. Pourquoi les autres non: Les autres choix confondent acteur de coordination, canal d appel ou niveau d urgence. Piege examen: Ne pas confondre canal d appel de detresse et canaux de travail.",
           "difficulty": 2,
           "tags": [
             "web_annales",
@@ -4915,7 +4915,7 @@
               "correct": true
             }
           ],
-          "explanation": "Bonne reponse: Charlie - Oscar - Bravo - Alfa - Lima - Tango. En VHF, le choix du canal et de la procedure depend du niveau d urgence.",
+          "explanation": "Bonne reponse: Charlie - Oscar - Bravo - Alfa - Lima - Tango. Regle: Securite equipage/navire: verifier categorie, zone, equipement et responsabilite du chef de bord. Pourquoi les autres non: Les autres propositions soit inversent la regle, soit decrivent un cas voisin mais different. Piege examen: Piege frequent: confondre une regle generale avec un cas particulier non demande.",
           "difficulty": 2,
           "tags": [
             "web_annales",
@@ -4946,7 +4946,7 @@
               "correct": true
             }
           ],
-          "explanation": "Bonne reponse: J'accuse réception par VHF si le CROSS n'a pas répondu dans les 5 minutes.. En VHF, le choix du canal et de la procedure depend du niveau d urgence.",
+          "explanation": "Bonne reponse: J'accuse réception par VHF si le CROSS n'a pas répondu dans les 5 minutes.. Regle: Securite equipage/navire: verifier categorie, zone, equipement et responsabilite du chef de bord. Pourquoi les autres non: Les autres choix confondent acteur de coordination, canal d appel ou niveau d urgence. Piege examen: Piege frequent: confondre une regle generale avec un cas particulier non demande.",
           "difficulty": 2,
           "tags": [
             "web_annales",
@@ -4977,7 +4977,7 @@
               "correct": false
             }
           ],
-          "explanation": "Bonne reponse: de 20 à 30 milles.. En detresse vocale, le canal 16 est la voie d appel initiale obligatoire.",
+          "explanation": "Bonne reponse: de 20 à 30 milles.. Regle: En detresse vocale, l appel initial se fait sur le canal 16. Pourquoi les autres non: Les autres choix confondent acteur de coordination, canal d appel ou niveau d urgence. Piege examen: Ne pas confondre canal d appel de detresse et canaux de travail.",
           "difficulty": 2,
           "tags": [
             "web_annales",
@@ -5013,7 +5013,7 @@
               "correct": false
             }
           ],
-          "explanation": "Bonne reponse: Canal 70.. En detresse vocale, le canal 16 est la voie d appel initiale obligatoire.",
+          "explanation": "Bonne reponse: Canal 70.. Regle: En detresse vocale, l appel initial se fait sur le canal 16. Pourquoi les autres non: Les autres choix confondent acteur de coordination, canal d appel ou niveau d urgence. Piege examen: Ne pas confondre canal d appel de detresse et canaux de travail.",
           "difficulty": 2,
           "tags": [
             "web_annales",
@@ -5044,7 +5044,7 @@
               "correct": false
             }
           ],
-          "explanation": "Bonne reponse: de veiller en même temps un canal choisi en plus du canal 16.. En detresse vocale, le canal 16 est la voie d appel initiale obligatoire.",
+          "explanation": "Bonne reponse: de veiller en même temps un canal choisi en plus du canal 16.. Regle: En detresse vocale, l appel initial se fait sur le canal 16. Pourquoi les autres non: Les autres choix confondent acteur de coordination, canal d appel ou niveau d urgence. Piege examen: Ne pas confondre canal d appel de detresse et canaux de travail.",
           "difficulty": 2,
           "tags": [
             "web_annales",
@@ -5070,7 +5070,7 @@
               "correct": true
             }
           ],
-          "explanation": "Bonne reponse: Non.. En detresse vocale, le canal 16 est la voie d appel initiale obligatoire. Contexte utile: Naviguant dans la lagune de Venise et ne possédant que le permis mer et pas de CRR..",
+          "explanation": "Bonne reponse: Non.. Regle: En detresse vocale, l appel initial se fait sur le canal 16. Pourquoi les autres non: Les autres choix confondent acteur de coordination, canal d appel ou niveau d urgence. Piege examen: Ne pas confondre canal d appel de detresse et canaux de travail. Contexte a exploiter: Naviguant dans la lagune de Venise et ne possédant que le permis mer et pas de CRR..",
           "difficulty": 2,
           "tags": [
             "web_annales",
@@ -5096,7 +5096,7 @@
               "correct": true
             }
           ],
-          "explanation": "Bonne reponse: Non.. En detresse vocale, le canal 16 est la voie d appel initiale obligatoire. Contexte utile: Vous êtes victime d'une panne moteur..",
+          "explanation": "Bonne reponse: Non.. Regle: En detresse vocale, l appel initial se fait sur le canal 16. Pourquoi les autres non: Les autres propositions soit inversent la regle, soit decrivent un cas voisin mais different. Piege examen: Ne pas confondre canal d appel de detresse et canaux de travail. Contexte a exploiter: Vous êtes victime d'une panne moteur..",
           "difficulty": 2,
           "tags": [
             "web_annales",
@@ -5132,7 +5132,7 @@
               "correct": true
             }
           ],
-          "explanation": "Bonne reponse: Je dégage sur le canal que le CROSS m'aura indiqué.. En VHF, le choix du canal et de la procedure depend du niveau d urgence.",
+          "explanation": "Bonne reponse: Je dégage sur le canal que le CROSS m'aura indiqué.. Regle: La coordination des secours en mer releve du CROSS. Pourquoi les autres non: Les autres choix confondent acteur de coordination, canal d appel ou niveau d urgence. Piege examen: La SNSM intervient en sauvetage mais ne coordonne pas les operations.",
           "difficulty": 2,
           "tags": [
             "web_annales",
@@ -5163,7 +5163,7 @@
               "correct": false
             }
           ],
-          "explanation": "Bonne reponse: Je règle la puissance sur 1 watt.. En detresse vocale, le canal 16 est la voie d appel initiale obligatoire.",
+          "explanation": "Bonne reponse: Je règle la puissance sur 1 watt.. Regle: En detresse vocale, l appel initial se fait sur le canal 16. Pourquoi les autres non: Les autres choix confondent acteur de coordination, canal d appel ou niveau d urgence. Piege examen: Ne pas confondre canal d appel de detresse et canaux de travail.",
           "difficulty": 2,
           "tags": [
             "web_annales",
@@ -5194,7 +5194,7 @@
               "correct": false
             }
           ],
-          "explanation": "Bonne reponse: Le numéro d'identification d'une station radio.. En VHF, le choix du canal et de la procedure depend du niveau d urgence. Contexte utile: M M S I.",
+          "explanation": "Bonne reponse: Le numéro d'identification d'une station radio.. Regle: Securite equipage/navire: verifier categorie, zone, equipement et responsabilite du chef de bord. Pourquoi les autres non: Les autres propositions soit inversent la regle, soit decrivent un cas voisin mais different. Piege examen: Piege frequent: confondre une regle generale avec un cas particulier non demande. Contexte a exploiter: M M S I.",
           "difficulty": 2,
           "tags": [
             "web_annales",
@@ -5220,7 +5220,7 @@
               "correct": false
             }
           ],
-          "explanation": "Bonne reponse: Vrai.. En detresse vocale, le canal 16 est la voie d appel initiale obligatoire.",
+          "explanation": "Bonne reponse: Vrai.. Regle: En detresse vocale, l appel initial se fait sur le canal 16. Pourquoi les autres non: L'alternative inverse contredit directement la regle ou l'obligation visee par la question. Piege examen: Ne pas confondre canal d appel de detresse et canaux de travail.",
           "difficulty": 2,
           "tags": [
             "web_annales",
@@ -5251,7 +5251,7 @@
               "correct": false
             }
           ],
-          "explanation": "Bonne reponse: Non, il est interdit d'utiliser la VHF à terre.. En detresse vocale, le canal 16 est la voie d appel initiale obligatoire. Contexte utile: En voiture, vous êtes à environ 15 km du port.",
+          "explanation": "Bonne reponse: Non, il est interdit d'utiliser la VHF à terre.. Regle: En detresse vocale, l appel initial se fait sur le canal 16. Pourquoi les autres non: Les autres choix confondent acteur de coordination, canal d appel ou niveau d urgence. Piege examen: Ne pas confondre canal d appel de detresse et canaux de travail. Contexte a exploiter: En voiture, vous êtes à environ 15 km du port.",
           "difficulty": 2,
           "tags": [
             "web_annales",
@@ -5277,7 +5277,7 @@
               "correct": false
             }
           ],
-          "explanation": "Bonne reponse: Vrai.. En detresse vocale, le canal 16 est la voie d appel initiale obligatoire.",
+          "explanation": "Bonne reponse: Vrai.. Regle: En detresse vocale, l appel initial se fait sur le canal 16. Pourquoi les autres non: L'alternative inverse contredit directement la regle ou l'obligation visee par la question. Piege examen: Ne pas confondre canal d appel de detresse et canaux de travail.",
           "difficulty": 2,
           "tags": [
             "web_annales",
@@ -5308,7 +5308,7 @@
               "correct": true
             }
           ],
-          "explanation": "Bonne reponse: SÉCURITÉ.. En VHF, le choix du canal et de la procedure depend du niveau d urgence. Contexte utile: De nuit, les feux d'une bouée cardinale sont en panne (la carte marine indiquant que la bouée est lumineuse)..",
+          "explanation": "Bonne reponse: SÉCURITÉ.. Regle: La coordination des secours en mer releve du CROSS. Pourquoi les autres non: Les autres choix confondent acteur de coordination, canal d appel ou niveau d urgence. Piege examen: La SNSM intervient en sauvetage mais ne coordonne pas les operations. Contexte a exploiter: De nuit, les feux d'une bouée cardinale sont en panne (la carte marine indiquant que la bouée est lumineuse)..",
           "difficulty": 2,
           "tags": [
             "web_annales",
@@ -5339,7 +5339,7 @@
               "correct": false
             }
           ],
-          "explanation": "Bonne reponse: La puissance d'émission.. En detresse vocale, le canal 16 est la voie d appel initiale obligatoire. Contexte utile: Vous allez lancer un appel de détresse..",
+          "explanation": "Bonne reponse: La puissance d'émission.. Regle: En detresse vocale, l appel initial se fait sur le canal 16. Pourquoi les autres non: Les autres choix confondent acteur de coordination, canal d appel ou niveau d urgence. Piege examen: Ne pas confondre canal d appel de detresse et canaux de travail. Contexte a exploiter: Vous allez lancer un appel de détresse..",
           "difficulty": 2,
           "tags": [
             "web_annales",
@@ -5370,7 +5370,7 @@
               "correct": false
             }
           ],
-          "explanation": "Bonne reponse: je dois obtenir une licence auprès de l'ANFR.. En VHF, le choix du canal et de la procedure depend du niveau d urgence. Contexte utile: Vous venez d'acheter un appareil radioélectrique..",
+          "explanation": "Bonne reponse: je dois obtenir une licence auprès de l'ANFR.. Regle: Securite equipage/navire: verifier categorie, zone, equipement et responsabilite du chef de bord. Pourquoi les autres non: Les autres propositions soit inversent la regle, soit decrivent un cas voisin mais different. Piege examen: Piege frequent: confondre une regle generale avec un cas particulier non demande. Contexte a exploiter: Vous venez d'acheter un appareil radioélectrique..",
           "difficulty": 2,
           "tags": [
             "web_annales",
@@ -5406,7 +5406,7 @@
               "correct": false
             }
           ],
-          "explanation": "Bonne reponse: 12 milles.. En detresse vocale, le canal 16 est la voie d appel initiale obligatoire. Contexte utile: Depuis le 1er mars 2011, avec un permis plaisance.",
+          "explanation": "Bonne reponse: 12 milles.. Regle: En detresse vocale, l appel initial se fait sur le canal 16. Pourquoi les autres non: Les autres choix confondent acteur de coordination, canal d appel ou niveau d urgence. Piege examen: Ne pas confondre canal d appel de detresse et canaux de travail. Contexte a exploiter: Depuis le 1er mars 2011, avec un permis plaisance.",
           "difficulty": 2,
           "tags": [
             "web_annales",
@@ -5437,7 +5437,7 @@
               "correct": true
             }
           ],
-          "explanation": "Bonne reponse: dans tous les cas.. En detresse vocale, le canal 16 est la voie d appel initiale obligatoire. Contexte utile: Pour une VHF portative ou fixe.",
+          "explanation": "Bonne reponse: dans tous les cas.. Regle: En detresse vocale, l appel initial se fait sur le canal 16. Pourquoi les autres non: Les autres choix confondent acteur de coordination, canal d appel ou niveau d urgence. Piege examen: Ne pas confondre canal d appel de detresse et canaux de travail. Contexte a exploiter: Pour une VHF portative ou fixe.",
           "difficulty": 2,
           "tags": [
             "web_annales",
@@ -5468,7 +5468,7 @@
               "correct": false
             }
           ],
-          "explanation": "Bonne reponse: PAN PAN.. En VHF, le choix du canal et de la procedure depend du niveau d urgence.",
+          "explanation": "Bonne reponse: PAN PAN.. Regle: Securite equipage/navire: verifier categorie, zone, equipement et responsabilite du chef de bord. Pourquoi les autres non: Les autres propositions soit inversent la regle, soit decrivent un cas voisin mais different. Piege examen: Piege frequent: confondre une regle generale avec un cas particulier non demande.",
           "difficulty": 2,
           "tags": [
             "web_annales",
@@ -5504,7 +5504,7 @@
               "correct": false
             }
           ],
-          "explanation": "Bonne reponse: le numéro MMSI du navire.. En detresse vocale, le canal 16 est la voie d appel initiale obligatoire. Contexte utile: Lors de l'envoi d'une alerte de détresse en ASN.",
+          "explanation": "Bonne reponse: le numéro MMSI du navire.. Regle: En detresse vocale, l appel initial se fait sur le canal 16. Pourquoi les autres non: Les autres choix confondent acteur de coordination, canal d appel ou niveau d urgence. Piege examen: Ne pas confondre canal d appel de detresse et canaux de travail. Contexte a exploiter: Lors de l'envoi d'une alerte de détresse en ASN.",
           "difficulty": 2,
           "tags": [
             "web_annales",
@@ -5535,7 +5535,7 @@
               "correct": false
             }
           ],
-          "explanation": "Bonne reponse: Mike - Alfa - Romeo - India - Oscar. En VHF, le choix du canal et de la procedure depend du niveau d urgence.",
+          "explanation": "Bonne reponse: Mike - Alfa - Romeo - India - Oscar. Regle: Securite equipage/navire: verifier categorie, zone, equipement et responsabilite du chef de bord. Pourquoi les autres non: Les autres propositions soit inversent la regle, soit decrivent un cas voisin mais different. Piege examen: Piege frequent: confondre une regle generale avec un cas particulier non demande.",
           "difficulty": 2,
           "tags": [
             "web_annales",
@@ -5566,7 +5566,7 @@
               "correct": false
             }
           ],
-          "explanation": "Bonne reponse: Je sélectionne le canal 16, j'écoute pour savoir si le canal est libre et si oui, j'appelle l'autre navire.. En VHF, le choix du canal et de la procedure depend du niveau d urgence. Contexte utile: Vous souhaitez contacter un autre navire..",
+          "explanation": "Bonne reponse: Je sélectionne le canal 16, j'écoute pour savoir si le canal est libre et si oui, j'appelle l'autre navire.. Regle: Securite equipage/navire: verifier categorie, zone, equipement et responsabilite du chef de bord. Pourquoi les autres non: Les autres propositions soit inversent la regle, soit decrivent un cas voisin mais different. Piege examen: Piege frequent: confondre une regle generale avec un cas particulier non demande. Contexte a exploiter: Vous souhaitez contacter un autre navire..",
           "difficulty": 2,
           "tags": [
             "web_annales",
@@ -5592,7 +5592,7 @@
               "correct": false
             }
           ],
-          "explanation": "Bonne reponse: Oui.. En detresse vocale, le canal 16 est la voie d appel initiale obligatoire.",
+          "explanation": "Bonne reponse: Oui.. Regle: En detresse vocale, l appel initial se fait sur le canal 16. Pourquoi les autres non: Les autres choix confondent acteur de coordination, canal d appel ou niveau d urgence. Piege examen: Ne pas confondre canal d appel de detresse et canaux de travail.",
           "difficulty": 2,
           "tags": [
             "web_annales",
@@ -5623,7 +5623,7 @@
               "correct": false
             }
           ],
-          "explanation": "Bonne reponse: Système Mondial de Détresse et Sécurité en Mer.. En VHF, le choix du canal et de la procedure depend du niveau d urgence. Contexte utile: S M D S M.",
+          "explanation": "Bonne reponse: Système Mondial de Détresse et Sécurité en Mer.. Regle: Securite equipage/navire: verifier categorie, zone, equipement et responsabilite du chef de bord. Pourquoi les autres non: Les autres propositions soit inversent la regle, soit decrivent un cas voisin mais different. Piege examen: Piege frequent: confondre une regle generale avec un cas particulier non demande. Contexte a exploiter: S M D S M.",
           "difficulty": 2,
           "tags": [
             "web_annales",
@@ -5654,7 +5654,7 @@
               "correct": true
             }
           ],
-          "explanation": "Bonne reponse: l'antenne est placée beaucoup plus haut (en haut du mât).. En detresse vocale, le canal 16 est la voie d appel initiale obligatoire.",
+          "explanation": "Bonne reponse: l'antenne est placée beaucoup plus haut (en haut du mât).. Regle: En detresse vocale, l appel initial se fait sur le canal 16. Pourquoi les autres non: Les autres choix confondent acteur de coordination, canal d appel ou niveau d urgence. Piege examen: Ne pas confondre canal d appel de detresse et canaux de travail.",
           "difficulty": 2,
           "tags": [
             "web_annales",
@@ -5685,7 +5685,7 @@
               "correct": false
             }
           ],
-          "explanation": "Bonne reponse: PAN PAN.. En detresse vocale, le canal 16 est la voie d appel initiale obligatoire. Contexte utile: En panne d'essence, vous dérivez inexorablement vers le large.",
+          "explanation": "Bonne reponse: PAN PAN.. Regle: En detresse vocale, l appel initial se fait sur le canal 16. Pourquoi les autres non: Les autres choix confondent acteur de coordination, canal d appel ou niveau d urgence. Piege examen: Ne pas confondre canal d appel de detresse et canaux de travail. Contexte a exploiter: En panne d'essence, vous dérivez inexorablement vers le large.",
           "difficulty": 2,
           "tags": [
             "web_annales",
@@ -5721,7 +5721,7 @@
               "correct": false
             }
           ],
-          "explanation": "Bonne reponse: PAN PAN.. En VHF, le choix du canal et de la procedure depend du niveau d urgence.",
+          "explanation": "Bonne reponse: PAN PAN.. Regle: Securite equipage/navire: verifier categorie, zone, equipement et responsabilite du chef de bord. Pourquoi les autres non: Les autres propositions soit inversent la regle, soit decrivent un cas voisin mais different. Piege examen: Piege frequent: confondre une regle generale avec un cas particulier non demande.",
           "difficulty": 2,
           "tags": [
             "web_annales",
@@ -5757,7 +5757,7 @@
               "correct": false
             }
           ],
-          "explanation": "Bonne reponse: 16.. En detresse vocale, le canal 16 est la voie d appel initiale obligatoire.",
+          "explanation": "Bonne reponse: 16.. Regle: En detresse vocale, l appel initial se fait sur le canal 16. Pourquoi les autres non: Les autres choix confondent acteur de coordination, canal d appel ou niveau d urgence. Piege examen: Ne pas confondre canal d appel de detresse et canaux de travail.",
           "difficulty": 2,
           "tags": [
             "web_annales",
@@ -5793,7 +5793,7 @@
               "correct": false
             }
           ],
-          "explanation": "Bonne reponse: LISTING.. En VHF, le choix du canal et de la procedure depend du niveau d urgence.",
+          "explanation": "Bonne reponse: LISTING.. Regle: Securite equipage/navire: verifier categorie, zone, equipement et responsabilite du chef de bord. Pourquoi les autres non: Les autres choix confondent acteur de coordination, canal d appel ou niveau d urgence. Piege examen: Piege frequent: confondre une regle generale avec un cas particulier non demande.",
           "difficulty": 2,
           "tags": [
             "web_annales",
@@ -5824,7 +5824,7 @@
               "correct": false
             }
           ],
-          "explanation": "Bonne reponse: De 5 à 8 heures.. En detresse vocale, le canal 16 est la voie d appel initiale obligatoire. Contexte utile: Avec une seule batterie et en conditions normales d'utilisation..",
+          "explanation": "Bonne reponse: De 5 à 8 heures.. Regle: En detresse vocale, l appel initial se fait sur le canal 16. Pourquoi les autres non: Les autres choix confondent acteur de coordination, canal d appel ou niveau d urgence. Piege examen: Ne pas confondre canal d appel de detresse et canaux de travail. Contexte a exploiter: Avec une seule batterie et en conditions normales d'utilisation..",
           "difficulty": 2,
           "tags": [
             "web_annales",
@@ -5855,7 +5855,7 @@
               "correct": true
             }
           ],
-          "explanation": "Bonne reponse: d'enclencher l'émission pour pouvoir parler.. En VHF, le choix du canal et de la procedure depend du niveau d urgence.",
+          "explanation": "Bonne reponse: d'enclencher l'émission pour pouvoir parler.. Regle: Securite equipage/navire: verifier categorie, zone, equipement et responsabilite du chef de bord. Pourquoi les autres non: Les autres propositions soit inversent la regle, soit decrivent un cas voisin mais different. Piege examen: Piege frequent: confondre une regle generale avec un cas particulier non demande.",
           "difficulty": 2,
           "tags": [
             "web_annales",
@@ -5886,7 +5886,7 @@
               "correct": true
             }
           ],
-          "explanation": "Bonne reponse: Non.. En VHF, le choix du canal et de la procedure depend du niveau d urgence.",
+          "explanation": "Bonne reponse: Non.. Regle: Securite equipage/navire: verifier categorie, zone, equipement et responsabilite du chef de bord. Pourquoi les autres non: Les autres propositions soit inversent la regle, soit decrivent un cas voisin mais different. Piege examen: Piege frequent: confondre une regle generale avec un cas particulier non demande.",
           "difficulty": 2,
           "tags": [
             "web_annales",
@@ -5912,7 +5912,7 @@
               "correct": true
             }
           ],
-          "explanation": "Bonne reponse: Non, il faut parler en alternance.. En VHF, le choix du canal et de la procedure depend du niveau d urgence.",
+          "explanation": "Bonne reponse: Non, il faut parler en alternance.. Regle: Securite equipage/navire: verifier categorie, zone, equipement et responsabilite du chef de bord. Pourquoi les autres non: Les autres choix confondent acteur de coordination, canal d appel ou niveau d urgence. Piege examen: Piege frequent: confondre une regle generale avec un cas particulier non demande.",
           "difficulty": 2,
           "tags": [
             "web_annales",
@@ -5943,7 +5943,7 @@
               "correct": true
             }
           ],
-          "explanation": "Bonne reponse: je sors des eaux territoriales françaises.. En detresse vocale, le canal 16 est la voie d appel initiale obligatoire. Contexte utile: Vous disposez d'une VHF à bord..",
+          "explanation": "Bonne reponse: je sors des eaux territoriales françaises.. Regle: En detresse vocale, l appel initial se fait sur le canal 16. Pourquoi les autres non: Les autres choix confondent acteur de coordination, canal d appel ou niveau d urgence. Piege examen: Ne pas confondre canal d appel de detresse et canaux de travail. Contexte a exploiter: Vous disposez d'une VHF à bord..",
           "difficulty": 2,
           "tags": [
             "web_annales",
@@ -5979,7 +5979,7 @@
               "correct": false
             }
           ],
-          "explanation": "Bonne reponse: Aux appels par ASN de détresse, sécurité et aux CROSS.. En VHF, le choix du canal et de la procedure depend du niveau d urgence.",
+          "explanation": "Bonne reponse: Aux appels par ASN de détresse, sécurité et aux CROSS.. Regle: Securite equipage/navire: verifier categorie, zone, equipement et responsabilite du chef de bord. Pourquoi les autres non: Les autres choix confondent acteur de coordination, canal d appel ou niveau d urgence. Piege examen: Piege frequent: confondre une regle generale avec un cas particulier non demande.",
           "difficulty": 2,
           "tags": [
             "web_annales",
@@ -6013,7 +6013,7 @@
               "correct": false
             }
           ],
-          "explanation": "Bonne reponse: Vrai, pour tout l'équipage.. En securite, retiens les limites reglementaires de categorie de navire, meteo et equipement embarque.",
+          "explanation": "Bonne reponse: Vrai, pour tout l'équipage.. Regle: Meteo: convertir les termes du bulletin (force/avis) en consequences navigation concretes. Pourquoi les autres non: L'alternative inverse contredit directement la regle ou l'obligation visee par la question. Piege examen: Piege frequent: confondre une regle generale avec un cas particulier non demande.",
           "difficulty": 2,
           "tags": [
             "web_annales",
@@ -6044,7 +6044,7 @@
               "correct": false
             }
           ],
-          "explanation": "Bonne reponse: jusqu'à 2 m.. En securite, retiens les limites reglementaires de categorie de navire, meteo et equipement embarque. Contexte utile: Catégorie de conception \"C\".",
+          "explanation": "Bonne reponse: jusqu'à 2 m.. Regle: Meteo: convertir les termes du bulletin (force/avis) en consequences navigation concretes. Pourquoi les autres non: Les autres choix ignorent les limites de conception et le niveau de vent annonce. Piege examen: Piege frequent: confondre une regle generale avec un cas particulier non demande. Contexte a exploiter: Catégorie de conception \"C\".",
           "difficulty": 2,
           "tags": [
             "web_annales",
@@ -6080,7 +6080,7 @@
               "correct": false
             }
           ],
-          "explanation": "Bonne reponse: 2 milles.. En securite, retiens les limites reglementaires de categorie de navire, meteo et equipement embarque.",
+          "explanation": "Bonne reponse: 2 milles.. Regle: Meteo: convertir les termes du bulletin (force/avis) en consequences navigation concretes. Pourquoi les autres non: Les autres propositions soit inversent la regle, soit decrivent un cas voisin mais different. Piege examen: Piege frequent: confondre une regle generale avec un cas particulier non demande.",
           "difficulty": 2,
           "tags": [
             "web_annales",
@@ -6111,7 +6111,7 @@
               "correct": false
             }
           ],
-          "explanation": "Bonne reponse: d'appeler le répondeur météo marine.. En securite, retiens les limites reglementaires de categorie de navire, meteo et equipement embarque. Contexte utile: 08 99 71 08 08.",
+          "explanation": "Bonne reponse: d'appeler le répondeur météo marine.. Regle: Meteo: convertir les termes du bulletin (force/avis) en consequences navigation concretes. Pourquoi les autres non: Les autres propositions soit inversent la regle, soit decrivent un cas voisin mais different. Piege examen: Piege frequent: confondre une regle generale avec un cas particulier non demande. Contexte a exploiter: 08 99 71 08 08.",
           "difficulty": 2,
           "tags": [
             "web_annales",
@@ -6142,7 +6142,7 @@
               "correct": false
             }
           ],
-          "explanation": "Bonne reponse: 16 ans.. En reglementation, la bonne reponse depend de l obligation legale du chef de bord.",
+          "explanation": "Bonne reponse: 16 ans.. Regle: Reglementation plaisance: la bonne reponse est celle qui respecte l obligation legale explicite. Pourquoi les autres non: Les autres propositions soit inversent la regle, soit decrivent un cas voisin mais different. Piege examen: Piege frequent: confondre une regle generale avec un cas particulier non demande.",
           "difficulty": 2,
           "tags": [
             "web_annales",
@@ -6173,7 +6173,7 @@
               "correct": true
             }
           ],
-          "explanation": "Bonne reponse: De 100 à 500 ans.. En environnement, la conduite correcte est celle qui limite le risque pour les personnes et le milieu.",
+          "explanation": "Bonne reponse: De 100 à 500 ans.. Regle: Environnement: retenir la conduite limitant le risque pour les personnes et le milieu. Pourquoi les autres non: Les autres propositions soit inversent la regle, soit decrivent un cas voisin mais different. Piege examen: Piege frequent: confondre une regle generale avec un cas particulier non demande.",
           "difficulty": 2,
           "tags": [
             "web_annales",
@@ -6209,7 +6209,7 @@
               "correct": false
             }
           ],
-          "explanation": "Bonne reponse: 100 N.. En securite, retiens les limites reglementaires de categorie de navire, meteo et equipement embarque. Contexte utile: Vous pilotez un véhicule nautique à moteur à 4 milles d'un abri..",
+          "explanation": "Bonne reponse: 100 N.. Regle: Meteo: convertir les termes du bulletin (force/avis) en consequences navigation concretes. Pourquoi les autres non: Les autres propositions soit inversent la regle, soit decrivent un cas voisin mais different. Piege examen: Piege frequent: confondre une regle generale avec un cas particulier non demande. Contexte a exploiter: Vous pilotez un véhicule nautique à moteur à 4 milles d'un abri..",
           "difficulty": 2,
           "tags": [
             "web_annales",
@@ -6240,7 +6240,7 @@
               "correct": true
             }
           ],
-          "explanation": "Bonne reponse: quelle que soit la zone de navigation.. En securite, retiens les limites reglementaires de categorie de navire, meteo et equipement embarque.",
+          "explanation": "Bonne reponse: quelle que soit la zone de navigation.. Regle: Meteo: convertir les termes du bulletin (force/avis) en consequences navigation concretes. Pourquoi les autres non: Les autres propositions soit inversent la regle, soit decrivent un cas voisin mais different. Piege examen: Piege frequent: confondre une regle generale avec un cas particulier non demande.",
           "difficulty": 2,
           "tags": [
             "web_annales",
@@ -6266,7 +6266,7 @@
               "correct": true
             }
           ],
-          "explanation": "Bonne reponse: j'utilise un entonnoir pour éviter les débordements.. En environnement, la conduite correcte est celle qui limite le risque pour les personnes et le milieu.",
+          "explanation": "Bonne reponse: j'utilise un entonnoir pour éviter les débordements.. Regle: Environnement: retenir la conduite limitant le risque pour les personnes et le milieu. Pourquoi les autres non: Les autres propositions soit inversent la regle, soit decrivent un cas voisin mais different. Piege examen: Piege frequent: confondre une regle generale avec un cas particulier non demande.",
           "difficulty": 2,
           "tags": [
             "web_annales",
@@ -6292,7 +6292,7 @@
               "correct": true
             }
           ],
-          "explanation": "Bonne reponse: je ne dois pas sortir en mer.. En securite, retiens les limites reglementaires de categorie de navire, meteo et equipement embarque.",
+          "explanation": "Bonne reponse: je ne dois pas sortir en mer.. Regle: Meteo: convertir les termes du bulletin (force/avis) en consequences navigation concretes. Pourquoi les autres non: Les autres choix ignorent les limites de conception et le niveau de vent annonce. Piege examen: Piege frequent: confondre une regle generale avec un cas particulier non demande.",
           "difficulty": 2,
           "tags": [
             "web_annales",
@@ -6318,7 +6318,7 @@
               "correct": true
             }
           ],
-          "explanation": "Bonne reponse: Non, c'est celui qui possède le permis qui est le chef de bord.. En reglementation, la bonne reponse depend de l obligation legale du chef de bord.",
+          "explanation": "Bonne reponse: Non, c'est celui qui possède le permis qui est le chef de bord.. Regle: Reglementation plaisance: la bonne reponse est celle qui respecte l obligation legale explicite. Pourquoi les autres non: Les autres propositions soit inversent la regle, soit decrivent un cas voisin mais different. Piege examen: Piege frequent: confondre une regle generale avec un cas particulier non demande.",
           "difficulty": 2,
           "tags": [
             "web_annales",
@@ -6344,7 +6344,7 @@
               "correct": false
             }
           ],
-          "explanation": "Bonne reponse: le compas de route peut s'en trouver perturbé.. En securite, retiens les limites reglementaires de categorie de navire, meteo et equipement embarque.",
+          "explanation": "Bonne reponse: le compas de route peut s'en trouver perturbé.. Regle: Meteo: convertir les termes du bulletin (force/avis) en consequences navigation concretes. Pourquoi les autres non: Les autres propositions soit inversent la regle, soit decrivent un cas voisin mais different. Piege examen: Piege frequent: confondre une regle generale avec un cas particulier non demande.",
           "difficulty": 2,
           "tags": [
             "web_annales",
@@ -6375,7 +6375,7 @@
               "correct": false
             }
           ],
-          "explanation": "Bonne reponse: 2 milles d'un abri au maximum.. En reglementation, la bonne reponse depend de l obligation legale du chef de bord.",
+          "explanation": "Bonne reponse: 2 milles d'un abri au maximum.. Regle: Reglementation plaisance: la bonne reponse est celle qui respecte l obligation legale explicite. Pourquoi les autres non: Les autres propositions soit inversent la regle, soit decrivent un cas voisin mais different. Piege examen: Piege frequent: confondre une regle generale avec un cas particulier non demande.",
           "difficulty": 2,
           "tags": [
             "web_annales",
@@ -6406,7 +6406,7 @@
               "correct": false
             }
           ],
-          "explanation": "Bonne reponse: Oui.. En securite, retiens les limites reglementaires de categorie de navire, meteo et equipement embarque.",
+          "explanation": "Bonne reponse: Oui.. Regle: Meteo: convertir les termes du bulletin (force/avis) en consequences navigation concretes. Pourquoi les autres non: Les autres propositions soit inversent la regle, soit decrivent un cas voisin mais different. Piege examen: Piege frequent: confondre une regle generale avec un cas particulier non demande.",
           "difficulty": 2,
           "tags": [
             "web_annales",
@@ -6442,7 +6442,7 @@
               "correct": false
             }
           ],
-          "explanation": "Bonne reponse: 6 cv.. En securite, retiens les limites reglementaires de categorie de navire, meteo et equipement embarque.",
+          "explanation": "Bonne reponse: 6 cv.. Regle: Le coupe-circuit est obligatoire sur VNM a partir de 6 cv. Pourquoi les autres non: Les autres propositions soit inversent la regle, soit decrivent un cas voisin mais different. Piege examen: Ne pas attendre des puissances superieures: l'obligation commence des 6 cv.",
           "difficulty": 2,
           "tags": [
             "web_annales",
@@ -6478,7 +6478,7 @@
               "correct": true
             }
           ],
-          "explanation": "Bonne reponse: 6 milles.. En securite, retiens les limites reglementaires de categorie de navire, meteo et equipement embarque.",
+          "explanation": "Bonne reponse: 6 milles.. Regle: Meteo: convertir les termes du bulletin (force/avis) en consequences navigation concretes. Pourquoi les autres non: Les autres propositions soit inversent la regle, soit decrivent un cas voisin mais different. Piege examen: Piege frequent: confondre une regle generale avec un cas particulier non demande.",
           "difficulty": 2,
           "tags": [
             "web_annales",
@@ -6509,7 +6509,7 @@
               "correct": false
             }
           ],
-          "explanation": "Bonne reponse: à partir de la zone de navigation côtière.. En securite, retiens les limites reglementaires de categorie de navire, meteo et equipement embarque.",
+          "explanation": "Bonne reponse: à partir de la zone de navigation côtière.. Regle: Meteo: convertir les termes du bulletin (force/avis) en consequences navigation concretes. Pourquoi les autres non: Les autres propositions soit inversent la regle, soit decrivent un cas voisin mais different. Piege examen: Piege frequent: confondre une regle generale avec un cas particulier non demande.",
           "difficulty": 2,
           "tags": [
             "web_annales",
@@ -6535,7 +6535,7 @@
               "correct": false
             }
           ],
-          "explanation": "Bonne reponse: Vrai.. En environnement, la conduite correcte est celle qui limite le risque pour les personnes et le milieu.",
+          "explanation": "Bonne reponse: Vrai.. Regle: Environnement: retenir la conduite limitant le risque pour les personnes et le milieu. Pourquoi les autres non: L'alternative inverse contredit directement la regle ou l'obligation visee par la question. Piege examen: Piege frequent: confondre une regle generale avec un cas particulier non demande.",
           "difficulty": 2,
           "tags": [
             "web_annales",
@@ -6566,7 +6566,7 @@
               "correct": true
             }
           ],
-          "explanation": "Bonne reponse: Demande d'assistance immédiate à tous les navires.. En securite, retiens les limites reglementaires de categorie de navire, meteo et equipement embarque.",
+          "explanation": "Bonne reponse: Demande d'assistance immédiate à tous les navires.. Regle: Meteo: convertir les termes du bulletin (force/avis) en consequences navigation concretes. Pourquoi les autres non: Les autres propositions soit inversent la regle, soit decrivent un cas voisin mais different. Piege examen: Piege frequent: confondre une regle generale avec un cas particulier non demande.",
           "difficulty": 2,
           "tags": [
             "web_annales",
@@ -6592,7 +6592,7 @@
               "correct": false
             }
           ],
-          "explanation": "Bonne reponse: Oui.. En reglementation, la bonne reponse depend de l obligation legale du chef de bord.",
+          "explanation": "Bonne reponse: Oui.. Regle: Reglementation plaisance: la bonne reponse est celle qui respecte l obligation legale explicite. Pourquoi les autres non: Les autres propositions soit inversent la regle, soit decrivent un cas voisin mais different. Piege examen: Piege frequent: confondre une regle generale avec un cas particulier non demande.",
           "difficulty": 2,
           "tags": [
             "web_annales",
@@ -6618,7 +6618,7 @@
               "correct": false
             }
           ],
-          "explanation": "Bonne reponse: Oui.. En securite, retiens les limites reglementaires de categorie de navire, meteo et equipement embarque.",
+          "explanation": "Bonne reponse: Oui.. Regle: La categorie C ne couvre pas des conditions de mer correspondant a force 8. Pourquoi les autres non: Les autres choix ignorent les limites de conception et le niveau de vent annonce. Piege examen: Toujours confronter meteo annoncee et limites de conception du navire.",
           "difficulty": 2,
           "tags": [
             "web_annales",
@@ -6649,7 +6649,7 @@
               "correct": false
             }
           ],
-          "explanation": "Bonne reponse: Le CROSS.. En securite, retiens les limites reglementaires de categorie de navire, meteo et equipement embarque.",
+          "explanation": "Bonne reponse: Le CROSS.. Regle: La coordination des secours en mer releve du CROSS. Pourquoi les autres non: Les autres propositions soit inversent la regle, soit decrivent un cas voisin mais different. Piege examen: La SNSM intervient en sauvetage mais ne coordonne pas les operations.",
           "difficulty": 2,
           "tags": [
             "web_annales",
@@ -6680,7 +6680,7 @@
               "correct": false
             }
           ],
-          "explanation": "Bonne reponse: Les véhicules nautiques à moteur capables d'emporter une seule personne.. En securite, retiens les limites reglementaires de categorie de navire, meteo et equipement embarque.",
+          "explanation": "Bonne reponse: Les véhicules nautiques à moteur capables d'emporter une seule personne.. Regle: La zone basique (2 milles) concerne des vehicules nautiques a moteur mono-place. Pourquoi les autres non: Les autres propositions soit inversent la regle, soit decrivent un cas voisin mais different. Piege examen: Ne pas extrapoler aux navires a moteur classiques.",
           "difficulty": 2,
           "tags": [
             "web_annales",
@@ -6706,7 +6706,7 @@
               "correct": false
             }
           ],
-          "explanation": "Bonne reponse: Oui.. En securite, retiens les limites reglementaires de categorie de navire, meteo et equipement embarque. Contexte utile: Avant d'effectuer une croisière,.",
+          "explanation": "Bonne reponse: Oui.. Regle: Meteo: convertir les termes du bulletin (force/avis) en consequences navigation concretes. Pourquoi les autres non: Les autres propositions soit inversent la regle, soit decrivent un cas voisin mais different. Piege examen: Piege frequent: confondre une regle generale avec un cas particulier non demande. Contexte a exploiter: Avant d'effectuer une croisière,.",
           "difficulty": 2,
           "tags": [
             "web_annales",
@@ -6732,7 +6732,7 @@
               "correct": true
             }
           ],
-          "explanation": "Bonne reponse: Non.. En securite, retiens les limites reglementaires de categorie de navire, meteo et equipement embarque. Contexte utile: Pour un navire à moteur, en zone côtière..",
+          "explanation": "Bonne reponse: Non.. Regle: Meteo: convertir les termes du bulletin (force/avis) en consequences navigation concretes. Pourquoi les autres non: Les autres propositions soit inversent la regle, soit decrivent un cas voisin mais different. Piege examen: Piege frequent: confondre une regle generale avec un cas particulier non demande. Contexte a exploiter: Pour un navire à moteur, en zone côtière..",
           "difficulty": 2,
           "tags": [
             "web_annales",
@@ -6763,7 +6763,7 @@
               "correct": true
             }
           ],
-          "explanation": "Bonne reponse: S'il est titulaire du brevet d'état de moniteur de ski nautique.. En reglementation, la bonne reponse depend de l obligation legale du chef de bord.",
+          "explanation": "Bonne reponse: S'il est titulaire du brevet d'état de moniteur de ski nautique.. Regle: Reglementation plaisance: la bonne reponse est celle qui respecte l obligation legale explicite. Pourquoi les autres non: Les autres propositions soit inversent la regle, soit decrivent un cas voisin mais different. Piege examen: Piege frequent: confondre une regle generale avec un cas particulier non demande.",
           "difficulty": 2,
           "tags": [
             "web_annales",
@@ -6794,7 +6794,7 @@
               "correct": false
             }
           ],
-          "explanation": "Bonne reponse: Je jette l'ancre pour empêcher le navire de dériver vers la côte.. En securite, retiens les limites reglementaires de categorie de navire, meteo et equipement embarque. Contexte utile: Victime d'une panne moteur, vous dérivez dangereusement vers la côte rocheuse alors que la mer est agitée..",
+          "explanation": "Bonne reponse: Je jette l'ancre pour empêcher le navire de dériver vers la côte.. Regle: Meteo: convertir les termes du bulletin (force/avis) en consequences navigation concretes. Pourquoi les autres non: Les autres propositions soit inversent la regle, soit decrivent un cas voisin mais different. Piege examen: Piege frequent: confondre une regle generale avec un cas particulier non demande. Contexte a exploiter: Victime d'une panne moteur, vous dérivez dangereusement vers la côte rocheuse alors que la mer est agitée..",
           "difficulty": 2,
           "tags": [
             "web_annales",
@@ -6830,7 +6830,7 @@
               "correct": true
             }
           ],
-          "explanation": "Bonne reponse: Non, en aucun cas.. En securite, retiens les limites reglementaires de categorie de navire, meteo et equipement embarque.",
+          "explanation": "Bonne reponse: Non, en aucun cas.. Regle: Meteo: convertir les termes du bulletin (force/avis) en consequences navigation concretes. Pourquoi les autres non: Les autres propositions soit inversent la regle, soit decrivent un cas voisin mais different. Piege examen: Piege frequent: confondre une regle generale avec un cas particulier non demande.",
           "difficulty": 2,
           "tags": [
             "web_annales",
@@ -6866,7 +6866,7 @@
               "correct": false
             }
           ],
-          "explanation": "Bonne reponse: Le manuel du propriétaire de votre navire, à défaut, la Division 240.. En securite, retiens les limites reglementaires de categorie de navire, meteo et equipement embarque.",
+          "explanation": "Bonne reponse: Le manuel du propriétaire de votre navire, à défaut, la Division 240.. Regle: Meteo: convertir les termes du bulletin (force/avis) en consequences navigation concretes. Pourquoi les autres non: Les autres propositions soit inversent la regle, soit decrivent un cas voisin mais different. Piege examen: Piege frequent: confondre une regle generale avec un cas particulier non demande.",
           "difficulty": 2,
           "tags": [
             "web_annales",
@@ -6897,7 +6897,7 @@
               "correct": false
             }
           ],
-          "explanation": "Bonne reponse: Vrai.. En securite, retiens les limites reglementaires de categorie de navire, meteo et equipement embarque.",
+          "explanation": "Bonne reponse: Vrai.. Regle: Meteo: convertir les termes du bulletin (force/avis) en consequences navigation concretes. Pourquoi les autres non: L'alternative inverse contredit directement la regle ou l'obligation visee par la question. Piege examen: Piege frequent: confondre une regle generale avec un cas particulier non demande.",
           "difficulty": 2,
           "tags": [
             "web_annales",
@@ -6923,7 +6923,7 @@
               "correct": false
             }
           ],
-          "explanation": "Bonne reponse: Oui.. En securite, retiens les limites reglementaires de categorie de navire, meteo et equipement embarque. Contexte utile: Hors VNM et navire.",
+          "explanation": "Bonne reponse: Oui.. Regle: Meteo: convertir les termes du bulletin (force/avis) en consequences navigation concretes. Pourquoi les autres non: Les autres propositions soit inversent la regle, soit decrivent un cas voisin mais different. Piege examen: Piege frequent: confondre une regle generale avec un cas particulier non demande. Contexte a exploiter: Hors VNM et navire.",
           "difficulty": 2,
           "tags": [
             "web_annales",
@@ -6954,7 +6954,7 @@
               "correct": false
             }
           ],
-          "explanation": "Bonne reponse: Non, en aucun cas.. En environnement, la conduite correcte est celle qui limite le risque pour les personnes et le milieu.",
+          "explanation": "Bonne reponse: Non, en aucun cas.. Regle: Environnement: retenir la conduite limitant le risque pour les personnes et le milieu. Pourquoi les autres non: Les autres propositions soit inversent la regle, soit decrivent un cas voisin mais different. Piege examen: Piege frequent: confondre une regle generale avec un cas particulier non demande.",
           "difficulty": 2,
           "tags": [
             "web_annales",
@@ -6990,7 +6990,7 @@
               "correct": false
             }
           ],
-          "explanation": "Bonne reponse: dès la zone basique.. En securite, retiens les limites reglementaires de categorie de navire, meteo et equipement embarque.",
+          "explanation": "Bonne reponse: dès la zone basique.. Regle: Meteo: convertir les termes du bulletin (force/avis) en consequences navigation concretes. Pourquoi les autres non: Les autres propositions soit inversent la regle, soit decrivent un cas voisin mais different. Piege examen: Piege frequent: confondre une regle generale avec un cas particulier non demande.",
           "difficulty": 2,
           "tags": [
             "web_annales",
@@ -7026,7 +7026,7 @@
               "correct": false
             }
           ],
-          "explanation": "Bonne reponse: Force 8.. En securite, retiens les limites reglementaires de categorie de navire, meteo et equipement embarque.",
+          "explanation": "Bonne reponse: Force 8.. Regle: La categorie B est prevue jusqu a des conditions de vent force 8. Pourquoi les autres non: Les autres choix ignorent les limites de conception et le niveau de vent annonce. Piege examen: Au-dela, la condition sort du domaine nominal de conception.",
           "difficulty": 2,
           "tags": [
             "web_annales",
@@ -7052,7 +7052,7 @@
               "correct": true
             }
           ],
-          "explanation": "Bonne reponse: Je lui coupe la partie inférieure de la queue.. En reglementation, la bonne reponse depend de l obligation legale du chef de bord.",
+          "explanation": "Bonne reponse: Je lui coupe la partie inférieure de la queue.. Regle: Reglementation plaisance: la bonne reponse est celle qui respecte l obligation legale explicite. Pourquoi les autres non: Les autres propositions soit inversent la regle, soit decrivent un cas voisin mais different. Piege examen: Piege frequent: confondre une regle generale avec un cas particulier non demande.",
           "difficulty": 2,
           "tags": [
             "web_annales",
@@ -7088,7 +7088,7 @@
               "correct": false
             }
           ],
-          "explanation": "Bonne reponse: les 3 feux à main.. En securite, retiens les limites reglementaires de categorie de navire, meteo et equipement embarque.",
+          "explanation": "Bonne reponse: les 3 feux à main.. Regle: Meteo: convertir les termes du bulletin (force/avis) en consequences navigation concretes. Pourquoi les autres non: Les autres propositions soit inversent la regle, soit decrivent un cas voisin mais different. Piege examen: Piege frequent: confondre une regle generale avec un cas particulier non demande.",
           "difficulty": 2,
           "tags": [
             "web_annales",
@@ -7114,7 +7114,7 @@
               "correct": false
             }
           ],
-          "explanation": "Bonne reponse: Vrai.. En securite, retiens les limites reglementaires de categorie de navire, meteo et equipement embarque.",
+          "explanation": "Bonne reponse: Vrai.. Regle: Meteo: convertir les termes du bulletin (force/avis) en consequences navigation concretes. Pourquoi les autres non: L'alternative inverse contredit directement la regle ou l'obligation visee par la question. Piege examen: Piege frequent: confondre une regle generale avec un cas particulier non demande.",
           "difficulty": 2,
           "tags": [
             "web_annales",
@@ -7145,7 +7145,7 @@
               "correct": false
             }
           ],
-          "explanation": "Bonne reponse: un compas magnétique.. En securite, retiens les limites reglementaires de categorie de navire, meteo et equipement embarque.",
+          "explanation": "Bonne reponse: un compas magnétique.. Regle: Meteo: convertir les termes du bulletin (force/avis) en consequences navigation concretes. Pourquoi les autres non: Les autres propositions soit inversent la regle, soit decrivent un cas voisin mais different. Piege examen: Piege frequent: confondre une regle generale avec un cas particulier non demande.",
           "difficulty": 2,
           "tags": [
             "web_annales",
@@ -7176,7 +7176,7 @@
               "correct": false
             }
           ],
-          "explanation": "Bonne reponse: Non.. En reglementation, la bonne reponse depend de l obligation legale du chef de bord. Contexte utile: Sur un navire à moteur de plus de 6cv et hors du strict cadre d'une conduite accompagnée..",
+          "explanation": "Bonne reponse: Non.. Regle: Reglementation plaisance: la bonne reponse est celle qui respecte l obligation legale explicite. Pourquoi les autres non: Les autres propositions soit inversent la regle, soit decrivent un cas voisin mais different. Piege examen: Piege frequent: confondre une regle generale avec un cas particulier non demande. Contexte a exploiter: Sur un navire à moteur de plus de 6cv et hors du strict cadre d'une conduite accompagnée..",
           "difficulty": 2,
           "tags": [
             "web_annales",
