@@ -219,172 +219,303 @@ function mapThemeToModule(theme) {
     return mapping[theme] || 1;
 }
 
-function themeExplanationHint(theme) {
-    const hints = {
-        1: 'Balisage: raisonner avec le triplet couleur + forme + sens conventionnel de navigation.',
-        2: 'Feux/signaux: identifier un navire par la combinaison complete (couleur, position, secteur, portee).',
-        3: 'Regles de barre: commencer par qualifier la rencontre, puis appliquer la priorite RIPAM correspondante.',
-        4: 'Cartographie: associer chaque symbole a sa definition officielle SHOM, sans interpretation libre.',
-        5: 'Meteo: convertir les termes du bulletin (force/avis) en consequences navigation concretes.',
-        6: 'RIPAM pratique: privilegie ou non, la manœuvre doit rester franche, precoce et comprehensible.',
-        7: 'Reglementation plaisance: la bonne reponse est celle qui respecte l obligation legale explicite.',
-        8: 'Signaux sonores: compter exactement les sons et leur duree, sans approximation.',
-        9: 'Radio: choisir le bon canal et le bon niveau d urgence avant tout message.',
-        10: 'Securite equipage/navire: verifier categorie, zone, equipement et responsabilite du chef de bord.',
-        11: 'Environnement: retenir la conduite limitant le risque pour les personnes et le milieu.'
-    };
-    return hints[theme] || 'Applique la regle de reference du cours, puis elimine les propositions incoherentes.';
+function themeExplanationHint(theme, fullText = '', correctText = '') {
+    const combined = normalize(`${fullText} ${correctText}`);
+
+    if (theme === 1) {
+        if (/panneau|interdit|engins a moteur|vehicules nautiques|vnm/.test(combined)) {
+            return "Cours PE reglementation locale: un panneau se lit strictement selon son pictogramme. Si l'interdiction vise les engins a moteur, la navigation motorisee est exclue dans la zone signalisee.";
+        }
+        if (/chenal traversier|acces a la plage/.test(combined)) {
+            return "Cours PE balisage des plages: un chenal traversier materialise un couloir de circulation entre plage et large, a respecter sans couper les lignes de bouees.";
+        }
+        if (/route [abc]|passe en [ab]|chenal principal|sens de navigation|vers le large|entre au port/.test(combined)) {
+            return "Cours PE balisage lateral (IALA region A): il faut d'abord identifier le sens conventionnel (entrant au port), puis positionner les marques laterales pour choisir la route conforme.";
+        }
+        return "Cours PE module balisage: identifier d'abord le type de marque (laterale, cardinale, speciale, eaux saines, danger isole), puis appliquer la regle de passage associee.";
+    }
+
+    if (theme === 2) {
+        return "Cours PE feux de navigation (RIPAM regles 21 a 23): l'identification repose sur la combinaison couleur + position + secteur + portee, jamais sur un seul feu isole.";
+    }
+    if (theme === 3 || theme === 6) {
+        return "Cours PE regles de barre (RIPAM): qualifier la situation (rattrapage, croisement, route convergente), determiner le navire privilegie puis executer une manœuvre franche et precoce.";
+    }
+    if (theme === 4) {
+        return "Cours PE cartographie: la reponse se construit en lisant la legende SHOM, les echelles et les symboles normalises avant toute decision de route.";
+    }
+    if (theme === 5) {
+        return "Cours PE meteo marine: traduire les termes du bulletin en force Beaufort, etat de mer et impact sur la securite du navire.";
+    }
+    if (theme === 7 || theme === 10 || theme === 11) {
+        return "Cours PE securite/reglementation: appliquer l'obligation legale du chef de bord et verifier les contraintes de zone, d'armement et de pratique.";
+    }
+    if (theme === 8) {
+        return "Cours PE signaux sonores (RIPAM regle 34): le sens du signal depend strictement du nombre et de la duree des sons.";
+    }
+    if (theme === 9) {
+        return "Cours PE VHF/SMDSM: identifier le niveau d'urgence puis appliquer le bon format d'appel sur le canal approprie.";
+    }
+    return "Cours PE: appliquer la regle de reference du module concerne.";
 }
 
-function inferSpecificRule(fullText) {
+function inferSpecificRule(fullText, correctText = '') {
+    const combined = normalize(`${fullText} ${correctText}`);
     const rules = [
         {
+            test: /bouees jaunes rapprochees|collier de bouees jaunes|danger nouveau|pas encore porte sur les cartes/,
+            reason: "Un collier de petites bouees jaunes signale en pratique un danger nouveau ou temporaire: on ne le franchit pas et on recherche un passage balise autorise.",
+            reference: "Reference: cours PE balisage des dangers nouveaux et information nautique locale."
+        },
+        {
+            test: /chenal traversier|acces a la plage|chenal d acces a la plage|chenal de plage/,
+            reason: "Le chenal traversier est un couloir obligatoire entre plage et large. Il est balise par des marques jaunes laterales (conique/cylindrique selon le cote) et se franchit en restant dans l'axe.",
+            reference: "Reference: cours PE balisage des plages et chenaux traversiers."
+        },
+        {
+            test: /voyant.*bouee|forme au dessus du corps de la bouee/,
+            reason: "Le voyant (topmark) est la marque de sommet. Il sert, avec la couleur et le rythme du feu, a identifier sans ambiguite la categorie de bouee.",
+            reference: "Reference: cours PE balisage (elements d'identification d'une marque)."
+        },
+        {
+            test: /feu blanc isophase|isophase/,
+            reason: "Un feu isophase alterne lumieres et obscurites de duree egale. Sur une marque d'eaux saines, il confirme que l'eau est libre tout autour.",
+            reference: "Reference: cours PE balisage lumineux (caractere des feux) + marque d'eaux saines."
+        },
+        {
+            test: /zone de peche|marque speciale|speciale/,
+            reason: "Une marque speciale (jaune) delimite une zone ou un usage particulier (peche, zone de travaux, chenal de service). Ce n'est pas une marque de chenal principal.",
+            reference: "Reference: systeme IALA, cours PE marques speciales."
+        },
+        {
+            test: /antilles|guyane|st pierre|saint pierre|couleurs inversees/,
+            reason: "Dans les zones relevant de l'IALA region B, les couleurs laterales sont inversees par rapport a la metropole (region A).",
+            reference: "Reference: cours PE balisage lateral IALA region A/B."
+        },
+        {
+            test: /vers le large|j entre au port|entre au port|sens de navigation/,
+            reason: "Le sens conventionnel sert de reference: en entrant, rouge a babord et vert a tribord (region A). En sortie, la logique est inversee.",
+            reference: "Reference: cours PE balisage lateral IALA region A."
+        },
+        {
+            test: /route\s+[abc]\b|passe en\s+[ab]\b|chenal principal/,
+            reason: "La bonne route est celle qui respecte le balisage du chenal principal et maintient une marge de securite vis-a-vis des dangers cartographies.",
+            reference: "Reference: cours PE balisage + lecture de route sur carte/extrait d'annale."
+        },
+        {
+            test: /panneau|navigation interdite|engins a moteur|vehicules nautiques a moteur interdits/,
+            reason: "La signalisation de zone s'applique telle quelle: un panneau d'interdiction limite effectivement la pratique concernee sur la zone delimitee.",
+            reference: "Reference: cours PE reglementation cotiere et signalisation locale."
+        },
+        {
+            test: /cale immergee/,
+            reason: "Une cale immergee est un danger local pour l'helice et le controle du navire, surtout a faible hauteur d'eau ou maree descendante.",
+            reference: "Reference: cours PE securite portuaire et vigilance en zone abritee."
+        },
+        {
+            test: /cap au \d+|cap au (nord|sud|est|ouest)|faisant route au|route au \d+|route au (nord|sud|est|ouest)/,
+            reason: "La manœuvre se deduit du compas: vers des valeurs plus faibles on vient a gauche (babord), vers des valeurs plus elevees on vient a droite (tribord), en tenant compte du passage 000/360.",
+            reference: "Reference: cours PE cartographie/navigation (lecture et evolution du cap)."
+        },
+        {
+            test: /danger isole|isol[ée]/,
+            reason: "Une marque de danger isole signale un obstacle local entoure d'eaux saines; on ne passe pas au contact.",
+            reference: "Reference: cours PE balisage (marque de danger isole: couleurs noir/rouge, 2 spheres, feu blanc 2 eclats)."
+        },
+        {
+            test: /eaux saines|safe water|atterrissage/,
+            reason: "La marque d'eaux saines indique une eau navigable tout autour et sert souvent d'atterrissage.",
+            reference: "Reference: cours PE balisage (marque d'eaux saines: bandes rouge/blanc, voyant sphere)."
+        },
+        {
+            test: /chenal pref[ée]r[ée]|bifurcation/,
+            reason: "Une marque de chenal prefere indique la branche principale a suivre dans une bifurcation de chenal.",
+            reference: "Reference: cours PE balisage lateral (rythme 2+1 pour identifier le chenal prefere)."
+        },
+        {
+            test: /cardinale|scintillement|c[ôo]nes?\s*(haut|bas)|topmark/,
+            reason: "Une cardinale se lit par couleur, orientation des cones et rythme du feu blanc pour deduire le cote de passage securise.",
+            reference: "Reference: cours PE cardinales + systeme AISM/IALA."
+        },
+        {
+            test: /signal sonore|sons brefs|son prolonge/,
+            reason: "Le message sonore se decode strictement par nombre et duree des coups, puis s'applique a la manœuvre immediate.",
+            reference: "Reference: RIPAM regle 34 (signaux de manœuvre et d'avertissement) et cours PE signaux sonores."
+        },
+        {
+            test: /chalut|mouillage|non maitre|capacite de man[œo]uvre|echou[ée]/,
+            reason: "Le statut du navire est determine par la combinaison des feux/marques de jour, ce qui conditionne priorite et distance de securite.",
+            reference: "Reference: RIPAM regles 21 a 30 + cours PE feux et marques de navires."
+        },
+        {
+            test: /gisement|rel[eè]vement/,
+            reason: "Un relèvement qui reste quasi constant caracterise un risque d'abordage, meme si la distance semble encore confortable.",
+            reference: "Reference: RIPAM regle 7 et methode de veille du cours PE."
+        },
+        {
+            test: /route convergente|croisement|priorit[ée]|sur son tribord/,
+            reason: "En route convergente, le navire qui voit l'autre sur son tribord est navire non privilegie et doit s'ecarter.",
+            reference: "Reference: RIPAM regles 15 et 16."
+        },
+        {
+            test: /privilegi[ée]|stand[- ]on|doit s ecarter|s ecarter/,
+            reason: "Le navire privilegie maintient route et vitesse, mais doit agir a temps si l'autre ne manœuvre pas.",
+            reference: "Reference: RIPAM regle 17."
+        },
+        {
+            test: /compas|cap vrai|cap compas|d[ée]clinaison|d[ée]viation/,
+            reason: "La conversion des caps suit la chaine cap compas -> corrections magnetiques -> cap vrai avec convention de signe explicite.",
+            reference: "Reference: cours PE cartographie/navigation calculatoire."
+        },
+        {
+            test: /beaufort|avis de grand frais|vent de force/,
+            reason: "L'avis meteo se traduit en plage Beaufort et en etat de mer compatible ou non avec la categorie de navire.",
+            reference: "Reference: cours PE meteo marine (echelle Beaufort et interpretation bulletin)."
+        },
+        {
+            test: /mar[éee]|marnage|hauteur d eau|douzi[eè]mes|sonde/,
+            reason: "La decision se fonde sur hauteur d'eau calculee (PM/BM/marnage) et marge sous quille.",
+            reference: "Reference: cours PE maree (regle des douziemes et pied de pilote)."
+        },
+        {
             test: /entrant au port/,
-            reason: 'En region A, en entrant depuis le large, on laisse les marques rouges a babord et vertes a tribord.',
-            trap: "Le piege classique est d'inverser avec la logique de sortie de port."
+            reason: "En region A, en entrant depuis le large, on laisse les marques rouges a babord et vertes a tribord.",
+            reference: "Reference: balisage lateral IALA region A (cours PE module balisage)."
         },
         {
             test: /sortant du port/,
-            reason: 'En sortie, la lecture du balisage est inversee par rapport au sens conventionnel d entree.',
-            trap: "Ne pas reutiliser automatiquement la regle d'entree."
+            reason: "En sortie, la lecture du balisage est inversee par rapport au sens conventionnel d'entree.",
+            reference: "Reference: balisage lateral IALA region A (cours PE module balisage)."
         },
         {
             test: /angle du feu blanc de tete de mat/,
             reason: "Le feu blanc de tete de mat d'un navire a moteur couvre 225 deg.",
-            trap: '135 deg correspond au feu de poupe, pas au feu de tete.'
+            reference: "Reference: RIPAM regles 21 et 23 (feux des navires a propulsion mecanique)."
         },
         {
             test: /angle du feu de poupe/,
             reason: "Le feu de poupe couvre 135 deg vers l'arriere.",
-            trap: '225 deg correspond au feu de tete de mat.'
+            reference: "Reference: RIPAM regle 21 (definition des feux de navigation)."
         },
         {
             test: /angle d un feu de cote|angle d'un feu de cote/,
-            reason: 'Chaque feu de cote couvre 112,5 deg.',
-            trap: 'Ne pas confondre avec 135 deg (poupe) ou 225 deg (tete de mat).'
+            reason: "Chaque feu de cote couvre 112,5 deg.",
+            reference: "Reference: RIPAM regle 21 (feux de cote)."
         },
         {
             test: /portee des feux de cote.*moins de 12/,
-            reason: 'Pour un navire de plaisance de moins de 12 m, la portee minimale des feux de cote est de 1 mille.',
-            trap: 'Les portees plus grandes concernent d autres categories de navires.'
+            reason: "Pour un navire de plaisance de moins de 12 m, la portee minimale des feux de cote est de 1 mille.",
+            reference: "Reference: RIPAM regle 22 (portee des feux)."
         },
         {
             test: /portee du feu de tete de mat.*moins de 12/,
             reason: "Pour un navire a moteur de moins de 12 m, la portee du feu de tete de mat est de 2 milles.",
-            trap: '300 m est insuffisant, 5 ou 10 milles correspondent a de plus gros navires.'
+            reference: "Reference: RIPAM regle 22 (portee des feux)."
         },
         {
             test: /canal.*detresse|mayday|\bvhf\b/,
-            reason: 'En detresse vocale, l appel initial se fait sur le canal 16.',
-            trap: 'Ne pas confondre canal d appel de detresse et canaux de travail.'
+            reason: "En detresse vocale, l'appel initial se fait sur le canal 16 avant degagement sur canal de travail.",
+            reference: "Reference: cours PE VHF et procedures SMDSM/canal 16."
         },
         {
             test: /cross|secours en mer/,
-            reason: 'La coordination des secours en mer releve du CROSS.',
-            trap: 'La SNSM intervient en sauvetage mais ne coordonne pas les operations.'
+            reason: "La coordination des secours en mer releve du CROSS.",
+            reference: "Reference: organisation des secours en mer (cours PE securite/VHF)."
         },
         {
             test: /300 m|bande cotiere|dans les ports, la vitesse/,
-            reason: 'La vitesse est reglementee pour la securite des usagers; la limite usuelle est 5 nds sauf signalisation locale.',
-            trap: 'Ne pas melanger unites (km/h et nds) ni generaliser hors zone reglementee.'
+            reason: "La vitesse est reglementee pour la securite des usagers; la limite usuelle est 5 nds sauf signalisation locale.",
+            reference: "Reference: cours PE reglementation cotiere (bande des 300 m)."
         },
         {
             test: /rattrap/,
             reason: "Est rattrapant le navire situe dans le secteur de 135 deg arriere de l'autre navire.",
-            trap: '90 deg ou 112,5 deg ne couvrent pas toute la definition RIPAM.'
+            reference: "Reference: RIPAM regle 13 (rattrapage)."
         },
         {
             test: /releve au 65.*70.*67|risque d abordage|risque d'abordage/,
             reason: "Une variation faible et non franche du relèvement impose de retenir un risque d'abordage.",
-            trap: 'En securite, le doute se traite comme un risque et non comme une absence de danger.'
+            reference: "Reference: RIPAM regle 7 (evaluation du risque d'abordage)."
         },
         {
             test: /veille sur un navire/,
-            reason: 'La veille visuelle et auditive est permanente en navigation.',
-            trap: 'Elle ne se limite pas a la nuit, a la brume, ou au trafic dense.'
+            reason: "La veille visuelle et auditive est permanente en navigation.",
+            reference: "Reference: RIPAM regle 5 (veille)."
         },
         {
             test: /categorie de conception c.*force 8|force 6.*categorie de conception c/,
-            reason: 'La categorie C ne couvre pas des conditions de mer correspondant a force 8.',
-            trap: 'Toujours confronter meteo annoncee et limites de conception du navire.'
+            reason: "La categorie C ne couvre pas des conditions de mer correspondant a force 8.",
+            reference: "Reference: cours PE securite et categories de conception CE."
         },
         {
             test: /categorie de conception b.*force/,
-            reason: 'La categorie B est prevue jusqu a des conditions de vent force 8.',
-            trap: "Au-dela, la condition sort du domaine nominal de conception."
+            reason: "La categorie B est prevue jusqu a des conditions de vent force 8.",
+            reference: "Reference: cours PE securite et categories de conception CE."
         },
         {
             test: /zone de navigation basique.*2 milles/,
-            reason: 'La zone basique (2 milles) concerne des vehicules nautiques a moteur mono-place.',
-            trap: 'Ne pas extrapoler aux navires a moteur classiques.'
+            reason: "La zone basique (2 milles) concerne des vehicules nautiques a moteur mono-place.",
+            reference: "Reference: cours PE reglementation des VNM."
         },
         {
             test: /coupe[- ]circuit/,
             reason: "Le coupe-circuit est obligatoire sur VNM a partir de 6 cv.",
-            trap: "Ne pas attendre des puissances superieures: l'obligation commence des 6 cv."
+            reference: "Reference: cours PE securite des VNM."
         },
         {
             test: /feu a occultation/,
             reason: "Un feu a occultation a des periodes de lumiere plus longues que les periodes d'obscurite.",
-            trap: 'Les durees egales caracterisent un autre type de feu.'
+            reference: "Reference: cours PE balisage (caractere des feux)."
         },
         {
             test: /feu a eclat/,
             reason: "Un feu a eclat presente des periodes d'obscurite plus longues que les periodes lumineuses.",
-            trap: "Ne pas inverser avec la definition du feu a occultation."
+            reference: "Reference: cours PE balisage (caractere des feux)."
         },
         {
             test: /chenal traversier d acces a la plage|chenal traversier d'acces a la plage/,
             reason: "Le chenal traversier est balise en jaune par conique a tribord et cylindrique a babord (sens d'entree).",
-            trap: 'Ne pas appliquer le rouge/vert du balisage lateral de chenal classique.'
+            reference: "Reference: cours PE balisage des plages."
         },
         {
             test: /minute sur l echelle des latitudes|minute sur l'echelle des latitudes/,
             reason: "Sur carte marine, la minute se lit sur les echelles verticales de latitude (gauche/droite).",
-            trap: "Les bords haut/bas servent a la longitude."
+            reference: "Reference: cours PE cartographie (lecture des echelles)."
         }
     ];
-    return rules.find(rule => rule.test.test(fullText)) || null;
+    return rules.find(rule => rule.test.test(combined)) || null;
 }
 
-function explainWrongChoices(fullText, wrongAnswers, correctText) {
-    const wrong = wrongAnswers.filter(Boolean);
-    if (!wrong.length) return 'Les autres propositions ne respectent pas la regle de reference.';
+function themeReference(theme) {
+    const refs = {
+        1: "Reference cours: module balisage (marques laterales, cardinales, marques speciales).",
+        2: "Reference cours: module feux et signaux + RIPAM regles 21 a 23.",
+        3: "Reference cours: module regles de barre + RIPAM regles 5, 7, 13, 15, 16, 17.",
+        4: "Reference cours: module cartographie et symboles SHOM.",
+        5: "Reference cours: module meteo marine et echelle Beaufort.",
+        9: "Reference cours: module VHF et procedures de detresse/urgence.",
+        10: "Reference cours: module securite et reglementation plaisance."
+    };
+    return refs[theme] || "Reference cours: module theorique PE correspondant.";
+}
 
-    if (/[0-9]+\s*deg|°/.test(`${correctText} ${wrong.join(' ')}`)) {
-        return 'Les autres valeurs correspondent a d autres feux/secteurs et non a la situation demandee.';
-    }
-    if (/vrai|faux/i.test(`${correctText} ${wrong.join(' ')}`)) {
-        return "L'alternative inverse contredit directement la regle ou l'obligation visee par la question.";
-    }
-    if (/canal|vhf|cross|detresse/.test(fullText)) {
-        return 'Les autres choix confondent acteur de coordination, canal d appel ou niveau d urgence.';
-    }
-    if (/vitesse|300 m|ports/.test(fullText)) {
-        return 'Les autres choix melangent unites ou valeurs hors cadre reglementaire.';
-    }
-    if (/categorie de conception|force/.test(fullText)) {
-        return 'Les autres choix ignorent les limites de conception et le niveau de vent annonce.';
-    }
-    return 'Les autres propositions soit inversent la regle, soit decrivent un cas voisin mais different.';
+function stripTrailingPunctuation(value) {
+    return String(value || '').trim().replace(/[.?!]+$/g, '');
 }
 
 function buildExplanation({ text, context, answers, correctIndex, theme }) {
-    const correctText = String(answers[correctIndex] || '').trim();
+    const correctText = stripTrailingPunctuation(answers[correctIndex]);
     const questionText = String(text || '').trim();
     const fullText = normalize(`${questionText} ${context || ''}`);
-    const matched = inferSpecificRule(fullText);
-    const baseReason = matched ? matched.reason : themeExplanationHint(theme);
-    const trap = matched ? matched.trap : 'Piege frequent: confondre une regle generale avec un cas particulier non demande.';
-    const wrongAnswers = answers.filter((_, index) => index !== correctIndex);
-    const wrongReason = explainWrongChoices(fullText, wrongAnswers, correctText);
-    const contextReason = context ? `Contexte a exploiter: ${context}.` : '';
+    const matched = inferSpecificRule(fullText, correctText);
+    const baseReason = matched ? matched.reason : themeExplanationHint(theme, fullText, correctText);
+    const reference = matched?.reference || themeReference(theme);
+    const contextReason = context ? `Contexte de l'enonce: ${stripTrailingPunctuation(context)}.` : '';
 
     return [
-        `Bonne reponse: ${correctText}.`,
-        `Regle: ${baseReason}`,
-        `Pourquoi les autres non: ${wrongReason}`,
-        `Piege examen: ${trap}`,
+        `Reponse correcte: ${correctText}.`,
+        reference,
+        `Explication: ${baseReason}`,
         contextReason
     ].filter(Boolean).join(' ');
 }

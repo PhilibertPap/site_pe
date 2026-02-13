@@ -197,19 +197,31 @@ class SitePE {
     generateFallbackExplanation(question, correctIndex) {
         const correctAnswer = question.answers?.[correctIndex]?.text || '';
         const fullText = String(`${question.text || ''} ${question.context || ''}`).toLowerCase();
-        let reason = 'Applique la regle du cours visee par cette question, puis elimine les propositions qui ne respectent pas cette regle.';
+        let reference = 'Reference cours: module theorique PE correspondant.';
+        let reason = 'Appliquer la regle du module, puis verifier la coherence avec les donnees de l enonce.';
         if (fullText.includes('entrant au port')) {
+            reference = 'Reference cours: balisage lateral region A.';
             reason = 'En region A, en entrant du large vers le port, on garde les marques rouges a babord et vertes a tribord.';
         } else if (fullText.includes('angle') && fullText.includes('feu blanc') && fullText.includes('tete')) {
+            reference = 'Reference: RIPAM regles 21 et 23.';
             reason = 'Le feu blanc de tete de mat couvre 225 deg sur l avant.';
         } else if (fullText.includes('feu de poupe')) {
+            reference = 'Reference: RIPAM regle 21.';
             reason = 'Le feu de poupe couvre 135 deg vers l arriere.';
         } else if (fullText.includes('canal') && fullText.includes('vhf')) {
+            reference = 'Reference cours: procedures VHF de detresse.';
             reason = 'En detresse vocale, le premier appel se fait sur le canal 16.';
         } else if (fullText.includes('300 m') || fullText.includes('bande cotiere')) {
+            reference = 'Reference cours: reglementation cotiere.';
             reason = 'La vitesse y est strictement limitee pour la securite des usagers et baigneurs.';
+        } else if (fullText.includes('veille')) {
+            reference = 'Reference: RIPAM regle 5.';
+            reason = 'La veille visuelle et auditive est permanente en navigation.';
+        } else if (fullText.includes('rattrap')) {
+            reference = 'Reference: RIPAM regle 13.';
+            reason = "Le navire rattrapant est situe dans le secteur de 135 deg arriere de l'autre navire.";
         }
-        return `Bonne reponse: ${correctAnswer}. ${reason}`;
+        return `Reponse correcte: ${correctAnswer}. ${reference} Explication: ${reason}`;
     }
 
     startQCM(moduleFilter = null) {
