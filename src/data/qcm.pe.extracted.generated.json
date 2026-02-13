@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-02-13T14:17:32.469Z",
+  "generatedAt": "2026-02-13T14:28:46.095Z",
   "source": "pe_course_dataset.normalized.json",
   "categories": [
     {
@@ -15,23 +15,23 @@
           "answers": [
             {
               "id": "a",
-              "text": "jaune; forme variable; voyant en « X » jaune pour les marques durables.",
-              "correct": false
+              "text": "Partie supérieure (topmark) d’une marque, utile de jour.",
+              "correct": true
             },
             {
               "id": "b",
-              "text": "la position des pointes indique où est la bande noire.",
-              "correct": false
-            },
-            {
-              "id": "c",
               "text": "identifier la couleur du feu et son rythme (caractère).",
               "correct": false
             },
             {
+              "id": "c",
+              "text": "jaune; forme variable; voyant en « X » jaune pour les marques durables.",
+              "correct": false
+            },
+            {
               "id": "d",
-              "text": "Partie supérieure (topmark) d’une marque, utile de jour.",
-              "correct": true
+              "text": "la position des pointes indique où est la bande noire.",
+              "correct": false
             }
           ],
           "difficulty": 2,
@@ -49,12 +49,12 @@
           "answers": [
             {
               "id": "a",
-              "text": "Feu (caractère)",
+              "text": "Couleur",
               "correct": false
             },
             {
               "id": "b",
-              "text": "Couleurs et voyants à deux cônes",
+              "text": "Feux possibles",
               "correct": false
             },
             {
@@ -64,7 +64,7 @@
             },
             {
               "id": "d",
-              "text": "Danger nouveau",
+              "text": "Chenaux traversiers",
               "correct": false
             }
           ],
@@ -83,7 +83,7 @@
           "answers": [
             {
               "id": "a",
-              "text": "bandes verticales rouges et blanches; voyant sphère rouge.",
+              "text": "blanc à 2 éclats groupés.",
               "correct": false
             },
             {
@@ -93,13 +93,13 @@
             },
             {
               "id": "c",
-              "text": "en entrant depuis la mer vers le port : tribord = vert, bâbord = rouge.",
-              "correct": false
+              "text": "Signal lumineux (couleur + rythme) permettant d’identifier une marque la nuit.",
+              "correct": true
             },
             {
               "id": "d",
-              "text": "Signal lumineux (couleur + rythme) permettant d’identifier une marque la nuit.",
-              "correct": true
+              "text": "noir avec une ou plusieurs larges bandes horizontales rouges.",
+              "correct": false
             }
           ],
           "difficulty": 2,
@@ -117,23 +117,23 @@
           "answers": [
             {
               "id": "a",
-              "text": "Bâbord",
+              "text": "Feu",
               "correct": false
             },
             {
               "id": "b",
-              "text": "Urgence épave",
+              "text": "Couleurs et voyants à deux cônes",
               "correct": false
             },
             {
               "id": "c",
-              "text": "Feu (caractère)",
-              "correct": true
+              "text": "Urgence épave",
+              "correct": false
             },
             {
               "id": "d",
-              "text": "Voyant",
-              "correct": false
+              "text": "Feu (caractère)",
+              "correct": true
             }
           ],
           "difficulty": 2,
@@ -151,12 +151,12 @@
           "answers": [
             {
               "id": "a",
-              "text": "bandes verticales rouges et blanches; voyant sphère rouge.",
+              "text": "jaune, rythme différent de ceux des autres catégories.",
               "correct": false
             },
             {
               "id": "b",
-              "text": "Partie supérieure (topmark) d’une marque, utile de jour.",
+              "text": "bouées coniques et cylindriques jaunes, de plus en plus serrées vers le rivage.",
               "correct": false
             },
             {
@@ -166,7 +166,7 @@
             },
             {
               "id": "d",
-              "text": "Signal lumineux (couleur + rythme) permettant d’identifier une marque la nuit.",
+              "text": "noir avec une ou plusieurs larges bandes horizontales rouges.",
               "correct": false
             }
           ],
@@ -185,12 +185,12 @@
           "answers": [
             {
               "id": "a",
-              "text": "Mémo",
+              "text": "Chenal préféré à bâbord",
               "correct": false
             },
             {
               "id": "b",
-              "text": "Danger nouveau",
+              "text": "De nuit",
               "correct": false
             },
             {
@@ -200,7 +200,7 @@
             },
             {
               "id": "d",
-              "text": "Feu (caractère)",
+              "text": "Tribord",
               "correct": false
             }
           ],
@@ -219,23 +219,23 @@
           "answers": [
             {
               "id": "a",
-              "text": "Est = 3, Sud = 6 + 1 long, Ouest = 9, Nord = scintillant continu.",
+              "text": "en entrant depuis la mer vers le port : tribord = vert, bâbord = rouge.",
               "correct": false
             },
             {
               "id": "b",
-              "text": "bouées coniques et cylindriques jaunes, de plus en plus serrées vers le rivage.",
+              "text": "isophase, occultations, 1 éclat long (≥ 2 s au moins toutes les 10 s), ou lettre Morse « A ».",
               "correct": false
             },
             {
               "id": "c",
-              "text": "identifier la couleur du feu et son rythme (caractère).",
-              "correct": true
+              "text": "blanc à 2 éclats groupés.",
+              "correct": false
             },
             {
               "id": "d",
-              "text": "deux sphères noires superposées.",
-              "correct": false
+              "text": "identifier la couleur du feu et son rythme (caractère).",
+              "correct": true
             }
           ],
           "difficulty": 2,
@@ -253,23 +253,23 @@
           "answers": [
             {
               "id": "a",
-              "text": "Corps",
+              "text": "Tribord",
               "correct": false
             },
             {
               "id": "b",
-              "text": "Feu",
-              "correct": false
+              "text": "De nuit",
+              "correct": true
             },
             {
               "id": "c",
-              "text": "Couleur",
+              "text": "Ligne des 300 m",
               "correct": false
             },
             {
               "id": "d",
-              "text": "De nuit",
-              "correct": true
+              "text": "Chenal préféré à bâbord",
+              "correct": false
             }
           ],
           "difficulty": 2,
@@ -287,23 +287,23 @@
           "answers": [
             {
               "id": "a",
-              "text": "corps rouge, voyant cylindrique, numéros pairs, feu rouge (rythme quelconque sauf 2+1).",
+              "text": "généralement 5 kt (rappel local).",
               "correct": false
             },
             {
               "id": "b",
-              "text": "on passe au N/E/S/O de la marque selon son type.",
+              "text": "bandes verticales rouges et blanches; voyant sphère rouge.",
               "correct": false
             },
             {
               "id": "c",
-              "text": "noir avec une ou plusieurs larges bandes horizontales rouges.",
-              "correct": false
+              "text": "en entrant depuis la mer vers le port : tribord = vert, bâbord = rouge.",
+              "correct": true
             },
             {
               "id": "d",
-              "text": "en entrant depuis la mer vers le port : tribord = vert, bâbord = rouge.",
-              "correct": true
+              "text": "deux sphères noires superposées.",
+              "correct": false
             }
           ],
           "difficulty": 2,
@@ -321,23 +321,23 @@
           "answers": [
             {
               "id": "a",
-              "text": "corps vert avec bande rouge; voyant cône vert pointe en haut; feu vert, rythme 2 éclats + 1 (2+1).",
+              "text": "corps vert, voyant cône pointe en haut, numéros impairs, feu vert (rythme quelconque sauf 2+1).",
               "correct": false
             },
             {
               "id": "b",
-              "text": "bandes verticales rouges et blanches; voyant sphère rouge.",
+              "text": "corps rouge avec bande verte; voyant cylindrique; feu rouge, rythme 2 éclats + 1 (2+1).",
               "correct": false
             },
             {
               "id": "c",
-              "text": "corps rouge, voyant cylindrique, numéros pairs, feu rouge (rythme quelconque sauf 2+1).",
-              "correct": true
+              "text": "Signal lumineux (couleur + rythme) permettant d’identifier une marque la nuit.",
+              "correct": false
             },
             {
               "id": "d",
-              "text": "regarder le voyant (topmark), la couleur du corps, la forme de la marque.",
-              "correct": false
+              "text": "corps rouge, voyant cylindrique, numéros pairs, feu rouge (rythme quelconque sauf 2+1).",
+              "correct": true
             }
           ],
           "difficulty": 2,
@@ -355,17 +355,17 @@
           "answers": [
             {
               "id": "a",
-              "text": "Chenaux traversiers",
+              "text": "Voyant",
               "correct": false
             },
             {
               "id": "b",
-              "text": "Ligne des 300 m",
+              "text": "Feux possibles",
               "correct": false
             },
             {
               "id": "c",
-              "text": "Bande des 300 m / limite de vitesse",
+              "text": "Feu (caractère)",
               "correct": false
             },
             {
@@ -389,17 +389,17 @@
           "answers": [
             {
               "id": "a",
-              "text": "identifier la couleur du feu et son rythme (caractère).",
+              "text": "on passe au N/E/S/O de la marque selon son type.",
               "correct": false
             },
             {
               "id": "b",
-              "text": "Est = 3, Sud = 6 + 1 long, Ouest = 9, Nord = scintillant continu.",
+              "text": "corps vert avec bande rouge; voyant cône vert pointe en haut; feu vert, rythme 2 éclats + 1 (2+1).",
               "correct": false
             },
             {
               "id": "c",
-              "text": "corps vert avec bande rouge; voyant cône vert pointe en haut; feu vert, rythme 2 éclats + 1 (2+1).",
+              "text": "Est = 3, Sud = 6 + 1 long, Ouest = 9, Nord = scintillant continu.",
               "correct": false
             },
             {
@@ -423,22 +423,22 @@
           "answers": [
             {
               "id": "a",
-              "text": "Indiquent où passer par rapport à un danger",
+              "text": "Urgence épave",
               "correct": false
             },
             {
               "id": "b",
-              "text": "Couleurs et voyants à deux cônes",
-              "correct": false
-            },
-            {
-              "id": "c",
               "text": "Tribord",
               "correct": true
             },
             {
+              "id": "c",
+              "text": "De jour",
+              "correct": false
+            },
+            {
               "id": "d",
-              "text": "Apparence",
+              "text": "Chenal préféré à bâbord",
               "correct": false
             }
           ],
@@ -457,22 +457,22 @@
           "answers": [
             {
               "id": "a",
-              "text": "la position des pointes indique où est la bande noire.",
-              "correct": false
-            },
-            {
-              "id": "b",
-              "text": "blanc à 2 éclats groupés.",
-              "correct": false
-            },
-            {
-              "id": "c",
               "text": "« Un tricot vert et deux bas si rouges » (Impair tribord cône vert / Pair bâbord cylindre rouge).",
               "correct": true
             },
             {
+              "id": "b",
+              "text": "en entrant depuis la mer vers le port : tribord = vert, bâbord = rouge.",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "text": "regarder le voyant (topmark), la couleur du corps, la forme de la marque.",
+              "correct": false
+            },
+            {
               "id": "d",
-              "text": "jaune; forme variable; voyant en « X » jaune pour les marques durables.",
+              "text": "Est = 3, Sud = 6 + 1 long, Ouest = 9, Nord = scintillant continu.",
               "correct": false
             }
           ],
@@ -496,17 +496,17 @@
             },
             {
               "id": "b",
-              "text": "Bâbord",
+              "text": "Zone réservée aux baigneurs",
               "correct": false
             },
             {
               "id": "c",
-              "text": "Chenaux traversiers",
+              "text": "Chenal préféré à tribord",
               "correct": false
             },
             {
               "id": "d",
-              "text": "Indiquent où passer par rapport à un danger",
+              "text": "Chenal préféré à bâbord",
               "correct": false
             }
           ],
@@ -525,22 +525,22 @@
           "answers": [
             {
               "id": "a",
-              "text": "Partie supérieure (topmark) d’une marque, utile de jour.",
+              "text": "deux sphères noires superposées.",
               "correct": false
             },
             {
               "id": "b",
-              "text": "bandes verticales rouges et blanches; voyant sphère rouge.",
-              "correct": false
-            },
-            {
-              "id": "c",
               "text": "corps rouge avec bande verte; voyant cylindrique; feu rouge, rythme 2 éclats + 1 (2+1).",
               "correct": true
             },
             {
+              "id": "c",
+              "text": "en entrant depuis la mer vers le port : tribord = vert, bâbord = rouge.",
+              "correct": false
+            },
+            {
               "id": "d",
-              "text": "corps vert avec bande rouge; voyant cône vert pointe en haut; feu vert, rythme 2 éclats + 1 (2+1).",
+              "text": "« Un tricot vert et deux bas si rouges » (Impair tribord cône vert / Pair bâbord cylindre rouge).",
               "correct": false
             }
           ],
@@ -559,23 +559,23 @@
           "answers": [
             {
               "id": "a",
-              "text": "Chenal préféré à bâbord",
-              "correct": false
-            },
-            {
-              "id": "b",
               "text": "Feu",
               "correct": false
             },
             {
+              "id": "b",
+              "text": "Chenal préféré à tribord",
+              "correct": true
+            },
+            {
               "id": "c",
-              "text": "Apparence",
+              "text": "Couleurs et voyants à deux cônes",
               "correct": false
             },
             {
               "id": "d",
-              "text": "Chenal préféré à tribord",
-              "correct": true
+              "text": "Apparence",
+              "correct": false
             }
           ],
           "difficulty": 2,
@@ -593,7 +593,7 @@
           "answers": [
             {
               "id": "a",
-              "text": "Partie supérieure (topmark) d’une marque, utile de jour.",
+              "text": "deux sphères noires superposées.",
               "correct": false
             },
             {
@@ -603,12 +603,12 @@
             },
             {
               "id": "c",
-              "text": "collier de bouées sphériques jaunes très rapprochées.",
+              "text": "en entrant depuis la mer vers le port : tribord = vert, bâbord = rouge.",
               "correct": false
             },
             {
               "id": "d",
-              "text": "« Un tricot vert et deux bas si rouges » (Impair tribord cône vert / Pair bâbord cylindre rouge).",
+              "text": "obstruction récente non encore portée sur les documents nautiques; balisage souvent par latérale ou cardinale; danger grave : marque doublée; feu scintillant rapide ou scintillant; possible balise radar codée Morse « D ».",
               "correct": false
             }
           ],
@@ -627,12 +627,12 @@
           "answers": [
             {
               "id": "a",
-              "text": "Voyant",
+              "text": "Feux possibles",
               "correct": false
             },
             {
               "id": "b",
-              "text": "Corps",
+              "text": "Bande des 300 m / limite de vitesse",
               "correct": false
             },
             {
@@ -642,7 +642,7 @@
             },
             {
               "id": "d",
-              "text": "Mémo",
+              "text": "Tribord",
               "correct": false
             }
           ],
@@ -661,22 +661,22 @@
           "answers": [
             {
               "id": "a",
-              "text": "deux sphères noires superposées.",
-              "correct": false
-            },
-            {
-              "id": "b",
-              "text": "« Un tricot vert et deux bas si rouges » (Impair tribord cône vert / Pair bâbord cylindre rouge).",
-              "correct": false
-            },
-            {
-              "id": "c",
               "text": "bandes verticales rouges et blanches; voyant sphère rouge.",
               "correct": true
             },
             {
+              "id": "b",
+              "text": "noir avec une ou plusieurs larges bandes horizontales rouges.",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "text": "jaune; forme variable; voyant en « X » jaune pour les marques durables.",
+              "correct": false
+            },
+            {
               "id": "d",
-              "text": "jaune, rythme différent de ceux des autres catégories.",
+              "text": "blanc à 2 éclats groupés.",
               "correct": false
             }
           ],
@@ -695,22 +695,22 @@
           "answers": [
             {
               "id": "a",
-              "text": "Apparence",
-              "correct": true
-            },
-            {
-              "id": "b",
-              "text": "De jour",
-              "correct": false
-            },
-            {
-              "id": "c",
               "text": "Urgence épave",
               "correct": false
             },
             {
+              "id": "b",
+              "text": "Indiquent où passer par rapport à un danger",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "text": "Apparence",
+              "correct": true
+            },
+            {
               "id": "d",
-              "text": "Feux possibles",
+              "text": "Bâbord",
               "correct": false
             }
           ],
@@ -729,7 +729,7 @@
           "answers": [
             {
               "id": "a",
-              "text": "balise temporaire après naufrage; corps bandes verticales jaunes et bleues; voyant croix jaune droite; feu à éclats alternatifs bleu et jaune.",
+              "text": "collier de bouées sphériques jaunes très rapprochées.",
               "correct": false
             },
             {
@@ -739,12 +739,12 @@
             },
             {
               "id": "c",
-              "text": "généralement 5 kt (rappel local).",
+              "text": "obstruction récente non encore portée sur les documents nautiques; balisage souvent par latérale ou cardinale; danger grave : marque doublée; feu scintillant rapide ou scintillant; possible balise radar codée Morse « D ».",
               "correct": false
             },
             {
               "id": "d",
-              "text": "noir avec une ou plusieurs larges bandes horizontales rouges.",
+              "text": "la position des pointes indique où est la bande noire.",
               "correct": false
             }
           ],
@@ -763,22 +763,22 @@
           "answers": [
             {
               "id": "a",
-              "text": "Apparence",
+              "text": "Chenal préféré à bâbord",
               "correct": false
             },
             {
               "id": "b",
+              "text": "Tribord",
+              "correct": false
+            },
+            {
+              "id": "c",
               "text": "Feux possibles",
               "correct": true
             },
             {
-              "id": "c",
-              "text": "Voyant",
-              "correct": false
-            },
-            {
               "id": "d",
-              "text": "Urgence épave",
+              "text": "Couleur",
               "correct": false
             }
           ],
@@ -797,7 +797,7 @@
           "answers": [
             {
               "id": "a",
-              "text": "la position des pointes indique où est la bande noire.",
+              "text": "bandes verticales rouges et blanches; voyant sphère rouge.",
               "correct": false
             },
             {
@@ -807,13 +807,13 @@
             },
             {
               "id": "c",
-              "text": "jaune, rythme différent de ceux des autres catégories.",
-              "correct": false
+              "text": "jaune; forme variable; voyant en « X » jaune pour les marques durables.",
+              "correct": true
             },
             {
               "id": "d",
-              "text": "jaune; forme variable; voyant en « X » jaune pour les marques durables.",
-              "correct": true
+              "text": "deux sphères noires superposées.",
+              "correct": false
             }
           ],
           "difficulty": 2,
@@ -831,22 +831,22 @@
           "answers": [
             {
               "id": "a",
-              "text": "Chenal préféré à bâbord",
+              "text": "Corps",
               "correct": false
             },
             {
               "id": "b",
+              "text": "Tribord",
+              "correct": false
+            },
+            {
+              "id": "c",
               "text": "Couleur",
               "correct": true
             },
             {
-              "id": "c",
-              "text": "Feux possibles",
-              "correct": false
-            },
-            {
               "id": "d",
-              "text": "Bâbord",
+              "text": "Chenal préféré à tribord",
               "correct": false
             }
           ],
@@ -865,13 +865,13 @@
           "answers": [
             {
               "id": "a",
-              "text": "regarder le voyant (topmark), la couleur du corps, la forme de la marque.",
-              "correct": false
+              "text": "jaune, rythme différent de ceux des autres catégories.",
+              "correct": true
             },
             {
               "id": "b",
-              "text": "jaune, rythme différent de ceux des autres catégories.",
-              "correct": true
+              "text": "noir avec une ou plusieurs larges bandes horizontales rouges.",
+              "correct": false
             },
             {
               "id": "c",
@@ -880,7 +880,7 @@
             },
             {
               "id": "d",
-              "text": "blanc à 2 éclats groupés.",
+              "text": "Signal lumineux (couleur + rythme) permettant d’identifier une marque la nuit.",
               "correct": false
             }
           ],
@@ -899,17 +899,17 @@
           "answers": [
             {
               "id": "a",
-              "text": "Bâbord",
-              "correct": false
-            },
-            {
-              "id": "b",
               "text": "Feu",
               "correct": true
             },
             {
+              "id": "b",
+              "text": "Tribord",
+              "correct": false
+            },
+            {
               "id": "c",
-              "text": "Couleurs et voyants à deux cônes",
+              "text": "Urgence épave",
               "correct": false
             },
             {
@@ -933,22 +933,22 @@
           "answers": [
             {
               "id": "a",
+              "text": "deux sphères noires superposées.",
+              "correct": false
+            },
+            {
+              "id": "b",
               "text": "noir avec une ou plusieurs larges bandes horizontales rouges.",
               "correct": true
             },
             {
-              "id": "b",
-              "text": "Signal lumineux (couleur + rythme) permettant d’identifier une marque la nuit.",
-              "correct": false
-            },
-            {
               "id": "c",
-              "text": "blanc à 2 éclats groupés.",
+              "text": "on passe au N/E/S/O de la marque selon son type.",
               "correct": false
             },
             {
               "id": "d",
-              "text": "Partie supérieure (topmark) d’une marque, utile de jour.",
+              "text": "collier de bouées sphériques jaunes très rapprochées.",
               "correct": false
             }
           ],
@@ -967,17 +967,17 @@
           "answers": [
             {
               "id": "a",
-              "text": "Feu (caractère)",
+              "text": "Chenal préféré à tribord",
               "correct": false
             },
             {
               "id": "b",
-              "text": "Feux possibles",
+              "text": "Indiquent où passer par rapport à un danger",
               "correct": false
             },
             {
               "id": "c",
-              "text": "Bâbord",
+              "text": "Mémo",
               "correct": false
             },
             {
@@ -1001,7 +1001,7 @@
           "answers": [
             {
               "id": "a",
-              "text": "blanc à 2 éclats groupés.",
+              "text": "identifier la couleur du feu et son rythme (caractère).",
               "correct": false
             },
             {
@@ -1011,12 +1011,12 @@
             },
             {
               "id": "c",
-              "text": "balise temporaire après naufrage; corps bandes verticales jaunes et bleues; voyant croix jaune droite; feu à éclats alternatifs bleu et jaune.",
+              "text": "« Un tricot vert et deux bas si rouges » (Impair tribord cône vert / Pair bâbord cylindre rouge).",
               "correct": false
             },
             {
               "id": "d",
-              "text": "« Un tricot vert et deux bas si rouges » (Impair tribord cône vert / Pair bâbord cylindre rouge).",
+              "text": "regarder le voyant (topmark), la couleur du corps, la forme de la marque.",
               "correct": false
             }
           ],
@@ -1035,23 +1035,23 @@
           "answers": [
             {
               "id": "a",
-              "text": "Feu",
+              "text": "Urgence épave",
               "correct": false
             },
             {
               "id": "b",
-              "text": "Apparence",
+              "text": "De jour",
               "correct": false
             },
             {
               "id": "c",
-              "text": "Danger nouveau",
-              "correct": false
+              "text": "Voyant",
+              "correct": true
             },
             {
               "id": "d",
-              "text": "Voyant",
-              "correct": true
+              "text": "Feux possibles",
+              "correct": false
             }
           ],
           "difficulty": 2,
@@ -1069,22 +1069,22 @@
           "answers": [
             {
               "id": "a",
-              "text": "corps vert avec bande rouge; voyant cône vert pointe en haut; feu vert, rythme 2 éclats + 1 (2+1).",
+              "text": "on passe au N/E/S/O de la marque selon son type.",
               "correct": false
             },
             {
               "id": "b",
-              "text": "la position des pointes indique où est la bande noire.",
-              "correct": false
-            },
-            {
-              "id": "c",
               "text": "blanc à 2 éclats groupés.",
               "correct": true
             },
             {
+              "id": "c",
+              "text": "jaune, rythme différent de ceux des autres catégories.",
+              "correct": false
+            },
+            {
               "id": "d",
-              "text": "on passe au N/E/S/O de la marque selon son type.",
+              "text": "Est = 3, Sud = 6 + 1 long, Ouest = 9, Nord = scintillant continu.",
               "correct": false
             }
           ],
@@ -1103,7 +1103,7 @@
           "answers": [
             {
               "id": "a",
-              "text": "Apparence",
+              "text": "Chenaux traversiers",
               "correct": false
             },
             {
@@ -1113,12 +1113,12 @@
             },
             {
               "id": "c",
-              "text": "Bâbord",
+              "text": "Indiquent où passer par rapport à un danger",
               "correct": false
             },
             {
               "id": "d",
-              "text": "Feux possibles",
+              "text": "Corps",
               "correct": false
             }
           ],
@@ -1137,22 +1137,22 @@
           "answers": [
             {
               "id": "a",
-              "text": "noir avec une ou plusieurs larges bandes horizontales rouges.",
+              "text": "corps rouge avec bande verte; voyant cylindrique; feu rouge, rythme 2 éclats + 1 (2+1).",
               "correct": false
             },
             {
               "id": "b",
-              "text": "blanc à 2 éclats groupés.",
-              "correct": false
-            },
-            {
-              "id": "c",
               "text": "on passe au N/E/S/O de la marque selon son type.",
               "correct": true
             },
             {
+              "id": "c",
+              "text": "généralement 5 kt (rappel local).",
+              "correct": false
+            },
+            {
               "id": "d",
-              "text": "« Un tricot vert et deux bas si rouges » (Impair tribord cône vert / Pair bâbord cylindre rouge).",
+              "text": "bouées coniques et cylindriques jaunes, de plus en plus serrées vers le rivage.",
               "correct": false
             }
           ],
@@ -1171,23 +1171,23 @@
           "answers": [
             {
               "id": "a",
-              "text": "Feu (caractère)",
+              "text": "Couleurs et voyants à deux cônes",
               "correct": false
             },
             {
               "id": "b",
-              "text": "Chenaux traversiers",
-              "correct": false
-            },
-            {
-              "id": "c",
               "text": "Apparence",
               "correct": false
             },
             {
-              "id": "d",
+              "id": "c",
               "text": "Indiquent où passer par rapport à un danger",
               "correct": true
+            },
+            {
+              "id": "d",
+              "text": "Feux possibles",
+              "correct": false
             }
           ],
           "difficulty": 2,
@@ -1205,22 +1205,22 @@
           "answers": [
             {
               "id": "a",
-              "text": "la position des pointes indique où est la bande noire.",
-              "correct": true
+              "text": "deux sphères noires superposées.",
+              "correct": false
             },
             {
               "id": "b",
-              "text": "bandes verticales rouges et blanches; voyant sphère rouge.",
+              "text": "on passe au N/E/S/O de la marque selon son type.",
               "correct": false
             },
             {
               "id": "c",
-              "text": "blanc à 2 éclats groupés.",
-              "correct": false
+              "text": "la position des pointes indique où est la bande noire.",
+              "correct": true
             },
             {
               "id": "d",
-              "text": "noir avec une ou plusieurs larges bandes horizontales rouges.",
+              "text": "obstruction récente non encore portée sur les documents nautiques; balisage souvent par latérale ou cardinale; danger grave : marque doublée; feu scintillant rapide ou scintillant; possible balise radar codée Morse « D ».",
               "correct": false
             }
           ],
@@ -1239,23 +1239,23 @@
           "answers": [
             {
               "id": "a",
-              "text": "Mémo",
+              "text": "Bande des 300 m / limite de vitesse",
               "correct": false
             },
             {
               "id": "b",
-              "text": "Ligne des 300 m",
+              "text": "Mémo",
               "correct": false
             },
             {
               "id": "c",
-              "text": "Couleurs et voyants à deux cônes",
-              "correct": true
+              "text": "Chenaux traversiers",
+              "correct": false
             },
             {
               "id": "d",
-              "text": "Chenal préféré à tribord",
-              "correct": false
+              "text": "Couleurs et voyants à deux cônes",
+              "correct": true
             }
           ],
           "difficulty": 2,
@@ -1273,23 +1273,23 @@
           "answers": [
             {
               "id": "a",
-              "text": "jaune, rythme différent de ceux des autres catégories.",
+              "text": "Partie supérieure (topmark) d’une marque, utile de jour.",
               "correct": false
             },
             {
               "id": "b",
-              "text": "isophase, occultations, 1 éclat long (≥ 2 s au moins toutes les 10 s), ou lettre Morse « A ».",
+              "text": "identifier la couleur du feu et son rythme (caractère).",
               "correct": false
             },
             {
               "id": "c",
-              "text": "collier de bouées sphériques jaunes très rapprochées.",
-              "correct": false
+              "text": "Est = 3, Sud = 6 + 1 long, Ouest = 9, Nord = scintillant continu.",
+              "correct": true
             },
             {
               "id": "d",
-              "text": "Est = 3, Sud = 6 + 1 long, Ouest = 9, Nord = scintillant continu.",
-              "correct": true
+              "text": "regarder le voyant (topmark), la couleur du corps, la forme de la marque.",
+              "correct": false
             }
           ],
           "difficulty": 2,
@@ -1307,7 +1307,7 @@
           "answers": [
             {
               "id": "a",
-              "text": "généralement 5 kt (rappel local).",
+              "text": "collier de bouées sphériques jaunes très rapprochées.",
               "correct": false
             },
             {
@@ -1317,7 +1317,7 @@
             },
             {
               "id": "c",
-              "text": "jaune; forme variable; voyant en « X » jaune pour les marques durables.",
+              "text": "bouées coniques et cylindriques jaunes, de plus en plus serrées vers le rivage.",
               "correct": false
             },
             {
@@ -1341,22 +1341,22 @@
           "answers": [
             {
               "id": "a",
-              "text": "Apparence",
-              "correct": false
-            },
-            {
-              "id": "b",
               "text": "Danger nouveau",
               "correct": true
             },
             {
+              "id": "b",
+              "text": "De nuit",
+              "correct": false
+            },
+            {
               "id": "c",
-              "text": "De jour",
+              "text": "Bâbord",
               "correct": false
             },
             {
               "id": "d",
-              "text": "Bande des 300 m / limite de vitesse",
+              "text": "Mémo",
               "correct": false
             }
           ],
@@ -1375,23 +1375,23 @@
           "answers": [
             {
               "id": "a",
-              "text": "regarder le voyant (topmark), la couleur du corps, la forme de la marque.",
-              "correct": false
-            },
-            {
-              "id": "b",
               "text": "bandes verticales rouges et blanches; voyant sphère rouge.",
               "correct": false
             },
             {
-              "id": "c",
-              "text": "corps rouge, voyant cylindrique, numéros pairs, feu rouge (rythme quelconque sauf 2+1).",
+              "id": "b",
+              "text": "corps vert avec bande rouge; voyant cône vert pointe en haut; feu vert, rythme 2 éclats + 1 (2+1).",
               "correct": false
             },
             {
-              "id": "d",
+              "id": "c",
               "text": "balise temporaire après naufrage; corps bandes verticales jaunes et bleues; voyant croix jaune droite; feu à éclats alternatifs bleu et jaune.",
               "correct": true
+            },
+            {
+              "id": "d",
+              "text": "blanc à 2 éclats groupés.",
+              "correct": false
             }
           ],
           "difficulty": 2,
@@ -1414,17 +1414,17 @@
             },
             {
               "id": "b",
-              "text": "Chenal préféré à bâbord",
+              "text": "Couleurs et voyants à deux cônes",
               "correct": false
             },
             {
               "id": "c",
-              "text": "Chenal préféré à tribord",
+              "text": "Voyant",
               "correct": false
             },
             {
               "id": "d",
-              "text": "Danger nouveau",
+              "text": "Indiquent où passer par rapport à un danger",
               "correct": false
             }
           ],
@@ -1443,23 +1443,23 @@
           "answers": [
             {
               "id": "a",
-              "text": "obstruction récente non encore portée sur les documents nautiques; balisage souvent par latérale ou cardinale; danger grave : marque doublée; feu scintillant rapide ou scintillant; possible balise radar codée Morse « D ».",
+              "text": "Est = 3, Sud = 6 + 1 long, Ouest = 9, Nord = scintillant continu.",
               "correct": false
             },
             {
               "id": "b",
-              "text": "bouées sphériques jaunes (~1 m) espacées d’environ 200 m.",
-              "correct": true
+              "text": "généralement 5 kt (rappel local).",
+              "correct": false
             },
             {
               "id": "c",
-              "text": "en entrant depuis la mer vers le port : tribord = vert, bâbord = rouge.",
+              "text": "Partie supérieure (topmark) d’une marque, utile de jour.",
               "correct": false
             },
             {
               "id": "d",
-              "text": "on passe au N/E/S/O de la marque selon son type.",
-              "correct": false
+              "text": "bouées sphériques jaunes (~1 m) espacées d’environ 200 m.",
+              "correct": true
             }
           ],
           "difficulty": 2,
@@ -1477,22 +1477,22 @@
           "answers": [
             {
               "id": "a",
-              "text": "Voyant",
+              "text": "De jour",
               "correct": false
             },
             {
               "id": "b",
+              "text": "Indiquent où passer par rapport à un danger",
+              "correct": false
+            },
+            {
+              "id": "c",
               "text": "Ligne des 300 m",
               "correct": true
             },
             {
-              "id": "c",
-              "text": "Corps",
-              "correct": false
-            },
-            {
               "id": "d",
-              "text": "Feu (caractère)",
+              "text": "Zone réservée aux baigneurs",
               "correct": false
             }
           ],
@@ -1516,17 +1516,17 @@
             },
             {
               "id": "b",
-              "text": "la position des pointes indique où est la bande noire.",
+              "text": "isophase, occultations, 1 éclat long (≥ 2 s au moins toutes les 10 s), ou lettre Morse « A ».",
               "correct": false
             },
             {
               "id": "c",
-              "text": "balise temporaire après naufrage; corps bandes verticales jaunes et bleues; voyant croix jaune droite; feu à éclats alternatifs bleu et jaune.",
+              "text": "collier de bouées sphériques jaunes très rapprochées.",
               "correct": false
             },
             {
               "id": "d",
-              "text": "jaune, rythme différent de ceux des autres catégories.",
+              "text": "généralement 5 kt (rappel local).",
               "correct": false
             }
           ],
@@ -1545,23 +1545,23 @@
           "answers": [
             {
               "id": "a",
-              "text": "Bâbord",
+              "text": "Corps",
               "correct": false
             },
             {
               "id": "b",
-              "text": "Feux possibles",
-              "correct": false
+              "text": "Chenaux traversiers",
+              "correct": true
             },
             {
               "id": "c",
-              "text": "Couleurs et voyants à deux cônes",
+              "text": "Indiquent où passer par rapport à un danger",
               "correct": false
             },
             {
               "id": "d",
-              "text": "Chenaux traversiers",
-              "correct": true
+              "text": "Apparence",
+              "correct": false
             }
           ],
           "difficulty": 2,
@@ -1579,17 +1579,17 @@
           "answers": [
             {
               "id": "a",
-              "text": "corps vert, voyant cône pointe en haut, numéros impairs, feu vert (rythme quelconque sauf 2+1).",
+              "text": "bouées coniques et cylindriques jaunes, de plus en plus serrées vers le rivage.",
               "correct": false
             },
             {
               "id": "b",
-              "text": "jaune; forme variable; voyant en « X » jaune pour les marques durables.",
+              "text": "isophase, occultations, 1 éclat long (≥ 2 s au moins toutes les 10 s), ou lettre Morse « A ».",
               "correct": false
             },
             {
               "id": "c",
-              "text": "noir avec une ou plusieurs larges bandes horizontales rouges.",
+              "text": "deux sphères noires superposées.",
               "correct": false
             },
             {
@@ -1613,23 +1613,23 @@
           "answers": [
             {
               "id": "a",
-              "text": "Chenaux traversiers",
+              "text": "Tribord",
               "correct": false
             },
             {
               "id": "b",
-              "text": "Zone réservée aux baigneurs",
-              "correct": true
+              "text": "Couleurs et voyants à deux cônes",
+              "correct": false
             },
             {
               "id": "c",
-              "text": "Voyant",
+              "text": "Feu",
               "correct": false
             },
             {
               "id": "d",
-              "text": "Couleur",
-              "correct": false
+              "text": "Zone réservée aux baigneurs",
+              "correct": true
             }
           ],
           "difficulty": 2,
@@ -1647,23 +1647,23 @@
           "answers": [
             {
               "id": "a",
-              "text": "« Un tricot vert et deux bas si rouges » (Impair tribord cône vert / Pair bâbord cylindre rouge).",
-              "correct": false
+              "text": "généralement 5 kt (rappel local).",
+              "correct": true
             },
             {
               "id": "b",
-              "text": "bandes verticales rouges et blanches; voyant sphère rouge.",
-              "correct": false
-            },
-            {
-              "id": "c",
               "text": "deux sphères noires superposées.",
               "correct": false
             },
             {
+              "id": "c",
+              "text": "on passe au N/E/S/O de la marque selon son type.",
+              "correct": false
+            },
+            {
               "id": "d",
-              "text": "généralement 5 kt (rappel local).",
-              "correct": true
+              "text": "en entrant depuis la mer vers le port : tribord = vert, bâbord = rouge.",
+              "correct": false
             }
           ],
           "difficulty": 2,
@@ -1681,22 +1681,22 @@
           "answers": [
             {
               "id": "a",
-              "text": "Bande des 300 m / limite de vitesse",
-              "correct": true
+              "text": "Couleur",
+              "correct": false
             },
             {
               "id": "b",
-              "text": "Urgence épave",
+              "text": "Chenaux traversiers",
               "correct": false
             },
             {
               "id": "c",
-              "text": "Bâbord",
-              "correct": false
+              "text": "Bande des 300 m / limite de vitesse",
+              "correct": true
             },
             {
               "id": "d",
-              "text": "Feu (caractère)",
+              "text": "Mémo",
               "correct": false
             }
           ],
@@ -1728,17 +1728,17 @@
             },
             {
               "id": "b",
-              "text": "coefficients journaliers, heures et hauteurs de PM/BM des ports principaux, et tables de corrections pour ports rattachés.",
+              "text": "1/12, 2/12, 3/12, 3/12, 2/12, 1/12.",
               "correct": false
             },
             {
               "id": "c",
-              "text": "certaines sondes peuvent être négatives et signalent un fond découvrant aux très grandes basses mers.",
+              "text": "1/6 de la durée de flux ou de jusant.",
               "correct": false
             },
             {
               "id": "d",
-              "text": "port principal dont les tables donnent heures et hauteurs de PM/BM.",
+              "text": "certaines sondes peuvent être négatives et signalent un fond découvrant aux très grandes basses mers.",
               "correct": false
             }
           ],
@@ -1757,23 +1757,23 @@
           "answers": [
             {
               "id": "a",
-              "text": "Flux",
-              "correct": true
+              "text": "Attention",
+              "correct": false
             },
             {
               "id": "b",
-              "text": "Heures",
+              "text": "Port rattaché",
               "correct": false
             },
             {
               "id": "c",
-              "text": "Zéro des cartes",
+              "text": "Flot",
               "correct": false
             },
             {
               "id": "d",
-              "text": "Heure marée",
-              "correct": false
+              "text": "Flux",
+              "correct": true
             }
           ],
           "difficulty": 2,
@@ -1791,23 +1791,23 @@
           "answers": [
             {
               "id": "a",
-              "text": "coefficients journaliers, heures et hauteurs de PM/BM des ports principaux, et tables de corrections pour ports rattachés.",
+              "text": "courant associé au reflux.",
               "correct": false
             },
             {
               "id": "b",
-              "text": "1/12, 2/12, 3/12, 3/12, 2/12, 1/12.",
-              "correct": false
+              "text": "durée pendant laquelle la mer descend (de PM à BM).",
+              "correct": true
             },
             {
               "id": "c",
-              "text": "durée pendant laquelle la mer monte (de BM à PM).",
+              "text": "coefficients journaliers, heures et hauteurs de PM/BM des ports principaux, et tables de corrections pour ports rattachés.",
               "correct": false
             },
             {
               "id": "d",
-              "text": "durée pendant laquelle la mer descend (de PM à BM).",
-              "correct": true
+              "text": "différence de niveau entre une PM et une BM consécutives.",
+              "correct": false
             }
           ],
           "difficulty": 2,
@@ -1825,23 +1825,23 @@
           "answers": [
             {
               "id": "a",
-              "text": "Heure marée",
+              "text": "Attention",
               "correct": false
             },
             {
               "id": "b",
-              "text": "Reflux",
-              "correct": true
-            },
-            {
-              "id": "c",
               "text": "Heures",
               "correct": false
             },
             {
-              "id": "d",
-              "text": "Jusant",
+              "id": "c",
+              "text": "Flot",
               "correct": false
+            },
+            {
+              "id": "d",
+              "text": "Reflux",
+              "correct": true
             }
           ],
           "difficulty": 2,
@@ -1859,7 +1859,7 @@
           "answers": [
             {
               "id": "a",
-              "text": "durée pendant laquelle la mer descend (de PM à BM).",
+              "text": "dans le cours, rappel que l’annuaire est en Temps Universel + 1 (= heure d’hiver). En été, ajouter +1 h supplémentaire.",
               "correct": false
             },
             {
@@ -1869,12 +1869,12 @@
             },
             {
               "id": "c",
-              "text": "courant associé au reflux.",
+              "text": "1/12, 2/12, 3/12, 3/12, 2/12, 1/12.",
               "correct": false
             },
             {
               "id": "d",
-              "text": "port principal dont les tables donnent heures et hauteurs de PM/BM.",
+              "text": "bien distinguer profondeur, immersion (tirant d’eau) et lecture sondeur.",
               "correct": false
             }
           ],
@@ -1893,23 +1893,23 @@
           "answers": [
             {
               "id": "a",
-              "text": "Répartition du marnage par tranches successives",
+              "text": "Port rattaché",
               "correct": false
             },
             {
               "id": "b",
-              "text": "Coefficient",
+              "text": "L’Annuaire donne",
               "correct": false
             },
             {
               "id": "c",
-              "text": "Marnage (amplitude)",
-              "correct": true
+              "text": "Reflux",
+              "correct": false
             },
             {
               "id": "d",
-              "text": "Zéro des cartes",
-              "correct": false
+              "text": "Marnage (amplitude)",
+              "correct": true
             }
           ],
           "difficulty": 2,
@@ -1927,22 +1927,22 @@
           "answers": [
             {
               "id": "a",
-              "text": "coefficients journaliers, heures et hauteurs de PM/BM des ports principaux, et tables de corrections pour ports rattachés.",
-              "correct": false
-            },
-            {
-              "id": "b",
               "text": "mesure de la « force » de la marée (≈ 20 à 120). >70 = vives-eaux; <70 = mortes-eaux.",
               "correct": true
             },
             {
+              "id": "b",
+              "text": "niveau de référence des sondes (souvent proche des plus basses mers théoriques).",
+              "correct": false
+            },
+            {
               "id": "c",
-              "text": "port principal dont les tables donnent heures et hauteurs de PM/BM.",
+              "text": "courant associé au reflux.",
               "correct": false
             },
             {
               "id": "d",
-              "text": "courant associé au reflux.",
+              "text": "certaines sondes peuvent être négatives et signalent un fond découvrant aux très grandes basses mers.",
               "correct": false
             }
           ],
@@ -1961,22 +1961,22 @@
           "answers": [
             {
               "id": "a",
-              "text": "Zéro des cartes",
+              "text": "Attention",
               "correct": false
             },
             {
               "id": "b",
+              "text": "Reflux",
+              "correct": false
+            },
+            {
+              "id": "c",
               "text": "Coefficient",
               "correct": true
             },
             {
-              "id": "c",
-              "text": "L’Annuaire donne",
-              "correct": false
-            },
-            {
               "id": "d",
-              "text": "Flux",
+              "text": "Zéro des cartes",
               "correct": false
             }
           ],
@@ -1995,22 +1995,22 @@
           "answers": [
             {
               "id": "a",
-              "text": "port principal dont les tables donnent heures et hauteurs de PM/BM.",
-              "correct": true
+              "text": "bien distinguer profondeur, immersion (tirant d’eau) et lecture sondeur.",
+              "correct": false
             },
             {
               "id": "b",
-              "text": "durée pendant laquelle la mer monte (de BM à PM).",
+              "text": "mesure de la « force » de la marée (≈ 20 à 120). >70 = vives-eaux; <70 = mortes-eaux.",
               "correct": false
             },
             {
               "id": "c",
-              "text": "courant associé au reflux.",
-              "correct": false
+              "text": "port principal dont les tables donnent heures et hauteurs de PM/BM.",
+              "correct": true
             },
             {
               "id": "d",
-              "text": "différence de niveau entre une PM et une BM consécutives.",
+              "text": "coefficients journaliers, heures et hauteurs de PM/BM des ports principaux, et tables de corrections pour ports rattachés.",
               "correct": false
             }
           ],
@@ -2029,23 +2029,23 @@
           "answers": [
             {
               "id": "a",
-              "text": "Profondeur (au-dessus du fond)",
+              "text": "Zéro des cartes",
               "correct": false
             },
             {
               "id": "b",
-              "text": "Port de référence",
-              "correct": true
+              "text": "Heure marée",
+              "correct": false
             },
             {
               "id": "c",
-              "text": "L’Annuaire donne",
+              "text": "Profondeur (au-dessus du fond)",
               "correct": false
             },
             {
               "id": "d",
-              "text": "Reflux",
-              "correct": false
+              "text": "Port de référence",
+              "correct": true
             }
           ],
           "difficulty": 2,
@@ -2068,17 +2068,17 @@
             },
             {
               "id": "b",
-              "text": "mesure de la « force » de la marée (≈ 20 à 120). >70 = vives-eaux; <70 = mortes-eaux.",
+              "text": "durée pendant laquelle la mer descend (de PM à BM).",
               "correct": false
             },
             {
               "id": "c",
-              "text": "niveau de référence des sondes (souvent proche des plus basses mers théoriques).",
+              "text": "1/6 de la durée de flux ou de jusant.",
               "correct": false
             },
             {
               "id": "d",
-              "text": "dans le cours, rappel que l’annuaire est en Temps Universel + 1 (= heure d’hiver). En été, ajouter +1 h supplémentaire.",
+              "text": "mesure de la « force » de la marée (≈ 20 à 120). >70 = vives-eaux; <70 = mortes-eaux.",
               "correct": false
             }
           ],
@@ -2097,23 +2097,23 @@
           "answers": [
             {
               "id": "a",
-              "text": "Marnage (amplitude)",
-              "correct": false
+              "text": "Port rattaché",
+              "correct": true
             },
             {
               "id": "b",
-              "text": "Répartition du marnage par tranches successives",
+              "text": "Heure marée",
               "correct": false
             },
             {
               "id": "c",
-              "text": "L’Annuaire donne",
+              "text": "Attention",
               "correct": false
             },
             {
               "id": "d",
-              "text": "Port rattaché",
-              "correct": true
+              "text": "Port de référence",
+              "correct": false
             }
           ],
           "difficulty": 2,
@@ -2141,12 +2141,12 @@
             },
             {
               "id": "c",
-              "text": "port principal dont les tables donnent heures et hauteurs de PM/BM.",
+              "text": "dans le cours, rappel que l’annuaire est en Temps Universel + 1 (= heure d’hiver). En été, ajouter +1 h supplémentaire.",
               "correct": false
             },
             {
               "id": "d",
-              "text": "coefficients journaliers, heures et hauteurs de PM/BM des ports principaux, et tables de corrections pour ports rattachés.",
+              "text": "certaines sondes peuvent être négatives et signalent un fond découvrant aux très grandes basses mers.",
               "correct": false
             }
           ],
@@ -2165,22 +2165,22 @@
           "answers": [
             {
               "id": "a",
-              "text": "Port de référence",
+              "text": "Flot",
               "correct": false
             },
             {
               "id": "b",
-              "text": "Marnage (amplitude)",
-              "correct": false
-            },
-            {
-              "id": "c",
               "text": "Zéro des cartes",
               "correct": true
             },
             {
+              "id": "c",
+              "text": "Port rattaché",
+              "correct": false
+            },
+            {
               "id": "d",
-              "text": "Heures",
+              "text": "Profondeur (au-dessus du fond)",
               "correct": false
             }
           ],
@@ -2199,22 +2199,22 @@
           "answers": [
             {
               "id": "a",
-              "text": "bien distinguer profondeur, immersion (tirant d’eau) et lecture sondeur.",
+              "text": "port principal dont les tables donnent heures et hauteurs de PM/BM.",
               "correct": false
             },
             {
               "id": "b",
-              "text": "durée pendant laquelle la mer monte (de BM à PM).",
-              "correct": false
-            },
-            {
-              "id": "c",
               "text": "P = H + S (hauteur d’eau H + sonde S).",
               "correct": true
             },
             {
+              "id": "c",
+              "text": "niveau de référence des sondes (souvent proche des plus basses mers théoriques).",
+              "correct": false
+            },
+            {
               "id": "d",
-              "text": "1/12, 2/12, 3/12, 3/12, 2/12, 1/12.",
+              "text": "1/6 de la durée de flux ou de jusant.",
               "correct": false
             }
           ],
@@ -2233,22 +2233,22 @@
           "answers": [
             {
               "id": "a",
+              "text": "L’Annuaire donne",
+              "correct": false
+            },
+            {
+              "id": "b",
               "text": "Profondeur (au-dessus du fond)",
               "correct": true
             },
             {
-              "id": "b",
-              "text": "Flux",
-              "correct": false
-            },
-            {
               "id": "c",
-              "text": "Marnage (amplitude)",
+              "text": "Port rattaché",
               "correct": false
             },
             {
               "id": "d",
-              "text": "Jusant",
+              "text": "Heure marée",
               "correct": false
             }
           ],
@@ -2267,23 +2267,23 @@
           "answers": [
             {
               "id": "a",
-              "text": "niveau de référence des sondes (souvent proche des plus basses mers théoriques).",
+              "text": "port principal dont les tables donnent heures et hauteurs de PM/BM.",
               "correct": false
             },
             {
               "id": "b",
-              "text": "durée pendant laquelle la mer descend (de PM à BM).",
-              "correct": false
+              "text": "certaines sondes peuvent être négatives et signalent un fond découvrant aux très grandes basses mers.",
+              "correct": true
             },
             {
               "id": "c",
-              "text": "1/6 de la durée de flux ou de jusant.",
+              "text": "P = H + S (hauteur d’eau H + sonde S).",
               "correct": false
             },
             {
               "id": "d",
-              "text": "certaines sondes peuvent être négatives et signalent un fond découvrant aux très grandes basses mers.",
-              "correct": true
+              "text": "port secondaire dont les horaires/hauteurs se déduisent par corrections.",
+              "correct": false
             }
           ],
           "difficulty": 2,
@@ -2301,23 +2301,23 @@
           "answers": [
             {
               "id": "a",
-              "text": "L’Annuaire donne",
-              "correct": false
-            },
-            {
-              "id": "b",
               "text": "Zéro des cartes",
               "correct": false
             },
             {
+              "id": "b",
+              "text": "Attention",
+              "correct": true
+            },
+            {
               "id": "c",
-              "text": "Coefficient",
+              "text": "Heures",
               "correct": false
             },
             {
               "id": "d",
-              "text": "Attention",
-              "correct": true
+              "text": "Jusant",
+              "correct": false
             }
           ],
           "difficulty": 2,
@@ -2335,22 +2335,22 @@
           "answers": [
             {
               "id": "a",
-              "text": "coefficients journaliers, heures et hauteurs de PM/BM des ports principaux, et tables de corrections pour ports rattachés.",
-              "correct": false
-            },
-            {
-              "id": "b",
               "text": "bien distinguer profondeur, immersion (tirant d’eau) et lecture sondeur.",
               "correct": true
             },
             {
+              "id": "b",
+              "text": "niveau de référence des sondes (souvent proche des plus basses mers théoriques).",
+              "correct": false
+            },
+            {
               "id": "c",
-              "text": "mesure de la « force » de la marée (≈ 20 à 120). >70 = vives-eaux; <70 = mortes-eaux.",
+              "text": "port principal dont les tables donnent heures et hauteurs de PM/BM.",
               "correct": false
             },
             {
               "id": "d",
-              "text": "niveau de référence des sondes (souvent proche des plus basses mers théoriques).",
+              "text": "coefficients journaliers, heures et hauteurs de PM/BM des ports principaux, et tables de corrections pour ports rattachés.",
               "correct": false
             }
           ],
@@ -2369,7 +2369,7 @@
           "answers": [
             {
               "id": "a",
-              "text": "port principal dont les tables donnent heures et hauteurs de PM/BM.",
+              "text": "durée pendant laquelle la mer monte (de BM à PM).",
               "correct": false
             },
             {
@@ -2384,7 +2384,7 @@
             },
             {
               "id": "d",
-              "text": "1/6 de la durée de flux ou de jusant.",
+              "text": "mesure de la « force » de la marée (≈ 20 à 120). >70 = vives-eaux; <70 = mortes-eaux.",
               "correct": false
             }
           ],
@@ -2413,12 +2413,12 @@
             },
             {
               "id": "c",
-              "text": "Jusant",
+              "text": "Coefficient",
               "correct": false
             },
             {
               "id": "d",
-              "text": "Répartition du marnage par tranches successives",
+              "text": "Flux",
               "correct": false
             }
           ],
@@ -2437,17 +2437,17 @@
           "answers": [
             {
               "id": "a",
-              "text": "port secondaire dont les horaires/hauteurs se déduisent par corrections.",
+              "text": "durée pendant laquelle la mer monte (de BM à PM).",
               "correct": false
             },
             {
               "id": "b",
-              "text": "durée pendant laquelle la mer descend (de PM à BM).",
+              "text": "P = H + S (hauteur d’eau H + sonde S).",
               "correct": false
             },
             {
               "id": "c",
-              "text": "différence de niveau entre une PM et une BM consécutives.",
+              "text": "port principal dont les tables donnent heures et hauteurs de PM/BM.",
               "correct": false
             },
             {
@@ -2471,22 +2471,22 @@
           "answers": [
             {
               "id": "a",
-              "text": "Heures",
-              "correct": true
-            },
-            {
-              "id": "b",
-              "text": "Marnage (amplitude)",
-              "correct": false
-            },
-            {
-              "id": "c",
               "text": "Flot",
               "correct": false
             },
             {
+              "id": "b",
+              "text": "Heures",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "text": "Répartition du marnage par tranches successives",
+              "correct": false
+            },
+            {
               "id": "d",
-              "text": "Jusant",
+              "text": "Profondeur (au-dessus du fond)",
               "correct": false
             }
           ],
@@ -2515,12 +2515,12 @@
             },
             {
               "id": "c",
-              "text": "mesure de la « force » de la marée (≈ 20 à 120). >70 = vives-eaux; <70 = mortes-eaux.",
+              "text": "bien distinguer profondeur, immersion (tirant d’eau) et lecture sondeur.",
               "correct": false
             },
             {
               "id": "d",
-              "text": "port principal dont les tables donnent heures et hauteurs de PM/BM.",
+              "text": "P = H + S (hauteur d’eau H + sonde S).",
               "correct": false
             }
           ],
@@ -2539,22 +2539,22 @@
           "answers": [
             {
               "id": "a",
-              "text": "Marnage (amplitude)",
-              "correct": false
-            },
-            {
-              "id": "b",
               "text": "Répartition du marnage par tranches successives",
               "correct": true
             },
             {
+              "id": "b",
+              "text": "Reflux",
+              "correct": false
+            },
+            {
               "id": "c",
-              "text": "Port rattaché",
+              "text": "Flux",
               "correct": false
             },
             {
               "id": "d",
-              "text": "Heure marée",
+              "text": "Heures",
               "correct": false
             }
           ],
@@ -2573,23 +2573,23 @@
           "answers": [
             {
               "id": "a",
-              "text": "01h04m40s (≈ 64 min 40 s)",
-              "correct": true
+              "text": "06h28",
+              "correct": false
             },
             {
               "id": "b",
-              "text": "bandes verticales rouges et blanches; voyant sphère rouge.",
+              "text": "durée pendant laquelle la mer descend (de PM à BM).",
               "correct": false
             },
             {
               "id": "c",
-              "text": "on passe au N/E/S/O de la marque selon son type.",
+              "text": "niveau de référence des sondes (souvent proche des plus basses mers théoriques).",
               "correct": false
             },
             {
               "id": "d",
-              "text": "bouées coniques et cylindriques jaunes, de plus en plus serrées vers le rivage.",
-              "correct": false
+              "text": "01h04m40s (≈ 64 min 40 s)",
+              "correct": true
             }
           ],
           "difficulty": 2,
@@ -2612,17 +2612,17 @@
             },
             {
               "id": "b",
-              "text": "certaines sondes peuvent être négatives et signalent un fond découvrant aux très grandes basses mers.",
+              "text": "différence de niveau entre une PM et une BM consécutives.",
               "correct": false
             },
             {
               "id": "c",
-              "text": "corps rouge, voyant cylindrique, numéros pairs, feu rouge (rythme quelconque sauf 2+1).",
+              "text": "1/12, 2/12, 3/12, 3/12, 2/12, 1/12.",
               "correct": false
             },
             {
               "id": "d",
-              "text": "obstruction récente non encore portée sur les documents nautiques; balisage souvent par latérale ou cardinale; danger grave : marque doublée; feu scintillant rapide ou scintillant; possible balise radar codée Morse « D ».",
+              "text": "5.00",
               "correct": false
             }
           ],
@@ -2649,23 +2649,23 @@
           "answers": [
             {
               "id": "a",
-              "text": "port principal dont les tables donnent heures et hauteurs de PM/BM.",
+              "text": "bien distinguer profondeur, immersion (tirant d’eau) et lecture sondeur.",
               "correct": false
             },
             {
               "id": "b",
-              "text": "courant associé au flux.",
-              "correct": true
+              "text": "port principal dont les tables donnent heures et hauteurs de PM/BM.",
+              "correct": false
             },
             {
               "id": "c",
-              "text": "1/6 de la durée de flux ou de jusant.",
+              "text": "dans le cours, rappel que l’annuaire est en Temps Universel + 1 (= heure d’hiver). En été, ajouter +1 h supplémentaire.",
               "correct": false
             },
             {
               "id": "d",
-              "text": "coefficients journaliers, heures et hauteurs de PM/BM des ports principaux, et tables de corrections pour ports rattachés.",
-              "correct": false
+              "text": "courant associé au flux.",
+              "correct": true
             }
           ],
           "difficulty": 2,
@@ -2683,12 +2683,12 @@
           "answers": [
             {
               "id": "a",
-              "text": "Attention",
+              "text": "Reflux",
               "correct": false
             },
             {
               "id": "b",
-              "text": "Port rattaché",
+              "text": "Attention",
               "correct": false
             },
             {
@@ -2698,7 +2698,7 @@
             },
             {
               "id": "d",
-              "text": "Coefficient",
+              "text": "Heures",
               "correct": false
             }
           ],
@@ -2717,17 +2717,17 @@
           "answers": [
             {
               "id": "a",
-              "text": "différence de niveau entre une PM et une BM consécutives.",
+              "text": "niveau de référence des sondes (souvent proche des plus basses mers théoriques).",
               "correct": false
             },
             {
               "id": "b",
-              "text": "durée pendant laquelle la mer monte (de BM à PM).",
+              "text": "coefficients journaliers, heures et hauteurs de PM/BM des ports principaux, et tables de corrections pour ports rattachés.",
               "correct": false
             },
             {
               "id": "c",
-              "text": "courant associé au flux.",
+              "text": "dans le cours, rappel que l’annuaire est en Temps Universel + 1 (= heure d’hiver). En été, ajouter +1 h supplémentaire.",
               "correct": false
             },
             {
@@ -2751,7 +2751,7 @@
           "answers": [
             {
               "id": "a",
-              "text": "Port de référence",
+              "text": "Attention",
               "correct": false
             },
             {
@@ -2761,12 +2761,12 @@
             },
             {
               "id": "c",
-              "text": "Port rattaché",
+              "text": "Heures",
               "correct": false
             },
             {
               "id": "d",
-              "text": "L’Annuaire donne",
+              "text": "Port de référence",
               "correct": false
             }
           ],
@@ -2785,22 +2785,22 @@
           "answers": [
             {
               "id": "a",
-              "text": "1/6 de la durée de flux ou de jusant.",
-              "correct": true
-            },
-            {
-              "id": "b",
-              "text": "port principal dont les tables donnent heures et hauteurs de PM/BM.",
+              "text": "durée pendant laquelle la mer monte (de BM à PM).",
               "correct": false
             },
             {
-              "id": "c",
+              "id": "b",
               "text": "niveau de référence des sondes (souvent proche des plus basses mers théoriques).",
               "correct": false
             },
             {
+              "id": "c",
+              "text": "1/6 de la durée de flux ou de jusant.",
+              "correct": true
+            },
+            {
               "id": "d",
-              "text": "bien distinguer profondeur, immersion (tirant d’eau) et lecture sondeur.",
+              "text": "mesure de la « force » de la marée (≈ 20 à 120). >70 = vives-eaux; <70 = mortes-eaux.",
               "correct": false
             }
           ],
@@ -2819,17 +2819,17 @@
           "answers": [
             {
               "id": "a",
-              "text": "Marnage (amplitude)",
+              "text": "Flot",
               "correct": false
             },
             {
               "id": "b",
-              "text": "Répartition du marnage par tranches successives",
+              "text": "Jusant",
               "correct": false
             },
             {
               "id": "c",
-              "text": "Heures",
+              "text": "Reflux",
               "correct": false
             },
             {
@@ -2853,23 +2853,23 @@
           "answers": [
             {
               "id": "a",
-              "text": "isophase, occultations, 1 éclat long (≥ 2 s au moins toutes les 10 s), ou lettre Morse « A ».",
+              "text": "durée pendant laquelle la mer descend (de PM à BM).",
               "correct": false
             },
             {
               "id": "b",
-              "text": "06h28",
-              "correct": true
+              "text": "certaines sondes peuvent être négatives et signalent un fond découvrant aux très grandes basses mers.",
+              "correct": false
             },
             {
               "id": "c",
-              "text": "bandes verticales rouges et blanches; voyant sphère rouge.",
+              "text": "mesure de la « force » de la marée (≈ 20 à 120). >70 = vives-eaux; <70 = mortes-eaux.",
               "correct": false
             },
             {
               "id": "d",
-              "text": "durée pendant laquelle la mer monte (de BM à PM).",
-              "correct": false
+              "text": "06h28",
+              "correct": true
             }
           ],
           "difficulty": 2,

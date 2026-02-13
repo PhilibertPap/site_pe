@@ -247,11 +247,8 @@ function generateDefinitionMcq(pair, idx, allPairs, rng) {
     const sameModuleDefinitions = allPairs
         .filter(item => item.moduleId === pair.moduleId)
         .map(item => item.definition);
-    const globalDefinitions = allPairs.map(item => item.definition);
     const wrongLocal = pickDistractors(sameModuleDefinitions, pair.definition, 3, rng);
-    const wrongGlobal = pickDistractors(globalDefinitions, pair.definition, 6, rng)
-        .filter(item => !wrongLocal.includes(item));
-    const wrong = [...wrongLocal, ...wrongGlobal].slice(0, 3);
+    const wrong = [...wrongLocal].slice(0, 3);
     if (wrong.length < 3) return null;
 
     const choices = shuffle([pair.definition, ...wrong], rng);
@@ -276,13 +273,8 @@ function generateTermMcq(pair, idx, allPairs, rng) {
         .filter(item => item.moduleId === pair.moduleId)
         .map(item => item.concept)
         .filter(isConceptLabel);
-    const globalConcepts = allPairs
-        .map(item => item.concept)
-        .filter(isConceptLabel);
     const wrongLocal = pickDistractors(sameModuleConcepts, pair.concept, 3, rng);
-    const wrongGlobal = pickDistractors(globalConcepts, pair.concept, 6, rng)
-        .filter(item => !wrongLocal.includes(item));
-    const wrong = [...wrongLocal, ...wrongGlobal].slice(0, 3);
+    const wrong = [...wrongLocal].slice(0, 3);
     if (wrong.length < 3) return null;
 
     const choices = shuffle([pair.concept, ...wrong], rng);
@@ -344,7 +336,7 @@ function labelFromAnswerKey(key) {
         .trim();
 }
 
-function generateExerciseMcq(module, exercise, answerKey, answerValue, index, rng, allDefinitions) {
+function generateExerciseMcq(module, exercise, answerKey, answerValue, index, rng, localDefinitions) {
     const cleanValue = normalizeSpace(answerValue);
     if (!cleanValue) return null;
 
@@ -352,7 +344,7 @@ function generateExerciseMcq(module, exercise, answerKey, answerValue, index, rn
     const distractors = pickDistractors([
         ...localValues,
         ...buildNumericVariants(cleanValue),
-        ...allDefinitions
+        ...(localDefinitions || [])
     ], cleanValue, 3, rng);
     if (distractors.length < 3) return null;
 
@@ -380,7 +372,11 @@ function buildMcqBankFromNormalized(normalized, options) {
     const questions = [];
 
     const allPairs = (normalized.modules || []).flatMap(module => extractDefinitionPairs(module));
-    const allDefinitions = allPairs.map(item => item.definition);
+    const moduleDefinitions = new Map();
+    allPairs.forEach(pair => {
+        if (!moduleDefinitions.has(pair.moduleId)) moduleDefinitions.set(pair.moduleId, []);
+        moduleDefinitions.get(pair.moduleId).push(pair.definition);
+    });
     let definitionCounter = 1;
 
     allPairs.forEach(pair => {
@@ -397,9 +393,10 @@ function buildMcqBankFromNormalized(normalized, options) {
 
     let exerciseCounter = 1;
     (normalized.modules || []).forEach(module => {
+        const localDefinitions = moduleDefinitions.get(module.id) || [];
         (module.exercises || []).forEach(exercise => {
             Object.entries(exercise.answers || {}).forEach(([key, value]) => {
-                const q = generateExerciseMcq(module, exercise, key, value, exerciseCounter, rng, allDefinitions);
+                const q = generateExerciseMcq(module, exercise, key, value, exerciseCounter, rng, localDefinitions);
                 if (q) questions.push(q);
                 exerciseCounter += 1;
             });
@@ -600,6 +597,112 @@ function splitConceptDefinition(point) {
         concept: normalizeSpace(match[1]),
         definition: normalizeSpace(match[2])
     };
+}
+
+function normalizeForMatch(text) {
+    return normalizeSpace(text)
+        .toLowerCase()
+        .normalize('NFD')
+        .replace(/[\u0300-\u036f]/g, '')
+        .replace(/[^a-z0-9\s]/g, ' ')
+        .replace(/\s+/g, ' ')
+        .trim();
+}
+
+function tokenizeForMatch(text) {
+    const stopWords = new Set([
+        'de', 'du', 'des', 'la', 'le', 'les', 'un', 'une', 'et', 'ou',
+        'en', 'au', 'aux', 'sur', 'dans', 'avec', 'sans', 'pour', 'par',
+        'est', 'sont', 'a', 'd', 'l'
+    ]);
+    return normalizeForMatch(text)
+        .split(' ')
+        .filter(token => token.length >= 3 && !stopWords.has(token));
+}
+
+function overlapCount(a, b) {
+    const setA = new Set(a);
+    let count = 0;
+    b.forEach(token => {
+        if (setA.has(token)) count += 1;
+    });
+    return count;
+}
+
+function inferFactFamily(moduleId, fact) {
+    const text = normalizeForMatch(fact);
+    if (moduleId === 1 || /(balise|bouee|cardinale|chenal|marque|eaux saines|danger isole)/.test(text)) return 'balisage';
+    if (moduleId === 2 || /(feu|mature|mouillage|non maitre|echoue|signal sonore|brume|coup bref|coup long)/.test(text)) return 'feux_signaux';
+    if (moduleId === 3 || /(priorite|route collision|tribord amure|rattrap|doublage|gisement)/.test(text)) return 'priorite';
+    if (moduleId === 4 || /(carte|shom|rocher|distance|regle cras)/.test(text)) return 'carto';
+    if (moduleId === 5 || /(beaufort|front|depression|bulletin meteo|nuage)/.test(text)) return 'meteo';
+    if (moduleId === 6 || /(cap vrai|cap compas|declinaison|deviation)/.test(text)) return 'caps';
+    if (moduleId === 7 || /(route fond|route surface|courant|derive|triangle des vitesses)/.test(text)) return 'courants';
+    if (moduleId === 8 || /(maree|marnage|pleine mer|basse mer|douzieme|hauteur d eau|coefficient)/.test(text)) return 'maree';
+    if (moduleId === 9 || /(vhf|canal|mayday|cross|detresse)/.test(text)) return 'vhf';
+    if (moduleId === 10 || /(brassiere|abri|suf|securite|limite meteo)/.test(text)) return 'securite';
+    return 'generic';
+}
+
+function scoreDistractorCandidate(correctFact, candidateFact, moduleId) {
+    if (candidateFact === correctFact) return Number.NEGATIVE_INFINITY;
+
+    const correctSplit = splitConceptDefinition(correctFact);
+    const candidateSplit = splitConceptDefinition(candidateFact);
+    const correctText = normalizeForMatch(correctFact);
+    const candidateText = normalizeForMatch(candidateFact);
+    const correctTokens = tokenizeForMatch(correctFact);
+    const candidateTokens = tokenizeForMatch(candidateFact);
+    const familyCorrect = inferFactFamily(moduleId, correctFact);
+    const familyCandidate = inferFactFamily(moduleId, candidateFact);
+    let score = 0;
+
+    if (familyCorrect === familyCandidate) score += 18;
+
+    score += overlapCount(correctTokens, candidateTokens) * 3;
+
+    if (correctSplit && candidateSplit) {
+        const conceptOverlap = overlapCount(
+            tokenizeForMatch(correctSplit.concept),
+            tokenizeForMatch(candidateSplit.concept)
+        );
+        const defOverlap = overlapCount(
+            tokenizeForMatch(correctSplit.definition),
+            tokenizeForMatch(candidateSplit.definition)
+        );
+        score += conceptOverlap * 4;
+        score += defOverlap * 2;
+    }
+
+    const correctNumbers = (correctText.match(/\d+(?:[.,]\d+)?/g) || []);
+    const candidateNumbers = (candidateText.match(/\d+(?:[.,]\d+)?/g) || []);
+    if (correctNumbers.length && candidateNumbers.length) score += 2;
+
+    return score;
+}
+
+function pickPlausibleDistractors(fact, localPool, count, rng, moduleId) {
+    const uniqueCandidates = [...new Set(
+        (localPool || []).filter(candidate => candidate && candidate !== fact)
+    )];
+    if (uniqueCandidates.length < count) return [];
+
+    const scored = uniqueCandidates
+        .map(candidate => ({
+            candidate,
+            score: scoreDistractorCandidate(fact, candidate, moduleId)
+        }))
+        .sort((a, b) => b.score - a.score);
+
+    const positive = scored.filter(item => item.score > 0);
+    const ordered = positive.length >= count ? positive : scored;
+    const windowSize = Math.min(ordered.length, Math.max(6, count * 3));
+    const topWindow = shuffle(ordered.slice(0, windowSize).map(item => item.candidate), rng);
+    const fallback = ordered.slice(windowSize).map(item => item.candidate);
+
+    return [...topWindow, ...fallback]
+        .filter((candidate, index, array) => array.indexOf(candidate) === index)
+        .slice(0, count);
 }
 
 function cleanAnnalesStem(text) {
@@ -854,21 +957,13 @@ function buildPedagogicalQuestion(
     fact,
     variantIndex,
     localPool,
-    globalPool,
     rng,
     questionId,
     imagePools
 ) {
     const answerIds = ['a', 'b', 'c', 'd', 'e'];
 
-    const wrongLocal = pickDistractors(localPool, fact, 2, rng);
-    const wrongGlobal = pickDistractors(
-        globalPool.filter(item => !wrongLocal.includes(item)),
-        fact,
-        4,
-        rng
-    );
-    const wrong = [...wrongLocal, ...wrongGlobal].slice(0, 3);
+    const wrong = pickPlausibleDistractors(fact, localPool, 3, rng, Number(module.id));
     if (wrong.length < 3) return null;
 
     const correctStatement = factToStatement(fact);
@@ -923,8 +1018,6 @@ function buildTheoryCoverageCategories(modulesContent, siteData, existingCounts,
         facts: resolveModulePoints(module, modulesContentById)
     }));
 
-    const globalFacts = modules.flatMap(module => module.facts || []);
-
     const categories = [];
     modules.forEach(module => {
         const moduleId = Number(module.id);
@@ -949,7 +1042,6 @@ function buildTheoryCoverageCategories(modulesContent, siteData, existingCounts,
                 fact,
                 variantIndex,
                 localFacts,
-                globalFacts.filter(item => !localFacts.includes(item)),
                 rng,
                 questionId,
                 imagePools

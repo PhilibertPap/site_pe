@@ -19,12 +19,12 @@
       ],
       "stem": "Que signifie \"Voyant\" ?",
       "choices": [
-        "jaune; forme variable; voyant en « X » jaune pour les marques durables.",
-        "la position des pointes indique où est la bande noire.",
+        "Partie supérieure (topmark) d’une marque, utile de jour.",
         "identifier la couleur du feu et son rythme (caractère).",
-        "Partie supérieure (topmark) d’une marque, utile de jour."
+        "jaune; forme variable; voyant en « X » jaune pour les marques durables.",
+        "la position des pointes indique où est la bande noire."
       ],
-      "answer_index": 3,
+      "answer_index": 0,
       "explanation": "\"Voyant\" se definit par: Partie supérieure (topmark) d’une marque, utile de jour.",
       "source_pages": []
     },
@@ -40,10 +40,10 @@
       ],
       "stem": "Quel terme correspond a la definition suivante ? \"Partie supérieure (topmark) d’une marque, utile de jour.\"",
       "choices": [
-        "Feu (caractère)",
-        "Couleurs et voyants à deux cônes",
+        "Couleur",
+        "Feux possibles",
         "Voyant",
-        "Danger nouveau"
+        "Chenaux traversiers"
       ],
       "answer_index": 2,
       "explanation": "La definition donnee correspond au terme: Voyant",
@@ -61,12 +61,12 @@
       ],
       "stem": "Que signifie \"Feu (caractère)\" ?",
       "choices": [
-        "bandes verticales rouges et blanches; voyant sphère rouge.",
+        "blanc à 2 éclats groupés.",
         "« Un tricot vert et deux bas si rouges » (Impair tribord cône vert / Pair bâbord cylindre rouge).",
-        "en entrant depuis la mer vers le port : tribord = vert, bâbord = rouge.",
-        "Signal lumineux (couleur + rythme) permettant d’identifier une marque la nuit."
+        "Signal lumineux (couleur + rythme) permettant d’identifier une marque la nuit.",
+        "noir avec une ou plusieurs larges bandes horizontales rouges."
       ],
-      "answer_index": 3,
+      "answer_index": 2,
       "explanation": "\"Feu (caractère)\" se definit par: Signal lumineux (couleur + rythme) permettant d’identifier une marque la nuit.",
       "source_pages": []
     },
@@ -82,12 +82,12 @@
       ],
       "stem": "Quel terme correspond a la definition suivante ? \"Signal lumineux (couleur + rythme) permettant d’identifier une marque la nuit.\"",
       "choices": [
-        "Bâbord",
+        "Feu",
+        "Couleurs et voyants à deux cônes",
         "Urgence épave",
-        "Feu (caractère)",
-        "Voyant"
+        "Feu (caractère)"
       ],
-      "answer_index": 2,
+      "answer_index": 3,
       "explanation": "La definition donnee correspond au terme: Feu (caractère)",
       "source_pages": []
     },
@@ -103,10 +103,10 @@
       ],
       "stem": "Que signifie \"De jour\" ?",
       "choices": [
-        "bandes verticales rouges et blanches; voyant sphère rouge.",
-        "Partie supérieure (topmark) d’une marque, utile de jour.",
+        "jaune, rythme différent de ceux des autres catégories.",
+        "bouées coniques et cylindriques jaunes, de plus en plus serrées vers le rivage.",
         "regarder le voyant (topmark), la couleur du corps, la forme de la marque.",
-        "Signal lumineux (couleur + rythme) permettant d’identifier une marque la nuit."
+        "noir avec une ou plusieurs larges bandes horizontales rouges."
       ],
       "answer_index": 2,
       "explanation": "\"De jour\" se definit par: regarder le voyant (topmark), la couleur du corps, la forme de la marque.",
@@ -124,10 +124,10 @@
       ],
       "stem": "Quel terme correspond a la definition suivante ? \"regarder le voyant (topmark), la couleur du corps, la forme de la marque.\"",
       "choices": [
-        "Mémo",
-        "Danger nouveau",
+        "Chenal préféré à bâbord",
+        "De nuit",
         "De jour",
-        "Feu (caractère)"
+        "Tribord"
       ],
       "answer_index": 2,
       "explanation": "La definition donnee correspond au terme: De jour",
@@ -145,12 +145,12 @@
       ],
       "stem": "Que signifie \"De nuit\" ?",
       "choices": [
-        "Est = 3, Sud = 6 + 1 long, Ouest = 9, Nord = scintillant continu.",
-        "bouées coniques et cylindriques jaunes, de plus en plus serrées vers le rivage.",
-        "identifier la couleur du feu et son rythme (caractère).",
-        "deux sphères noires superposées."
+        "en entrant depuis la mer vers le port : tribord = vert, bâbord = rouge.",
+        "isophase, occultations, 1 éclat long (≥ 2 s au moins toutes les 10 s), ou lettre Morse « A ».",
+        "blanc à 2 éclats groupés.",
+        "identifier la couleur du feu et son rythme (caractère)."
       ],
-      "answer_index": 2,
+      "answer_index": 3,
       "explanation": "\"De nuit\" se definit par: identifier la couleur du feu et son rythme (caractère).",
       "source_pages": []
     },
@@ -166,12 +166,12 @@
       ],
       "stem": "Quel terme correspond a la definition suivante ? \"identifier la couleur du feu et son rythme (caractère).\"",
       "choices": [
-        "Corps",
-        "Feu",
-        "Couleur",
-        "De nuit"
+        "Tribord",
+        "De nuit",
+        "Ligne des 300 m",
+        "Chenal préféré à bâbord"
       ],
-      "answer_index": 3,
+      "answer_index": 1,
       "explanation": "La definition donnee correspond au terme: De nuit",
       "source_pages": []
     },
@@ -187,12 +187,12 @@
       ],
       "stem": "Que signifie \"Système A (Europe, France)\" ?",
       "choices": [
-        "corps rouge, voyant cylindrique, numéros pairs, feu rouge (rythme quelconque sauf 2+1).",
-        "on passe au N/E/S/O de la marque selon son type.",
-        "noir avec une ou plusieurs larges bandes horizontales rouges.",
-        "en entrant depuis la mer vers le port : tribord = vert, bâbord = rouge."
+        "généralement 5 kt (rappel local).",
+        "bandes verticales rouges et blanches; voyant sphère rouge.",
+        "en entrant depuis la mer vers le port : tribord = vert, bâbord = rouge.",
+        "deux sphères noires superposées."
       ],
-      "answer_index": 3,
+      "answer_index": 2,
       "explanation": "\"Système A (Europe, France)\" se definit par: en entrant depuis la mer vers le port : tribord = vert, bâbord = rouge.",
       "source_pages": []
     },
@@ -208,12 +208,12 @@
       ],
       "stem": "Que signifie \"Bâbord\" ?",
       "choices": [
-        "corps vert avec bande rouge; voyant cône vert pointe en haut; feu vert, rythme 2 éclats + 1 (2+1).",
-        "bandes verticales rouges et blanches; voyant sphère rouge.",
-        "corps rouge, voyant cylindrique, numéros pairs, feu rouge (rythme quelconque sauf 2+1).",
-        "regarder le voyant (topmark), la couleur du corps, la forme de la marque."
+        "corps vert, voyant cône pointe en haut, numéros impairs, feu vert (rythme quelconque sauf 2+1).",
+        "corps rouge avec bande verte; voyant cylindrique; feu rouge, rythme 2 éclats + 1 (2+1).",
+        "Signal lumineux (couleur + rythme) permettant d’identifier une marque la nuit.",
+        "corps rouge, voyant cylindrique, numéros pairs, feu rouge (rythme quelconque sauf 2+1)."
       ],
-      "answer_index": 2,
+      "answer_index": 3,
       "explanation": "\"Bâbord\" se definit par: corps rouge, voyant cylindrique, numéros pairs, feu rouge (rythme quelconque sauf 2+1).",
       "source_pages": []
     },
@@ -229,9 +229,9 @@
       ],
       "stem": "Quel terme correspond a la definition suivante ? \"corps rouge, voyant cylindrique, numéros pairs, feu rouge (rythme quelconque sauf 2+1).\"",
       "choices": [
-        "Chenaux traversiers",
-        "Ligne des 300 m",
-        "Bande des 300 m / limite de vitesse",
+        "Voyant",
+        "Feux possibles",
+        "Feu (caractère)",
         "Bâbord"
       ],
       "answer_index": 3,
@@ -250,9 +250,9 @@
       ],
       "stem": "Que signifie \"Tribord\" ?",
       "choices": [
-        "identifier la couleur du feu et son rythme (caractère).",
-        "Est = 3, Sud = 6 + 1 long, Ouest = 9, Nord = scintillant continu.",
+        "on passe au N/E/S/O de la marque selon son type.",
         "corps vert avec bande rouge; voyant cône vert pointe en haut; feu vert, rythme 2 éclats + 1 (2+1).",
+        "Est = 3, Sud = 6 + 1 long, Ouest = 9, Nord = scintillant continu.",
         "corps vert, voyant cône pointe en haut, numéros impairs, feu vert (rythme quelconque sauf 2+1)."
       ],
       "answer_index": 3,
@@ -271,12 +271,12 @@
       ],
       "stem": "Quel terme correspond a la definition suivante ? \"corps vert, voyant cône pointe en haut, numéros impairs, feu vert (rythme quelconque sauf 2+1).\"",
       "choices": [
-        "Indiquent où passer par rapport à un danger",
-        "Couleurs et voyants à deux cônes",
+        "Urgence épave",
         "Tribord",
-        "Apparence"
+        "De jour",
+        "Chenal préféré à bâbord"
       ],
-      "answer_index": 2,
+      "answer_index": 1,
       "explanation": "La definition donnee correspond au terme: Tribord",
       "source_pages": []
     },
@@ -292,12 +292,12 @@
       ],
       "stem": "Que signifie \"Mémo\" ?",
       "choices": [
-        "la position des pointes indique où est la bande noire.",
-        "blanc à 2 éclats groupés.",
         "« Un tricot vert et deux bas si rouges » (Impair tribord cône vert / Pair bâbord cylindre rouge).",
-        "jaune; forme variable; voyant en « X » jaune pour les marques durables."
+        "en entrant depuis la mer vers le port : tribord = vert, bâbord = rouge.",
+        "regarder le voyant (topmark), la couleur du corps, la forme de la marque.",
+        "Est = 3, Sud = 6 + 1 long, Ouest = 9, Nord = scintillant continu."
       ],
-      "answer_index": 2,
+      "answer_index": 0,
       "explanation": "\"Mémo\" se definit par: « Un tricot vert et deux bas si rouges » (Impair tribord cône vert / Pair bâbord cylindre rouge).",
       "source_pages": []
     },
@@ -314,9 +314,9 @@
       "stem": "Quel terme correspond a la definition suivante ? \"« Un tricot vert et deux bas si rouges » (Impair tribord cône vert / Pair bâbord cylindre rouge).\"",
       "choices": [
         "Mémo",
-        "Bâbord",
-        "Chenaux traversiers",
-        "Indiquent où passer par rapport à un danger"
+        "Zone réservée aux baigneurs",
+        "Chenal préféré à tribord",
+        "Chenal préféré à bâbord"
       ],
       "answer_index": 0,
       "explanation": "La definition donnee correspond au terme: Mémo",
@@ -334,12 +334,12 @@
       ],
       "stem": "Que signifie \"Chenal préféré à tribord\" ?",
       "choices": [
-        "Partie supérieure (topmark) d’une marque, utile de jour.",
-        "bandes verticales rouges et blanches; voyant sphère rouge.",
+        "deux sphères noires superposées.",
         "corps rouge avec bande verte; voyant cylindrique; feu rouge, rythme 2 éclats + 1 (2+1).",
-        "corps vert avec bande rouge; voyant cône vert pointe en haut; feu vert, rythme 2 éclats + 1 (2+1)."
+        "en entrant depuis la mer vers le port : tribord = vert, bâbord = rouge.",
+        "« Un tricot vert et deux bas si rouges » (Impair tribord cône vert / Pair bâbord cylindre rouge)."
       ],
-      "answer_index": 2,
+      "answer_index": 1,
       "explanation": "\"Chenal préféré à tribord\" se definit par: corps rouge avec bande verte; voyant cylindrique; feu rouge, rythme 2 éclats + 1 (2+1).",
       "source_pages": []
     },
@@ -355,12 +355,12 @@
       ],
       "stem": "Quel terme correspond a la definition suivante ? \"corps rouge avec bande verte; voyant cylindrique; feu rouge, rythme 2 éclats + 1 (2+1).\"",
       "choices": [
-        "Chenal préféré à bâbord",
         "Feu",
-        "Apparence",
-        "Chenal préféré à tribord"
+        "Chenal préféré à tribord",
+        "Couleurs et voyants à deux cônes",
+        "Apparence"
       ],
-      "answer_index": 3,
+      "answer_index": 1,
       "explanation": "La definition donnee correspond au terme: Chenal préféré à tribord",
       "source_pages": []
     },
@@ -376,10 +376,10 @@
       ],
       "stem": "Que signifie \"Chenal préféré à bâbord\" ?",
       "choices": [
-        "Partie supérieure (topmark) d’une marque, utile de jour.",
+        "deux sphères noires superposées.",
         "corps vert avec bande rouge; voyant cône vert pointe en haut; feu vert, rythme 2 éclats + 1 (2+1).",
-        "collier de bouées sphériques jaunes très rapprochées.",
-        "« Un tricot vert et deux bas si rouges » (Impair tribord cône vert / Pair bâbord cylindre rouge)."
+        "en entrant depuis la mer vers le port : tribord = vert, bâbord = rouge.",
+        "obstruction récente non encore portée sur les documents nautiques; balisage souvent par latérale ou cardinale; danger grave : marque doublée; feu scintillant rapide ou scintillant; possible balise radar codée Morse « D »."
       ],
       "answer_index": 1,
       "explanation": "\"Chenal préféré à bâbord\" se definit par: corps vert avec bande rouge; voyant cône vert pointe en haut; feu vert, rythme 2 éclats + 1 (2+1).",
@@ -397,10 +397,10 @@
       ],
       "stem": "Quel terme correspond a la definition suivante ? \"corps vert avec bande rouge; voyant cône vert pointe en haut; feu vert, rythme 2 éclats + 1 (2+1).\"",
       "choices": [
-        "Voyant",
-        "Corps",
+        "Feux possibles",
+        "Bande des 300 m / limite de vitesse",
         "Chenal préféré à bâbord",
-        "Mémo"
+        "Tribord"
       ],
       "answer_index": 2,
       "explanation": "La definition donnee correspond au terme: Chenal préféré à bâbord",
@@ -418,12 +418,12 @@
       ],
       "stem": "Que signifie \"Apparence\" ?",
       "choices": [
-        "deux sphères noires superposées.",
-        "« Un tricot vert et deux bas si rouges » (Impair tribord cône vert / Pair bâbord cylindre rouge).",
         "bandes verticales rouges et blanches; voyant sphère rouge.",
-        "jaune, rythme différent de ceux des autres catégories."
+        "noir avec une ou plusieurs larges bandes horizontales rouges.",
+        "jaune; forme variable; voyant en « X » jaune pour les marques durables.",
+        "blanc à 2 éclats groupés."
       ],
-      "answer_index": 2,
+      "answer_index": 0,
       "explanation": "\"Apparence\" se definit par: bandes verticales rouges et blanches; voyant sphère rouge.",
       "source_pages": []
     },
@@ -439,12 +439,12 @@
       ],
       "stem": "Quel terme correspond a la definition suivante ? \"bandes verticales rouges et blanches; voyant sphère rouge.\"",
       "choices": [
-        "Apparence",
-        "De jour",
         "Urgence épave",
-        "Feux possibles"
+        "Indiquent où passer par rapport à un danger",
+        "Apparence",
+        "Bâbord"
       ],
-      "answer_index": 0,
+      "answer_index": 2,
       "explanation": "La definition donnee correspond au terme: Apparence",
       "source_pages": []
     },
@@ -460,10 +460,10 @@
       ],
       "stem": "Que signifie \"Feux possibles\" ?",
       "choices": [
-        "balise temporaire après naufrage; corps bandes verticales jaunes et bleues; voyant croix jaune droite; feu à éclats alternatifs bleu et jaune.",
+        "collier de bouées sphériques jaunes très rapprochées.",
         "isophase, occultations, 1 éclat long (≥ 2 s au moins toutes les 10 s), ou lettre Morse « A ».",
-        "généralement 5 kt (rappel local).",
-        "noir avec une ou plusieurs larges bandes horizontales rouges."
+        "obstruction récente non encore portée sur les documents nautiques; balisage souvent par latérale ou cardinale; danger grave : marque doublée; feu scintillant rapide ou scintillant; possible balise radar codée Morse « D ».",
+        "la position des pointes indique où est la bande noire."
       ],
       "answer_index": 1,
       "explanation": "\"Feux possibles\" se definit par: isophase, occultations, 1 éclat long (≥ 2 s au moins toutes les 10 s), ou lettre Morse « A ».",
@@ -481,12 +481,12 @@
       ],
       "stem": "Quel terme correspond a la definition suivante ? \"isophase, occultations, 1 éclat long (≥ 2 s au moins toutes les 10 s), ou lettre Morse « A ».\"",
       "choices": [
-        "Apparence",
+        "Chenal préféré à bâbord",
+        "Tribord",
         "Feux possibles",
-        "Voyant",
-        "Urgence épave"
+        "Couleur"
       ],
-      "answer_index": 1,
+      "answer_index": 2,
       "explanation": "La definition donnee correspond au terme: Feux possibles",
       "source_pages": []
     },
@@ -502,12 +502,12 @@
       ],
       "stem": "Que signifie \"Couleur\" ?",
       "choices": [
-        "la position des pointes indique où est la bande noire.",
+        "bandes verticales rouges et blanches; voyant sphère rouge.",
         "isophase, occultations, 1 éclat long (≥ 2 s au moins toutes les 10 s), ou lettre Morse « A ».",
-        "jaune, rythme différent de ceux des autres catégories.",
-        "jaune; forme variable; voyant en « X » jaune pour les marques durables."
+        "jaune; forme variable; voyant en « X » jaune pour les marques durables.",
+        "deux sphères noires superposées."
       ],
-      "answer_index": 3,
+      "answer_index": 2,
       "explanation": "\"Couleur\" se definit par: jaune; forme variable; voyant en « X » jaune pour les marques durables.",
       "source_pages": []
     },
@@ -523,12 +523,12 @@
       ],
       "stem": "Quel terme correspond a la definition suivante ? \"jaune; forme variable; voyant en « X » jaune pour les marques durables.\"",
       "choices": [
-        "Chenal préféré à bâbord",
+        "Corps",
+        "Tribord",
         "Couleur",
-        "Feux possibles",
-        "Bâbord"
+        "Chenal préféré à tribord"
       ],
-      "answer_index": 1,
+      "answer_index": 2,
       "explanation": "La definition donnee correspond au terme: Couleur",
       "source_pages": []
     },
@@ -544,12 +544,12 @@
       ],
       "stem": "Que signifie \"Feu\" ?",
       "choices": [
-        "regarder le voyant (topmark), la couleur du corps, la forme de la marque.",
         "jaune, rythme différent de ceux des autres catégories.",
+        "noir avec une ou plusieurs larges bandes horizontales rouges.",
         "la position des pointes indique où est la bande noire.",
-        "blanc à 2 éclats groupés."
+        "Signal lumineux (couleur + rythme) permettant d’identifier une marque la nuit."
       ],
-      "answer_index": 1,
+      "answer_index": 0,
       "explanation": "\"Feu\" se definit par: jaune, rythme différent de ceux des autres catégories.",
       "source_pages": []
     },
@@ -565,12 +565,12 @@
       ],
       "stem": "Quel terme correspond a la definition suivante ? \"jaune, rythme différent de ceux des autres catégories.\"",
       "choices": [
-        "Bâbord",
         "Feu",
-        "Couleurs et voyants à deux cônes",
+        "Tribord",
+        "Urgence épave",
         "Zone réservée aux baigneurs"
       ],
-      "answer_index": 1,
+      "answer_index": 0,
       "explanation": "La definition donnee correspond au terme: Feu",
       "source_pages": []
     },
@@ -586,12 +586,12 @@
       ],
       "stem": "Que signifie \"Corps\" ?",
       "choices": [
+        "deux sphères noires superposées.",
         "noir avec une ou plusieurs larges bandes horizontales rouges.",
-        "Signal lumineux (couleur + rythme) permettant d’identifier une marque la nuit.",
-        "blanc à 2 éclats groupés.",
-        "Partie supérieure (topmark) d’une marque, utile de jour."
+        "on passe au N/E/S/O de la marque selon son type.",
+        "collier de bouées sphériques jaunes très rapprochées."
       ],
-      "answer_index": 0,
+      "answer_index": 1,
       "explanation": "\"Corps\" se definit par: noir avec une ou plusieurs larges bandes horizontales rouges.",
       "source_pages": []
     },
@@ -607,9 +607,9 @@
       ],
       "stem": "Quel terme correspond a la definition suivante ? \"noir avec une ou plusieurs larges bandes horizontales rouges.\"",
       "choices": [
-        "Feu (caractère)",
-        "Feux possibles",
-        "Bâbord",
+        "Chenal préféré à tribord",
+        "Indiquent où passer par rapport à un danger",
+        "Mémo",
         "Corps"
       ],
       "answer_index": 3,
@@ -628,10 +628,10 @@
       ],
       "stem": "Que signifie \"Voyant\" ?",
       "choices": [
-        "blanc à 2 éclats groupés.",
+        "identifier la couleur du feu et son rythme (caractère).",
         "deux sphères noires superposées.",
-        "balise temporaire après naufrage; corps bandes verticales jaunes et bleues; voyant croix jaune droite; feu à éclats alternatifs bleu et jaune.",
-        "« Un tricot vert et deux bas si rouges » (Impair tribord cône vert / Pair bâbord cylindre rouge)."
+        "« Un tricot vert et deux bas si rouges » (Impair tribord cône vert / Pair bâbord cylindre rouge).",
+        "regarder le voyant (topmark), la couleur du corps, la forme de la marque."
       ],
       "answer_index": 1,
       "explanation": "\"Voyant\" se definit par: deux sphères noires superposées.",
@@ -649,12 +649,12 @@
       ],
       "stem": "Quel terme correspond a la definition suivante ? \"deux sphères noires superposées.\"",
       "choices": [
-        "Feu",
-        "Apparence",
-        "Danger nouveau",
-        "Voyant"
+        "Urgence épave",
+        "De jour",
+        "Voyant",
+        "Feux possibles"
       ],
-      "answer_index": 3,
+      "answer_index": 2,
       "explanation": "La definition donnee correspond au terme: Voyant",
       "source_pages": []
     },
@@ -670,12 +670,12 @@
       ],
       "stem": "Que signifie \"Feu\" ?",
       "choices": [
-        "corps vert avec bande rouge; voyant cône vert pointe en haut; feu vert, rythme 2 éclats + 1 (2+1).",
-        "la position des pointes indique où est la bande noire.",
+        "on passe au N/E/S/O de la marque selon son type.",
         "blanc à 2 éclats groupés.",
-        "on passe au N/E/S/O de la marque selon son type."
+        "jaune, rythme différent de ceux des autres catégories.",
+        "Est = 3, Sud = 6 + 1 long, Ouest = 9, Nord = scintillant continu."
       ],
-      "answer_index": 2,
+      "answer_index": 1,
       "explanation": "\"Feu\" se definit par: blanc à 2 éclats groupés.",
       "source_pages": []
     },
@@ -691,10 +691,10 @@
       ],
       "stem": "Quel terme correspond a la definition suivante ? \"blanc à 2 éclats groupés.\"",
       "choices": [
-        "Apparence",
+        "Chenaux traversiers",
         "Feu",
-        "Bâbord",
-        "Feux possibles"
+        "Indiquent où passer par rapport à un danger",
+        "Corps"
       ],
       "answer_index": 1,
       "explanation": "La definition donnee correspond au terme: Feu",
@@ -712,12 +712,12 @@
       ],
       "stem": "Que signifie \"Indiquent où passer par rapport à un danger\" ?",
       "choices": [
-        "noir avec une ou plusieurs larges bandes horizontales rouges.",
-        "blanc à 2 éclats groupés.",
+        "corps rouge avec bande verte; voyant cylindrique; feu rouge, rythme 2 éclats + 1 (2+1).",
         "on passe au N/E/S/O de la marque selon son type.",
-        "« Un tricot vert et deux bas si rouges » (Impair tribord cône vert / Pair bâbord cylindre rouge)."
+        "généralement 5 kt (rappel local).",
+        "bouées coniques et cylindriques jaunes, de plus en plus serrées vers le rivage."
       ],
-      "answer_index": 2,
+      "answer_index": 1,
       "explanation": "\"Indiquent où passer par rapport à un danger\" se definit par: on passe au N/E/S/O de la marque selon son type.",
       "source_pages": []
     },
@@ -733,12 +733,12 @@
       ],
       "stem": "Quel terme correspond a la definition suivante ? \"on passe au N/E/S/O de la marque selon son type.\"",
       "choices": [
-        "Feu (caractère)",
-        "Chenaux traversiers",
+        "Couleurs et voyants à deux cônes",
         "Apparence",
-        "Indiquent où passer par rapport à un danger"
+        "Indiquent où passer par rapport à un danger",
+        "Feux possibles"
       ],
-      "answer_index": 3,
+      "answer_index": 2,
       "explanation": "La definition donnee correspond au terme: Indiquent où passer par rapport à un danger",
       "source_pages": []
     },
@@ -754,12 +754,12 @@
       ],
       "stem": "Que signifie \"Couleurs et voyants à deux cônes\" ?",
       "choices": [
+        "deux sphères noires superposées.",
+        "on passe au N/E/S/O de la marque selon son type.",
         "la position des pointes indique où est la bande noire.",
-        "bandes verticales rouges et blanches; voyant sphère rouge.",
-        "blanc à 2 éclats groupés.",
-        "noir avec une ou plusieurs larges bandes horizontales rouges."
+        "obstruction récente non encore portée sur les documents nautiques; balisage souvent par latérale ou cardinale; danger grave : marque doublée; feu scintillant rapide ou scintillant; possible balise radar codée Morse « D »."
       ],
-      "answer_index": 0,
+      "answer_index": 2,
       "explanation": "\"Couleurs et voyants à deux cônes\" se definit par: la position des pointes indique où est la bande noire.",
       "source_pages": []
     },
@@ -775,12 +775,12 @@
       ],
       "stem": "Quel terme correspond a la definition suivante ? \"la position des pointes indique où est la bande noire.\"",
       "choices": [
+        "Bande des 300 m / limite de vitesse",
         "Mémo",
-        "Ligne des 300 m",
-        "Couleurs et voyants à deux cônes",
-        "Chenal préféré à tribord"
+        "Chenaux traversiers",
+        "Couleurs et voyants à deux cônes"
       ],
-      "answer_index": 2,
+      "answer_index": 3,
       "explanation": "La definition donnee correspond au terme: Couleurs et voyants à deux cônes",
       "source_pages": []
     },
@@ -796,12 +796,12 @@
       ],
       "stem": "Que signifie \"Rythmes de feu (blanc scintillant) mémotechnique cadran d’horloge\" ?",
       "choices": [
-        "jaune, rythme différent de ceux des autres catégories.",
-        "isophase, occultations, 1 éclat long (≥ 2 s au moins toutes les 10 s), ou lettre Morse « A ».",
-        "collier de bouées sphériques jaunes très rapprochées.",
-        "Est = 3, Sud = 6 + 1 long, Ouest = 9, Nord = scintillant continu."
+        "Partie supérieure (topmark) d’une marque, utile de jour.",
+        "identifier la couleur du feu et son rythme (caractère).",
+        "Est = 3, Sud = 6 + 1 long, Ouest = 9, Nord = scintillant continu.",
+        "regarder le voyant (topmark), la couleur du corps, la forme de la marque."
       ],
-      "answer_index": 3,
+      "answer_index": 2,
       "explanation": "\"Rythmes de feu (blanc scintillant) mémotechnique cadran d’horloge\" se definit par: Est = 3, Sud = 6 + 1 long, Ouest = 9, Nord = scintillant continu.",
       "source_pages": []
     },
@@ -817,9 +817,9 @@
       ],
       "stem": "Que signifie \"Danger nouveau\" ?",
       "choices": [
-        "généralement 5 kt (rappel local).",
+        "collier de bouées sphériques jaunes très rapprochées.",
         "corps vert avec bande rouge; voyant cône vert pointe en haut; feu vert, rythme 2 éclats + 1 (2+1).",
-        "jaune; forme variable; voyant en « X » jaune pour les marques durables.",
+        "bouées coniques et cylindriques jaunes, de plus en plus serrées vers le rivage.",
         "obstruction récente non encore portée sur les documents nautiques; balisage souvent par latérale ou cardinale; danger grave : marque doublée; feu scintillant rapide ou scintillant; possible balise radar codée Morse « D »."
       ],
       "answer_index": 3,
@@ -838,12 +838,12 @@
       ],
       "stem": "Quel terme correspond a la definition suivante ? \"obstruction récente non encore portée sur les documents nautiques; balisage souvent par latérale ou cardinale; danger grave : marque doublée; feu scintillant rapide ou scintillant; possible balise radar codée Morse « D ».\"",
       "choices": [
-        "Apparence",
         "Danger nouveau",
-        "De jour",
-        "Bande des 300 m / limite de vitesse"
+        "De nuit",
+        "Bâbord",
+        "Mémo"
       ],
-      "answer_index": 1,
+      "answer_index": 0,
       "explanation": "La definition donnee correspond au terme: Danger nouveau",
       "source_pages": []
     },
@@ -859,12 +859,12 @@
       ],
       "stem": "Que signifie \"Urgence épave\" ?",
       "choices": [
-        "regarder le voyant (topmark), la couleur du corps, la forme de la marque.",
         "bandes verticales rouges et blanches; voyant sphère rouge.",
-        "corps rouge, voyant cylindrique, numéros pairs, feu rouge (rythme quelconque sauf 2+1).",
-        "balise temporaire après naufrage; corps bandes verticales jaunes et bleues; voyant croix jaune droite; feu à éclats alternatifs bleu et jaune."
+        "corps vert avec bande rouge; voyant cône vert pointe en haut; feu vert, rythme 2 éclats + 1 (2+1).",
+        "balise temporaire après naufrage; corps bandes verticales jaunes et bleues; voyant croix jaune droite; feu à éclats alternatifs bleu et jaune.",
+        "blanc à 2 éclats groupés."
       ],
-      "answer_index": 3,
+      "answer_index": 2,
       "explanation": "\"Urgence épave\" se definit par: balise temporaire après naufrage; corps bandes verticales jaunes et bleues; voyant croix jaune droite; feu à éclats alternatifs bleu et jaune.",
       "source_pages": []
     },
@@ -881,9 +881,9 @@
       "stem": "Quel terme correspond a la definition suivante ? \"balise temporaire après naufrage; corps bandes verticales jaunes et bleues; voyant croix jaune droite; feu à éclats alternatifs bleu et jaune.\"",
       "choices": [
         "Urgence épave",
-        "Chenal préféré à bâbord",
-        "Chenal préféré à tribord",
-        "Danger nouveau"
+        "Couleurs et voyants à deux cônes",
+        "Voyant",
+        "Indiquent où passer par rapport à un danger"
       ],
       "answer_index": 0,
       "explanation": "La definition donnee correspond au terme: Urgence épave",
@@ -901,12 +901,12 @@
       ],
       "stem": "Que signifie \"Ligne des 300 m\" ?",
       "choices": [
-        "obstruction récente non encore portée sur les documents nautiques; balisage souvent par latérale ou cardinale; danger grave : marque doublée; feu scintillant rapide ou scintillant; possible balise radar codée Morse « D ».",
-        "bouées sphériques jaunes (~1 m) espacées d’environ 200 m.",
-        "en entrant depuis la mer vers le port : tribord = vert, bâbord = rouge.",
-        "on passe au N/E/S/O de la marque selon son type."
+        "Est = 3, Sud = 6 + 1 long, Ouest = 9, Nord = scintillant continu.",
+        "généralement 5 kt (rappel local).",
+        "Partie supérieure (topmark) d’une marque, utile de jour.",
+        "bouées sphériques jaunes (~1 m) espacées d’environ 200 m."
       ],
-      "answer_index": 1,
+      "answer_index": 3,
       "explanation": "\"Ligne des 300 m\" se definit par: bouées sphériques jaunes (~1 m) espacées d’environ 200 m.",
       "source_pages": []
     },
@@ -922,12 +922,12 @@
       ],
       "stem": "Quel terme correspond a la definition suivante ? \"bouées sphériques jaunes (~1 m) espacées d’environ 200 m.\"",
       "choices": [
-        "Voyant",
+        "De jour",
+        "Indiquent où passer par rapport à un danger",
         "Ligne des 300 m",
-        "Corps",
-        "Feu (caractère)"
+        "Zone réservée aux baigneurs"
       ],
-      "answer_index": 1,
+      "answer_index": 2,
       "explanation": "La definition donnee correspond au terme: Ligne des 300 m",
       "source_pages": []
     },
@@ -944,9 +944,9 @@
       "stem": "Que signifie \"Chenaux traversiers\" ?",
       "choices": [
         "bouées coniques et cylindriques jaunes, de plus en plus serrées vers le rivage.",
-        "la position des pointes indique où est la bande noire.",
-        "balise temporaire après naufrage; corps bandes verticales jaunes et bleues; voyant croix jaune droite; feu à éclats alternatifs bleu et jaune.",
-        "jaune, rythme différent de ceux des autres catégories."
+        "isophase, occultations, 1 éclat long (≥ 2 s au moins toutes les 10 s), ou lettre Morse « A ».",
+        "collier de bouées sphériques jaunes très rapprochées.",
+        "généralement 5 kt (rappel local)."
       ],
       "answer_index": 0,
       "explanation": "\"Chenaux traversiers\" se definit par: bouées coniques et cylindriques jaunes, de plus en plus serrées vers le rivage.",
@@ -964,12 +964,12 @@
       ],
       "stem": "Quel terme correspond a la definition suivante ? \"bouées coniques et cylindriques jaunes, de plus en plus serrées vers le rivage.\"",
       "choices": [
-        "Bâbord",
-        "Feux possibles",
-        "Couleurs et voyants à deux cônes",
-        "Chenaux traversiers"
+        "Corps",
+        "Chenaux traversiers",
+        "Indiquent où passer par rapport à un danger",
+        "Apparence"
       ],
-      "answer_index": 3,
+      "answer_index": 1,
       "explanation": "La definition donnee correspond au terme: Chenaux traversiers",
       "source_pages": []
     },
@@ -985,9 +985,9 @@
       ],
       "stem": "Que signifie \"Zone réservée aux baigneurs\" ?",
       "choices": [
-        "corps vert, voyant cône pointe en haut, numéros impairs, feu vert (rythme quelconque sauf 2+1).",
-        "jaune; forme variable; voyant en « X » jaune pour les marques durables.",
-        "noir avec une ou plusieurs larges bandes horizontales rouges.",
+        "bouées coniques et cylindriques jaunes, de plus en plus serrées vers le rivage.",
+        "isophase, occultations, 1 éclat long (≥ 2 s au moins toutes les 10 s), ou lettre Morse « A ».",
+        "deux sphères noires superposées.",
         "collier de bouées sphériques jaunes très rapprochées."
       ],
       "answer_index": 3,
@@ -1006,12 +1006,12 @@
       ],
       "stem": "Quel terme correspond a la definition suivante ? \"collier de bouées sphériques jaunes très rapprochées.\"",
       "choices": [
-        "Chenaux traversiers",
-        "Zone réservée aux baigneurs",
-        "Voyant",
-        "Couleur"
+        "Tribord",
+        "Couleurs et voyants à deux cônes",
+        "Feu",
+        "Zone réservée aux baigneurs"
       ],
-      "answer_index": 1,
+      "answer_index": 3,
       "explanation": "La definition donnee correspond au terme: Zone réservée aux baigneurs",
       "source_pages": []
     },
@@ -1027,12 +1027,12 @@
       ],
       "stem": "Que signifie \"Bande des 300 m / limite de vitesse\" ?",
       "choices": [
-        "« Un tricot vert et deux bas si rouges » (Impair tribord cône vert / Pair bâbord cylindre rouge).",
-        "bandes verticales rouges et blanches; voyant sphère rouge.",
+        "généralement 5 kt (rappel local).",
         "deux sphères noires superposées.",
-        "généralement 5 kt (rappel local)."
+        "on passe au N/E/S/O de la marque selon son type.",
+        "en entrant depuis la mer vers le port : tribord = vert, bâbord = rouge."
       ],
-      "answer_index": 3,
+      "answer_index": 0,
       "explanation": "\"Bande des 300 m / limite de vitesse\" se definit par: généralement 5 kt (rappel local).",
       "source_pages": []
     },
@@ -1048,12 +1048,12 @@
       ],
       "stem": "Quel terme correspond a la definition suivante ? \"généralement 5 kt (rappel local).\"",
       "choices": [
+        "Couleur",
+        "Chenaux traversiers",
         "Bande des 300 m / limite de vitesse",
-        "Urgence épave",
-        "Bâbord",
-        "Feu (caractère)"
+        "Mémo"
       ],
-      "answer_index": 0,
+      "answer_index": 2,
       "explanation": "La definition donnee correspond au terme: Bande des 300 m / limite de vitesse",
       "source_pages": []
     },
@@ -1070,9 +1070,9 @@
       "stem": "Que signifie \"Flux\" ?",
       "choices": [
         "durée pendant laquelle la mer monte (de BM à PM).",
-        "coefficients journaliers, heures et hauteurs de PM/BM des ports principaux, et tables de corrections pour ports rattachés.",
-        "certaines sondes peuvent être négatives et signalent un fond découvrant aux très grandes basses mers.",
-        "port principal dont les tables donnent heures et hauteurs de PM/BM."
+        "1/12, 2/12, 3/12, 3/12, 2/12, 1/12.",
+        "1/6 de la durée de flux ou de jusant.",
+        "certaines sondes peuvent être négatives et signalent un fond découvrant aux très grandes basses mers."
       ],
       "answer_index": 0,
       "explanation": "\"Flux\" se definit par: durée pendant laquelle la mer monte (de BM à PM).",
@@ -1090,12 +1090,12 @@
       ],
       "stem": "Quel terme correspond a la definition suivante ? \"durée pendant laquelle la mer monte (de BM à PM).\"",
       "choices": [
-        "Flux",
-        "Heures",
-        "Zéro des cartes",
-        "Heure marée"
+        "Attention",
+        "Port rattaché",
+        "Flot",
+        "Flux"
       ],
-      "answer_index": 0,
+      "answer_index": 3,
       "explanation": "La definition donnee correspond au terme: Flux",
       "source_pages": []
     },
@@ -1111,12 +1111,12 @@
       ],
       "stem": "Que signifie \"Reflux\" ?",
       "choices": [
+        "courant associé au reflux.",
+        "durée pendant laquelle la mer descend (de PM à BM).",
         "coefficients journaliers, heures et hauteurs de PM/BM des ports principaux, et tables de corrections pour ports rattachés.",
-        "1/12, 2/12, 3/12, 3/12, 2/12, 1/12.",
-        "durée pendant laquelle la mer monte (de BM à PM).",
-        "durée pendant laquelle la mer descend (de PM à BM)."
+        "différence de niveau entre une PM et une BM consécutives."
       ],
-      "answer_index": 3,
+      "answer_index": 1,
       "explanation": "\"Reflux\" se definit par: durée pendant laquelle la mer descend (de PM à BM).",
       "source_pages": []
     },
@@ -1132,12 +1132,12 @@
       ],
       "stem": "Quel terme correspond a la definition suivante ? \"durée pendant laquelle la mer descend (de PM à BM).\"",
       "choices": [
-        "Heure marée",
-        "Reflux",
+        "Attention",
         "Heures",
-        "Jusant"
+        "Flot",
+        "Reflux"
       ],
-      "answer_index": 1,
+      "answer_index": 3,
       "explanation": "La definition donnee correspond au terme: Reflux",
       "source_pages": []
     },
@@ -1153,12 +1153,12 @@
       ],
       "stem": "Que signifie \"Flot\" ?",
       "choices": [
+        "bien distinguer profondeur, immersion (tirant d’eau) et lecture sondeur.",
         "port principal dont les tables donnent heures et hauteurs de PM/BM.",
-        "courant associé au flux.",
-        "1/6 de la durée de flux ou de jusant.",
-        "coefficients journaliers, heures et hauteurs de PM/BM des ports principaux, et tables de corrections pour ports rattachés."
+        "dans le cours, rappel que l’annuaire est en Temps Universel + 1 (= heure d’hiver). En été, ajouter +1 h supplémentaire.",
+        "courant associé au flux."
       ],
-      "answer_index": 1,
+      "answer_index": 3,
       "explanation": "\"Flot\" se definit par: courant associé au flux.",
       "source_pages": []
     },
@@ -1174,10 +1174,10 @@
       ],
       "stem": "Quel terme correspond a la definition suivante ? \"courant associé au flux.\"",
       "choices": [
+        "Reflux",
         "Attention",
-        "Port rattaché",
         "Flot",
-        "Coefficient"
+        "Heures"
       ],
       "answer_index": 2,
       "explanation": "La definition donnee correspond au terme: Flot",
@@ -1195,9 +1195,9 @@
       ],
       "stem": "Que signifie \"Jusant\" ?",
       "choices": [
-        "différence de niveau entre une PM et une BM consécutives.",
-        "durée pendant laquelle la mer monte (de BM à PM).",
-        "courant associé au flux.",
+        "niveau de référence des sondes (souvent proche des plus basses mers théoriques).",
+        "coefficients journaliers, heures et hauteurs de PM/BM des ports principaux, et tables de corrections pour ports rattachés.",
+        "dans le cours, rappel que l’annuaire est en Temps Universel + 1 (= heure d’hiver). En été, ajouter +1 h supplémentaire.",
         "courant associé au reflux."
       ],
       "answer_index": 3,
@@ -1216,10 +1216,10 @@
       ],
       "stem": "Quel terme correspond a la definition suivante ? \"courant associé au reflux.\"",
       "choices": [
-        "Port de référence",
+        "Attention",
         "Jusant",
-        "Port rattaché",
-        "L’Annuaire donne"
+        "Heures",
+        "Port de référence"
       ],
       "answer_index": 1,
       "explanation": "La definition donnee correspond au terme: Jusant",
@@ -1237,10 +1237,10 @@
       ],
       "stem": "Que signifie \"Marnage (amplitude)\" ?",
       "choices": [
-        "durée pendant laquelle la mer descend (de PM à BM).",
+        "dans le cours, rappel que l’annuaire est en Temps Universel + 1 (= heure d’hiver). En été, ajouter +1 h supplémentaire.",
         "différence de niveau entre une PM et une BM consécutives.",
-        "courant associé au reflux.",
-        "port principal dont les tables donnent heures et hauteurs de PM/BM."
+        "1/12, 2/12, 3/12, 3/12, 2/12, 1/12.",
+        "bien distinguer profondeur, immersion (tirant d’eau) et lecture sondeur."
       ],
       "answer_index": 1,
       "explanation": "\"Marnage (amplitude)\" se definit par: différence de niveau entre une PM et une BM consécutives.",
@@ -1258,12 +1258,12 @@
       ],
       "stem": "Quel terme correspond a la definition suivante ? \"différence de niveau entre une PM et une BM consécutives.\"",
       "choices": [
-        "Répartition du marnage par tranches successives",
-        "Coefficient",
-        "Marnage (amplitude)",
-        "Zéro des cartes"
+        "Port rattaché",
+        "L’Annuaire donne",
+        "Reflux",
+        "Marnage (amplitude)"
       ],
-      "answer_index": 2,
+      "answer_index": 3,
       "explanation": "La definition donnee correspond au terme: Marnage (amplitude)",
       "source_pages": []
     },
@@ -1279,12 +1279,12 @@
       ],
       "stem": "Que signifie \"Coefficient\" ?",
       "choices": [
-        "coefficients journaliers, heures et hauteurs de PM/BM des ports principaux, et tables de corrections pour ports rattachés.",
         "mesure de la « force » de la marée (≈ 20 à 120). >70 = vives-eaux; <70 = mortes-eaux.",
-        "port principal dont les tables donnent heures et hauteurs de PM/BM.",
-        "courant associé au reflux."
+        "niveau de référence des sondes (souvent proche des plus basses mers théoriques).",
+        "courant associé au reflux.",
+        "certaines sondes peuvent être négatives et signalent un fond découvrant aux très grandes basses mers."
       ],
-      "answer_index": 1,
+      "answer_index": 0,
       "explanation": "\"Coefficient\" se definit par: mesure de la « force » de la marée (≈ 20 à 120). >70 = vives-eaux; <70 = mortes-eaux.",
       "source_pages": []
     },
@@ -1300,12 +1300,12 @@
       ],
       "stem": "Quel terme correspond a la definition suivante ? \"mesure de la « force » de la marée (≈ 20 à 120). >70 = vives-eaux; <70 = mortes-eaux.\"",
       "choices": [
-        "Zéro des cartes",
+        "Attention",
+        "Reflux",
         "Coefficient",
-        "L’Annuaire donne",
-        "Flux"
+        "Zéro des cartes"
       ],
-      "answer_index": 1,
+      "answer_index": 2,
       "explanation": "La definition donnee correspond au terme: Coefficient",
       "source_pages": []
     },
@@ -1321,12 +1321,12 @@
       ],
       "stem": "Que signifie \"Port de référence\" ?",
       "choices": [
+        "bien distinguer profondeur, immersion (tirant d’eau) et lecture sondeur.",
+        "mesure de la « force » de la marée (≈ 20 à 120). >70 = vives-eaux; <70 = mortes-eaux.",
         "port principal dont les tables donnent heures et hauteurs de PM/BM.",
-        "durée pendant laquelle la mer monte (de BM à PM).",
-        "courant associé au reflux.",
-        "différence de niveau entre une PM et une BM consécutives."
+        "coefficients journaliers, heures et hauteurs de PM/BM des ports principaux, et tables de corrections pour ports rattachés."
       ],
-      "answer_index": 0,
+      "answer_index": 2,
       "explanation": "\"Port de référence\" se definit par: port principal dont les tables donnent heures et hauteurs de PM/BM.",
       "source_pages": []
     },
@@ -1342,12 +1342,12 @@
       ],
       "stem": "Quel terme correspond a la definition suivante ? \"port principal dont les tables donnent heures et hauteurs de PM/BM.\"",
       "choices": [
+        "Zéro des cartes",
+        "Heure marée",
         "Profondeur (au-dessus du fond)",
-        "Port de référence",
-        "L’Annuaire donne",
-        "Reflux"
+        "Port de référence"
       ],
-      "answer_index": 1,
+      "answer_index": 3,
       "explanation": "La definition donnee correspond au terme: Port de référence",
       "source_pages": []
     },
@@ -1364,9 +1364,9 @@
       "stem": "Que signifie \"Port rattaché\" ?",
       "choices": [
         "port secondaire dont les horaires/hauteurs se déduisent par corrections.",
-        "mesure de la « force » de la marée (≈ 20 à 120). >70 = vives-eaux; <70 = mortes-eaux.",
-        "niveau de référence des sondes (souvent proche des plus basses mers théoriques).",
-        "dans le cours, rappel que l’annuaire est en Temps Universel + 1 (= heure d’hiver). En été, ajouter +1 h supplémentaire."
+        "durée pendant laquelle la mer descend (de PM à BM).",
+        "1/6 de la durée de flux ou de jusant.",
+        "mesure de la « force » de la marée (≈ 20 à 120). >70 = vives-eaux; <70 = mortes-eaux."
       ],
       "answer_index": 0,
       "explanation": "\"Port rattaché\" se definit par: port secondaire dont les horaires/hauteurs se déduisent par corrections.",
@@ -1384,12 +1384,12 @@
       ],
       "stem": "Quel terme correspond a la definition suivante ? \"port secondaire dont les horaires/hauteurs se déduisent par corrections.\"",
       "choices": [
-        "Marnage (amplitude)",
-        "Répartition du marnage par tranches successives",
-        "L’Annuaire donne",
-        "Port rattaché"
+        "Port rattaché",
+        "Heure marée",
+        "Attention",
+        "Port de référence"
       ],
-      "answer_index": 3,
+      "answer_index": 0,
       "explanation": "La definition donnee correspond au terme: Port rattaché",
       "source_pages": []
     },
@@ -1405,12 +1405,12 @@
       ],
       "stem": "Que signifie \"Heure marée\" ?",
       "choices": [
-        "1/6 de la durée de flux ou de jusant.",
-        "port principal dont les tables donnent heures et hauteurs de PM/BM.",
+        "durée pendant laquelle la mer monte (de BM à PM).",
         "niveau de référence des sondes (souvent proche des plus basses mers théoriques).",
-        "bien distinguer profondeur, immersion (tirant d’eau) et lecture sondeur."
+        "1/6 de la durée de flux ou de jusant.",
+        "mesure de la « force » de la marée (≈ 20 à 120). >70 = vives-eaux; <70 = mortes-eaux."
       ],
-      "answer_index": 0,
+      "answer_index": 2,
       "explanation": "\"Heure marée\" se definit par: 1/6 de la durée de flux ou de jusant.",
       "source_pages": []
     },
@@ -1426,9 +1426,9 @@
       ],
       "stem": "Quel terme correspond a la definition suivante ? \"1/6 de la durée de flux ou de jusant.\"",
       "choices": [
-        "Marnage (amplitude)",
-        "Répartition du marnage par tranches successives",
-        "Heures",
+        "Flot",
+        "Jusant",
+        "Reflux",
         "Heure marée"
       ],
       "answer_index": 3,
@@ -1449,8 +1449,8 @@
       "choices": [
         "niveau de référence des sondes (souvent proche des plus basses mers théoriques).",
         "différence de niveau entre une PM et une BM consécutives.",
-        "port principal dont les tables donnent heures et hauteurs de PM/BM.",
-        "coefficients journaliers, heures et hauteurs de PM/BM des ports principaux, et tables de corrections pour ports rattachés."
+        "dans le cours, rappel que l’annuaire est en Temps Universel + 1 (= heure d’hiver). En été, ajouter +1 h supplémentaire.",
+        "certaines sondes peuvent être négatives et signalent un fond découvrant aux très grandes basses mers."
       ],
       "answer_index": 0,
       "explanation": "\"Zéro des cartes\" se definit par: niveau de référence des sondes (souvent proche des plus basses mers théoriques).",
@@ -1468,12 +1468,12 @@
       ],
       "stem": "Quel terme correspond a la definition suivante ? \"niveau de référence des sondes (souvent proche des plus basses mers théoriques).\"",
       "choices": [
-        "Port de référence",
-        "Marnage (amplitude)",
+        "Flot",
         "Zéro des cartes",
-        "Heures"
+        "Port rattaché",
+        "Profondeur (au-dessus du fond)"
       ],
-      "answer_index": 2,
+      "answer_index": 1,
       "explanation": "La definition donnee correspond au terme: Zéro des cartes",
       "source_pages": []
     },
@@ -1489,12 +1489,12 @@
       ],
       "stem": "Que signifie \"Profondeur (au-dessus du fond)\" ?",
       "choices": [
-        "bien distinguer profondeur, immersion (tirant d’eau) et lecture sondeur.",
-        "durée pendant laquelle la mer monte (de BM à PM).",
+        "port principal dont les tables donnent heures et hauteurs de PM/BM.",
         "P = H + S (hauteur d’eau H + sonde S).",
-        "1/12, 2/12, 3/12, 3/12, 2/12, 1/12."
+        "niveau de référence des sondes (souvent proche des plus basses mers théoriques).",
+        "1/6 de la durée de flux ou de jusant."
       ],
-      "answer_index": 2,
+      "answer_index": 1,
       "explanation": "\"Profondeur (au-dessus du fond)\" se definit par: P = H + S (hauteur d’eau H + sonde S).",
       "source_pages": []
     },
@@ -1510,12 +1510,12 @@
       ],
       "stem": "Quel terme correspond a la definition suivante ? \"P = H + S (hauteur d’eau H + sonde S).\"",
       "choices": [
+        "L’Annuaire donne",
         "Profondeur (au-dessus du fond)",
-        "Flux",
-        "Marnage (amplitude)",
-        "Jusant"
+        "Port rattaché",
+        "Heure marée"
       ],
-      "answer_index": 0,
+      "answer_index": 1,
       "explanation": "La definition donnee correspond au terme: Profondeur (au-dessus du fond)",
       "source_pages": []
     },
@@ -1531,12 +1531,12 @@
       ],
       "stem": "Que signifie \"Attention\" ?",
       "choices": [
-        "niveau de référence des sondes (souvent proche des plus basses mers théoriques).",
-        "durée pendant laquelle la mer descend (de PM à BM).",
-        "1/6 de la durée de flux ou de jusant.",
-        "certaines sondes peuvent être négatives et signalent un fond découvrant aux très grandes basses mers."
+        "port principal dont les tables donnent heures et hauteurs de PM/BM.",
+        "certaines sondes peuvent être négatives et signalent un fond découvrant aux très grandes basses mers.",
+        "P = H + S (hauteur d’eau H + sonde S).",
+        "port secondaire dont les horaires/hauteurs se déduisent par corrections."
       ],
-      "answer_index": 3,
+      "answer_index": 1,
       "explanation": "\"Attention\" se definit par: certaines sondes peuvent être négatives et signalent un fond découvrant aux très grandes basses mers.",
       "source_pages": []
     },
@@ -1552,12 +1552,12 @@
       ],
       "stem": "Quel terme correspond a la definition suivante ? \"certaines sondes peuvent être négatives et signalent un fond découvrant aux très grandes basses mers.\"",
       "choices": [
-        "L’Annuaire donne",
         "Zéro des cartes",
-        "Coefficient",
-        "Attention"
+        "Attention",
+        "Heures",
+        "Jusant"
       ],
-      "answer_index": 3,
+      "answer_index": 1,
       "explanation": "La definition donnee correspond au terme: Attention",
       "source_pages": []
     },
@@ -1573,12 +1573,12 @@
       ],
       "stem": "Que signifie \"Le sondeur mesure sous la quille, pas le tirant d’eau total\" ?",
       "choices": [
-        "coefficients journaliers, heures et hauteurs de PM/BM des ports principaux, et tables de corrections pour ports rattachés.",
         "bien distinguer profondeur, immersion (tirant d’eau) et lecture sondeur.",
-        "mesure de la « force » de la marée (≈ 20 à 120). >70 = vives-eaux; <70 = mortes-eaux.",
-        "niveau de référence des sondes (souvent proche des plus basses mers théoriques)."
+        "niveau de référence des sondes (souvent proche des plus basses mers théoriques).",
+        "port principal dont les tables donnent heures et hauteurs de PM/BM.",
+        "coefficients journaliers, heures et hauteurs de PM/BM des ports principaux, et tables de corrections pour ports rattachés."
       ],
-      "answer_index": 1,
+      "answer_index": 0,
       "explanation": "\"Le sondeur mesure sous la quille, pas le tirant d’eau total\" se definit par: bien distinguer profondeur, immersion (tirant d’eau) et lecture sondeur.",
       "source_pages": []
     },
@@ -1594,10 +1594,10 @@
       ],
       "stem": "Que signifie \"L’Annuaire donne\" ?",
       "choices": [
-        "port principal dont les tables donnent heures et hauteurs de PM/BM.",
+        "durée pendant laquelle la mer monte (de BM à PM).",
         "coefficients journaliers, heures et hauteurs de PM/BM des ports principaux, et tables de corrections pour ports rattachés.",
         "port secondaire dont les horaires/hauteurs se déduisent par corrections.",
-        "1/6 de la durée de flux ou de jusant."
+        "mesure de la « force » de la marée (≈ 20 à 120). >70 = vives-eaux; <70 = mortes-eaux."
       ],
       "answer_index": 1,
       "explanation": "\"L’Annuaire donne\" se definit par: coefficients journaliers, heures et hauteurs de PM/BM des ports principaux, et tables de corrections pour ports rattachés.",
@@ -1617,8 +1617,8 @@
       "choices": [
         "Profondeur (au-dessus du fond)",
         "L’Annuaire donne",
-        "Jusant",
-        "Répartition du marnage par tranches successives"
+        "Coefficient",
+        "Flux"
       ],
       "answer_index": 1,
       "explanation": "La definition donnee correspond au terme: L’Annuaire donne",
@@ -1636,9 +1636,9 @@
       ],
       "stem": "Que signifie \"Heures\" ?",
       "choices": [
-        "port secondaire dont les horaires/hauteurs se déduisent par corrections.",
-        "durée pendant laquelle la mer descend (de PM à BM).",
-        "différence de niveau entre une PM et une BM consécutives.",
+        "durée pendant laquelle la mer monte (de BM à PM).",
+        "P = H + S (hauteur d’eau H + sonde S).",
+        "port principal dont les tables donnent heures et hauteurs de PM/BM.",
         "dans le cours, rappel que l’annuaire est en Temps Universel + 1 (= heure d’hiver). En été, ajouter +1 h supplémentaire."
       ],
       "answer_index": 3,
@@ -1657,12 +1657,12 @@
       ],
       "stem": "Quel terme correspond a la definition suivante ? \"dans le cours, rappel que l’annuaire est en Temps Universel + 1 (= heure d’hiver). En été, ajouter +1 h supplémentaire.\"",
       "choices": [
-        "Heures",
-        "Marnage (amplitude)",
         "Flot",
-        "Jusant"
+        "Heures",
+        "Répartition du marnage par tranches successives",
+        "Profondeur (au-dessus du fond)"
       ],
-      "answer_index": 0,
+      "answer_index": 1,
       "explanation": "La definition donnee correspond au terme: Heures",
       "source_pages": []
     },
@@ -1680,8 +1680,8 @@
       "choices": [
         "1/12, 2/12, 3/12, 3/12, 2/12, 1/12.",
         "durée pendant laquelle la mer descend (de PM à BM).",
-        "mesure de la « force » de la marée (≈ 20 à 120). >70 = vives-eaux; <70 = mortes-eaux.",
-        "port principal dont les tables donnent heures et hauteurs de PM/BM."
+        "bien distinguer profondeur, immersion (tirant d’eau) et lecture sondeur.",
+        "P = H + S (hauteur d’eau H + sonde S)."
       ],
       "answer_index": 0,
       "explanation": "\"Répartition du marnage par tranches successives\" se definit par: 1/12, 2/12, 3/12, 3/12, 2/12, 1/12.",
@@ -1699,12 +1699,12 @@
       ],
       "stem": "Quel terme correspond a la definition suivante ? \"1/12, 2/12, 3/12, 3/12, 2/12, 1/12.\"",
       "choices": [
-        "Marnage (amplitude)",
         "Répartition du marnage par tranches successives",
-        "Port rattaché",
-        "Heure marée"
+        "Reflux",
+        "Flux",
+        "Heures"
       ],
-      "answer_index": 1,
+      "answer_index": 0,
       "explanation": "La definition donnee correspond au terme: Répartition du marnage par tranches successives",
       "source_pages": []
     },
@@ -1720,12 +1720,12 @@
       ],
       "stem": "Exercice M14-EX1: quelle est la valeur correcte pour \"duration jusant\" ?",
       "choices": [
-        "isophase, occultations, 1 éclat long (≥ 2 s au moins toutes les 10 s), ou lettre Morse « A ».",
-        "06h28",
-        "bandes verticales rouges et blanches; voyant sphère rouge.",
-        "durée pendant laquelle la mer monte (de BM à PM)."
+        "durée pendant laquelle la mer descend (de PM à BM).",
+        "certaines sondes peuvent être négatives et signalent un fond découvrant aux très grandes basses mers.",
+        "mesure de la « force » de la marée (≈ 20 à 120). >70 = vives-eaux; <70 = mortes-eaux.",
+        "06h28"
       ],
-      "answer_index": 1,
+      "answer_index": 3,
       "explanation": "En appliquant la methode de l exercice M14-EX1, la valeur correcte est \"06h28\".",
       "source_pages": [
         1,
@@ -1744,12 +1744,12 @@
       ],
       "stem": "Exercice M14-EX1: quelle est la valeur correcte pour \"heure maree\" ?",
       "choices": [
-        "01h04m40s (≈ 64 min 40 s)",
-        "bandes verticales rouges et blanches; voyant sphère rouge.",
-        "on passe au N/E/S/O de la marque selon son type.",
-        "bouées coniques et cylindriques jaunes, de plus en plus serrées vers le rivage."
+        "06h28",
+        "durée pendant laquelle la mer descend (de PM à BM).",
+        "niveau de référence des sondes (souvent proche des plus basses mers théoriques).",
+        "01h04m40s (≈ 64 min 40 s)"
       ],
-      "answer_index": 0,
+      "answer_index": 3,
       "explanation": "En appliquant la methode de l exercice M14-EX1, la valeur correcte est \"01h04m40s (≈ 64 min 40 s)\".",
       "source_pages": [
         1,
@@ -1769,9 +1769,9 @@
       "stem": "Exercice M14-EX1: quelle est la valeur correcte pour \"marnage m\" ?",
       "choices": [
         "4.50",
-        "certaines sondes peuvent être négatives et signalent un fond découvrant aux très grandes basses mers.",
-        "corps rouge, voyant cylindrique, numéros pairs, feu rouge (rythme quelconque sauf 2+1).",
-        "obstruction récente non encore portée sur les documents nautiques; balisage souvent par latérale ou cardinale; danger grave : marque doublée; feu scintillant rapide ou scintillant; possible balise radar codée Morse « D »."
+        "différence de niveau entre une PM et une BM consécutives.",
+        "1/12, 2/12, 3/12, 3/12, 2/12, 1/12.",
+        "5.00"
       ],
       "answer_index": 0,
       "explanation": "En appliquant la methode de l exercice M14-EX1, la valeur correcte est \"4.50\".",

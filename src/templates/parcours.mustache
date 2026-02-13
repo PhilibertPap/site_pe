@@ -5,7 +5,7 @@
             <p class="mb-0">Vue d'ensemble du cursus. Chaque module possede maintenant sa page de cours dediee.</p>
         </div>
         <div class="col-lg-3 text-lg-end">
-            <p class="page-tag mb-2">📚 Cursus guide</p>
+            <p class="page-tag mb-2">Cursus guide</p>
             <a href="entrainement.html" class="btn btn-light btn-sm">Aller a l'entrainement</a>
         </div>
     </div>
@@ -14,7 +14,7 @@
 <div class="row g-4 reveal reveal-delay-1">
     <aside class="col-lg-3">
         <div class="soft-panel p-3 sticky-top" style="top: 90px;">
-            <h2 class="h6 section-title section-head"><span class="icon-badge">🪜</span>Etapes</h2>
+            <h2 class="h6 section-title section-head"><span class="icon-badge">ET</span>Etapes</h2>
             <div class="list-group">
                 {{#etapes}}
                 <button type="button" class="list-group-item list-group-item-action" onclick="scrollToEtape('etape-{{id}}')">
@@ -31,7 +31,7 @@
         <section id="etape-{{id}}" class="mb-5 reveal reveal-delay-2">
             <div class="d-flex justify-content-between align-items-start mb-3">
                 <div>
-                    <h2 class="section-title h4 mb-1 section-head"><span class="icon-badge">⚓</span>{{name}}</h2>
+                    <h2 class="section-title h4 mb-1 section-head"><span class="icon-badge">M</span>{{name}}</h2>
                     <p class="text-muted mb-0">{{description}}</p>
                 </div>
                 <span class="badge text-bg-light">{{moduleCount}} modules</span>
