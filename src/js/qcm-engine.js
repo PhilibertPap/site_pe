@@ -56,6 +56,7 @@
             categoryName: category.name,
             moduleId: category.module,
             text: raw.text || raw.question || '',
+            context: raw.context || '',
             image: raw.image || null,
             difficulty: raw.difficulty || 1,
             answers: (raw.answers || raw.options || []).map((answer, index) => ({

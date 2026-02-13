@@ -157,6 +157,30 @@ class SitePE {
         </figure>`;
     }
 
+    buildQuestionContextHtml(question) {
+        const context = String(question?.context || '').trim();
+        if (!context) return '';
+        return `<div class="alert alert-info qcm-context">${context}</div>`;
+    }
+
+    generateFallbackExplanation(question, correctIndex) {
+        const correctAnswer = question.answers?.[correctIndex]?.text || '';
+        const fullText = String(`${question.text || ''} ${question.context || ''}`).toLowerCase();
+        let reason = 'Applique la regle du cours visee par cette question, puis elimine les propositions qui ne respectent pas cette regle.';
+        if (fullText.includes('entrant au port')) {
+            reason = 'En region A, en entrant du large vers le port, on garde les marques rouges a babord et vertes a tribord.';
+        } else if (fullText.includes('angle') && fullText.includes('feu blanc') && fullText.includes('tete')) {
+            reason = 'Le feu blanc de tete de mat couvre 225 deg sur l avant.';
+        } else if (fullText.includes('feu de poupe')) {
+            reason = 'Le feu de poupe couvre 135 deg vers l arriere.';
+        } else if (fullText.includes('canal') && fullText.includes('vhf')) {
+            reason = 'En detresse vocale, le premier appel se fait sur le canal 16.';
+        } else if (fullText.includes('300 m') || fullText.includes('bande cotiere')) {
+            reason = 'La vitesse y est strictement limitee pour la securite des usagers et baigneurs.';
+        }
+        return `Bonne reponse: ${correctAnswer}. ${reason}`;
+    }
+
     startQCM(moduleFilter = null) {
         this.stopQcmTimer();
         const pool = window.QcmEngine
@@ -296,6 +320,7 @@ class SitePE {
             </div>`;
         }).join('');
         const imageHtml = this.buildQcmImageHtml(question);
+        const contextHtml = this.buildQuestionContextHtml(question);
 
         const actionLabel = this.qcm?.metadata?.instantFeedback ? 'Valider' : 'Suivant';
         const html = `<div class="qcm-question">
@@ -304,6 +329,7 @@ class SitePE {
                 <h5 class="mb-0">${this.qcm.idx + 1}/${this.qcm.q.length}</h5>
                 ${this.getTimerBadgeHtml()}
             </div>
+            ${contextHtml}
             <h4>${question.text}</h4>
             ${imageHtml}
             <div class="options mt-4">${options}</div>
@@ -331,6 +357,7 @@ class SitePE {
         const question = this.qcm.q[this.qcm.idx];
         const correctIndex = question.answers.findIndex(option => option.correct);
         const selectedIndex = Number.parseInt(selected.value, 10);
+        this.qcm.answers[this.qcm.idx] = selectedIndex;
         const isCorrect = selectedIndex === correctIndex;
 
         if (isCorrect) {
@@ -371,8 +398,10 @@ class SitePE {
 
         const statusClass = isCorrect ? 'alert-success' : 'alert-warning';
         const statusText = isCorrect ? 'Bonne reponse.' : 'Reponse incorrecte.';
-        const explanation = question.explanation ? `<p class="mb-0"><strong>Explication:</strong> ${question.explanation}</p>` : '';
+        const explanationText = String(question.explanation || '').trim() || this.generateFallbackExplanation(question, correctIndex);
+        const explanation = `<p class="mb-0"><strong>Explication:</strong> ${explanationText}</p>`;
         const imageHtml = this.buildQcmImageHtml(question);
+        const contextHtml = this.buildQuestionContextHtml(question);
 
         const html = `<div class="qcm-question">
             <div class="progress mb-3"><div class="progress-bar" style="width:${((this.qcm.idx + 1) / this.qcm.q.length) * 100}%"></div></div>
@@ -380,6 +409,7 @@ class SitePE {
                 <h5 class="mb-0">${this.qcm.idx + 1}/${this.qcm.q.length}</h5>
                 ${this.getTimerBadgeHtml()}
             </div>
+            ${contextHtml}
             <h4>${question.text}</h4>
             ${imageHtml}
             <div class="alert ${statusClass} mt-3">${statusText}</div>
@@ -423,6 +453,7 @@ class SitePE {
         const fullExamNextStep = mode === 'full'
             ? '<p><a class="btn btn-outline-secondary btn-sm" href="navigation.html">Continuer avec le probleme de navigation</a></p>'
             : '';
+        const reviewHtml = this.buildFinalReviewHtml();
 
         const html = `<div class="alert ${passed ? 'alert-success' : 'alert-danger'}">
             <h3>${passed ? 'Reussi' : 'A retenter'}</h3>
@@ -433,10 +464,31 @@ class SitePE {
             ${fullExamNextStep}
             <button class="btn btn-primary mt-3" onclick="location.reload()">Recommencer</button>
             <a class="btn btn-outline-primary mt-3 ms-2" href="examens.html">Retour examens</a>
-        </div>`;
+        </div>
+        ${reviewHtml}`;
 
         const container = this.getQcmContainer();
         if (container) container.innerHTML = html;
+    }
+
+    buildFinalReviewHtml() {
+        if (!Array.isArray(this.qcm?.q) || !this.qcm.q.length) return '';
+        const rows = this.qcm.q.map((question, index) => {
+            const selectedIndex = this.qcm.answers[index];
+            const correctIndex = question.answers.findIndex(answer => answer.correct);
+            const selectedText = Number.isInteger(selectedIndex) ? question.answers[selectedIndex]?.text : 'Aucune reponse';
+            const correctText = question.answers[correctIndex]?.text || '';
+            const explanation = String(question.explanation || '').trim() || this.generateFallbackExplanation(question, correctIndex);
+            const stateClass = selectedIndex === correctIndex ? 'text-success' : 'text-danger';
+            return `<details class="qcm-review-item mb-2">
+                <summary><strong>Q${index + 1}.</strong> ${question.text}</summary>
+                ${question.context ? `<p class="small text-muted mb-1">${question.context}</p>` : ''}
+                <p class="mb-1 ${stateClass}"><strong>Ta reponse:</strong> ${selectedText || 'Aucune reponse'}</p>
+                <p class="mb-1"><strong>Bonne reponse:</strong> ${correctText}</p>
+                <p class="mb-0 small"><strong>Pourquoi:</strong> ${explanation}</p>
+            </details>`;
+        }).join('');
+        return `<section class="card mt-4"><div class="card-body"><h4 class="h6 mb-3">Correction detaillee</h4>${rows}</div></section>`;
     }
 
     updateModuleProgress(moduleIds, score, passed) {
