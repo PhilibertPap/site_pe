@@ -229,7 +229,7 @@ function themeExplanationHint(theme, fullText = '', correctText = '') {
         if (/chenal traversier|acces a la plage/.test(combined)) {
             return "Cours PE balisage des plages: un chenal traversier materialise un couloir de circulation entre plage et large, a respecter sans couper les lignes de bouees.";
         }
-        if (/route [abc]|passe en [ab]|chenal principal|sens de navigation|vers le large|entre au port/.test(combined)) {
+        if (/route\s+[abc]\b|passe en\s+[ab]\b|chenal principal|sens de navigation|entre au port|sortant du port/.test(combined)) {
             return "Cours PE balisage lateral (IALA region A): il faut d'abord identifier le sens conventionnel (entrant au port), puis positionner les marques laterales pour choisir la route conforme.";
         }
         return "Cours PE module balisage: identifier d'abord le type de marque (laterale, cardinale, speciale, eaux saines, danger isole), puis appliquer la regle de passage associee.";
@@ -263,6 +263,38 @@ function inferSpecificRule(fullText, correctText = '') {
     const combined = normalize(`${fullText} ${correctText}`);
     const rules = [
         {
+            test: /(?:\bmayday\b|\bpan pan\b|message de securite|canal\s*16|appel.*vhf|vhf.*appel|detresse.*vhf)/,
+            reason: "En VHF marine, le signal depend du degre d'urgence: MAYDAY pour detresse grave et imminente, PAN PAN pour urgence, SECURITE pour message de securite."
+        },
+        {
+            test: /cross|secours en mer|coordonne les secours/,
+            reason: "La coordination operationnelle des secours en mer est assuree par le CROSS."
+        },
+        {
+            test: /erre\b|vitesse du navire par rapport a l eau|vitesse du navire par rapport a l'eau/,
+            reason: "L'erre designe la vitesse propre du navire par rapport a l'eau, a distinguer de la vitesse fond."
+        },
+        {
+            test: /division 240|armement de securite|feux a main|manuel du proprietaire/,
+            reason: "L'armement obligatoire se verifie sur le manuel du navire et, a defaut, dans la reglementation Division 240 correspondant a la zone de navigation."
+        },
+        {
+            test: /plein de carburant|entonnoir|debordement|pollution/,
+            reason: "Au ravitaillement, toute mesure limitant debordement et rejet a la mer est obligatoire pour la securite et la prevention de la pollution."
+        },
+        {
+            test: /derive dangereusement|cote rocheuse|jette l ancre|jeter l ancre|panne moteur/,
+            reason: "En derive vers un danger, la priorite est de stopper la derive (mouillage si possible) puis d'alerter selon l'urgence de la situation."
+        },
+        {
+            test: /homme a la mer|dispositif de reperage|zone de navigation cotiere|zone basique/,
+            reason: "Les equipements de reperage et d'assistance augmentent avec l'eloignement: certaines obligations s'appliquent des la zone cotiere."
+        },
+        {
+            test: /chef de bord|locataire|titulaire du permis|responsabilite a bord/,
+            reason: "Le chef de bord est la personne qui assume legalement la conduite et la securite du navire; ce role n'est pas automatiquement lie a la location."
+        },
+        {
             test: /bouees jaunes rapprochees|collier de bouees jaunes|danger nouveau|pas encore porte sur les cartes/,
             reason: "Un collier de petites bouees jaunes signale en pratique un danger nouveau ou temporaire: on ne le franchit pas et on recherche un passage balise autorise.",
             reference: "Reference: cours PE balisage des dangers nouveaux et information nautique locale."
@@ -293,7 +325,7 @@ function inferSpecificRule(fullText, correctText = '') {
             reference: "Reference: cours PE balisage lateral IALA region A/B."
         },
         {
-            test: /vers le large|j entre au port|entre au port|sens de navigation/,
+            test: /j entre au port|entre au port|sortant du port|sens de navigation|se dirige.*vers le large|se dirige.*vers le port/,
             reason: "Le sens conventionnel sert de reference: en entrant, rouge a babord et vert a tribord (region A). En sortie, la logique est inversee.",
             reference: "Reference: cours PE balisage lateral IALA region A."
         },
@@ -506,15 +538,15 @@ function stripTrailingPunctuation(value) {
 function buildExplanation({ text, context, answers, correctIndex, theme }) {
     const correctText = stripTrailingPunctuation(answers[correctIndex]);
     const questionText = String(text || '').trim();
-    const fullText = normalize(`${questionText} ${context || ''}`);
+    const rawContext = String(context || '').trim();
+    const contextualHint = /^Question\s+/i.test(rawContext) ? '' : rawContext;
+    const fullText = normalize(`${questionText} ${contextualHint}`);
     const matched = inferSpecificRule(fullText, correctText);
     const baseReason = matched ? matched.reason : themeExplanationHint(theme, fullText, correctText);
-    const reference = matched?.reference || themeReference(theme);
-    const contextReason = context ? `Contexte de l'enonce: ${stripTrailingPunctuation(context)}.` : '';
+    const contextReason = contextualHint ? `Contexte de l'enonce: ${stripTrailingPunctuation(contextualHint)}.` : '';
 
     return [
         `Reponse correcte: ${correctText}.`,
-        reference,
         `Explication: ${baseReason}`,
         contextReason
     ].filter(Boolean).join(' ');
@@ -568,9 +600,9 @@ function applyManualCuration(categories) {
                         merged.context = synthesizeTheoryContext(merged.text, moduleId);
                     }
 
-                    if (!String(merged.explanation || '').trim()) {
-                        const answers = toArray(merged.answers).map(answer => answer.text);
-                        const correctIndex = toArray(merged.answers).findIndex(answer => answer.correct);
+                    const answers = toArray(merged.answers).map(answer => answer.text);
+                    const correctIndex = toArray(merged.answers).findIndex(answer => answer.correct);
+                    if (correctIndex >= 0) {
                         merged.explanation = buildExplanation({
                             text: merged.text,
                             context: merged.context,

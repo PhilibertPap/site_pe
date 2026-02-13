@@ -194,34 +194,37 @@ class SitePE {
         }).join('');
     }
 
+    sanitizeExplanationText(value) {
+        const text = String(value || '');
+        return text
+            .replace(/\bReference(?:\s+cours)?\s*:[^.]*\./gi, ' ')
+            .replace(/\bSource(?:s)?\s*:[^.]*\./gi, ' ')
+            .replace(/\s+/g, ' ')
+            .trim();
+    }
+
     generateFallbackExplanation(question, correctIndex) {
         const correctAnswer = question.answers?.[correctIndex]?.text || '';
         const fullText = String(`${question.text || ''} ${question.context || ''}`).toLowerCase();
-        let reference = 'Reference cours: module theorique PE correspondant.';
         let reason = 'Appliquer la regle du module, puis verifier la coherence avec les donnees de l enonce.';
-        if (fullText.includes('entrant au port')) {
-            reference = 'Reference cours: balisage lateral region A.';
+        if (fullText.includes('pan pan') || fullText.includes('mayday') || fullText.includes('securite')) {
+            reason = "En VHF marine, MAYDAY = detresse grave et imminente, PAN PAN = urgence, SECURITE = message de securite.";
+        } else if (fullText.includes('entrant au port') || fullText.includes('sens de navigation')) {
             reason = 'En region A, en entrant du large vers le port, on garde les marques rouges a babord et vertes a tribord.';
         } else if (fullText.includes('angle') && fullText.includes('feu blanc') && fullText.includes('tete')) {
-            reference = 'Reference: RIPAM regles 21 et 23.';
             reason = 'Le feu blanc de tete de mat couvre 225 deg sur l avant.';
         } else if (fullText.includes('feu de poupe')) {
-            reference = 'Reference: RIPAM regle 21.';
             reason = 'Le feu de poupe couvre 135 deg vers l arriere.';
         } else if (fullText.includes('canal') && fullText.includes('vhf')) {
-            reference = 'Reference cours: procedures VHF de detresse.';
             reason = 'En detresse vocale, le premier appel se fait sur le canal 16.';
         } else if (fullText.includes('300 m') || fullText.includes('bande cotiere')) {
-            reference = 'Reference cours: reglementation cotiere.';
             reason = 'La vitesse y est strictement limitee pour la securite des usagers et baigneurs.';
         } else if (fullText.includes('veille')) {
-            reference = 'Reference: RIPAM regle 5.';
             reason = 'La veille visuelle et auditive est permanente en navigation.';
         } else if (fullText.includes('rattrap')) {
-            reference = 'Reference: RIPAM regle 13.';
             reason = "Le navire rattrapant est situe dans le secteur de 135 deg arriere de l'autre navire.";
         }
-        return `Reponse correcte: ${correctAnswer}. ${reference} Explication: ${reason}`;
+        return `Reponse correcte: ${correctAnswer}. Explication: ${reason}`;
     }
 
     startQCM(moduleFilter = null) {
@@ -433,7 +436,9 @@ class SitePE {
 
         const statusClass = isCorrect ? 'alert-success' : 'alert-warning';
         const statusText = isCorrect ? 'Bonne reponse.' : 'Reponse incorrecte.';
-        const explanationText = String(question.explanation || '').trim() || this.generateFallbackExplanation(question, correctIndex);
+        const explanationText =
+            this.sanitizeExplanationText(question.explanation) ||
+            this.generateFallbackExplanation(question, correctIndex);
         const explanation = `<p class="mb-0"><strong>Explication:</strong> ${this.escapeHtml(explanationText)}</p>`;
         const imageHtml = this.buildQcmImageHtml(question);
         const contextHtml = this.buildQuestionContextHtml(question);
@@ -513,7 +518,9 @@ class SitePE {
             const correctIndex = question.answers.findIndex(answer => answer.correct);
             const selectedText = Number.isInteger(selectedIndex) ? question.answers[selectedIndex]?.text : 'Aucune reponse';
             const correctText = question.answers[correctIndex]?.text || '';
-            const explanation = String(question.explanation || '').trim() || this.generateFallbackExplanation(question, correctIndex);
+            const explanation =
+                this.sanitizeExplanationText(question.explanation) ||
+                this.generateFallbackExplanation(question, correctIndex);
             const stateClass = selectedIndex === correctIndex ? 'qcm-review-ok' : 'qcm-review-ko';
             const answerList = this.buildAnswerReviewList(question, selectedIndex, correctIndex);
             return `<article class="qcm-review-item ${stateClass} mb-3 p-3 rounded border">

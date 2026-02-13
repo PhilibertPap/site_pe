@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-02-13T21:11:02.178Z",
+  "generatedAt": "2026-02-13T21:32:12.194Z",
   "algorithm": "balanced_under_constraints_v1",
   "seed": 20260212,
   "totalQuestionsInPool": 228,
@@ -62,7 +62,7 @@
               "correct": false
             }
           ],
-          "explanation": "Reponse correcte: Oui. Reference: cours PE maree (regle des douziemes et pied de pilote). Explication: La decision se fonde sur hauteur d'eau calculee (PM/BM/marnage) et marge sous quille.",
+          "explanation": "Reponse correcte: Oui. Explication: La decision se fonde sur hauteur d'eau calculee (PM/BM/marnage) et marge sous quille.",
           "tags": [
             "web_annales",
             "series_2",
@@ -91,7 +91,7 @@
               "correct": false
             }
           ],
-          "explanation": "Reponse correcte: Je laisse à ma droite. Reference: cours PE cartographie/navigation (lecture et evolution du cap). Explication: La manœuvre se deduit du compas: vers des valeurs plus faibles on vient a gauche (babord), vers des valeurs plus elevees on vient a droite (tribord), en tenant compte du passage 000/360.",
+          "explanation": "Reponse correcte: Je laisse à ma droite. Explication: La manœuvre se deduit du compas: vers des valeurs plus faibles on vient a gauche (babord), vers des valeurs plus elevees on vient a droite (tribord), en tenant compte du passage 000/360.",
           "tags": [
             "web_annales",
             "series_4",
@@ -125,7 +125,7 @@
               "correct": false
             }
           ],
-          "explanation": "Reponse correcte: PAN PAN. Reference: cours PE balisage lateral IALA region A. Explication: Le sens conventionnel sert de reference: en entrant, rouge a babord et vert a tribord (region A). En sortie, la logique est inversee. Contexte de l'enonce: En panne d'essence, vous dérivez inexorablement vers le large.",
+          "explanation": "Reponse correcte: PAN PAN. Explication: En VHF marine, le signal depend du degre d'urgence: MAYDAY pour detresse grave et imminente, PAN PAN pour urgence, SECURITE pour message de securite. Contexte de l'enonce: En panne d'essence, vous dérivez inexorablement vers le large.",
           "tags": [
             "web_annales",
             "series_5",
@@ -159,7 +159,7 @@
               "correct": true
             }
           ],
-          "explanation": "Reponse correcte: SÉCURITÉ. Reference: cours PE cardinales + systeme AISM/IALA. Explication: Une cardinale se lit par couleur, orientation des cones et rythme du feu blanc pour deduire le cote de passage securise. Contexte de l'enonce: De nuit, les feux d'une bouée cardinale sont en panne (la carte marine indiquant que la bouée est lumineuse).",
+          "explanation": "Reponse correcte: SÉCURITÉ. Explication: La coordination operationnelle des secours en mer est assuree par le CROSS. Contexte de l'enonce: De nuit, les feux d'une bouée cardinale sont en panne (la carte marine indiquant que la bouée est lumineuse).",
           "tags": [
             "web_annales",
             "series_3",
@@ -193,7 +193,7 @@
               "correct": true
             }
           ],
-          "explanation": "Reponse correcte: je dois attendre. Reference: balisage lateral IALA region A (cours PE module balisage). Explication: En sortie, la lecture du balisage est inversee par rapport au sens conventionnel d'entree.",
+          "explanation": "Reponse correcte: je dois attendre. Explication: Le sens conventionnel sert de reference: en entrant, rouge a babord et vert a tribord (region A). En sortie, la logique est inversee.",
           "tags": [
             "web_annales",
             "series_5",
@@ -222,7 +222,7 @@
               "correct": true
             }
           ],
-          "explanation": "Reponse correcte: Je vais à gauche. Reference: cours PE cartographie/navigation (lecture et evolution du cap). Explication: La manœuvre se deduit du compas: vers des valeurs plus faibles on vient a gauche (babord), vers des valeurs plus elevees on vient a droite (tribord), en tenant compte du passage 000/360.",
+          "explanation": "Reponse correcte: Je vais à gauche. Explication: La manœuvre se deduit du compas: vers des valeurs plus faibles on vient a gauche (babord), vers des valeurs plus elevees on vient a droite (tribord), en tenant compte du passage 000/360.",
           "tags": [
             "web_annales",
             "series_1",
@@ -256,7 +256,7 @@
               "correct": true
             }
           ],
-          "explanation": "Reponse correcte: La vitesse du navire par rapport à l'eau. Reference cours: module theorique PE correspondant. Explication: Cours PE regles de barre (RIPAM): qualifier la situation (rattrapage, croisement, route convergente), determiner le navire privilegie puis executer une manœuvre franche et precoce. Contexte de l'enonce: ERRE.",
+          "explanation": "Reponse correcte: La vitesse du navire par rapport à l'eau. Explication: L'erre designe la vitesse propre du navire par rapport a l'eau, a distinguer de la vitesse fond. Contexte de l'enonce: ERRE.",
           "tags": [
             "web_annales",
             "series_2",
@@ -285,7 +285,7 @@
               "correct": false
             }
           ],
-          "explanation": "Reponse correcte: selon la direction d'où vient le vent. Reference cours: module VHF et procedures de detresse/urgence. Explication: Cours PE VHF/SMDSM: identifier le niveau d'urgence puis appliquer le bon format d'appel sur le canal approprie.",
+          "explanation": "Reponse correcte: selon la direction d'où vient le vent. Explication: Cours PE meteo marine: traduire les termes du bulletin en force Beaufort, etat de mer et impact sur la securite du navire.",
           "tags": [
             "web_annales",
             "series_5",
@@ -319,7 +319,7 @@
               "correct": false
             }
           ],
-          "explanation": "Reponse correcte: Un château d'eau visible de la mer. Reference cours: module regles de barre + RIPAM regles 5, 7, 13, 15, 16, 17. Explication: Cours PE regles de barre (RIPAM): qualifier la situation (rattrapage, croisement, route convergente), determiner le navire privilegie puis executer une manœuvre franche et precoce. Contexte de l'enonce: Sur une carte marine.",
+          "explanation": "Reponse correcte: Un château d'eau visible de la mer. Explication: Cours PE cartographie: la reponse se construit en lisant la legende SHOM, les echelles et les symboles normalises avant toute decision de route. Contexte de l'enonce: Sur une carte marine.",
           "tags": [
             "web_annales",
             "series_3",
@@ -348,7 +348,7 @@
               "correct": false
             }
           ],
-          "explanation": "Reponse correcte: Vrai. Reference: cours PE VHF et procedures SMDSM/canal 16. Explication: En detresse vocale, l'appel initial se fait sur le canal 16 avant degagement sur canal de travail.",
+          "explanation": "Reponse correcte: Vrai. Explication: En detresse vocale, l'appel initial se fait sur le canal 16 avant degagement sur canal de travail.",
           "tags": [
             "web_annales",
             "series_3",
@@ -387,7 +387,7 @@
               "correct": false
             }
           ],
-          "explanation": "Reponse correcte: un navire en détresse. Reference cours: module theorique PE correspondant. Explication: Cours PE signaux sonores (RIPAM regle 34): le sens du signal depend strictement du nombre et de la duree des sons.",
+          "explanation": "Reponse correcte: un navire en détresse. Explication: Cours PE feux de navigation (RIPAM regles 21 a 23): l'identification repose sur la combinaison couleur + position + secteur + portee, jamais sur un seul feu isole.",
           "tags": [
             "web_annales",
             "series_6",
@@ -421,7 +421,7 @@
               "correct": false
             }
           ],
-          "explanation": "Reponse correcte: d'appeler le répondeur météo marine. Reference cours: module meteo marine et echelle Beaufort. Explication: Cours PE meteo marine: traduire les termes du bulletin en force Beaufort, etat de mer et impact sur la securite du navire. Contexte de l'enonce: 08 99 71 08 08.",
+          "explanation": "Reponse correcte: d'appeler le répondeur météo marine. Explication: Cours PE securite/reglementation: appliquer l'obligation legale du chef de bord et verifier les contraintes de zone, d'armement et de pratique. Contexte de l'enonce: 08 99 71 08 08.",
           "tags": [
             "web_annales",
             "series_1",
@@ -450,7 +450,7 @@
               "correct": false
             }
           ],
-          "explanation": "Reponse correcte: Vrai. Reference cours: module VHF et procedures de detresse/urgence. Explication: Cours PE VHF/SMDSM: identifier le niveau d'urgence puis appliquer le bon format d'appel sur le canal approprie.",
+          "explanation": "Reponse correcte: Vrai. Explication: Cours PE meteo marine: traduire les termes du bulletin en force Beaufort, etat de mer et impact sur la securite du navire.",
           "tags": [
             "web_annales",
             "series_2",
@@ -484,7 +484,7 @@
               "correct": true
             }
           ],
-          "explanation": "Reponse correcte: je laisse passer le navire B. Reference cours: module theorique PE correspondant. Explication: Cours PE regles de barre (RIPAM): qualifier la situation (rattrapage, croisement, route convergente), determiner le navire privilegie puis executer une manœuvre franche et precoce.",
+          "explanation": "Reponse correcte: je laisse passer le navire B. Explication: Cours PE regles de barre (RIPAM): qualifier la situation (rattrapage, croisement, route convergente), determiner le navire privilegie puis executer une manœuvre franche et precoce.",
           "tags": [
             "web_annales",
             "series_3",
@@ -518,7 +518,7 @@
               "correct": false
             }
           ],
-          "explanation": "Reponse correcte: Les véhicules nautiques à moteur capables d'emporter une seule personne. Reference: cours PE reglementation des VNM. Explication: La zone basique (2 milles) concerne des vehicules nautiques a moteur mono-place.",
+          "explanation": "Reponse correcte: Les véhicules nautiques à moteur capables d'emporter une seule personne. Explication: Les equipements de reperage et d'assistance augmentent avec l'eloignement: certaines obligations s'appliquent des la zone cotiere.",
           "tags": [
             "web_annales",
             "series_4",
@@ -552,7 +552,7 @@
               "correct": false
             }
           ],
-          "explanation": "Reponse correcte: un remorqueur. Reference: RIPAM regle 34 (signaux de manœuvre et d'avertissement) et cours PE signaux sonores. Explication: Le message sonore se decode strictement par nombre et duree des coups, puis s'applique a la manœuvre immediate.",
+          "explanation": "Reponse correcte: un remorqueur. Explication: Le message sonore se decode strictement par nombre et duree des coups, puis s'applique a la manœuvre immediate.",
           "tags": [
             "web_annales",
             "series_1",
@@ -586,7 +586,7 @@
               "correct": false
             }
           ],
-          "explanation": "Reponse correcte: je viens à droite. Reference cours: module theorique PE correspondant. Explication: Cours PE regles de barre (RIPAM): qualifier la situation (rattrapage, croisement, route convergente), determiner le navire privilegie puis executer une manœuvre franche et precoce.",
+          "explanation": "Reponse correcte: je viens à droite. Explication: Cours PE regles de barre (RIPAM): qualifier la situation (rattrapage, croisement, route convergente), determiner le navire privilegie puis executer une manœuvre franche et precoce.",
           "tags": [
             "web_annales",
             "series_4",
@@ -615,7 +615,7 @@
               "correct": true
             }
           ],
-          "explanation": "Reponse correcte: Une balise flottante latérale bâbord. Reference cours: module regles de barre + RIPAM regles 5, 7, 13, 15, 16, 17. Explication: Cours PE regles de barre (RIPAM): qualifier la situation (rattrapage, croisement, route convergente), determiner le navire privilegie puis executer une manœuvre franche et precoce.",
+          "explanation": "Reponse correcte: Une balise flottante latérale bâbord. Explication: Cours PE cartographie: la reponse se construit en lisant la legende SHOM, les echelles et les symboles normalises avant toute decision de route.",
           "tags": [
             "web_annales",
             "series_6",
@@ -644,7 +644,7 @@
               "correct": true
             }
           ],
-          "explanation": "Reponse correcte: Sur les échelles à gauche et à droite de la carte. Reference: cours PE cartographie (lecture des echelles). Explication: Sur carte marine, la minute se lit sur les echelles verticales de latitude (gauche/droite).",
+          "explanation": "Reponse correcte: Sur les échelles à gauche et à droite de la carte. Explication: Sur carte marine, la minute se lit sur les echelles verticales de latitude (gauche/droite).",
           "tags": [
             "web_annales",
             "series_6",
@@ -683,7 +683,7 @@
               "correct": true
             }
           ],
-          "explanation": "Reponse correcte: échoué. Reference: RIPAM regles 21 a 30 + cours PE feux et marques de navires. Explication: Le statut du navire est determine par la combinaison des feux/marques de jour, ce qui conditionne priorite et distance de securite.",
+          "explanation": "Reponse correcte: échoué. Explication: Le statut du navire est determine par la combinaison des feux/marques de jour, ce qui conditionne priorite et distance de securite.",
           "tags": [
             "web_annales",
             "series_3",
@@ -722,7 +722,7 @@
               "correct": false
             }
           ],
-          "explanation": "Reponse correcte: des eaux saines. Reference: cours PE balisage (marque d'eaux saines: bandes rouge/blanc, voyant sphere). Explication: La marque d'eaux saines indique une eau navigable tout autour et sert souvent d'atterrissage.",
+          "explanation": "Reponse correcte: des eaux saines. Explication: La marque d'eaux saines indique une eau navigable tout autour et sert souvent d'atterrissage.",
           "tags": []
         },
         {
@@ -747,7 +747,7 @@
               "correct": false
             }
           ],
-          "explanation": "Reponse correcte: Vrai. Reference cours: module meteo marine et echelle Beaufort. Explication: Cours PE meteo marine: traduire les termes du bulletin en force Beaufort, etat de mer et impact sur la securite du navire.",
+          "explanation": "Reponse correcte: Vrai. Explication: Cours PE securite/reglementation: appliquer l'obligation legale du chef de bord et verifier les contraintes de zone, d'armement et de pratique.",
           "tags": [
             "web_annales",
             "series_6",
@@ -786,7 +786,7 @@
               "correct": true
             }
           ],
-          "explanation": "Reponse correcte: Je dégage sur le canal que le CROSS m'aura indiqué. Reference: organisation des secours en mer (cours PE securite/VHF). Explication: La coordination des secours en mer releve du CROSS.",
+          "explanation": "Reponse correcte: Je dégage sur le canal que le CROSS m'aura indiqué. Explication: En VHF marine, le signal depend du degre d'urgence: MAYDAY pour detresse grave et imminente, PAN PAN pour urgence, SECURITE pour message de securite.",
           "tags": [
             "web_annales",
             "series_2",
@@ -820,7 +820,7 @@
               "correct": false
             }
           ],
-          "explanation": "Reponse correcte: jusqu'à 2 m. Reference cours: module meteo marine et echelle Beaufort. Explication: Cours PE meteo marine: traduire les termes du bulletin en force Beaufort, etat de mer et impact sur la securite du navire. Contexte de l'enonce: Catégorie de conception \"C\".",
+          "explanation": "Reponse correcte: jusqu'à 2 m. Explication: Cours PE securite/reglementation: appliquer l'obligation legale du chef de bord et verifier les contraintes de zone, d'armement et de pratique. Contexte de l'enonce: Catégorie de conception \"C\".",
           "tags": [
             "web_annales",
             "series_1",
@@ -859,7 +859,7 @@
               "correct": false
             }
           ],
-          "explanation": "Reponse correcte: 135°. Reference: RIPAM regle 21 (definition des feux de navigation). Explication: Le feu de poupe couvre 135 deg vers l'arriere.",
+          "explanation": "Reponse correcte: 135°. Explication: Le feu de poupe couvre 135 deg vers l'arriere.",
           "tags": [
             "web_annales",
             "series_2",
@@ -893,7 +893,7 @@
               "correct": false
             }
           ],
-          "explanation": "Reponse correcte: Je passe en B. Reference: cours PE balisage + lecture de route sur carte/extrait d'annale. Explication: La bonne route est celle qui respecte le balisage du chenal principal et maintient une marge de securite vis-a-vis des dangers cartographies.",
+          "explanation": "Reponse correcte: Je passe en B. Explication: La bonne route est celle qui respecte le balisage du chenal principal et maintient une marge de securite vis-a-vis des dangers cartographies.",
           "tags": [
             "web_annales",
             "series_3",
@@ -927,7 +927,7 @@
               "correct": true
             }
           ],
-          "explanation": "Reponse correcte: Le symbole C. Reference cours: module regles de barre + RIPAM regles 5, 7, 13, 15, 16, 17. Explication: Cours PE regles de barre (RIPAM): qualifier la situation (rattrapage, croisement, route convergente), determiner le navire privilegie puis executer une manœuvre franche et precoce.",
+          "explanation": "Reponse correcte: Le symbole C. Explication: Cours PE cartographie: la reponse se construit en lisant la legende SHOM, les echelles et les symboles normalises avant toute decision de route.",
           "tags": [
             "web_annales",
             "series_6",
@@ -961,7 +961,7 @@
               "correct": false
             }
           ],
-          "explanation": "Reponse correcte: un navire en action de pêche. Reference cours: module theorique PE correspondant. Explication: Cours PE regles de barre (RIPAM): qualifier la situation (rattrapage, croisement, route convergente), determiner le navire privilegie puis executer une manœuvre franche et precoce.",
+          "explanation": "Reponse correcte: un navire en action de pêche. Explication: Cours PE regles de barre (RIPAM): qualifier la situation (rattrapage, croisement, route convergente), determiner le navire privilegie puis executer une manœuvre franche et precoce.",
           "tags": [
             "web_annales",
             "series_1",
@@ -1000,7 +1000,7 @@
               "correct": true
             }
           ],
-          "explanation": "Reponse correcte: d'une bouée de danger isolé. Reference: cours PE balisage (marque de danger isole: couleurs noir/rouge, 2 spheres, feu blanc 2 eclats). Explication: Une marque de danger isole signale un obstacle local entoure d'eaux saines; on ne passe pas au contact.",
+          "explanation": "Reponse correcte: d'une bouée de danger isolé. Explication: Une marque de danger isole signale un obstacle local entoure d'eaux saines; on ne passe pas au contact.",
           "tags": [
             "web_annales",
             "series_5",
@@ -1029,7 +1029,7 @@
               "correct": true
             }
           ],
-          "explanation": "Reponse correcte: La météo va devenir mauvaise. Reference cours: module VHF et procedures de detresse/urgence. Explication: Cours PE VHF/SMDSM: identifier le niveau d'urgence puis appliquer le bon format d'appel sur le canal approprie.",
+          "explanation": "Reponse correcte: La météo va devenir mauvaise. Explication: Cours PE meteo marine: traduire les termes du bulletin en force Beaufort, etat de mer et impact sur la securite du navire.",
           "tags": [
             "web_annales",
             "series_2",
@@ -1115,7 +1115,7 @@
               "correct": false
             }
           ],
-          "explanation": "Reponse correcte: LISTING. Reference cours: module securite et reglementation plaisance. Explication: Cours PE securite/reglementation: appliquer l'obligation legale du chef de bord et verifier les contraintes de zone, d'armement et de pratique.",
+          "explanation": "Reponse correcte: LISTING. Explication: Cours PE VHF/SMDSM: identifier le niveau d'urgence puis appliquer le bon format d'appel sur le canal approprie.",
           "tags": [
             "web_annales",
             "series_5",
@@ -1149,7 +1149,7 @@
               "correct": true
             }
           ],
-          "explanation": "Reponse correcte: Non. Reference cours: module securite et reglementation plaisance. Explication: Cours PE securite/reglementation: appliquer l'obligation legale du chef de bord et verifier les contraintes de zone, d'armement et de pratique.",
+          "explanation": "Reponse correcte: Non. Explication: Cours PE VHF/SMDSM: identifier le niveau d'urgence puis appliquer le bon format d'appel sur le canal approprie.",
           "tags": [
             "web_annales",
             "series_6",
@@ -1183,7 +1183,7 @@
               "correct": false
             }
           ],
-          "explanation": "Reponse correcte: de couleurs inversées à celles de la métropole. Reference: cours PE balisage lateral IALA region A/B. Explication: Dans les zones relevant de l'IALA region B, les couleurs laterales sont inversees par rapport a la metropole (region A).",
+          "explanation": "Reponse correcte: de couleurs inversées à celles de la métropole. Explication: L'erre designe la vitesse propre du navire par rapport a l'eau, a distinguer de la vitesse fond.",
           "tags": [
             "web_annales",
             "series_5",
@@ -1212,7 +1212,7 @@
               "correct": true
             }
           ],
-          "explanation": "Reponse correcte: La météo va devenir mauvaise. Reference cours: module VHF et procedures de detresse/urgence. Explication: Cours PE VHF/SMDSM: identifier le niveau d'urgence puis appliquer le bon format d'appel sur le canal approprie.",
+          "explanation": "Reponse correcte: La météo va devenir mauvaise. Explication: Cours PE meteo marine: traduire les termes du bulletin en force Beaufort, etat de mer et impact sur la securite du navire.",
           "tags": [
             "web_annales",
             "series_2",
@@ -1246,7 +1246,7 @@
               "correct": false
             }
           ],
-          "explanation": "Reponse correcte: Vrai. Reference cours: module meteo marine et echelle Beaufort. Explication: Cours PE meteo marine: traduire les termes du bulletin en force Beaufort, etat de mer et impact sur la securite du navire.",
+          "explanation": "Reponse correcte: Vrai. Explication: Cours PE securite/reglementation: appliquer l'obligation legale du chef de bord et verifier les contraintes de zone, d'armement et de pratique.",
           "tags": [
             "web_annales",
             "series_5",
@@ -1275,7 +1275,7 @@
               "correct": true
             }
           ],
-          "explanation": "Reponse correcte: Je laisse sur mon bâbord. Reference: cours PE cartographie/navigation (lecture et evolution du cap). Explication: La manœuvre se deduit du compas: vers des valeurs plus faibles on vient a gauche (babord), vers des valeurs plus elevees on vient a droite (tribord), en tenant compte du passage 000/360.",
+          "explanation": "Reponse correcte: Je laisse sur mon bâbord. Explication: La manœuvre se deduit du compas: vers des valeurs plus faibles on vient a gauche (babord), vers des valeurs plus elevees on vient a droite (tribord), en tenant compte du passage 000/360.",
           "tags": []
         },
         {
@@ -1305,7 +1305,7 @@
               "correct": false
             }
           ],
-          "explanation": "Reponse correcte: Le navire B. Reference cours: module theorique PE correspondant. Explication: Cours PE regles de barre (RIPAM): qualifier la situation (rattrapage, croisement, route convergente), determiner le navire privilegie puis executer une manœuvre franche et precoce.",
+          "explanation": "Reponse correcte: Le navire B. Explication: Cours PE regles de barre (RIPAM): qualifier la situation (rattrapage, croisement, route convergente), determiner le navire privilegie puis executer une manœuvre franche et precoce.",
           "tags": [
             "web_annales",
             "series_3",
@@ -1339,7 +1339,7 @@
               "correct": true
             }
           ],
-          "explanation": "Reponse correcte: J'émets une série d'au moins 5 sons brefs. Reference: RIPAM regle 34 (signaux de manœuvre et d'avertissement) et cours PE signaux sonores. Explication: Le message sonore se decode strictement par nombre et duree des coups, puis s'applique a la manœuvre immediate.",
+          "explanation": "Reponse correcte: J'émets une série d'au moins 5 sons brefs. Explication: Le message sonore se decode strictement par nombre et duree des coups, puis s'applique a la manœuvre immediate.",
           "tags": [
             "web_annales",
             "series_5",
@@ -1373,7 +1373,7 @@
               "correct": true
             }
           ],
-          "explanation": "Reponse correcte: non maître de sa manœuvre sans erre. Reference: RIPAM regles 21 a 30 + cours PE feux et marques de navires. Explication: Le statut du navire est determine par la combinaison des feux/marques de jour, ce qui conditionne priorite et distance de securite.",
+          "explanation": "Reponse correcte: non maître de sa manœuvre sans erre. Explication: L'erre designe la vitesse propre du navire par rapport a l'eau, a distinguer de la vitesse fond.",
           "tags": [
             "web_annales",
             "series_3",
@@ -1407,7 +1407,7 @@
               "correct": false
             }
           ],
-          "explanation": "Reponse correcte: Un château d'eau visible de la mer. Reference cours: module regles de barre + RIPAM regles 5, 7, 13, 15, 16, 17. Explication: Cours PE regles de barre (RIPAM): qualifier la situation (rattrapage, croisement, route convergente), determiner le navire privilegie puis executer une manœuvre franche et precoce. Contexte de l'enonce: Sur une carte marine.",
+          "explanation": "Reponse correcte: Un château d'eau visible de la mer. Explication: Cours PE cartographie: la reponse se construit en lisant la legende SHOM, les echelles et les symboles normalises avant toute decision de route. Contexte de l'enonce: Sur une carte marine.",
           "tags": [
             "web_annales",
             "series_3",
@@ -1436,7 +1436,7 @@
               "correct": false
             }
           ],
-          "explanation": "Reponse correcte: vous êtes privilégié. Reference: RIPAM regle 17. Explication: Le navire privilegie maintient route et vitesse, mais doit agir a temps si l'autre ne manœuvre pas.",
+          "explanation": "Reponse correcte: vous êtes privilégié. Explication: Le navire privilegie maintient route et vitesse, mais doit agir a temps si l'autre ne manœuvre pas.",
           "tags": [
             "web_annales",
             "series_5",
@@ -1470,7 +1470,7 @@
               "correct": false
             }
           ],
-          "explanation": "Reponse correcte: un navire en action de pêche. Reference cours: module theorique PE correspondant. Explication: Cours PE regles de barre (RIPAM): qualifier la situation (rattrapage, croisement, route convergente), determiner le navire privilegie puis executer une manœuvre franche et precoce.",
+          "explanation": "Reponse correcte: un navire en action de pêche. Explication: Cours PE regles de barre (RIPAM): qualifier la situation (rattrapage, croisement, route convergente), determiner le navire privilegie puis executer une manœuvre franche et precoce.",
           "tags": [
             "web_annales",
             "series_1",
@@ -1504,7 +1504,7 @@
               "correct": true
             }
           ],
-          "explanation": "Reponse correcte: l'antenne est placée beaucoup plus haut (en haut du mât). Reference: cours PE VHF et procedures SMDSM/canal 16. Explication: En detresse vocale, l'appel initial se fait sur le canal 16 avant degagement sur canal de travail.",
+          "explanation": "Reponse correcte: l'antenne est placée beaucoup plus haut (en haut du mât). Explication: En detresse vocale, l'appel initial se fait sur le canal 16 avant degagement sur canal de travail.",
           "tags": [
             "web_annales",
             "series_5",
@@ -1538,7 +1538,7 @@
               "correct": true
             }
           ],
-          "explanation": "Reponse correcte: Avis de coup de vent par le Nord-Ouest. Reference cours: module theorique PE correspondant. Explication: Cours PE signaux sonores (RIPAM regle 34): le sens du signal depend strictement du nombre et de la duree des sons.",
+          "explanation": "Reponse correcte: Avis de coup de vent par le Nord-Ouest. Explication: Cours PE feux de navigation (RIPAM regles 21 a 23): l'identification repose sur la combinaison couleur + position + secteur + portee, jamais sur un seul feu isole.",
           "tags": [
             "web_annales",
             "series_1",
@@ -1572,7 +1572,7 @@
               "correct": false
             }
           ],
-          "explanation": "Reponse correcte: Vous passez, trafic à sens unique. Reference cours: module theorique PE correspondant. Explication: Cours PE signaux sonores (RIPAM regle 34): le sens du signal depend strictement du nombre et de la duree des sons.",
+          "explanation": "Reponse correcte: Vous passez, trafic à sens unique. Explication: Cours PE feux de navigation (RIPAM regles 21 a 23): l'identification repose sur la combinaison couleur + position + secteur + portee, jamais sur un seul feu isole.",
           "tags": [
             "web_annales",
             "series_6",
@@ -1606,7 +1606,7 @@
               "correct": false
             }
           ],
-          "explanation": "Reponse correcte: 25 watts. Reference: cours PE VHF et procedures SMDSM/canal 16. Explication: En detresse vocale, l'appel initial se fait sur le canal 16 avant degagement sur canal de travail.",
+          "explanation": "Reponse correcte: 25 watts. Explication: En detresse vocale, l'appel initial se fait sur le canal 16 avant degagement sur canal de travail.",
           "tags": [
             "web_annales",
             "series_1",
@@ -1640,7 +1640,7 @@
               "correct": false
             }
           ],
-          "explanation": "Reponse correcte: à partir de la zone de navigation côtière. Reference cours: module meteo marine et echelle Beaufort. Explication: Cours PE meteo marine: traduire les termes du bulletin en force Beaufort, etat de mer et impact sur la securite du navire.",
+          "explanation": "Reponse correcte: à partir de la zone de navigation côtière. Explication: Les equipements de reperage et d'assistance augmentent avec l'eloignement: certaines obligations s'appliquent des la zone cotiere.",
           "tags": [
             "web_annales",
             "series_3",
@@ -1669,7 +1669,7 @@
               "correct": true
             }
           ],
-          "explanation": "Reponse correcte: Non, je vais m'échouer. Reference: RIPAM regles 21 a 30 + cours PE feux et marques de navires. Explication: Le statut du navire est determine par la combinaison des feux/marques de jour, ce qui conditionne priorite et distance de securite. Contexte de l'enonce: La sonde indiquée sur la carte est de 1 mètre souligné. la hauteur d'eau à la prochaine marée basse sera de 0,6 mètre.",
+          "explanation": "Reponse correcte: Non, je vais m'échouer. Explication: Le statut du navire est determine par la combinaison des feux/marques de jour, ce qui conditionne priorite et distance de securite. Contexte de l'enonce: La sonde indiquée sur la carte est de 1 mètre souligné. la hauteur d'eau à la prochaine marée basse sera de 0,6 mètre.",
           "tags": [
             "web_annales",
             "series_3",
@@ -1703,7 +1703,7 @@
               "correct": true
             }
           ],
-          "explanation": "Reponse correcte: je viens à gauche. Reference cours: module theorique PE correspondant. Explication: Cours PE regles de barre (RIPAM): qualifier la situation (rattrapage, croisement, route convergente), determiner le navire privilegie puis executer une manœuvre franche et precoce.",
+          "explanation": "Reponse correcte: je viens à gauche. Explication: Cours PE regles de barre (RIPAM): qualifier la situation (rattrapage, croisement, route convergente), determiner le navire privilegie puis executer une manœuvre franche et precoce.",
           "tags": [
             "web_annales",
             "series_4",
@@ -1737,7 +1737,7 @@
               "correct": true
             }
           ],
-          "explanation": "Reponse correcte: Le symbole C. Reference cours: module regles de barre + RIPAM regles 5, 7, 13, 15, 16, 17. Explication: Cours PE regles de barre (RIPAM): qualifier la situation (rattrapage, croisement, route convergente), determiner le navire privilegie puis executer une manœuvre franche et precoce.",
+          "explanation": "Reponse correcte: Le symbole C. Explication: Cours PE cartographie: la reponse se construit en lisant la legende SHOM, les echelles et les symboles normalises avant toute decision de route.",
           "tags": [
             "web_annales",
             "series_6",
@@ -1766,7 +1766,7 @@
               "correct": false
             }
           ],
-          "explanation": "Reponse correcte: chenal préféré à tribord. Reference: cours PE balisage lateral (rythme 2+1 pour identifier le chenal prefere). Explication: Une marque de chenal prefere indique la branche principale a suivre dans une bifurcation de chenal.",
+          "explanation": "Reponse correcte: chenal préféré à tribord. Explication: Une marque de chenal prefere indique la branche principale a suivre dans une bifurcation de chenal.",
           "tags": [
             "web_annales",
             "series_1",
@@ -1800,7 +1800,7 @@
               "correct": true
             }
           ],
-          "explanation": "Reponse correcte: Demande d'assistance immédiate à tous les navires. Reference cours: module meteo marine et echelle Beaufort. Explication: Cours PE meteo marine: traduire les termes du bulletin en force Beaufort, etat de mer et impact sur la securite du navire.",
+          "explanation": "Reponse correcte: Demande d'assistance immédiate à tous les navires. Explication: Cours PE securite/reglementation: appliquer l'obligation legale du chef de bord et verifier les contraintes de zone, d'armement et de pratique.",
           "tags": [
             "web_annales",
             "series_3",
@@ -1829,7 +1829,7 @@
               "correct": false
             }
           ],
-          "explanation": "Reponse correcte: Oui. Reference: RIPAM regles 21 a 30 + cours PE feux et marques de navires. Explication: Le statut du navire est determine par la combinaison des feux/marques de jour, ce qui conditionne priorite et distance de securite. Contexte de l'enonce: Hors VNM et navire.",
+          "explanation": "Reponse correcte: Oui. Explication: Le statut du navire est determine par la combinaison des feux/marques de jour, ce qui conditionne priorite et distance de securite. Contexte de l'enonce: Hors VNM et navire.",
           "tags": [
             "web_annales",
             "series_5",
@@ -1858,7 +1858,7 @@
               "correct": false
             }
           ],
-          "explanation": "Reponse correcte: Oui. Reference: cours PE maree (regle des douziemes et pied de pilote). Explication: La decision se fonde sur hauteur d'eau calculee (PM/BM/marnage) et marge sous quille.",
+          "explanation": "Reponse correcte: Oui. Explication: La decision se fonde sur hauteur d'eau calculee (PM/BM/marnage) et marge sous quille.",
           "tags": [
             "web_annales",
             "series_2",
@@ -1887,7 +1887,7 @@
               "correct": true
             }
           ],
-          "explanation": "Reponse correcte: vers le large. Reference: cours PE balisage lateral IALA region A. Explication: Le sens conventionnel sert de reference: en entrant, rouge a babord et vert a tribord (region A). En sortie, la logique est inversee.",
+          "explanation": "Reponse correcte: vers le large. Explication: Le sens conventionnel sert de reference: en entrant, rouge a babord et vert a tribord (region A). En sortie, la logique est inversee.",
           "tags": []
         },
         {
@@ -1917,7 +1917,7 @@
               "correct": true
             }
           ],
-          "explanation": "Reponse correcte: d'un signal de détresse. Reference cours: module theorique PE correspondant. Explication: Cours PE signaux sonores (RIPAM regle 34): le sens du signal depend strictement du nombre et de la duree des sons.",
+          "explanation": "Reponse correcte: d'un signal de détresse. Explication: Cours PE feux de navigation (RIPAM regles 21 a 23): l'identification repose sur la combinaison couleur + position + secteur + portee, jamais sur un seul feu isole.",
           "tags": [
             "web_annales",
             "series_2",
@@ -1946,7 +1946,7 @@
               "correct": true
             }
           ],
-          "explanation": "Reponse correcte: Une balise flottante latérale bâbord. Reference cours: module regles de barre + RIPAM regles 5, 7, 13, 15, 16, 17. Explication: Cours PE regles de barre (RIPAM): qualifier la situation (rattrapage, croisement, route convergente), determiner le navire privilegie puis executer une manœuvre franche et precoce.",
+          "explanation": "Reponse correcte: Une balise flottante latérale bâbord. Explication: Cours PE cartographie: la reponse se construit en lisant la legende SHOM, les echelles et les symboles normalises avant toute decision de route.",
           "tags": [
             "web_annales",
             "series_6",
@@ -1980,7 +1980,7 @@
               "correct": true
             }
           ],
-          "explanation": "Reponse correcte: Je laisse sur mon bâbord. Reference: cours PE cartographie/navigation (lecture et evolution du cap). Explication: La manœuvre se deduit du compas: vers des valeurs plus faibles on vient a gauche (babord), vers des valeurs plus elevees on vient a droite (tribord), en tenant compte du passage 000/360.",
+          "explanation": "Reponse correcte: Je laisse sur mon bâbord. Explication: La manœuvre se deduit du compas: vers des valeurs plus faibles on vient a gauche (babord), vers des valeurs plus elevees on vient a droite (tribord), en tenant compte du passage 000/360.",
           "tags": [
             "web_annales",
             "series_3",
@@ -2009,7 +2009,7 @@
               "correct": true
             }
           ],
-          "explanation": "Reponse correcte: Faux. Reference cours: module VHF et procedures de detresse/urgence. Explication: Cours PE VHF/SMDSM: identifier le niveau d'urgence puis appliquer le bon format d'appel sur le canal approprie.",
+          "explanation": "Reponse correcte: Faux. Explication: Cours PE meteo marine: traduire les termes du bulletin en force Beaufort, etat de mer et impact sur la securite du navire.",
           "tags": [
             "web_annales",
             "series_3",
@@ -2048,7 +2048,7 @@
               "correct": false
             }
           ],
-          "explanation": "Reponse correcte: 7 Beaufort. Reference: cours PE meteo marine (echelle Beaufort et interpretation bulletin). Explication: L'avis meteo se traduit en plage Beaufort et en etat de mer compatible ou non avec la categorie de navire. Contexte de l'enonce: La météo annonce un avis de grand frais.",
+          "explanation": "Reponse correcte: 7 Beaufort. Explication: L'avis meteo se traduit en plage Beaufort et en etat de mer compatible ou non avec la categorie de navire. Contexte de l'enonce: La météo annonce un avis de grand frais.",
           "tags": [
             "web_annales",
             "series_3",
@@ -2129,7 +2129,7 @@
               "correct": false
             }
           ],
-          "explanation": "Reponse correcte: 25 watts. Reference: cours PE VHF et procedures SMDSM/canal 16. Explication: En detresse vocale, l'appel initial se fait sur le canal 16 avant degagement sur canal de travail.",
+          "explanation": "Reponse correcte: 25 watts. Explication: En detresse vocale, l'appel initial se fait sur le canal 16 avant degagement sur canal de travail.",
           "tags": [
             "web_annales",
             "series_1",
@@ -2163,7 +2163,7 @@
               "correct": false
             }
           ],
-          "explanation": "Reponse correcte: de danger isolé. Reference: cours PE balisage (marque de danger isole: couleurs noir/rouge, 2 spheres, feu blanc 2 eclats). Explication: Une marque de danger isole signale un obstacle local entoure d'eaux saines; on ne passe pas au contact.",
+          "explanation": "Reponse correcte: de danger isolé. Explication: Une marque de danger isole signale un obstacle local entoure d'eaux saines; on ne passe pas au contact.",
           "tags": [
             "web_annales",
             "series_6",
@@ -2197,7 +2197,7 @@
               "correct": false
             }
           ],
-          "explanation": "Reponse correcte: PAN PAN. Reference: cours PE balisage lateral IALA region A. Explication: Le sens conventionnel sert de reference: en entrant, rouge a babord et vert a tribord (region A). En sortie, la logique est inversee. Contexte de l'enonce: En panne d'essence, vous dérivez inexorablement vers le large.",
+          "explanation": "Reponse correcte: PAN PAN. Explication: En VHF marine, le signal depend du degre d'urgence: MAYDAY pour detresse grave et imminente, PAN PAN pour urgence, SECURITE pour message de securite. Contexte de l'enonce: En panne d'essence, vous dérivez inexorablement vers le large.",
           "tags": [
             "web_annales",
             "series_5",
@@ -2236,7 +2236,7 @@
               "correct": false
             }
           ],
-          "explanation": "Reponse correcte: dès la zone basique. Reference cours: module meteo marine et echelle Beaufort. Explication: Cours PE meteo marine: traduire les termes du bulletin en force Beaufort, etat de mer et impact sur la securite du navire.",
+          "explanation": "Reponse correcte: dès la zone basique. Explication: Les equipements de reperage et d'assistance augmentent avec l'eloignement: certaines obligations s'appliquent des la zone cotiere.",
           "tags": [
             "web_annales",
             "series_6",
@@ -2265,7 +2265,7 @@
               "correct": true
             }
           ],
-          "explanation": "Reponse correcte: Une balise flottante latérale bâbord. Reference cours: module regles de barre + RIPAM regles 5, 7, 13, 15, 16, 17. Explication: Cours PE regles de barre (RIPAM): qualifier la situation (rattrapage, croisement, route convergente), determiner le navire privilegie puis executer une manœuvre franche et precoce.",
+          "explanation": "Reponse correcte: Une balise flottante latérale bâbord. Explication: Cours PE cartographie: la reponse se construit en lisant la legende SHOM, les echelles et les symboles normalises avant toute decision de route.",
           "tags": [
             "web_annales",
             "series_6",
@@ -2299,7 +2299,7 @@
               "correct": false
             }
           ],
-          "explanation": "Reponse correcte: Je règle la puissance sur 1 watt. Reference: cours PE VHF et procedures SMDSM/canal 16. Explication: En detresse vocale, l'appel initial se fait sur le canal 16 avant degagement sur canal de travail.",
+          "explanation": "Reponse correcte: Je règle la puissance sur 1 watt. Explication: En detresse vocale, l'appel initial se fait sur le canal 16 avant degagement sur canal de travail.",
           "tags": [
             "web_annales",
             "series_2",
@@ -2338,7 +2338,7 @@
               "correct": false
             }
           ],
-          "explanation": "Reponse correcte: au mouillage. Reference: RIPAM regles 21 a 30 + cours PE feux et marques de navires. Explication: Le statut du navire est determine par la combinaison des feux/marques de jour, ce qui conditionne priorite et distance de securite.",
+          "explanation": "Reponse correcte: au mouillage. Explication: Le statut du navire est determine par la combinaison des feux/marques de jour, ce qui conditionne priorite et distance de securite.",
           "tags": [
             "web_annales",
             "series_3",
@@ -2377,7 +2377,7 @@
               "correct": true
             }
           ],
-          "explanation": "Reponse correcte: vous vous dirigez vers lui. Reference cours: module theorique PE correspondant. Explication: Cours PE signaux sonores (RIPAM regle 34): le sens du signal depend strictement du nombre et de la duree des sons.",
+          "explanation": "Reponse correcte: vous vous dirigez vers lui. Explication: Cours PE feux de navigation (RIPAM regles 21 a 23): l'identification repose sur la combinaison couleur + position + secteur + portee, jamais sur un seul feu isole.",
           "tags": [
             "web_annales",
             "series_4",
@@ -2411,7 +2411,7 @@
               "correct": false
             }
           ],
-          "explanation": "Reponse correcte: B - Le navire non maître de sa manoeuvre. Reference: RIPAM regles 21 a 30 + cours PE feux et marques de navires. Explication: Le statut du navire est determine par la combinaison des feux/marques de jour, ce qui conditionne priorite et distance de securite.",
+          "explanation": "Reponse correcte: B - Le navire non maître de sa manoeuvre. Explication: Le statut du navire est determine par la combinaison des feux/marques de jour, ce qui conditionne priorite et distance de securite.",
           "tags": [
             "web_annales",
             "series_5",
@@ -2440,7 +2440,7 @@
               "correct": false
             }
           ],
-          "explanation": "Reponse correcte: Oui. Reference: cours PE securite et categories de conception CE. Explication: La categorie C ne couvre pas des conditions de mer correspondant a force 8.",
+          "explanation": "Reponse correcte: Oui. Explication: La categorie C ne couvre pas des conditions de mer correspondant a force 8.",
           "tags": [
             "web_annales",
             "series_4",
@@ -2474,7 +2474,7 @@
               "correct": true
             }
           ],
-          "explanation": "Reponse correcte: Le symbole C. Reference cours: module regles de barre + RIPAM regles 5, 7, 13, 15, 16, 17. Explication: Cours PE regles de barre (RIPAM): qualifier la situation (rattrapage, croisement, route convergente), determiner le navire privilegie puis executer une manœuvre franche et precoce.",
+          "explanation": "Reponse correcte: Le symbole C. Explication: Cours PE cartographie: la reponse se construit en lisant la legende SHOM, les echelles et les symboles normalises avant toute decision de route.",
           "tags": [
             "web_annales",
             "series_6",
@@ -2513,7 +2513,7 @@
               "correct": false
             }
           ],
-          "explanation": "Reponse correcte: PAN PAN. Reference cours: module securite et reglementation plaisance. Explication: Cours PE securite/reglementation: appliquer l'obligation legale du chef de bord et verifier les contraintes de zone, d'armement et de pratique.",
+          "explanation": "Reponse correcte: PAN PAN. Explication: En VHF marine, le signal depend du degre d'urgence: MAYDAY pour detresse grave et imminente, PAN PAN pour urgence, SECURITE pour message de securite.",
           "tags": [
             "web_annales",
             "series_5",
@@ -2547,7 +2547,7 @@
               "correct": true
             }
           ],
-          "explanation": "Reponse correcte: Je sors avec prudence. Reference: balisage lateral IALA region A (cours PE module balisage). Explication: En sortie, la lecture du balisage est inversee par rapport au sens conventionnel d'entree.",
+          "explanation": "Reponse correcte: Je sors avec prudence. Explication: Le sens conventionnel sert de reference: en entrant, rouge a babord et vert a tribord (region A). En sortie, la logique est inversee.",
           "tags": [
             "web_annales",
             "series_3",
@@ -2586,7 +2586,7 @@
               "correct": true
             }
           ],
-          "explanation": "Reponse correcte: la présence d'un plongeur sous-marin. Reference cours: module theorique PE correspondant. Explication: Cours PE signaux sonores (RIPAM regle 34): le sens du signal depend strictement du nombre et de la duree des sons.",
+          "explanation": "Reponse correcte: la présence d'un plongeur sous-marin. Explication: Cours PE feux de navigation (RIPAM regles 21 a 23): l'identification repose sur la combinaison couleur + position + secteur + portee, jamais sur un seul feu isole.",
           "tags": [
             "web_annales",
             "series_3",
@@ -2625,7 +2625,7 @@
               "correct": false
             }
           ],
-          "explanation": "Reponse correcte: non maître de sa manoeuvre. Reference: RIPAM regles 21 a 30 + cours PE feux et marques de navires. Explication: Le statut du navire est determine par la combinaison des feux/marques de jour, ce qui conditionne priorite et distance de securite.",
+          "explanation": "Reponse correcte: non maître de sa manoeuvre. Explication: Le statut du navire est determine par la combinaison des feux/marques de jour, ce qui conditionne priorite et distance de securite.",
           "tags": [
             "web_annales",
             "series_6",
@@ -2659,7 +2659,7 @@
               "correct": false
             }
           ],
-          "explanation": "Reponse correcte: 2 milles d'un abri au maximum. Reference cours: module theorique PE correspondant. Explication: Cours PE securite/reglementation: appliquer l'obligation legale du chef de bord et verifier les contraintes de zone, d'armement et de pratique.",
+          "explanation": "Reponse correcte: 2 milles d'un abri au maximum. Explication: Cours PE securite/reglementation: appliquer l'obligation legale du chef de bord et verifier les contraintes de zone, d'armement et de pratique.",
           "tags": [
             "web_annales",
             "series_2",
@@ -2688,7 +2688,7 @@
               "correct": false
             }
           ],
-          "explanation": "Reponse correcte: selon la direction d'où vient le vent. Reference cours: module VHF et procedures de detresse/urgence. Explication: Cours PE VHF/SMDSM: identifier le niveau d'urgence puis appliquer le bon format d'appel sur le canal approprie.",
+          "explanation": "Reponse correcte: selon la direction d'où vient le vent. Explication: Cours PE meteo marine: traduire les termes du bulletin en force Beaufort, etat de mer et impact sur la securite du navire.",
           "tags": [
             "web_annales",
             "series_5",
@@ -2722,7 +2722,7 @@
               "correct": false
             }
           ],
-          "explanation": "Reponse correcte: Un château d'eau visible de la mer. Reference cours: module regles de barre + RIPAM regles 5, 7, 13, 15, 16, 17. Explication: Cours PE regles de barre (RIPAM): qualifier la situation (rattrapage, croisement, route convergente), determiner le navire privilegie puis executer une manœuvre franche et precoce. Contexte de l'enonce: Sur une carte marine.",
+          "explanation": "Reponse correcte: Un château d'eau visible de la mer. Explication: Cours PE cartographie: la reponse se construit en lisant la legende SHOM, les echelles et les symboles normalises avant toute decision de route. Contexte de l'enonce: Sur une carte marine.",
           "tags": [
             "web_annales",
             "series_3",
@@ -2751,7 +2751,7 @@
               "correct": true
             }
           ],
-          "explanation": "Reponse correcte: La météo va devenir mauvaise. Reference cours: module VHF et procedures de detresse/urgence. Explication: Cours PE VHF/SMDSM: identifier le niveau d'urgence puis appliquer le bon format d'appel sur le canal approprie.",
+          "explanation": "Reponse correcte: La météo va devenir mauvaise. Explication: Cours PE meteo marine: traduire les termes du bulletin en force Beaufort, etat de mer et impact sur la securite du navire.",
           "tags": [
             "web_annales",
             "series_2",
@@ -2785,7 +2785,7 @@
               "correct": false
             }
           ],
-          "explanation": "Reponse correcte: j'abats sur bâbord. Reference: cours PE cartographie/navigation (lecture et evolution du cap). Explication: La manœuvre se deduit du compas: vers des valeurs plus faibles on vient a gauche (babord), vers des valeurs plus elevees on vient a droite (tribord), en tenant compte du passage 000/360.",
+          "explanation": "Reponse correcte: j'abats sur bâbord. Explication: La manœuvre se deduit du compas: vers des valeurs plus faibles on vient a gauche (babord), vers des valeurs plus elevees on vient a droite (tribord), en tenant compte du passage 000/360.",
           "tags": []
         },
         {
@@ -2820,7 +2820,7 @@
               "correct": false
             }
           ],
-          "explanation": "Reponse correcte: 7 Beaufort. Reference: cours PE meteo marine (echelle Beaufort et interpretation bulletin). Explication: L'avis meteo se traduit en plage Beaufort et en etat de mer compatible ou non avec la categorie de navire. Contexte de l'enonce: La météo annonce un avis de grand frais.",
+          "explanation": "Reponse correcte: 7 Beaufort. Explication: L'avis meteo se traduit en plage Beaufort et en etat de mer compatible ou non avec la categorie de navire. Contexte de l'enonce: La météo annonce un avis de grand frais.",
           "tags": [
             "web_annales",
             "series_3",
@@ -2854,7 +2854,7 @@
               "correct": false
             }
           ],
-          "explanation": "Reponse correcte: je viens à gauche. Reference: cours PE balisage (elements d'identification d'une marque). Explication: Le voyant (topmark) est la marque de sommet. Il sert, avec la couleur et le rythme du feu, a identifier sans ambiguite la categorie de bouee.",
+          "explanation": "Reponse correcte: je viens à gauche. Explication: Le voyant (topmark) est la marque de sommet. Il sert, avec la couleur et le rythme du feu, a identifier sans ambiguite la categorie de bouee.",
           "tags": [
             "web_annales",
             "series_3",
@@ -2888,7 +2888,7 @@
               "correct": true
             }
           ],
-          "explanation": "Reponse correcte: De 100 à 500 ans. Reference cours: module theorique PE correspondant. Explication: Cours PE securite/reglementation: appliquer l'obligation legale du chef de bord et verifier les contraintes de zone, d'armement et de pratique.",
+          "explanation": "Reponse correcte: De 100 à 500 ans. Explication: Cours PE securite/reglementation: appliquer l'obligation legale du chef de bord et verifier les contraintes de zone, d'armement et de pratique.",
           "tags": [
             "web_annales",
             "series_1",
@@ -2917,7 +2917,7 @@
               "correct": false
             }
           ],
-          "explanation": "Reponse correcte: Oui. Reference: cours PE maree (regle des douziemes et pied de pilote). Explication: La decision se fonde sur hauteur d'eau calculee (PM/BM/marnage) et marge sous quille.",
+          "explanation": "Reponse correcte: Oui. Explication: La decision se fonde sur hauteur d'eau calculee (PM/BM/marnage) et marge sous quille.",
           "tags": [
             "web_annales",
             "series_2",
@@ -2946,7 +2946,7 @@
               "correct": true
             }
           ],
-          "explanation": "Reponse correcte: Je viens à gauche. Reference: balisage lateral IALA region A (cours PE module balisage). Explication: En region A, en entrant depuis le large, on laisse les marques rouges a babord et vertes a tribord.",
+          "explanation": "Reponse correcte: Je viens à gauche. Explication: En region A, en entrant depuis le large, on laisse les marques rouges a babord et vertes a tribord.",
           "tags": []
         },
         {
@@ -2971,7 +2971,7 @@
               "correct": true
             }
           ],
-          "explanation": "Reponse correcte: Non, je vais m'échouer. Reference: RIPAM regles 21 a 30 + cours PE feux et marques de navires. Explication: Le statut du navire est determine par la combinaison des feux/marques de jour, ce qui conditionne priorite et distance de securite. Contexte de l'enonce: La sonde indiquée sur la carte est de 1 mètre souligné. la hauteur d'eau à la prochaine marée basse sera de 0,6 mètre.",
+          "explanation": "Reponse correcte: Non, je vais m'échouer. Explication: Le statut du navire est determine par la combinaison des feux/marques de jour, ce qui conditionne priorite et distance de securite. Contexte de l'enonce: La sonde indiquée sur la carte est de 1 mètre souligné. la hauteur d'eau à la prochaine marée basse sera de 0,6 mètre.",
           "tags": [
             "web_annales",
             "series_3",
@@ -3000,7 +3000,7 @@
               "correct": true
             }
           ],
-          "explanation": "Reponse correcte: Je laisse sur mon bâbord. Reference: cours PE cartographie/navigation (lecture et evolution du cap). Explication: La manœuvre se deduit du compas: vers des valeurs plus faibles on vient a gauche (babord), vers des valeurs plus elevees on vient a droite (tribord), en tenant compte du passage 000/360.",
+          "explanation": "Reponse correcte: Je laisse sur mon bâbord. Explication: La manœuvre se deduit du compas: vers des valeurs plus faibles on vient a gauche (babord), vers des valeurs plus elevees on vient a droite (tribord), en tenant compte du passage 000/360.",
           "tags": []
         },
         {
@@ -3035,7 +3035,7 @@
               "correct": true
             }
           ],
-          "explanation": "Reponse correcte: d'un remorqueur. Reference cours: module cartographie et symboles SHOM. Explication: Cours PE cartographie: la reponse se construit en lisant la legende SHOM, les echelles et les symboles normalises avant toute decision de route.",
+          "explanation": "Reponse correcte: d'un remorqueur. Explication: Cours PE feux de navigation (RIPAM regles 21 a 23): l'identification repose sur la combinaison couleur + position + secteur + portee, jamais sur un seul feu isole.",
           "tags": [
             "web_annales",
             "series_3",
@@ -3069,7 +3069,7 @@
               "correct": true
             }
           ],
-          "explanation": "Reponse correcte: non maître de sa manœuvre sans erre. Reference: RIPAM regles 21 a 30 + cours PE feux et marques de navires. Explication: Le statut du navire est determine par la combinaison des feux/marques de jour, ce qui conditionne priorite et distance de securite.",
+          "explanation": "Reponse correcte: non maître de sa manœuvre sans erre. Explication: L'erre designe la vitesse propre du navire par rapport a l'eau, a distinguer de la vitesse fond.",
           "tags": [
             "web_annales",
             "series_3",
@@ -3108,7 +3108,7 @@
               "correct": false
             }
           ],
-          "explanation": "Reponse correcte: il est à capacité de manoeuvre restreinte. Reference cours: module theorique PE correspondant. Explication: Cours PE regles de barre (RIPAM): qualifier la situation (rattrapage, croisement, route convergente), determiner le navire privilegie puis executer une manœuvre franche et precoce.",
+          "explanation": "Reponse correcte: il est à capacité de manoeuvre restreinte. Explication: Cours PE regles de barre (RIPAM): qualifier la situation (rattrapage, croisement, route convergente), determiner le navire privilegie puis executer une manœuvre franche et precoce.",
           "tags": [
             "web_annales",
             "series_2",
@@ -3189,7 +3189,7 @@
               "correct": false
             }
           ],
-          "explanation": "Reponse correcte: je viens à droite. Reference cours: module feux et signaux + RIPAM regles 21 a 23. Explication: Cours PE feux de navigation (RIPAM regles 21 a 23): l'identification repose sur la combinaison couleur + position + secteur + portee, jamais sur un seul feu isole.",
+          "explanation": "Reponse correcte: je viens à droite. Explication: Cours PE module balisage: identifier d'abord le type de marque (laterale, cardinale, speciale, eaux saines, danger isole), puis appliquer la regle de passage associee.",
           "tags": [
             "web_annales",
             "series_2",
@@ -3223,7 +3223,7 @@
               "correct": true
             }
           ],
-          "explanation": "Reponse correcte: Le symbole C. Reference cours: module regles de barre + RIPAM regles 5, 7, 13, 15, 16, 17. Explication: Cours PE regles de barre (RIPAM): qualifier la situation (rattrapage, croisement, route convergente), determiner le navire privilegie puis executer une manœuvre franche et precoce.",
+          "explanation": "Reponse correcte: Le symbole C. Explication: Cours PE cartographie: la reponse se construit en lisant la legende SHOM, les echelles et les symboles normalises avant toute decision de route.",
           "tags": [
             "web_annales",
             "series_6",
@@ -3262,7 +3262,7 @@
               "correct": false
             }
           ],
-          "explanation": "Reponse correcte: un avis de coup de vent ou tempête par le sud-ouest. Reference cours: module theorique PE correspondant. Explication: Cours PE signaux sonores (RIPAM regle 34): le sens du signal depend strictement du nombre et de la duree des sons.",
+          "explanation": "Reponse correcte: un avis de coup de vent ou tempête par le sud-ouest. Explication: Cours PE feux de navigation (RIPAM regles 21 a 23): l'identification repose sur la combinaison couleur + position + secteur + portee, jamais sur un seul feu isole.",
           "tags": [
             "web_annales",
             "series_6",
@@ -3291,7 +3291,7 @@
               "correct": false
             }
           ],
-          "explanation": "Reponse correcte: selon la direction d'où vient le vent. Reference cours: module VHF et procedures de detresse/urgence. Explication: Cours PE VHF/SMDSM: identifier le niveau d'urgence puis appliquer le bon format d'appel sur le canal approprie.",
+          "explanation": "Reponse correcte: selon la direction d'où vient le vent. Explication: Cours PE meteo marine: traduire les termes du bulletin en force Beaufort, etat de mer et impact sur la securite du navire.",
           "tags": [
             "web_annales",
             "series_5",
@@ -3320,7 +3320,7 @@
               "correct": true
             }
           ],
-          "explanation": "Reponse correcte: Une balise flottante latérale bâbord. Reference cours: module regles de barre + RIPAM regles 5, 7, 13, 15, 16, 17. Explication: Cours PE regles de barre (RIPAM): qualifier la situation (rattrapage, croisement, route convergente), determiner le navire privilegie puis executer une manœuvre franche et precoce.",
+          "explanation": "Reponse correcte: Une balise flottante latérale bâbord. Explication: Cours PE cartographie: la reponse se construit en lisant la legende SHOM, les echelles et les symboles normalises avant toute decision de route.",
           "tags": [
             "web_annales",
             "series_6",
@@ -3354,7 +3354,7 @@
               "correct": true
             }
           ],
-          "explanation": "Reponse correcte: je laisse passer le navire B. Reference cours: module theorique PE correspondant. Explication: Cours PE regles de barre (RIPAM): qualifier la situation (rattrapage, croisement, route convergente), determiner le navire privilegie puis executer une manœuvre franche et precoce.",
+          "explanation": "Reponse correcte: je laisse passer le navire B. Explication: Cours PE regles de barre (RIPAM): qualifier la situation (rattrapage, croisement, route convergente), determiner le navire privilegie puis executer une manœuvre franche et precoce.",
           "tags": [
             "web_annales",
             "series_3",
@@ -3388,7 +3388,7 @@
               "correct": false
             }
           ],
-          "explanation": "Reponse correcte: Avis de coup de vent. Reference cours: module theorique PE correspondant. Explication: Cours PE signaux sonores (RIPAM regle 34): le sens du signal depend strictement du nombre et de la duree des sons.",
+          "explanation": "Reponse correcte: Avis de coup de vent. Explication: Cours PE feux de navigation (RIPAM regles 21 a 23): l'identification repose sur la combinaison couleur + position + secteur + portee, jamais sur un seul feu isole.",
           "tags": [
             "web_annales",
             "series_2",
@@ -3422,7 +3422,7 @@
               "correct": false
             }
           ],
-          "explanation": "Reponse correcte: je passe à bâbord. Reference: balisage lateral IALA region A (cours PE module balisage). Explication: En region A, en entrant depuis le large, on laisse les marques rouges a babord et vertes a tribord.",
+          "explanation": "Reponse correcte: je passe à bâbord. Explication: En region A, en entrant depuis le large, on laisse les marques rouges a babord et vertes a tribord.",
           "tags": [
             "web_annales",
             "series_3",
@@ -3456,7 +3456,7 @@
               "correct": true
             }
           ],
-          "explanation": "Reponse correcte: La vitesse du navire par rapport à l'eau. Reference cours: module theorique PE correspondant. Explication: Cours PE regles de barre (RIPAM): qualifier la situation (rattrapage, croisement, route convergente), determiner le navire privilegie puis executer une manœuvre franche et precoce. Contexte de l'enonce: ERRE.",
+          "explanation": "Reponse correcte: La vitesse du navire par rapport à l'eau. Explication: L'erre designe la vitesse propre du navire par rapport a l'eau, a distinguer de la vitesse fond. Contexte de l'enonce: ERRE.",
           "tags": [
             "web_annales",
             "series_2",
@@ -3485,7 +3485,7 @@
               "correct": false
             }
           ],
-          "explanation": "Reponse correcte: Oui. Reference: cours PE maree (regle des douziemes et pied de pilote). Explication: La decision se fonde sur hauteur d'eau calculee (PM/BM/marnage) et marge sous quille.",
+          "explanation": "Reponse correcte: Oui. Explication: La decision se fonde sur hauteur d'eau calculee (PM/BM/marnage) et marge sous quille.",
           "tags": [
             "web_annales",
             "series_2",
@@ -3514,7 +3514,7 @@
               "correct": false
             }
           ],
-          "explanation": "Reponse correcte: Oui. Reference cours: module meteo marine et echelle Beaufort. Explication: Cours PE meteo marine: traduire les termes du bulletin en force Beaufort, etat de mer et impact sur la securite du navire. Contexte de l'enonce: Avant d'effectuer une croisière,.",
+          "explanation": "Reponse correcte: Oui. Explication: L'erre designe la vitesse propre du navire par rapport a l'eau, a distinguer de la vitesse fond. Contexte de l'enonce: Avant d'effectuer une croisière,.",
           "tags": [
             "web_annales",
             "series_4",
@@ -3543,7 +3543,7 @@
               "correct": true
             }
           ],
-          "explanation": "Reponse correcte: Sur les échelles à gauche et à droite de la carte. Reference: cours PE cartographie (lecture des echelles). Explication: Sur carte marine, la minute se lit sur les echelles verticales de latitude (gauche/droite).",
+          "explanation": "Reponse correcte: Sur les échelles à gauche et à droite de la carte. Explication: Sur carte marine, la minute se lit sur les echelles verticales de latitude (gauche/droite).",
           "tags": [
             "web_annales",
             "series_6",
@@ -3572,7 +3572,7 @@
               "correct": true
             }
           ],
-          "explanation": "Reponse correcte: doit s'écarter. Reference: RIPAM regle 17. Explication: Le navire privilegie maintient route et vitesse, mais doit agir a temps si l'autre ne manœuvre pas.",
+          "explanation": "Reponse correcte: doit s'écarter. Explication: Le navire privilegie maintient route et vitesse, mais doit agir a temps si l'autre ne manœuvre pas.",
           "tags": [
             "web_annales",
             "series_1",
@@ -3606,7 +3606,7 @@
               "correct": true
             }
           ],
-          "explanation": "Reponse correcte: De 100 à 500 ans. Reference cours: module theorique PE correspondant. Explication: Cours PE securite/reglementation: appliquer l'obligation legale du chef de bord et verifier les contraintes de zone, d'armement et de pratique.",
+          "explanation": "Reponse correcte: De 100 à 500 ans. Explication: Cours PE securite/reglementation: appliquer l'obligation legale du chef de bord et verifier les contraintes de zone, d'armement et de pratique.",
           "tags": [
             "web_annales",
             "series_1",
@@ -3640,7 +3640,7 @@
               "correct": false
             }
           ],
-          "explanation": "Reponse correcte: Un château d'eau visible de la mer. Reference cours: module regles de barre + RIPAM regles 5, 7, 13, 15, 16, 17. Explication: Cours PE regles de barre (RIPAM): qualifier la situation (rattrapage, croisement, route convergente), determiner le navire privilegie puis executer une manœuvre franche et precoce. Contexte de l'enonce: Sur une carte marine.",
+          "explanation": "Reponse correcte: Un château d'eau visible de la mer. Explication: Cours PE cartographie: la reponse se construit en lisant la legende SHOM, les echelles et les symboles normalises avant toute decision de route. Contexte de l'enonce: Sur une carte marine.",
           "tags": [
             "web_annales",
             "series_3",
@@ -3679,7 +3679,7 @@
               "correct": false
             }
           ],
-          "explanation": "Reponse correcte: traction d'un engin pneumatique. Reference cours: module theorique PE correspondant. Explication: Cours PE signaux sonores (RIPAM regle 34): le sens du signal depend strictement du nombre et de la duree des sons.",
+          "explanation": "Reponse correcte: traction d'un engin pneumatique. Explication: Cours PE feux de navigation (RIPAM regles 21 a 23): l'identification repose sur la combinaison couleur + position + secteur + portee, jamais sur un seul feu isole.",
           "tags": [
             "web_annales",
             "series_1",
@@ -3718,7 +3718,7 @@
               "correct": false
             }
           ],
-          "explanation": "Reponse correcte: 8 Beaufort. Reference: cours PE meteo marine (echelle Beaufort et interpretation bulletin). Explication: L'avis meteo se traduit en plage Beaufort et en etat de mer compatible ou non avec la categorie de navire. Contexte de l'enonce: La météo annonce un avis de coup de vent.",
+          "explanation": "Reponse correcte: 8 Beaufort. Explication: L'avis meteo se traduit en plage Beaufort et en etat de mer compatible ou non avec la categorie de navire. Contexte de l'enonce: La météo annonce un avis de coup de vent.",
           "tags": [
             "web_annales",
             "series_1",
@@ -3752,7 +3752,7 @@
               "correct": false
             }
           ],
-          "explanation": "Reponse correcte: Je règle la puissance sur 1 watt. Reference: cours PE VHF et procedures SMDSM/canal 16. Explication: En detresse vocale, l'appel initial se fait sur le canal 16 avant degagement sur canal de travail.",
+          "explanation": "Reponse correcte: Je règle la puissance sur 1 watt. Explication: En detresse vocale, l'appel initial se fait sur le canal 16 avant degagement sur canal de travail.",
           "tags": [
             "web_annales",
             "series_2",
@@ -3786,7 +3786,7 @@
               "correct": true
             }
           ],
-          "explanation": "Reponse correcte: d'un signal de détresse. Reference cours: module theorique PE correspondant. Explication: Cours PE signaux sonores (RIPAM regle 34): le sens du signal depend strictement du nombre et de la duree des sons.",
+          "explanation": "Reponse correcte: d'un signal de détresse. Explication: Cours PE feux de navigation (RIPAM regles 21 a 23): l'identification repose sur la combinaison couleur + position + secteur + portee, jamais sur un seul feu isole.",
           "tags": [
             "web_annales",
             "series_2",
@@ -3825,7 +3825,7 @@
               "correct": true
             }
           ],
-          "explanation": "Reponse correcte: Je dégage sur le canal que le CROSS m'aura indiqué. Reference: organisation des secours en mer (cours PE securite/VHF). Explication: La coordination des secours en mer releve du CROSS.",
+          "explanation": "Reponse correcte: Je dégage sur le canal que le CROSS m'aura indiqué. Explication: En VHF marine, le signal depend du degre d'urgence: MAYDAY pour detresse grave et imminente, PAN PAN pour urgence, SECURITE pour message de securite.",
           "tags": [
             "web_annales",
             "series_2",
@@ -3854,7 +3854,7 @@
               "correct": false
             }
           ],
-          "explanation": "Reponse correcte: Je laisse à ma droite. Reference: cours PE cartographie/navigation (lecture et evolution du cap). Explication: La manœuvre se deduit du compas: vers des valeurs plus faibles on vient a gauche (babord), vers des valeurs plus elevees on vient a droite (tribord), en tenant compte du passage 000/360.",
+          "explanation": "Reponse correcte: Je laisse à ma droite. Explication: La manœuvre se deduit du compas: vers des valeurs plus faibles on vient a gauche (babord), vers des valeurs plus elevees on vient a droite (tribord), en tenant compte du passage 000/360.",
           "tags": [
             "web_annales",
             "series_4",
@@ -3893,7 +3893,7 @@
               "correct": false
             }
           ],
-          "explanation": "Reponse correcte: 135°. Reference: RIPAM regle 21 (definition des feux de navigation). Explication: Le feu de poupe couvre 135 deg vers l'arriere.",
+          "explanation": "Reponse correcte: 135°. Explication: Le feu de poupe couvre 135 deg vers l'arriere.",
           "tags": [
             "web_annales",
             "series_2",
@@ -3932,7 +3932,7 @@
               "correct": false
             }
           ],
-          "explanation": "Reponse correcte: chenal préféré à bâbord. Reference: cours PE balisage lateral (rythme 2+1 pour identifier le chenal prefere). Explication: Une marque de chenal prefere indique la branche principale a suivre dans une bifurcation de chenal.",
+          "explanation": "Reponse correcte: chenal préféré à bâbord. Explication: Une marque de chenal prefere indique la branche principale a suivre dans une bifurcation de chenal.",
           "tags": []
         },
         {
@@ -3967,7 +3967,7 @@
               "correct": false
             }
           ],
-          "explanation": "Reponse correcte: 7 Beaufort. Reference: cours PE meteo marine (echelle Beaufort et interpretation bulletin). Explication: L'avis meteo se traduit en plage Beaufort et en etat de mer compatible ou non avec la categorie de navire. Contexte de l'enonce: La météo annonce un avis de grand frais.",
+          "explanation": "Reponse correcte: 7 Beaufort. Explication: L'avis meteo se traduit en plage Beaufort et en etat de mer compatible ou non avec la categorie de navire. Contexte de l'enonce: La météo annonce un avis de grand frais.",
           "tags": [
             "web_annales",
             "series_3",
@@ -4006,7 +4006,7 @@
               "correct": true
             }
           ],
-          "explanation": "Reponse correcte: passez indifféremment à tribord ou bâbord en faisant un écart. Reference: cours PE balisage (elements d'identification d'une marque). Explication: Le voyant (topmark) est la marque de sommet. Il sert, avec la couleur et le rythme du feu, a identifier sans ambiguite la categorie de bouee.",
+          "explanation": "Reponse correcte: passez indifféremment à tribord ou bâbord en faisant un écart. Explication: Le voyant (topmark) est la marque de sommet. Il sert, avec la couleur et le rythme du feu, a identifier sans ambiguite la categorie de bouee.",
           "tags": [
             "web_annales",
             "series_2",
@@ -4040,7 +4040,7 @@
               "correct": true
             }
           ],
-          "explanation": "Reponse correcte: S'il est titulaire du brevet d'état de moniteur de ski nautique. Reference cours: module theorique PE correspondant. Explication: Cours PE securite/reglementation: appliquer l'obligation legale du chef de bord et verifier les contraintes de zone, d'armement et de pratique.",
+          "explanation": "Reponse correcte: S'il est titulaire du brevet d'état de moniteur de ski nautique. Explication: Cours PE securite/reglementation: appliquer l'obligation legale du chef de bord et verifier les contraintes de zone, d'armement et de pratique.",
           "tags": [
             "web_annales",
             "series_4",
@@ -4074,7 +4074,7 @@
               "correct": true
             }
           ],
-          "explanation": "Reponse correcte: J'accuse réception par VHF si le CROSS n'a pas répondu dans les 5 minutes. Reference: cours PE VHF et procedures SMDSM/canal 16. Explication: En detresse vocale, l'appel initial se fait sur le canal 16 avant degagement sur canal de travail.",
+          "explanation": "Reponse correcte: J'accuse réception par VHF si le CROSS n'a pas répondu dans les 5 minutes. Explication: En VHF marine, le signal depend du degre d'urgence: MAYDAY pour detresse grave et imminente, PAN PAN pour urgence, SECURITE pour message de securite.",
           "tags": [
             "web_annales",
             "series_1",
@@ -4108,7 +4108,7 @@
               "correct": false
             }
           ],
-          "explanation": "Reponse correcte: de veiller en même temps un canal choisi en plus du canal 16. Reference: cours PE VHF et procedures SMDSM/canal 16. Explication: En detresse vocale, l'appel initial se fait sur le canal 16 avant degagement sur canal de travail.",
+          "explanation": "Reponse correcte: de veiller en même temps un canal choisi en plus du canal 16. Explication: En VHF marine, le signal depend du degre d'urgence: MAYDAY pour detresse grave et imminente, PAN PAN pour urgence, SECURITE pour message de securite.",
           "tags": [
             "web_annales",
             "series_2",
@@ -4137,7 +4137,7 @@
               "correct": true
             }
           ],
-          "explanation": "Reponse correcte: j'utilise un entonnoir pour éviter les débordements. Reference cours: module theorique PE correspondant. Explication: Cours PE securite/reglementation: appliquer l'obligation legale du chef de bord et verifier les contraintes de zone, d'armement et de pratique.",
+          "explanation": "Reponse correcte: j'utilise un entonnoir pour éviter les débordements. Explication: Au ravitaillement, toute mesure limitant debordement et rejet a la mer est obligatoire pour la securite et la prevention de la pollution.",
           "tags": [
             "web_annales",
             "series_1",
@@ -4176,7 +4176,7 @@
               "correct": false
             }
           ],
-          "explanation": "Reponse correcte: au mouillage. Reference: RIPAM regles 21 a 30 + cours PE feux et marques de navires. Explication: Le statut du navire est determine par la combinaison des feux/marques de jour, ce qui conditionne priorite et distance de securite.",
+          "explanation": "Reponse correcte: au mouillage. Explication: Le statut du navire est determine par la combinaison des feux/marques de jour, ce qui conditionne priorite et distance de securite.",
           "tags": [
             "web_annales",
             "series_3",
@@ -4252,7 +4252,7 @@
               "correct": false
             }
           ],
-          "explanation": "Reponse correcte: Vrai. Reference cours: module VHF et procedures de detresse/urgence. Explication: Cours PE VHF/SMDSM: identifier le niveau d'urgence puis appliquer le bon format d'appel sur le canal approprie.",
+          "explanation": "Reponse correcte: Vrai. Explication: Cours PE meteo marine: traduire les termes du bulletin en force Beaufort, etat de mer et impact sur la securite du navire.",
           "tags": [
             "web_annales",
             "series_2",
@@ -4281,7 +4281,7 @@
               "correct": true
             }
           ],
-          "explanation": "Reponse correcte: Non. Reference: cours PE cartographie/navigation calculatoire. Explication: La conversion des caps suit la chaine cap compas -> corrections magnetiques -> cap vrai avec convention de signe explicite. Contexte de l'enonce: Pour un navire à moteur, en zone côtière.",
+          "explanation": "Reponse correcte: Non. Explication: La conversion des caps suit la chaine cap compas -> corrections magnetiques -> cap vrai avec convention de signe explicite. Contexte de l'enonce: Pour un navire à moteur, en zone côtière.",
           "tags": [
             "web_annales",
             "series_4",
@@ -4315,7 +4315,7 @@
               "correct": false
             }
           ],
-          "explanation": "Reponse correcte: Système Mondial de Détresse et Sécurité en Mer. Reference cours: module securite et reglementation plaisance. Explication: Cours PE securite/reglementation: appliquer l'obligation legale du chef de bord et verifier les contraintes de zone, d'armement et de pratique. Contexte de l'enonce: S M D S M.",
+          "explanation": "Reponse correcte: Système Mondial de Détresse et Sécurité en Mer. Explication: Cours PE VHF/SMDSM: identifier le niveau d'urgence puis appliquer le bon format d'appel sur le canal approprie. Contexte de l'enonce: S M D S M.",
           "tags": [
             "web_annales",
             "series_5",
@@ -4354,7 +4354,7 @@
               "correct": false
             }
           ],
-          "explanation": "Reponse correcte: simplex. Reference cours: module securite et reglementation plaisance. Explication: Cours PE securite/reglementation: appliquer l'obligation legale du chef de bord et verifier les contraintes de zone, d'armement et de pratique.",
+          "explanation": "Reponse correcte: simplex. Explication: En VHF marine, le signal depend du degre d'urgence: MAYDAY pour detresse grave et imminente, PAN PAN pour urgence, SECURITE pour message de securite.",
           "tags": [
             "web_annales",
             "series_1",
@@ -4393,7 +4393,7 @@
               "correct": false
             }
           ],
-          "explanation": "Reponse correcte: Aux appels par ASN de détresse, sécurité et aux CROSS. Reference: cours PE VHF et procedures SMDSM/canal 16. Explication: En detresse vocale, l'appel initial se fait sur le canal 16 avant degagement sur canal de travail.",
+          "explanation": "Reponse correcte: Aux appels par ASN de détresse, sécurité et aux CROSS. Explication: La coordination operationnelle des secours en mer est assuree par le CROSS.",
           "tags": [
             "web_annales",
             "series_6",
@@ -4432,7 +4432,7 @@
               "correct": false
             }
           ],
-          "explanation": "Reponse correcte: les 3 feux à main. Reference cours: module meteo marine et echelle Beaufort. Explication: Cours PE meteo marine: traduire les termes du bulletin en force Beaufort, etat de mer et impact sur la securite du navire.",
+          "explanation": "Reponse correcte: les 3 feux à main. Explication: L'armement obligatoire se verifie sur le manuel du navire et, a defaut, dans la reglementation Division 240 correspondant a la zone de navigation.",
           "tags": [
             "web_annales",
             "series_6",
@@ -4461,7 +4461,7 @@
               "correct": true
             }
           ],
-          "explanation": "Reponse correcte: Faux. Reference cours: module VHF et procedures de detresse/urgence. Explication: Cours PE VHF/SMDSM: identifier le niveau d'urgence puis appliquer le bon format d'appel sur le canal approprie.",
+          "explanation": "Reponse correcte: Faux. Explication: Cours PE meteo marine: traduire les termes du bulletin en force Beaufort, etat de mer et impact sur la securite du navire.",
           "tags": [
             "web_annales",
             "series_3",
@@ -4490,7 +4490,7 @@
               "correct": false
             }
           ],
-          "explanation": "Reponse correcte: vous êtes privilégié. Reference: RIPAM regle 17. Explication: Le navire privilegie maintient route et vitesse, mais doit agir a temps si l'autre ne manœuvre pas.",
+          "explanation": "Reponse correcte: vous êtes privilégié. Explication: Le navire privilegie maintient route et vitesse, mais doit agir a temps si l'autre ne manœuvre pas.",
           "tags": [
             "web_annales",
             "series_5",
@@ -4529,7 +4529,7 @@
               "correct": false
             }
           ],
-          "explanation": "Reponse correcte: 8 Beaufort. Reference: cours PE meteo marine (echelle Beaufort et interpretation bulletin). Explication: L'avis meteo se traduit en plage Beaufort et en etat de mer compatible ou non avec la categorie de navire. Contexte de l'enonce: La météo annonce un avis de coup de vent.",
+          "explanation": "Reponse correcte: 8 Beaufort. Explication: L'avis meteo se traduit en plage Beaufort et en etat de mer compatible ou non avec la categorie de navire. Contexte de l'enonce: La météo annonce un avis de coup de vent.",
           "tags": [
             "web_annales",
             "series_1",
@@ -4563,7 +4563,7 @@
               "correct": true
             }
           ],
-          "explanation": "Reponse correcte: un danger pas encore porté sur les cartes. Reference: cours PE balisage des dangers nouveaux et information nautique locale. Explication: Un collier de petites bouees jaunes signale en pratique un danger nouveau ou temporaire: on ne le franchit pas et on recherche un passage balise autorise.",
+          "explanation": "Reponse correcte: un danger pas encore porté sur les cartes. Explication: Un collier de petites bouees jaunes signale en pratique un danger nouveau ou temporaire: on ne le franchit pas et on recherche un passage balise autorise.",
           "tags": []
         },
         {
@@ -4588,7 +4588,7 @@
               "correct": true
             }
           ],
-          "explanation": "Reponse correcte: Une balise flottante latérale bâbord. Reference cours: module regles de barre + RIPAM regles 5, 7, 13, 15, 16, 17. Explication: Cours PE regles de barre (RIPAM): qualifier la situation (rattrapage, croisement, route convergente), determiner le navire privilegie puis executer une manœuvre franche et precoce.",
+          "explanation": "Reponse correcte: Une balise flottante latérale bâbord. Explication: Cours PE cartographie: la reponse se construit en lisant la legende SHOM, les echelles et les symboles normalises avant toute decision de route.",
           "tags": [
             "web_annales",
             "series_6",
@@ -4622,7 +4622,7 @@
               "correct": false
             }
           ],
-          "explanation": "Reponse correcte: vous portez assistance. Reference cours: module theorique PE correspondant. Explication: Cours PE signaux sonores (RIPAM regle 34): le sens du signal depend strictement du nombre et de la duree des sons.",
+          "explanation": "Reponse correcte: vous portez assistance. Explication: Cours PE feux de navigation (RIPAM regles 21 a 23): l'identification repose sur la combinaison couleur + position + secteur + portee, jamais sur un seul feu isole.",
           "tags": [
             "web_annales",
             "series_2",
@@ -4661,7 +4661,7 @@
               "correct": false
             }
           ],
-          "explanation": "Reponse correcte: chenal préféré à bâbord. Reference: cours PE balisage lateral (rythme 2+1 pour identifier le chenal prefere). Explication: Une marque de chenal prefere indique la branche principale a suivre dans une bifurcation de chenal.",
+          "explanation": "Reponse correcte: chenal préféré à bâbord. Explication: Une marque de chenal prefere indique la branche principale a suivre dans une bifurcation de chenal.",
           "tags": []
         },
         {
@@ -4696,7 +4696,7 @@
               "correct": false
             }
           ],
-          "explanation": "Reponse correcte: Uniquement dans les 135° de son arrière. Reference: RIPAM regle 13 (rattrapage). Explication: Est rattrapant le navire situe dans le secteur de 135 deg arriere de l'autre navire.",
+          "explanation": "Reponse correcte: Uniquement dans les 135° de son arrière. Explication: Est rattrapant le navire situe dans le secteur de 135 deg arriere de l'autre navire.",
           "tags": [
             "web_annales",
             "series_4",
@@ -4725,7 +4725,7 @@
               "correct": true
             }
           ],
-          "explanation": "Reponse correcte: Sur les échelles à gauche et à droite de la carte. Reference: cours PE cartographie (lecture des echelles). Explication: Sur carte marine, la minute se lit sur les echelles verticales de latitude (gauche/droite).",
+          "explanation": "Reponse correcte: Sur les échelles à gauche et à droite de la carte. Explication: Sur carte marine, la minute se lit sur les echelles verticales de latitude (gauche/droite).",
           "tags": [
             "web_annales",
             "series_6",
@@ -4764,7 +4764,7 @@
               "correct": false
             }
           ],
-          "explanation": "Reponse correcte: 2 milles. Reference: RIPAM regle 22 (portee des feux). Explication: Pour un navire a moteur de moins de 12 m, la portee du feu de tete de mat est de 2 milles.",
+          "explanation": "Reponse correcte: 2 milles. Explication: Pour un navire a moteur de moins de 12 m, la portee du feu de tete de mat est de 2 milles.",
           "tags": [
             "web_annales",
             "series_6",
@@ -4798,7 +4798,7 @@
               "correct": false
             }
           ],
-          "explanation": "Reponse correcte: Le navire B. Reference cours: module theorique PE correspondant. Explication: Cours PE regles de barre (RIPAM): qualifier la situation (rattrapage, croisement, route convergente), determiner le navire privilegie puis executer une manœuvre franche et precoce.",
+          "explanation": "Reponse correcte: Le navire B. Explication: Cours PE regles de barre (RIPAM): qualifier la situation (rattrapage, croisement, route convergente), determiner le navire privilegie puis executer une manœuvre franche et precoce.",
           "tags": [
             "web_annales",
             "series_3",
@@ -4832,7 +4832,7 @@
               "correct": true
             }
           ],
-          "explanation": "Reponse correcte: d'un navire à moteur en route avec de l'erre. Reference: RIPAM regle 34 (signaux de manœuvre et d'avertissement) et cours PE signaux sonores. Explication: Le message sonore se decode strictement par nombre et duree des coups, puis s'applique a la manœuvre immediate. Contexte de l'enonce: Son prolongé.",
+          "explanation": "Reponse correcte: d'un navire à moteur en route avec de l'erre. Explication: L'erre designe la vitesse propre du navire par rapport a l'eau, a distinguer de la vitesse fond. Contexte de l'enonce: Son prolongé.",
           "tags": [
             "web_annales",
             "series_3",
@@ -4861,7 +4861,7 @@
               "correct": false
             }
           ],
-          "explanation": "Reponse correcte: chenal préféré à tribord. Reference: cours PE balisage lateral (rythme 2+1 pour identifier le chenal prefere). Explication: Une marque de chenal prefere indique la branche principale a suivre dans une bifurcation de chenal.",
+          "explanation": "Reponse correcte: chenal préféré à tribord. Explication: Une marque de chenal prefere indique la branche principale a suivre dans une bifurcation de chenal.",
           "tags": [
             "web_annales",
             "series_1",
@@ -4890,7 +4890,7 @@
               "correct": false
             }
           ],
-          "explanation": "Reponse correcte: Oui. Reference: RIPAM regles 21 a 30 + cours PE feux et marques de navires. Explication: Le statut du navire est determine par la combinaison des feux/marques de jour, ce qui conditionne priorite et distance de securite. Contexte de l'enonce: Hors VNM et navire.",
+          "explanation": "Reponse correcte: Oui. Explication: Le statut du navire est determine par la combinaison des feux/marques de jour, ce qui conditionne priorite et distance de securite. Contexte de l'enonce: Hors VNM et navire.",
           "tags": [
             "web_annales",
             "series_5",
@@ -4919,7 +4919,7 @@
               "correct": true
             }
           ],
-          "explanation": "Reponse correcte: Non, je vais m'échouer. Reference: RIPAM regles 21 a 30 + cours PE feux et marques de navires. Explication: Le statut du navire est determine par la combinaison des feux/marques de jour, ce qui conditionne priorite et distance de securite. Contexte de l'enonce: La sonde indiquée sur la carte est de 1 mètre souligné. la hauteur d'eau à la prochaine marée basse sera de 0,6 mètre.",
+          "explanation": "Reponse correcte: Non, je vais m'échouer. Explication: Le statut du navire est determine par la combinaison des feux/marques de jour, ce qui conditionne priorite et distance de securite. Contexte de l'enonce: La sonde indiquée sur la carte est de 1 mètre souligné. la hauteur d'eau à la prochaine marée basse sera de 0,6 mètre.",
           "tags": [
             "web_annales",
             "series_3",
@@ -4953,7 +4953,7 @@
               "correct": false
             }
           ],
-          "explanation": "Reponse correcte: un remorqueur. Reference: RIPAM regle 34 (signaux de manœuvre et d'avertissement) et cours PE signaux sonores. Explication: Le message sonore se decode strictement par nombre et duree des coups, puis s'applique a la manœuvre immediate.",
+          "explanation": "Reponse correcte: un remorqueur. Explication: Le message sonore se decode strictement par nombre et duree des coups, puis s'applique a la manœuvre immediate.",
           "tags": [
             "web_annales",
             "series_1",
@@ -4987,7 +4987,7 @@
               "correct": true
             }
           ],
-          "explanation": "Reponse correcte: Avis de coup de vent par le Nord-Ouest. Reference cours: module theorique PE correspondant. Explication: Cours PE signaux sonores (RIPAM regle 34): le sens du signal depend strictement du nombre et de la duree des sons.",
+          "explanation": "Reponse correcte: Avis de coup de vent par le Nord-Ouest. Explication: Cours PE feux de navigation (RIPAM regles 21 a 23): l'identification repose sur la combinaison couleur + position + secteur + portee, jamais sur un seul feu isole.",
           "tags": [
             "web_annales",
             "series_1",
@@ -5021,7 +5021,7 @@
               "correct": false
             }
           ],
-          "explanation": "Reponse correcte: PAN PAN. Reference: cours PE balisage lateral IALA region A. Explication: Le sens conventionnel sert de reference: en entrant, rouge a babord et vert a tribord (region A). En sortie, la logique est inversee. Contexte de l'enonce: En panne d'essence, vous dérivez inexorablement vers le large.",
+          "explanation": "Reponse correcte: PAN PAN. Explication: En VHF marine, le signal depend du degre d'urgence: MAYDAY pour detresse grave et imminente, PAN PAN pour urgence, SECURITE pour message de securite. Contexte de l'enonce: En panne d'essence, vous dérivez inexorablement vers le large.",
           "tags": [
             "web_annales",
             "series_5",
@@ -5050,7 +5050,7 @@
               "correct": true
             }
           ],
-          "explanation": "Reponse correcte: doit s'écarter. Reference: RIPAM regle 17. Explication: Le navire privilegie maintient route et vitesse, mais doit agir a temps si l'autre ne manœuvre pas.",
+          "explanation": "Reponse correcte: doit s'écarter. Explication: Le navire privilegie maintient route et vitesse, mais doit agir a temps si l'autre ne manœuvre pas.",
           "tags": [
             "web_annales",
             "series_1",
@@ -5084,7 +5084,7 @@
               "correct": true
             }
           ],
-          "explanation": "Reponse correcte: Le symbole C. Reference cours: module regles de barre + RIPAM regles 5, 7, 13, 15, 16, 17. Explication: Cours PE regles de barre (RIPAM): qualifier la situation (rattrapage, croisement, route convergente), determiner le navire privilegie puis executer une manœuvre franche et precoce.",
+          "explanation": "Reponse correcte: Le symbole C. Explication: Cours PE cartographie: la reponse se construit en lisant la legende SHOM, les echelles et les symboles normalises avant toute decision de route.",
           "tags": [
             "web_annales",
             "series_6",
@@ -5118,7 +5118,7 @@
               "correct": false
             }
           ],
-          "explanation": "Reponse correcte: Je viens à droite. Reference cours: module feux et signaux + RIPAM regles 21 a 23. Explication: Cours PE feux de navigation (RIPAM regles 21 a 23): l'identification repose sur la combinaison couleur + position + secteur + portee, jamais sur un seul feu isole.",
+          "explanation": "Reponse correcte: Je viens à droite. Explication: Cours PE module balisage: identifier d'abord le type de marque (laterale, cardinale, speciale, eaux saines, danger isole), puis appliquer la regle de passage associee.",
           "tags": [
             "web_annales",
             "series_6",
@@ -5152,7 +5152,7 @@
               "correct": false
             }
           ],
-          "explanation": "Reponse correcte: je viens à gauche. Reference: cours PE balisage (elements d'identification d'une marque). Explication: Le voyant (topmark) est la marque de sommet. Il sert, avec la couleur et le rythme du feu, a identifier sans ambiguite la categorie de bouee.",
+          "explanation": "Reponse correcte: je viens à gauche. Explication: Le voyant (topmark) est la marque de sommet. Il sert, avec la couleur et le rythme du feu, a identifier sans ambiguite la categorie de bouee.",
           "tags": [
             "web_annales",
             "series_3",
@@ -5191,7 +5191,7 @@
               "correct": false
             }
           ],
-          "explanation": "Reponse correcte: 6 cv. Reference: cours PE securite des VNM. Explication: Le coupe-circuit est obligatoire sur VNM a partir de 6 cv.",
+          "explanation": "Reponse correcte: 6 cv. Explication: Le coupe-circuit est obligatoire sur VNM a partir de 6 cv.",
           "tags": [
             "web_annales",
             "series_3",
@@ -5220,7 +5220,7 @@
               "correct": false
             }
           ],
-          "explanation": "Reponse correcte: selon la direction d'où vient le vent. Reference cours: module VHF et procedures de detresse/urgence. Explication: Cours PE VHF/SMDSM: identifier le niveau d'urgence puis appliquer le bon format d'appel sur le canal approprie.",
+          "explanation": "Reponse correcte: selon la direction d'où vient le vent. Explication: Cours PE meteo marine: traduire les termes du bulletin en force Beaufort, etat de mer et impact sur la securite du navire.",
           "tags": [
             "web_annales",
             "series_5",
@@ -5296,7 +5296,7 @@
               "correct": false
             }
           ],
-          "explanation": "Reponse correcte: Oui. Reference: cours PE maree (regle des douziemes et pied de pilote). Explication: La decision se fonde sur hauteur d'eau calculee (PM/BM/marnage) et marge sous quille.",
+          "explanation": "Reponse correcte: Oui. Explication: La decision se fonde sur hauteur d'eau calculee (PM/BM/marnage) et marge sous quille.",
           "tags": [
             "web_annales",
             "series_2",
@@ -5335,7 +5335,7 @@
               "correct": false
             }
           ],
-          "explanation": "Reponse correcte: 8 Beaufort. Reference: cours PE meteo marine (echelle Beaufort et interpretation bulletin). Explication: L'avis meteo se traduit en plage Beaufort et en etat de mer compatible ou non avec la categorie de navire. Contexte de l'enonce: La météo annonce un avis de coup de vent.",
+          "explanation": "Reponse correcte: 8 Beaufort. Explication: L'avis meteo se traduit en plage Beaufort et en etat de mer compatible ou non avec la categorie de navire. Contexte de l'enonce: La météo annonce un avis de coup de vent.",
           "tags": [
             "web_annales",
             "series_1",
@@ -5374,7 +5374,7 @@
               "correct": false
             }
           ],
-          "explanation": "Reponse correcte: Le manuel du propriétaire de votre navire, à défaut, la Division 240. Reference cours: module meteo marine et echelle Beaufort. Explication: Cours PE meteo marine: traduire les termes du bulletin en force Beaufort, etat de mer et impact sur la securite du navire.",
+          "explanation": "Reponse correcte: Le manuel du propriétaire de votre navire, à défaut, la Division 240. Explication: L'armement obligatoire se verifie sur le manuel du navire et, a defaut, dans la reglementation Division 240 correspondant a la zone de navigation.",
           "tags": [
             "web_annales",
             "series_5",
@@ -5403,7 +5403,7 @@
               "correct": true
             }
           ],
-          "explanation": "Reponse correcte: Non, je vais m'échouer. Reference: RIPAM regles 21 a 30 + cours PE feux et marques de navires. Explication: Le statut du navire est determine par la combinaison des feux/marques de jour, ce qui conditionne priorite et distance de securite. Contexte de l'enonce: La sonde indiquée sur la carte est de 1 mètre souligné. la hauteur d'eau à la prochaine marée basse sera de 0,6 mètre.",
+          "explanation": "Reponse correcte: Non, je vais m'échouer. Explication: Le statut du navire est determine par la combinaison des feux/marques de jour, ce qui conditionne priorite et distance de securite. Contexte de l'enonce: La sonde indiquée sur la carte est de 1 mètre souligné. la hauteur d'eau à la prochaine marée basse sera de 0,6 mètre.",
           "tags": [
             "web_annales",
             "series_3",
@@ -5437,7 +5437,7 @@
               "correct": false
             }
           ],
-          "explanation": "Reponse correcte: 16 ans. Reference cours: module theorique PE correspondant. Explication: Cours PE securite/reglementation: appliquer l'obligation legale du chef de bord et verifier les contraintes de zone, d'armement et de pratique.",
+          "explanation": "Reponse correcte: 16 ans. Explication: Cours PE securite/reglementation: appliquer l'obligation legale du chef de bord et verifier les contraintes de zone, d'armement et de pratique.",
           "tags": [
             "web_annales",
             "series_1",
@@ -5466,7 +5466,7 @@
               "correct": false
             }
           ],
-          "explanation": "Reponse correcte: Vrai. Reference cours: module theorique PE correspondant. Explication: Cours PE securite/reglementation: appliquer l'obligation legale du chef de bord et verifier les contraintes de zone, d'armement et de pratique.",
+          "explanation": "Reponse correcte: Vrai. Explication: Cours PE securite/reglementation: appliquer l'obligation legale du chef de bord et verifier les contraintes de zone, d'armement et de pratique.",
           "tags": [
             "web_annales",
             "series_3",
@@ -5505,7 +5505,7 @@
               "correct": false
             }
           ],
-          "explanation": "Reponse correcte: 12 milles. Reference: cours PE VHF et procedures SMDSM/canal 16. Explication: En detresse vocale, l'appel initial se fait sur le canal 16 avant degagement sur canal de travail. Contexte de l'enonce: Depuis le 1er mars 2011, avec un permis plaisance.",
+          "explanation": "Reponse correcte: 12 milles. Explication: En detresse vocale, l'appel initial se fait sur le canal 16 avant degagement sur canal de travail. Contexte de l'enonce: Depuis le 1er mars 2011, avec un permis plaisance.",
           "tags": [
             "web_annales",
             "series_4",
@@ -5544,7 +5544,7 @@
               "correct": false
             }
           ],
-          "explanation": "Reponse correcte: non maître de sa manoeuvre. Reference: RIPAM regles 21 a 30 + cours PE feux et marques de navires. Explication: Le statut du navire est determine par la combinaison des feux/marques de jour, ce qui conditionne priorite et distance de securite.",
+          "explanation": "Reponse correcte: non maître de sa manoeuvre. Explication: Le statut du navire est determine par la combinaison des feux/marques de jour, ce qui conditionne priorite et distance de securite.",
           "tags": [
             "web_annales",
             "series_6",
@@ -5573,7 +5573,7 @@
               "correct": true
             }
           ],
-          "explanation": "Reponse correcte: doit s'écarter. Reference: RIPAM regle 17. Explication: Le navire privilegie maintient route et vitesse, mais doit agir a temps si l'autre ne manœuvre pas.",
+          "explanation": "Reponse correcte: doit s'écarter. Explication: Le navire privilegie maintient route et vitesse, mais doit agir a temps si l'autre ne manœuvre pas.",
           "tags": [
             "web_annales",
             "series_1",
@@ -5607,7 +5607,7 @@
               "correct": false
             }
           ],
-          "explanation": "Reponse correcte: Je sélectionne le canal 16, j'écoute pour savoir si le canal est libre et si oui, j'appelle l'autre navire. Reference cours: module securite et reglementation plaisance. Explication: Cours PE securite/reglementation: appliquer l'obligation legale du chef de bord et verifier les contraintes de zone, d'armement et de pratique. Contexte de l'enonce: Vous souhaitez contacter un autre navire.",
+          "explanation": "Reponse correcte: Je sélectionne le canal 16, j'écoute pour savoir si le canal est libre et si oui, j'appelle l'autre navire. Explication: En VHF marine, le signal depend du degre d'urgence: MAYDAY pour detresse grave et imminente, PAN PAN pour urgence, SECURITE pour message de securite. Contexte de l'enonce: Vous souhaitez contacter un autre navire.",
           "tags": [
             "web_annales",
             "series_4",
@@ -5641,7 +5641,7 @@
               "correct": false
             }
           ],
-          "explanation": "Reponse correcte: d'un navire en action de pêche. Reference: RIPAM regle 34 (signaux de manœuvre et d'avertissement) et cours PE signaux sonores. Explication: Le message sonore se decode strictement par nombre et duree des coups, puis s'applique a la manœuvre immediate.",
+          "explanation": "Reponse correcte: d'un navire en action de pêche. Explication: Le message sonore se decode strictement par nombre et duree des coups, puis s'applique a la manœuvre immediate.",
           "tags": [
             "web_annales",
             "series_4",
@@ -5675,7 +5675,7 @@
               "correct": false
             }
           ],
-          "explanation": "Reponse correcte: Un château d'eau visible de la mer. Reference cours: module regles de barre + RIPAM regles 5, 7, 13, 15, 16, 17. Explication: Cours PE regles de barre (RIPAM): qualifier la situation (rattrapage, croisement, route convergente), determiner le navire privilegie puis executer une manœuvre franche et precoce. Contexte de l'enonce: Sur une carte marine.",
+          "explanation": "Reponse correcte: Un château d'eau visible de la mer. Explication: Cours PE cartographie: la reponse se construit en lisant la legende SHOM, les echelles et les symboles normalises avant toute decision de route. Contexte de l'enonce: Sur une carte marine.",
           "tags": [
             "web_annales",
             "series_3",
@@ -5704,7 +5704,7 @@
               "correct": false
             }
           ],
-          "explanation": "Reponse correcte: Je viens à droite. Reference: cours PE cartographie/navigation (lecture et evolution du cap). Explication: La manœuvre se deduit du compas: vers des valeurs plus faibles on vient a gauche (babord), vers des valeurs plus elevees on vient a droite (tribord), en tenant compte du passage 000/360.",
+          "explanation": "Reponse correcte: Je viens à droite. Explication: La manœuvre se deduit du compas: vers des valeurs plus faibles on vient a gauche (babord), vers des valeurs plus elevees on vient a droite (tribord), en tenant compte du passage 000/360.",
           "tags": [
             "web_annales",
             "series_3",
@@ -5733,7 +5733,7 @@
               "correct": false
             }
           ],
-          "explanation": "Reponse correcte: selon la direction d'où vient le vent. Reference cours: module VHF et procedures de detresse/urgence. Explication: Cours PE VHF/SMDSM: identifier le niveau d'urgence puis appliquer le bon format d'appel sur le canal approprie.",
+          "explanation": "Reponse correcte: selon la direction d'où vient le vent. Explication: Cours PE meteo marine: traduire les termes du bulletin en force Beaufort, etat de mer et impact sur la securite du navire.",
           "tags": [
             "web_annales",
             "series_5",
@@ -5762,7 +5762,7 @@
               "correct": true
             }
           ],
-          "explanation": "Reponse correcte: La météo va devenir mauvaise. Reference cours: module VHF et procedures de detresse/urgence. Explication: Cours PE VHF/SMDSM: identifier le niveau d'urgence puis appliquer le bon format d'appel sur le canal approprie.",
+          "explanation": "Reponse correcte: La météo va devenir mauvaise. Explication: Cours PE meteo marine: traduire les termes du bulletin en force Beaufort, etat de mer et impact sur la securite du navire.",
           "tags": [
             "web_annales",
             "series_2",
@@ -5796,7 +5796,7 @@
               "correct": false
             }
           ],
-          "explanation": "Reponse correcte: de danger isolé. Reference: cours PE balisage (marque de danger isole: couleurs noir/rouge, 2 spheres, feu blanc 2 eclats). Explication: Une marque de danger isole signale un obstacle local entoure d'eaux saines; on ne passe pas au contact.",
+          "explanation": "Reponse correcte: de danger isolé. Explication: Une marque de danger isole signale un obstacle local entoure d'eaux saines; on ne passe pas au contact.",
           "tags": [
             "web_annales",
             "series_6",
@@ -5825,7 +5825,7 @@
               "correct": false
             }
           ],
-          "explanation": "Reponse correcte: Je laisse à ma droite. Reference: cours PE cartographie/navigation (lecture et evolution du cap). Explication: La manœuvre se deduit du compas: vers des valeurs plus faibles on vient a gauche (babord), vers des valeurs plus elevees on vient a droite (tribord), en tenant compte du passage 000/360.",
+          "explanation": "Reponse correcte: Je laisse à ma droite. Explication: La manœuvre se deduit du compas: vers des valeurs plus faibles on vient a gauche (babord), vers des valeurs plus elevees on vient a droite (tribord), en tenant compte du passage 000/360.",
           "tags": []
         },
         {
@@ -5860,7 +5860,7 @@
               "correct": false
             }
           ],
-          "explanation": "Reponse correcte: 135°. Reference: RIPAM regle 21 (definition des feux de navigation). Explication: Le feu de poupe couvre 135 deg vers l'arriere.",
+          "explanation": "Reponse correcte: 135°. Explication: Le feu de poupe couvre 135 deg vers l'arriere.",
           "tags": [
             "web_annales",
             "series_2",
@@ -5889,7 +5889,7 @@
               "correct": true
             }
           ],
-          "explanation": "Reponse correcte: je laisse à bâbord. Reference: balisage lateral IALA region A (cours PE module balisage). Explication: En sortie, la lecture du balisage est inversee par rapport au sens conventionnel d'entree.",
+          "explanation": "Reponse correcte: je laisse à bâbord. Explication: Le sens conventionnel sert de reference: en entrant, rouge a babord et vert a tribord (region A). En sortie, la logique est inversee.",
           "tags": [
             "web_annales",
             "series_1",
@@ -5923,7 +5923,7 @@
               "correct": false
             }
           ],
-          "explanation": "Reponse correcte: Le navire B. Reference cours: module theorique PE correspondant. Explication: Cours PE regles de barre (RIPAM): qualifier la situation (rattrapage, croisement, route convergente), determiner le navire privilegie puis executer une manœuvre franche et precoce.",
+          "explanation": "Reponse correcte: Le navire B. Explication: Cours PE regles de barre (RIPAM): qualifier la situation (rattrapage, croisement, route convergente), determiner le navire privilegie puis executer une manœuvre franche et precoce.",
           "tags": [
             "web_annales",
             "series_3",
@@ -5952,7 +5952,7 @@
               "correct": false
             }
           ],
-          "explanation": "Reponse correcte: Vrai. Reference: cours PE VHF et procedures SMDSM/canal 16. Explication: En detresse vocale, l'appel initial se fait sur le canal 16 avant degagement sur canal de travail.",
+          "explanation": "Reponse correcte: Vrai. Explication: En detresse vocale, l'appel initial se fait sur le canal 16 avant degagement sur canal de travail.",
           "tags": [
             "web_annales",
             "series_3",
@@ -5991,7 +5991,7 @@
               "correct": true
             }
           ],
-          "explanation": "Reponse correcte: dépasser par la gauche. Reference cours: module theorique PE correspondant. Explication: Cours PE signaux sonores (RIPAM regle 34): le sens du signal depend strictement du nombre et de la duree des sons.",
+          "explanation": "Reponse correcte: dépasser par la gauche. Explication: Cours PE feux de navigation (RIPAM regles 21 a 23): l'identification repose sur la combinaison couleur + position + secteur + portee, jamais sur un seul feu isole.",
           "tags": [
             "web_annales",
             "series_5",
@@ -6030,7 +6030,7 @@
               "correct": false
             }
           ],
-          "explanation": "Reponse correcte: Je conserve mon cap et ma vitesse. Reference: cours PE cartographie/navigation (lecture et evolution du cap). Explication: La manœuvre se deduit du compas: vers des valeurs plus faibles on vient a gauche (babord), vers des valeurs plus elevees on vient a droite (tribord), en tenant compte du passage 000/360.",
+          "explanation": "Reponse correcte: Je conserve mon cap et ma vitesse. Explication: La manœuvre se deduit du compas: vers des valeurs plus faibles on vient a gauche (babord), vers des valeurs plus elevees on vient a droite (tribord), en tenant compte du passage 000/360.",
           "tags": [
             "web_annales",
             "series_4",
@@ -6064,7 +6064,7 @@
               "correct": true
             }
           ],
-          "explanation": "Reponse correcte: Le symbole C. Reference cours: module regles de barre + RIPAM regles 5, 7, 13, 15, 16, 17. Explication: Cours PE regles de barre (RIPAM): qualifier la situation (rattrapage, croisement, route convergente), determiner le navire privilegie puis executer une manœuvre franche et precoce.",
+          "explanation": "Reponse correcte: Le symbole C. Explication: Cours PE cartographie: la reponse se construit en lisant la legende SHOM, les echelles et les symboles normalises avant toute decision de route.",
           "tags": [
             "web_annales",
             "series_6",
@@ -6093,7 +6093,7 @@
               "correct": true
             }
           ],
-          "explanation": "Reponse correcte: Non. Reference: cours PE VHF et procedures SMDSM/canal 16. Explication: En detresse vocale, l'appel initial se fait sur le canal 16 avant degagement sur canal de travail. Contexte de l'enonce: Vous êtes victime d'une panne moteur.",
+          "explanation": "Reponse correcte: Non. Explication: En VHF marine, le signal depend du degre d'urgence: MAYDAY pour detresse grave et imminente, PAN PAN pour urgence, SECURITE pour message de securite. Contexte de l'enonce: Vous êtes victime d'une panne moteur.",
           "tags": [
             "web_annales",
             "series_2",
@@ -6132,7 +6132,7 @@
               "correct": true
             }
           ],
-          "explanation": "Reponse correcte: d'un remorqueur. Reference cours: module cartographie et symboles SHOM. Explication: Cours PE cartographie: la reponse se construit en lisant la legende SHOM, les echelles et les symboles normalises avant toute decision de route.",
+          "explanation": "Reponse correcte: d'un remorqueur. Explication: Cours PE feux de navigation (RIPAM regles 21 a 23): l'identification repose sur la combinaison couleur + position + secteur + portee, jamais sur un seul feu isole.",
           "tags": [
             "web_annales",
             "series_3",
@@ -6161,7 +6161,7 @@
               "correct": true
             }
           ],
-          "explanation": "Reponse correcte: Une balise flottante latérale bâbord. Reference cours: module regles de barre + RIPAM regles 5, 7, 13, 15, 16, 17. Explication: Cours PE regles de barre (RIPAM): qualifier la situation (rattrapage, croisement, route convergente), determiner le navire privilegie puis executer une manœuvre franche et precoce.",
+          "explanation": "Reponse correcte: Une balise flottante latérale bâbord. Explication: Cours PE cartographie: la reponse se construit en lisant la legende SHOM, les echelles et les symboles normalises avant toute decision de route.",
           "tags": [
             "web_annales",
             "series_6",
@@ -6190,7 +6190,7 @@
               "correct": false
             }
           ],
-          "explanation": "Reponse correcte: vous êtes privilégié. Reference: RIPAM regle 17. Explication: Le navire privilegie maintient route et vitesse, mais doit agir a temps si l'autre ne manœuvre pas.",
+          "explanation": "Reponse correcte: vous êtes privilégié. Explication: Le navire privilegie maintient route et vitesse, mais doit agir a temps si l'autre ne manœuvre pas.",
           "tags": [
             "web_annales",
             "series_5",
@@ -6224,7 +6224,7 @@
               "correct": true
             }
           ],
-          "explanation": "Reponse correcte: non maître de sa manœuvre sans erre. Reference: RIPAM regles 21 a 30 + cours PE feux et marques de navires. Explication: Le statut du navire est determine par la combinaison des feux/marques de jour, ce qui conditionne priorite et distance de securite.",
+          "explanation": "Reponse correcte: non maître de sa manœuvre sans erre. Explication: L'erre designe la vitesse propre du navire par rapport a l'eau, a distinguer de la vitesse fond.",
           "tags": [
             "web_annales",
             "series_3",
@@ -6253,7 +6253,7 @@
               "correct": true
             }
           ],
-          "explanation": "Reponse correcte: Non. Reference: cours PE cartographie/navigation calculatoire. Explication: La conversion des caps suit la chaine cap compas -> corrections magnetiques -> cap vrai avec convention de signe explicite. Contexte de l'enonce: Pour un navire à moteur, en zone côtière.",
+          "explanation": "Reponse correcte: Non. Explication: La conversion des caps suit la chaine cap compas -> corrections magnetiques -> cap vrai avec convention de signe explicite. Contexte de l'enonce: Pour un navire à moteur, en zone côtière.",
           "tags": [
             "web_annales",
             "series_4",
