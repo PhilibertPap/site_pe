@@ -625,6 +625,62 @@ function isUsableVisualMedia(mediaPath) {
     return /\.(png|jpg|jpeg|webp|svg)$/i.test(normalized);
 }
 
+function inferVisualTagsFromAnnalesText(text) {
+    const t = cleanAnnalesStem(text).toLowerCase();
+    const tags = new Set();
+    if (/(bou[ée]e|balise|cardinale|danger isol[ée]|eaux saines|marque|chenal|entr[ée]e au port|scintillement)/.test(t)) {
+        tags.add('balisage');
+    }
+    if (/(signal sonore|dans la brume|vous entendez|entendez ce signal|prolong[ée] [àa] intervalles|deux brefs|trois brefs)/.test(t)) {
+        tags.add('signal_sonore');
+    }
+    if (/(de nuit|apercevez les feux|feux ci-contre|signal vu en m[âa]ture|que signifient ces signaux|\bfeu\b|\bfeux\b|scintillement)/.test(t)) {
+        tags.add('feux_navire');
+    }
+    if (/(voilier|rattrap[ée]|route de collision|privil[eé]gi[ée]|qui doit man[œo]uvrer|tribord amure|vous [êe]tes sur un voilier|bateau a est rattrap[ée])/ .test(t)) {
+        tags.add('priorite');
+    }
+    if (/(vhf|canal|d[eé]tresse|cross|mayday)/.test(t)) {
+        tags.add('vhf');
+    }
+    if (/(feux plac[ée]s [àa] l'entr[ée]e d'un port|trafic [àa] sens)/.test(t)) {
+        tags.add('feux_port');
+    }
+    if (!tags.size) tags.add('generic_visual');
+    return [...tags];
+}
+
+function inferFactVisualTags(moduleId, fact) {
+    const split = splitConceptDefinition(fact);
+    const concept = normalizeSpace(split?.concept || fact).toLowerCase();
+    const detail = normalizeSpace(split?.definition || fact).toLowerCase();
+    const text = `${concept} ${detail}`;
+    const tags = new Set();
+
+    if (moduleId === 1) tags.add('balisage');
+    if (moduleId === 3) tags.add('priorite');
+
+    if (/(\bfeu\b|feux|boule|m[âa]ture|mouillage|chalutier|navire|non ma[iî]tre|[ée]chou[ée])/.test(text)) {
+        tags.add('feux_navire');
+    }
+    if (/(signal sonore|brume|coup|bref|long|man[œo]uvre trib|man[œo]uvre b[aâ]b|je tribord|je b[aâ]bord)/.test(text)) {
+        tags.add('signal_sonore');
+    }
+    if (/(canal|vhf|cross|mayday|pan-pan)/.test(text)) {
+        tags.add('vhf');
+    }
+    if (/(entr[ée]e au port|chenal|secteur|bou[ée]e|balise|cardinal|danger isol[ée]|eaux saines|scintillement)/.test(text)) {
+        tags.add('balisage');
+    }
+
+    if (!tags.size) {
+        if (moduleId === 2 || moduleId === 4) tags.add('signal_sonore');
+        else if (moduleId === 1) tags.add('balisage');
+        else if (moduleId === 3) tags.add('priorite');
+    }
+    return [...tags];
+}
+
 function inferModuleFromAnnalesText(text) {
     const t = cleanAnnalesStem(text).toLowerCase();
     if (/(brassi[eè]re|navigation scoute|limite m[eé]t[eé]o.*scout|patron d.?embarcation|abri)/.test(t)) return 10;
@@ -634,8 +690,8 @@ function inferModuleFromAnnalesText(text) {
     if (/(cap\\s*\\d+|cap plein|d[eé]clinaison|d[eé]viation|cap compas|cap vrai)/.test(t)) return 6;
     if (/(grand frais|beaufort|bulletin m[eé]t[eé]o|d[eé]pression|front|anticyclone)/.test(t)) return 5;
     if (/(carte marine|rocher|shom|r[eè]gle cras|distance sur carte|carte 9999)/.test(t)) return 4;
-    if (/(signal sonore|sons brefs|brume|prolong[eé] [àa] intervalles|entendez ce signal)/.test(t)) return 2;
-    if (/(privil[eé]gi|crois|rattrap|route de collision|abordage|tribord amure|man[œo]uvr)/.test(t)) return 3;
+    if (/(signal sonore|brume|prolong[eé] [àa] intervalles|entendez ce signal|vous entendez)/.test(t)) return 2;
+    if (/(privil[eé]gi|crois|rattrap|route de collision|abordage|tribord amure|vous [êe]tes sur un voilier|qui doit man[œo]uvrer)/.test(t)) return 3;
     if (/(feux|m[âa]ture|scintillement|mouillage|chalutier|navire non ma[iî]tre|navire [ée]chou[ée])/i.test(t)) return 2;
     if (/(bou[ée]e|balise|chenal|cardinale|marque|entrant au port)/.test(t)) return 1;
     return 1;
@@ -653,9 +709,10 @@ function buildAnnalesImagePools(annalesRaw) {
         if (!pools.has(moduleId)) pools.set(moduleId, []);
         const arr = pools.get(moduleId);
         const stemText = cleanAnnalesStem(question.text).toLowerCase();
+        const tags = inferVisualTagsFromAnnalesText(question.text);
         media.forEach(path => {
             if (!arr.some(item => item.path === path)) {
-                arr.push({ path, stemText });
+                arr.push({ path, stemText, tags });
             }
         });
     });
@@ -685,15 +742,15 @@ function getStemTemplates(moduleId, moduleName) {
             { text: 'A propos de "{concept}", quelle affirmation est exacte ?', visual: false }
         ],
         2: [
-            { text: 'En observant la situation ci-contre, quelle affirmation est exacte ?', visual: true },
-            { text: 'De nuit, en observant les feux visibles, quelle affirmation est exacte ?', visual: true },
-            { text: 'A partir de ce signal visuel, quelle affirmation est exacte ?', visual: true },
-            { text: 'Que signifie le signal montre sur l image ?', visual: true },
+            { text: 'En observant la situation ci-contre, quelle affirmation est exacte ?', visual: true, visualTags: ['feux_navire', 'signal_sonore'] },
+            { text: 'De nuit, en observant les feux visibles, quelle affirmation est exacte ?', visual: true, visualTags: ['feux_navire'] },
+            { text: 'Dans la brume, ce signal sonore correspond a :', visual: true, visualTags: ['signal_sonore'] },
+            { text: 'Que signifie le signal montre sur l image ?', visual: true, visualTags: ['feux_navire', 'signal_sonore', 'feux_port'] },
             { text: 'A propos de "{concept}", quelle affirmation est exacte ?', visual: false }
         ],
         3: [
-            { text: 'Dans la situation ci-contre, quelle regle de priorite s applique ?', visual: true },
-            { text: 'A partir de la situation illustree, quelle manœuvre est correcte ?', visual: true },
+            { text: 'Dans la situation ci-contre, quelle regle de priorite s applique ?', visual: true, visualTags: ['priorite'] },
+            { text: 'A partir de la situation illustree, quelle manœuvre est correcte ?', visual: true, visualTags: ['priorite'] },
             { text: 'En croisement, quelle priorité est exacte ?', visual: false },
             { text: 'A propos de "{concept}", quelle regle est exacte ?', visual: false }
         ],
@@ -772,10 +829,24 @@ function pickImageForFact(module, fact, variantIndex, imagePools) {
     const split = splitConceptDefinition(fact);
     const concept = (split?.concept || cleanConcept(fact)).toLowerCase();
     const conceptWords = concept.split(/[^a-z0-9àâäéèêëîïôöùûüç]+/i).filter(word => word.length >= 4);
-    const specificMatches = entries.filter(entry => conceptWords.some(word => entry.stemText.includes(word)));
-    const pool = specificMatches.length ? specificMatches : entries;
-    const selected = pool[variantIndex % pool.length];
-    return selected?.path || null;
+    const factTags = inferFactVisualTags(Number(module.id), fact);
+    const wantedTags = [...new Set(factTags)];
+
+    const scored = entries.map(entry => {
+        let score = 0;
+        const imageTags = entry.tags || [];
+        const sharedTagCount = wantedTags.filter(tag => imageTags.includes(tag)).length;
+        score += sharedTagCount * 8;
+        const conceptHitCount = conceptWords.filter(word => entry.stemText.includes(word)).length;
+        score += conceptHitCount * 3;
+        if (imageTags.includes('generic_visual')) score += 1;
+        return { entry, score };
+    }).sort((a, b) => b.score - a.score);
+
+    if (!scored.length || scored[0].score < 8) return null;
+    const bestScore = scored[0].score;
+    const best = scored.filter(item => item.score === bestScore).map(item => item.entry);
+    return best[variantIndex % best.length]?.path || null;
 }
 
 function buildPedagogicalQuestion(
@@ -805,12 +876,25 @@ function buildPedagogicalQuestion(
     const choices = shuffle([correctStatement, ...wrongStatements], rng);
     const answerIndex = choices.findIndex(choice => choice === correctStatement);
     const defaultStems = getStemTemplates(Number(module.id), module.name);
+    const factVisualTags = inferFactVisualTags(Number(module.id), fact);
     const stems = defaultStems;
-    const preferred = stems[variantIndex % stems.length];
-    const nonVisualFallback = stems.find(item => !item.visual) || preferred;
+    const nonVisualFallback = stems.find(item => !item.visual) || stems[0];
+    const visualCandidates = stems.filter(item => item.visual);
+    const scoredVisuals = visualCandidates
+        .map(item => {
+            const tags = item.visualTags || [];
+            const shared = factVisualTags.filter(tag => tags.includes(tag)).length;
+            return { item, score: shared };
+        })
+        .sort((a, b) => b.score - a.score);
+    const preferred = scoredVisuals.length && scoredVisuals[0].score > 0
+        ? scoredVisuals[variantIndex % Math.max(1, scoredVisuals.filter(x => x.score === scoredVisuals[0].score).length)].item
+        : stems[variantIndex % stems.length];
     let selected = preferred;
     let image = null;
-    if (preferred.visual) {
+    if (factVisualTags.includes('vhf')) {
+        selected = nonVisualFallback;
+    } else if (preferred.visual) {
         image = pickImageForFact(module, fact, variantIndex, imagePools);
         if (!image) selected = nonVisualFallback;
     }
