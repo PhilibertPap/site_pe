@@ -1,10 +1,25 @@
 class SitePE {
     constructor() {
-        this.storageKey = 'sitepe_progress';
+        this.profileKey = 'sitepe_profile_code';
+        this.profileCode = this.getStoredProfileCode();
+        this.storageKey = this.buildStorageKey(this.profileCode);
         this.progress = { modules: {}, examHistory: [] };
         this.data = { site: {}, qcm: {}, exercises: {}, problems: {} };
         this.qcmTimer = null;
         this.init();
+    }
+
+    getStoredProfileCode() {
+        const raw = String(localStorage.getItem(this.profileKey) || 'SCOUT-LOCAL').trim().toUpperCase();
+        return raw || 'SCOUT-LOCAL';
+    }
+
+    buildStorageKey(profileCode) {
+        const safe = String(profileCode || 'SCOUT-LOCAL')
+            .trim()
+            .toUpperCase()
+            .replace(/[^A-Z0-9_-]/g, '');
+        return `sitepe_progress_${safe || 'SCOUT-LOCAL'}`;
     }
 
     async init() {
@@ -49,11 +64,37 @@ class SitePE {
 
     loadProgress() {
         const saved = localStorage.getItem(this.storageKey);
-        this.progress = saved ? JSON.parse(saved) : { modules: {}, examHistory: [] };
+        if (!saved) {
+            this.progress = { modules: {}, examHistory: [] };
+            return;
+        }
+        try {
+            const parsed = JSON.parse(saved);
+            this.progress = {
+                modules: parsed.modules || {},
+                examHistory: Array.isArray(parsed.examHistory) ? parsed.examHistory : []
+            };
+        } catch (_) {
+            this.progress = { modules: {}, examHistory: [] };
+        }
     }
 
     saveProgress() {
         localStorage.setItem(this.storageKey, JSON.stringify(this.progress));
+    }
+
+    setProfileCode(profileCode) {
+        const normalized = String(profileCode || '').trim().toUpperCase().replace(/[^A-Z0-9_-]/g, '');
+        if (!normalized) {
+            alert('Code invalide. Utilise lettres, chiffres, tiret ou underscore.');
+            return;
+        }
+        this.profileCode = normalized;
+        localStorage.setItem(this.profileKey, normalized);
+        this.storageKey = this.buildStorageKey(normalized);
+        this.loadProgress();
+        this.updateDashboard();
+        window.dispatchEvent(new CustomEvent('sitepe:profile-changed', { detail: { profileCode: normalized } }));
     }
 
     setupUI() {
@@ -63,6 +104,19 @@ class SitePE {
         document.querySelectorAll('[data-flashcard-start]').forEach(button => {
             button.onclick = () => this.startFlashcards(button.dataset.fcModule);
         });
+
+        const profileInput = document.getElementById('profile-code-input');
+        const profileSave = document.getElementById('save-profile-code-btn');
+        const profileLabel = document.getElementById('current-profile-code');
+        if (profileInput) profileInput.value = this.profileCode;
+        if (profileLabel) profileLabel.textContent = this.profileCode;
+        if (profileSave && profileInput) {
+            profileSave.addEventListener('click', () => {
+                this.setProfileCode(profileInput.value);
+                profileLabel.textContent = this.profileCode;
+            });
+        }
+
         this.updateDashboard();
     }
 
@@ -78,6 +132,29 @@ class SitePE {
 
         progressBar.style.width = `${progress}%`;
         progressText.textContent = `${Math.round(progress)}%`;
+
+        document.querySelectorAll('[data-module-progress]').forEach(node => {
+            const moduleId = String(node.dataset.moduleProgress || '');
+            const stat = this.progress.modules[moduleId];
+            const percent = Math.round(stat?.progress || 0);
+            node.style.width = `${percent}%`;
+        });
+
+        document.querySelectorAll('[data-module-stat]').forEach(node => {
+            const moduleId = String(node.dataset.moduleStat || '');
+            const stat = this.progress.modules[moduleId];
+            if (!stat) return;
+            node.textContent = `${Math.round(stat.progress || 0)}% • Score ${Math.round(stat.bestScore || 0)}/100 • Tentatives ${stat.attempts || 0}`;
+        });
+    }
+
+    buildQcmImageHtml(question) {
+        if (!question.image) return '';
+        return `<figure class="qcm-media mt-3 mb-3">
+            <img class="img-fluid rounded qcm-illustration" src="${question.image}" alt="Illustration de la question ${this.qcm.idx + 1}" loading="lazy"
+                onerror="this.style.display='none'; this.parentElement.classList.add('qcm-media-missing');">
+            <figcaption class="qcm-media-fallback">Illustration indisponible sur cet appareil. Continue le QCM avec l enonce.</figcaption>
+        </figure>`;
     }
 
     startQCM(moduleFilter = null) {
@@ -218,11 +295,7 @@ class SitePE {
                 <label class="form-check-label" for="opt${this.qcm.idx}-${i}">${option.text}</label>
             </div>`;
         }).join('');
-        const imageHtml = question.image
-            ? `<figure class="qcm-media mt-3 mb-3">
-                <img class="img-fluid rounded qcm-illustration" src="${question.image}" alt="Illustration de la question ${this.qcm.idx + 1}" loading="lazy">
-            </figure>`
-            : '';
+        const imageHtml = this.buildQcmImageHtml(question);
 
         const actionLabel = this.qcm?.metadata?.instantFeedback ? 'Valider' : 'Suivant';
         const html = `<div class="qcm-question">
@@ -299,11 +372,7 @@ class SitePE {
         const statusClass = isCorrect ? 'alert-success' : 'alert-warning';
         const statusText = isCorrect ? 'Bonne reponse.' : 'Reponse incorrecte.';
         const explanation = question.explanation ? `<p class="mb-0"><strong>Explication:</strong> ${question.explanation}</p>` : '';
-        const imageHtml = question.image
-            ? `<figure class="qcm-media mt-3 mb-3">
-                <img class="img-fluid rounded qcm-illustration" src="${question.image}" alt="Illustration de la question ${this.qcm.idx + 1}" loading="lazy">
-            </figure>`
-            : '';
+        const imageHtml = this.buildQcmImageHtml(question);
 
         const html = `<div class="qcm-question">
             <div class="progress mb-3"><div class="progress-bar" style="width:${((this.qcm.idx + 1) / this.qcm.q.length) * 100}%"></div></div>
@@ -332,27 +401,60 @@ class SitePE {
         const score = Math.round(this.qcm.score);
         const passed = score >= 75 && this.qcm.errors <= 5;
         const timedOut = Boolean(options.timedOut);
+        const mode = this.qcm?.metadata?.mode || 'custom';
+        const moduleIds = [...new Set((this.qcm.q || []).map(question => String(question.moduleId || '')).filter(Boolean))];
         const exam = {
             date: new Date().toLocaleString('fr-FR'),
             score,
             errors: this.qcm.errors,
             passed,
-            timedOut
+            timedOut,
+            mode,
+            questionCount: (this.qcm?.q || []).length,
+            moduleIds
         };
 
         this.progress.examHistory.push(exam);
+        if (this.progress.examHistory.length > 120) {
+            this.progress.examHistory = this.progress.examHistory.slice(-120);
+        }
+        this.updateModuleProgress(moduleIds, score, passed);
         this.saveProgress();
+        const fullExamNextStep = mode === 'full'
+            ? '<p><a class="btn btn-outline-secondary btn-sm" href="navigation.html">Continuer avec le probleme de navigation</a></p>'
+            : '';
 
         const html = `<div class="alert ${passed ? 'alert-success' : 'alert-danger'}">
             <h3>${passed ? 'Reussi' : 'A retenter'}</h3>
             ${timedOut ? '<p><strong>Temps écoulé:</strong> la série a été arrêtée automatiquement.</p>' : ''}
             <p><strong>Score: ${score}/100</strong></p>
             <p>Erreurs: ${this.qcm.errors}/5</p>
+            <p>Code scout: <strong>${this.profileCode}</strong></p>
+            ${fullExamNextStep}
             <button class="btn btn-primary mt-3" onclick="location.reload()">Recommencer</button>
+            <a class="btn btn-outline-primary mt-3 ms-2" href="examens.html">Retour examens</a>
         </div>`;
 
         const container = this.getQcmContainer();
         if (container) container.innerHTML = html;
+    }
+
+    updateModuleProgress(moduleIds, score, passed) {
+        moduleIds.forEach(moduleId => {
+            const current = this.progress.modules[moduleId] || {
+                attempts: 0,
+                passedCount: 0,
+                bestScore: 0,
+                lastScore: 0,
+                progress: 0
+            };
+            current.attempts += 1;
+            current.lastScore = score;
+            current.bestScore = Math.max(current.bestScore || 0, score);
+            if (passed) current.passedCount += 1;
+            current.progress = Math.round((current.bestScore / 100) * 100);
+            this.progress.modules[moduleId] = current;
+        });
     }
 
     startFlashcards(moduleId) {

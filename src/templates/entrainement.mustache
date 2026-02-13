@@ -14,7 +14,7 @@
 <section class="mb-5 reveal reveal-delay-1">
   <h2 class="section-title h4 section-head"><span class="icon-badge">ST</span>Statistiques</h2>
   <div class="row g-3">
-    <div class="col-6 col-lg-3">
+    <div class="col-6 col-lg-4">
       <div class="card h-100 kpi-card">
         <div class="card-body">
           <p class="kpi-label">Total QCM</p>
@@ -22,7 +22,7 @@
         </div>
       </div>
     </div>
-    <div class="col-6 col-lg-3">
+    <div class="col-6 col-lg-4">
       <div class="card h-100 kpi-card">
         <div class="card-body">
           <p class="kpi-label">Catégories</p>
@@ -30,19 +30,11 @@
         </div>
       </div>
     </div>
-    <div class="col-6 col-lg-3">
+    <div class="col-12 col-lg-4">
       <div class="card h-100 kpi-card">
         <div class="card-body">
           <p class="kpi-label">Types de tests</p>
           <p class="kpi-value mb-0">{{statistics.typeOfTests}}</p>
-        </div>
-      </div>
-    </div>
-    <div class="col-6 col-lg-3">
-      <div class="card h-100 kpi-card">
-        <div class="card-body">
-          <p class="kpi-label">Prix</p>
-          <p class="kpi-value mb-0">{{statistics.price}}</p>
         </div>
       </div>
     </div>
@@ -60,7 +52,10 @@
             <span class="badge text-bg-light">{{type}}</span>
           </div>
           <h3 class="h5">{{name}}</h3>
-          <p class="card-text mb-0">{{description}}</p>
+          <p class="card-text mb-3">{{description}}</p>
+          <button class="btn btn-primary btn-sm mt-auto align-self-start" data-session-start="{{id}}">
+            Lancer ce mode
+          </button>
         </div>
       </article>
     </div>
@@ -68,7 +63,29 @@
   </div>
 </section>
 
-<section id="session-details" class="mb-5 reveal reveal-delay-3"></section>
+<section id="session-details" class="mb-5 reveal reveal-delay-3">
+  <div class="card">
+    <div class="card-body">
+      <h2 class="h5 mb-2">Paramètres rapides</h2>
+      <p class="text-muted mb-3">Choisis un module si nécessaire, puis lance ton entraînement.</p>
+      <div class="row g-2 align-items-end">
+        <div class="col-md-8">
+          <label class="form-label" for="training-module-select">Module ciblé</label>
+          <select class="form-select" id="training-module-select">
+            <option value="">Tous les modules</option>
+            {{#modules}}
+            <option value="{{id}}">Module {{moduleNumber}} - {{name}}</option>
+            {{/modules}}
+          </select>
+        </div>
+        <div class="col-md-4 d-grid">
+          <button class="btn btn-outline-primary" id="start-selected-mode-btn" disabled>Lancer le mode sélectionné</button>
+        </div>
+      </div>
+      <div id="selected-mode-help" class="small text-muted mt-3 mb-0"></div>
+    </div>
+  </div>
+</section>
 
 <section class="alert alert-info mb-0 reveal reveal-delay-4">
   <h2 class="h5 alert-heading">Conseil de progression</h2>

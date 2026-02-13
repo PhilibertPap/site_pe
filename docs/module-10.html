@@ -11,7 +11,10 @@
     <!-- Navigation persistante -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top">
         <div class="container">
-            <a class="navbar-brand fw-bold" href="index.html">Patron d'Embarcation</a>
+            <a class="navbar-brand fw-bold d-flex align-items-center gap-2" href="index.html">
+                <img src="assets/annales/qcm/2022/image1.png" alt="Logo SUF Marine" class="suf-navbar-logo" loading="lazy">
+                <span>Patron d'Embarcation</span>
+            </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -47,7 +50,7 @@
         </div>
         <div class="col-lg-4 text-lg-end">
             <a href="parcours.html#module-10" class="btn btn-light btn-sm">Retour au parcours</a>
-            <a href="session.html?mode=quick&module=10" class="btn btn-outline-light btn-sm ms-2">QCM du module</a>
+            <a href="session.html?mode=exam-module&module=10" class="btn btn-outline-light btn-sm ms-2">Examen module</a>
         </div>
     </div>
 </section>
@@ -59,7 +62,53 @@
                 <h2 class="h5 mb-0 section-head"><span class="icon-badge">CO</span>Cours complet</h2>
             </header>
             <div class="card-body course-content">
-                <p>Réglementation SUF, matériel d&#39;armement, gestion des avaries</p><h5>Objectifs de progression</h5><ul><li>Connaître la réglementation SUF (6 milles, force 4-5)</li><li>Lister l&#39;équipement obligatoire à bord</li><li>Gérer une voie d&#39;eau d&#39;urgence</li><li>Réagir en cas d&#39;incendie à bord</li></ul><h5>Points cle a maitriser</h5><ul><li>Connaître la réglementation SUF (6 milles, force 4-5)</li><li>Lister l&#39;équipement obligatoire à bord</li><li>Gérer une voie d&#39;eau d&#39;urgence</li><li>Réagir en cas d&#39;incendie à bord</li></ul><h5>Methode de resolution en examen</h5><ol><li>Verifier les limites SUF avant la sortie (meteo, distance a un abri, equipage).</li><li>Confirmer l equipement de securite et les moyens d alerte.</li><li>Maintenir une surveillance active et un plan de repli permanent.</li></ol><h5>Erreurs frequentes a eviter</h5><ul><li>Minimiser la meteo reelle au regard de la prevision.</li><li>Sortir sans correspondant a terre ou plan de route clair.</li><li>Retarder la decision d interrompre la navigation.</li></ul>
+                <div class="row g-4">
+                    <aside class="col-lg-4">
+                        <div class="course-toc-panel">
+                            <h3 class="h6 mb-2">Plan du cours</h3>
+                            <div class="list-group list-group-flush">
+                                <a href="#course-section-objectifs-de-progression-1" class="list-group-item list-group-item-action course-toc-link">
+                                    Objectifs de progression
+                                </a>
+                                <a href="#course-section-points-cle-a-maitriser-2" class="list-group-item list-group-item-action course-toc-link">
+                                    Points cle a maitriser
+                                </a>
+                                <a href="#course-section-methode-de-resolution-en-examen-3" class="list-group-item list-group-item-action course-toc-link">
+                                    Methode de resolution en examen
+                                </a>
+                                <a href="#course-section-erreurs-frequentes-a-eviter-4" class="list-group-item list-group-item-action course-toc-link">
+                                    Erreurs frequentes a eviter
+                                </a>
+                            </div>
+                        </div>
+                    </aside>
+                    <div class="col-lg-8">
+                        <section id="course-section-objectifs-de-progression-1" class="course-section-block mb-4">
+                            <h3 class="h5 mb-2">Objectifs de progression</h3>
+                            <div class="course-section-html">
+                                <ul><li>Connaître la réglementation SUF (6 milles, force 4-5)</li><li>Lister l&#39;équipement obligatoire à bord</li><li>Gérer une voie d&#39;eau d&#39;urgence</li><li>Réagir en cas d&#39;incendie à bord</li></ul>
+                            </div>
+                        </section>
+                        <section id="course-section-points-cle-a-maitriser-2" class="course-section-block mb-4">
+                            <h3 class="h5 mb-2">Points cle a maitriser</h3>
+                            <div class="course-section-html">
+                                <ul><li>Connaître la réglementation SUF (6 milles, force 4-5)</li><li>Lister l&#39;équipement obligatoire à bord</li><li>Gérer une voie d&#39;eau d&#39;urgence</li><li>Réagir en cas d&#39;incendie à bord</li></ul>
+                            </div>
+                        </section>
+                        <section id="course-section-methode-de-resolution-en-examen-3" class="course-section-block mb-4">
+                            <h3 class="h5 mb-2">Methode de resolution en examen</h3>
+                            <div class="course-section-html">
+                                <ol><li>Verifier les limites SUF avant la sortie (meteo, distance a un abri, equipage).</li><li>Confirmer l equipement de securite et les moyens d alerte.</li><li>Maintenir une surveillance active et un plan de repli permanent.</li></ol>
+                            </div>
+                        </section>
+                        <section id="course-section-erreurs-frequentes-a-eviter-4" class="course-section-block mb-4">
+                            <h3 class="h5 mb-2">Erreurs frequentes a eviter</h3>
+                            <div class="course-section-html">
+                                <ul><li>Minimiser la meteo reelle au regard de la prevision.</li><li>Sortir sans correspondant a terre ou plan de route clair.</li><li>Retarder la decision d interrompre la navigation.</li></ul>
+                            </div>
+                        </section>
+                    </div>
+                </div>
             </div>
         </article>
 
@@ -68,12 +117,24 @@
                 <h2 class="h6 mb-0 section-head"><span class="icon-badge">CL</span>Checklist de revision</h2>
             </header>
             <div class="card-body">
-                <ul class="mb-0">
-                    <li>Connaître la réglementation SUF (6 milles, force 4-5)</li>
-                    <li>Lister l&#39;équipement obligatoire à bord</li>
-                    <li>Gérer une voie d&#39;eau d&#39;urgence</li>
-                    <li>Réagir en cas d&#39;incendie à bord</li>
-                </ul>
+                <div class="checklist-group" data-module-checklist="10">
+                    <div class="form-check checklist-item">
+                        <input class="form-check-input module-check-item" type="checkbox" id="module-10-check-0" data-check-index="0">
+                        <label class="form-check-label" for="module-10-check-0">Connaître la réglementation SUF (6 milles, force 4-5)</label>
+                    </div>
+                    <div class="form-check checklist-item">
+                        <input class="form-check-input module-check-item" type="checkbox" id="module-10-check-1" data-check-index="1">
+                        <label class="form-check-label" for="module-10-check-1">Lister l&#39;équipement obligatoire à bord</label>
+                    </div>
+                    <div class="form-check checklist-item">
+                        <input class="form-check-input module-check-item" type="checkbox" id="module-10-check-2" data-check-index="2">
+                        <label class="form-check-label" for="module-10-check-2">Gérer une voie d&#39;eau d&#39;urgence</label>
+                    </div>
+                    <div class="form-check checklist-item">
+                        <input class="form-check-input module-check-item" type="checkbox" id="module-10-check-3" data-check-index="3">
+                        <label class="form-check-label" for="module-10-check-3">Réagir en cas d&#39;incendie à bord</label>
+                    </div>
+                </div>
             </div>
         </article>
     </section>
@@ -88,8 +149,22 @@
                 <p class="mb-3"><strong>Annales QCM:</strong> 8</p>
                 <div class="d-grid gap-2">
                     <a href="session.html?mode=quick&module=10" class="btn btn-primary">Lancer un QCM cible</a>
-                    <a href="examens.html" class="btn btn-outline-primary">Mode examen</a>
+                    <a href="session.html?mode=exam-module&module=10" class="btn btn-outline-primary">Lancer l'examen module</a>
                 </div>
+            </div>
+        </article>
+
+        <article class="card mb-4">
+            <header class="card-header bg-light-subtle">
+                <h2 class="h6 mb-0 section-head"><span class="icon-badge">FX</span>Formules et reperes</h2>
+            </header>
+            <div class="card-body">
+                <ul class="small mb-0">
+                    <li>Bande des 300 m: vitesse max usuelle 5 nds (verifier reglement local).</li>
+                    <li>Chef de bord responsable: equipage, armement, meteo, decision de renoncer.</li>
+                    <li>Verification avant depart: equipement, route, meteo, point de repli.</li>
+                    <li>Connaître la réglementation SUF (6 milles, force 4-5)</li>
+                </ul>
             </div>
         </article>
 
@@ -101,15 +176,12 @@
             <div class="card-body">
                 <div class="annales-example mb-3 pb-3 border-bottom">
                     <p class="small mb-2"><strong>Question 6:</strong> Lors d’une navigation scoute, le port de la brassière est obligatoire : Uniquement en navigation à la voile En toutes circonstances Par vent de force 2 et plus Sur demande du Patron d’Embarcation</p>
-                    <img src="assets&#x2F;annales&#x2F;qcm&#x2F;2022&#x2F;image1.png" alt="Illustration annale question 6" class="img-fluid rounded annales-thumb">
                 </div>
                 <div class="annales-example mb-3 pb-3 border-bottom">
                     <p class="small mb-2"><strong>Question 8:</strong> Le Bulletin Météo émis annonce un avis de grand frais. Quelle sera la force du vent ? 5 Beaufort 6 Beaufort 7 Beaufort 8 Beaufort</p>
-                    <img src="assets&#x2F;annales&#x2F;qcm&#x2F;2022&#x2F;image1.png" alt="Illustration annale question 8" class="img-fluid rounded annales-thumb">
                 </div>
                 <div class="annales-example mb-3 pb-3 border-bottom">
                     <p class="small mb-2"><strong>Question 14:</strong> Quelle est la limite météo autorisée pour naviguer en voilier habitable dans le cadre du scoutisme marin : Force 3 établie, rafales à 4 Force 4 établie, rafales à 5 Force 5 établie, rafales à 6 Dépend de la catégorie de conception du bateau</p>
-                    <img src="assets&#x2F;annales&#x2F;qcm&#x2F;2022&#x2F;image1.png" alt="Illustration annale question 14" class="img-fluid rounded annales-thumb">
                 </div>
             </div>
         </article>
@@ -195,6 +267,24 @@
         </article>
     </aside>
 </div>
+
+<script>
+(() => {
+    const root = document.querySelector('[data-module-checklist="10"]');
+    if (!root) return;
+    const key = 'sitepe_checklist_module_10';
+    const checked = new Set(JSON.parse(localStorage.getItem(key) || '[]'));
+    root.querySelectorAll('.module-check-item').forEach((input) => {
+        const index = String(input.dataset.checkIndex || '');
+        input.checked = checked.has(index);
+        input.addEventListener('change', () => {
+            if (input.checked) checked.add(index);
+            else checked.delete(index);
+            localStorage.setItem(key, JSON.stringify([...checked]));
+        });
+    });
+})();
+</script>
 
     </main>
 

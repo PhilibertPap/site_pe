@@ -268,6 +268,16 @@ function cleanAnnalesQuestionText(text) {
         .trim();
 }
 
+function pickRepresentativeMediaAsset(mediaAssets) {
+    const assets = toArray(mediaAssets)
+        .map(item => String(item || '').trim())
+        .filter(Boolean);
+    if (!assets.length) return null;
+
+    const preferred = assets.find(item => !/\/image1\.(png|jpg|jpeg|gif)$/i.test(item));
+    return preferred || null;
+}
+
 function pickAnnalesExamples(moduleId, annalesQcm2022) {
     const questions = toArray(annalesQcm2022?.questions);
     if (!questions.length) return [];
@@ -291,13 +301,148 @@ function pickAnnalesExamples(moduleId, annalesQcm2022) {
 
     return selected.slice(0, 3).map(item => {
         const mediaAssets = toArray(item.mediaAssets);
+        const representative = pickRepresentativeMediaAsset(mediaAssets);
         return {
             question: item.cleanText,
             questionNumber: item.question,
-            image: mediaAssets[0] || null,
-            hasImage: Boolean(mediaAssets[0])
+            image: representative,
+            hasImage: Boolean(representative)
         };
     });
+}
+
+function slugifySectionId(text, fallback = 'section') {
+    const base = String(text || fallback)
+        .toLowerCase()
+        .normalize('NFD')
+        .replace(/[\u0300-\u036f]/g, '')
+        .replace(/[^a-z0-9]+/g, '-')
+        .replace(/(^-|-$)/g, '')
+        .trim();
+    return base || fallback;
+}
+
+function buildCourseSections(courseContentHtml) {
+    const html = String(courseContentHtml || '').trim();
+    if (!html) return [];
+
+    const headingRegex = /<h[45][^>]*>([\s\S]*?)<\/h[45]>/gi;
+    const sections = [];
+    const matches = [...html.matchAll(headingRegex)];
+
+    if (!matches.length) {
+        return [{
+            id: 'cours-complet',
+            title: 'Cours complet',
+            html
+        }];
+    }
+
+    for (let i = 0; i < matches.length; i += 1) {
+        const current = matches[i];
+        const next = matches[i + 1];
+        const headingRaw = current[1] || '';
+        const title = stripHtml(headingRaw) || `Section ${i + 1}`;
+        const startIndex = current.index + current[0].length;
+        const endIndex = next ? next.index : html.length;
+        const bodyHtml = html.slice(startIndex, endIndex).trim();
+        const id = `${slugifySectionId(title, `section-${i + 1}`)}-${i + 1}`;
+        sections.push({
+            id,
+            title,
+            html: bodyHtml || '<p class="text-muted mb-0">Contenu en cours de completion.</p>'
+        });
+    }
+
+    return sections;
+}
+
+function moduleFormulaRepereItems(moduleId, formulas, keyPoints) {
+    const baseByModule = {
+        1: [
+            'Entrant au port (Region A): laisser rouge a babord, vert a tribord.',
+            'Cardinale Est: marque noire/jaune/noire, feu blanc 3 scintillements.',
+            'Danger isole: 2 spheres noires, feu blanc 2 eclats groupes.'
+        ],
+        2: [
+            'Signal de manœuvre: 1 bref = je viens a tribord; 2 brefs = je viens a babord; 3 brefs = je bats en arriere.',
+            'Feu de tete de mat navire a moteur: blanc 225 deg.',
+            'Portee usuelle en plaisance (< 12 m): feux de cote 1 M, feu de tete 2 M.'
+        ],
+        3: [
+            'Croisement: le navire qui a l autre sur son tribord doit s ecarter.',
+            'Rattrapage: le rattrapant s ecarte quelle que soit sa nature.',
+            'En cas de doute: reduction de vitesse et manœuvre franche, precoce, lisible.'
+        ],
+        4: [
+            'Brume navire a moteur avec erre: 1 son prolonge toutes les 2 min.',
+            'Brume navire a moteur sans erre: 2 sons prolonges toutes les 2 min.',
+            'Signal de detresse: MAYDAY x3 + identification + position + nature de la detresse.'
+        ],
+        5: [
+            'Distance: se mesure sur l echelle des latitudes (bord vertical de carte).',
+            'Profondeur disponible: H (hauteur d eau) + S (sonde carte).',
+            'Toujours conserver un pied de pilote adapte au plan d eau.'
+        ],
+        6: [
+            'Cap vrai = cap compas + declinaison + deviation.',
+            'Convention utile: Est positif, Ouest negatif.',
+            'Toujours verifier la coherence du cap calcule avec la route observee.'
+        ],
+        7: [
+            'Route fond = route surface + vecteur courant (construction vectorielle).',
+            'Vitesse fond et cap fond se lisent sur le triangle des vitesses.',
+            'Ne pas confondre derive vent et derive courant.'
+        ],
+        8: [
+            'Marnage = PM - BM.',
+            'Regle des douziemes: 1/12, 2/12, 3/12, 3/12, 2/12, 1/12.',
+            'Profondeur minimale securite = tirant d eau + pied de pilote.'
+        ],
+        9: [
+            'Canal 16: detresse, urgence, securite (veille obligatoire).',
+            'Message MAYDAY: MAYDAY x3, nom navire x3, position, nature, aide demandee.',
+            'Apres contact, bascule sur canal de degagement demande par le CROSS.'
+        ],
+        10: [
+            'Bande des 300 m: vitesse max usuelle 5 nds (verifier reglement local).',
+            'Chef de bord responsable: equipage, armement, meteo, decision de renoncer.',
+            'Verification avant depart: equipement, route, meteo, point de repli.'
+        ]
+    };
+
+    const base = toArray(baseByModule[Number(moduleId)]);
+    const formulaParts = uniqueStrings(String(formulas || '').split(/\s*[|;]\s*/g).filter(Boolean))
+        .filter(item => /[=0-9/]/.test(item) || /(cap|route|marnage|beaufort|canal|vitesse|profondeur|tirant)/i.test(item));
+    const formulaPointHints = uniqueStrings(toArray(keyPoints).filter(item => /[=0-9/]/.test(item))).slice(0, 3);
+
+    return uniqueStrings([...base, ...formulaParts, ...formulaPointHints]).slice(0, 8);
+}
+
+function moduleCourseIllustrations(moduleId) {
+    const byModule = {
+        1: [
+            { src: 'assets/annales/qcm/2022/image2.png', alt: 'Balisage lateral en entree de port' },
+            { src: 'assets/annales/qcm/2022/image3.png', alt: 'Marque de balisage et sens de passage' },
+            { src: 'assets/annales/qcm/2022/image9.png', alt: 'Marques et signalisation de balisage' }
+        ],
+        2: [
+            { src: 'assets/annales/qcm/2022/image4.png', alt: 'Signal sonore et interpretation RIPAM' },
+            { src: 'assets/annales/qcm/2022/image8.png', alt: 'Feux de navires de nuit' }
+        ],
+        3: [
+            { src: 'assets/annales/qcm/2022/image6.png', alt: 'Situation de priorite entre voiliers' },
+            { src: 'assets/annales/qcm/2022/image14.png', alt: 'Croisement et regles de barre' }
+        ],
+        4: [
+            { src: 'assets/annales/qcm/2022/image8.png', alt: 'Combinaison de feux et interpretation de navire' },
+            { src: 'assets/annales/qcm/2022/image11.png', alt: 'Signaux sonores et visuels' }
+        ],
+        8: [
+            { src: 'assets/annales/qcm/2022/image18.png', alt: 'Exemple de problematique maree et securite de profondeur' }
+        ]
+    };
+    return toArray(byModule[Number(moduleId)]);
 }
 
 function buildModulesContentMap(modulesContentData) {
@@ -486,6 +631,7 @@ function enrichModulesForLearning({
             ...toArray(module.objectifs)
         ]);
         const formulas = moduleContent.formulas || '';
+        const formulaRepereItems = moduleFormulaRepereItems(moduleId, formulas, keyPoints);
         const fallbackCourseContentHtml = buildFallbackCourseHtml(module, objectifs, keyPoints, formulas);
         const overrideCourseContentHtml = override.content && String(override.content).trim().length > 40
             ? String(override.content)
@@ -493,15 +639,22 @@ function enrichModulesForLearning({
         const courseContentHtml = overrideCourseContentHtml.length >= fallbackCourseContentHtml.length
             ? overrideCourseContentHtml
             : fallbackCourseContentHtml;
+        const courseSections = buildCourseSections(courseContentHtml);
         const domain = getAnnalesDomainByModule(moduleId);
         const annalesSeries = toArray(annalesByDomain[domain]).slice(0, 8);
         const annalesExamples = pickAnnalesExamples(moduleId, annalesQcm2022);
         const resources = toArray(theoryResourcesByModule.get(moduleId)).slice(0, 8);
+        const courseIllustrations = moduleCourseIllustrations(moduleId);
         const synopsisSource = stripHtml(courseContentHtml) || module.description || '';
         const synopsis = synopsisSource.length > 200
             ? `${synopsisSource.slice(0, 200).trim()}...`
             : synopsisSource;
         const checklist = uniqueStrings([...objectifs, ...keyPoints]).slice(0, 10);
+        const checklistEntries = checklist.map((text, index) => ({
+            moduleId,
+            index: String(index),
+            text
+        }));
 
         return {
             ...module,
@@ -510,9 +663,12 @@ function enrichModulesForLearning({
             keyPoints,
             quickKeyPoints: keyPoints.slice(0, 4),
             checklist,
+            checklistEntries,
             formulas,
+            formulaRepereItems,
             synopsis,
             courseContentHtml,
+            courseSections,
             coursePage: `module-${moduleId}.html`,
             qcmQuestionCount: qcmCountByModule[String(moduleId)] || 0,
             annalesDomain: domain,
@@ -520,11 +676,14 @@ function enrichModulesForLearning({
             annalesCount: annalesSeries.length,
             annalesSeries,
             annalesExamples,
+            courseIllustrations,
             resources,
             resourcesCount: resources.length,
             hasResources: resources.length > 0,
             hasAnnalesExamples: annalesExamples.length > 0,
-            hasFormulas: Boolean(formulas)
+            hasFormulas: formulaRepereItems.length > 0,
+            hasCourseSections: courseSections.length > 0,
+            hasCourseIllustrations: courseIllustrations.length > 0
         };
     });
 }
@@ -560,8 +719,7 @@ function prepareTrainingData(qcmData, trainingSessionsData = {}) {
         statistics: {
             totalQCM: categories.reduce((sum, cat) => sum + cat.questionCount, 0),
             typeOfTests: 4,
-            themes: categories.length,
-            price: 'Gratuit'
+            themes: categories.length
         }
     };
 }

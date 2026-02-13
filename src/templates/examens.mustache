@@ -33,22 +33,22 @@
 
         <article class="card mb-4 reveal reveal-delay-3">
             <header class="card-header bg-success text-white">
-                <h2 class="h5 mb-0 section-head"><span class="icon-badge">Q</span>QCM rapide</h2>
+                <h2 class="h5 mb-0 section-head"><span class="icon-badge">Q</span>QCM module en mode examen</h2>
             </header>
             <div class="card-body">
-                <p>Révise rapidement sur <strong>{{qcmQuestionCount}}</strong> questions.</p>
+                <p>Noté uniquement à la fin, comme un vrai examen.</p>
                 <div class="row g-2 align-items-end">
                     <div class="col-md-8">
                         <label class="form-label" for="qcm-filter">Filtre par module</label>
                         <select class="form-select" id="qcm-filter">
-                            <option value="">Tous les modules</option>
+                            <option value="">Choisir un module</option>
                             {{#modules}}
                             <option value="{{id}}">{{name}}</option>
                             {{/modules}}
                         </select>
                     </div>
                     <div class="col-md-4 d-grid">
-                        <button class="btn btn-success" id="start-quick-qcm-btn">Démarrer</button>
+                        <button class="btn btn-success" id="start-module-exam-btn">Démarrer</button>
                     </div>
                 </div>
             </div>
@@ -84,18 +84,24 @@
             </div>
             <div class="card-body">
                 <p class="mb-3"><strong>Historique récent</strong></p>
-                {{#examHistory}}
-                <div class="mb-3 pb-3 border-bottom">
-                    <small class="text-muted">{{date}}</small><br>
-                    <strong>Score : {{score}}/100</strong>
-                    <div class="progress mt-2" role="progressbar">
-                        <div class="progress-bar {{scoreColor}}" style="width: {{scorePercent}}%"></div>
+                <div id="exam-history-list">
+                    {{#examHistory}}
+                    <div class="mb-3 pb-3 border-bottom">
+                        <small class="text-muted">{{date}}</small><br>
+                        <strong>Score : {{score}}/100</strong>
+                        <div class="progress mt-2" role="progressbar">
+                            <div class="progress-bar {{scoreColor}}" style="width: {{scorePercent}}%"></div>
+                        </div>
                     </div>
+                    {{/examHistory}}
+                    {{^examHistory}}
+                    <p class="text-muted mb-0">Aucun examen enregistré pour le moment.</p>
+                    {{/examHistory}}
                 </div>
-                {{/examHistory}}
-                {{^examHistory}}
-                <p class="text-muted mb-0">Aucun examen enregistré pour le moment.</p>
-                {{/examHistory}}
+                <hr>
+                <div id="exam-kpis" class="small text-muted">
+                    Les statistiques se mettent à jour après chaque session.
+                </div>
             </div>
         </div>
 

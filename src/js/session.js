@@ -30,20 +30,102 @@ async function loadExamSeries() {
     return Array.isArray(payload.series) ? payload.series : [];
 }
 
+function parseCount(params, fallback = 30) {
+    const raw = Number.parseInt(params.get('count') || '', 10);
+    if (!Number.isFinite(raw) || raw <= 0) return fallback;
+    return Math.min(raw, 60);
+}
+
+function parseFeedback(params, fallbackInstant) {
+    const mode = String(params.get('feedback') || '').toLowerCase().trim();
+    if (!mode) return fallbackInstant;
+    return mode === 'instant';
+}
+
+function pickQuestionsFromPool(sitePE, options = {}) {
+    const pool = window.QcmEngine ? window.QcmEngine.buildQuestionPool(sitePE.data.qcm) : [];
+    if (!pool.length) return [];
+    return window.QcmEngine.pickQuestions(pool, {
+        moduleId: options.moduleId || null,
+        count: options.count || 30
+    });
+}
+
+function pickRandomModuleId(sitePE) {
+    const pool = window.QcmEngine ? window.QcmEngine.buildQuestionPool(sitePE.data.qcm) : [];
+    const modules = [...new Set(pool.map(question => String(question.moduleId)).filter(Boolean))];
+    if (!modules.length) return null;
+    return modules[Math.floor(Math.random() * modules.length)];
+}
+
 async function startSessionFromQuery() {
     const params = new URLSearchParams(window.location.search);
     const mode = params.get('mode') || 'quick';
     const moduleId = params.get('module');
     const seriesId = Number.parseInt(params.get('seriesId') || '', 10);
+    const count = parseCount(params, 30);
     const sitePE = await waitForSitePE();
 
     if (mode === 'quick') {
+        const instantFeedback = parseFeedback(params, true);
+        const questions = pickQuestionsFromPool(sitePE, { moduleId, count });
+        if (!questions.length) {
+            setSessionHeader('Erreur', 'Aucune question disponible pour ce mode.');
+            return;
+        }
         const moduleLabel = moduleId ? `module ${moduleId}` : 'tous modules';
         setSessionHeader(
-            'QCM rapide',
-            `<strong>Mode:</strong> QCM rapide • <strong>Filtre:</strong> ${moduleLabel} • Pas de limite de temps`
+            'QCM entrainement',
+            `<strong>Mode:</strong> entrainement • <strong>Filtre:</strong> ${moduleLabel} • <strong>Questions:</strong> ${questions.length}`
         );
-        sitePE.startQCM(moduleId || null);
+        sitePE.startQCMFromQuestions(questions, {
+            mode: moduleId ? 'quick-module' : 'quick',
+            instantFeedback
+        });
+        return;
+    }
+
+    if (mode === 'quick-random-module') {
+        const randomModule = pickRandomModuleId(sitePE);
+        if (!randomModule) {
+            setSessionHeader('Erreur', 'Impossible de choisir un module aleatoire.');
+            return;
+        }
+        const questions = pickQuestionsFromPool(sitePE, { moduleId: randomModule, count });
+        if (!questions.length) {
+            setSessionHeader('Erreur', 'Aucune question disponible pour ce module.');
+            return;
+        }
+        setSessionHeader(
+            'Theme aleatoire',
+            `<strong>Mode:</strong> module aleatoire • <strong>Module:</strong> ${randomModule} • <strong>Questions:</strong> ${questions.length}`
+        );
+        sitePE.startQCMFromQuestions(questions, {
+            mode: 'quick-random-module',
+            instantFeedback: parseFeedback(params, true)
+        });
+        return;
+    }
+
+    if (mode === 'exam-module') {
+        if (!moduleId) {
+            setSessionHeader('Erreur', 'Module manquant pour le mode examen module.');
+            return;
+        }
+        const questions = pickQuestionsFromPool(sitePE, { moduleId, count });
+        if (!questions.length) {
+            setSessionHeader('Erreur', 'Aucune question disponible pour ce module.');
+            return;
+        }
+        setSessionHeader(
+            `Examen module ${moduleId}`,
+            `<strong>Mode:</strong> examen • <strong>Questions:</strong> ${questions.length} • <strong>Temps:</strong> 30 minutes • Correction finale`
+        );
+        sitePE.startQCMFromQuestions(questions, {
+            mode: 'exam-module',
+            timeLimitMinutes: 30,
+            instantFeedback: false
+        });
         return;
     }
 
@@ -54,19 +136,22 @@ async function startSessionFromQuery() {
     }
 
     if (mode === 'fixed') {
-        const selected = series.find(item => item.id === seriesId);
+        const selected = Number.isFinite(seriesId)
+            ? series.find(item => item.id === seriesId)
+            : series[Math.floor(Math.random() * series.length)];
         if (!selected) {
             setSessionHeader('Erreur', `Serie ${seriesId} introuvable.`);
             return;
         }
         setSessionHeader(
             selected.name,
-            `<strong>Mode:</strong> Serie fixe • <strong>Questions:</strong> ${selected.questions.length} • <strong>Temps:</strong> 30 minutes`
+            `<strong>Mode:</strong> serie fixe • <strong>Questions:</strong> ${selected.questions.length} • <strong>Temps:</strong> 30 minutes • Correction finale`
         );
         sitePE.startQCMFromQuestions(selected.questions, {
             mode: 'fixed',
             seriesId: selected.id,
-            timeLimitMinutes: 30
+            timeLimitMinutes: 30,
+            instantFeedback: false
         });
         return;
     }
@@ -75,12 +160,13 @@ async function startSessionFromQuery() {
         const selected = series[Math.floor(Math.random() * series.length)];
         setSessionHeader(
             `Examen complet (${selected.name})`,
-            `<strong>Mode:</strong> Examen complet • <strong>Questions:</strong> ${selected.questions.length} • <strong>Temps:</strong> 30 minutes`
+            `<strong>Mode:</strong> examen complet • <strong>Questions:</strong> ${selected.questions.length} • <strong>Temps:</strong> 30 minutes • Correction finale`
         );
         sitePE.startQCMFromQuestions(selected.questions, {
             mode: 'full',
             seriesId: selected.id,
-            timeLimitMinutes: 30
+            timeLimitMinutes: 30,
+            instantFeedback: false
         });
         return;
     }

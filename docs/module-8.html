@@ -11,7 +11,10 @@
     <!-- Navigation persistante -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top">
         <div class="container">
-            <a class="navbar-brand fw-bold" href="index.html">Patron d'Embarcation</a>
+            <a class="navbar-brand fw-bold d-flex align-items-center gap-2" href="index.html">
+                <img src="assets/annales/qcm/2022/image1.png" alt="Logo SUF Marine" class="suf-navbar-logo" loading="lazy">
+                <span>Patron d'Embarcation</span>
+            </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -47,7 +50,7 @@
         </div>
         <div class="col-lg-4 text-lg-end">
             <a href="parcours.html#module-8" class="btn btn-light btn-sm">Retour au parcours</a>
-            <a href="session.html?mode=quick&module=8" class="btn btn-outline-light btn-sm ms-2">QCM du module</a>
+            <a href="session.html?mode=exam-module&module=8" class="btn btn-outline-light btn-sm ms-2">Examen module</a>
         </div>
     </div>
 </section>
@@ -59,7 +62,71 @@
                 <h2 class="h5 mb-0 section-head"><span class="icon-badge">CO</span>Cours complet</h2>
             </header>
             <div class="card-body course-content">
-                <p>Règle des douzièmes, marnage, heure marée, pied de pilote</p><h5>Objectifs de progression</h5><ul><li>La marée résulte de l’effet combiné des attractions gravitationnelles de la Lune et du Soleil et du mouvement du système Terre–Lune–Soleil.</li><li>Les marées de vives-eaux sont plus amples quand Soleil et Lune sont alignés (Nouvelle Lune et Pleine Lune).</li><li>Les marées de mortes-eaux sont moins amples quand Soleil et Lune sont en quadrature (Premier et Dernier Quartier).</li><li>Zéro des cartes : niveau de référence des sondes (souvent proche des plus basses mers théoriques).</li><li>Profondeur (au-dessus du fond) : P = H + S (hauteur d’eau H + sonde S).</li><li>Attention : certaines sondes peuvent être négatives et signalent un fond découvrant aux très grandes basses mers.</li><li>Hauteurs marées</li><li>Douzièmes</li><li>Marnage</li><li>Pied pilote</li><li>Comprendre les phénomènes de marée</li><li>Appliquer la règle des douzièmes</li><li>Calculer la hauteur d&#39;eau à une heure donnée</li><li>Utiliser le pied de pilote (sécurité)</li></ul><h5>Notions et definitions essentielles</h5><ul><li><strong>Zéro des cartes</strong> : niveau de référence des sondes (souvent proche des plus basses mers théoriques).</li><li><strong>Profondeur (au-dessus du fond)</strong> : P = H + S (hauteur d’eau H + sonde S).</li><li><strong>Attention</strong> : certaines sondes peuvent être négatives et signalent un fond découvrant aux très grandes basses mers.</li><li><strong>Le sondeur mesure sous la quille, pas le tirant d’eau total</strong> : bien distinguer profondeur, immersion (tirant d’eau) et lecture sondeur.</li><li><strong>L’Annuaire donne</strong> : coefficients journaliers, heures et hauteurs de PM/BM des ports principaux, et tables de corrections pour ports rattachés.</li><li><strong>Heures</strong> : dans le cours, rappel que l’annuaire est en Temps Universel + 1 (= heure d’hiver). En été, ajouter +1 h supplémentaire.</li><li><strong>BM</strong> : basse mer</li><li><strong>PM</strong> : pleine mer</li><li><strong>Marnage</strong> : PM-BM</li><li><strong>Douzièmes</strong> : 1,2,3,3,2,1</li><li><strong>H1</strong> : 1/12</li><li><strong>H2</strong> : 2/12 (cumul 3/12)</li><li><strong>H3</strong> : 3/12 (cumul 6/12)</li><li><strong>Heure marée</strong> : 50min</li><li><strong>Pied pilote</strong> : sécurité 20cm</li></ul><h5>Points cle a maitriser</h5><ul><li>La marée résulte de l’effet combiné des attractions gravitationnelles de la Lune et du Soleil et du mouvement du système Terre–Lune–Soleil.</li><li>Les marées de vives-eaux sont plus amples quand Soleil et Lune sont alignés (Nouvelle Lune et Pleine Lune).</li><li>Les marées de mortes-eaux sont moins amples quand Soleil et Lune sont en quadrature (Premier et Dernier Quartier).</li><li>Toujours garder une marge de sécurité (pied de pilote), en règle générale 0,50 m.</li><li>Profondeur minimale nécessaire ≈ tirant d’eau + pied de pilote.</li><li>Approche du niveau d’eau entre BM et PM (ou inverse) par 6 &#39;heures marées&#39; de durée égale.</li><li>Comprendre les phénomènes de marée</li><li>Appliquer la règle des douzièmes</li><li>Calculer la hauteur d&#39;eau à une heure donnée</li><li>Utiliser le pied de pilote (sécurité)</li></ul><h5>Methode de resolution en examen</h5><ol><li>Relever PM/BM, coefficients et marnage dans l annuaire.</li><li>Appliquer la regle des douziemes sur la bonne tranche horaire.</li><li>Conclure avec une marge de securite de hauteur d eau.</li></ol><h5>Erreurs frequentes a eviter</h5><ul><li>Appliquer les douziemes sur une duree differente de 6 h sans adaptation.</li><li>Confondre hauteur d eau et profondeur sondee carte.</li><li>Oublier l heure legale/UTC selon la source utilisee.</li></ul><h5>Formules et reperes</h5><p><code>1/12, 2/12, 3/12, 3/12, 2/12, 1/12</code></p>
+                <div class="row g-4">
+                    <aside class="col-lg-4">
+                        <div class="course-toc-panel">
+                            <h3 class="h6 mb-2">Plan du cours</h3>
+                            <div class="list-group list-group-flush">
+                                <a href="#course-section-objectifs-de-progression-1" class="list-group-item list-group-item-action course-toc-link">
+                                    Objectifs de progression
+                                </a>
+                                <a href="#course-section-notions-et-definitions-essentielles-2" class="list-group-item list-group-item-action course-toc-link">
+                                    Notions et definitions essentielles
+                                </a>
+                                <a href="#course-section-points-cle-a-maitriser-3" class="list-group-item list-group-item-action course-toc-link">
+                                    Points cle a maitriser
+                                </a>
+                                <a href="#course-section-methode-de-resolution-en-examen-4" class="list-group-item list-group-item-action course-toc-link">
+                                    Methode de resolution en examen
+                                </a>
+                                <a href="#course-section-erreurs-frequentes-a-eviter-5" class="list-group-item list-group-item-action course-toc-link">
+                                    Erreurs frequentes a eviter
+                                </a>
+                                <a href="#course-section-formules-et-reperes-6" class="list-group-item list-group-item-action course-toc-link">
+                                    Formules et reperes
+                                </a>
+                            </div>
+                        </div>
+                    </aside>
+                    <div class="col-lg-8">
+                        <section id="course-section-objectifs-de-progression-1" class="course-section-block mb-4">
+                            <h3 class="h5 mb-2">Objectifs de progression</h3>
+                            <div class="course-section-html">
+                                <ul><li>La marée résulte de l’effet combiné des attractions gravitationnelles de la Lune et du Soleil et du mouvement du système Terre–Lune–Soleil.</li><li>Les marées de vives-eaux sont plus amples quand Soleil et Lune sont alignés (Nouvelle Lune et Pleine Lune).</li><li>Les marées de mortes-eaux sont moins amples quand Soleil et Lune sont en quadrature (Premier et Dernier Quartier).</li><li>Zéro des cartes : niveau de référence des sondes (souvent proche des plus basses mers théoriques).</li><li>Profondeur (au-dessus du fond) : P = H + S (hauteur d’eau H + sonde S).</li><li>Attention : certaines sondes peuvent être négatives et signalent un fond découvrant aux très grandes basses mers.</li><li>Hauteurs marées</li><li>Douzièmes</li><li>Marnage</li><li>Pied pilote</li><li>Comprendre les phénomènes de marée</li><li>Appliquer la règle des douzièmes</li><li>Calculer la hauteur d&#39;eau à une heure donnée</li><li>Utiliser le pied de pilote (sécurité)</li></ul>
+                            </div>
+                        </section>
+                        <section id="course-section-notions-et-definitions-essentielles-2" class="course-section-block mb-4">
+                            <h3 class="h5 mb-2">Notions et definitions essentielles</h3>
+                            <div class="course-section-html">
+                                <ul><li><strong>Zéro des cartes</strong> : niveau de référence des sondes (souvent proche des plus basses mers théoriques).</li><li><strong>Profondeur (au-dessus du fond)</strong> : P = H + S (hauteur d’eau H + sonde S).</li><li><strong>Attention</strong> : certaines sondes peuvent être négatives et signalent un fond découvrant aux très grandes basses mers.</li><li><strong>Le sondeur mesure sous la quille, pas le tirant d’eau total</strong> : bien distinguer profondeur, immersion (tirant d’eau) et lecture sondeur.</li><li><strong>L’Annuaire donne</strong> : coefficients journaliers, heures et hauteurs de PM/BM des ports principaux, et tables de corrections pour ports rattachés.</li><li><strong>Heures</strong> : dans le cours, rappel que l’annuaire est en Temps Universel + 1 (= heure d’hiver). En été, ajouter +1 h supplémentaire.</li><li><strong>BM</strong> : basse mer</li><li><strong>PM</strong> : pleine mer</li><li><strong>Marnage</strong> : PM-BM</li><li><strong>Douzièmes</strong> : 1,2,3,3,2,1</li><li><strong>H1</strong> : 1/12</li><li><strong>H2</strong> : 2/12 (cumul 3/12)</li><li><strong>H3</strong> : 3/12 (cumul 6/12)</li><li><strong>Heure marée</strong> : 50min</li><li><strong>Pied pilote</strong> : sécurité 20cm</li></ul>
+                            </div>
+                        </section>
+                        <section id="course-section-points-cle-a-maitriser-3" class="course-section-block mb-4">
+                            <h3 class="h5 mb-2">Points cle a maitriser</h3>
+                            <div class="course-section-html">
+                                <ul><li>La marée résulte de l’effet combiné des attractions gravitationnelles de la Lune et du Soleil et du mouvement du système Terre–Lune–Soleil.</li><li>Les marées de vives-eaux sont plus amples quand Soleil et Lune sont alignés (Nouvelle Lune et Pleine Lune).</li><li>Les marées de mortes-eaux sont moins amples quand Soleil et Lune sont en quadrature (Premier et Dernier Quartier).</li><li>Toujours garder une marge de sécurité (pied de pilote), en règle générale 0,50 m.</li><li>Profondeur minimale nécessaire ≈ tirant d’eau + pied de pilote.</li><li>Approche du niveau d’eau entre BM et PM (ou inverse) par 6 &#39;heures marées&#39; de durée égale.</li><li>Comprendre les phénomènes de marée</li><li>Appliquer la règle des douzièmes</li><li>Calculer la hauteur d&#39;eau à une heure donnée</li><li>Utiliser le pied de pilote (sécurité)</li></ul>
+                            </div>
+                        </section>
+                        <section id="course-section-methode-de-resolution-en-examen-4" class="course-section-block mb-4">
+                            <h3 class="h5 mb-2">Methode de resolution en examen</h3>
+                            <div class="course-section-html">
+                                <ol><li>Relever PM/BM, coefficients et marnage dans l annuaire.</li><li>Appliquer la regle des douziemes sur la bonne tranche horaire.</li><li>Conclure avec une marge de securite de hauteur d eau.</li></ol>
+                            </div>
+                        </section>
+                        <section id="course-section-erreurs-frequentes-a-eviter-5" class="course-section-block mb-4">
+                            <h3 class="h5 mb-2">Erreurs frequentes a eviter</h3>
+                            <div class="course-section-html">
+                                <ul><li>Appliquer les douziemes sur une duree differente de 6 h sans adaptation.</li><li>Confondre hauteur d eau et profondeur sondee carte.</li><li>Oublier l heure legale/UTC selon la source utilisee.</li></ul>
+                            </div>
+                        </section>
+                        <section id="course-section-formules-et-reperes-6" class="course-section-block mb-4">
+                            <h3 class="h5 mb-2">Formules et reperes</h3>
+                            <div class="course-section-html">
+                                <p><code>1/12, 2/12, 3/12, 3/12, 2/12, 1/12</code></p>
+                            </div>
+                        </section>
+                    </div>
+                </div>
             </div>
         </article>
 
@@ -68,18 +135,48 @@
                 <h2 class="h6 mb-0 section-head"><span class="icon-badge">CL</span>Checklist de revision</h2>
             </header>
             <div class="card-body">
-                <ul class="mb-0">
-                    <li>La marée résulte de l’effet combiné des attractions gravitationnelles de la Lune et du Soleil et du mouvement du système Terre–Lune–Soleil.</li>
-                    <li>Les marées de vives-eaux sont plus amples quand Soleil et Lune sont alignés (Nouvelle Lune et Pleine Lune).</li>
-                    <li>Les marées de mortes-eaux sont moins amples quand Soleil et Lune sont en quadrature (Premier et Dernier Quartier).</li>
-                    <li>Zéro des cartes : niveau de référence des sondes (souvent proche des plus basses mers théoriques).</li>
-                    <li>Profondeur (au-dessus du fond) : P &#x3D; H + S (hauteur d’eau H + sonde S).</li>
-                    <li>Attention : certaines sondes peuvent être négatives et signalent un fond découvrant aux très grandes basses mers.</li>
-                    <li>Hauteurs marées</li>
-                    <li>Douzièmes</li>
-                    <li>Marnage</li>
-                    <li>Pied pilote</li>
-                </ul>
+                <div class="checklist-group" data-module-checklist="8">
+                    <div class="form-check checklist-item">
+                        <input class="form-check-input module-check-item" type="checkbox" id="module-8-check-0" data-check-index="0">
+                        <label class="form-check-label" for="module-8-check-0">La marée résulte de l’effet combiné des attractions gravitationnelles de la Lune et du Soleil et du mouvement du système Terre–Lune–Soleil.</label>
+                    </div>
+                    <div class="form-check checklist-item">
+                        <input class="form-check-input module-check-item" type="checkbox" id="module-8-check-1" data-check-index="1">
+                        <label class="form-check-label" for="module-8-check-1">Les marées de vives-eaux sont plus amples quand Soleil et Lune sont alignés (Nouvelle Lune et Pleine Lune).</label>
+                    </div>
+                    <div class="form-check checklist-item">
+                        <input class="form-check-input module-check-item" type="checkbox" id="module-8-check-2" data-check-index="2">
+                        <label class="form-check-label" for="module-8-check-2">Les marées de mortes-eaux sont moins amples quand Soleil et Lune sont en quadrature (Premier et Dernier Quartier).</label>
+                    </div>
+                    <div class="form-check checklist-item">
+                        <input class="form-check-input module-check-item" type="checkbox" id="module-8-check-3" data-check-index="3">
+                        <label class="form-check-label" for="module-8-check-3">Zéro des cartes : niveau de référence des sondes (souvent proche des plus basses mers théoriques).</label>
+                    </div>
+                    <div class="form-check checklist-item">
+                        <input class="form-check-input module-check-item" type="checkbox" id="module-8-check-4" data-check-index="4">
+                        <label class="form-check-label" for="module-8-check-4">Profondeur (au-dessus du fond) : P &#x3D; H + S (hauteur d’eau H + sonde S).</label>
+                    </div>
+                    <div class="form-check checklist-item">
+                        <input class="form-check-input module-check-item" type="checkbox" id="module-8-check-5" data-check-index="5">
+                        <label class="form-check-label" for="module-8-check-5">Attention : certaines sondes peuvent être négatives et signalent un fond découvrant aux très grandes basses mers.</label>
+                    </div>
+                    <div class="form-check checklist-item">
+                        <input class="form-check-input module-check-item" type="checkbox" id="module-8-check-6" data-check-index="6">
+                        <label class="form-check-label" for="module-8-check-6">Hauteurs marées</label>
+                    </div>
+                    <div class="form-check checklist-item">
+                        <input class="form-check-input module-check-item" type="checkbox" id="module-8-check-7" data-check-index="7">
+                        <label class="form-check-label" for="module-8-check-7">Douzièmes</label>
+                    </div>
+                    <div class="form-check checklist-item">
+                        <input class="form-check-input module-check-item" type="checkbox" id="module-8-check-8" data-check-index="8">
+                        <label class="form-check-label" for="module-8-check-8">Marnage</label>
+                    </div>
+                    <div class="form-check checklist-item">
+                        <input class="form-check-input module-check-item" type="checkbox" id="module-8-check-9" data-check-index="9">
+                        <label class="form-check-label" for="module-8-check-9">Pied pilote</label>
+                    </div>
+                </div>
             </div>
         </article>
     </section>
@@ -94,7 +191,7 @@
                 <p class="mb-3"><strong>Annales Maree:</strong> 8</p>
                 <div class="d-grid gap-2">
                     <a href="session.html?mode=quick&module=8" class="btn btn-primary">Lancer un QCM cible</a>
-                    <a href="examens.html" class="btn btn-outline-primary">Mode examen</a>
+                    <a href="session.html?mode=exam-module&module=8" class="btn btn-outline-primary">Lancer l'examen module</a>
                 </div>
             </div>
         </article>
@@ -104,7 +201,28 @@
                 <h2 class="h6 mb-0 section-head"><span class="icon-badge">FX</span>Formules et reperes</h2>
             </header>
             <div class="card-body">
-                <p class="mb-0"><code>1&#x2F;12, 2&#x2F;12, 3&#x2F;12, 3&#x2F;12, 2&#x2F;12, 1&#x2F;12</code></p>
+                <ul class="small mb-0">
+                    <li>Marnage &#x3D; PM - BM.</li>
+                    <li>Regle des douziemes: 1&#x2F;12, 2&#x2F;12, 3&#x2F;12, 3&#x2F;12, 2&#x2F;12, 1&#x2F;12.</li>
+                    <li>Profondeur minimale securite &#x3D; tirant d eau + pied de pilote.</li>
+                    <li>1&#x2F;12, 2&#x2F;12, 3&#x2F;12, 3&#x2F;12, 2&#x2F;12, 1&#x2F;12</li>
+                    <li>Profondeur (au-dessus du fond) : P &#x3D; H + S (hauteur d’eau H + sonde S).</li>
+                    <li>Toujours garder une marge de sécurité (pied de pilote), en règle générale 0,50 m.</li>
+                    <li>L’Annuaire donne : coefficients journaliers, heures et hauteurs de PM&#x2F;BM des ports principaux, et tables de corrections pour ports rattachés.</li>
+                </ul>
+            </div>
+        </article>
+
+        <article class="card mb-4">
+            <header class="card-header bg-light-subtle">
+                <h2 class="h6 mb-0 section-head"><span class="icon-badge">IM</span>Visuels representatifs</h2>
+            </header>
+            <div class="card-body">
+                <div class="row g-2">
+                    <div class="col-12">
+                        <img src="assets&#x2F;annales&#x2F;qcm&#x2F;2022&#x2F;image18.png" alt="Exemple de problematique maree et securite de profondeur" class="img-fluid rounded annales-thumb">
+                    </div>
+                </div>
             </div>
         </article>
 
@@ -192,6 +310,24 @@
         </article>
     </aside>
 </div>
+
+<script>
+(() => {
+    const root = document.querySelector('[data-module-checklist="8"]');
+    if (!root) return;
+    const key = 'sitepe_checklist_module_8';
+    const checked = new Set(JSON.parse(localStorage.getItem(key) || '[]'));
+    root.querySelectorAll('.module-check-item').forEach((input) => {
+        const index = String(input.dataset.checkIndex || '');
+        input.checked = checked.has(index);
+        input.addEventListener('change', () => {
+            if (input.checked) checked.add(index);
+            else checked.delete(index);
+            localStorage.setItem(key, JSON.stringify([...checked]));
+        });
+    });
+})();
+</script>
 
     </main>
 

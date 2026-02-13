@@ -9,6 +9,7 @@
     "test": "node --test tests",
     "generate:series": "node scripts/generate-exam-series.js",
     "generate:qcm:web": "node scripts/generate-qcm-web-curated.js",
+    "cache:qcm:images": "node scripts/cache-qcm-images.js",
     "generate:qcm:large": "node scripts/generate-large-qcm.js --variants=150 --objectiveVariants=3 --seed=20260212",
     "import:attendus": "node scripts/import-attendus-json.js",
     "generate:pe:data": "node scripts/generate-pe-datasets.js --perFact=8 --seed=20260212",

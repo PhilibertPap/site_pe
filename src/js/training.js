@@ -1,161 +1,105 @@
-// Charger les données d'entraînement
-async function loadTrainingData() {
-    const fallbackSessions = [
-        {
-            id: 'thematic',
-            name: 'Tests thématiques',
-            advice: 'Commence par un thème pour progresser de manière structurée.'
-        },
-        {
-            id: 'random',
-            name: 'Tests aléatoires',
-            advice: 'Excellente option pour simuler un examen réel.'
-        },
-        {
-            id: 'fixed',
-            name: 'Tests fixes examen',
-            advice: 'Travaille des séries proches du format officiel.'
-        },
-        {
-            id: 'random-thematic',
-            name: 'Tests thématiques aléatoires',
-            advice: 'Utile pour consolider un thème déjà étudié.'
-        }
+function parseTrainingSessions() {
+    const fallback = [
+        { id: 'thematic', name: 'Tests thematiques', advice: 'Travail module par module.' },
+        { id: 'random', name: 'Tests aleatoires', advice: 'Simulation rapide sur tout le programme.' },
+        { id: 'fixed', name: 'Series fixes', advice: 'Conditions proches de l examen.' },
+        { id: 'random-thematic', name: 'Theme aleatoire', advice: 'Un module choisi au hasard.' }
     ];
 
     try {
-        const dataNode = document.getElementById('training-sessions-data');
-        const sessions = dataNode
-            ? JSON.parse(dataNode.textContent || '[]')
-            : fallbackSessions;
-        const safeSessions = Array.isArray(sessions) && sessions.length ? sessions : fallbackSessions;
-        setupTrainingCards(safeSessions);
-
-        // Initialiser les handlers pour les boutons d'entraînement
-        initializeTrainingButtons();
-
-        return safeSessions;
-    } catch (error) {
-        console.error('Erreur lors du chargement des données:', error);
-        setupTrainingCards(fallbackSessions);
-        initializeTrainingButtons();
-        return fallbackSessions;
+        const node = document.getElementById('training-sessions-data');
+        const parsed = node ? JSON.parse(node.textContent || '[]') : [];
+        return Array.isArray(parsed) && parsed.length ? parsed : fallback;
+    } catch (_) {
+        return fallback;
     }
 }
 
-// Initialiser les gestionnaires de boutons
-function initializeTrainingButtons() {
-    // Trouver les boutons par texte
-    const buttons = Array.from(document.querySelectorAll('button'));
-
-    // Bouton Démarrer (Flashcards)
-    const startBtn = buttons.find(btn => btn.textContent.trim() === 'Démarrer');
-    if (startBtn) {
-        startBtn.addEventListener('click', function (e) {
-            e.preventDefault();
-            const module = document.getElementById('flashcard-module')?.value;
-            if (!module || module === 'Choisir un module...') {
-                alert('Veuillez sélectionner un module');
-                return;
-            }
-            startFlashcards(module);
-        });
+function sessionRoute(sessionId, selectedModule) {
+    if (sessionId === 'thematic') {
+        if (!selectedModule) return null;
+        return `session.html?mode=quick&module=${encodeURIComponent(selectedModule)}&count=20&feedback=instant`;
     }
-
-    // Bouton Jouer (Mini-jeux)
-    const playBtn = buttons.find(btn => btn.textContent.trim() === 'Jouer');
-    if (playBtn) {
-        playBtn.addEventListener('click', function (e) {
-            e.preventDefault();
-            const gameType = document.getElementById('game-module')?.value;
-            if (!gameType || gameType === 'Choisir un type...') {
-                alert('Veuillez sélectionner un type de jeu');
-                return;
-            }
-            startGame(gameType);
-        });
+    if (sessionId === 'random') {
+        return 'session.html?mode=quick&count=30&feedback=instant';
     }
-
-    // Bouton Calculer
-    const calcBtn = buttons.find(btn => btn.textContent.trim() === 'Calculer');
-    if (calcBtn) {
-        calcBtn.addEventListener('click', function (e) {
-            e.preventDefault();
-            const calcType = document.getElementById('calculator-type')?.value;
-            if (!calcType || calcType === 'Choisir un outil...') {
-                alert('Veuillez sélectionner un outil');
-                return;
-            }
-            startCalculator(calcType);
-        });
+    if (sessionId === 'fixed') {
+        return 'session.html?mode=fixed';
     }
+    if (sessionId === 'random-thematic') {
+        return selectedModule
+            ? `session.html?mode=quick&module=${encodeURIComponent(selectedModule)}&count=20&feedback=instant`
+            : 'session.html?mode=quick-random-module&count=20&feedback=instant';
+    }
+    return 'session.html?mode=quick&count=30&feedback=instant';
 }
 
-// Configuration des cartes de session
-function setupTrainingCards(sessions) {
+function describeMode(session) {
+    if (!session) return '';
+    const hints = {
+        thematic: 'Choisis un module, puis lance 20 questions avec correction immediate.',
+        random: '30 questions tirees dans toute la banque, correction immediate.',
+        fixed: 'Serie pregeneree, notation finale uniquement.',
+        'random-thematic': '20 questions sur un module choisi (ou aleatoire).'
+    };
+    return hints[session.id] || session.advice || '';
+}
+
+function initTrainingPage() {
+    const sessions = parseTrainingSessions();
+    const detailsHelp = document.getElementById('selected-mode-help');
+    const moduleSelect = document.getElementById('training-module-select');
+    const launchSelectedBtn = document.getElementById('start-selected-mode-btn');
+    let selectedMode = null;
+
+    function startMode(modeId) {
+        const moduleId = moduleSelect?.value || '';
+        const target = sessionRoute(modeId, moduleId);
+        if (!target) {
+            alert('Selectionne un module pour ce mode.');
+            return;
+        }
+        window.location.href = target;
+    }
+
+    function setSelected(modeId) {
+        selectedMode = sessions.find(item => item.id === modeId) || null;
+        if (launchSelectedBtn) {
+            launchSelectedBtn.disabled = !selectedMode;
+        }
+        if (detailsHelp) {
+            detailsHelp.textContent = describeMode(selectedMode);
+        }
+        document.querySelectorAll('[data-session]').forEach(card => {
+            card.classList.toggle('is-selected', card.dataset.session === modeId);
+        });
+    }
+
     document.querySelectorAll('[data-session]').forEach(card => {
-        card.addEventListener('click', function () {
-            const sessionId = this.dataset.session;
-            showSessionDetails(sessionId, sessions);
+        const sessionId = card.dataset.session;
+        const clickHandler = () => setSelected(sessionId);
+        card.addEventListener('click', clickHandler);
+        card.addEventListener('keypress', (event) => {
+            if (event.key === 'Enter') clickHandler();
         });
     });
-}
 
-// Afficher les détails d'une session
-function showSessionDetails(sessionId, sessions) {
-    const session = sessions.find(s => s.id === sessionId);
-    if (!session) return;
-
-    const detailsDiv = document.getElementById('session-details');
-    let html = `<div class="card"><div class="card-body">
-        <h3 class="h4">${session.name}</h3>
-        ${session.advice ? `<p class="mb-3">${session.advice}</p>` : ''}`;
-
-    if (session.topics) {
-        html += '<div class="list-group">';
-        session.topics.forEach(topic => {
-            html += `<div class="list-group-item">${topic}</div>`;
+    document.querySelectorAll('[data-session-start]').forEach(button => {
+        button.addEventListener('click', (event) => {
+            event.preventDefault();
+            event.stopPropagation();
+            startMode(button.dataset.sessionStart);
         });
-        html += '</div>';
+    });
+
+    if (launchSelectedBtn) {
+        launchSelectedBtn.addEventListener('click', () => {
+            if (!selectedMode) return;
+            startMode(selectedMode.id);
+        });
     }
 
-    if (session.exams) {
-        html += '<div class="mt-3"><h5>Séries disponibles:</h5>';
-        session.exams.forEach(exam => {
-            html += `<button class="btn btn-primary btn-sm m-1" onclick="startExam(${exam.id})">${exam.name}</button>`;
-        });
-        html += '</div>';
-    }
-
-    html += '</div></div>';
-    detailsDiv.innerHTML = html;
+    if (sessions.length) setSelected(sessions[0].id);
 }
 
-// Lancer les flashcards
-function startFlashcards(module) {
-    console.log('Démarrage des flashcards pour le module:', module);
-    // Option 1: Navigate vers une page flashcards
-    window.location.href = `flashcards.html?module=${encodeURIComponent(module)}`;
-    // Option 2: Ou afficher les flashcards sur la page actuelle
-    // loadFlashcardsForModule(module);
-}
-
-// Lancer un mini-jeu
-function startGame(gameType) {
-    console.log('Lancement du jeu:', gameType);
-    window.location.href = `game.html?type=${encodeURIComponent(gameType)}`;
-}
-
-// Lancer un examen
-function startExam(examId) {
-    window.location.href = `examens.html?id=${examId}`;
-}
-
-// Lancer le calculateur
-function startCalculator(calculatorType) {
-    console.log('Lancement du calculateur:', calculatorType);
-    window.location.href = `calculator.html?type=${encodeURIComponent(calculatorType)}`;
-}
-
-// Initialiser quand la page charge
-document.addEventListener('DOMContentLoaded', loadTrainingData);
+document.addEventListener('DOMContentLoaded', initTrainingPage);

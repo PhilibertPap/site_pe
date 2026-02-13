@@ -11,7 +11,10 @@
     <!-- Navigation persistante -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top">
         <div class="container">
-            <a class="navbar-brand fw-bold" href="index.html">Patron d'Embarcation</a>
+            <a class="navbar-brand fw-bold d-flex align-items-center gap-2" href="index.html">
+                <img src="assets/annales/qcm/2022/image1.png" alt="Logo SUF Marine" class="suf-navbar-logo" loading="lazy">
+                <span>Patron d'Embarcation</span>
+            </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -47,6 +50,20 @@
     </div>
     <div class="col-lg-3 text-lg-end">
       <a href="examens.html" class="btn btn-light btn-sm">Retour examens</a>
+    </div>
+  </div>
+</section>
+
+<section class="card mb-4 reveal reveal-delay-1">
+  <div class="card-body">
+    <div class="row g-2 align-items-end">
+      <div class="col-md-8">
+        <label class="form-label" for="navigation-problem-select">Sujet</label>
+        <select id="navigation-problem-select" class="form-select"></select>
+      </div>
+      <div class="col-md-4 d-grid">
+        <button id="start-random-problem-btn" class="btn btn-outline-primary">Sujet aléatoire</button>
+      </div>
     </div>
   </div>
 </section>

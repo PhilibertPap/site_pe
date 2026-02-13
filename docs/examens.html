@@ -11,7 +11,10 @@
     <!-- Navigation persistante -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top">
         <div class="container">
-            <a class="navbar-brand fw-bold" href="index.html">Patron d'Embarcation</a>
+            <a class="navbar-brand fw-bold d-flex align-items-center gap-2" href="index.html">
+                <img src="assets/annales/qcm/2022/image1.png" alt="Logo SUF Marine" class="suf-navbar-logo" loading="lazy">
+                <span>Patron d'Embarcation</span>
+            </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -74,20 +77,20 @@
 
         <article class="card mb-4 reveal reveal-delay-3">
             <header class="card-header bg-success text-white">
-                <h2 class="h5 mb-0 section-head"><span class="icon-badge">Q</span>QCM rapide</h2>
+                <h2 class="h5 mb-0 section-head"><span class="icon-badge">Q</span>QCM module en mode examen</h2>
             </header>
             <div class="card-body">
-                <p>Révise rapidement sur <strong>238</strong> questions.</p>
+                <p>Noté uniquement à la fin, comme un vrai examen.</p>
                 <div class="row g-2 align-items-end">
                     <div class="col-md-8">
                         <label class="form-label" for="qcm-filter">Filtre par module</label>
                         <select class="form-select" id="qcm-filter">
-                            <option value="">Tous les modules</option>
+                            <option value="">Choisir un module</option>
                             <option value=""></option>
                         </select>
                     </div>
                     <div class="col-md-4 d-grid">
-                        <button class="btn btn-success" id="start-quick-qcm-btn">Démarrer</button>
+                        <button class="btn btn-success" id="start-module-exam-btn">Démarrer</button>
                     </div>
                 </div>
             </div>
@@ -123,7 +126,13 @@
             </div>
             <div class="card-body">
                 <p class="mb-3"><strong>Historique récent</strong></p>
-                <p class="text-muted mb-0">Aucun examen enregistré pour le moment.</p>
+                <div id="exam-history-list">
+                    <p class="text-muted mb-0">Aucun examen enregistré pour le moment.</p>
+                </div>
+                <hr>
+                <div id="exam-kpis" class="small text-muted">
+                    Les statistiques se mettent à jour après chaque session.
+                </div>
             </div>
         </div>
 

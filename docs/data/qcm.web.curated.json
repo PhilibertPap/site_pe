@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-02-13T17:33:01.229Z",
+  "generatedAt": "2026-02-13T17:34:01.370Z",
   "source": {
     "base": "src/data/qcm.json",
     "web": "https://www.loisirs-nautic.fr/"
@@ -14,7 +14,7 @@
         {
           "id": 1,
           "text": "En entrant au port,",
-          "image": "https://www.loisirs-nautic.fr/images/Q1.png",
+          "image": "assets/qcm/web/1f6013ea8f-Q1.png",
           "answers": [
             {
               "id": "a",
@@ -37,7 +37,7 @@
         {
           "id": 2,
           "text": "Ces petites bouées jaunes rapprochées indiquent :",
-          "image": "https://www.loisirs-nautic.fr/images/Q29.png",
+          "image": "assets/qcm/web/aa343fecce-Q29.png",
           "answers": [
             {
               "id": "a",
@@ -65,7 +65,7 @@
         {
           "id": 3,
           "text": "Cap au 195 :",
-          "image": "https://www.loisirs-nautic.fr/images/nc_12.png",
+          "image": "assets/qcm/web/9f2205e72e-nc_12.png",
           "answers": [
             {
               "id": "a",
@@ -111,7 +111,7 @@
         {
           "id": 5,
           "text": "Cette marque indique :",
-          "image": "https://www.loisirs-nautic.fr/images/Q4.png",
+          "image": "assets/qcm/web/3fa2ba5040-Q4.png",
           "answers": [
             {
               "id": "a",
@@ -139,7 +139,7 @@
         {
           "id": 6,
           "text": "Sur le navire rouge, cap à l'est,",
-          "image": "https://www.loisirs-nautic.fr/images/Q5.png",
+          "image": "assets/qcm/web/8443d643cf-Q5.png",
           "answers": [
             {
               "id": "a",
@@ -162,7 +162,7 @@
         {
           "id": 7,
           "text": "Cap au 345 :",
-          "image": "https://www.loisirs-nautic.fr/images/nc_6.png",
+          "image": "assets/qcm/web/c8ac6ff2e5-nc_6.png",
           "answers": [
             {
               "id": "a",
@@ -180,7 +180,7 @@
         {
           "id": 8,
           "text": "En sortant du port :",
-          "image": "https://www.loisirs-nautic.fr/images/Q6.png",
+          "image": "assets/qcm/web/8b3cd15fda-Q6.png",
           "answers": [
             {
               "id": "a",
@@ -198,7 +198,7 @@
         {
           "id": 9,
           "text": "Cette bouée délimite :",
-          "image": "https://www.loisirs-nautic.fr/images/Q7.png",
+          "image": "assets/qcm/web/1b55244fa4-Q7.png",
           "answers": [
             {
               "id": "a",
@@ -226,7 +226,7 @@
         {
           "id": 10,
           "text": "À l'approche de cette marque :",
-          "image": "https://www.loisirs-nautic.fr/images/Q8.png",
+          "image": "assets/qcm/web/4ad3a4a4a4-Q8.png",
           "answers": [
             {
               "id": "a",
@@ -254,7 +254,7 @@
         {
           "id": 11,
           "text": "Ce balisage représente :",
-          "image": "https://www.loisirs-nautic.fr/images/Q9.png",
+          "image": "assets/qcm/web/e02303e079-Q9.png",
           "answers": [
             {
               "id": "a",
@@ -282,7 +282,7 @@
         {
           "id": 12,
           "text": "En entrant au port, cette marque représente :",
-          "image": "https://www.loisirs-nautic.fr/images/Q10.png",
+          "image": "assets/qcm/web/12dcd0257b-Q10.png",
           "answers": [
             {
               "id": "a",
@@ -300,7 +300,7 @@
         {
           "id": 13,
           "text": "Que signifie ce panneau ?",
-          "image": "https://www.loisirs-nautic.fr/images/Q11.png",
+          "image": "assets/qcm/web/37594ea11c-Q11.png",
           "answers": [
             {
               "id": "a",
@@ -323,7 +323,7 @@
         {
           "id": 14,
           "text": "Ce navire se dirige :",
-          "image": "https://www.loisirs-nautic.fr/images/Q12.png",
+          "image": "assets/qcm/web/1d31c8aa4e-Q12.png",
           "answers": [
             {
               "id": "a",
@@ -341,7 +341,7 @@
         {
           "id": 15,
           "text": "La nuit, cap au nord, je vois 3 scintillements :",
-          "image": "https://www.loisirs-nautic.fr/images/nc_7.png",
+          "image": "assets/qcm/web/57b7af70a8-nc_7.png",
           "answers": [
             {
               "id": "a",
@@ -359,7 +359,7 @@
         {
           "id": 16,
           "text": "Quel est votre sens de navigation ?",
-          "image": "https://www.loisirs-nautic.fr/images/q665.png",
+          "image": "assets/qcm/web/70c5ca4fec-q665.png",
           "answers": [
             {
               "id": "a",
@@ -377,7 +377,7 @@
         {
           "id": 17,
           "text": "Faisant route au 260 :",
-          "image": "https://www.loisirs-nautic.fr/images/Q13.GIF",
+          "image": "assets/qcm/web/79d50eefb4-Q13.GIF",
           "answers": [
             {
               "id": "a",
@@ -400,7 +400,7 @@
         {
           "id": 18,
           "text": "En entrant au port du Palais (Morbihan 56, France) :",
-          "image": "https://www.loisirs-nautic.fr/images/Q14.GIF",
+          "image": "assets/qcm/web/6ab5a382e7-Q14.GIF",
           "answers": [
             {
               "id": "a",
@@ -418,7 +418,7 @@
         {
           "id": 19,
           "text": "Venant du Sud, je vois cette bouée dont les voyants sont absents :",
-          "image": "https://www.loisirs-nautic.fr/images/Q15.png",
+          "image": "assets/qcm/web/01c97022a3-Q15.png",
           "answers": [
             {
               "id": "a",
@@ -436,7 +436,7 @@
         {
           "id": 20,
           "text": "La bouée émettant ce signal représente :",
-          "image": "https://www.loisirs-nautic.fr/images/Q16.GIF",
+          "image": "assets/qcm/web/1e57779a79-Q16.GIF",
           "answers": [
             {
               "id": "a",
@@ -464,7 +464,7 @@
         {
           "id": 21,
           "text": "Cette bouée est une marque de :",
-          "image": "https://www.loisirs-nautic.fr/images/Q17.png",
+          "image": "assets/qcm/web/ab2f6f28a4-Q17.png",
           "answers": [
             {
               "id": "a",
@@ -492,7 +492,7 @@
         {
           "id": 22,
           "text": "Ces 2 bouées signalent :",
-          "image": "https://www.loisirs-nautic.fr/images/Q18.png",
+          "image": "assets/qcm/web/8a5107bfe7-Q18.png",
           "answers": [
             {
               "id": "a",
@@ -515,7 +515,7 @@
         {
           "id": 23,
           "text": "Cette bouée indique :",
-          "image": "https://www.loisirs-nautic.fr/images/Q19.png",
+          "image": "assets/qcm/web/2651e63a4e-Q19.png",
           "answers": [
             {
               "id": "a",
@@ -543,7 +543,7 @@
         {
           "id": 24,
           "text": "Cap au sud :",
-          "image": "https://www.loisirs-nautic.fr/images/Q20.GIF",
+          "image": "assets/qcm/web/571303f5f5-Q20.GIF",
           "answers": [
             {
               "id": "a",
@@ -561,7 +561,7 @@
         {
           "id": 25,
           "text": "Cette balise est :",
-          "image": "https://www.loisirs-nautic.fr/images/Q30.png",
+          "image": "assets/qcm/web/d5af7dcecd-Q30.png",
           "answers": [
             {
               "id": "a",
@@ -585,98 +585,6 @@
             }
           ],
           "difficulty": 2
-        },
-        {
-          "id": 26,
-          "text": "Ce feu est :",
-          "image": "https://www.loisirs-nautic.fr/images/Q21.GIF",
-          "answers": [
-            {
-              "id": "a",
-              "text": "à éclat.",
-              "correct": true
-            },
-            {
-              "id": "b",
-              "text": "isophase.",
-              "correct": false
-            },
-            {
-              "id": "c",
-              "text": "à occultation.",
-              "correct": false
-            }
-          ],
-          "difficulty": 1
-        },
-        {
-          "id": 27,
-          "text": "Ce feu est :",
-          "image": "https://www.loisirs-nautic.fr/images/Q22.GIF",
-          "answers": [
-            {
-              "id": "a",
-              "text": "à éclat.",
-              "correct": false
-            },
-            {
-              "id": "b",
-              "text": "isophase.",
-              "correct": false
-            },
-            {
-              "id": "c",
-              "text": "à occultation.",
-              "correct": true
-            }
-          ],
-          "difficulty": 1
-        },
-        {
-          "id": 28,
-          "text": "Ce feu est :",
-          "image": "https://www.loisirs-nautic.fr/images/Q23.GIF",
-          "answers": [
-            {
-              "id": "a",
-              "text": "à éclat.",
-              "correct": false
-            },
-            {
-              "id": "b",
-              "text": "isophase.",
-              "correct": true
-            },
-            {
-              "id": "c",
-              "text": "à occultation.",
-              "correct": false
-            }
-          ],
-          "difficulty": 1
-        },
-        {
-          "id": 29,
-          "text": "Ce feu est :",
-          "image": null,
-          "answers": [
-            {
-              "id": "a",
-              "text": "à éclat.",
-              "correct": false
-            },
-            {
-              "id": "b",
-              "text": "isophase.",
-              "correct": true
-            },
-            {
-              "id": "c",
-              "text": "à occultation.",
-              "correct": false
-            }
-          ],
-          "difficulty": 1
         }
       ]
     },
@@ -751,7 +659,7 @@
         {
           "id": "ln_pc1_q1",
           "text": "Venant de l'ouest,",
-          "image": "https://www.loisirs-nautic.fr/img/Test_Cotier_1/Q1.png",
+          "image": "assets/qcm/web/fc9eb3f95e-Q1.png",
           "answers": [
             {
               "id": "a",
@@ -775,7 +683,7 @@
         {
           "id": "ln_pc1_q5",
           "text": "La nuit, cap au 165, je vois 3 scintillements :",
-          "image": "https://www.loisirs-nautic.fr/img/Test_cardinales/nc_10.png",
+          "image": "assets/qcm/web/a16dd6d99f-nc_10.png",
           "answers": [
             {
               "id": "a",
@@ -799,7 +707,7 @@
         {
           "id": "ln_pc1_q6",
           "text": "En sortant du port :",
-          "image": "https://www.loisirs-nautic.fr/img/Test_Cotier_1/Q6.png",
+          "image": "assets/qcm/web/b80afdf250-Q6.png",
           "answers": [
             {
               "id": "a",
@@ -823,7 +731,7 @@
         {
           "id": "ln_pc1_q9",
           "text": "Où se trouve le danger par rapport à cette bouée ?",
-          "image": "https://www.loisirs-nautic.fr/img/Test_Cotier_1/Q9.png",
+          "image": "assets/qcm/web/f003bdccba-Q9.png",
           "answers": [
             {
               "id": "a",
@@ -857,7 +765,7 @@
         {
           "id": "ln_pc1_q16",
           "text": "Cette marque représente :",
-          "image": "https://www.loisirs-nautic.fr/img/Test_Cotier_1/Q16.png",
+          "image": "assets/qcm/web/2ad5a2d0ba-Q16.png",
           "answers": [
             {
               "id": "a",
@@ -891,7 +799,7 @@
         {
           "id": "ln_pc1_q23",
           "text": "En entrant au port, cette marque représente :",
-          "image": "https://www.loisirs-nautic.fr/img/Test_Cotier_1/Q10.png",
+          "image": "assets/qcm/web/e533e90f5e-Q10.png",
           "answers": [
             {
               "id": "a",
@@ -915,7 +823,7 @@
         {
           "id": "ln_pc1_q28",
           "text": "Quelle est la route à suivre pour rentrer au port ?",
-          "image": "https://www.loisirs-nautic.fr/img/test_autre/pc616.jpg",
+          "image": "assets/qcm/web/e3fd1a6a28-pc616.jpg",
           "answers": [
             {
               "id": "a",
@@ -944,7 +852,7 @@
         {
           "id": "ln_pc2_q7",
           "text": "Pilotant le navire rouge et venant de l'ouest :",
-          "image": "https://www.loisirs-nautic.fr/img/test_cotier_2/Q7.png",
+          "image": "assets/qcm/web/c75f1d3d02-Q7.png",
           "answers": [
             {
               "id": "a",
@@ -973,7 +881,7 @@
         {
           "id": "ln_pc2_q10",
           "text": "En entrant au port, cette bouée marque :",
-          "image": "https://www.loisirs-nautic.fr/img/test_cotier_2/Q10.png",
+          "image": "assets/qcm/web/572b99536b-Q10.png",
           "answers": [
             {
               "id": "a",
@@ -997,7 +905,7 @@
         {
           "id": "ln_pc2_q15",
           "text": "Voyant cette bouée, vous :",
-          "image": "https://www.loisirs-nautic.fr/img/test_cotier_2/Q15.png",
+          "image": "assets/qcm/web/89476c1fe1-Q15.png",
           "answers": [
             {
               "id": "a",
@@ -1065,7 +973,7 @@
         {
           "id": "ln_pc2_q18",
           "text": "Vous faites cap au 005° et voyez cette bouée droit devant vous :",
-          "image": "https://www.loisirs-nautic.fr/img/test_cotier_2/Q18.png",
+          "image": "assets/qcm/web/697d3768a3-Q18.png",
           "answers": [
             {
               "id": "a",
@@ -1089,7 +997,7 @@
         {
           "id": "ln_pc2_q22",
           "text": "La nuit, cap au 105, je vois des scintillements continus :",
-          "image": "https://www.loisirs-nautic.fr/img/Test_cardinales/nc_15.png",
+          "image": "assets/qcm/web/ca7e7800e6-nc_15.png",
           "answers": [
             {
               "id": "a",
@@ -1113,7 +1021,7 @@
         {
           "id": "ln_pc3_q1",
           "text": "Cap au 345 :",
-          "image": "https://www.loisirs-nautic.fr/img/Test_cardinales/nc_5.png",
+          "image": "assets/qcm/web/45473e4607-nc_5.png",
           "answers": [
             {
               "id": "a",
@@ -1137,7 +1045,7 @@
         {
           "id": "ln_pc3_q4",
           "text": "Vous faites cap à l'est. Voyant cette bouée devant vous, que faites-vous ?",
-          "image": "https://www.loisirs-nautic.fr/img/test_cotier_3/Q4.png",
+          "image": "assets/qcm/web/936787b6c7-Q4.png",
           "answers": [
             {
               "id": "a",
@@ -1166,7 +1074,7 @@
         {
           "id": "ln_pc3_q7",
           "text": "En entrant au port :",
-          "image": "https://www.loisirs-nautic.fr/img/test_cotier_3/Q7.png",
+          "image": "assets/qcm/web/932d1e1f78-Q7.png",
           "answers": [
             {
               "id": "a",
@@ -1195,7 +1103,7 @@
         {
           "id": "ln_pc3_q8",
           "text": "Faisant cap au 170, vous voyez ces 9 scintillements :",
-          "image": "https://www.loisirs-nautic.fr/img/test_cotier_3/Q8.png",
+          "image": "assets/qcm/web/f4c1045530-Q8.png",
           "answers": [
             {
               "id": "a",
@@ -1224,7 +1132,7 @@
         {
           "id": "ln_pc3_q9",
           "text": "Que faites-vous au passage de cette bouée ?",
-          "image": "https://www.loisirs-nautic.fr/img/test_cotier_3/Q9.png",
+          "image": "assets/qcm/web/e93ed13caf-Q9.png",
           "answers": [
             {
               "id": "a",
@@ -1287,7 +1195,7 @@
         {
           "id": "ln_pc3_q16",
           "text": "Cette bouée indique :",
-          "image": "https://www.loisirs-nautic.fr/img/test_cotier_3/Q16.png",
+          "image": "assets/qcm/web/09281fa428-Q16.png",
           "answers": [
             {
               "id": "a",
@@ -1321,7 +1229,7 @@
         {
           "id": "ln_pc3_q22",
           "text": "La nuit, cap au 165, je vois 9 scintillements :",
-          "image": "https://www.loisirs-nautic.fr/img/Test_cardinales/nc_9.png",
+          "image": "assets/qcm/web/dcd1828bed-nc_9.png",
           "answers": [
             {
               "id": "a",
@@ -1345,7 +1253,7 @@
         {
           "id": "ln_pc3_q30",
           "text": "Dans cette situation, quelle route suivez-vous ?",
-          "image": "https://www.loisirs-nautic.fr/img/test_balisage/q700.jpg",
+          "image": "assets/qcm/web/7d7ce5d05d-q700.jpg",
           "answers": [
             {
               "id": "a",
@@ -1374,7 +1282,7 @@
         {
           "id": "ln_pc3_q33",
           "text": "Que signifie ce panneau ?",
-          "image": "https://www.loisirs-nautic.fr/img/test_balisage/q679.png",
+          "image": "assets/qcm/web/bf92a57c46-q679.png",
           "answers": [
             {
               "id": "a",
@@ -1408,7 +1316,7 @@
         {
           "id": "ln_pc4_q2",
           "text": "Cap au 260 :",
-          "image": "https://www.loisirs-nautic.fr/img/Test_cardinales/nc_2.png",
+          "image": "assets/qcm/web/685926fd58-nc_2.png",
           "answers": [
             {
               "id": "a",
@@ -1432,7 +1340,7 @@
         {
           "id": "ln_pc4_q4",
           "text": "Cap au sud, que doit faire ce navire ?",
-          "image": "https://www.loisirs-nautic.fr/img/test_cotier_4/Q4.png",
+          "image": "assets/qcm/web/f6438f38b3-Q4.png",
           "answers": [
             {
               "id": "a",
@@ -1461,7 +1369,7 @@
         {
           "id": "ln_pc4_q8",
           "text": "Cette bouée vous signale :",
-          "image": "https://www.loisirs-nautic.fr/img/test_cotier_4/Q8.png",
+          "image": "assets/qcm/web/9ff194ae6d-Q8.png",
           "answers": [
             {
               "id": "a",
@@ -1495,7 +1403,7 @@
         {
           "id": "ln_pc4_q19",
           "text": "Faisant route au nord, vous approchez de cette balise qui se trouve largement à gauche de votre route. Que faites-vous ?",
-          "image": "https://www.loisirs-nautic.fr/img/Test_cardinales/pc526.png",
+          "image": "assets/qcm/web/31c8e27dc2-pc526.png",
           "answers": [
             {
               "id": "a",
@@ -1529,7 +1437,7 @@
         {
           "id": "ln_pc4_q21",
           "text": "En entrant au port, de quel côté passez-vous de préférence ?",
-          "image": "https://www.loisirs-nautic.fr/img/test_cotier_4/Q2.png",
+          "image": "assets/qcm/web/0121324f3e-Q2.png",
           "answers": [
             {
               "id": "a",
@@ -1553,7 +1461,7 @@
         {
           "id": "ln_pc4_q26",
           "text": "Où se trouve le chenal principal ?",
-          "image": "https://www.loisirs-nautic.fr/img/test_balisage/q561.png",
+          "image": "assets/qcm/web/c91879f6d2-q561.png",
           "answers": [
             {
               "id": "a",
@@ -1577,7 +1485,7 @@
         {
           "id": "ln_pc4_q28",
           "text": "Qu'appelle-t-on le voyant d'une bouée ?",
-          "image": "https://www.loisirs-nautic.fr/img/test_balisage/q539.png",
+          "image": "assets/qcm/web/95ada5a459-q539.png",
           "answers": [
             {
               "id": "a",
@@ -1606,7 +1514,7 @@
         {
           "id": "ln_pc4_q31",
           "text": "Naviguant de nuit, vous rencontrez ce feu blanc isophase. Que faites-vous ?",
-          "image": "https://www.loisirs-nautic.fr/img/test_balisage/Q22.GIF",
+          "image": "assets/qcm/web/c500ce85eb-Q22.GIF",
           "answers": [
             {
               "id": "a",
@@ -1635,7 +1543,7 @@
         {
           "id": "ln_pc5_q1",
           "text": "Cette marque peut indiquer :",
-          "image": "https://www.loisirs-nautic.fr/img/test_cotier_5/Q1.png",
+          "image": "assets/qcm/web/5b408948f9-Q1.png",
           "answers": [
             {
               "id": "a",
@@ -1669,7 +1577,7 @@
         {
           "id": "ln_pc5_q2",
           "text": "Vous voyez ce feu à 2 éclats blancs groupés. Il s'agit :",
-          "image": "https://www.loisirs-nautic.fr/img/test_cotier_5/Q2.png",
+          "image": "assets/qcm/web/2b81d8f7b3-Q2.png",
           "answers": [
             {
               "id": "a",
@@ -1703,7 +1611,7 @@
         {
           "id": "ln_pc5_q4",
           "text": "Faisant cap à l'ouest, vous voyez cette bouée devant vous :",
-          "image": "https://www.loisirs-nautic.fr/img/test_cotier_5/Q4.png",
+          "image": "assets/qcm/web/aa5e3e136a-Q4.png",
           "answers": [
             {
               "id": "a",
@@ -1732,7 +1640,7 @@
         {
           "id": "ln_pc5_q18",
           "text": "Faisant cap au Nord-Ouest :",
-          "image": "https://www.loisirs-nautic.fr/img/test_cotier_5/Q18.png",
+          "image": "assets/qcm/web/2eb9933d4d-Q18.png",
           "answers": [
             {
               "id": "a",
@@ -1761,7 +1669,7 @@
         {
           "id": "ln_pc5_q21",
           "text": "Devant vous, ce collier de bouées jaunes rapprochées. Que faites- vous ?",
-          "image": "https://www.loisirs-nautic.fr/img/test_balisage/Q29.png",
+          "image": "assets/qcm/web/c7f77ce1a3-Q29.png",
           "answers": [
             {
               "id": "a",
@@ -1790,7 +1698,7 @@
         {
           "id": "ln_pc5_q24",
           "text": "Cap au 195 :",
-          "image": "https://www.loisirs-nautic.fr/img/Test_cardinales/nc_11.png",
+          "image": "assets/qcm/web/80b3a17946-nc_11.png",
           "answers": [
             {
               "id": "a",
@@ -1843,7 +1751,7 @@
         {
           "id": "ln_pc6_q1",
           "text": "Cap à l'Est,",
-          "image": "https://www.loisirs-nautic.fr/img/test_autre/divers_31.png",
+          "image": "assets/qcm/web/d8bff6cb61-divers_31.png",
           "answers": [
             {
               "id": "a",
@@ -1901,7 +1809,7 @@
         {
           "id": "ln_pc6_q7",
           "text": "Faisant cap à l'ouest sur le navire dessiné en rose :",
-          "image": "https://www.loisirs-nautic.fr/img/test_cotier_6/Q7.png",
+          "image": "assets/qcm/web/8deda8835d-Q7.png",
           "answers": [
             {
               "id": "a",
@@ -1930,7 +1838,7 @@
         {
           "id": "ln_pc6_q11",
           "text": "En entrant au port :",
-          "image": "https://www.loisirs-nautic.fr/img/test_cotier_6/Q11.png",
+          "image": "assets/qcm/web/6c08f7648b-Q11.png",
           "answers": [
             {
               "id": "a",
@@ -1959,7 +1867,7 @@
         {
           "id": "ln_pc6_q14",
           "text": "Il s'agit d'une bouée :",
-          "image": "https://www.loisirs-nautic.fr/img/test_cotier_6/Q14.png",
+          "image": "assets/qcm/web/305c187d86-Q14.png",
           "answers": [
             {
               "id": "a",
@@ -1988,7 +1896,7 @@
         {
           "id": "ln_pc6_q17",
           "text": "Dans un port, cette marque peut indiquer :",
-          "image": "https://www.loisirs-nautic.fr/img/test_cotier_6/Q17.png",
+          "image": "assets/qcm/web/3d14709c09-Q17.png",
           "answers": [
             {
               "id": "a",
@@ -2022,7 +1930,7 @@
         {
           "id": "ln_pc6_q22",
           "text": "La nuit, cap au 165, je vois 3 scintillements :",
-          "image": "https://www.loisirs-nautic.fr/img/Test_cardinales/nc_10.png",
+          "image": "assets/qcm/web/a16dd6d99f-nc_10.png",
           "answers": [
             {
               "id": "a",
@@ -2054,7 +1962,7 @@
         {
           "id": "ln_pc1_q3",
           "text": "Ce signal sonore, 2 sons brefs, signifie :",
-          "image": "https://www.loisirs-nautic.fr/img/Test_Cotier_1/Q3.png",
+          "image": "assets/qcm/web/6adab7ab14-Q3.png",
           "answers": [
             {
               "id": "a",
@@ -2083,7 +1991,7 @@
         {
           "id": "ln_pc1_q7",
           "text": "La nuit, vous croisez un navire portant ces feux, il s'agit d'un :",
-          "image": "https://www.loisirs-nautic.fr/img/Test_Cotier_1/Q7.png",
+          "image": "assets/qcm/web/752313188c-Q7.png",
           "answers": [
             {
               "id": "a",
@@ -2112,7 +2020,7 @@
         {
           "id": "ln_pc1_q11",
           "text": "Que signifie ce signal ?",
-          "image": "https://www.loisirs-nautic.fr/img/Test_Cotier_1/Q11.png",
+          "image": "assets/qcm/web/9fc3ff78ce-Q11.png",
           "answers": [
             {
               "id": "a",
@@ -2175,7 +2083,7 @@
         {
           "id": "ln_pc1_q14",
           "text": "Ce pavillon signale :",
-          "image": "https://www.loisirs-nautic.fr/img/Test_Cotier_1/Q14.png",
+          "image": "assets/qcm/web/53c0bca225-Q14.png",
           "answers": [
             {
               "id": "a",
@@ -2204,7 +2112,7 @@
         {
           "id": "ln_pc1_q17",
           "text": "Que signifie le drapeau montré par ce navire ?",
-          "image": "https://www.loisirs-nautic.fr/img/Test_Cotier_1/Q17.png",
+          "image": "assets/qcm/web/7b55db3a4c-Q17.png",
           "answers": [
             {
               "id": "a",
@@ -2238,7 +2146,7 @@
         {
           "id": "ln_pc1_q19",
           "text": "Qu'indique ce signal au sémaphore ?",
-          "image": "https://www.loisirs-nautic.fr/img/Test_Cotier_1/Q19.png",
+          "image": "assets/qcm/web/5954cea14b-Q19.png",
           "answers": [
             {
               "id": "a",
@@ -2267,7 +2175,7 @@
         {
           "id": "ln_pc1_q20",
           "text": "La nuit, vous croisez un :",
-          "image": "https://www.loisirs-nautic.fr/img/Test_Cotier_1/Q20.png",
+          "image": "assets/qcm/web/a0b8ac4b8b-Q20.png",
           "answers": [
             {
               "id": "a",
@@ -2296,7 +2204,7 @@
         {
           "id": "ln_pc1_q21",
           "text": "Dans la brume, ce signal sonore indique :",
-          "image": "https://www.loisirs-nautic.fr/img/Test_Cotier_1/Q15.png",
+          "image": "assets/qcm/web/d8dcd25ed6-Q15.png",
           "answers": [
             {
               "id": "a",
@@ -2325,7 +2233,7 @@
         {
           "id": "ln_pc1_q24",
           "text": "À l'entrée du port,",
-          "image": "https://www.loisirs-nautic.fr/img/Test_Cotier_1/Q2.png",
+          "image": "assets/qcm/web/d98a161dc5-Q2.png",
           "answers": [
             {
               "id": "a",
@@ -2354,7 +2262,7 @@
         {
           "id": "ln_pc2_q1",
           "text": "En me rapprochant de la côte, je vois une bouée qui porte ce pavillon :",
-          "image": "https://www.loisirs-nautic.fr/img/test_signaux/Q21.png",
+          "image": "assets/qcm/web/de8083e638-Q21.png",
           "answers": [
             {
               "id": "a",
@@ -2388,7 +2296,7 @@
         {
           "id": "ln_pc2_q2",
           "text": "Voyant ces feux à l'entrée du port :",
-          "image": "https://www.loisirs-nautic.fr/img/test_cotier_2/Q2.png",
+          "image": "assets/qcm/web/6f933db548-Q2.png",
           "answers": [
             {
               "id": "a",
@@ -2417,7 +2325,7 @@
         {
           "id": "ln_pc2_q3",
           "text": "Devant vous, un navire émet 3 sons brefs :",
-          "image": "https://www.loisirs-nautic.fr/img/test_cotier_2/Q3.png",
+          "image": "assets/qcm/web/49fdadf15e-Q3.png",
           "answers": [
             {
               "id": "a",
@@ -2446,7 +2354,7 @@
         {
           "id": "ln_pc2_q9",
           "text": "La nuit, en pleine mer, vous voyez ces signaux lumineux. Il s'agit :",
-          "image": "https://www.loisirs-nautic.fr/img/test_cotier_2/Q9.GIF",
+          "image": "assets/qcm/web/231a16a707-Q9.GIF",
           "answers": [
             {
               "id": "a",
@@ -2475,7 +2383,7 @@
         {
           "id": "ln_pc2_q11",
           "text": "Ces feux de navire indiquent :",
-          "image": "https://www.loisirs-nautic.fr/img/test_cotier_2/Q11.png",
+          "image": "assets/qcm/web/820a37b34a-Q11.png",
           "answers": [
             {
               "id": "a",
@@ -2504,7 +2412,7 @@
         {
           "id": "ln_pc2_q12",
           "text": "Dans la brume, vous entendez ce signal sonore. Il s'agit :",
-          "image": "https://www.loisirs-nautic.fr/img/test_cotier_2/Q12.png",
+          "image": "assets/qcm/web/dcdc992341-Q12.png",
           "answers": [
             {
               "id": "a",
@@ -2567,7 +2475,7 @@
         {
           "id": "ln_pc2_q14",
           "text": "Vous voyez ces pavillons :",
-          "image": "https://www.loisirs-nautic.fr/img/test_cotier_2/Q14.png",
+          "image": "assets/qcm/web/b3585954f2-Q14.png",
           "answers": [
             {
               "id": "a",
@@ -2596,7 +2504,7 @@
         {
           "id": "ln_pc2_q20",
           "text": "La nuit, vous croisez un :",
-          "image": "https://www.loisirs-nautic.fr/img/test_cotier_2/Q20.png",
+          "image": "assets/qcm/web/7fed9213d1-Q20.png",
           "answers": [
             {
               "id": "a",
@@ -2625,7 +2533,7 @@
         {
           "id": "ln_pc2_q25",
           "text": "La nuit, au mât de signaux, vous voyez ces feux :",
-          "image": "https://www.loisirs-nautic.fr/img/test_autre/divers_33.png",
+          "image": "assets/qcm/web/c8dfe0be64-divers_33.png",
           "answers": [
             {
               "id": "a",
@@ -2654,7 +2562,7 @@
         {
           "id": "ln_pc3_q3",
           "text": "Un navire qui porte ces feux est un :",
-          "image": "https://www.loisirs-nautic.fr/img/test_cotier_3/Q3.png",
+          "image": "assets/qcm/web/4bb0ed1a82-Q3.png",
           "answers": [
             {
               "id": "a",
@@ -2683,7 +2591,7 @@
         {
           "id": "ln_pc3_q12",
           "text": "Dans la brume, vous entendez ce signal sonore toutes les 2 minutes. Il s'agit :",
-          "image": "https://www.loisirs-nautic.fr/img/test_cotier_3/Q12.png",
+          "image": "assets/qcm/web/91cd136c14-Q12.png",
           "answers": [
             {
               "id": "a",
@@ -2741,7 +2649,7 @@
         {
           "id": "ln_pc3_q14",
           "text": "Ce pavillon indique :",
-          "image": "https://www.loisirs-nautic.fr/img/test_cotier_3/Q14.png",
+          "image": "assets/qcm/web/16f24e2e66-Q14.png",
           "answers": [
             {
               "id": "a",
@@ -2775,7 +2683,7 @@
         {
           "id": "ln_pc3_q18",
           "text": "Un navire porte ces marques. Il s'agit d'un navire :",
-          "image": "https://www.loisirs-nautic.fr/img/test_cotier_3/Q18.png",
+          "image": "assets/qcm/web/ea9c3b3856-Q18.png",
           "answers": [
             {
               "id": "a",
@@ -2809,7 +2717,7 @@
         {
           "id": "ln_pc3_q19",
           "text": "La nuit, un navire montre ces feux. Il s'agit d'un :",
-          "image": "https://www.loisirs-nautic.fr/img/test_cotier_3/Q19.png",
+          "image": "assets/qcm/web/b57e79896d-Q19.png",
           "answers": [
             {
               "id": "a",
@@ -2843,7 +2751,7 @@
         {
           "id": "ln_pc3_q21",
           "text": "Que signifie ce signal sonore ?",
-          "image": "https://www.loisirs-nautic.fr/img/test_cotier_3/Q2.png",
+          "image": "assets/qcm/web/3fc7dc382d-Q2.png",
           "answers": [
             {
               "id": "a",
@@ -2877,7 +2785,7 @@
         {
           "id": "ln_pc3_q32",
           "text": "Sortant du port, vous voyez ces 3 feux à occultations lentes.",
-          "image": "https://www.loisirs-nautic.fr/img/test_signaux/Q9.png",
+          "image": "assets/qcm/web/9a20f935dd-Q9.png",
           "answers": [
             {
               "id": "a",
@@ -2906,7 +2814,7 @@
         {
           "id": "ln_pc4_q1",
           "text": "Au sémaphore, vous voyez ces feux. Ils indiquent :",
-          "image": "https://www.loisirs-nautic.fr/img/test_cotier_4/Q1.png",
+          "image": "assets/qcm/web/17b84abdf9-Q1.png",
           "answers": [
             {
               "id": "a",
@@ -2940,7 +2848,7 @@
         {
           "id": "ln_pc4_q6",
           "text": "Dans la brume, un bateau pilote peut s'identifier par 4 sons brefs.",
-          "image": "https://www.loisirs-nautic.fr/img/test_regles_barre/Q32.png",
+          "image": "assets/qcm/web/a3697a9e50-Q32.png",
           "answers": [
             {
               "id": "a",
@@ -2964,7 +2872,7 @@
         {
           "id": "ln_pc4_q7",
           "text": "Un navire porte ces feux. Il s'agit d'un :",
-          "image": "https://www.loisirs-nautic.fr/img/test_cotier_4/Q7.png",
+          "image": "assets/qcm/web/b7fc896f6a-Q7.png",
           "answers": [
             {
               "id": "a",
@@ -2993,7 +2901,7 @@
         {
           "id": "ln_pc4_q11",
           "text": "Qu'indique ce pavillon ?",
-          "image": "https://www.loisirs-nautic.fr/img/test_cotier_4/Q11.png",
+          "image": "assets/qcm/web/f84f72262a-Q11.png",
           "answers": [
             {
               "id": "a",
@@ -3027,7 +2935,7 @@
         {
           "id": "ln_pc4_q12",
           "text": "Dans la brume, vous entendez ce signal sonore. Il s'agit :",
-          "image": "https://www.loisirs-nautic.fr/img/test_cotier_4/Q12.png",
+          "image": "assets/qcm/web/a56e457d5e-Q12.png",
           "answers": [
             {
               "id": "a",
@@ -3056,7 +2964,7 @@
         {
           "id": "ln_pc4_q14",
           "text": "Un navire émet de la fumée orange :",
-          "image": "https://www.loisirs-nautic.fr/img/test_cotier_4/Q14.png",
+          "image": "assets/qcm/web/e326c31fe2-Q14.png",
           "answers": [
             {
               "id": "a",
@@ -3090,7 +2998,7 @@
         {
           "id": "ln_pc4_q15",
           "text": "En entrant au port, que fait un petit navire ?",
-          "image": "https://www.loisirs-nautic.fr/img/test_cotier_4/Q15.png",
+          "image": "assets/qcm/web/c3eead574a-Q15.png",
           "answers": [
             {
               "id": "a",
@@ -3124,7 +3032,7 @@
         {
           "id": "ln_pc4_q18",
           "text": "Un navire porte ces marques. Il s'agit d'un :",
-          "image": "https://www.loisirs-nautic.fr/img/test_cotier_4/Q18.png",
+          "image": "assets/qcm/web/24a3adb32f-Q18.png",
           "answers": [
             {
               "id": "a",
@@ -3153,7 +3061,7 @@
         {
           "id": "ln_pc4_q25",
           "text": "De nuit, un navire au mouillage de moins de 50 m doit montrer un feu minimum. Lequel ?",
-          "image": "https://www.loisirs-nautic.fr/img/test_feux/Q37.GIF",
+          "image": "assets/qcm/web/d9cd478156-Q37.GIF",
           "answers": [
             {
               "id": "a",
@@ -3211,7 +3119,7 @@
         {
           "id": "ln_pc5_q7",
           "text": "Ce pavillon vous oblige à passer à au moins :",
-          "image": "https://www.loisirs-nautic.fr/img/test_cotier_5/Q7.png",
+          "image": "assets/qcm/web/44076e7fb8-Q7.png",
           "answers": [
             {
               "id": "a",
@@ -3245,7 +3153,7 @@
         {
           "id": "ln_pc5_q10",
           "text": "Ce signal au sémaphore vous indique :",
-          "image": "https://www.loisirs-nautic.fr/img/test_cotier_5/Q10.png",
+          "image": "assets/qcm/web/b60f8bfb1e-Q10.png",
           "answers": [
             {
               "id": "a",
@@ -3279,7 +3187,7 @@
         {
           "id": "ln_pc5_q12",
           "text": "Dans un chenal étroit, un navire émet ces signaux sonores. Il a l'intention de :",
-          "image": "https://www.loisirs-nautic.fr/img/test_cotier_5/Q12.png",
+          "image": "assets/qcm/web/342572f46c-Q12.png",
           "answers": [
             {
               "id": "a",
@@ -3313,7 +3221,7 @@
         {
           "id": "ln_pc5_q15",
           "text": "En sortant du port :",
-          "image": "https://www.loisirs-nautic.fr/img/test_cotier_5/Q15.png",
+          "image": "assets/qcm/web/0b9316dbdd-Q15.png",
           "answers": [
             {
               "id": "a",
@@ -3371,7 +3279,7 @@
         {
           "id": "ln_pc6_q3",
           "text": "A l'entrée du port, vous voyez ces feux.",
-          "image": "https://www.loisirs-nautic.fr/img/test_cotier_6/Q3.png",
+          "image": "assets/qcm/web/2d32957f2a-Q3.png",
           "answers": [
             {
               "id": "a",
@@ -3400,7 +3308,7 @@
         {
           "id": "ln_pc6_q4",
           "text": "Ce son continu indique :",
-          "image": "https://www.loisirs-nautic.fr/img/test_cotier_6/Q4.png",
+          "image": "assets/qcm/web/3063ff307d-Q4.png",
           "answers": [
             {
               "id": "a",
@@ -3434,7 +3342,7 @@
         {
           "id": "ln_pc6_q6",
           "text": "Quel est ce navire ?",
-          "image": "https://www.loisirs-nautic.fr/img/test_cotier_6/Q6.png",
+          "image": "assets/qcm/web/119f0e2f4e-Q6.png",
           "answers": [
             {
               "id": "a",
@@ -3463,7 +3371,7 @@
         {
           "id": "ln_pc6_q10",
           "text": "Ce signal au sémaphore vous indique :",
-          "image": "https://www.loisirs-nautic.fr/img/test_cotier_6/Q10.png",
+          "image": "assets/qcm/web/b0f0df3933-Q10.png",
           "answers": [
             {
               "id": "a",
@@ -3497,7 +3405,7 @@
         {
           "id": "ln_pc6_q12",
           "text": "Un navire émet ces signaux sonores. Il souhaite :",
-          "image": "https://www.loisirs-nautic.fr/img/test_cotier_6/Q12.png",
+          "image": "assets/qcm/web/b730e85a22-Q12.png",
           "answers": [
             {
               "id": "a",
@@ -3573,7 +3481,7 @@
         {
           "id": "ln_pc1_q4",
           "text": "Le voilier qui rattrape :",
-          "image": "https://www.loisirs-nautic.fr/img/Test_Cotier_1/Q4.png",
+          "image": "assets/qcm/web/d7f3f0a803-Q4.png",
           "answers": [
             {
               "id": "a",
@@ -3597,7 +3505,7 @@
         {
           "id": "ln_pc1_q12",
           "text": "Cette marque désigne :",
-          "image": "https://www.loisirs-nautic.fr/img/Test_Cotier_1/Q12.png",
+          "image": "assets/qcm/web/0ae0615821-Q12.png",
           "answers": [
             {
               "id": "a",
@@ -3626,7 +3534,7 @@
         {
           "id": "ln_pc1_q32",
           "text": "Dans ces conditions, quel navire est privilégié ?",
-          "image": "https://www.loisirs-nautic.fr/img/test_regles_barre/Q36.png",
+          "image": "assets/qcm/web/fc70df1986-Q36.png",
           "answers": [
             {
               "id": "a",
@@ -3650,7 +3558,7 @@
         {
           "id": "ln_pc2_q4",
           "text": "Quel est le navire privilégié ?",
-          "image": "https://www.loisirs-nautic.fr/img/test_cotier_2/Q4.png",
+          "image": "assets/qcm/web/a36e57f0f6-Q4.png",
           "answers": [
             {
               "id": "a",
@@ -3674,7 +3582,7 @@
         {
           "id": "ln_pc2_q8",
           "text": "Un navire montre ces marques :",
-          "image": "https://www.loisirs-nautic.fr/img/test_cotier_2/Q8.png",
+          "image": "assets/qcm/web/1a1fd9c902-Q8.png",
           "answers": [
             {
               "id": "a",
@@ -3708,7 +3616,7 @@
         {
           "id": "ln_pc2_q19",
           "text": "Vous êtes sur le navire B et vous rattrapez le navire A. Que faites-vous ?",
-          "image": "https://www.loisirs-nautic.fr/img/test_cotier_2/Q19.png",
+          "image": "assets/qcm/web/ccd82f8f10-Q19.png",
           "answers": [
             {
               "id": "a",
@@ -3766,7 +3674,7 @@
         {
           "id": "ln_pc3_q2",
           "text": "Vous êtes sur le navire A. Que faites vous ?",
-          "image": "https://www.loisirs-nautic.fr/img/test_cotier_3/Q1.png",
+          "image": "assets/qcm/web/0c56852674-Q1.png",
           "answers": [
             {
               "id": "a",
@@ -3795,7 +3703,7 @@
         {
           "id": "ln_pc3_q6",
           "text": "Il s'agit d'un navire :",
-          "image": "https://www.loisirs-nautic.fr/img/test_cotier_3/Q6.png",
+          "image": "assets/qcm/web/500dc10793-Q6.png",
           "answers": [
             {
               "id": "a",
@@ -3829,7 +3737,7 @@
         {
           "id": "ln_pc3_q15",
           "text": "Qui doit manoeuvrer ?",
-          "image": "https://www.loisirs-nautic.fr/img/test_cotier_3/Q15.png",
+          "image": "assets/qcm/web/c04bbd2f3c-Q15.png",
           "answers": [
             {
               "id": "a",
@@ -3858,7 +3766,7 @@
         {
           "id": "ln_pc4_q3",
           "text": "Qui doit manoeuvrer ?",
-          "image": "https://www.loisirs-nautic.fr/img/test_cotier_4/Q3.png",
+          "image": "assets/qcm/web/c3d22339c9-Q3.png",
           "answers": [
             {
               "id": "a",
@@ -3882,7 +3790,7 @@
         {
           "id": "ln_pc4_q9",
           "text": "Vous rencontrez un navire venant en face de vous. Que faites-vous ?",
-          "image": "https://www.loisirs-nautic.fr/img/test_cotier_4/Q9.png",
+          "image": "assets/qcm/web/3b209da1cc-Q9.png",
           "answers": [
             {
               "id": "a",
@@ -3911,7 +3819,7 @@
         {
           "id": "ln_pc4_q10",
           "text": "Voyant ce navire face à vous :",
-          "image": "https://www.loisirs-nautic.fr/img/test_cotier_4/Q10.png",
+          "image": "assets/qcm/web/064e36b0d6-Q10.png",
           "answers": [
             {
               "id": "a",
@@ -3940,7 +3848,7 @@
         {
           "id": "ln_pc4_q13",
           "text": "Lequel de ces navires doit manoeuvrer ?",
-          "image": "https://www.loisirs-nautic.fr/img/test_cotier_4/Q13.png",
+          "image": "assets/qcm/web/2fd46f3261-Q13.png",
           "answers": [
             {
               "id": "a",
@@ -4027,7 +3935,7 @@
         {
           "id": "ln_pc5_q3",
           "text": "Sur le bateau rouge, vous vous rapprochez de l'autre navire devant vous :",
-          "image": "https://www.loisirs-nautic.fr/img/test_cotier_5/Q3.png",
+          "image": "assets/qcm/web/486753b3bc-Q3.png",
           "answers": [
             {
               "id": "a",
@@ -4051,7 +3959,7 @@
         {
           "id": "ln_pc5_q11",
           "text": "Un navire montre ce cylindre. C'est un :",
-          "image": "https://www.loisirs-nautic.fr/img/test_cotier_5/Q11.png",
+          "image": "assets/qcm/web/84aaff9de4-Q11.png",
           "answers": [
             {
               "id": "a",
@@ -4104,7 +4012,7 @@
         {
           "id": "ln_pc5_q22",
           "text": "Quel est le navire le plus privilégié ?",
-          "image": "https://www.loisirs-nautic.fr/img/test_regles_barre/Q31.png",
+          "image": "assets/qcm/web/2083b3d61d-Q31.png",
           "answers": [
             {
               "id": "a",
@@ -4133,7 +4041,7 @@
         {
           "id": "ln_pc5_q27",
           "text": "Arrivant en rade, vous voyez ce navire devant vous.",
-          "image": "https://www.loisirs-nautic.fr/img/test_autre/pc738.png",
+          "image": "assets/qcm/web/f8441e0305-pc738.png",
           "answers": [
             {
               "id": "a",
@@ -4167,7 +4075,7 @@
         {
           "id": "ln_pc6_q2",
           "text": "Le navire qui porte ces marques est :",
-          "image": "https://www.loisirs-nautic.fr/img/test_cotier_6/Q2.png",
+          "image": "assets/qcm/web/399f52b926-Q2.png",
           "answers": [
             {
               "id": "a",
@@ -4235,7 +4143,7 @@
         {
           "id": "ln_pc6_q16",
           "text": "Le navire A est rattrapé par le navire B. Qui doit manoeuvrer ?",
-          "image": "https://www.loisirs-nautic.fr/img/test_cotier_6/Q16.png",
+          "image": "assets/qcm/web/2c10965cd6-Q16.png",
           "answers": [
             {
               "id": "a",
@@ -4272,7 +4180,7 @@
         {
           "id": "ln_pc3_q26",
           "text": "Qu'indique ce symbole ?",
-          "image": "https://www.loisirs-nautic.fr/img/test_carte/q11.png",
+          "image": "assets/qcm/web/8261b26180-q11.png",
           "answers": [
             {
               "id": "a",
@@ -4325,7 +4233,7 @@
         {
           "id": "ln_pc6_q27",
           "text": "Sur une carte marine, lequel de ces symboles indique un port de plaisance ?",
-          "image": "https://www.loisirs-nautic.fr/img/test_carte/q675.png",
+          "image": "assets/qcm/web/cdce83b624-q675.png",
           "answers": [
             {
               "id": "a",
@@ -4378,7 +4286,7 @@
         {
           "id": "ln_pc6_q31",
           "text": "Sur une carte marine, ce symbole représente :",
-          "image": "https://www.loisirs-nautic.fr/img/test_autre/pc627.png",
+          "image": "assets/qcm/web/9effe3eb9d-pc627.png",
           "answers": [
             {
               "id": "a",
@@ -4444,7 +4352,7 @@
         {
           "id": "ln_pc2_q23",
           "text": "Vous constatez que la pression baromètrique baisse rapidement.",
-          "image": "https://www.loisirs-nautic.fr/img/test_securite_mer/q6.jpg",
+          "image": "assets/qcm/web/5fff6ca6b5-q6.jpg",
           "answers": [
             {
               "id": "a",
@@ -4492,7 +4400,7 @@
         {
           "id": "ln_pc2_q27",
           "text": "Les conditions météorologiques peuvent-elles influer sur la hauteur des marées ?",
-          "image": "https://www.loisirs-nautic.fr/img/test_autre/pc573.jpg",
+          "image": "assets/qcm/web/f113866e2b-pc573.jpg",
           "answers": [
             {
               "id": "a",
@@ -4574,7 +4482,7 @@
         {
           "id": "ln_pc5_q28",
           "text": "La direction du vent est donnée :",
-          "image": "https://www.loisirs-nautic.fr/img/test_hauturier/ph239.jpg",
+          "image": "assets/qcm/web/848e57ce34-ph239.jpg",
           "answers": [
             {
               "id": "a",
@@ -4606,7 +4514,7 @@
         {
           "id": "ln_pc1_q34",
           "text": "Une VHF fixe a une puissance maximum de :",
-          "image": "https://www.loisirs-nautic.fr/img/picto_vhf_20.png",
+          "image": "assets/qcm/web/d0b8c944b8-picto_vhf_20.png",
           "answers": [
             {
               "id": "a",
@@ -4635,7 +4543,7 @@
         {
           "id": "ln_pc1_q35",
           "text": "Le canal 16 est un canal :",
-          "image": "https://www.loisirs-nautic.fr/img/picto_vhf_20.png",
+          "image": "assets/qcm/web/d0b8c944b8-picto_vhf_20.png",
           "answers": [
             {
               "id": "a",
@@ -4669,7 +4577,7 @@
         {
           "id": "ln_pc1_q36",
           "text": "Pouvez-vous parler sur le canal 70 ?",
-          "image": "https://www.loisirs-nautic.fr/img/picto_vhf_20.png",
+          "image": "assets/qcm/web/d0b8c944b8-picto_vhf_20.png",
           "answers": [
             {
               "id": "a",
@@ -4698,7 +4606,7 @@
         {
           "id": "ln_pc1_q37",
           "text": "Le feu s'est déclaré à bord. Vous envoyez un message VHF :",
-          "image": "https://www.loisirs-nautic.fr/img/picto_vhf_20.png",
+          "image": "assets/qcm/web/d0b8c944b8-picto_vhf_20.png",
           "answers": [
             {
               "id": "a",
@@ -4732,7 +4640,7 @@
         {
           "id": "ln_pc1_q38",
           "text": "Comment épelez-vous le nom du navire COBALT ?",
-          "image": "https://www.loisirs-nautic.fr/img/picto_vhf_20.png",
+          "image": "assets/qcm/web/d0b8c944b8-picto_vhf_20.png",
           "answers": [
             {
               "id": "a",
@@ -4761,7 +4669,7 @@
         {
           "id": "ln_pc1_q40",
           "text": "Vous recevez un message de détresse par ASN :",
-          "image": "https://www.loisirs-nautic.fr/img/picto_vhf_20.png",
+          "image": "assets/qcm/web/d0b8c944b8-picto_vhf_20.png",
           "answers": [
             {
               "id": "a",
@@ -4790,7 +4698,7 @@
         {
           "id": "ln_pc2_q34",
           "text": "Quelle est la portée d'une VHF fixe ?",
-          "image": "https://www.loisirs-nautic.fr/img/picto_vhf_20.png",
+          "image": "assets/qcm/web/d0b8c944b8-picto_vhf_20.png",
           "answers": [
             {
               "id": "a",
@@ -4819,7 +4727,7 @@
         {
           "id": "ln_pc2_q35",
           "text": "Quel est le canal VHF utilisé pour un appel ASN ?",
-          "image": "https://www.loisirs-nautic.fr/img/picto_vhf_20.png",
+          "image": "assets/qcm/web/d0b8c944b8-picto_vhf_20.png",
           "answers": [
             {
               "id": "a",
@@ -4853,7 +4761,7 @@
         {
           "id": "ln_pc2_q36",
           "text": "La touche / fonction DUAL de la VHF permet :",
-          "image": "https://www.loisirs-nautic.fr/img/picto_vhf_20.png",
+          "image": "assets/qcm/web/d0b8c944b8-picto_vhf_20.png",
           "answers": [
             {
               "id": "a",
@@ -4882,7 +4790,7 @@
         {
           "id": "ln_pc2_q37",
           "text": "Êtes-vous autorisé à vous servir de votre VHF portative ?",
-          "image": "https://www.loisirs-nautic.fr/img/picto_vhf_20.png",
+          "image": "assets/qcm/web/d0b8c944b8-picto_vhf_20.png",
           "answers": [
             {
               "id": "a",
@@ -4906,7 +4814,7 @@
         {
           "id": "ln_pc2_q38",
           "text": "Est-il approprié d'envoyer un message MAYDAY ?",
-          "image": "https://www.loisirs-nautic.fr/img/picto_vhf_20.png",
+          "image": "assets/qcm/web/d0b8c944b8-picto_vhf_20.png",
           "answers": [
             {
               "id": "a",
@@ -4930,7 +4838,7 @@
         {
           "id": "ln_pc2_q39",
           "text": "Vous contactez le CROSS en utilisant le canal 16 ou 70.",
-          "image": "https://www.loisirs-nautic.fr/img/picto_vhf_20.png",
+          "image": "assets/qcm/web/d0b8c944b8-picto_vhf_20.png",
           "answers": [
             {
               "id": "a",
@@ -4964,7 +4872,7 @@
         {
           "id": "ln_pc2_q40",
           "text": "En radiotéléphonie, comment réglez-vous la puissance de votre VHF pour une communication à courte distance ?",
-          "image": "https://www.loisirs-nautic.fr/img/picto_vhf_20.png",
+          "image": "assets/qcm/web/d0b8c944b8-picto_vhf_20.png",
           "answers": [
             {
               "id": "a",
@@ -4993,7 +4901,7 @@
         {
           "id": "ln_pc3_q34",
           "text": "Qu'est-ce que le numéro MMSI ?",
-          "image": "https://www.loisirs-nautic.fr/img/picto_vhf_20.png",
+          "image": "assets/qcm/web/d0b8c944b8-picto_vhf_20.png",
           "answers": [
             {
               "id": "a",
@@ -5022,7 +4930,7 @@
         {
           "id": "ln_pc3_q35",
           "text": "La licence d'exploitation est obligatoire pour une VHF portative.",
-          "image": "https://www.loisirs-nautic.fr/img/picto_vhf_20.png",
+          "image": "assets/qcm/web/d0b8c944b8-picto_vhf_20.png",
           "answers": [
             {
               "id": "a",
@@ -5046,7 +4954,7 @@
         {
           "id": "ln_pc3_q36",
           "text": "Pouvez-vous utiliser votre VHF portative pour appeler vos équipiers qui vous attendent sur le bateau ?",
-          "image": "https://www.loisirs-nautic.fr/img/picto_vhf_20.png",
+          "image": "assets/qcm/web/d0b8c944b8-picto_vhf_20.png",
           "answers": [
             {
               "id": "a",
@@ -5075,7 +4983,7 @@
         {
           "id": "ln_pc3_q37",
           "text": "Une vhf portative non ASN a les mêmes fonctions qu'une vhf fixe non ASN.",
-          "image": "https://www.loisirs-nautic.fr/img/picto_vhf_20.png",
+          "image": "assets/qcm/web/d0b8c944b8-picto_vhf_20.png",
           "answers": [
             {
               "id": "a",
@@ -5099,7 +5007,7 @@
         {
           "id": "ln_pc3_q38",
           "text": "Vous pouvez en aviser le CROSS en utilisant un message de type :",
-          "image": "https://www.loisirs-nautic.fr/img/picto_vhf_20.png",
+          "image": "assets/qcm/web/d0b8c944b8-picto_vhf_20.png",
           "answers": [
             {
               "id": "a",
@@ -5128,7 +5036,7 @@
         {
           "id": "ln_pc3_q39",
           "text": "Quel réglage de VHF devez-vous vérifier ?",
-          "image": "https://www.loisirs-nautic.fr/img/picto_vhf_20.png",
+          "image": "assets/qcm/web/d0b8c944b8-picto_vhf_20.png",
           "answers": [
             {
               "id": "a",
@@ -5157,7 +5065,7 @@
         {
           "id": "ln_pc3_q40",
           "text": "Pour pouvoir l'utiliser :",
-          "image": "https://www.loisirs-nautic.fr/img/picto_vhf_20.png",
+          "image": "assets/qcm/web/d0b8c944b8-picto_vhf_20.png",
           "answers": [
             {
               "id": "a",
@@ -5186,7 +5094,7 @@
         {
           "id": "ln_pc4_q34",
           "text": "Vous avez le droit d'utiliser une VHF fixe dans la limite des eaux françaises, c'est à dire dans la limite de :",
-          "image": "https://www.loisirs-nautic.fr/img/picto_vhf_20.png",
+          "image": "assets/qcm/web/d0b8c944b8-picto_vhf_20.png",
           "answers": [
             {
               "id": "a",
@@ -5220,7 +5128,7 @@
         {
           "id": "ln_pc4_q35",
           "text": "La licence est obligatoire :",
-          "image": "https://www.loisirs-nautic.fr/img/picto_vhf_20.png",
+          "image": "assets/qcm/web/d0b8c944b8-picto_vhf_20.png",
           "answers": [
             {
               "id": "a",
@@ -5249,7 +5157,7 @@
         {
           "id": "ln_pc4_q36",
           "text": "À bord, une personne est blessée. Pour demander une assistance médicale, vous utilisez :",
-          "image": "https://www.loisirs-nautic.fr/img/picto_vhf_20.png",
+          "image": "assets/qcm/web/d0b8c944b8-picto_vhf_20.png",
           "answers": [
             {
               "id": "a",
@@ -5278,7 +5186,7 @@
         {
           "id": "ln_pc4_q37",
           "text": "Dans tous les cas, et même si je ne respecte pas la règlementation, la VHF transmet automatiquement :",
-          "image": "https://www.loisirs-nautic.fr/img/picto_vhf_20.png",
+          "image": "assets/qcm/web/d0b8c944b8-picto_vhf_20.png",
           "answers": [
             {
               "id": "a",
@@ -5312,7 +5220,7 @@
         {
           "id": "ln_pc4_q38",
           "text": "Comment épelez-vous le mot MARIO ?",
-          "image": "https://www.loisirs-nautic.fr/img/picto_vhf_20.png",
+          "image": "assets/qcm/web/d0b8c944b8-picto_vhf_20.png",
           "answers": [
             {
               "id": "a",
@@ -5341,7 +5249,7 @@
         {
           "id": "ln_pc4_q39",
           "text": "Comment procédez-vous ?",
-          "image": "https://www.loisirs-nautic.fr/img/picto_vhf_20.png",
+          "image": "assets/qcm/web/d0b8c944b8-picto_vhf_20.png",
           "answers": [
             {
               "id": "a",
@@ -5370,7 +5278,7 @@
         {
           "id": "ln_pc4_q40",
           "text": "À l'aide d'un dispositif spécial (triangulation par radiogoniométrie), la VHF seule permet-elle d'être localisée ?",
-          "image": "https://www.loisirs-nautic.fr/img/picto_vhf_20.png",
+          "image": "assets/qcm/web/d0b8c944b8-picto_vhf_20.png",
           "answers": [
             {
               "id": "a",
@@ -5394,7 +5302,7 @@
         {
           "id": "ln_pc5_q34",
           "text": "Que signifie l'abréviation SMDSM ?",
-          "image": "https://www.loisirs-nautic.fr/img/picto_vhf_20.png",
+          "image": "assets/qcm/web/d0b8c944b8-picto_vhf_20.png",
           "answers": [
             {
               "id": "a",
@@ -5423,7 +5331,7 @@
         {
           "id": "ln_pc5_q35",
           "text": "La portée d'une VHF fixe d'un voilier sera plus importante que celle d'une VHF portative sur un pneumatique parce que :",
-          "image": "https://www.loisirs-nautic.fr/img/picto_vhf_20.png",
+          "image": "assets/qcm/web/d0b8c944b8-picto_vhf_20.png",
           "answers": [
             {
               "id": "a",
@@ -5452,7 +5360,7 @@
         {
           "id": "ln_pc5_q36",
           "text": "Quel est le message vhf approprié à cette situation ?",
-          "image": "https://www.loisirs-nautic.fr/img/picto_vhf_20.png",
+          "image": "assets/qcm/web/d0b8c944b8-picto_vhf_20.png",
           "answers": [
             {
               "id": "a",
@@ -5481,7 +5389,7 @@
         {
           "id": "ln_pc5_q37",
           "text": "L'annonce d'urgence URGENCY est la correspondance ASN du message radio :",
-          "image": "https://www.loisirs-nautic.fr/img/picto_vhf_20.png",
+          "image": "assets/qcm/web/d0b8c944b8-picto_vhf_20.png",
           "answers": [
             {
               "id": "a",
@@ -5515,7 +5423,7 @@
         {
           "id": "ln_pc5_q38",
           "text": "En radiotéléphonie, quel est le canal international d'appel et de détresse ?",
-          "image": "https://www.loisirs-nautic.fr/img/picto_vhf_20.png",
+          "image": "assets/qcm/web/d0b8c944b8-picto_vhf_20.png",
           "answers": [
             {
               "id": "a",
@@ -5549,7 +5457,7 @@
         {
           "id": "ln_pc5_q39",
           "text": "Votre navire, très fortement gîté, risque de chavirer. Quelle est la nature de détresse à transmettre en ASN ?",
-          "image": "https://www.loisirs-nautic.fr/img/picto_vhf_20.png",
+          "image": "assets/qcm/web/d0b8c944b8-picto_vhf_20.png",
           "answers": [
             {
               "id": "a",
@@ -5583,7 +5491,7 @@
         {
           "id": "ln_pc5_q40",
           "text": "Quelle est la durée d'autonomie d'une VHF portable ?",
-          "image": "https://www.loisirs-nautic.fr/img/picto_vhf_20.png",
+          "image": "assets/qcm/web/d0b8c944b8-picto_vhf_20.png",
           "answers": [
             {
               "id": "a",
@@ -5612,7 +5520,7 @@
         {
           "id": "ln_pc6_q34",
           "text": "Appuyer sur la touche PTT permet :",
-          "image": "https://www.loisirs-nautic.fr/img/picto_vhf_20.png",
+          "image": "assets/qcm/web/d0b8c944b8-picto_vhf_20.png",
           "answers": [
             {
               "id": "a",
@@ -5641,7 +5549,7 @@
         {
           "id": "ln_pc6_q35",
           "text": "Un navire de plaisance de moins de 24m est-il \"astreint\" au SMDSM ?",
-          "image": "https://www.loisirs-nautic.fr/img/picto_vhf_20.png",
+          "image": "assets/qcm/web/d0b8c944b8-picto_vhf_20.png",
           "answers": [
             {
               "id": "a",
@@ -5670,7 +5578,7 @@
         {
           "id": "ln_pc6_q36",
           "text": "Sur un canal simplex, les 2 correspondants peuvent-ils parler et s'entendre simultanément ?",
-          "image": "https://www.loisirs-nautic.fr/img/picto_vhf_20.png",
+          "image": "assets/qcm/web/d0b8c944b8-picto_vhf_20.png",
           "answers": [
             {
               "id": "a",
@@ -5694,7 +5602,7 @@
         {
           "id": "ln_pc6_q37",
           "text": "Le CRR devient obligatoire à partir du moment où :",
-          "image": "https://www.loisirs-nautic.fr/img/picto_vhf_20.png",
+          "image": "assets/qcm/web/d0b8c944b8-picto_vhf_20.png",
           "answers": [
             {
               "id": "a",
@@ -5723,7 +5631,7 @@
         {
           "id": "ln_pc6_q38",
           "text": "À quoi est utilisé le canal 70 ?",
-          "image": "https://www.loisirs-nautic.fr/img/picto_vhf_20.png",
+          "image": "assets/qcm/web/d0b8c944b8-picto_vhf_20.png",
           "answers": [
             {
               "id": "a",
@@ -5799,7 +5707,7 @@
         {
           "id": "ln_pc1_q8",
           "text": "Le chef de bord est responsable du port du gilet de sauvetage.",
-          "image": "https://www.loisirs-nautic.fr/img/materiel_securite/gilet.jpg",
+          "image": "assets/qcm/web/ff562ce289-gilet.jpg",
           "answers": [
             {
               "id": "a",
@@ -5852,7 +5760,7 @@
         {
           "id": "ln_pc1_q15",
           "text": "Le compas de route est obligatoire à partir de :",
-          "image": "https://www.loisirs-nautic.fr/img/materiel_securite/compas.jpg",
+          "image": "assets/qcm/web/a4cc707322-compas.jpg",
           "answers": [
             {
               "id": "a",
@@ -5944,7 +5852,7 @@
         {
           "id": "ln_pc1_q27",
           "text": "Quel est le temps nécessaire à la dégradation d'un sac en plastique ?",
-          "image": "https://www.loisirs-nautic.fr/img/test_fluvial_reglementation/pf317.jpg",
+          "image": "assets/qcm/web/7afb102596-pf317.jpg",
           "answers": [
             {
               "id": "a",
@@ -6007,7 +5915,7 @@
         {
           "id": "ln_pc1_q31",
           "text": "Le dispositif pour remonter à bord une personne tombée à l'eau est obligatoire :",
-          "image": "https://www.loisirs-nautic.fr/img/corrections/PC/pc553.jpg",
+          "image": "assets/qcm/web/bf43c3bc87-pc553.jpg",
           "answers": [
             {
               "id": "a",
@@ -6142,7 +6050,7 @@
         {
           "id": "ln_pc2_q28",
           "text": "Vous posez votre téléphone portable près du compas de route magnétique :",
-          "image": "https://www.loisirs-nautic.fr/img/test_autre/pc572.png",
+          "image": "assets/qcm/web/6447df02c9-pc572.png",
           "answers": [
             {
               "id": "a",
@@ -6166,7 +6074,7 @@
         {
           "id": "ln_pc2_q29",
           "text": "J'utilise un VNM ne pouvant emporter qu'une seule personne. Je peux naviguer jusqu'à :",
-          "image": "https://www.loisirs-nautic.fr/img/test_autre/Q32.JPG",
+          "image": "assets/qcm/web/559b5f4220-Q32.JPG",
           "answers": [
             {
               "id": "a",
@@ -6195,7 +6103,7 @@
         {
           "id": "ln_pc2_q31",
           "text": "Un extincteur est-il obligatoire sur un navire de plaisance à moteur inboard ?",
-          "image": "https://www.loisirs-nautic.fr/img/test_autre/pc281.png",
+          "image": "assets/qcm/web/c29de784e5-pc281.png",
           "answers": [
             {
               "id": "a",
@@ -6345,7 +6253,7 @@
         {
           "id": "ln_pc3_q29",
           "text": "Vous apercevez une fusée rouge. Quelle est sa signification ?",
-          "image": "https://www.loisirs-nautic.fr/img/test_securite_mer/q703.jpg",
+          "image": "assets/qcm/web/06b9f9e5f1-q703.jpg",
           "answers": [
             {
               "id": "a",
@@ -6591,7 +6499,7 @@
         {
           "id": "ln_pc4_q33",
           "text": "Pour pratiquer le ski nautique, dans quel cas le pilote du navire peut-il être seul à bord ?",
-          "image": "https://www.loisirs-nautic.fr/img/test_autre/pc737.png",
+          "image": "assets/qcm/web/af2907a4d1-pc737.png",
           "answers": [
             {
               "id": "a",
@@ -6712,7 +6620,7 @@
         {
           "id": "ln_pc5_q23",
           "text": "Quel est le document qui précise la présence d'extincteur à bord de votre navire ?",
-          "image": "https://www.loisirs-nautic.fr/img/test_autre/divers_24.png",
+          "image": "assets/qcm/web/8806ab25b7-divers_24.png",
           "answers": [
             {
               "id": "a",
@@ -6775,7 +6683,7 @@
         {
           "id": "ln_pc5_q29",
           "text": "Une ligne de mouillage est-elle obligatoire ?",
-          "image": "https://www.loisirs-nautic.fr/img/test_autre/divers_35.jpg",
+          "image": "assets/qcm/web/74a05dc44c-divers_35.jpg",
           "answers": [
             {
               "id": "a",
@@ -6799,7 +6707,7 @@
         {
           "id": "ln_pc5_q31",
           "text": "Une peinture antisalissures contenant de l'étain est-elle autorisée pour protéger la coque du navire ?",
-          "image": "https://www.loisirs-nautic.fr/img/test_autre/qpc705.jpg",
+          "image": "assets/qcm/web/75073e16cd-qpc705.jpg",
           "answers": [
             {
               "id": "a",
@@ -6828,7 +6736,7 @@
         {
           "id": "ln_pc6_q9",
           "text": "Pour un navire habitable, ou avec un moteur hors-bord d'au moins 40 cv, un extincteur est obligatoire :",
-          "image": "https://www.loisirs-nautic.fr/img/test_autre/pc281.png",
+          "image": "assets/qcm/web/c29de784e5-pc281.png",
           "answers": [
             {
               "id": "a",
@@ -6930,7 +6838,7 @@
         {
           "id": "ln_pc6_q20",
           "text": "Pratiquant la pêche de loisirs, vous avez capturé un poisson. Que devez-vous faire avant de le ramener à terre ?",
-          "image": "https://www.loisirs-nautic.fr/img/test_autre/pc524.png",
+          "image": "assets/qcm/web/96ab98568e-pc524.png",
           "answers": [
             {
               "id": "a",
@@ -6954,7 +6862,7 @@
         {
           "id": "ln_pc6_q23",
           "text": "Sur un scooter des mers, lequel de ces éléments de sécurité n'est pas obligatoire en zone basique mais le devient en zone côtière ?",
-          "image": "https://www.loisirs-nautic.fr/img/corrections/PC/pc273.png",
+          "image": "assets/qcm/web/a3fabe2bbd-pc273.png",
           "answers": [
             {
               "id": "a",
@@ -7071,6 +6979,6 @@
     }
   ],
   "metadata": {
-    "totalQuestions": 245
+    "totalQuestions": 241
   }
 }

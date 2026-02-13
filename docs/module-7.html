@@ -11,7 +11,10 @@
     <!-- Navigation persistante -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top">
         <div class="container">
-            <a class="navbar-brand fw-bold" href="index.html">Patron d'Embarcation</a>
+            <a class="navbar-brand fw-bold d-flex align-items-center gap-2" href="index.html">
+                <img src="assets/annales/qcm/2022/image1.png" alt="Logo SUF Marine" class="suf-navbar-logo" loading="lazy">
+                <span>Patron d'Embarcation</span>
+            </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -47,7 +50,7 @@
         </div>
         <div class="col-lg-4 text-lg-end">
             <a href="parcours.html#module-7" class="btn btn-light btn-sm">Retour au parcours</a>
-            <a href="session.html?mode=quick&module=7" class="btn btn-outline-light btn-sm ms-2">QCM du module</a>
+            <a href="session.html?mode=exam-module&module=7" class="btn btn-outline-light btn-sm ms-2">Examen module</a>
         </div>
     </div>
 </section>
@@ -59,7 +62,71 @@
                 <h2 class="h5 mb-0 section-head"><span class="icon-badge">CO</span>Cours complet</h2>
             </header>
             <div class="card-body course-content">
-                <p>Vecteurs de courant, construction géométrique, route fond</p><h5>Objectifs de progression</h5><ul><li>Flux : durée pendant laquelle la mer monte (de BM à PM).</li><li>Reflux : durée pendant laquelle la mer descend (de PM à BM).</li><li>Flot : courant associé au flux.</li><li>Jusant : courant associé au reflux.</li><li>Marnage (amplitude) : différence de niveau entre une PM et une BM consécutives.</li><li>Coefficient : mesure de la « force » de la marée (≈ 20 à 120). &gt;70 = vives-eaux; &lt;70 = mortes-eaux.</li><li>Vecteurs vitesse</li><li>Route fond</li><li>Dérive</li><li>Construction</li><li>Représenter les vecteurs de courant</li><li>Construire la route fond sur carte</li><li>Calculer la dérive due au courant</li><li>Vérifier la cohérence des routes (surface vs fond)</li></ul><h5>Notions et definitions essentielles</h5><ul><li><strong>Flux</strong> : durée pendant laquelle la mer monte (de BM à PM).</li><li><strong>Reflux</strong> : durée pendant laquelle la mer descend (de PM à BM).</li><li><strong>Flot</strong> : courant associé au flux.</li><li><strong>Jusant</strong> : courant associé au reflux.</li><li><strong>Marnage (amplitude)</strong> : différence de niveau entre une PM et une BM consécutives.</li><li><strong>Coefficient</strong> : mesure de la « force » de la marée (≈ 20 à 120). &gt;70 = vives-eaux; &lt;70 = mortes-eaux.</li><li><strong>Port de référence</strong> : port principal dont les tables donnent heures et hauteurs de PM/BM.</li><li><strong>Port rattaché</strong> : port secondaire dont les horaires/hauteurs se déduisent par corrections.</li><li><strong>Heure marée</strong> : 1/6 de la durée de flux ou de jusant.</li><li><strong>Rs</strong> : route surface</li><li><strong>Vc</strong> : vecteur courant</li><li><strong>Rf</strong> : route fond</li><li><strong>Dérive</strong> : Rf - Rs</li><li><strong>Courants tidals</strong> : tables marées</li></ul><h5>Points cle a maitriser</h5><ul><li>Rf = Rs + Vc</li><li>Parallélogramme vectoriel</li><li>Triangle fermé vecteurs</li><li>Représenter les vecteurs de courant</li><li>Construire la route fond sur carte</li><li>Calculer la dérive due au courant</li><li>Vérifier la cohérence des routes (surface vs fond)</li></ul><h5>Methode de resolution en examen</h5><ol><li>Tracer le vecteur surface puis le vecteur courant.</li><li>Fermer le triangle des vitesses pour obtenir route et vitesse fond.</li><li>Verifier le resultat avec la distance franchie sur le fond.</li></ol><h5>Erreurs frequentes a eviter</h5><ul><li>Confondre route surface et route fond.</li><li>Utiliser une echelle de vitesse incoherente sur les vecteurs.</li><li>Oublier l influence de la derive vent.</li></ul><h5>Formules et reperes</h5><p><code>Rf = Rs + Vc vectoriel</code></p>
+                <div class="row g-4">
+                    <aside class="col-lg-4">
+                        <div class="course-toc-panel">
+                            <h3 class="h6 mb-2">Plan du cours</h3>
+                            <div class="list-group list-group-flush">
+                                <a href="#course-section-objectifs-de-progression-1" class="list-group-item list-group-item-action course-toc-link">
+                                    Objectifs de progression
+                                </a>
+                                <a href="#course-section-notions-et-definitions-essentielles-2" class="list-group-item list-group-item-action course-toc-link">
+                                    Notions et definitions essentielles
+                                </a>
+                                <a href="#course-section-points-cle-a-maitriser-3" class="list-group-item list-group-item-action course-toc-link">
+                                    Points cle a maitriser
+                                </a>
+                                <a href="#course-section-methode-de-resolution-en-examen-4" class="list-group-item list-group-item-action course-toc-link">
+                                    Methode de resolution en examen
+                                </a>
+                                <a href="#course-section-erreurs-frequentes-a-eviter-5" class="list-group-item list-group-item-action course-toc-link">
+                                    Erreurs frequentes a eviter
+                                </a>
+                                <a href="#course-section-formules-et-reperes-6" class="list-group-item list-group-item-action course-toc-link">
+                                    Formules et reperes
+                                </a>
+                            </div>
+                        </div>
+                    </aside>
+                    <div class="col-lg-8">
+                        <section id="course-section-objectifs-de-progression-1" class="course-section-block mb-4">
+                            <h3 class="h5 mb-2">Objectifs de progression</h3>
+                            <div class="course-section-html">
+                                <ul><li>Flux : durée pendant laquelle la mer monte (de BM à PM).</li><li>Reflux : durée pendant laquelle la mer descend (de PM à BM).</li><li>Flot : courant associé au flux.</li><li>Jusant : courant associé au reflux.</li><li>Marnage (amplitude) : différence de niveau entre une PM et une BM consécutives.</li><li>Coefficient : mesure de la « force » de la marée (≈ 20 à 120). &gt;70 = vives-eaux; &lt;70 = mortes-eaux.</li><li>Vecteurs vitesse</li><li>Route fond</li><li>Dérive</li><li>Construction</li><li>Représenter les vecteurs de courant</li><li>Construire la route fond sur carte</li><li>Calculer la dérive due au courant</li><li>Vérifier la cohérence des routes (surface vs fond)</li></ul>
+                            </div>
+                        </section>
+                        <section id="course-section-notions-et-definitions-essentielles-2" class="course-section-block mb-4">
+                            <h3 class="h5 mb-2">Notions et definitions essentielles</h3>
+                            <div class="course-section-html">
+                                <ul><li><strong>Flux</strong> : durée pendant laquelle la mer monte (de BM à PM).</li><li><strong>Reflux</strong> : durée pendant laquelle la mer descend (de PM à BM).</li><li><strong>Flot</strong> : courant associé au flux.</li><li><strong>Jusant</strong> : courant associé au reflux.</li><li><strong>Marnage (amplitude)</strong> : différence de niveau entre une PM et une BM consécutives.</li><li><strong>Coefficient</strong> : mesure de la « force » de la marée (≈ 20 à 120). &gt;70 = vives-eaux; &lt;70 = mortes-eaux.</li><li><strong>Port de référence</strong> : port principal dont les tables donnent heures et hauteurs de PM/BM.</li><li><strong>Port rattaché</strong> : port secondaire dont les horaires/hauteurs se déduisent par corrections.</li><li><strong>Heure marée</strong> : 1/6 de la durée de flux ou de jusant.</li><li><strong>Rs</strong> : route surface</li><li><strong>Vc</strong> : vecteur courant</li><li><strong>Rf</strong> : route fond</li><li><strong>Dérive</strong> : Rf - Rs</li><li><strong>Courants tidals</strong> : tables marées</li></ul>
+                            </div>
+                        </section>
+                        <section id="course-section-points-cle-a-maitriser-3" class="course-section-block mb-4">
+                            <h3 class="h5 mb-2">Points cle a maitriser</h3>
+                            <div class="course-section-html">
+                                <ul><li>Rf = Rs + Vc</li><li>Parallélogramme vectoriel</li><li>Triangle fermé vecteurs</li><li>Représenter les vecteurs de courant</li><li>Construire la route fond sur carte</li><li>Calculer la dérive due au courant</li><li>Vérifier la cohérence des routes (surface vs fond)</li></ul>
+                            </div>
+                        </section>
+                        <section id="course-section-methode-de-resolution-en-examen-4" class="course-section-block mb-4">
+                            <h3 class="h5 mb-2">Methode de resolution en examen</h3>
+                            <div class="course-section-html">
+                                <ol><li>Tracer le vecteur surface puis le vecteur courant.</li><li>Fermer le triangle des vitesses pour obtenir route et vitesse fond.</li><li>Verifier le resultat avec la distance franchie sur le fond.</li></ol>
+                            </div>
+                        </section>
+                        <section id="course-section-erreurs-frequentes-a-eviter-5" class="course-section-block mb-4">
+                            <h3 class="h5 mb-2">Erreurs frequentes a eviter</h3>
+                            <div class="course-section-html">
+                                <ul><li>Confondre route surface et route fond.</li><li>Utiliser une echelle de vitesse incoherente sur les vecteurs.</li><li>Oublier l influence de la derive vent.</li></ul>
+                            </div>
+                        </section>
+                        <section id="course-section-formules-et-reperes-6" class="course-section-block mb-4">
+                            <h3 class="h5 mb-2">Formules et reperes</h3>
+                            <div class="course-section-html">
+                                <p><code>Rf = Rs + Vc vectoriel</code></p>
+                            </div>
+                        </section>
+                    </div>
+                </div>
             </div>
         </article>
 
@@ -68,18 +135,48 @@
                 <h2 class="h6 mb-0 section-head"><span class="icon-badge">CL</span>Checklist de revision</h2>
             </header>
             <div class="card-body">
-                <ul class="mb-0">
-                    <li>Flux : durée pendant laquelle la mer monte (de BM à PM).</li>
-                    <li>Reflux : durée pendant laquelle la mer descend (de PM à BM).</li>
-                    <li>Flot : courant associé au flux.</li>
-                    <li>Jusant : courant associé au reflux.</li>
-                    <li>Marnage (amplitude) : différence de niveau entre une PM et une BM consécutives.</li>
-                    <li>Coefficient : mesure de la « force » de la marée (≈ 20 à 120). &gt;70 &#x3D; vives-eaux; &lt;70 &#x3D; mortes-eaux.</li>
-                    <li>Vecteurs vitesse</li>
-                    <li>Route fond</li>
-                    <li>Dérive</li>
-                    <li>Construction</li>
-                </ul>
+                <div class="checklist-group" data-module-checklist="7">
+                    <div class="form-check checklist-item">
+                        <input class="form-check-input module-check-item" type="checkbox" id="module-7-check-0" data-check-index="0">
+                        <label class="form-check-label" for="module-7-check-0">Flux : durée pendant laquelle la mer monte (de BM à PM).</label>
+                    </div>
+                    <div class="form-check checklist-item">
+                        <input class="form-check-input module-check-item" type="checkbox" id="module-7-check-1" data-check-index="1">
+                        <label class="form-check-label" for="module-7-check-1">Reflux : durée pendant laquelle la mer descend (de PM à BM).</label>
+                    </div>
+                    <div class="form-check checklist-item">
+                        <input class="form-check-input module-check-item" type="checkbox" id="module-7-check-2" data-check-index="2">
+                        <label class="form-check-label" for="module-7-check-2">Flot : courant associé au flux.</label>
+                    </div>
+                    <div class="form-check checklist-item">
+                        <input class="form-check-input module-check-item" type="checkbox" id="module-7-check-3" data-check-index="3">
+                        <label class="form-check-label" for="module-7-check-3">Jusant : courant associé au reflux.</label>
+                    </div>
+                    <div class="form-check checklist-item">
+                        <input class="form-check-input module-check-item" type="checkbox" id="module-7-check-4" data-check-index="4">
+                        <label class="form-check-label" for="module-7-check-4">Marnage (amplitude) : différence de niveau entre une PM et une BM consécutives.</label>
+                    </div>
+                    <div class="form-check checklist-item">
+                        <input class="form-check-input module-check-item" type="checkbox" id="module-7-check-5" data-check-index="5">
+                        <label class="form-check-label" for="module-7-check-5">Coefficient : mesure de la « force » de la marée (≈ 20 à 120). &gt;70 &#x3D; vives-eaux; &lt;70 &#x3D; mortes-eaux.</label>
+                    </div>
+                    <div class="form-check checklist-item">
+                        <input class="form-check-input module-check-item" type="checkbox" id="module-7-check-6" data-check-index="6">
+                        <label class="form-check-label" for="module-7-check-6">Vecteurs vitesse</label>
+                    </div>
+                    <div class="form-check checklist-item">
+                        <input class="form-check-input module-check-item" type="checkbox" id="module-7-check-7" data-check-index="7">
+                        <label class="form-check-label" for="module-7-check-7">Route fond</label>
+                    </div>
+                    <div class="form-check checklist-item">
+                        <input class="form-check-input module-check-item" type="checkbox" id="module-7-check-8" data-check-index="8">
+                        <label class="form-check-label" for="module-7-check-8">Dérive</label>
+                    </div>
+                    <div class="form-check checklist-item">
+                        <input class="form-check-input module-check-item" type="checkbox" id="module-7-check-9" data-check-index="9">
+                        <label class="form-check-label" for="module-7-check-9">Construction</label>
+                    </div>
+                </div>
             </div>
         </article>
     </section>
@@ -94,7 +191,7 @@
                 <p class="mb-3"><strong>Annales Cartographie:</strong> 8</p>
                 <div class="d-grid gap-2">
                     <a href="session.html?mode=quick&module=7" class="btn btn-primary">Lancer un QCM cible</a>
-                    <a href="examens.html" class="btn btn-outline-primary">Mode examen</a>
+                    <a href="session.html?mode=exam-module&module=7" class="btn btn-outline-primary">Lancer l'examen module</a>
                 </div>
             </div>
         </article>
@@ -104,9 +201,18 @@
                 <h2 class="h6 mb-0 section-head"><span class="icon-badge">FX</span>Formules et reperes</h2>
             </header>
             <div class="card-body">
-                <p class="mb-0"><code>Rf &#x3D; Rs + Vc vectoriel</code></p>
+                <ul class="small mb-0">
+                    <li>Route fond &#x3D; route surface + vecteur courant (construction vectorielle).</li>
+                    <li>Vitesse fond et cap fond se lisent sur le triangle des vitesses.</li>
+                    <li>Ne pas confondre derive vent et derive courant.</li>
+                    <li>Rf &#x3D; Rs + Vc vectoriel</li>
+                    <li>Coefficient : mesure de la « force » de la marée (≈ 20 à 120). &gt;70 &#x3D; vives-eaux; &lt;70 &#x3D; mortes-eaux.</li>
+                    <li>Port de référence : port principal dont les tables donnent heures et hauteurs de PM&#x2F;BM.</li>
+                    <li>Port rattaché : port secondaire dont les horaires&#x2F;hauteurs se déduisent par corrections.</li>
+                </ul>
             </div>
         </article>
+
 
 
         <article class="card">
@@ -190,6 +296,24 @@
         </article>
     </aside>
 </div>
+
+<script>
+(() => {
+    const root = document.querySelector('[data-module-checklist="7"]');
+    if (!root) return;
+    const key = 'sitepe_checklist_module_7';
+    const checked = new Set(JSON.parse(localStorage.getItem(key) || '[]'));
+    root.querySelectorAll('.module-check-item').forEach((input) => {
+        const index = String(input.dataset.checkIndex || '');
+        input.checked = checked.has(index);
+        input.addEventListener('change', () => {
+            if (input.checked) checked.add(index);
+            else checked.delete(index);
+            localStorage.setItem(key, JSON.stringify([...checked]));
+        });
+    });
+})();
+</script>
 
     </main>
 

@@ -11,7 +11,10 @@
     <!-- Navigation persistante -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top">
         <div class="container">
-            <a class="navbar-brand fw-bold" href="index.html">Patron d'Embarcation</a>
+            <a class="navbar-brand fw-bold d-flex align-items-center gap-2" href="index.html">
+                <img src="assets/annales/qcm/2022/image1.png" alt="Logo SUF Marine" class="suf-navbar-logo" loading="lazy">
+                <span>Patron d'Embarcation</span>
+            </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -47,7 +50,7 @@
         </div>
         <div class="col-lg-4 text-lg-end">
             <a href="parcours.html#module-6" class="btn btn-light btn-sm">Retour au parcours</a>
-            <a href="session.html?mode=quick&module=6" class="btn btn-outline-light btn-sm ms-2">QCM du module</a>
+            <a href="session.html?mode=exam-module&module=6" class="btn btn-outline-light btn-sm ms-2">Examen module</a>
         </div>
     </div>
 </section>
@@ -59,7 +62,71 @@
                 <h2 class="h5 mb-0 section-head"><span class="icon-badge">CO</span>Cours complet</h2>
             </header>
             <div class="card-body course-content">
-                <p>Déclinaison, déviation, cap vrai, route surface, dérive du vent</p><h5>Objectifs de progression</h5><ul><li>Déclinaison</li><li>Déviation</li><li>Conversion caps</li><li>Formule Cox</li><li>Comprendre déclinaison et déviation magnétiques</li><li>Calculer le cap vrai à partir du cap compas</li><li>Déterminer la route surface avec dérive</li><li>Appliquer les formules de variation</li></ul><h5>Notions et definitions essentielles</h5><ul><li><strong>Cv</strong> : cap vrai</li><li><strong>Cc</strong> : cap compas</li><li><strong>France</strong> : W 0-2°</li><li><strong>Déviation</strong> : propre navire</li><li><strong>Rose</strong> : 360°</li></ul><h5>Points cle a maitriser</h5><ul><li>W: déclinaison (W=-,E=+)</li><li>δ: déviation</li><li>Cv = Cc + W + δ</li><li>Comprendre déclinaison et déviation magnétiques</li><li>Calculer le cap vrai à partir du cap compas</li><li>Déterminer la route surface avec dérive</li><li>Appliquer les formules de variation</li></ul><h5>Methode de resolution en examen</h5><ol><li>Poser les donnees dans l ordre: cap compas, deviation, declinaison, cap vrai.</li><li>Appliquer une convention de signe unique (Est positif, Ouest negatif).</li><li>Verifier la coherence du resultat avec la route observee.</li></ol><h5>Erreurs frequentes a eviter</h5><ul><li>Inverser declinaison et deviation.</li><li>Additionner les corrections dans le mauvais sens.</li><li>Ne pas controler la plausibilite du cap final.</li></ul><h5>Formules et reperes</h5><p><code>Cv = Cc + W + δ</code></p>
+                <div class="row g-4">
+                    <aside class="col-lg-4">
+                        <div class="course-toc-panel">
+                            <h3 class="h6 mb-2">Plan du cours</h3>
+                            <div class="list-group list-group-flush">
+                                <a href="#course-section-objectifs-de-progression-1" class="list-group-item list-group-item-action course-toc-link">
+                                    Objectifs de progression
+                                </a>
+                                <a href="#course-section-notions-et-definitions-essentielles-2" class="list-group-item list-group-item-action course-toc-link">
+                                    Notions et definitions essentielles
+                                </a>
+                                <a href="#course-section-points-cle-a-maitriser-3" class="list-group-item list-group-item-action course-toc-link">
+                                    Points cle a maitriser
+                                </a>
+                                <a href="#course-section-methode-de-resolution-en-examen-4" class="list-group-item list-group-item-action course-toc-link">
+                                    Methode de resolution en examen
+                                </a>
+                                <a href="#course-section-erreurs-frequentes-a-eviter-5" class="list-group-item list-group-item-action course-toc-link">
+                                    Erreurs frequentes a eviter
+                                </a>
+                                <a href="#course-section-formules-et-reperes-6" class="list-group-item list-group-item-action course-toc-link">
+                                    Formules et reperes
+                                </a>
+                            </div>
+                        </div>
+                    </aside>
+                    <div class="col-lg-8">
+                        <section id="course-section-objectifs-de-progression-1" class="course-section-block mb-4">
+                            <h3 class="h5 mb-2">Objectifs de progression</h3>
+                            <div class="course-section-html">
+                                <ul><li>Déclinaison</li><li>Déviation</li><li>Conversion caps</li><li>Formule Cox</li><li>Comprendre déclinaison et déviation magnétiques</li><li>Calculer le cap vrai à partir du cap compas</li><li>Déterminer la route surface avec dérive</li><li>Appliquer les formules de variation</li></ul>
+                            </div>
+                        </section>
+                        <section id="course-section-notions-et-definitions-essentielles-2" class="course-section-block mb-4">
+                            <h3 class="h5 mb-2">Notions et definitions essentielles</h3>
+                            <div class="course-section-html">
+                                <ul><li><strong>Cv</strong> : cap vrai</li><li><strong>Cc</strong> : cap compas</li><li><strong>France</strong> : W 0-2°</li><li><strong>Déviation</strong> : propre navire</li><li><strong>Rose</strong> : 360°</li></ul>
+                            </div>
+                        </section>
+                        <section id="course-section-points-cle-a-maitriser-3" class="course-section-block mb-4">
+                            <h3 class="h5 mb-2">Points cle a maitriser</h3>
+                            <div class="course-section-html">
+                                <ul><li>W: déclinaison (W=-,E=+)</li><li>δ: déviation</li><li>Cv = Cc + W + δ</li><li>Comprendre déclinaison et déviation magnétiques</li><li>Calculer le cap vrai à partir du cap compas</li><li>Déterminer la route surface avec dérive</li><li>Appliquer les formules de variation</li></ul>
+                            </div>
+                        </section>
+                        <section id="course-section-methode-de-resolution-en-examen-4" class="course-section-block mb-4">
+                            <h3 class="h5 mb-2">Methode de resolution en examen</h3>
+                            <div class="course-section-html">
+                                <ol><li>Poser les donnees dans l ordre: cap compas, deviation, declinaison, cap vrai.</li><li>Appliquer une convention de signe unique (Est positif, Ouest negatif).</li><li>Verifier la coherence du resultat avec la route observee.</li></ol>
+                            </div>
+                        </section>
+                        <section id="course-section-erreurs-frequentes-a-eviter-5" class="course-section-block mb-4">
+                            <h3 class="h5 mb-2">Erreurs frequentes a eviter</h3>
+                            <div class="course-section-html">
+                                <ul><li>Inverser declinaison et deviation.</li><li>Additionner les corrections dans le mauvais sens.</li><li>Ne pas controler la plausibilite du cap final.</li></ul>
+                            </div>
+                        </section>
+                        <section id="course-section-formules-et-reperes-6" class="course-section-block mb-4">
+                            <h3 class="h5 mb-2">Formules et reperes</h3>
+                            <div class="course-section-html">
+                                <p><code>Cv = Cc + W + δ</code></p>
+                            </div>
+                        </section>
+                    </div>
+                </div>
             </div>
         </article>
 
@@ -68,18 +135,48 @@
                 <h2 class="h6 mb-0 section-head"><span class="icon-badge">CL</span>Checklist de revision</h2>
             </header>
             <div class="card-body">
-                <ul class="mb-0">
-                    <li>Déclinaison</li>
-                    <li>Déviation</li>
-                    <li>Conversion caps</li>
-                    <li>Formule Cox</li>
-                    <li>Comprendre déclinaison et déviation magnétiques</li>
-                    <li>Calculer le cap vrai à partir du cap compas</li>
-                    <li>Déterminer la route surface avec dérive</li>
-                    <li>Appliquer les formules de variation</li>
-                    <li>Cv: cap vrai</li>
-                    <li>Cc: cap compas</li>
-                </ul>
+                <div class="checklist-group" data-module-checklist="6">
+                    <div class="form-check checklist-item">
+                        <input class="form-check-input module-check-item" type="checkbox" id="module-6-check-0" data-check-index="0">
+                        <label class="form-check-label" for="module-6-check-0">Déclinaison</label>
+                    </div>
+                    <div class="form-check checklist-item">
+                        <input class="form-check-input module-check-item" type="checkbox" id="module-6-check-1" data-check-index="1">
+                        <label class="form-check-label" for="module-6-check-1">Déviation</label>
+                    </div>
+                    <div class="form-check checklist-item">
+                        <input class="form-check-input module-check-item" type="checkbox" id="module-6-check-2" data-check-index="2">
+                        <label class="form-check-label" for="module-6-check-2">Conversion caps</label>
+                    </div>
+                    <div class="form-check checklist-item">
+                        <input class="form-check-input module-check-item" type="checkbox" id="module-6-check-3" data-check-index="3">
+                        <label class="form-check-label" for="module-6-check-3">Formule Cox</label>
+                    </div>
+                    <div class="form-check checklist-item">
+                        <input class="form-check-input module-check-item" type="checkbox" id="module-6-check-4" data-check-index="4">
+                        <label class="form-check-label" for="module-6-check-4">Comprendre déclinaison et déviation magnétiques</label>
+                    </div>
+                    <div class="form-check checklist-item">
+                        <input class="form-check-input module-check-item" type="checkbox" id="module-6-check-5" data-check-index="5">
+                        <label class="form-check-label" for="module-6-check-5">Calculer le cap vrai à partir du cap compas</label>
+                    </div>
+                    <div class="form-check checklist-item">
+                        <input class="form-check-input module-check-item" type="checkbox" id="module-6-check-6" data-check-index="6">
+                        <label class="form-check-label" for="module-6-check-6">Déterminer la route surface avec dérive</label>
+                    </div>
+                    <div class="form-check checklist-item">
+                        <input class="form-check-input module-check-item" type="checkbox" id="module-6-check-7" data-check-index="7">
+                        <label class="form-check-label" for="module-6-check-7">Appliquer les formules de variation</label>
+                    </div>
+                    <div class="form-check checklist-item">
+                        <input class="form-check-input module-check-item" type="checkbox" id="module-6-check-8" data-check-index="8">
+                        <label class="form-check-label" for="module-6-check-8">Cv: cap vrai</label>
+                    </div>
+                    <div class="form-check checklist-item">
+                        <input class="form-check-input module-check-item" type="checkbox" id="module-6-check-9" data-check-index="9">
+                        <label class="form-check-label" for="module-6-check-9">Cc: cap compas</label>
+                    </div>
+                </div>
             </div>
         </article>
     </section>
@@ -94,7 +191,7 @@
                 <p class="mb-3"><strong>Annales Cartographie:</strong> 8</p>
                 <div class="d-grid gap-2">
                     <a href="session.html?mode=quick&module=6" class="btn btn-primary">Lancer un QCM cible</a>
-                    <a href="examens.html" class="btn btn-outline-primary">Mode examen</a>
+                    <a href="session.html?mode=exam-module&module=6" class="btn btn-outline-primary">Lancer l'examen module</a>
                 </div>
             </div>
         </article>
@@ -104,9 +201,17 @@
                 <h2 class="h6 mb-0 section-head"><span class="icon-badge">FX</span>Formules et reperes</h2>
             </header>
             <div class="card-body">
-                <p class="mb-0"><code>Cv &#x3D; Cc + W + δ</code></p>
+                <ul class="small mb-0">
+                    <li>Cap vrai &#x3D; cap compas + declinaison + deviation.</li>
+                    <li>Convention utile: Est positif, Ouest negatif.</li>
+                    <li>Toujours verifier la coherence du cap calcule avec la route observee.</li>
+                    <li>Cv &#x3D; Cc + W + δ</li>
+                    <li>W: déclinaison (W&#x3D;-,E&#x3D;+)</li>
+                    <li>France: W 0-2°</li>
+                </ul>
             </div>
         </article>
+
 
 
         <article class="card">
@@ -190,6 +295,24 @@
         </article>
     </aside>
 </div>
+
+<script>
+(() => {
+    const root = document.querySelector('[data-module-checklist="6"]');
+    if (!root) return;
+    const key = 'sitepe_checklist_module_6';
+    const checked = new Set(JSON.parse(localStorage.getItem(key) || '[]'));
+    root.querySelectorAll('.module-check-item').forEach((input) => {
+        const index = String(input.dataset.checkIndex || '');
+        input.checked = checked.has(index);
+        input.addEventListener('change', () => {
+            if (input.checked) checked.add(index);
+            else checked.delete(index);
+            localStorage.setItem(key, JSON.stringify([...checked]));
+        });
+    });
+})();
+</script>
 
     </main>
 

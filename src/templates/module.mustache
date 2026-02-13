@@ -6,7 +6,7 @@
         </div>
         <div class="col-lg-4 text-lg-end">
             <a href="parcours.html#module-{{id}}" class="btn btn-light btn-sm">Retour au parcours</a>
-            <a href="session.html?mode=quick&module={{id}}" class="btn btn-outline-light btn-sm ms-2">QCM du module</a>
+            <a href="session.html?mode=exam-module&module={{id}}" class="btn btn-outline-light btn-sm ms-2">Examen module</a>
         </div>
     </div>
 </section>
@@ -18,7 +18,35 @@
                 <h2 class="h5 mb-0 section-head"><span class="icon-badge">CO</span>Cours complet</h2>
             </header>
             <div class="card-body course-content">
+                {{#hasCourseSections}}
+                <div class="row g-4">
+                    <aside class="col-lg-4">
+                        <div class="course-toc-panel">
+                            <h3 class="h6 mb-2">Plan du cours</h3>
+                            <div class="list-group list-group-flush">
+                                {{#courseSections}}
+                                <a href="#course-section-{{id}}" class="list-group-item list-group-item-action course-toc-link">
+                                    {{title}}
+                                </a>
+                                {{/courseSections}}
+                            </div>
+                        </div>
+                    </aside>
+                    <div class="col-lg-8">
+                        {{#courseSections}}
+                        <section id="course-section-{{id}}" class="course-section-block mb-4">
+                            <h3 class="h5 mb-2">{{title}}</h3>
+                            <div class="course-section-html">
+                                {{{html}}}
+                            </div>
+                        </section>
+                        {{/courseSections}}
+                    </div>
+                </div>
+                {{/hasCourseSections}}
+                {{^hasCourseSections}}
                 {{{courseContentHtml}}}
+                {{/hasCourseSections}}
             </div>
         </article>
 
@@ -27,11 +55,14 @@
                 <h2 class="h6 mb-0 section-head"><span class="icon-badge">CL</span>Checklist de revision</h2>
             </header>
             <div class="card-body">
-                <ul class="mb-0">
-                    {{#checklist}}
-                    <li>{{.}}</li>
-                    {{/checklist}}
-                </ul>
+                <div class="checklist-group" data-module-checklist="{{id}}">
+                    {{#checklistEntries}}
+                    <div class="form-check checklist-item">
+                        <input class="form-check-input module-check-item" type="checkbox" id="module-{{moduleId}}-check-{{index}}" data-check-index="{{index}}">
+                        <label class="form-check-label" for="module-{{moduleId}}-check-{{index}}">{{text}}</label>
+                    </div>
+                    {{/checklistEntries}}
+                </div>
             </div>
         </article>
     </section>
@@ -46,7 +77,7 @@
                 <p class="mb-3"><strong>Annales {{annalesDomainLabel}}:</strong> {{annalesCount}}</p>
                 <div class="d-grid gap-2">
                     <a href="session.html?mode=quick&module={{id}}" class="btn btn-primary">Lancer un QCM cible</a>
-                    <a href="examens.html" class="btn btn-outline-primary">Mode examen</a>
+                    <a href="session.html?mode=exam-module&module={{id}}" class="btn btn-outline-primary">Lancer l'examen module</a>
                 </div>
             </div>
         </article>
@@ -57,10 +88,31 @@
                 <h2 class="h6 mb-0 section-head"><span class="icon-badge">FX</span>Formules et reperes</h2>
             </header>
             <div class="card-body">
-                <p class="mb-0"><code>{{formulas}}</code></p>
+                <ul class="small mb-0">
+                    {{#formulaRepereItems}}
+                    <li>{{.}}</li>
+                    {{/formulaRepereItems}}
+                </ul>
             </div>
         </article>
         {{/hasFormulas}}
+
+        {{#hasCourseIllustrations}}
+        <article class="card mb-4">
+            <header class="card-header bg-light-subtle">
+                <h2 class="h6 mb-0 section-head"><span class="icon-badge">IM</span>Visuels representatifs</h2>
+            </header>
+            <div class="card-body">
+                <div class="row g-2">
+                    {{#courseIllustrations}}
+                    <div class="col-12">
+                        <img src="{{src}}" alt="{{alt}}" class="img-fluid rounded annales-thumb">
+                    </div>
+                    {{/courseIllustrations}}
+                </div>
+            </div>
+        </article>
+        {{/hasCourseIllustrations}}
 
         {{#hasAnnalesExamples}}
         <article class="card mb-4">
@@ -103,3 +155,21 @@
         </article>
     </aside>
 </div>
+
+<script>
+(() => {
+    const root = document.querySelector('[data-module-checklist="{{id}}"]');
+    if (!root) return;
+    const key = 'sitepe_checklist_module_{{id}}';
+    const checked = new Set(JSON.parse(localStorage.getItem(key) || '[]'));
+    root.querySelectorAll('.module-check-item').forEach((input) => {
+        const index = String(input.dataset.checkIndex || '');
+        input.checked = checked.has(index);
+        input.addEventListener('change', () => {
+            if (input.checked) checked.add(index);
+            else checked.delete(index);
+            localStorage.setItem(key, JSON.stringify([...checked]));
+        });
+    });
+})();
+</script>

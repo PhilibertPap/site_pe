@@ -41,6 +41,15 @@ nav.navbar {
     font-weight: 700;
 }
 
+.suf-navbar-logo {
+    width: 34px;
+    height: 34px;
+    object-fit: contain;
+    background: #fff;
+    border-radius: 4px;
+    padding: 2px;
+}
+
 main.container {
     max-width: 1180px;
 }
@@ -145,6 +154,17 @@ main.container {
     border-radius: 8px;
     background: #fff;
     padding: 0.25rem;
+}
+
+.qcm-media-fallback {
+    display: none;
+    font-size: 0.86rem;
+    color: var(--text-muted);
+    margin-top: 0.5rem;
+}
+
+.qcm-media.qcm-media-missing .qcm-media-fallback {
+    display: block;
 }
 
 .form-check {
@@ -325,12 +345,48 @@ main.container {
 
 .training-card {
     min-height: 180px;
+    cursor: pointer;
+    border: 1px solid var(--border);
 }
 
 .training-card .card-body {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+}
+
+.training-card.is-selected {
+    border-color: var(--brand-500);
+    box-shadow: 0 0 0 2px rgba(15, 108, 191, 0.14);
+}
+
+.course-toc-panel {
+    position: sticky;
+    top: 92px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    background: #fff;
+    padding: 0.9rem;
+}
+
+.course-toc-link {
+    font-size: 0.9rem;
+}
+
+.course-section-block {
+    scroll-margin-top: 90px;
+    border-bottom: 1px solid #edf2f7;
+    padding-bottom: 0.9rem;
+}
+
+.course-section-block:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.checklist-group .checklist-item {
+    padding: 0.4rem 0;
+    border: none;
 }
 
 a {

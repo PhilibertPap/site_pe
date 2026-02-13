@@ -1,117 +1,128 @@
 {
-    "problems": [
+  "problems": [
+    {
+      "id": 1,
+      "title": "Golfe du Morbihan - Sortie vers Quiberon",
+      "difficulty": "intermediaire",
+      "duration": 55,
+      "carte": "SHOM 9999",
+      "zone": "Morbihan",
+      "scenario": "Depart de Port-Navalo a 09h20, destination baie de Quiberon. Vent SW 14 nds, mer peu agitee.",
+      "steps": [
         {
-            "id": 1,
-            "title": "Bretagne - Vannes à Houat",
-            "difficulty": "advanced",
-            "duration": 60,
-            "carte": "9999",
-            "location": "Golfe Morbihan",
-            "steps": [
-                {
-                    "stepId": 1,
-                    "task": "Relevé coordonnées Vannes & Houat",
-                    "expected": "47°38'N 002°45'W → 47°24'N 003°08'W"
-                },
-                {
-                    "stepId": 2,
-                    "task": "Mesure distance Cras",
-                    "expected": "~35 milles"
-                },
-                {
-                    "stepId": 3,
-                    "task": "Cap vrai sur carte",
-                    "expected": "~220°"
-                },
-                {
-                    "stepId": 4,
-                    "task": "Vent SW 15kt, dérive",
-                    "expected": "Route surface ~232°"
-                },
-                {
-                    "stepId": 5,
-                    "task": "Courant 045°/1.5kt, route fond",
-                    "expected": "~240° à 8kt"
-                },
-                {
-                    "stepId": 6,
-                    "task": "Cap compas (Décl 1°W, Dév 2°E)",
-                    "expected": "~241°"
-                },
-                {
-                    "stepId": 7,
-                    "task": "Marée: PM 2m@08h | BM 0.5m | Départ 10h30",
-                    "expected": "~1.58m"
-                },
-                {
-                    "stepId": 8,
-                    "task": "Pied pilote min",
-                    "expected": ">2m à l'arrivée"
-                }
-            ]
+          "stepId": 1,
+          "task": "Determiner la route vraie theorique Port-Navalo -> waypoint Quiberon.",
+          "hint": "Tracer la route sur la carte et lire au rapporteur.",
+          "expected": "Route vraie proche de 252 deg.",
+          "explanation": "Une valeur entre 248 deg et 256 deg est consideree correcte selon la precision de trace."
         },
         {
-            "id": 2,
-            "title": "Côte Atlantique - Île de Ré",
-            "difficulty": "medium",
-            "duration": 45,
-            "carte": "9999",
-            "steps": [
-                {
-                    "stepId": 1,
-                    "task": "Coordonnées Port-des-Barques → Phare d'Ars",
-                    "expected": "46°12'N 001°26'W → 46°14'N 001°34'W"
-                },
-                {
-                    "stepId": 2,
-                    "task": "Distance et cap",
-                    "expected": "~6 milles, cap ~320°"
-                },
-                {
-                    "stepId": 3,
-                    "task": "Vent NW 12kt, dérive",
-                    "expected": "Route ~310°"
-                },
-                {
-                    "stepId": 4,
-                    "task": "Courant tidal",
-                    "expected": "Integration vector"
-                },
-                {
-                    "stepId": 5,
-                    "task": "Marée coef 85",
-                    "expected": "Marnage important"
-                }
-            ]
+          "stepId": 2,
+          "task": "Calculer le cap compas avec declinaison 1 deg W et deviation +2 deg.",
+          "hint": "Cap vrai = cap compas + declinaison + deviation.",
+          "expected": "Cap compas voisin de 251 deg.",
+          "explanation": "En convention Est +, Ouest -, on retire 1 deg puis 2 deg au cap vrai."
         },
         {
-            "id": 3,
-            "title": "Méditerranée - Corse",
-            "difficulty": "hard",
-            "duration": 75,
-            "carte": "9999",
-            "steps": [
-                {
-                    "stepId": 1,
-                    "task": "Porquerolles → Bonifacio",
-                    "expected": "Longue navigation 60+nm"
-                },
-                {
-                    "stepId": 2,
-                    "task": "Gisement exact",
-                    "expected": "~190°"
-                },
-                {
-                    "stepId": 3,
-                    "task": "Forts courants Bonifacio",
-                    "expected": "2-3 nœuds"
-                },
-                {
-                    "stepId": 4,
-                    "task": "Haute pression, vent stable",
-                    "expected": "Force 3-4 NE"
-                }
-            ]
+          "stepId": 3,
+          "task": "Estimer la vitesse fond avec vitesse surface 5.5 nds et courant 030 deg / 1.4 nd.",
+          "hint": "Construire le triangle des vitesses.",
+          "expected": "Vitesse fond environ 6.3 nds, route fond legerement plus a l est.",
+          "explanation": "Le courant portant vers le NE augmente la vitesse fond et fait lofer la route."
+        },
+        {
+          "stepId": 4,
+          "task": "Verifier la profondeur disponible a 10h50: BM 07h50 (1.2 m), PM 13h58 (4.6 m).",
+          "hint": "Appliquer la regle des douziemes sur 3 h apres BM.",
+          "expected": "Hauteur d eau proche de 2.9 m au-dessus du zero des cartes.",
+          "explanation": "Marnage = 3.4 m; en 3 heures, gain = 1/12 + 2/12 + 3/12 = 6/12, soit 1.7 m."
+        },
+        {
+          "stepId": 5,
+          "task": "Conclure sur la securite pour un tirant d eau de 1.1 m et pied de pilote de 0.5 m.",
+          "hint": "Profondeur mini requise = tirant d eau + marge.",
+          "expected": "Navigation acceptable si sonde carte locale >= 0.0 m (minimum requis 1.6 m).",
+          "explanation": "La hauteur d eau calculee couvre la marge sous quille sur les zones non decouvrantes."
         }
-    ]
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Ile de Re - Navigation cotiere",
+      "difficulty": "facile",
+      "duration": 40,
+      "carte": "SHOM 9999",
+      "zone": "Atlantique",
+      "scenario": "Depart de La Flotte a 15h10 vers Les Baleines. Vent NW 12 nds, houle faible.",
+      "steps": [
+        {
+          "stepId": 1,
+          "task": "Identifier les marques laterales principales sur l itineraire.",
+          "hint": "Se placer mentalement en entrant dans le chenal.",
+          "expected": "Rouge a babord, vert a tribord en entrant.",
+          "explanation": "Rappel Region A: le sens conventionnel est l entree depuis le large."
+        },
+        {
+          "stepId": 2,
+          "task": "Evaluer la distance totale et le temps a 6 nds sans courant.",
+          "hint": "Temps (h) = distance / vitesse.",
+          "expected": "Distance voisine de 7.5 NM, temps environ 1 h 15.",
+          "explanation": "Tolere entre 7 et 8 NM selon le trace precise."
+        },
+        {
+          "stepId": 3,
+          "task": "Appliquer un courant de jusant 240 deg / 0.8 nd.",
+          "hint": "Ajouter le vecteur courant a la route surface.",
+          "expected": "Le courant freine la progression vers l ouest et impose un cap un peu plus nord.",
+          "explanation": "La vitesse fond baisse legerement; prevoir une marge de temps."
+        },
+        {
+          "stepId": 4,
+          "task": "Rappeler la vitesse max en bande des 300 m.",
+          "hint": "Regle de securite usuelle cotiere.",
+          "expected": "5 nds (sauf signalisation locale differente).",
+          "explanation": "La limitation protege baigneurs et engins de plage."
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "Rade de Brest - Cas examen complet",
+      "difficulty": "avance",
+      "duration": 70,
+      "carte": "SHOM 9999",
+      "zone": "Bretagne",
+      "scenario": "Route vers Camaret avec visibilite moyenne et trafic soutenu.",
+      "steps": [
+        {
+          "stepId": 1,
+          "task": "Tracer la route, relever deux alignements de securite et une zone interdite.",
+          "hint": "Exploiter legende et symboles carte (interdiction, cable, epave).",
+          "expected": "Route tracee + 2 alignements utilises + 1 zone a eviter identifiee.",
+          "explanation": "L objectif est la methode de lecture carte, pas une valeur unique."
+        },
+        {
+          "stepId": 2,
+          "task": "Interpreter un croisement moteur/moteur en route convergente.",
+          "hint": "Regle de barre RIPAM: navire a tribord.",
+          "expected": "Si l autre navire est sur votre tribord, vous manœuvrez pour vous ecarter.",
+          "explanation": "Manœuvre franche, precoce, lisible; reduction de vitesse si necessaire."
+        },
+        {
+          "stepId": 3,
+          "task": "Message VHF d urgence apres avarie de barre sans danger immediat de naufrage.",
+          "hint": "Choisir PAN PAN plutot que MAYDAY.",
+          "expected": "PAN PAN sur canal 16 avec identification, position, avarie, assistance demandee.",
+          "explanation": "MAYDAY reste reserve a la detresse grave et imminente."
+        },
+        {
+          "stepId": 4,
+          "task": "Verifier l armement de securite avant appareillage.",
+          "hint": "Lister les equipements essentiels cotiers.",
+          "expected": "Brassieres, mouillage, moyen de reperage homme a la mer, VHF, materiel pyrotechnique selon categorie.",
+          "explanation": "La logique examen attend une verification systematique du chef de bord."
+        }
+      ]
+    }
+  ]
 }
