@@ -101,7 +101,8 @@ class SitePE {
             isFinished: false,
             metadata: {
                 mode: moduleFilter ? 'quick-module' : 'quick',
-                timeLimitMinutes: null
+                timeLimitMinutes: null,
+                instantFeedback: true
             }
         };
         this.displayQCM();
@@ -124,7 +125,8 @@ class SitePE {
             metadata: {
                 mode: metadata.mode || 'custom',
                 timeLimitMinutes: Number.isFinite(metadata.timeLimitMinutes) ? metadata.timeLimitMinutes : null,
-                seriesId: metadata.seriesId || null
+                seriesId: metadata.seriesId || null,
+                instantFeedback: Boolean(metadata.instantFeedback)
             },
             isFinished: false
         };
@@ -216,6 +218,7 @@ class SitePE {
             </figure>`
             : '';
 
+        const actionLabel = this.qcm?.metadata?.instantFeedback ? 'Valider' : 'Suivant';
         const html = `<div class="qcm-question">
             <div class="progress mb-3"><div class="progress-bar" style="width:${progress}%"></div></div>
             <div class="d-flex justify-content-between align-items-center mb-2">
@@ -225,7 +228,7 @@ class SitePE {
             <h4>${question.text}</h4>
             ${imageHtml}
             <div class="options mt-4">${options}</div>
-            <button class="btn btn-primary mt-4" onclick="window.sitePE.nextQCM()">Suivant</button>
+            <button class="btn btn-primary mt-4" onclick="window.sitePE.nextQCM()">${actionLabel}</button>
         </div>`;
 
         const container = this.getQcmContainer();
@@ -248,7 +251,8 @@ class SitePE {
 
         const question = this.qcm.q[this.qcm.idx];
         const correctIndex = question.answers.findIndex(option => option.correct);
-        const isCorrect = Number.parseInt(selected.value, 10) === correctIndex;
+        const selectedIndex = Number.parseInt(selected.value, 10);
+        const isCorrect = selectedIndex === correctIndex;
 
         if (isCorrect) {
             this.qcm.score += 100 / this.qcm.q.length;
@@ -256,8 +260,62 @@ class SitePE {
             this.qcm.errors += 1;
         }
 
+        if (this.qcm?.metadata?.instantFeedback) {
+            this.renderImmediateFeedback(question, selectedIndex, correctIndex, isCorrect);
+            return;
+        }
+
         this.qcm.idx += 1;
         this.displayQCM();
+    }
+
+    continueQCM() {
+        if (!this.qcm || this.qcm.isFinished) return;
+        this.qcm.idx += 1;
+        this.displayQCM();
+    }
+
+    renderImmediateFeedback(question, selectedIndex, correctIndex, isCorrect) {
+        const remaining = this.getRemainingSeconds();
+        if (remaining != null && remaining <= 0) {
+            this.forceEndQcmByTimeout();
+            return;
+        }
+
+        const answerLines = question.answers.map((answer, idx) => {
+            const classes = [];
+            if (idx === correctIndex) classes.push('text-success', 'fw-semibold');
+            if (idx === selectedIndex && idx !== correctIndex) classes.push('text-danger', 'fw-semibold');
+            const classAttr = classes.length ? ` class="${classes.join(' ')}"` : '';
+            return `<li${classAttr}>${answer.text}</li>`;
+        }).join('');
+
+        const statusClass = isCorrect ? 'alert-success' : 'alert-warning';
+        const statusText = isCorrect ? 'Bonne reponse.' : 'Reponse incorrecte.';
+        const explanation = question.explanation ? `<p class="mb-0"><strong>Explication:</strong> ${question.explanation}</p>` : '';
+        const imageHtml = question.image
+            ? `<figure class="qcm-media mt-3 mb-3">
+                <img class="img-fluid rounded qcm-illustration" src="${question.image}" alt="Illustration de la question ${this.qcm.idx + 1}" loading="lazy">
+            </figure>`
+            : '';
+
+        const html = `<div class="qcm-question">
+            <div class="progress mb-3"><div class="progress-bar" style="width:${((this.qcm.idx + 1) / this.qcm.q.length) * 100}%"></div></div>
+            <div class="d-flex justify-content-between align-items-center mb-2">
+                <h5 class="mb-0">${this.qcm.idx + 1}/${this.qcm.q.length}</h5>
+                ${this.getTimerBadgeHtml()}
+            </div>
+            <h4>${question.text}</h4>
+            ${imageHtml}
+            <div class="alert ${statusClass} mt-3">${statusText}</div>
+            <ul class="mb-3">${answerLines}</ul>
+            ${explanation}
+            <button class="btn btn-primary mt-4" onclick="window.sitePE.continueQCM()">Question suivante</button>
+        </div>`;
+
+        const container = this.getQcmContainer();
+        if (container) container.innerHTML = html;
+        this.renderQcmTimerOnly();
     }
 
     endQCM(options = {}) {

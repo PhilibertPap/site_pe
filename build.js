@@ -3,6 +3,19 @@ const path = require('path');
 const mustache = require('mustache');
 const qcmEngine = require('./src/js/qcm-engine.js');
 
+const MODULE_CONTENT_LINKS = {
+    1: [1],
+    2: [2, 4],
+    3: [3],
+    4: [5],
+    5: [6],
+    6: [7],
+    7: [8],
+    8: [9],
+    9: [10],
+    10: []
+};
+
 // ========== UTILITAIRES ==========
 async function loadJSON(filePath, defaultValue = {}) {
     try {
@@ -134,6 +147,22 @@ function buildModulesContentMap(modulesContentData) {
     return new Map(
         toArray(modulesContentData.modules).map(module => [Number(module.id), module])
     );
+}
+
+function resolveModuleContentForSiteModule(moduleId, modulesContentMap) {
+    const sourceIds = MODULE_CONTENT_LINKS[moduleId] || [moduleId];
+    const sourceModules = sourceIds
+        .map(id => modulesContentMap.get(Number(id)))
+        .filter(Boolean);
+    const keyPoints = uniqueStrings(sourceModules.flatMap(module => toArray(module.keyPoints)));
+    const formulas = uniqueStrings(sourceModules.map(module => module.formulas)).join(' | ');
+    const objectifs = uniqueStrings(sourceModules.flatMap(module => toArray(module.objectifs)));
+
+    return {
+        keyPoints,
+        formulas,
+        objectifs
+    };
 }
 
 function buildQcmCountByModule(qcmData) {
@@ -277,9 +306,10 @@ function enrichModulesForLearning({
     return toArray(siteModules).map(module => {
         const moduleId = Number(module.id);
         const override = overridesById.get(moduleId) || {};
-        const moduleContent = modulesContentMap.get(moduleId) || {};
+        const moduleContent = resolveModuleContentForSiteModule(moduleId, modulesContentMap);
         const objectifs = uniqueStrings([
             ...toArray(override.objectifs),
+            ...toArray(moduleContent.objectifs),
             ...toArray(module.objectifs)
         ]);
         const keyPoints = uniqueStrings([

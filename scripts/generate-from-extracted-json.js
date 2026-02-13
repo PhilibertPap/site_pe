@@ -2,6 +2,32 @@ const fs = require('node:fs');
 const path = require('node:path');
 const qcmEngine = require('../src/js/qcm-engine.js');
 
+const MODULE_CONTENT_LINKS = {
+    1: [1],
+    2: [2, 4],
+    3: [3],
+    4: [5],
+    5: [6],
+    6: [7],
+    7: [8],
+    8: [9],
+    9: [10],
+    10: []
+};
+
+const MODULE_FACTS_FALLBACK = {
+    10: [
+        'En navigation scoute, le port du gilet est obligatoire en permanence.',
+        'Le cadre SUF privilegie la navigation de jour.',
+        'En habitable, la limite est de 6 milles d un abri.',
+        'En voile legere, la limite est de 2 milles d un abri.',
+        'En habitable, la limite meteo est force 4 avec rafales 5.',
+        'En voile legere, la limite meteo est force 3 avec rafales 4.',
+        'La presence d un correspondant a terre est obligatoire.',
+        'La securite de l equipage prime sur l objectif pedagogique.'
+    ]
+};
+
 function readJson(filePath) {
     return JSON.parse(fs.readFileSync(filePath, 'utf8'));
 }
@@ -526,6 +552,7 @@ function toUniquePoints(list) {
     (list || []).forEach(item => {
         const text = normalizeSpace(item);
         if (text.length < 8) return;
+        if (/^(comprendre|connaitre|conna[iî]tre|ma[iî]triser|appliquer|identifier|reconna[iî]tre)/i.test(text)) return;
         const key = text.toLowerCase();
         if (seen.has(key)) return;
         seen.add(key);
@@ -542,22 +569,164 @@ function countQuestionsByModule(categories) {
     }, {});
 }
 
+function splitConceptDefinition(point) {
+    const match = String(point).match(/^([^:]{2,90})\s*:\s*(.+)$/);
+    if (!match) return null;
+    return {
+        concept: normalizeSpace(match[1]),
+        definition: normalizeSpace(match[2])
+    };
+}
+
+function resolveModulePoints(module, modulesContentById) {
+    const moduleId = Number(module.id);
+    const sourceIds = MODULE_CONTENT_LINKS[moduleId] || [moduleId];
+    const keyPoints = sourceIds.flatMap(sourceId => {
+        const sourceModule = modulesContentById.get(Number(sourceId));
+        return sourceModule ? (sourceModule.keyPoints || []) : [];
+    });
+    const fallbackObjectives = module.objectifs || [];
+    const fallbackFacts = MODULE_FACTS_FALLBACK[moduleId] || [];
+    return toUniquePoints([...keyPoints, ...fallbackFacts, ...fallbackObjectives]);
+}
+
+function getStemTemplates(moduleId, moduleName) {
+    const templates = {
+        1: [
+            'En region A, en entrant au port, quelle proposition est juste ?',
+            'A propos du balisage, cochez la seule reponse exacte.',
+            'Dans cette situation de balisage, quelle regle est correcte ?'
+        ],
+        2: [
+            'Concernant les signaux sonores et lumineux, quelle proposition est juste ?',
+            'En navigation, quel signal correspond a la bonne manœuvre ?',
+            'Au PE, quelle reponse est conforme pour cette signalisation ?'
+        ],
+        3: [
+            'Selon le RIPAM, quelle proposition est exacte ?',
+            'En risque d abordage, quelle regle de barre est correcte ?',
+            'Dans cette situation de route, qui a la priorite ?'
+        ],
+        4: [
+            'Sur la carte marine, quelle proposition est exacte ?',
+            'Avec la regle Cras, quelle methode est correcte ?',
+            'Concernant les symboles SHOM, quelle reponse est juste ?'
+        ],
+        5: [
+            'En meteorologie marine, quelle proposition est exacte ?',
+            'Concernant Beaufort et les fronts, quelle reponse est correcte ?',
+            'Pour la securite meteo, quelle interpretation est juste ?'
+        ],
+        6: [
+            'Concernant caps et derive, quelle relation est correcte ?',
+            'En navigation estimee, quelle proposition est exacte ?',
+            'A propos des conversions de cap, quelle reponse est juste ?'
+        ],
+        7: [
+            'Concernant courants et route fond, quelle relation est correcte ?',
+            'Dans le triangle des vitesses, quelle proposition est exacte ?',
+            'A propos de la derive, quelle reponse est juste ?'
+        ],
+        8: [
+            'Pour le calcul de maree, quelle proposition est exacte ?',
+            'Concernant la regle des douziemes, quelle reponse est correcte ?',
+            'Pour la hauteur d eau, quelle relation est juste ?'
+        ],
+        9: [
+            'En communication VHF, quelle proposition est exacte ?',
+            'Pour un message de detresse, quelle procedure est correcte ?',
+            'Concernant les canaux VHF, quelle reponse est juste ?'
+        ],
+        10: [
+            'Dans le cadre SUF, quelle regle de securite est exacte ?',
+            'Pour la navigation scoute, quelle limite est correcte ?',
+            'Concernant la securite de bord, quelle proposition est juste ?'
+        ]
+    };
+    return templates[moduleId] || [
+        `Concernant ${moduleName}, quelle proposition est juste ?`,
+        `Au PE, quelle reponse est exacte pour ${moduleName} ?`
+    ];
+}
+
+function buildPedagogicalQuestion(module, fact, variantIndex, localPool, globalPool, localDefs, globalDefs, rng, questionId) {
+    const answerIds = ['a', 'b', 'c', 'd', 'e'];
+    const split = splitConceptDefinition(fact);
+
+    if (split && split.definition.length >= 5 && split.definition.length <= 180) {
+        const wrongLocal = pickDistractors(localDefs, split.definition, 2, rng);
+        const wrongGlobal = pickDistractors(
+            globalDefs.filter(item => !wrongLocal.includes(item)),
+            split.definition,
+            4,
+            rng
+        );
+        const wrong = [...wrongLocal, ...wrongGlobal].slice(0, 3);
+        if (wrong.length < 3) return null;
+
+        const choices = shuffle([split.definition, ...wrong], rng);
+        const answerIndex = choices.findIndex(choice => choice === split.definition);
+        const questionText = variantIndex % 2 === 0
+            ? `Dans le module ${module.moduleNumber}, que signifie "${split.concept}" ?`
+            : `Au PE, "${split.concept}" designe :`;
+
+        return {
+            id: questionId,
+            text: questionText,
+            image: null,
+            answers: choices.map((choice, idx) => ({
+                id: answerIds[idx] || String(idx),
+                text: choice,
+                correct: idx === answerIndex
+            })),
+            difficulty: 2,
+            explanation: `Point de cours valide (module ${module.moduleNumber})`,
+            tags: [`module_${module.id}`, 'pedagogical_quality']
+        };
+    }
+
+    const wrongLocal = pickDistractors(localPool, fact, 2, rng);
+    const wrongGlobal = pickDistractors(
+        globalPool.filter(item => !wrongLocal.includes(item)),
+        fact,
+        4,
+        rng
+    );
+    const wrong = [...wrongLocal, ...wrongGlobal].slice(0, 3);
+    if (wrong.length < 3) return null;
+
+    const choices = shuffle([fact, ...wrong], rng);
+    const answerIndex = choices.findIndex(choice => choice === fact);
+    const stems = getStemTemplates(Number(module.id), module.name);
+    const questionText = stems[variantIndex % stems.length];
+
+    return {
+        id: questionId,
+        text: questionText,
+        image: null,
+        answers: choices.map((choice, idx) => ({
+            id: answerIds[idx] || String(idx),
+            text: choice,
+            correct: idx === answerIndex
+        })),
+        difficulty: 2,
+        explanation: `Point de cours valide (module ${module.moduleNumber})`,
+        tags: [`module_${module.id}`, 'pedagogical_quality']
+    };
+}
+
 function buildTheoryCoverageCategories(modulesContent, siteData, existingCounts, rng) {
-    const moduleContentById = new Map((modulesContent.modules || []).map(m => [Number(m.id), m]));
+    const modulesContentById = new Map((modulesContent.modules || []).map(m => [Number(m.id), m]));
     const modules = (siteData.modules || []).map(module => ({
         ...module,
-        content: moduleContentById.get(Number(module.id)) || {}
+        facts: resolveModulePoints(module, modulesContentById)
     }));
-    const allPool = modules.flatMap(module => {
-        const points = toUniquePoints([
-            ...(module.content.keyPoints || []),
-            ...(module.objectifs || [])
-        ]);
-        return points.map(point => ({
-            moduleId: Number(module.id),
-            text: point
-        }));
-    });
+
+    const globalFacts = modules.flatMap(module => module.facts || []);
+    const globalDefs = globalFacts
+        .map(splitConceptDefinition)
+        .filter(Boolean)
+        .map(item => item.definition);
 
     const categories = [];
     modules.forEach(module => {
@@ -567,49 +736,49 @@ function buildTheoryCoverageCategories(modulesContent, siteData, existingCounts,
         const needed = Math.max(0, targetCount - currentCount);
         if (needed <= 0) return;
 
-        const modulePoints = toUniquePoints([
-            ...(module.content.keyPoints || []),
-            ...(module.objectifs || [])
-        ]);
-        if (!modulePoints.length) return;
+        const localFacts = toUniquePoints(module.facts || []);
+        if (!localFacts.length) return;
+        const localDefs = localFacts
+            .map(splitConceptDefinition)
+            .filter(Boolean)
+            .map(item => item.definition);
 
         const questions = [];
-        const selectedPoints = shuffle(modulePoints, rng).slice(0, Math.min(needed, modulePoints.length));
-        selectedPoints.forEach((point, idx) => {
-            const localDistractors = shuffle(modulePoints.filter(item => item !== point), rng).slice(0, 2);
-            const globalDistractors = shuffle(
-                allPool
-                    .filter(item => item.moduleId !== moduleId && item.text !== point)
-                    .map(item => item.text),
-                rng
-            ).filter(item => !localDistractors.includes(item)).slice(0, 3);
-            const wrong = [...localDistractors, ...globalDistractors].slice(0, 3);
-            if (wrong.length < 3) return;
+        const signatures = new Set();
+        let cursor = 0;
+        let guard = 0;
 
-            const choices = shuffle([point, ...wrong], rng);
-            const answerIndex = choices.findIndex(choice => choice === point);
-            const answerIds = ['a', 'b', 'c', 'd', 'e'];
+        while (questions.length < needed && guard < needed * 12) {
+            const fact = localFacts[cursor % localFacts.length];
+            const variantIndex = Math.floor(cursor / localFacts.length);
+            const questionId = `pedago_${moduleId}_${questions.length + 1}`;
+            const question = buildPedagogicalQuestion(
+                module,
+                fact,
+                variantIndex,
+                localFacts,
+                globalFacts.filter(item => !localFacts.includes(item)),
+                localDefs,
+                globalDefs,
+                rng,
+                questionId
+            );
+            cursor += 1;
+            guard += 1;
+            if (!question) continue;
 
-            questions.push({
-                id: `theory_${moduleId}_${idx + 1}`,
-                text: `Module ${module.moduleNumber} (${module.name}) : quel enonce est exact ?`,
-                image: null,
-                answers: choices.map((choice, choiceIdx) => ({
-                    id: answerIds[choiceIdx] || String(choiceIdx),
-                    text: choice,
-                    correct: choiceIdx === answerIndex
-                })),
-                difficulty: 2,
-                explanation: `Point de cours du module ${module.moduleNumber}`,
-                tags: [`module_${moduleId}`, 'theory_coverage']
-            });
-        });
+            const correct = question.answers.find(answer => answer.correct)?.text || '';
+            const signature = `${question.text}|${correct}`;
+            if (signatures.has(signature)) continue;
+            signatures.add(signature);
+            questions.push(question);
+        }
 
         if (!questions.length) return;
         categories.push({
-            id: `theory_module_${moduleId}`,
-            name: `Couverture theorie module ${module.moduleNumber}`,
-            description: `Questions de couverture pour le module ${module.moduleNumber}`,
+            id: `pedago_module_${moduleId}`,
+            name: `Banque pedagogique module ${module.moduleNumber}`,
+            description: `Questions formulees pour le style examen PE/permis bateau (module ${module.moduleNumber})`,
             module: moduleId,
             questions
         });
