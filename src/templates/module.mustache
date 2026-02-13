@@ -62,24 +62,6 @@
         </article>
         {{/hasFormulas}}
 
-        {{#hasResources}}
-        <article class="card mb-4">
-            <header class="card-header bg-light-subtle">
-                <h2 class="h6 mb-0 section-head"><span class="icon-badge">📂</span>Ressources du cours</h2>
-            </header>
-            <div class="card-body">
-                <ul class="list-group list-group-flush">
-                    {{#resources}}
-                    <li class="list-group-item px-0">
-                        <strong>{{label}}</strong><br>
-                        <small><code>{{path}}</code></small>
-                    </li>
-                    {{/resources}}
-                </ul>
-            </div>
-        </article>
-        {{/hasResources}}
-
         {{#hasAnnalesExamples}}
         <article class="card mb-4">
             <header class="card-header bg-light-subtle">
@@ -109,6 +91,11 @@
                         <strong>{{label}}</strong>
                         {{#hasCorrige}}<span class="badge text-bg-success ms-1">corrige</span>{{/hasCorrige}}
                         {{#answerKeyAvailable}}<span class="badge text-bg-info ms-1">cle reponses</span>{{/answerKeyAvailable}}
+                        <div class="mt-2 d-flex flex-wrap gap-2">
+                            {{#downloads}}
+                            <a class="btn btn-outline-secondary btn-sm" href="{{path}}" download>{{label}} ({{extension}})</a>
+                            {{/downloads}}
+                        </div>
                     </li>
                     {{/annalesSeries}}
                 </ul>

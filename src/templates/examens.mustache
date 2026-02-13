@@ -124,6 +124,11 @@
                         <strong>{{label}}</strong>
                         {{#hasCorrige}}<span class="badge text-bg-success ms-1">corrigé</span>{{/hasCorrige}}
                         {{#answerKeyAvailable}}<span class="badge text-bg-info ms-1">clé docx</span>{{/answerKeyAvailable}}
+                        <div class="mt-2 d-flex flex-wrap gap-2">
+                            {{#downloads}}
+                            <a class="btn btn-outline-secondary btn-sm" href="{{path}}" download>{{label}} ({{extension}})</a>
+                            {{/downloads}}
+                        </div>
                     </li>
                     {{/annalesQcmSessions}}
                 </ul>

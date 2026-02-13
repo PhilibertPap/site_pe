@@ -1,0 +1,678 @@
+{
+  "source": "imports/drive/annales/Annales QCM/2022/PE-2022-QCM-Sujet.ppsx",
+  "slidesCount": 35,
+  "questionCount": 30,
+  "questionSlidesWithMedia": 30,
+  "extractedMediaCount": 20,
+  "questions": [
+    {
+      "slide": 5,
+      "question": 1,
+      "mediaCount": 2,
+      "mediaAssets": [
+        "assets/annales/qcm/2022/image1.png",
+        "assets/annales/qcm/2022/image2.png"
+      ],
+      "text": "En entrant au port: | je laisse à | tribord | je laisse à | bâbord | je laisse indifféremment à tribord ou à bâbord | Question 1",
+      "tokens": [
+        "En entrant au port:",
+        "je laisse à",
+        "tribord",
+        "je laisse à",
+        "bâbord",
+        "je laisse indifféremment à tribord ou à bâbord",
+        "Question 1"
+      ]
+    },
+    {
+      "slide": 6,
+      "question": 2,
+      "mediaCount": 2,
+      "mediaAssets": [
+        "assets/annales/qcm/2022/image1.png",
+        "assets/annales/qcm/2022/image3.png"
+      ],
+      "text": "Mon voilier fait un cap 195° J’aperçois cette marque. | Je laisse la marque à bâbord | Je laisse la marque à | tribord | Je peux passer indifféremment | d’un côté ou de l’autre | Question 2",
+      "tokens": [
+        "Mon voilier fait un cap 195° J’aperçois cette marque.",
+        "Je laisse la marque à bâbord",
+        "Je laisse la marque à",
+        "tribord",
+        "Je peux passer indifféremment",
+        "d’un côté ou de l’autre",
+        "Question 2"
+      ]
+    },
+    {
+      "slide": 7,
+      "question": 3,
+      "mediaCount": 2,
+      "mediaAssets": [
+        "assets/annales/qcm/2022/image1.png",
+        "assets/annales/qcm/2022/image4.png"
+      ],
+      "text": "Vous entendez ce signal | sonore. | Il | s'agit d'un | : | navire au mouillage | navire venant sur | tribord | navire venant sur | bâbord | navire venant en arrière | Question 3",
+      "tokens": [
+        "Vous entendez ce signal",
+        "sonore.",
+        "Il",
+        "s'agit d'un",
+        ":",
+        "navire au mouillage",
+        "navire venant sur",
+        "tribord",
+        "navire venant sur",
+        "bâbord",
+        "navire venant en arrière",
+        "Question 3"
+      ]
+    },
+    {
+      "slide": 8,
+      "question": 4,
+      "mediaCount": 2,
+      "mediaAssets": [
+        "assets/annales/qcm/2022/image1.png",
+        "assets/annales/qcm/2022/image5.png"
+      ],
+      "text": "Que signifie ce signal vu en mâture d'un navire | ? | navire au | mouillage | navire non maître de sa | manœuvre | navire échoué | navire handicapé par son tirant d’eau | Question 4",
+      "tokens": [
+        "Que signifie ce signal vu en mâture d'un navire",
+        "?",
+        "navire au",
+        "mouillage",
+        "navire non maître de sa",
+        "manœuvre",
+        "navire échoué",
+        "navire handicapé par son tirant d’eau",
+        "Question 4"
+      ]
+    },
+    {
+      "slide": 9,
+      "question": 5,
+      "mediaCount": 2,
+      "mediaAssets": [
+        "assets/annales/qcm/2022/image1.png",
+        "assets/annales/qcm/2022/image6.png"
+      ],
+      "text": "Dans la situation ci-contre, quel voilier est privilégié ? | (ils reçoivent tous deux le vent du même bord) | l | e voilier A | l | e voilier B | Question 5",
+      "tokens": [
+        "Dans la situation ci-contre, quel voilier est privilégié ?",
+        "(ils reçoivent tous deux le vent du même bord)",
+        "l",
+        "e voilier A",
+        "l",
+        "e voilier B",
+        "Question 5"
+      ]
+    },
+    {
+      "slide": 10,
+      "question": 6,
+      "mediaCount": 1,
+      "mediaAssets": [
+        "assets/annales/qcm/2022/image1.png"
+      ],
+      "text": "Lors | d’une navigation scoute, le port de la brassière est obligatoire | : | Uniquement | en navigation à la voile | En | toutes circonstances | Par | vent de force 2 et | plus | Sur demande du Patron d’Embarcation | Question 6",
+      "tokens": [
+        "Lors",
+        "d’une navigation scoute, le port de la brassière est obligatoire",
+        ":",
+        "Uniquement",
+        "en navigation à la voile",
+        "En",
+        "toutes circonstances",
+        "Par",
+        "vent de force 2 et",
+        "plus",
+        "Sur demande du Patron d’Embarcation",
+        "Question 6"
+      ]
+    },
+    {
+      "slide": 11,
+      "question": 7,
+      "mediaCount": 1,
+      "mediaAssets": [
+        "assets/annales/qcm/2022/image1.png"
+      ],
+      "text": "Sur une carte marine, un rocher qui découvre à marée | basse est signalé par un chiffre | : | En italique | Souligné | Négatif | Entouré | Question 7",
+      "tokens": [
+        "Sur une carte marine, un rocher qui découvre à marée",
+        "basse est signalé par un chiffre",
+        ":",
+        "En italique",
+        "Souligné",
+        "Négatif",
+        "Entouré",
+        "Question 7"
+      ]
+    },
+    {
+      "slide": 12,
+      "question": 8,
+      "mediaCount": 1,
+      "mediaAssets": [
+        "assets/annales/qcm/2022/image1.png"
+      ],
+      "text": "Le Bulletin Météo émis annonce un avis de grand frais. Quelle sera la force du vent ? | 5 Beaufort | 6 Beaufort | 7 Beaufort | 8 Beaufort | Question 8",
+      "tokens": [
+        "Le Bulletin Météo émis annonce un avis de grand frais. Quelle sera la force du vent ?",
+        "5 Beaufort",
+        "6 Beaufort",
+        "7 Beaufort",
+        "8 Beaufort",
+        "Question 8"
+      ]
+    },
+    {
+      "slide": 13,
+      "question": 9,
+      "mediaCount": 2,
+      "mediaAssets": [
+        "assets/annales/qcm/2022/image1.png",
+        "assets/annales/qcm/2022/image7.png"
+      ],
+      "text": "A la VHF, quel canal permet de signaler une détresse ? | Canal 8 | Canal 16 | Canal 18 | Canal 196 | Question 9",
+      "tokens": [
+        "A la VHF, quel canal permet de signaler une détresse ?",
+        "Canal 8",
+        "Canal 16",
+        "Canal 18",
+        "Canal 196",
+        "Question 9"
+      ]
+    },
+    {
+      "slide": 14,
+      "question": 10,
+      "mediaCount": 2,
+      "mediaAssets": [
+        "assets/annales/qcm/2022/image1.png",
+        "assets/annales/qcm/2022/image8.png"
+      ],
+      "text": "De nuit, vous apercevez les feux ci-contre. | De quel navire s’agit-il ? | d'un navire échoué vu par | l'avant | d'un | navire à capacité de | manœuvre | restreinte | avec passage libre sur | son | bâbord | d'un | chalutier qui a son chalut | engagé | d'un | navire non maître de sa | manœuvre | vu | par | bâbord | Question 10",
+      "tokens": [
+        "De nuit, vous apercevez les feux ci-contre.",
+        "De quel navire s’agit-il ?",
+        "d'un navire échoué vu par",
+        "l'avant",
+        "d'un",
+        "navire à capacité de",
+        "manœuvre",
+        "restreinte",
+        "avec passage libre sur",
+        "son",
+        "bâbord",
+        "d'un",
+        "chalutier qui a son chalut",
+        "engagé",
+        "d'un",
+        "navire non maître de sa",
+        "manœuvre",
+        "vu",
+        "par",
+        "bâbord",
+        "Question 10"
+      ]
+    },
+    {
+      "slide": 15,
+      "question": 11,
+      "mediaCount": 1,
+      "mediaAssets": [
+        "assets/annales/qcm/2022/image1.png"
+      ],
+      "text": "Sur un navire vous voyez une personne qui agite les bras de haut en bas : | Elle a besoin | d'assistance | Elle fait sa | gymnastique | Elle vous dit | bonjour | Elle indique que le bateau est incapable de | manœuvrer | Question 11",
+      "tokens": [
+        "Sur un navire vous voyez une personne qui agite les bras de haut en bas :",
+        "Elle a besoin",
+        "d'assistance",
+        "Elle fait sa",
+        "gymnastique",
+        "Elle vous dit",
+        "bonjour",
+        "Elle indique que le bateau est incapable de",
+        "manœuvrer",
+        "Question 11"
+      ]
+    },
+    {
+      "slide": 16,
+      "question": 12,
+      "mediaCount": 1,
+      "mediaAssets": [
+        "assets/annales/qcm/2022/image1.png"
+      ],
+      "text": "De nuit, vous observez deux scintillements groupés blancs. Quelle est cette marque ? | Une marque spéciale | Une cardinale Est | Un danger isolé | Une marque d’eaux saines | Question 12",
+      "tokens": [
+        "De nuit, vous observez deux scintillements groupés blancs. Quelle est cette marque ?",
+        "Une marque spéciale",
+        "Une cardinale Est",
+        "Un danger isolé",
+        "Une marque d’eaux saines",
+        "Question 12"
+      ]
+    },
+    {
+      "slide": 17,
+      "question": 13,
+      "mediaCount": 2,
+      "mediaAssets": [
+        "assets/annales/qcm/2022/image1.png",
+        "assets/annales/qcm/2022/image9.png"
+      ],
+      "text": "Le | bateau | A est rattrapé par le | bateau | B. Qui doit manœuvrer | ? | Le bateau A | Le bateau B | Les deux bateaux | Question 13",
+      "tokens": [
+        "Le",
+        "bateau",
+        "A est rattrapé par le",
+        "bateau",
+        "B. Qui doit manœuvrer",
+        "?",
+        "Le bateau A",
+        "Le bateau B",
+        "Les deux bateaux",
+        "Question 13"
+      ]
+    },
+    {
+      "slide": 18,
+      "question": 14,
+      "mediaCount": 1,
+      "mediaAssets": [
+        "assets/annales/qcm/2022/image1.png"
+      ],
+      "text": "Quelle est la limite météo autorisée pour | naviguer en | voilier habitable dans le cadre du scoutisme marin : | Force 3 établie, rafales à 4 | Force | 4 | établie, rafales à | 5 | Force | 5 | établie, rafales à | 6 | Dépend de la catégorie de conception du bateau | Question 14",
+      "tokens": [
+        "Quelle est la limite météo autorisée pour",
+        "naviguer en",
+        "voilier habitable dans le cadre du scoutisme marin :",
+        "Force 3 établie, rafales à 4",
+        "Force",
+        "4",
+        "établie, rafales à",
+        "5",
+        "Force",
+        "5",
+        "établie, rafales à",
+        "6",
+        "Dépend de la catégorie de conception du bateau",
+        "Question 14"
+      ]
+    },
+    {
+      "slide": 19,
+      "question": 15,
+      "mediaCount": 2,
+      "mediaAssets": [
+        "assets/annales/qcm/2022/image1.png",
+        "assets/annales/qcm/2022/image10.png"
+      ],
+      "text": "Les sondes affichées sur une carte marine sont définies par rapport à | : | la marée basse de coefficient | 20 | la marée basse de coefficient | 120 | la marée haute de coefficient | 20 | la marée haute de coefficient | 120 | Question 15",
+      "tokens": [
+        "Les sondes affichées sur une carte marine sont définies par rapport à",
+        ":",
+        "la marée basse de coefficient",
+        "20",
+        "la marée basse de coefficient",
+        "120",
+        "la marée haute de coefficient",
+        "20",
+        "la marée haute de coefficient",
+        "120",
+        "Question 15"
+      ]
+    },
+    {
+      "slide": 20,
+      "question": 16,
+      "mediaCount": 1,
+      "mediaAssets": [
+        "assets/annales/qcm/2022/image1.png"
+      ],
+      "text": "Le phénomène combiné du vent et du courant en sens inverses a pour effet | : | d'augmenter la hauteur des | vagues | d'augmenter la vitesse du | vent | d'augmenter la vitesse du | courant | Question 16",
+      "tokens": [
+        "Le phénomène combiné du vent et du courant en sens inverses a pour effet",
+        ":",
+        "d'augmenter la hauteur des",
+        "vagues",
+        "d'augmenter la vitesse du",
+        "vent",
+        "d'augmenter la vitesse du",
+        "courant",
+        "Question 16"
+      ]
+    },
+    {
+      "slide": 21,
+      "question": 17,
+      "mediaCount": 2,
+      "mediaAssets": [
+        "assets/annales/qcm/2022/image1.png",
+        "assets/annales/qcm/2022/image11.png"
+      ],
+      "text": "Dans la brume, vous entendez ce signal sonore prolongé à intervalles réguliers. C'est un | : | Un | navire en | détresse | Un navire à moteur au | mouillage | Un | navire à moteur avec | erre | Un | navire à moteur sans erre | Question 17",
+      "tokens": [
+        "Dans la brume, vous entendez ce signal sonore prolongé à intervalles réguliers. C'est un",
+        ":",
+        "Un",
+        "navire en",
+        "détresse",
+        "Un navire à moteur au",
+        "mouillage",
+        "Un",
+        "navire à moteur avec",
+        "erre",
+        "Un",
+        "navire à moteur sans erre",
+        "Question 17"
+      ]
+    },
+    {
+      "slide": 22,
+      "question": 18,
+      "mediaCount": 2,
+      "mediaAssets": [
+        "assets/annales/qcm/2022/image1.png",
+        "assets/annales/qcm/2022/image12.png"
+      ],
+      "text": "Que signifie cette marque ? | Un danger | isolé | Une marque d’eaux saines | Une | cardinale | Nord | Une | marque spéciale | Question 18",
+      "tokens": [
+        "Que signifie cette marque ?",
+        "Un danger",
+        "isolé",
+        "Une marque d’eaux saines",
+        "Une",
+        "cardinale",
+        "Nord",
+        "Une",
+        "marque spéciale",
+        "Question 18"
+      ]
+    },
+    {
+      "slide": 23,
+      "question": 19,
+      "mediaCount": 2,
+      "mediaAssets": [
+        "assets/annales/qcm/2022/image1.png",
+        "assets/annales/qcm/2022/image13.png"
+      ],
+      "text": "Que dois-je faire en apercevant cette marque ? | Je peux passer au plus | près | (marque d’eau saine) | Je passe à au moins | 50 m | Je | passe à au moins | 100 m | Je | passe à au moins | 200 m | Question 19",
+      "tokens": [
+        "Que dois-je faire en apercevant cette marque ?",
+        "Je peux passer au plus",
+        "près",
+        "(marque d’eau saine)",
+        "Je passe à au moins",
+        "50 m",
+        "Je",
+        "passe à au moins",
+        "100 m",
+        "Je",
+        "passe à au moins",
+        "200 m",
+        "Question 19"
+      ]
+    },
+    {
+      "slide": 24,
+      "question": 20,
+      "mediaCount": 2,
+      "mediaAssets": [
+        "assets/annales/qcm/2022/image1.png",
+        "assets/annales/qcm/2022/image14.png"
+      ],
+      "text": "Dans la brume, | le | signal | sonore | ci-contre est | émis par | : | un navire au | mouillage | un navire privilégié avec | erre | un | bateau-pilote | un chalutier en action de pêche | Question 20",
+      "tokens": [
+        "Dans la brume,",
+        "le",
+        "signal",
+        "sonore",
+        "ci-contre est",
+        "émis par",
+        ":",
+        "un navire au",
+        "mouillage",
+        "un navire privilégié avec",
+        "erre",
+        "un",
+        "bateau-pilote",
+        "un chalutier en action de pêche",
+        "Question 20"
+      ]
+    },
+    {
+      "slide": 25,
+      "question": 21,
+      "mediaCount": 2,
+      "mediaAssets": [
+        "assets/annales/qcm/2022/image1.png",
+        "assets/annales/qcm/2022/image15.png"
+      ],
+      "text": "Vous êtes sur un voilier | tribord amure et | vous croisez ce | chalutier. Vous | faites route | de collision. Que faites-vous ? | Vous maintenez | votre | cap et | votre | vitesse | Vous manœuvrez | Vous | vous | émettez | 5 | sons | brefs | Question 21",
+      "tokens": [
+        "Vous êtes sur un voilier",
+        "tribord amure et",
+        "vous croisez ce",
+        "chalutier. Vous",
+        "faites route",
+        "de collision. Que faites-vous ?",
+        "Vous maintenez",
+        "votre",
+        "cap et",
+        "votre",
+        "vitesse",
+        "Vous manœuvrez",
+        "Vous",
+        "vous",
+        "émettez",
+        "5",
+        "sons",
+        "brefs",
+        "Question 21"
+      ]
+    },
+    {
+      "slide": 26,
+      "question": 22,
+      "mediaCount": 2,
+      "mediaAssets": [
+        "assets/annales/qcm/2022/image1.png",
+        "assets/annales/qcm/2022/image16.png"
+      ],
+      "text": "Pour entrer au port en évitant les | écueils, | il | faut naviguer | : | dans le secteur marqué G (vert | ) | dans le secteur marqué W (blanc | ) | dans le secteur marqué R | (rouge) | d | ans les secteurs marqués G ou R | Question 22",
+      "tokens": [
+        "Pour entrer au port en évitant les",
+        "écueils,",
+        "il",
+        "faut naviguer",
+        ":",
+        "dans le secteur marqué G (vert",
+        ")",
+        "dans le secteur marqué W (blanc",
+        ")",
+        "dans le secteur marqué R",
+        "(rouge)",
+        "d",
+        "ans les secteurs marqués G ou R",
+        "Question 22"
+      ]
+    },
+    {
+      "slide": 27,
+      "question": 23,
+      "mediaCount": 1,
+      "mediaAssets": [
+        "assets/annales/qcm/2022/image1.png"
+      ],
+      "text": "Dans l’hémisphère nord, les vents tournent autour d’une | dépression : | Dans le sens horaire | Dans le sens antihoraire | Question 23",
+      "tokens": [
+        "Dans l’hémisphère nord, les vents tournent autour d’une",
+        "dépression :",
+        "Dans le sens horaire",
+        "Dans le sens antihoraire",
+        "Question 23"
+      ]
+    },
+    {
+      "slide": 28,
+      "question": 24,
+      "mediaCount": 1,
+      "mediaAssets": [
+        "assets/annales/qcm/2022/image1.png"
+      ],
+      "text": "À quoi est utilisé le canal 9 de la VHF | ? | Aux appels vocaux de détresse, sécurité et aux CROSS | Aux | appels par ASN | Aux | communications avec les capitaineries | Aux | communications entre les CROSS | Question 24",
+      "tokens": [
+        "À quoi est utilisé le canal 9 de la VHF",
+        "?",
+        "Aux appels vocaux de détresse, sécurité et aux CROSS",
+        "Aux",
+        "appels par ASN",
+        "Aux",
+        "communications avec les capitaineries",
+        "Aux",
+        "communications entre les CROSS",
+        "Question 24"
+      ]
+    },
+    {
+      "slide": 29,
+      "question": 25,
+      "mediaCount": 2,
+      "mediaAssets": [
+        "assets/annales/qcm/2022/image1.png",
+        "assets/annales/qcm/2022/image17.png"
+      ],
+      "text": "Ces petites bouées jaunes rapprochées indiquent | : | Un danger isolé | Un | danger nouveau | Une | marque spéciale | Une | zone de baignade | Question 25",
+      "tokens": [
+        "Ces petites bouées jaunes rapprochées indiquent",
+        ":",
+        "Un danger isolé",
+        "Un",
+        "danger nouveau",
+        "Une",
+        "marque spéciale",
+        "Une",
+        "zone de baignade",
+        "Question 25"
+      ]
+    },
+    {
+      "slide": 30,
+      "question": 26,
+      "mediaCount": 2,
+      "mediaAssets": [
+        "assets/annales/qcm/2022/image1.png",
+        "assets/annales/qcm/2022/image18.png"
+      ],
+      "text": "Cap plein Nord, dans la brume, vous apercevez devant vous un feu blanc montrant 9 scintillements | Vous | le laissez | à | bâbord | Vous le laissez | à tribord | Vous le laissez | indifféremment à bâbord ou à tribord, en vous écartant largement | Vous | demandez aux chefs d’arrêter avec la lampe torche | Question 26",
+      "tokens": [
+        "Cap plein Nord, dans la brume, vous apercevez devant vous un feu blanc montrant 9 scintillements",
+        "Vous",
+        "le laissez",
+        "à",
+        "bâbord",
+        "Vous le laissez",
+        "à tribord",
+        "Vous le laissez",
+        "indifféremment à bâbord ou à tribord, en vous écartant largement",
+        "Vous",
+        "demandez aux chefs d’arrêter avec la lampe torche",
+        "Question 26"
+      ]
+    },
+    {
+      "slide": 31,
+      "question": 27,
+      "mediaCount": 2,
+      "mediaAssets": [
+        "assets/annales/qcm/2022/image1.png",
+        "assets/annales/qcm/2022/image19.png"
+      ],
+      "text": "Q | ue | signifient ces | signaux ? | Un navire en | détresse | Un navire au mouillage | temporaire | Un navire transportant des matières dangereuses | Question 27",
+      "tokens": [
+        "Q",
+        "ue",
+        "signifient ces",
+        "signaux ?",
+        "Un navire en",
+        "détresse",
+        "Un navire au mouillage",
+        "temporaire",
+        "Un navire transportant des matières dangereuses",
+        "Question 27"
+      ]
+    },
+    {
+      "slide": 32,
+      "question": 28,
+      "mediaCount": 1,
+      "mediaAssets": [
+        "assets/annales/qcm/2022/image1.png"
+      ],
+      "text": "Qu'est-ce | qu'un abri ? | Une | crique | Une partie de la côte protégée du | vent | Un endroit | de la côte où tout engin, embarcation ou navire et son équipage peuvent se mettre en sécurité en mouillant, atterrissant ou accostant et en repartir sans | assistance | Question 28",
+      "tokens": [
+        "Qu'est-ce",
+        "qu'un abri ?",
+        "Une",
+        "crique",
+        "Une partie de la côte protégée du",
+        "vent",
+        "Un endroit",
+        "de la côte où tout engin, embarcation ou navire et son équipage peuvent se mettre en sécurité en mouillant, atterrissant ou accostant et en repartir sans",
+        "assistance",
+        "Question 28"
+      ]
+    },
+    {
+      "slide": 33,
+      "question": 29,
+      "mediaCount": 2,
+      "mediaAssets": [
+        "assets/annales/qcm/2022/image1.png",
+        "assets/annales/qcm/2022/image20.png"
+      ],
+      "text": "Q | ue | signifient ces feux placés à l'entrée d'un port | ? | Autorisation | de passer, trafic à sens | unique | Autorisation | de passer, trafic à double sens | Attendre | les | instructions | Autorisation de passer pour les bateaux de moins de 30 m | Question 29",
+      "tokens": [
+        "Q",
+        "ue",
+        "signifient ces feux placés à l'entrée d'un port",
+        "?",
+        "Autorisation",
+        "de passer, trafic à sens",
+        "unique",
+        "Autorisation",
+        "de passer, trafic à double sens",
+        "Attendre",
+        "les",
+        "instructions",
+        "Autorisation de passer pour les bateaux de moins de 30 m",
+        "Question 29"
+      ]
+    },
+    {
+      "slide": 34,
+      "question": 30,
+      "mediaCount": 1,
+      "mediaAssets": [
+        "assets/annales/qcm/2022/image1.png"
+      ],
+      "text": "Quels sont les canaux réservés aux communications vocales entre les navires | ? | 6, 8, 72, | 77 | 6, 16, 72, 77 | 6 | , 10, 77, 78 | 6 | , 8, 15, 77, 78 | Question 30",
+      "tokens": [
+        "Quels sont les canaux réservés aux communications vocales entre les navires",
+        "?",
+        "6, 8, 72,",
+        "77",
+        "6, 16, 72, 77",
+        "6",
+        ", 10, 77, 78",
+        "6",
+        ", 8, 15, 77, 78",
+        "Question 30"
+      ]
+    }
+  ]
+}

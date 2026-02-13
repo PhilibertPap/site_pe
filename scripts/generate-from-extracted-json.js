@@ -593,97 +593,73 @@ function resolveModulePoints(module, modulesContentById) {
 function getStemTemplates(moduleId, moduleName) {
     const templates = {
         1: [
-            'En region A, en entrant au port, quelle proposition est juste ?',
-            'A propos du balisage, cochez la seule reponse exacte.',
-            'Dans cette situation de balisage, quelle regle est correcte ?'
+            'En entrant au port, quelle proposition est exacte ?',
+            'Concernant le balisage, quelle proposition est correcte ?',
+            'Pour suivre le chenal, quelle regle est juste ?'
         ],
         2: [
-            'Concernant les signaux sonores et lumineux, quelle proposition est juste ?',
-            'En navigation, quel signal correspond a la bonne manœuvre ?',
-            'Au PE, quelle reponse est conforme pour cette signalisation ?'
+            'Dans la brume, quel signal est correct ?',
+            'Concernant les feux de navigation, quelle proposition est exacte ?',
+            'Que signifie ce signal maritime ?'
         ],
         3: [
-            'Selon le RIPAM, quelle proposition est exacte ?',
-            'En risque d abordage, quelle regle de barre est correcte ?',
-            'Dans cette situation de route, qui a la priorite ?'
+            'En risque d abordage, quelle manœuvre est correcte ?',
+            'En croisement, quelle priorite est exacte ?',
+            'En route de collision, quelle regle est juste ?'
         ],
         4: [
-            'Sur la carte marine, quelle proposition est exacte ?',
+            'Sur une carte marine, quelle proposition est exacte ?',
             'Avec la regle Cras, quelle methode est correcte ?',
-            'Concernant les symboles SHOM, quelle reponse est juste ?'
+            'Concernant les symboles SHOM, quelle interpretation est juste ?'
         ],
         5: [
-            'En meteorologie marine, quelle proposition est exacte ?',
-            'Concernant Beaufort et les fronts, quelle reponse est correcte ?',
-            'Pour la securite meteo, quelle interpretation est juste ?'
+            'Avant appareillage, quelle interpretation meteo est correcte ?',
+            'Concernant Beaufort et les fronts, quelle proposition est exacte ?',
+            'En meteorologie marine, quelle reponse est conforme ?'
         ],
         6: [
-            'Concernant caps et derive, quelle relation est correcte ?',
+            'Lors d un calcul de cap, quelle relation est correcte ?',
             'En navigation estimee, quelle proposition est exacte ?',
-            'A propos des conversions de cap, quelle reponse est juste ?'
+            'Concernant les conversions de cap, quelle reponse est juste ?'
         ],
         7: [
-            'Concernant courants et route fond, quelle relation est correcte ?',
+            'Pour calculer la route fond, quelle relation est correcte ?',
             'Dans le triangle des vitesses, quelle proposition est exacte ?',
-            'A propos de la derive, quelle reponse est juste ?'
+            'Concernant courant et derive, quelle reponse est juste ?'
         ],
         8: [
-            'Pour le calcul de maree, quelle proposition est exacte ?',
-            'Concernant la regle des douziemes, quelle reponse est correcte ?',
-            'Pour la hauteur d eau, quelle relation est juste ?'
+            'Pour estimer la hauteur d eau, quelle proposition est correcte ?',
+            'Concernant la regle des douziemes, quelle reponse est exacte ?',
+            'En calcul de maree, quelle relation est juste ?'
         ],
         9: [
-            'En communication VHF, quelle proposition est exacte ?',
-            'Pour un message de detresse, quelle procedure est correcte ?',
-            'Concernant les canaux VHF, quelle reponse est juste ?'
+            'A la VHF, quelle procedure est correcte ?',
+            'Concernant les canaux de securite, quelle reponse est exacte ?',
+            'Pour un message radio de detresse, quelle proposition est juste ?'
         ],
         10: [
-            'Dans le cadre SUF, quelle regle de securite est exacte ?',
-            'Pour la navigation scoute, quelle limite est correcte ?',
-            'Concernant la securite de bord, quelle proposition est juste ?'
+            'Le port de la brassiere est obligatoire :',
+            'Pour une navigation scoute, quelle limite est correcte ?',
+            'Concernant la securite de bord, quelle proposition est exacte ?'
         ]
     };
     return templates[moduleId] || [
         `Concernant ${moduleName}, quelle proposition est juste ?`,
-        `Au PE, quelle reponse est exacte pour ${moduleName} ?`
+        `Pour l examen PE, quelle reponse est exacte ?`
     ];
 }
 
-function buildPedagogicalQuestion(module, fact, variantIndex, localPool, globalPool, localDefs, globalDefs, rng, questionId) {
-    const answerIds = ['a', 'b', 'c', 'd', 'e'];
-    const split = splitConceptDefinition(fact);
-
-    if (split && split.definition.length >= 5 && split.definition.length <= 180) {
-        const wrongLocal = pickDistractors(localDefs, split.definition, 2, rng);
-        const wrongGlobal = pickDistractors(
-            globalDefs.filter(item => !wrongLocal.includes(item)),
-            split.definition,
-            4,
-            rng
-        );
-        const wrong = [...wrongLocal, ...wrongGlobal].slice(0, 3);
-        if (wrong.length < 3) return null;
-
-        const choices = shuffle([split.definition, ...wrong], rng);
-        const answerIndex = choices.findIndex(choice => choice === split.definition);
-        const questionText = variantIndex % 2 === 0
-            ? `Dans le module ${module.moduleNumber}, que signifie "${split.concept}" ?`
-            : `Au PE, "${split.concept}" designe :`;
-
-        return {
-            id: questionId,
-            text: questionText,
-            image: null,
-            answers: choices.map((choice, idx) => ({
-                id: answerIds[idx] || String(idx),
-                text: choice,
-                correct: idx === answerIndex
-            })),
-            difficulty: 2,
-            explanation: `Point de cours valide (module ${module.moduleNumber})`,
-            tags: [`module_${module.id}`, 'pedagogical_quality']
-        };
+function factToStatement(fact) {
+    const text = normalizeSpace(fact);
+    const split = splitConceptDefinition(text);
+    if (split) {
+        return `${split.concept} : ${split.definition}`.replace(/\s+/g, ' ').trim();
     }
+    return text.endsWith('.') ? text : `${text}.`;
+}
+
+function buildPedagogicalQuestion(module, fact, variantIndex, localPool, globalPool, rng, questionId) {
+    const answerIds = ['a', 'b', 'c', 'd', 'e'];
 
     const wrongLocal = pickDistractors(localPool, fact, 2, rng);
     const wrongGlobal = pickDistractors(
@@ -695,8 +671,10 @@ function buildPedagogicalQuestion(module, fact, variantIndex, localPool, globalP
     const wrong = [...wrongLocal, ...wrongGlobal].slice(0, 3);
     if (wrong.length < 3) return null;
 
-    const choices = shuffle([fact, ...wrong], rng);
-    const answerIndex = choices.findIndex(choice => choice === fact);
+    const correctStatement = factToStatement(fact);
+    const wrongStatements = wrong.map(factToStatement);
+    const choices = shuffle([correctStatement, ...wrongStatements], rng);
+    const answerIndex = choices.findIndex(choice => choice === correctStatement);
     const stems = getStemTemplates(Number(module.id), module.name);
     const questionText = stems[variantIndex % stems.length];
 
@@ -723,10 +701,6 @@ function buildTheoryCoverageCategories(modulesContent, siteData, existingCounts,
     }));
 
     const globalFacts = modules.flatMap(module => module.facts || []);
-    const globalDefs = globalFacts
-        .map(splitConceptDefinition)
-        .filter(Boolean)
-        .map(item => item.definition);
 
     const categories = [];
     modules.forEach(module => {
@@ -738,11 +712,6 @@ function buildTheoryCoverageCategories(modulesContent, siteData, existingCounts,
 
         const localFacts = toUniquePoints(module.facts || []);
         if (!localFacts.length) return;
-        const localDefs = localFacts
-            .map(splitConceptDefinition)
-            .filter(Boolean)
-            .map(item => item.definition);
-
         const questions = [];
         const signatures = new Set();
         let cursor = 0;
@@ -758,8 +727,6 @@ function buildTheoryCoverageCategories(modulesContent, siteData, existingCounts,
                 variantIndex,
                 localFacts,
                 globalFacts.filter(item => !localFacts.includes(item)),
-                localDefs,
-                globalDefs,
                 rng,
                 questionId
             );

@@ -89,6 +89,12 @@ function normalizeSessionLabel(session) {
     return 'Annuel';
 }
 
+function toPublicAnnalesPath(filePath) {
+    const normalized = String(filePath || '').replace(/\\/g, '/');
+    if (!normalized.startsWith('imports/drive/annales/')) return '';
+    return normalized.replace('imports/drive/annales/', 'annales/');
+}
+
 function sortAnnalesSeries(items) {
     const rank = { annuel: 0, mars: 1, octobre: 2 };
     return [...items].sort((a, b) => {
@@ -179,14 +185,25 @@ function buildAnnalesByDomain(annalesManifest) {
     toArray(annalesManifest.series).forEach(series => {
         const domain = series.domain;
         if (!grouped[domain]) return;
-        const sujet = toArray(series.sujets)[0] || null;
+        const sujets = toArray(series.sujets).map(item => ({
+            label: 'Sujet',
+            path: toPublicAnnalesPath(item.path),
+            extension: item.extension
+        }));
+        const corriges = toArray(series.corriges).map(item => ({
+            label: 'Corrige',
+            path: toPublicAnnalesPath(item.path),
+            extension: item.extension
+        }));
+        const downloads = [...sujets, ...corriges].filter(item => Boolean(item.path));
+
         grouped[domain].push({
             year: series.year,
             session: series.session,
             sessionLabel: normalizeSessionLabel(series.session),
             label: `${series.year} - ${normalizeSessionLabel(series.session)}`,
             hasCorrige: toArray(series.corriges).length > 0,
-            subjectPath: sujet ? sujet.path : '',
+            downloads,
             answerKeyAvailable: Boolean(series.metadata?.hasDocxAnswerKey)
         });
     });
@@ -441,6 +458,7 @@ async function build() {
         const cssDir = path.join(srcDir, 'css');
         const jsDir = path.join(srcDir, 'js');
         const assetsDir = path.join(srcDir, 'assets');
+        const annalesSourceDir = path.join(__dirname, 'imports', 'drive', 'annales');
         const outputDir = path.join(__dirname, 'docs');
 
         // ========== CHARGEMENT DES DONNÉES ==========
@@ -658,6 +676,9 @@ async function build() {
         await fs.copy(jsDir, path.join(outputDir, 'js'));
         if (await fs.pathExists(assetsDir)) {
             await fs.copy(assetsDir, path.join(outputDir, 'assets'));
+        }
+        if (await fs.pathExists(annalesSourceDir)) {
+            await fs.copy(annalesSourceDir, path.join(outputDir, 'annales'));
         }
 
         // Copier les données pour un accès dynamique côté client

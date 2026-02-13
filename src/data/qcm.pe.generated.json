@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-02-13T12:36:56.947Z",
+  "generatedAt": "2026-02-13T12:55:35.624Z",
   "source": {
     "base": "qcm.json",
     "extracted": "pe_course_dataset.normalized.json",
@@ -3732,27 +3732,27 @@
       "questions": [
         {
           "id": "pedago_2_1",
-          "text": "Dans le module 2, que signifie \"Feu proue\" ?",
+          "text": "Dans la brume, quel signal est correct ?",
           "image": null,
           "answers": [
             {
               "id": "a",
-              "text": "3 brefs",
-              "correct": false
+              "text": "Feu proue : blanc axial 225°",
+              "correct": true
             },
             {
               "id": "b",
-              "text": "3 coups",
+              "text": "Échoué : 3 boules (j), blanc+2 rouges (n)",
               "correct": false
             },
             {
               "id": "c",
-              "text": "blanc axial 225°",
-              "correct": true
+              "text": "Rattrapage bâb : 1long+2brefs",
+              "correct": false
             },
             {
               "id": "d",
-              "text": "jaune/noir, cônes bas, 6 blancs/10s",
+              "text": "Distinguer les zones de danger et eaux saines.",
               "correct": false
             }
           ],
@@ -3765,28 +3765,28 @@
         },
         {
           "id": "pedago_2_2",
-          "text": "Dans le module 2, que signifie \"Feux route\" ?",
+          "text": "Dans la brume, quel signal est correct ?",
           "image": null,
           "answers": [
             {
               "id": "a",
-              "text": "1 coup",
+              "text": "Rose : 360°",
               "correct": false
             },
             {
               "id": "b",
-              "text": "rouge bâb, vert trib 112.5°",
-              "correct": true
+              "text": "Manœuvre bâb : 2 coups",
+              "correct": false
             },
             {
               "id": "c",
-              "text": "2 boules (j), feu+route (n)",
+              "text": "Non maître : 2 boules (j), feu+route (n)",
               "correct": false
             },
             {
               "id": "d",
-              "text": "pleine mer",
-              "correct": false
+              "text": "Feux route : rouge bâb, vert trib 112.5°",
+              "correct": true
             }
           ],
           "difficulty": 2,
@@ -3798,27 +3798,27 @@
         },
         {
           "id": "pedago_2_3",
-          "text": "Dans le module 2, que signifie \"Feu arrière\" ?",
+          "text": "Dans la brume, quel signal est correct ?",
           "image": null,
           "answers": [
             {
               "id": "a",
-              "text": "2 brefs",
-              "correct": false
-            },
-            {
-              "id": "b",
-              "text": "blanc 135°",
+              "text": "Feu arrière : blanc 135°",
               "correct": true
             },
             {
+              "id": "b",
+              "text": "Coude : 1 long",
+              "correct": false
+            },
+            {
               "id": "c",
-              "text": "équipement obligatoire",
+              "text": "Détresse : Mayday 3x, fusée, miroir, pavillon NC",
               "correct": false
             },
             {
               "id": "d",
-              "text": "1long+2brefs",
+              "text": "H2 : 2/12 (cumul 3/12)",
               "correct": false
             }
           ],
@@ -3831,27 +3831,27 @@
         },
         {
           "id": "pedago_2_4",
-          "text": "Dans le module 2, que signifie \"Mouillage\" ?",
+          "text": "Dans la brume, quel signal est correct ?",
           "image": null,
           "answers": [
             {
               "id": "a",
-              "text": "jaune, croix jaune",
+              "text": "Rattrapage trib : 2 brefs",
               "correct": false
             },
             {
               "id": "b",
-              "text": "2 brefs",
+              "text": "Manœuvre bâb : 2 coups",
               "correct": false
             },
             {
               "id": "c",
-              "text": "Mayday 3x, fusée, miroir, pavillon NC",
+              "text": "Chenal trib : rouge+bande verte, feu rouge 2+1",
               "correct": false
             },
             {
               "id": "d",
-              "text": "boule noire (j), feu blanc (n)",
+              "text": "Mouillage : boule noire (j), feu blanc (n)",
               "correct": true
             }
           ],
@@ -3864,27 +3864,27 @@
         },
         {
           "id": "pedago_2_5",
-          "text": "Dans le module 2, que signifie \"Non maître\" ?",
+          "text": "Dans la brume, quel signal est correct ?",
           "image": null,
           "answers": [
             {
               "id": "a",
-              "text": "blanc 135°",
+              "text": "Parallélogramme vectoriel.",
               "correct": false
             },
             {
               "id": "b",
-              "text": "2 boules (j), feu+route (n)",
-              "correct": true
-            },
-            {
-              "id": "c",
-              "text": "1long+2brefs",
+              "text": "Je arrière : 3 brefs",
               "correct": false
             },
             {
+              "id": "c",
+              "text": "Non maître : 2 boules (j), feu+route (n)",
+              "correct": true
+            },
+            {
               "id": "d",
-              "text": "tribord-tribord",
+              "text": "Feu proue : blanc axial 225°",
               "correct": false
             }
           ],
@@ -3897,27 +3897,27 @@
         },
         {
           "id": "pedago_2_6",
-          "text": "Dans le module 2, que signifie \"Échoué\" ?",
+          "text": "Dans la brume, quel signal est correct ?",
           "image": null,
           "answers": [
             {
               "id": "a",
-              "text": "3 boules (j), blanc+2 rouges (n)",
-              "correct": true
+              "text": "Arrière : 3 coups",
+              "correct": false
             },
             {
               "id": "b",
-              "text": "3 fois",
+              "text": "Moteur erre brume : 1 long/2min",
               "correct": false
             },
             {
               "id": "c",
-              "text": "rouge bâb, vert trib 112.5°",
-              "correct": false
+              "text": "Échoué : 3 boules (j), blanc+2 rouges (n)",
+              "correct": true
             },
             {
               "id": "d",
-              "text": "2 coups",
+              "text": "En voile legere, la limite est de 2 milles d un abri.",
               "correct": false
             }
           ],
@@ -3930,28 +3930,28 @@
         },
         {
           "id": "pedago_2_7",
-          "text": "Dans le module 2, que signifie \"Manœuvre trib\" ?",
+          "text": "Dans la brume, quel signal est correct ?",
           "image": null,
           "answers": [
             {
               "id": "a",
-              "text": "3 brefs",
+              "text": "Manœuvre bâb : 2 coups",
               "correct": false
             },
             {
               "id": "b",
-              "text": "Mayday 3x, fusée, miroir, pavillon NC",
-              "correct": false
+              "text": "Manœuvre trib : 1 coup",
+              "correct": true
             },
             {
               "id": "c",
-              "text": "traité moteur",
+              "text": "Distance : échelle latitudes",
               "correct": false
             },
             {
               "id": "d",
-              "text": "1 coup",
-              "correct": true
+              "text": "Arrière : 3 coups",
+              "correct": false
             }
           ],
           "difficulty": 2,
@@ -3963,28 +3963,28 @@
         },
         {
           "id": "pedago_2_8",
-          "text": "Dans le module 2, que signifie \"Manœuvre bâb\" ?",
+          "text": "Dans la brume, quel signal est correct ?",
           "image": null,
           "answers": [
             {
               "id": "a",
-              "text": "blanc 135°",
-              "correct": false
+              "text": "Manœuvre bâb : 2 coups",
+              "correct": true
             },
             {
               "id": "b",
-              "text": "2 boules (j), feu+route (n)",
+              "text": "Détresse : Mayday 3x, fusée, miroir, pavillon NC",
               "correct": false
             },
             {
               "id": "c",
-              "text": "mètres côtier",
+              "text": "Rattrapage trib : 2 brefs",
               "correct": false
             },
             {
               "id": "d",
-              "text": "2 coups",
-              "correct": true
+              "text": "Chalutier pêche : 2 cônes, feu vert/blanc",
+              "correct": false
             }
           ],
           "difficulty": 2,
@@ -3996,28 +3996,28 @@
         },
         {
           "id": "pedago_2_9",
-          "text": "Dans le module 2, que signifie \"Arrière\" ?",
+          "text": "Dans la brume, quel signal est correct ?",
           "image": null,
           "answers": [
             {
               "id": "a",
-              "text": "1 coup",
-              "correct": false
+              "text": "Arrière : 3 coups",
+              "correct": true
             },
             {
               "id": "b",
-              "text": "1 long/2min",
+              "text": "BM : basse mer",
               "correct": false
             },
             {
               "id": "c",
-              "text": "blanc 135°",
+              "text": "Je bâbord : 2 brefs",
               "correct": false
             },
             {
               "id": "d",
-              "text": "3 coups",
-              "correct": true
+              "text": "Mouillage : boule noire (j), feu blanc (n)",
+              "correct": false
             }
           ],
           "difficulty": 2,
@@ -4029,27 +4029,27 @@
         },
         {
           "id": "pedago_2_10",
-          "text": "Dans le module 2, que signifie \"Brume moteur erre\" ?",
+          "text": "Dans la brume, quel signal est correct ?",
           "image": null,
           "answers": [
             {
               "id": "a",
-              "text": "traité moteur",
+              "text": "Mouillage : boule noire (j), feu blanc (n)",
               "correct": false
             },
             {
               "id": "b",
-              "text": "1long+2brefs",
-              "correct": false
-            },
-            {
-              "id": "c",
-              "text": "1 long/2min",
+              "text": "Brume moteur erre : 1 long/2min",
               "correct": true
             },
             {
+              "id": "c",
+              "text": "Je arrière : 3 brefs",
+              "correct": false
+            },
+            {
               "id": "d",
-              "text": "1long+1bref",
+              "text": "Balise SOLAS.",
               "correct": false
             }
           ],
@@ -4062,28 +4062,28 @@
         },
         {
           "id": "pedago_2_11",
-          "text": "Dans le module 2, que signifie \"Je tribord\" ?",
+          "text": "Dans la brume, quel signal est correct ?",
           "image": null,
           "answers": [
             {
               "id": "a",
-              "text": "1 coup",
+              "text": "Je bâbord : 2 brefs",
               "correct": false
             },
             {
               "id": "b",
-              "text": "1 bref",
-              "correct": true
+              "text": "Rattrapage bâb : 1long+2brefs",
+              "correct": false
             },
             {
               "id": "c",
-              "text": "3 coups",
+              "text": "Gilet autogonflant obligatoire.",
               "correct": false
             },
             {
               "id": "d",
-              "text": "traité moteur",
-              "correct": false
+              "text": "Je tribord : 1 bref",
+              "correct": true
             }
           ],
           "difficulty": 2,
@@ -4095,27 +4095,27 @@
         },
         {
           "id": "pedago_2_12",
-          "text": "Dans le module 2, que signifie \"Je bâbord\" ?",
+          "text": "Dans la brume, quel signal est correct ?",
           "image": null,
           "answers": [
             {
               "id": "a",
-              "text": "2 brefs",
-              "correct": true
+              "text": "Épave : croix+point",
+              "correct": false
             },
             {
               "id": "b",
-              "text": "vert+bande rouge, feu vert 2+1",
+              "text": "Je arrière : 3 brefs",
               "correct": false
             },
             {
               "id": "c",
-              "text": "Mayday 3x, fusée, miroir, pavillon NC",
-              "correct": false
+              "text": "Je bâbord : 2 brefs",
+              "correct": true
             },
             {
               "id": "d",
-              "text": "1 bref",
+              "text": "Échoué : 3 boules (j), blanc+2 rouges (n)",
               "correct": false
             }
           ],
@@ -4128,27 +4128,27 @@
         },
         {
           "id": "pedago_2_13",
-          "text": "Dans le module 2, que signifie \"Je arrière\" ?",
+          "text": "Dans la brume, quel signal est correct ?",
           "image": null,
           "answers": [
             {
               "id": "a",
-              "text": "1 bref",
-              "correct": false
-            },
-            {
-              "id": "b",
-              "text": "3 brefs",
+              "text": "Je arrière : 3 brefs",
               "correct": true
             },
             {
+              "id": "b",
+              "text": "Manœuvre trib : 1 coup",
+              "correct": false
+            },
+            {
               "id": "c",
-              "text": "3 boules (j), blanc+2 rouges (n)",
+              "text": "Feu proue : blanc axial 225°",
               "correct": false
             },
             {
               "id": "d",
-              "text": "point+profondeur",
+              "text": "Dérive : Rf - Rs",
               "correct": false
             }
           ],
@@ -4161,27 +4161,27 @@
         },
         {
           "id": "pedago_2_14",
-          "text": "Dans le module 2, que signifie \"Rattrapage trib\" ?",
+          "text": "Dans la brume, quel signal est correct ?",
           "image": null,
           "answers": [
             {
               "id": "a",
-              "text": "mesurer caps distances",
+              "text": "Accord dépass : 1long+1bref",
               "correct": false
             },
             {
               "id": "b",
-              "text": "2 brefs",
+              "text": "Rattrapage trib : 2 brefs",
               "correct": true
             },
             {
               "id": "c",
-              "text": "1 long",
+              "text": "Moteur erre brume : 1 long/2min",
               "correct": false
             },
             {
               "id": "d",
-              "text": "3 coups",
+              "text": "Doublage : s'écarter",
               "correct": false
             }
           ],
@@ -4194,28 +4194,28 @@
         },
         {
           "id": "pedago_2_15",
-          "text": "Dans le module 2, que signifie \"Rattrapage bâb\" ?",
+          "text": "Dans la brume, quel signal est correct ?",
           "image": null,
           "answers": [
             {
               "id": "a",
-              "text": "Mayday 3x, fusée, miroir, pavillon NC",
+              "text": "Est : noir/jaune/noir, cônes opposés, 3 blancs/10s",
               "correct": false
             },
             {
               "id": "b",
-              "text": "1 bref",
+              "text": "Arrière : 3 coups",
               "correct": false
             },
             {
               "id": "c",
-              "text": "1long+2brefs",
-              "correct": true
+              "text": "Coude : 1 long",
+              "correct": false
             },
             {
               "id": "d",
-              "text": "-12h",
-              "correct": false
+              "text": "Rattrapage bâb : 1long+2brefs",
+              "correct": true
             }
           ],
           "difficulty": 2,
@@ -4227,28 +4227,28 @@
         },
         {
           "id": "pedago_2_16",
-          "text": "Dans le module 2, que signifie \"Accord dépass\" ?",
+          "text": "Dans la brume, quel signal est correct ?",
           "image": null,
           "answers": [
             {
               "id": "a",
-              "text": "4 brefs rapides",
-              "correct": false
+              "text": "Accord dépass : 1long+1bref",
+              "correct": true
             },
             {
               "id": "b",
-              "text": "pluie progressive",
+              "text": "Rattrapage trib : 2 brefs",
               "correct": false
             },
             {
               "id": "c",
-              "text": "1 coup",
+              "text": "Routes convergentes : priorité droite",
               "correct": false
             },
             {
               "id": "d",
-              "text": "1long+1bref",
-              "correct": true
+              "text": "Feu arrière : blanc 135°",
+              "correct": false
             }
           ],
           "difficulty": 2,
@@ -4260,28 +4260,28 @@
         },
         {
           "id": "pedago_2_17",
-          "text": "Dans le module 2, que signifie \"Doute\" ?",
+          "text": "Dans la brume, quel signal est correct ?",
           "image": null,
           "answers": [
             {
               "id": "a",
-              "text": "Mayday 3x, fusée, miroir, pavillon NC",
+              "text": "Brume moteur erre : 1 long/2min",
               "correct": false
             },
             {
               "id": "b",
-              "text": "boule noire (j), feu blanc (n)",
+              "text": "Interpréter les signaux sonores en brume.",
               "correct": false
             },
             {
               "id": "c",
-              "text": "4 brefs rapides",
-              "correct": true
+              "text": "Doublage : s'écarter",
+              "correct": false
             },
             {
               "id": "d",
-              "text": "11-16kt, 1m",
-              "correct": false
+              "text": "Doute : 4 brefs rapides",
+              "correct": true
             }
           ],
           "difficulty": 2,
@@ -4293,28 +4293,28 @@
         },
         {
           "id": "pedago_2_18",
-          "text": "Dans le module 2, que signifie \"Coude\" ?",
+          "text": "Dans la brume, quel signal est correct ?",
           "image": null,
           "answers": [
             {
               "id": "a",
-              "text": "1 bref",
+              "text": "Arrière : 3 coups",
               "correct": false
             },
             {
               "id": "b",
-              "text": "1 long",
-              "correct": true
+              "text": "Je tribord : 1 bref",
+              "correct": false
             },
             {
               "id": "c",
-              "text": "2 boules (j), feu+route (n)",
+              "text": "Interpréter les cartes de pression.",
               "correct": false
             },
             {
               "id": "d",
-              "text": "rouge bâb, vert trib 112.5°",
-              "correct": false
+              "text": "Coude : 1 long",
+              "correct": true
             }
           ],
           "difficulty": 2,
@@ -4326,27 +4326,27 @@
         },
         {
           "id": "pedago_2_19",
-          "text": "Dans le module 2, que signifie \"Moteur erre brume\" ?",
+          "text": "Dans la brume, quel signal est correct ?",
           "image": null,
           "answers": [
             {
               "id": "a",
-              "text": "3 brefs",
+              "text": "Force 6 : 22-27kt, 3m",
               "correct": false
             },
             {
               "id": "b",
-              "text": "2 boules (j), feu+route (n)",
-              "correct": false
-            },
-            {
-              "id": "c",
-              "text": "1 long/2min",
+              "text": "Moteur erre brume : 1 long/2min",
               "correct": true
             },
             {
+              "id": "c",
+              "text": "Non maître : 2 boules (j), feu+route (n)",
+              "correct": false
+            },
+            {
               "id": "d",
-              "text": "1 coup",
+              "text": "Je arrière : 3 brefs",
               "correct": false
             }
           ],
@@ -4359,27 +4359,27 @@
         },
         {
           "id": "pedago_2_20",
-          "text": "Dans le module 2, que signifie \"Détresse\" ?",
+          "text": "Dans la brume, quel signal est correct ?",
           "image": null,
           "answers": [
             {
               "id": "a",
-              "text": "boule noire (j), feu blanc (n)",
+              "text": "Spéciale : jaune, croix jaune",
               "correct": false
             },
             {
               "id": "b",
-              "text": "Mayday 3x, fusée, miroir, pavillon NC",
+              "text": "Détresse : Mayday 3x, fusée, miroir, pavillon NC",
               "correct": true
             },
             {
               "id": "c",
-              "text": "blanc axial 225°",
+              "text": "Interpréter les signaux sonores en brume.",
               "correct": false
             },
             {
               "id": "d",
-              "text": "feu blanc supplémentaire",
+              "text": "Je tribord : 1 bref",
               "correct": false
             }
           ],
@@ -4400,27 +4400,27 @@
       "questions": [
         {
           "id": "pedago_3_1",
-          "text": "Dans le module 3, que signifie \"Hiérarchie\" ?",
+          "text": "En risque d abordage, quelle manœuvre est correcte ?",
           "image": null,
           "answers": [
             {
               "id": "a",
-              "text": "tribord-tribord",
+              "text": "Distinguer les zones de danger et eaux saines.",
               "correct": false
             },
             {
               "id": "b",
-              "text": "Non-maître>Capacité>Tirant>Pêche>Voilier>Moteur",
+              "text": "Hiérarchie : Non-maître>Capacité>Tirant>Pêche>Voilier>Moteur",
               "correct": true
             },
             {
               "id": "c",
-              "text": "gisement constant 3 temps",
+              "text": "Routes opposées : tribord-tribord",
               "correct": false
             },
             {
               "id": "d",
-              "text": "triangle+numéro",
+              "text": "Chalutier pêche : 2 cônes, feu vert/blanc",
               "correct": false
             }
           ],
@@ -4433,27 +4433,27 @@
         },
         {
           "id": "pedago_3_2",
-          "text": "Dans le module 3, que signifie \"Routes opposées\" ?",
+          "text": "En risque d abordage, quelle manœuvre est correcte ?",
           "image": null,
           "answers": [
             {
               "id": "a",
-              "text": "Non-maître>Capacité>Tirant>Pêche>Voilier>Moteur",
+              "text": "Chalutier pêche : 2 cônes, feu vert/blanc",
               "correct": false
             },
             {
               "id": "b",
-              "text": "traité moteur",
+              "text": "Voilier+moteur : traité moteur",
               "correct": false
             },
             {
               "id": "c",
-              "text": "s'écarter",
+              "text": "Arrière : 3 coups",
               "correct": false
             },
             {
               "id": "d",
-              "text": "tribord-tribord",
+              "text": "Routes opposées : tribord-tribord",
               "correct": true
             }
           ],
@@ -4466,28 +4466,28 @@
         },
         {
           "id": "pedago_3_3",
-          "text": "Dans le module 3, que signifie \"Routes convergentes\" ?",
+          "text": "En risque d abordage, quelle manœuvre est correcte ?",
           "image": null,
           "answers": [
             {
               "id": "a",
-              "text": "gisement constant 3 temps",
+              "text": "Eaux saines : bandes rouges/blanches, feu blanc",
               "correct": false
             },
             {
               "id": "b",
-              "text": "détresse urgence",
+              "text": "Doublage : s'écarter",
               "correct": false
             },
             {
               "id": "c",
-              "text": "s'écarter",
-              "correct": false
+              "text": "Routes convergentes : priorité droite",
+              "correct": true
             },
             {
               "id": "d",
-              "text": "priorité droite",
-              "correct": true
+              "text": "Risque : gisement constant 3 temps",
+              "correct": false
             }
           ],
           "difficulty": 2,
@@ -4499,27 +4499,27 @@
         },
         {
           "id": "pedago_3_4",
-          "text": "Dans le module 3, que signifie \"Doublage\" ?",
+          "text": "En risque d abordage, quelle manœuvre est correcte ?",
           "image": null,
           "answers": [
             {
               "id": "a",
-              "text": "2 cônes, feu vert/blanc",
+              "text": "Routes convergentes : priorité droite",
               "correct": false
             },
             {
               "id": "b",
-              "text": "tribord-tribord",
+              "text": "Feu arrière : blanc 135°",
               "correct": false
             },
             {
               "id": "c",
-              "text": "mesurer caps distances",
+              "text": "Voilier+moteur : traité moteur",
               "correct": false
             },
             {
               "id": "d",
-              "text": "s'écarter",
+              "text": "Doublage : s'écarter",
               "correct": true
             }
           ],
@@ -4532,28 +4532,28 @@
         },
         {
           "id": "pedago_3_5",
-          "text": "Dans le module 3, que signifie \"Voilier+moteur\" ?",
+          "text": "En risque d abordage, quelle manœuvre est correcte ?",
           "image": null,
           "answers": [
             {
               "id": "a",
-              "text": "Non-maître>Capacité>Tirant>Pêche>Voilier>Moteur",
+              "text": "Hiérarchie : Non-maître>Capacité>Tirant>Pêche>Voilier>Moteur",
               "correct": false
             },
             {
               "id": "b",
-              "text": "route surface",
+              "text": "Remorqueur : feu blanc supplémentaire",
               "correct": false
             },
             {
               "id": "c",
-              "text": "gisement constant 3 temps",
-              "correct": false
+              "text": "Voilier+moteur : traité moteur",
+              "correct": true
             },
             {
               "id": "d",
-              "text": "traité moteur",
-              "correct": true
+              "text": "En voile legere, la limite est de 2 milles d un abri.",
+              "correct": false
             }
           ],
           "difficulty": 2,
@@ -4565,27 +4565,27 @@
         },
         {
           "id": "pedago_3_6",
-          "text": "Dans le module 3, que signifie \"Chalutier pêche\" ?",
+          "text": "En risque d abordage, quelle manœuvre est correcte ?",
           "image": null,
           "answers": [
             {
               "id": "a",
-              "text": "-12-24h avant basse pression",
-              "correct": false
-            },
-            {
-              "id": "b",
-              "text": "2 cônes, feu vert/blanc",
+              "text": "Chalutier pêche : 2 cônes, feu vert/blanc",
               "correct": true
             },
             {
+              "id": "b",
+              "text": "Doublage : s'écarter",
+              "correct": false
+            },
+            {
               "id": "c",
-              "text": "feu blanc supplémentaire",
+              "text": "Voilier+moteur : traité moteur",
               "correct": false
             },
             {
               "id": "d",
-              "text": "Non-maître>Capacité>Tirant>Pêche>Voilier>Moteur",
+              "text": "Fréquence 156-162 MHz.",
               "correct": false
             }
           ],
@@ -4598,27 +4598,27 @@
         },
         {
           "id": "pedago_3_7",
-          "text": "Dans le module 3, que signifie \"Remorqueur\" ?",
+          "text": "En risque d abordage, quelle manœuvre est correcte ?",
           "image": null,
           "answers": [
             {
               "id": "a",
-              "text": "tribord-tribord",
+              "text": "Sud : jaune/noir, cônes bas, 6 blancs/10s",
               "correct": false
             },
             {
               "id": "b",
-              "text": "feu blanc supplémentaire",
+              "text": "Remorqueur : feu blanc supplémentaire",
               "correct": true
             },
             {
               "id": "c",
-              "text": "s'écarter",
+              "text": "Voilier+moteur : traité moteur",
               "correct": false
             },
             {
               "id": "d",
-              "text": "orages",
+              "text": "Routes opposées : tribord-tribord",
               "correct": false
             }
           ],
@@ -4631,27 +4631,27 @@
         },
         {
           "id": "pedago_3_8",
-          "text": "Dans le module 3, que signifie \"Risque\" ?",
+          "text": "En risque d abordage, quelle manœuvre est correcte ?",
           "image": null,
           "answers": [
             {
               "id": "a",
-              "text": "Non-maître>Capacité>Tirant>Pêche>Voilier>Moteur",
+              "text": "Doublage : s'écarter",
               "correct": false
             },
             {
               "id": "b",
-              "text": "triangle+numéro",
-              "correct": false
-            },
-            {
-              "id": "c",
-              "text": "gisement constant 3 temps",
+              "text": "Risque : gisement constant 3 temps",
               "correct": true
             },
             {
+              "id": "c",
+              "text": "Balise SOLAS.",
+              "correct": false
+            },
+            {
               "id": "d",
-              "text": "tribord-tribord",
+              "text": "Routes opposées : tribord-tribord",
               "correct": false
             }
           ],
@@ -4664,28 +4664,28 @@
         },
         {
           "id": "pedago_3_9",
-          "text": "Au PE, \"Hiérarchie\" designe :",
+          "text": "En croisement, quelle priorite est exacte ?",
           "image": null,
           "answers": [
             {
               "id": "a",
-              "text": "1/12",
+              "text": "Doublage : s'écarter",
               "correct": false
             },
             {
               "id": "b",
-              "text": "Non-maître>Capacité>Tirant>Pêche>Voilier>Moteur",
-              "correct": true
+              "text": "Routes opposées : tribord-tribord",
+              "correct": false
             },
             {
               "id": "c",
-              "text": "tribord-tribord",
+              "text": "Je arrière : 3 brefs",
               "correct": false
             },
             {
               "id": "d",
-              "text": "2 cônes, feu vert/blanc",
-              "correct": false
+              "text": "Hiérarchie : Non-maître>Capacité>Tirant>Pêche>Voilier>Moteur",
+              "correct": true
             }
           ],
           "difficulty": 2,
@@ -4697,27 +4697,27 @@
         },
         {
           "id": "pedago_3_10",
-          "text": "Au PE, \"Routes opposées\" designe :",
+          "text": "En croisement, quelle priorite est exacte ?",
           "image": null,
           "answers": [
             {
               "id": "a",
-              "text": "tribord-tribord",
-              "correct": true
+              "text": "Utiliser le pied de pilote (sécurité).",
+              "correct": false
             },
             {
               "id": "b",
-              "text": "Non-maître>Capacité>Tirant>Pêche>Voilier>Moteur",
+              "text": "Chalutier pêche : 2 cônes, feu vert/blanc",
               "correct": false
             },
             {
               "id": "c",
-              "text": "feu blanc supplémentaire",
-              "correct": false
+              "text": "Routes opposées : tribord-tribord",
+              "correct": true
             },
             {
               "id": "d",
-              "text": "tables marées",
+              "text": "Risque : gisement constant 3 temps",
               "correct": false
             }
           ],
@@ -4730,27 +4730,27 @@
         },
         {
           "id": "pedago_3_11",
-          "text": "Au PE, \"Routes convergentes\" designe :",
+          "text": "En croisement, quelle priorite est exacte ?",
           "image": null,
           "answers": [
             {
               "id": "a",
-              "text": "s'écarter",
+              "text": "Hiérarchie : Non-maître>Capacité>Tirant>Pêche>Voilier>Moteur",
               "correct": false
             },
             {
               "id": "b",
-              "text": "tribord-tribord",
-              "correct": false
-            },
-            {
-              "id": "c",
-              "text": "priorité droite",
+              "text": "Routes convergentes : priorité droite",
               "correct": true
             },
             {
+              "id": "c",
+              "text": "Routes opposées : tribord-tribord",
+              "correct": false
+            },
+            {
               "id": "d",
-              "text": "cap compas",
+              "text": "W: déclinaison (W=-,E=+).",
               "correct": false
             }
           ],
@@ -4763,27 +4763,27 @@
         },
         {
           "id": "pedago_3_12",
-          "text": "Au PE, \"Doublage\" designe :",
+          "text": "En croisement, quelle priorite est exacte ?",
           "image": null,
           "answers": [
             {
               "id": "a",
-              "text": "2 cônes, feu vert/blanc",
-              "correct": false
+              "text": "Doublage : s'écarter",
+              "correct": true
             },
             {
               "id": "b",
-              "text": "route surface",
+              "text": "Risque : gisement constant 3 temps",
               "correct": false
             },
             {
               "id": "c",
-              "text": "s'écarter",
-              "correct": true
+              "text": "Lire et interpréter les symboles SHOM.",
+              "correct": false
             },
             {
               "id": "d",
-              "text": "Non-maître>Capacité>Tirant>Pêche>Voilier>Moteur",
+              "text": "Routes convergentes : priorité droite",
               "correct": false
             }
           ],
@@ -4796,27 +4796,27 @@
         },
         {
           "id": "pedago_3_13",
-          "text": "Au PE, \"Voilier+moteur\" designe :",
+          "text": "En croisement, quelle priorite est exacte ?",
           "image": null,
           "answers": [
             {
               "id": "a",
-              "text": "-12h",
+              "text": "Profondeur : mètres côtier",
               "correct": false
             },
             {
               "id": "b",
-              "text": "traité moteur",
-              "correct": true
-            },
-            {
-              "id": "c",
-              "text": "2 cônes, feu vert/blanc",
+              "text": "Routes opposées : tribord-tribord",
               "correct": false
             },
             {
+              "id": "c",
+              "text": "Voilier+moteur : traité moteur",
+              "correct": true
+            },
+            {
               "id": "d",
-              "text": "tribord-tribord",
+              "text": "Chalutier pêche : 2 cônes, feu vert/blanc",
               "correct": false
             }
           ],
@@ -4829,27 +4829,27 @@
         },
         {
           "id": "pedago_3_14",
-          "text": "Au PE, \"Chalutier pêche\" designe :",
+          "text": "En croisement, quelle priorite est exacte ?",
           "image": null,
           "answers": [
             {
               "id": "a",
-              "text": "gisement constant 3 temps",
-              "correct": false
-            },
-            {
-              "id": "b",
-              "text": "2 cônes, feu vert/blanc",
+              "text": "Chalutier pêche : 2 cônes, feu vert/blanc",
               "correct": true
             },
             {
+              "id": "b",
+              "text": "Profondeur : mètres côtier",
+              "correct": false
+            },
+            {
               "id": "c",
-              "text": "blanc 135°",
+              "text": "Voilier+moteur : traité moteur",
               "correct": false
             },
             {
               "id": "d",
-              "text": "feu blanc supplémentaire",
+              "text": "Remorqueur : feu blanc supplémentaire",
               "correct": false
             }
           ],
@@ -4862,27 +4862,27 @@
         },
         {
           "id": "pedago_3_15",
-          "text": "Au PE, \"Remorqueur\" designe :",
+          "text": "En croisement, quelle priorite est exacte ?",
           "image": null,
           "answers": [
             {
               "id": "a",
-              "text": "feu blanc supplémentaire",
-              "correct": true
+              "text": "Routes convergentes : priorité droite",
+              "correct": false
             },
             {
               "id": "b",
-              "text": "basse mer",
+              "text": "Rattrapage trib : 2 brefs",
               "correct": false
             },
             {
               "id": "c",
-              "text": "2 cônes, feu vert/blanc",
-              "correct": false
+              "text": "Remorqueur : feu blanc supplémentaire",
+              "correct": true
             },
             {
               "id": "d",
-              "text": "traité moteur",
+              "text": "Voilier+moteur : traité moteur",
               "correct": false
             }
           ],
@@ -4895,28 +4895,160 @@
         },
         {
           "id": "pedago_3_16",
-          "text": "Au PE, \"Risque\" designe :",
+          "text": "En croisement, quelle priorite est exacte ?",
           "image": null,
           "answers": [
             {
               "id": "a",
-              "text": "gisement constant 3 temps",
+              "text": "Risque : gisement constant 3 temps",
               "correct": true
             },
             {
               "id": "b",
-              "text": "2 cônes, feu vert/blanc",
+              "text": "Hiérarchie : Non-maître>Capacité>Tirant>Pêche>Voilier>Moteur",
               "correct": false
             },
             {
               "id": "c",
-              "text": "Non-maître>Capacité>Tirant>Pêche>Voilier>Moteur",
+              "text": "Chalutier pêche : 2 cônes, feu vert/blanc",
               "correct": false
             },
             {
               "id": "d",
-              "text": "croix+point",
+              "text": "δ: déviation.",
               "correct": false
+            }
+          ],
+          "difficulty": 2,
+          "explanation": "Point de cours valide (module 3)",
+          "tags": [
+            "module_3",
+            "pedagogical_quality"
+          ]
+        },
+        {
+          "id": "pedago_3_17",
+          "text": "En route de collision, quelle regle est juste ?",
+          "image": null,
+          "answers": [
+            {
+              "id": "a",
+              "text": "Routes opposées : tribord-tribord",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "Phare : triangle+numéro",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "text": "Hiérarchie : Non-maître>Capacité>Tirant>Pêche>Voilier>Moteur",
+              "correct": true
+            },
+            {
+              "id": "d",
+              "text": "Chalutier pêche : 2 cônes, feu vert/blanc",
+              "correct": false
+            }
+          ],
+          "difficulty": 2,
+          "explanation": "Point de cours valide (module 3)",
+          "tags": [
+            "module_3",
+            "pedagogical_quality"
+          ]
+        },
+        {
+          "id": "pedago_3_18",
+          "text": "En route de collision, quelle regle est juste ?",
+          "image": null,
+          "answers": [
+            {
+              "id": "a",
+              "text": "Construire la route fond sur carte.",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "Hiérarchie : Non-maître>Capacité>Tirant>Pêche>Voilier>Moteur",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "text": "Routes convergentes : priorité droite",
+              "correct": false
+            },
+            {
+              "id": "d",
+              "text": "Routes opposées : tribord-tribord",
+              "correct": true
+            }
+          ],
+          "difficulty": 2,
+          "explanation": "Point de cours valide (module 3)",
+          "tags": [
+            "module_3",
+            "pedagogical_quality"
+          ]
+        },
+        {
+          "id": "pedago_3_19",
+          "text": "En route de collision, quelle regle est juste ?",
+          "image": null,
+          "answers": [
+            {
+              "id": "a",
+              "text": "Parallélogramme vectoriel.",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "Routes convergentes : priorité droite",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "text": "Routes opposées : tribord-tribord",
+              "correct": false
+            },
+            {
+              "id": "d",
+              "text": "Chalutier pêche : 2 cônes, feu vert/blanc",
+              "correct": false
+            }
+          ],
+          "difficulty": 2,
+          "explanation": "Point de cours valide (module 3)",
+          "tags": [
+            "module_3",
+            "pedagogical_quality"
+          ]
+        },
+        {
+          "id": "pedago_3_20",
+          "text": "En route de collision, quelle regle est juste ?",
+          "image": null,
+          "answers": [
+            {
+              "id": "a",
+              "text": "Risque : gisement constant 3 temps",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "Routes opposées : tribord-tribord",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "text": "Courants tidals : tables marées",
+              "correct": false
+            },
+            {
+              "id": "d",
+              "text": "Doublage : s'écarter",
+              "correct": true
             }
           ],
           "difficulty": 2,
@@ -4936,27 +5068,27 @@
       "questions": [
         {
           "id": "pedago_4_1",
-          "text": "Dans le module 4, que signifie \"Distance\" ?",
+          "text": "Sur une carte marine, quelle proposition est exacte ?",
           "image": null,
           "answers": [
             {
               "id": "a",
-              "text": "17-21kt, 2m",
-              "correct": false
+              "text": "Distance : échelle latitudes",
+              "correct": true
             },
             {
               "id": "b",
-              "text": "carré",
+              "text": "Mouillage : boule noire (j), feu blanc (n)",
               "correct": false
             },
             {
               "id": "c",
-              "text": "échelle latitudes",
-              "correct": true
+              "text": "Épave : croix+point",
+              "correct": false
             },
             {
               "id": "d",
-              "text": "pointillés fermés",
+              "text": "Déterminer des coordonnées géographiques.",
               "correct": false
             }
           ],
@@ -4969,28 +5101,28 @@
         },
         {
           "id": "pedago_4_2",
-          "text": "Dans le module 4, que signifie \"Épave\" ?",
+          "text": "Sur une carte marine, quelle proposition est exacte ?",
           "image": null,
           "answers": [
             {
               "id": "a",
-              "text": "mesurer caps distances",
+              "text": "Non maître : 2 boules (j), feu+route (n)",
               "correct": false
             },
             {
               "id": "b",
-              "text": "croix+point",
-              "correct": true
+              "text": "Lire et interpréter les symboles SHOM.",
+              "correct": false
             },
             {
               "id": "c",
-              "text": "échelle latitudes",
+              "text": "Profondeur : mètres côtier",
               "correct": false
             },
             {
               "id": "d",
-              "text": "point+profondeur",
-              "correct": false
+              "text": "Épave : croix+point",
+              "correct": true
             }
           ],
           "difficulty": 2,
@@ -5002,28 +5134,28 @@
         },
         {
           "id": "pedago_4_3",
-          "text": "Dans le module 4, que signifie \"Haut-fond\" ?",
+          "text": "Sur une carte marine, quelle proposition est exacte ?",
           "image": null,
           "answers": [
             {
               "id": "a",
-              "text": "croix+point",
+              "text": "Marnage : PM-BM",
               "correct": false
             },
             {
               "id": "b",
-              "text": "carré",
+              "text": "Balise : carré",
               "correct": false
             },
             {
               "id": "c",
-              "text": "mètres côtier",
-              "correct": false
+              "text": "Haut-fond : point+profondeur",
+              "correct": true
             },
             {
               "id": "d",
-              "text": "point+profondeur",
-              "correct": true
+              "text": "Règle Cras : mesurer caps distances",
+              "correct": false
             }
           ],
           "difficulty": 2,
@@ -5035,28 +5167,28 @@
         },
         {
           "id": "pedago_4_4",
-          "text": "Dans le module 4, que signifie \"Parc\" ?",
+          "text": "Sur une carte marine, quelle proposition est exacte ?",
           "image": null,
           "answers": [
             {
               "id": "a",
-              "text": "triangle+numéro",
+              "text": "Manœuvre trib : 1 coup",
               "correct": false
             },
             {
               "id": "b",
-              "text": "mètres côtier",
+              "text": "Lire et interpréter les symboles SHOM.",
               "correct": false
             },
             {
               "id": "c",
-              "text": "pointillés fermés",
-              "correct": true
+              "text": "Haut-fond : point+profondeur",
+              "correct": false
             },
             {
               "id": "d",
-              "text": "Non-maître>Capacité>Tirant>Pêche>Voilier>Moteur",
-              "correct": false
+              "text": "Parc : pointillés fermés",
+              "correct": true
             }
           ],
           "difficulty": 2,
@@ -5068,27 +5200,27 @@
         },
         {
           "id": "pedago_4_5",
-          "text": "Dans le module 4, que signifie \"Câble\" ?",
+          "text": "Sur une carte marine, quelle proposition est exacte ?",
           "image": null,
           "answers": [
             {
               "id": "a",
-              "text": "mètres côtier",
+              "text": "Triangle fermé vecteurs.",
               "correct": false
             },
             {
               "id": "b",
-              "text": "pointillé+AC",
+              "text": "Câble : pointillé+AC",
               "correct": true
             },
             {
               "id": "c",
-              "text": "croix+point",
+              "text": "Phare : triangle+numéro",
               "correct": false
             },
             {
               "id": "d",
-              "text": "pleine mer",
+              "text": "Déterminer des coordonnées géographiques.",
               "correct": false
             }
           ],
@@ -5101,28 +5233,28 @@
         },
         {
           "id": "pedago_4_6",
-          "text": "Dans le module 4, que signifie \"Phare\" ?",
+          "text": "Sur une carte marine, quelle proposition est exacte ?",
           "image": null,
           "answers": [
             {
               "id": "a",
-              "text": "pointillés fermés",
-              "correct": false
+              "text": "Phare : triangle+numéro",
+              "correct": true
             },
             {
               "id": "b",
-              "text": "gisement constant 3 temps",
+              "text": "Parc : pointillés fermés",
               "correct": false
             },
             {
               "id": "c",
-              "text": "échelle latitudes",
+              "text": "Triangle fermé vecteurs.",
               "correct": false
             },
             {
               "id": "d",
-              "text": "triangle+numéro",
-              "correct": true
+              "text": "Distance : échelle latitudes",
+              "correct": false
             }
           ],
           "difficulty": 2,
@@ -5134,27 +5266,27 @@
         },
         {
           "id": "pedago_4_7",
-          "text": "Dans le module 4, que signifie \"Balise\" ?",
+          "text": "Sur une carte marine, quelle proposition est exacte ?",
           "image": null,
           "answers": [
             {
               "id": "a",
-              "text": "carré",
-              "correct": true
-            },
-            {
-              "id": "b",
-              "text": "point+profondeur",
+              "text": "Utiliser la règle Cras (rapporteur maritime).",
               "correct": false
             },
             {
+              "id": "b",
+              "text": "Balise : carré",
+              "correct": true
+            },
+            {
               "id": "c",
-              "text": "50min",
+              "text": "Rose : 360°",
               "correct": false
             },
             {
               "id": "d",
-              "text": "pointillé+AC",
+              "text": "Haut-fond : point+profondeur",
               "correct": false
             }
           ],
@@ -5167,27 +5299,27 @@
         },
         {
           "id": "pedago_4_8",
-          "text": "Dans le module 4, que signifie \"Profondeur\" ?",
+          "text": "Sur une carte marine, quelle proposition est exacte ?",
           "image": null,
           "answers": [
             {
               "id": "a",
-              "text": "pointillé+AC",
+              "text": "Utiliser la règle Cras (rapporteur maritime).",
               "correct": false
             },
             {
               "id": "b",
-              "text": "rouge bâb, vert trib 112.5°",
+              "text": "Distance : échelle latitudes",
               "correct": false
             },
             {
               "id": "c",
-              "text": "carré",
+              "text": "Rs : route surface",
               "correct": false
             },
             {
               "id": "d",
-              "text": "mètres côtier",
+              "text": "Profondeur : mètres côtier",
               "correct": true
             }
           ],
@@ -5200,27 +5332,27 @@
         },
         {
           "id": "pedago_4_9",
-          "text": "Dans le module 4, que signifie \"Règle Cras\" ?",
+          "text": "Sur une carte marine, quelle proposition est exacte ?",
           "image": null,
           "answers": [
             {
               "id": "a",
-              "text": "mesurer caps distances",
-              "correct": true
-            },
-            {
-              "id": "b",
-              "text": "point+profondeur",
+              "text": "Parc : pointillés fermés",
               "correct": false
             },
             {
+              "id": "b",
+              "text": "Règle Cras : mesurer caps distances",
+              "correct": true
+            },
+            {
               "id": "c",
-              "text": "pointillé+AC",
+              "text": "Distance : échelle latitudes",
               "correct": false
             },
             {
               "id": "d",
-              "text": "3 brefs",
+              "text": "Feu proue : blanc axial 225°",
               "correct": false
             }
           ],
@@ -5233,28 +5365,28 @@
         },
         {
           "id": "pedago_4_10",
-          "text": "Sur la carte marine, quelle proposition est exacte ?",
+          "text": "Sur une carte marine, quelle proposition est exacte ?",
           "image": null,
           "answers": [
             {
               "id": "a",
-              "text": "Utiliser l'alphabet phonétique",
+              "text": "Routes opposées : tribord-tribord",
               "correct": false
             },
             {
               "id": "b",
-              "text": "Lire et interpréter les symboles SHOM",
-              "correct": true
+              "text": "Mesurer des distances sur la carte.",
+              "correct": false
             },
             {
               "id": "c",
-              "text": "Mesurer des distances sur la carte",
+              "text": "Câble : pointillé+AC",
               "correct": false
             },
             {
               "id": "d",
-              "text": "Déterminer des coordonnées géographiques",
-              "correct": false
+              "text": "Lire et interpréter les symboles SHOM.",
+              "correct": true
             }
           ],
           "difficulty": 2,
@@ -5266,27 +5398,27 @@
         },
         {
           "id": "pedago_4_11",
-          "text": "Sur la carte marine, quelle proposition est exacte ?",
+          "text": "Sur une carte marine, quelle proposition est exacte ?",
           "image": null,
           "answers": [
             {
               "id": "a",
-              "text": "Déterminer des coordonnées géographiques",
+              "text": "Déterminer des coordonnées géographiques.",
               "correct": true
             },
             {
               "id": "b",
-              "text": "Règle Cras: mesurer caps distances",
+              "text": "Utiliser la règle Cras (rapporteur maritime).",
               "correct": false
             },
             {
               "id": "c",
-              "text": "Le cadre SUF privilegie la navigation de jour.",
+              "text": "Parallélogramme vectoriel.",
               "correct": false
             },
             {
               "id": "d",
-              "text": "Phare: triangle+numéro",
+              "text": "Lire et interpréter les symboles SHOM.",
               "correct": false
             }
           ],
@@ -5299,27 +5431,27 @@
         },
         {
           "id": "pedago_4_12",
-          "text": "Sur la carte marine, quelle proposition est exacte ?",
+          "text": "Sur une carte marine, quelle proposition est exacte ?",
           "image": null,
           "answers": [
             {
               "id": "a",
-              "text": "Lire et interpréter les symboles SHOM",
+              "text": "Force 0 : <1kt",
               "correct": false
             },
             {
               "id": "b",
-              "text": "Utiliser la règle Cras (rapporteur maritime)",
-              "correct": true
-            },
-            {
-              "id": "c",
-              "text": "Front chaud: pluie progressive",
+              "text": "Distance : échelle latitudes",
               "correct": false
             },
             {
+              "id": "c",
+              "text": "Utiliser la règle Cras (rapporteur maritime).",
+              "correct": true
+            },
+            {
               "id": "d",
-              "text": "Règle Cras: mesurer caps distances",
+              "text": "Règle Cras : mesurer caps distances",
               "correct": false
             }
           ],
@@ -5332,28 +5464,28 @@
         },
         {
           "id": "pedago_4_13",
-          "text": "Sur la carte marine, quelle proposition est exacte ?",
+          "text": "Sur une carte marine, quelle proposition est exacte ?",
           "image": null,
           "answers": [
             {
               "id": "a",
-              "text": "Mouillage: boule noire (j), feu blanc (n)",
+              "text": "Haut-fond : point+profondeur",
               "correct": false
             },
             {
               "id": "b",
-              "text": "Épave: croix+point",
+              "text": "H3 : 3/12 (cumul 6/12)",
               "correct": false
             },
             {
               "id": "c",
-              "text": "Mesurer des distances sur la carte",
-              "correct": true
+              "text": "Parc : pointillés fermés",
+              "correct": false
             },
             {
               "id": "d",
-              "text": "Utiliser la règle Cras (rapporteur maritime)",
-              "correct": false
+              "text": "Mesurer des distances sur la carte.",
+              "correct": true
             }
           ],
           "difficulty": 2,
@@ -5365,27 +5497,27 @@
         },
         {
           "id": "pedago_4_14",
-          "text": "Au PE, \"Distance\" designe :",
+          "text": "Avec la regle Cras, quelle methode est correcte ?",
           "image": null,
           "answers": [
             {
               "id": "a",
-              "text": "pointillé+AC",
+              "text": "Feu proue : blanc axial 225°",
               "correct": false
             },
             {
               "id": "b",
-              "text": "1,2,3,3,2,1",
+              "text": "Balise : carré",
               "correct": false
             },
             {
               "id": "c",
-              "text": "triangle+numéro",
+              "text": "Mesurer des distances sur la carte.",
               "correct": false
             },
             {
               "id": "d",
-              "text": "échelle latitudes",
+              "text": "Distance : échelle latitudes",
               "correct": true
             }
           ],
@@ -5398,27 +5530,27 @@
         },
         {
           "id": "pedago_4_15",
-          "text": "Au PE, \"Épave\" designe :",
+          "text": "Avec la regle Cras, quelle methode est correcte ?",
           "image": null,
           "answers": [
             {
               "id": "a",
-              "text": "croix+point",
-              "correct": true
+              "text": "Haut-fond : point+profondeur",
+              "correct": false
             },
             {
               "id": "b",
-              "text": "pleine mer",
+              "text": "Phare : triangle+numéro",
               "correct": false
             },
             {
               "id": "c",
-              "text": "mesurer caps distances",
-              "correct": false
+              "text": "Épave : croix+point",
+              "correct": true
             },
             {
               "id": "d",
-              "text": "point+profondeur",
+              "text": "Dérive : Rf - Rs",
               "correct": false
             }
           ],
@@ -5431,27 +5563,27 @@
         },
         {
           "id": "pedago_4_16",
-          "text": "Au PE, \"Haut-fond\" designe :",
+          "text": "Avec la regle Cras, quelle methode est correcte ?",
           "image": null,
           "answers": [
             {
               "id": "a",
-              "text": "croix+point",
+              "text": "Je tribord : 1 bref",
               "correct": false
             },
             {
               "id": "b",
-              "text": "point+profondeur",
-              "correct": true
-            },
-            {
-              "id": "c",
-              "text": "W 0-2°",
+              "text": "Phare : triangle+numéro",
               "correct": false
             },
             {
+              "id": "c",
+              "text": "Haut-fond : point+profondeur",
+              "correct": true
+            },
+            {
               "id": "d",
-              "text": "mesurer caps distances",
+              "text": "Utiliser la règle Cras (rapporteur maritime).",
               "correct": false
             }
           ],
@@ -5464,27 +5596,27 @@
         },
         {
           "id": "pedago_4_17",
-          "text": "Au PE, \"Parc\" designe :",
+          "text": "Avec la regle Cras, quelle methode est correcte ?",
           "image": null,
           "answers": [
             {
               "id": "a",
-              "text": "pointillés fermés",
+              "text": "Parc : pointillés fermés",
               "correct": true
             },
             {
               "id": "b",
-              "text": "3 boules (j), blanc+2 rouges (n)",
+              "text": "Utiliser la règle Cras (rapporteur maritime).",
               "correct": false
             },
             {
               "id": "c",
-              "text": "échelle latitudes",
+              "text": "Épave : croix+point",
               "correct": false
             },
             {
               "id": "d",
-              "text": "triangle+numéro",
+              "text": "Force 4 : 11-16kt, 1m",
               "correct": false
             }
           ],
@@ -5497,27 +5629,27 @@
         },
         {
           "id": "pedago_4_18",
-          "text": "Au PE, \"Câble\" designe :",
+          "text": "Avec la regle Cras, quelle methode est correcte ?",
           "image": null,
           "answers": [
             {
               "id": "a",
-              "text": "croix+point",
+              "text": "Interpréter les cartes de pression.",
               "correct": false
             },
             {
               "id": "b",
-              "text": "échelle latitudes",
-              "correct": false
-            },
-            {
-              "id": "c",
-              "text": "pointillé+AC",
+              "text": "Câble : pointillé+AC",
               "correct": true
             },
             {
+              "id": "c",
+              "text": "Déterminer des coordonnées géographiques.",
+              "correct": false
+            },
+            {
               "id": "d",
-              "text": "mètres côtier",
+              "text": "Règle Cras : mesurer caps distances",
               "correct": false
             }
           ],
@@ -5530,28 +5662,28 @@
         },
         {
           "id": "pedago_4_19",
-          "text": "Au PE, \"Phare\" designe :",
+          "text": "Avec la regle Cras, quelle methode est correcte ?",
           "image": null,
           "answers": [
             {
               "id": "a",
-              "text": "vert+bande rouge, feu vert 2+1",
+              "text": "Distance : échelle latitudes",
               "correct": false
             },
             {
               "id": "b",
-              "text": "croix+point",
+              "text": "Lister l'équipement obligatoire à bord.",
               "correct": false
             },
             {
               "id": "c",
-              "text": "échelle latitudes",
-              "correct": false
+              "text": "Phare : triangle+numéro",
+              "correct": true
             },
             {
               "id": "d",
-              "text": "triangle+numéro",
-              "correct": true
+              "text": "Haut-fond : point+profondeur",
+              "correct": false
             }
           ],
           "difficulty": 2,
@@ -5563,28 +5695,28 @@
         },
         {
           "id": "pedago_4_20",
-          "text": "Au PE, \"Balise\" designe :",
+          "text": "Avec la regle Cras, quelle methode est correcte ?",
           "image": null,
           "answers": [
             {
               "id": "a",
-              "text": "triangle+numéro",
+              "text": "Phare : triangle+numéro",
               "correct": false
             },
             {
               "id": "b",
-              "text": "pointillé+AC",
+              "text": "H3 : 3/12 (cumul 6/12)",
               "correct": false
             },
             {
               "id": "c",
-              "text": "carré",
-              "correct": true
+              "text": "Utiliser la règle Cras (rapporteur maritime).",
+              "correct": false
             },
             {
               "id": "d",
-              "text": "point+profondeur",
-              "correct": false
+              "text": "Balise : carré",
+              "correct": true
             }
           ],
           "difficulty": 2,
@@ -5604,27 +5736,27 @@
       "questions": [
         {
           "id": "pedago_5_1",
-          "text": "Dans le module 5, que signifie \"Cirrus\" ?",
+          "text": "Avant appareillage, quelle interpretation meteo est correcte ?",
           "image": null,
           "answers": [
             {
               "id": "a",
-              "text": "22-27kt, 3m",
+              "text": "Distinguer les zones de danger et eaux saines.",
               "correct": false
             },
             {
               "id": "b",
-              "text": "-12-24h avant basse pression",
+              "text": "Cirrus : -12-24h avant basse pression",
               "correct": true
             },
             {
               "id": "c",
-              "text": "orages",
+              "text": "Force 0 : <1kt",
               "correct": false
             },
             {
               "id": "d",
-              "text": "<1kt",
+              "text": "Force 4 : 11-16kt, 1m",
               "correct": false
             }
           ],
@@ -5637,28 +5769,28 @@
         },
         {
           "id": "pedago_5_2",
-          "text": "En meteorologie marine, quelle proposition est exacte ?",
+          "text": "Avant appareillage, quelle interpretation meteo est correcte ?",
           "image": null,
           "answers": [
             {
               "id": "a",
-              "text": "Altocumulus: -12h",
-              "correct": true
+              "text": "Haut-fond : point+profondeur",
+              "correct": false
             },
             {
               "id": "b",
-              "text": "Force 0: <1kt",
+              "text": "Front froid : orages",
               "correct": false
             },
             {
               "id": "c",
-              "text": "Parallélogramme vectoriel",
+              "text": "Front chaud : pluie progressive",
               "correct": false
             },
             {
               "id": "d",
-              "text": "Cirrus: -12-24h avant basse pression",
-              "correct": false
+              "text": "Altocumulus : -12h",
+              "correct": true
             }
           ],
           "difficulty": 2,
@@ -5670,27 +5802,27 @@
         },
         {
           "id": "pedago_5_3",
-          "text": "En meteorologie marine, quelle proposition est exacte ?",
+          "text": "Avant appareillage, quelle interpretation meteo est correcte ?",
           "image": null,
           "answers": [
             {
               "id": "a",
-              "text": "Je bâbord: 2 brefs",
+              "text": "Force 6 : 22-27kt, 3m",
               "correct": false
             },
             {
               "id": "b",
-              "text": "Force 0: <1kt",
-              "correct": true
-            },
-            {
-              "id": "c",
-              "text": "Front froid: orages",
+              "text": "Force 5 : 17-21kt, 2m",
               "correct": false
             },
             {
+              "id": "c",
+              "text": "Force 0 : <1kt",
+              "correct": true
+            },
+            {
               "id": "d",
-              "text": "Force 5: 17-21kt, 2m",
+              "text": "Marnage : PM-BM",
               "correct": false
             }
           ],
@@ -5703,27 +5835,27 @@
         },
         {
           "id": "pedago_5_4",
-          "text": "Dans le module 5, que signifie \"Force 4\" ?",
+          "text": "Avant appareillage, quelle interpretation meteo est correcte ?",
           "image": null,
           "answers": [
             {
               "id": "a",
-              "text": "1long+2brefs",
-              "correct": false
+              "text": "Force 4 : 11-16kt, 1m",
+              "correct": true
             },
             {
               "id": "b",
-              "text": "-12-24h avant basse pression",
+              "text": "Front froid : orages",
               "correct": false
             },
             {
               "id": "c",
-              "text": "11-16kt, 1m",
-              "correct": true
+              "text": "Représenter les vecteurs de courant.",
+              "correct": false
             },
             {
               "id": "d",
-              "text": "pluie progressive",
+              "text": "Cirrus : -12-24h avant basse pression",
               "correct": false
             }
           ],
@@ -5736,27 +5868,27 @@
         },
         {
           "id": "pedago_5_5",
-          "text": "Dans le module 5, que signifie \"Force 5\" ?",
+          "text": "Avant appareillage, quelle interpretation meteo est correcte ?",
           "image": null,
           "answers": [
             {
               "id": "a",
-              "text": "orages",
-              "correct": false
+              "text": "Force 5 : 17-21kt, 2m",
+              "correct": true
             },
             {
               "id": "b",
-              "text": "vert+bande rouge, feu vert 2+1",
+              "text": "Force 6 : 22-27kt, 3m",
               "correct": false
             },
             {
               "id": "c",
-              "text": "17-21kt, 2m",
-              "correct": true
+              "text": "Rattrapage bâb : 1long+2brefs",
+              "correct": false
             },
             {
               "id": "d",
-              "text": "11-16kt, 1m",
+              "text": "Force 0 : <1kt",
               "correct": false
             }
           ],
@@ -5769,28 +5901,28 @@
         },
         {
           "id": "pedago_5_6",
-          "text": "Dans le module 5, que signifie \"Force 6\" ?",
+          "text": "Avant appareillage, quelle interpretation meteo est correcte ?",
           "image": null,
           "answers": [
             {
               "id": "a",
-              "text": "22-27kt, 3m",
-              "correct": true
+              "text": "Interpréter les cartes de pression.",
+              "correct": false
             },
             {
               "id": "b",
-              "text": "orages",
+              "text": "H1 : 1/12",
               "correct": false
             },
             {
               "id": "c",
-              "text": "-12h",
+              "text": "Cirrus : -12-24h avant basse pression",
               "correct": false
             },
             {
               "id": "d",
-              "text": "jaune, croix jaune",
-              "correct": false
+              "text": "Force 6 : 22-27kt, 3m",
+              "correct": true
             }
           ],
           "difficulty": 2,
@@ -5802,27 +5934,27 @@
         },
         {
           "id": "pedago_5_7",
-          "text": "Dans le module 5, que signifie \"Front froid\" ?",
+          "text": "Avant appareillage, quelle interpretation meteo est correcte ?",
           "image": null,
           "answers": [
             {
               "id": "a",
-              "text": "pluie progressive",
-              "correct": false
+              "text": "Front froid : orages",
+              "correct": true
             },
             {
               "id": "b",
-              "text": "-12h",
+              "text": "Force 0 : <1kt",
               "correct": false
             },
             {
               "id": "c",
-              "text": "orages",
-              "correct": true
+              "text": "Force 4 : 11-16kt, 1m",
+              "correct": false
             },
             {
               "id": "d",
-              "text": "22-27kt, 3m",
+              "text": "En habitable, la limite meteo est force 4 avec rafales 5.",
               "correct": false
             }
           ],
@@ -5835,28 +5967,28 @@
         },
         {
           "id": "pedago_5_8",
-          "text": "Dans le module 5, que signifie \"Front chaud\" ?",
+          "text": "Avant appareillage, quelle interpretation meteo est correcte ?",
           "image": null,
           "answers": [
             {
               "id": "a",
-              "text": "17-21kt, 2m",
+              "text": "Routes opposées : tribord-tribord",
               "correct": false
             },
             {
               "id": "b",
-              "text": "-12h",
-              "correct": false
+              "text": "Front chaud : pluie progressive",
+              "correct": true
             },
             {
               "id": "c",
-              "text": "2 coups",
+              "text": "Interpréter les cartes de pression.",
               "correct": false
             },
             {
               "id": "d",
-              "text": "pluie progressive",
-              "correct": true
+              "text": "Force 4 : 11-16kt, 1m",
+              "correct": false
             }
           ],
           "difficulty": 2,
@@ -5868,27 +6000,27 @@
         },
         {
           "id": "pedago_5_9",
-          "text": "En meteorologie marine, quelle proposition est exacte ?",
+          "text": "Avant appareillage, quelle interpretation meteo est correcte ?",
           "image": null,
           "answers": [
             {
               "id": "a",
-              "text": "Interpréter les cartes de pression",
-              "correct": true
-            },
-            {
-              "id": "b",
-              "text": "Altocumulus: -12h",
+              "text": "Force 5 : 17-21kt, 2m",
               "correct": false
             },
             {
+              "id": "b",
+              "text": "Interpréter les cartes de pression.",
+              "correct": true
+            },
+            {
               "id": "c",
-              "text": "Profondeur: mètres côtier",
+              "text": "Altocumulus : -12h",
               "correct": false
             },
             {
               "id": "d",
-              "text": "Front chaud: pluie progressive",
+              "text": "Feux route : rouge bâb, vert trib 112.5°",
               "correct": false
             }
           ],
@@ -5901,27 +6033,27 @@
         },
         {
           "id": "pedago_5_10",
-          "text": "En meteorologie marine, quelle proposition est exacte ?",
+          "text": "Avant appareillage, quelle interpretation meteo est correcte ?",
           "image": null,
           "answers": [
             {
               "id": "a",
-              "text": "Force 5: 17-21kt, 2m",
+              "text": "Pied pilote : sécurité 20cm",
               "correct": false
             },
             {
               "id": "b",
-              "text": "Doublage: s'écarter",
-              "correct": false
-            },
-            {
-              "id": "c",
-              "text": "Utiliser l'échelle de Beaufort",
+              "text": "Utiliser l'échelle de Beaufort.",
               "correct": true
             },
             {
+              "id": "c",
+              "text": "Cirrus : -12-24h avant basse pression",
+              "correct": false
+            },
+            {
               "id": "d",
-              "text": "Front chaud: pluie progressive",
+              "text": "Force 0 : <1kt",
               "correct": false
             }
           ],
@@ -5934,28 +6066,28 @@
         },
         {
           "id": "pedago_5_11",
-          "text": "Au PE, \"Cirrus\" designe :",
+          "text": "Concernant Beaufort et les fronts, quelle proposition est exacte ?",
           "image": null,
           "answers": [
             {
               "id": "a",
-              "text": "17-21kt, 2m",
+              "text": "Force 0 : <1kt",
               "correct": false
             },
             {
               "id": "b",
-              "text": "pluie progressive",
+              "text": "Utiliser l'échelle de Beaufort.",
               "correct": false
             },
             {
               "id": "c",
-              "text": "Rf - Rs",
-              "correct": false
+              "text": "Cirrus : -12-24h avant basse pression",
+              "correct": true
             },
             {
               "id": "d",
-              "text": "-12-24h avant basse pression",
-              "correct": true
+              "text": "Sud : jaune/noir, cônes bas, 6 blancs/10s",
+              "correct": false
             }
           ],
           "difficulty": 2,
@@ -5967,27 +6099,27 @@
         },
         {
           "id": "pedago_5_12",
-          "text": "Concernant Beaufort et les fronts, quelle reponse est correcte ?",
+          "text": "Concernant Beaufort et les fronts, quelle proposition est exacte ?",
           "image": null,
           "answers": [
             {
               "id": "a",
-              "text": "Cirrus: -12-24h avant basse pression",
+              "text": "Représenter les vecteurs de courant.",
               "correct": false
             },
             {
               "id": "b",
-              "text": "Doublage: s'écarter",
+              "text": "Force 5 : 17-21kt, 2m",
               "correct": false
             },
             {
               "id": "c",
-              "text": "Interpréter les cartes de pression",
+              "text": "Front froid : orages",
               "correct": false
             },
             {
               "id": "d",
-              "text": "Altocumulus: -12h",
+              "text": "Altocumulus : -12h",
               "correct": true
             }
           ],
@@ -6000,27 +6132,27 @@
         },
         {
           "id": "pedago_5_13",
-          "text": "Concernant Beaufort et les fronts, quelle reponse est correcte ?",
+          "text": "Concernant Beaufort et les fronts, quelle proposition est exacte ?",
           "image": null,
           "answers": [
             {
               "id": "a",
-              "text": "Est: noir/jaune/noir, cônes opposés, 3 blancs/10s",
+              "text": "Force 6 : 22-27kt, 3m",
               "correct": false
             },
             {
               "id": "b",
-              "text": "Front froid: orages",
+              "text": "Cirrus : -12-24h avant basse pression",
               "correct": false
             },
             {
               "id": "c",
-              "text": "Force 6: 22-27kt, 3m",
+              "text": "Feu proue : blanc axial 225°",
               "correct": false
             },
             {
               "id": "d",
-              "text": "Force 0: <1kt",
+              "text": "Force 0 : <1kt",
               "correct": true
             }
           ],
@@ -6033,27 +6165,27 @@
         },
         {
           "id": "pedago_5_14",
-          "text": "Au PE, \"Force 4\" designe :",
+          "text": "Concernant Beaufort et les fronts, quelle proposition est exacte ?",
           "image": null,
           "answers": [
             {
               "id": "a",
-              "text": "-12h",
+              "text": "Force 6 : 22-27kt, 3m",
               "correct": false
             },
             {
               "id": "b",
-              "text": "point+profondeur",
+              "text": "Routes opposées : tribord-tribord",
               "correct": false
             },
             {
               "id": "c",
-              "text": "22-27kt, 3m",
+              "text": "Altocumulus : -12h",
               "correct": false
             },
             {
               "id": "d",
-              "text": "11-16kt, 1m",
+              "text": "Force 4 : 11-16kt, 1m",
               "correct": true
             }
           ],
@@ -6066,27 +6198,27 @@
         },
         {
           "id": "pedago_5_15",
-          "text": "Au PE, \"Force 5\" designe :",
+          "text": "Concernant Beaufort et les fronts, quelle proposition est exacte ?",
           "image": null,
           "answers": [
             {
               "id": "a",
-              "text": "jaune/noir, cônes bas, 6 blancs/10s",
+              "text": "Interpréter les cartes de pression.",
               "correct": false
             },
             {
               "id": "b",
-              "text": "17-21kt, 2m",
+              "text": "Force 5 : 17-21kt, 2m",
               "correct": true
             },
             {
               "id": "c",
-              "text": "pluie progressive",
+              "text": "Bâbord : rouge cylindrique feu rouge",
               "correct": false
             },
             {
               "id": "d",
-              "text": "orages",
+              "text": "Force 0 : <1kt",
               "correct": false
             }
           ],
@@ -6099,27 +6231,27 @@
         },
         {
           "id": "pedago_5_16",
-          "text": "Au PE, \"Force 6\" designe :",
+          "text": "Concernant Beaufort et les fronts, quelle proposition est exacte ?",
           "image": null,
           "answers": [
             {
               "id": "a",
-              "text": "22-27kt, 3m",
+              "text": "Force 6 : 22-27kt, 3m",
               "correct": true
             },
             {
               "id": "b",
-              "text": "noir+bandes rouges, 2 sphères",
+              "text": "Rf = Rs + Vc.",
               "correct": false
             },
             {
               "id": "c",
-              "text": "orages",
+              "text": "Force 5 : 17-21kt, 2m",
               "correct": false
             },
             {
               "id": "d",
-              "text": "-12h",
+              "text": "Utiliser l'échelle de Beaufort.",
               "correct": false
             }
           ],
@@ -6132,27 +6264,27 @@
         },
         {
           "id": "pedago_5_17",
-          "text": "Au PE, \"Front froid\" designe :",
+          "text": "Concernant Beaufort et les fronts, quelle proposition est exacte ?",
           "image": null,
           "answers": [
             {
               "id": "a",
-              "text": "17-21kt, 2m",
+              "text": "Cirrus : -12-24h avant basse pression",
               "correct": false
             },
             {
               "id": "b",
-              "text": "orages",
+              "text": "Front froid : orages",
               "correct": true
             },
             {
               "id": "c",
-              "text": "-12h",
+              "text": "Force 4 : 11-16kt, 1m",
               "correct": false
             },
             {
               "id": "d",
-              "text": "triangle+numéro",
+              "text": "Feu proue : blanc axial 225°",
               "correct": false
             }
           ],
@@ -6165,27 +6297,27 @@
         },
         {
           "id": "pedago_5_18",
-          "text": "Au PE, \"Front chaud\" designe :",
+          "text": "Concernant Beaufort et les fronts, quelle proposition est exacte ?",
           "image": null,
           "answers": [
             {
               "id": "a",
-              "text": "pluie progressive",
-              "correct": true
-            },
-            {
-              "id": "b",
-              "text": "orages",
+              "text": "Cirrus : -12-24h avant basse pression",
               "correct": false
             },
             {
+              "id": "b",
+              "text": "Front chaud : pluie progressive",
+              "correct": true
+            },
+            {
               "id": "c",
-              "text": "pointillé+AC",
+              "text": "Lister l'équipement obligatoire à bord.",
               "correct": false
             },
             {
               "id": "d",
-              "text": "-12-24h avant basse pression",
+              "text": "Force 0 : <1kt",
               "correct": false
             }
           ],
@@ -6198,28 +6330,28 @@
         },
         {
           "id": "pedago_5_19",
-          "text": "Concernant Beaufort et les fronts, quelle reponse est correcte ?",
+          "text": "Concernant Beaufort et les fronts, quelle proposition est exacte ?",
           "image": null,
           "answers": [
             {
               "id": "a",
-              "text": "Cirrus: -12-24h avant basse pression",
+              "text": "Routes convergentes : priorité droite",
               "correct": false
             },
             {
               "id": "b",
-              "text": "Interpréter les cartes de pression",
-              "correct": true
+              "text": "Force 6 : 22-27kt, 3m",
+              "correct": false
             },
             {
               "id": "c",
-              "text": "Force 5: 17-21kt, 2m",
+              "text": "Cirrus : -12-24h avant basse pression",
               "correct": false
             },
             {
               "id": "d",
-              "text": "Nord: noir/jaune, cônes haut, continu blanc",
-              "correct": false
+              "text": "Interpréter les cartes de pression.",
+              "correct": true
             }
           ],
           "difficulty": 2,
@@ -6231,28 +6363,28 @@
         },
         {
           "id": "pedago_5_20",
-          "text": "Concernant Beaufort et les fronts, quelle reponse est correcte ?",
+          "text": "Concernant Beaufort et les fronts, quelle proposition est exacte ?",
           "image": null,
           "answers": [
             {
               "id": "a",
-              "text": "Front chaud: pluie progressive",
+              "text": "Front froid : orages",
               "correct": false
             },
             {
               "id": "b",
-              "text": "PM: pleine mer",
-              "correct": false
+              "text": "Utiliser l'échelle de Beaufort.",
+              "correct": true
             },
             {
               "id": "c",
-              "text": "Cirrus: -12-24h avant basse pression",
+              "text": "Force 5 : 17-21kt, 2m",
               "correct": false
             },
             {
               "id": "d",
-              "text": "Utiliser l'échelle de Beaufort",
-              "correct": true
+              "text": "Vérifier la cohérence des routes (surface vs fond).",
+              "correct": false
             }
           ],
           "difficulty": 2,
@@ -6272,27 +6404,27 @@
       "questions": [
         {
           "id": "pedago_6_1",
-          "text": "Dans le module 6, que signifie \"Cv\" ?",
+          "text": "Lors d un calcul de cap, quelle relation est correcte ?",
           "image": null,
           "answers": [
             {
               "id": "a",
-              "text": "cap compas",
+              "text": "W: déclinaison (W=-,E=+).",
               "correct": false
             },
             {
               "id": "b",
-              "text": "360°",
-              "correct": false
-            },
-            {
-              "id": "c",
-              "text": "cap vrai",
+              "text": "Cv : cap vrai",
               "correct": true
             },
             {
+              "id": "c",
+              "text": "Cc : cap compas",
+              "correct": false
+            },
+            {
               "id": "d",
-              "text": "4 brefs rapides",
+              "text": "Rs : route surface",
               "correct": false
             }
           ],
@@ -6305,27 +6437,27 @@
         },
         {
           "id": "pedago_6_2",
-          "text": "Dans le module 6, que signifie \"Cc\" ?",
+          "text": "Lors d un calcul de cap, quelle relation est correcte ?",
           "image": null,
           "answers": [
             {
               "id": "a",
-              "text": "cap compas",
+              "text": "Cc : cap compas",
               "correct": true
             },
             {
               "id": "b",
-              "text": "360°",
+              "text": "Déterminer la route surface avec dérive.",
               "correct": false
             },
             {
               "id": "c",
-              "text": "propre navire",
+              "text": "Calculer le cap vrai à partir du cap compas.",
               "correct": false
             },
             {
               "id": "d",
-              "text": "W 0-2°",
+              "text": "Triangle fermé vecteurs.",
               "correct": false
             }
           ],
@@ -6338,28 +6470,28 @@
         },
         {
           "id": "pedago_6_3",
-          "text": "Concernant caps et derive, quelle relation est correcte ?",
+          "text": "Lors d un calcul de cap, quelle relation est correcte ?",
           "image": null,
           "answers": [
             {
               "id": "a",
-              "text": "Douzièmes: 1,2,3,3,2,1",
-              "correct": false
+              "text": "W: déclinaison (W=-,E=+).",
+              "correct": true
             },
             {
               "id": "b",
-              "text": "Calculer le cap vrai à partir du cap compas",
+              "text": "Calculer le cap vrai à partir du cap compas.",
               "correct": false
             },
             {
               "id": "c",
-              "text": "Cc: cap compas",
+              "text": "France : W 0-2°",
               "correct": false
             },
             {
               "id": "d",
-              "text": "W: déclinaison (W=-,E=+)",
-              "correct": true
+              "text": "Utiliser le pied de pilote (sécurité).",
+              "correct": false
             }
           ],
           "difficulty": 2,
@@ -6371,27 +6503,27 @@
         },
         {
           "id": "pedago_6_4",
-          "text": "Concernant caps et derive, quelle relation est correcte ?",
+          "text": "Lors d un calcul de cap, quelle relation est correcte ?",
           "image": null,
           "answers": [
             {
               "id": "a",
-              "text": "Cv: cap vrai",
-              "correct": false
+              "text": "δ: déviation.",
+              "correct": true
             },
             {
               "id": "b",
-              "text": "Routes convergentes: priorité droite",
+              "text": "Risque : gisement constant 3 temps",
               "correct": false
             },
             {
               "id": "c",
-              "text": "δ: déviation",
-              "correct": true
+              "text": "Cv : cap vrai",
+              "correct": false
             },
             {
               "id": "d",
-              "text": "W: déclinaison (W=-,E=+)",
+              "text": "Cv = Cc + W + δ.",
               "correct": false
             }
           ],
@@ -6404,28 +6536,28 @@
         },
         {
           "id": "pedago_6_5",
-          "text": "Concernant caps et derive, quelle relation est correcte ?",
+          "text": "Lors d un calcul de cap, quelle relation est correcte ?",
           "image": null,
           "answers": [
             {
               "id": "a",
-              "text": "Rose: 360°",
-              "correct": false
+              "text": "Cv = Cc + W + δ.",
+              "correct": true
             },
             {
               "id": "b",
-              "text": "Déterminer la route surface avec dérive",
+              "text": "Échoué : 3 boules (j), blanc+2 rouges (n)",
               "correct": false
             },
             {
               "id": "c",
-              "text": "Mayday: 3 fois",
+              "text": "Cv : cap vrai",
               "correct": false
             },
             {
               "id": "d",
-              "text": "Cv = Cc + W + δ",
-              "correct": true
+              "text": "δ: déviation.",
+              "correct": false
             }
           ],
           "difficulty": 2,
@@ -6437,27 +6569,27 @@
         },
         {
           "id": "pedago_6_6",
-          "text": "Dans le module 6, que signifie \"France\" ?",
+          "text": "Lors d un calcul de cap, quelle relation est correcte ?",
           "image": null,
           "answers": [
             {
               "id": "a",
-              "text": "W 0-2°",
+              "text": "France : W 0-2°",
               "correct": true
             },
             {
               "id": "b",
-              "text": "4 brefs rapides",
+              "text": "Arrière : 3 coups",
               "correct": false
             },
             {
               "id": "c",
-              "text": "cap compas",
+              "text": "Cv : cap vrai",
               "correct": false
             },
             {
               "id": "d",
-              "text": "propre navire",
+              "text": "W: déclinaison (W=-,E=+).",
               "correct": false
             }
           ],
@@ -6470,28 +6602,28 @@
         },
         {
           "id": "pedago_6_7",
-          "text": "Dans le module 6, que signifie \"Déviation\" ?",
+          "text": "Lors d un calcul de cap, quelle relation est correcte ?",
           "image": null,
           "answers": [
             {
               "id": "a",
-              "text": "cap compas",
+              "text": "France : W 0-2°",
               "correct": false
             },
             {
               "id": "b",
-              "text": "propre navire",
-              "correct": true
+              "text": "Haut-fond : point+profondeur",
+              "correct": false
             },
             {
               "id": "c",
-              "text": "rouge bâb, vert trib 112.5°",
+              "text": "Cc : cap compas",
               "correct": false
             },
             {
               "id": "d",
-              "text": "W 0-2°",
-              "correct": false
+              "text": "Déviation : propre navire",
+              "correct": true
             }
           ],
           "difficulty": 2,
@@ -6503,28 +6635,28 @@
         },
         {
           "id": "pedago_6_8",
-          "text": "Concernant caps et derive, quelle relation est correcte ?",
+          "text": "Lors d un calcul de cap, quelle relation est correcte ?",
           "image": null,
           "answers": [
             {
               "id": "a",
-              "text": "δ: déviation",
+              "text": "Déviation : propre navire",
               "correct": false
             },
             {
               "id": "b",
-              "text": "Réagir en cas d'incendie à bord",
+              "text": "Cc : cap compas",
               "correct": false
             },
             {
               "id": "c",
-              "text": "Cv: cap vrai",
-              "correct": false
+              "text": "Rose : 360°",
+              "correct": true
             },
             {
               "id": "d",
-              "text": "Rose: 360°",
-              "correct": true
+              "text": "Hiérarchie : Non-maître>Capacité>Tirant>Pêche>Voilier>Moteur",
+              "correct": false
             }
           ],
           "difficulty": 2,
@@ -6536,28 +6668,28 @@
         },
         {
           "id": "pedago_6_9",
-          "text": "Concernant caps et derive, quelle relation est correcte ?",
+          "text": "Lors d un calcul de cap, quelle relation est correcte ?",
           "image": null,
           "answers": [
             {
               "id": "a",
-              "text": "France: W 0-2°",
+              "text": "Cv : cap vrai",
               "correct": false
             },
             {
               "id": "b",
-              "text": "Calculer le cap vrai à partir du cap compas",
-              "correct": true
+              "text": "En habitable, la limite meteo est force 4 avec rafales 5.",
+              "correct": false
             },
             {
               "id": "c",
-              "text": "Chenal trib: rouge+bande verte, feu rouge 2+1",
+              "text": "δ: déviation.",
               "correct": false
             },
             {
               "id": "d",
-              "text": "δ: déviation",
-              "correct": false
+              "text": "Calculer le cap vrai à partir du cap compas.",
+              "correct": true
             }
           ],
           "difficulty": 2,
@@ -6569,28 +6701,28 @@
         },
         {
           "id": "pedago_6_10",
-          "text": "Concernant caps et derive, quelle relation est correcte ?",
+          "text": "Lors d un calcul de cap, quelle relation est correcte ?",
           "image": null,
           "answers": [
             {
               "id": "a",
-              "text": "Rose: 360°",
+              "text": "Sud : jaune/noir, cônes bas, 6 blancs/10s",
               "correct": false
             },
             {
               "id": "b",
-              "text": "Déterminer la route surface avec dérive",
-              "correct": true
+              "text": "France : W 0-2°",
+              "correct": false
             },
             {
               "id": "c",
-              "text": "En voile legere, la limite est de 2 milles d un abri.",
+              "text": "Cv = Cc + W + δ.",
               "correct": false
             },
             {
               "id": "d",
-              "text": "Calculer le cap vrai à partir du cap compas",
-              "correct": false
+              "text": "Déterminer la route surface avec dérive.",
+              "correct": true
             }
           ],
           "difficulty": 2,
@@ -6602,27 +6734,27 @@
         },
         {
           "id": "pedago_6_11",
-          "text": "Au PE, \"Cv\" designe :",
+          "text": "En navigation estimee, quelle proposition est exacte ?",
           "image": null,
           "answers": [
             {
               "id": "a",
-              "text": "360°",
-              "correct": false
+              "text": "Cv : cap vrai",
+              "correct": true
             },
             {
               "id": "b",
-              "text": "propre navire",
+              "text": "Cv = Cc + W + δ.",
               "correct": false
             },
             {
               "id": "c",
-              "text": "cap vrai",
-              "correct": true
+              "text": "Cc : cap compas",
+              "correct": false
             },
             {
               "id": "d",
-              "text": "Rf - Rs",
+              "text": "Le cadre SUF privilegie la navigation de jour.",
               "correct": false
             }
           ],
@@ -6635,27 +6767,27 @@
         },
         {
           "id": "pedago_6_12",
-          "text": "Au PE, \"Cc\" designe :",
+          "text": "En navigation estimee, quelle proposition est exacte ?",
           "image": null,
           "answers": [
             {
               "id": "a",
-              "text": "propre navire",
-              "correct": false
-            },
-            {
-              "id": "b",
-              "text": "cap compas",
+              "text": "Cc : cap compas",
               "correct": true
             },
             {
+              "id": "b",
+              "text": "En voile legere, la limite est de 2 milles d un abri.",
+              "correct": false
+            },
+            {
               "id": "c",
-              "text": "vert conique feu vert",
+              "text": "Rose : 360°",
               "correct": false
             },
             {
               "id": "d",
-              "text": "cap vrai",
+              "text": "Déviation : propre navire",
               "correct": false
             }
           ],
@@ -6673,23 +6805,23 @@
           "answers": [
             {
               "id": "a",
-              "text": "W: déclinaison (W=-,E=+)",
-              "correct": true
+              "text": "Gilet autogonflant obligatoire.",
+              "correct": false
             },
             {
               "id": "b",
-              "text": "δ: déviation",
+              "text": "Déviation : propre navire",
               "correct": false
             },
             {
               "id": "c",
-              "text": "Déterminer la route surface avec dérive",
+              "text": "Cc : cap compas",
               "correct": false
             },
             {
               "id": "d",
-              "text": "Dérive: Rf - Rs",
-              "correct": false
+              "text": "W: déclinaison (W=-,E=+).",
+              "correct": true
             }
           ],
           "difficulty": 2,
@@ -6706,23 +6838,23 @@
           "answers": [
             {
               "id": "a",
-              "text": "δ: déviation",
-              "correct": true
+              "text": "Déterminer la route surface avec dérive.",
+              "correct": false
             },
             {
               "id": "b",
-              "text": "Cv: cap vrai",
+              "text": "Cv : cap vrai",
               "correct": false
             },
             {
               "id": "c",
-              "text": "Phare: triangle+numéro",
+              "text": "Courants tidals : tables marées",
               "correct": false
             },
             {
               "id": "d",
-              "text": "Cv = Cc + W + δ",
-              "correct": false
+              "text": "δ: déviation.",
+              "correct": true
             }
           ],
           "difficulty": 2,
@@ -6739,23 +6871,23 @@
           "answers": [
             {
               "id": "a",
-              "text": "Heure marée: 50min",
+              "text": "Déterminer la route surface avec dérive.",
               "correct": false
             },
             {
               "id": "b",
-              "text": "Cc: cap compas",
+              "text": "France : W 0-2°",
               "correct": false
             },
             {
               "id": "c",
-              "text": "Cv: cap vrai",
-              "correct": false
+              "text": "Cv = Cc + W + δ.",
+              "correct": true
             },
             {
               "id": "d",
-              "text": "Cv = Cc + W + δ",
-              "correct": true
+              "text": "Spéciale : jaune, croix jaune",
+              "correct": false
             }
           ],
           "difficulty": 2,
@@ -6767,27 +6899,27 @@
         },
         {
           "id": "pedago_6_16",
-          "text": "Au PE, \"France\" designe :",
+          "text": "En navigation estimee, quelle proposition est exacte ?",
           "image": null,
           "answers": [
             {
               "id": "a",
-              "text": "cap compas",
+              "text": "Cv : cap vrai",
               "correct": false
             },
             {
               "id": "b",
-              "text": "W 0-2°",
+              "text": "France : W 0-2°",
               "correct": true
             },
             {
               "id": "c",
-              "text": "3/12 (cumul 6/12)",
+              "text": "Cv = Cc + W + δ.",
               "correct": false
             },
             {
               "id": "d",
-              "text": "360°",
+              "text": "Routes opposées : tribord-tribord",
               "correct": false
             }
           ],
@@ -6800,28 +6932,28 @@
         },
         {
           "id": "pedago_6_17",
-          "text": "Au PE, \"Déviation\" designe :",
+          "text": "En navigation estimee, quelle proposition est exacte ?",
           "image": null,
           "answers": [
             {
               "id": "a",
-              "text": "propre navire",
-              "correct": true
+              "text": "Calculer le cap vrai à partir du cap compas.",
+              "correct": false
             },
             {
               "id": "b",
-              "text": "360°",
+              "text": "Parallélogramme vectoriel.",
               "correct": false
             },
             {
               "id": "c",
-              "text": "noir+bandes rouges, 2 sphères",
+              "text": "Déterminer la route surface avec dérive.",
               "correct": false
             },
             {
               "id": "d",
-              "text": "cap compas",
-              "correct": false
+              "text": "Déviation : propre navire",
+              "correct": true
             }
           ],
           "difficulty": 2,
@@ -6838,23 +6970,23 @@
           "answers": [
             {
               "id": "a",
-              "text": "Déviation: propre navire",
-              "correct": false
+              "text": "Rose : 360°",
+              "correct": true
             },
             {
               "id": "b",
-              "text": "Cv: cap vrai",
+              "text": "W: déclinaison (W=-,E=+).",
               "correct": false
             },
             {
               "id": "c",
-              "text": "Manœuvre trib: 1 coup",
+              "text": "Cc : cap compas",
               "correct": false
             },
             {
               "id": "d",
-              "text": "Rose: 360°",
-              "correct": true
+              "text": "Force 5 : 17-21kt, 2m",
+              "correct": false
             }
           ],
           "difficulty": 2,
@@ -6871,23 +7003,23 @@
           "answers": [
             {
               "id": "a",
-              "text": "Nord: noir/jaune, cônes haut, continu blanc",
+              "text": "W: déclinaison (W=-,E=+).",
               "correct": false
             },
             {
               "id": "b",
-              "text": "Déterminer la route surface avec dérive",
+              "text": "δ: déviation.",
               "correct": false
             },
             {
               "id": "c",
-              "text": "France: W 0-2°",
-              "correct": false
+              "text": "Calculer le cap vrai à partir du cap compas.",
+              "correct": true
             },
             {
               "id": "d",
-              "text": "Calculer le cap vrai à partir du cap compas",
-              "correct": true
+              "text": "H3 : 3/12 (cumul 6/12)",
+              "correct": false
             }
           ],
           "difficulty": 2,
@@ -6904,22 +7036,22 @@
           "answers": [
             {
               "id": "a",
-              "text": "Risque: gisement constant 3 temps",
+              "text": "Cv : cap vrai",
               "correct": false
             },
             {
               "id": "b",
-              "text": "Cc: cap compas",
+              "text": "Déviation : propre navire",
               "correct": false
             },
             {
               "id": "c",
-              "text": "δ: déviation",
+              "text": "Manœuvre trib : 1 coup",
               "correct": false
             },
             {
               "id": "d",
-              "text": "Déterminer la route surface avec dérive",
+              "text": "Déterminer la route surface avec dérive.",
               "correct": true
             }
           ],
@@ -6940,27 +7072,27 @@
       "questions": [
         {
           "id": "pedago_7_1",
-          "text": "Dans le module 7, que signifie \"Rs\" ?",
+          "text": "Pour calculer la route fond, quelle relation est correcte ?",
           "image": null,
           "answers": [
             {
               "id": "a",
-              "text": "3 coups",
+              "text": "Rf = Rs + Vc.",
               "correct": false
             },
             {
               "id": "b",
-              "text": "route fond",
-              "correct": false
-            },
-            {
-              "id": "c",
-              "text": "route surface",
+              "text": "Rs : route surface",
               "correct": true
             },
             {
+              "id": "c",
+              "text": "Détresse : Mayday 3x, fusée, miroir, pavillon NC",
+              "correct": false
+            },
+            {
               "id": "d",
-              "text": "tables marées",
+              "text": "Vc : vecteur courant",
               "correct": false
             }
           ],
@@ -6973,27 +7105,27 @@
         },
         {
           "id": "pedago_7_2",
-          "text": "Dans le module 7, que signifie \"Vc\" ?",
+          "text": "Pour calculer la route fond, quelle relation est correcte ?",
           "image": null,
           "answers": [
             {
               "id": "a",
-              "text": "noir/jaune/noir, cônes opposés, 3 blancs/10s",
+              "text": "Rf = Rs + Vc.",
               "correct": false
             },
             {
               "id": "b",
-              "text": "route surface",
+              "text": "Distance : échelle latitudes",
               "correct": false
             },
             {
               "id": "c",
-              "text": "vecteur courant",
+              "text": "Vc : vecteur courant",
               "correct": true
             },
             {
               "id": "d",
-              "text": "tables marées",
+              "text": "Triangle fermé vecteurs.",
               "correct": false
             }
           ],
@@ -7006,27 +7138,27 @@
         },
         {
           "id": "pedago_7_3",
-          "text": "Dans le module 7, que signifie \"Rf\" ?",
+          "text": "Pour calculer la route fond, quelle relation est correcte ?",
           "image": null,
           "answers": [
             {
               "id": "a",
-              "text": "Rf - Rs",
-              "correct": false
-            },
-            {
-              "id": "b",
-              "text": "route fond",
+              "text": "Rf : route fond",
               "correct": true
             },
             {
+              "id": "b",
+              "text": "Vc : vecteur courant",
+              "correct": false
+            },
+            {
               "id": "c",
-              "text": "3/12 (cumul 6/12)",
+              "text": "Tribord : vert conique feu vert",
               "correct": false
             },
             {
               "id": "d",
-              "text": "route surface",
+              "text": "Rf = Rs + Vc.",
               "correct": false
             }
           ],
@@ -7039,28 +7171,28 @@
         },
         {
           "id": "pedago_7_4",
-          "text": "Concernant courants et route fond, quelle relation est correcte ?",
+          "text": "Pour calculer la route fond, quelle relation est correcte ?",
           "image": null,
           "answers": [
             {
               "id": "a",
-              "text": "Construire la route fond sur carte",
+              "text": "Parallélogramme vectoriel.",
               "correct": false
             },
             {
               "id": "b",
-              "text": "Cirrus: -12-24h avant basse pression",
+              "text": "Rs : route surface",
               "correct": false
             },
             {
               "id": "c",
-              "text": "Vérifier la cohérence des routes (surface vs fond)",
-              "correct": false
+              "text": "Rf = Rs + Vc.",
+              "correct": true
             },
             {
               "id": "d",
-              "text": "Rf = Rs + Vc",
-              "correct": true
+              "text": "Épave : croix+point",
+              "correct": false
             }
           ],
           "difficulty": 2,
@@ -7072,27 +7204,27 @@
         },
         {
           "id": "pedago_7_5",
-          "text": "Concernant courants et route fond, quelle relation est correcte ?",
+          "text": "Pour calculer la route fond, quelle relation est correcte ?",
           "image": null,
           "answers": [
             {
               "id": "a",
-              "text": "Vérifier la cohérence des routes (surface vs fond)",
+              "text": "Triangle fermé vecteurs.",
               "correct": false
             },
             {
               "id": "b",
-              "text": "Doute: 4 brefs rapides",
+              "text": "Calculer la dérive due au courant.",
               "correct": false
             },
             {
               "id": "c",
-              "text": "Triangle fermé vecteurs",
+              "text": "Front froid : orages",
               "correct": false
             },
             {
               "id": "d",
-              "text": "Parallélogramme vectoriel",
+              "text": "Parallélogramme vectoriel.",
               "correct": true
             }
           ],
@@ -7105,27 +7237,27 @@
         },
         {
           "id": "pedago_7_6",
-          "text": "Dans le module 7, que signifie \"Dérive\" ?",
+          "text": "Pour calculer la route fond, quelle relation est correcte ?",
           "image": null,
           "answers": [
             {
               "id": "a",
-              "text": "orages",
+              "text": "Parallélogramme vectoriel.",
               "correct": false
             },
             {
               "id": "b",
-              "text": "route surface",
+              "text": "Radeaux : selon tonnage",
               "correct": false
             },
             {
               "id": "c",
-              "text": "vecteur courant",
+              "text": "Rs : route surface",
               "correct": false
             },
             {
               "id": "d",
-              "text": "Rf - Rs",
+              "text": "Dérive : Rf - Rs",
               "correct": true
             }
           ],
@@ -7138,27 +7270,27 @@
         },
         {
           "id": "pedago_7_7",
-          "text": "Dans le module 7, que signifie \"Courants tidals\" ?",
+          "text": "Pour calculer la route fond, quelle relation est correcte ?",
           "image": null,
           "answers": [
             {
               "id": "a",
-              "text": "route fond",
+              "text": "Moteur erre brume : 1 long/2min",
               "correct": false
             },
             {
               "id": "b",
-              "text": "1long+2brefs",
-              "correct": false
-            },
-            {
-              "id": "c",
-              "text": "tables marées",
+              "text": "Courants tidals : tables marées",
               "correct": true
             },
             {
+              "id": "c",
+              "text": "Triangle fermé vecteurs.",
+              "correct": false
+            },
+            {
               "id": "d",
-              "text": "route surface",
+              "text": "Rf : route fond",
               "correct": false
             }
           ],
@@ -7171,28 +7303,28 @@
         },
         {
           "id": "pedago_7_8",
-          "text": "Concernant courants et route fond, quelle relation est correcte ?",
+          "text": "Pour calculer la route fond, quelle relation est correcte ?",
           "image": null,
           "answers": [
             {
               "id": "a",
-              "text": "Calculer la dérive due au courant",
+              "text": "Rf = Rs + Vc.",
               "correct": false
             },
             {
               "id": "b",
-              "text": "Rf: route fond",
+              "text": "Lister l'équipement obligatoire à bord.",
               "correct": false
             },
             {
               "id": "c",
-              "text": "Sud: jaune/noir, cônes bas, 6 blancs/10s",
-              "correct": false
+              "text": "Triangle fermé vecteurs.",
+              "correct": true
             },
             {
               "id": "d",
-              "text": "Triangle fermé vecteurs",
-              "correct": true
+              "text": "Calculer la dérive due au courant.",
+              "correct": false
             }
           ],
           "difficulty": 2,
@@ -7204,27 +7336,27 @@
         },
         {
           "id": "pedago_7_9",
-          "text": "Concernant courants et route fond, quelle relation est correcte ?",
+          "text": "Pour calculer la route fond, quelle relation est correcte ?",
           "image": null,
           "answers": [
             {
               "id": "a",
-              "text": "Rs: route surface",
-              "correct": false
+              "text": "Représenter les vecteurs de courant.",
+              "correct": true
             },
             {
               "id": "b",
-              "text": "Je bâbord: 2 brefs",
+              "text": "Doute : 4 brefs rapides",
               "correct": false
             },
             {
               "id": "c",
-              "text": "Représenter les vecteurs de courant",
-              "correct": true
+              "text": "Courants tidals : tables marées",
+              "correct": false
             },
             {
               "id": "d",
-              "text": "Rf: route fond",
+              "text": "Dérive : Rf - Rs",
               "correct": false
             }
           ],
@@ -7237,28 +7369,28 @@
         },
         {
           "id": "pedago_7_10",
-          "text": "Concernant courants et route fond, quelle relation est correcte ?",
+          "text": "Pour calculer la route fond, quelle relation est correcte ?",
           "image": null,
           "answers": [
             {
               "id": "a",
-              "text": "Construire la route fond sur carte",
-              "correct": true
+              "text": "Dérive : Rf - Rs",
+              "correct": false
             },
             {
               "id": "b",
-              "text": "Vc: vecteur courant",
+              "text": "Calculer la dérive due au courant.",
               "correct": false
             },
             {
               "id": "c",
-              "text": "Parallélogramme vectoriel",
+              "text": "En habitable, la limite est de 6 milles d un abri.",
               "correct": false
             },
             {
               "id": "d",
-              "text": "Je tribord: 1 bref",
-              "correct": false
+              "text": "Construire la route fond sur carte.",
+              "correct": true
             }
           ],
           "difficulty": 2,
@@ -7270,28 +7402,28 @@
         },
         {
           "id": "pedago_7_11",
-          "text": "Concernant courants et route fond, quelle relation est correcte ?",
+          "text": "Pour calculer la route fond, quelle relation est correcte ?",
           "image": null,
           "answers": [
             {
               "id": "a",
-              "text": "Rf = Rs + Vc",
+              "text": "Vc : vecteur courant",
               "correct": false
             },
             {
               "id": "b",
-              "text": "Mesurer des distances sur la carte",
+              "text": "Parallélogramme vectoriel.",
               "correct": false
             },
             {
               "id": "c",
-              "text": "Calculer la dérive due au courant",
-              "correct": true
+              "text": "Calculer la hauteur d'eau à une heure donnée.",
+              "correct": false
             },
             {
               "id": "d",
-              "text": "Parallélogramme vectoriel",
-              "correct": false
+              "text": "Calculer la dérive due au courant.",
+              "correct": true
             }
           ],
           "difficulty": 2,
@@ -7303,27 +7435,27 @@
         },
         {
           "id": "pedago_7_12",
-          "text": "Concernant courants et route fond, quelle relation est correcte ?",
+          "text": "Pour calculer la route fond, quelle relation est correcte ?",
           "image": null,
           "answers": [
             {
               "id": "a",
-              "text": "Construire la route fond sur carte",
+              "text": "Front chaud : pluie progressive",
               "correct": false
             },
             {
               "id": "b",
-              "text": "Représenter les vecteurs de courant",
+              "text": "Rf : route fond",
               "correct": false
             },
             {
               "id": "c",
-              "text": "Vérifier la cohérence des routes (surface vs fond)",
+              "text": "Vérifier la cohérence des routes (surface vs fond).",
               "correct": true
             },
             {
               "id": "d",
-              "text": "H3: 3/12 (cumul 6/12)",
+              "text": "Rs : route surface",
               "correct": false
             }
           ],
@@ -7336,27 +7468,27 @@
         },
         {
           "id": "pedago_7_13",
-          "text": "Au PE, \"Rs\" designe :",
+          "text": "Dans le triangle des vitesses, quelle proposition est exacte ?",
           "image": null,
           "answers": [
             {
               "id": "a",
-              "text": "bandes rouges/blanches, feu blanc",
-              "correct": false
+              "text": "Rs : route surface",
+              "correct": true
             },
             {
               "id": "b",
-              "text": "vecteur courant",
+              "text": "Dérive : Rf - Rs",
               "correct": false
             },
             {
               "id": "c",
-              "text": "route surface",
-              "correct": true
+              "text": "Calculer le cap vrai à partir du cap compas.",
+              "correct": false
             },
             {
               "id": "d",
-              "text": "Rf - Rs",
+              "text": "Construire la route fond sur carte.",
               "correct": false
             }
           ],
@@ -7377,27 +7509,27 @@
       "questions": [
         {
           "id": "pedago_9_1",
-          "text": "Dans le module 9, que signifie \"Canal 16\" ?",
+          "text": "A la VHF, quelle procedure est correcte ?",
           "image": null,
           "answers": [
             {
               "id": "a",
-              "text": "détresse urgence",
-              "correct": true
-            },
-            {
-              "id": "b",
-              "text": "selon tonnage",
+              "text": "Mayday : 3 fois",
               "correct": false
             },
             {
+              "id": "b",
+              "text": "Canal 16 : détresse urgence",
+              "correct": true
+            },
+            {
               "id": "c",
-              "text": "équipement obligatoire",
+              "text": "Parc : pointillés fermés",
               "correct": false
             },
             {
               "id": "d",
-              "text": "2 coups",
+              "text": "ASN : équipement obligatoire",
               "correct": false
             }
           ],
@@ -7410,28 +7542,28 @@
         },
         {
           "id": "pedago_9_2",
-          "text": "Dans le module 9, que signifie \"Mayday\" ?",
+          "text": "A la VHF, quelle procedure est correcte ?",
           "image": null,
           "answers": [
             {
               "id": "a",
-              "text": "détresse urgence",
+              "text": "Utiliser l'alphabet phonétique.",
               "correct": false
             },
             {
               "id": "b",
-              "text": "3 fois",
-              "correct": true
+              "text": "Pied pilote : sécurité 20cm",
+              "correct": false
             },
             {
               "id": "c",
-              "text": "selon tonnage",
+              "text": "Gilet autogonflant obligatoire.",
               "correct": false
             },
             {
               "id": "d",
-              "text": "W 0-2°",
-              "correct": false
+              "text": "Mayday : 3 fois",
+              "correct": true
             }
           ],
           "difficulty": 2,
@@ -7443,27 +7575,27 @@
         },
         {
           "id": "pedago_9_3",
-          "text": "Dans le module 9, que signifie \"ASN\" ?",
+          "text": "A la VHF, quelle procedure est correcte ?",
           "image": null,
           "answers": [
             {
               "id": "a",
-              "text": "selon tonnage",
-              "correct": false
-            },
-            {
-              "id": "b",
-              "text": "équipement obligatoire",
+              "text": "ASN : équipement obligatoire",
               "correct": true
             },
             {
+              "id": "b",
+              "text": "Haut-fond : point+profondeur",
+              "correct": false
+            },
+            {
               "id": "c",
-              "text": "3 fois",
+              "text": "Licence radio.",
               "correct": false
             },
             {
               "id": "d",
-              "text": "blanc axial 225°",
+              "text": "Gilet autogonflant obligatoire.",
               "correct": false
             }
           ],
@@ -7476,28 +7608,28 @@
         },
         {
           "id": "pedago_9_4",
-          "text": "En communication VHF, quelle proposition est exacte ?",
+          "text": "A la VHF, quelle procedure est correcte ?",
           "image": null,
           "answers": [
             {
               "id": "a",
-              "text": "Licence radio",
-              "correct": true
+              "text": "Gilet autogonflant obligatoire.",
+              "correct": false
             },
             {
               "id": "b",
-              "text": "ASN: équipement obligatoire",
+              "text": "Nord : noir/jaune, cônes haut, continu blanc",
               "correct": false
             },
             {
               "id": "c",
-              "text": "Utiliser l'alphabet phonétique",
+              "text": "Utiliser l'alphabet phonétique.",
               "correct": false
             },
             {
               "id": "d",
-              "text": "Déterminer la route surface avec dérive",
-              "correct": false
+              "text": "Licence radio.",
+              "correct": true
             }
           ],
           "difficulty": 2,
@@ -7509,27 +7641,27 @@
         },
         {
           "id": "pedago_9_5",
-          "text": "En communication VHF, quelle proposition est exacte ?",
+          "text": "A la VHF, quelle procedure est correcte ?",
           "image": null,
           "answers": [
             {
               "id": "a",
-              "text": "Canal 16: détresse urgence",
-              "correct": false
-            },
-            {
-              "id": "b",
-              "text": "Fréquence 156-162 MHz",
+              "text": "Fréquence 156-162 MHz.",
               "correct": true
             },
             {
+              "id": "b",
+              "text": "Balise SOLAS.",
+              "correct": false
+            },
+            {
               "id": "c",
-              "text": "Utiliser l'échelle de Beaufort",
+              "text": "Vérifier la cohérence des routes (surface vs fond).",
               "correct": false
             },
             {
               "id": "d",
-              "text": "Radeaux: selon tonnage",
+              "text": "Mayday : 3 fois",
               "correct": false
             }
           ],
@@ -7542,28 +7674,28 @@
         },
         {
           "id": "pedago_9_6",
-          "text": "En communication VHF, quelle proposition est exacte ?",
+          "text": "A la VHF, quelle procedure est correcte ?",
           "image": null,
           "answers": [
             {
               "id": "a",
-              "text": "La presence d un correspondant a terre est obligatoire.",
-              "correct": false
+              "text": "Gilet autogonflant obligatoire.",
+              "correct": true
             },
             {
               "id": "b",
-              "text": "Canal 16: détresse urgence",
+              "text": "Fréquence 156-162 MHz.",
               "correct": false
             },
             {
               "id": "c",
-              "text": "Mayday: 3 fois",
+              "text": "Canal 16 : détresse urgence",
               "correct": false
             },
             {
               "id": "d",
-              "text": "Gilet autogonflant obligatoire",
-              "correct": true
+              "text": "Interpréter les signaux sonores en brume.",
+              "correct": false
             }
           ],
           "difficulty": 2,
@@ -7575,28 +7707,28 @@
         },
         {
           "id": "pedago_9_7",
-          "text": "En communication VHF, quelle proposition est exacte ?",
+          "text": "A la VHF, quelle procedure est correcte ?",
           "image": null,
           "answers": [
             {
               "id": "a",
-              "text": "Balise SOLAS",
-              "correct": true
+              "text": "Hiérarchie : Non-maître>Capacité>Tirant>Pêche>Voilier>Moteur",
+              "correct": false
             },
             {
               "id": "b",
-              "text": "France: W 0-2°",
+              "text": "Fréquence 156-162 MHz.",
               "correct": false
             },
             {
               "id": "c",
-              "text": "Canal 16: détresse urgence",
+              "text": "ASN : équipement obligatoire",
               "correct": false
             },
             {
               "id": "d",
-              "text": "Gilet autogonflant obligatoire",
-              "correct": false
+              "text": "Balise SOLAS.",
+              "correct": true
             }
           ],
           "difficulty": 2,
@@ -7608,28 +7740,28 @@
         },
         {
           "id": "pedago_9_8",
-          "text": "Dans le module 9, que signifie \"Radeaux\" ?",
+          "text": "A la VHF, quelle procedure est correcte ?",
           "image": null,
           "answers": [
             {
               "id": "a",
-              "text": "détresse urgence",
-              "correct": false
+              "text": "Radeaux : selon tonnage",
+              "correct": true
             },
             {
               "id": "b",
-              "text": "3 fois",
+              "text": "Calculer la hauteur d'eau à une heure donnée.",
               "correct": false
             },
             {
               "id": "c",
-              "text": "1/12",
+              "text": "Canal 16 : détresse urgence",
               "correct": false
             },
             {
               "id": "d",
-              "text": "selon tonnage",
-              "correct": true
+              "text": "ASN : équipement obligatoire",
+              "correct": false
             }
           ],
           "difficulty": 2,
@@ -7641,27 +7773,27 @@
         },
         {
           "id": "pedago_9_9",
-          "text": "En communication VHF, quelle proposition est exacte ?",
+          "text": "A la VHF, quelle procedure est correcte ?",
           "image": null,
           "answers": [
             {
               "id": "a",
-              "text": "Mayday: 3 fois",
+              "text": "Représenter les vecteurs de courant.",
               "correct": false
             },
             {
               "id": "b",
-              "text": "Utiliser l'alphabet phonétique",
-              "correct": true
-            },
-            {
-              "id": "c",
-              "text": "Balise SOLAS",
+              "text": "Gilet autogonflant obligatoire.",
               "correct": false
             },
             {
+              "id": "c",
+              "text": "Utiliser l'alphabet phonétique.",
+              "correct": true
+            },
+            {
               "id": "d",
-              "text": "Danger isolé: noir+bandes rouges, 2 sphères",
+              "text": "Balise SOLAS.",
               "correct": false
             }
           ],
@@ -7674,27 +7806,27 @@
         },
         {
           "id": "pedago_9_10",
-          "text": "Au PE, \"Canal 16\" designe :",
+          "text": "Concernant les canaux de securite, quelle reponse est exacte ?",
           "image": null,
           "answers": [
             {
               "id": "a",
-              "text": "équipement obligatoire",
+              "text": "Radeaux : selon tonnage",
               "correct": false
             },
             {
               "id": "b",
-              "text": "3 fois",
-              "correct": false
-            },
-            {
-              "id": "c",
-              "text": "détresse urgence",
+              "text": "Canal 16 : détresse urgence",
               "correct": true
             },
             {
+              "id": "c",
+              "text": "Fréquence 156-162 MHz.",
+              "correct": false
+            },
+            {
               "id": "d",
-              "text": "route surface",
+              "text": "BM : basse mer",
               "correct": false
             }
           ],
@@ -7707,27 +7839,27 @@
         },
         {
           "id": "pedago_9_11",
-          "text": "Au PE, \"Mayday\" designe :",
+          "text": "Concernant les canaux de securite, quelle reponse est exacte ?",
           "image": null,
           "answers": [
             {
               "id": "a",
-              "text": "détresse urgence",
+              "text": "Épave : croix+point",
               "correct": false
             },
             {
               "id": "b",
-              "text": "3 fois",
-              "correct": true
-            },
-            {
-              "id": "c",
-              "text": "équipement obligatoire",
+              "text": "Fréquence 156-162 MHz.",
               "correct": false
             },
             {
+              "id": "c",
+              "text": "Mayday : 3 fois",
+              "correct": true
+            },
+            {
               "id": "d",
-              "text": "3 boules (j), blanc+2 rouges (n)",
+              "text": "Canal 16 : détresse urgence",
               "correct": false
             }
           ],
@@ -7740,27 +7872,27 @@
         },
         {
           "id": "pedago_9_12",
-          "text": "Au PE, \"ASN\" designe :",
+          "text": "Concernant les canaux de securite, quelle reponse est exacte ?",
           "image": null,
           "answers": [
             {
               "id": "a",
-              "text": "3 fois",
+              "text": "Gilet autogonflant obligatoire.",
               "correct": false
             },
             {
               "id": "b",
-              "text": "détresse urgence",
+              "text": "Licence radio.",
               "correct": false
             },
             {
               "id": "c",
-              "text": "équipement obligatoire",
+              "text": "ASN : équipement obligatoire",
               "correct": true
             },
             {
               "id": "d",
-              "text": "traité moteur",
+              "text": "Bâbord : rouge cylindrique feu rouge",
               "correct": false
             }
           ],
@@ -7773,28 +7905,28 @@
         },
         {
           "id": "pedago_9_13",
-          "text": "Pour un message de detresse, quelle procedure est correcte ?",
+          "text": "Concernant les canaux de securite, quelle reponse est exacte ?",
           "image": null,
           "answers": [
             {
               "id": "a",
-              "text": "Gilet autogonflant obligatoire",
+              "text": "Balise SOLAS.",
               "correct": false
             },
             {
               "id": "b",
-              "text": "Licence radio",
-              "correct": true
+              "text": "Mayday : 3 fois",
+              "correct": false
             },
             {
               "id": "c",
-              "text": "Radeaux: selon tonnage",
+              "text": "Brume moteur erre : 1 long/2min",
               "correct": false
             },
             {
               "id": "d",
-              "text": "Construire la route fond sur carte",
-              "correct": false
+              "text": "Licence radio.",
+              "correct": true
             }
           ],
           "difficulty": 2,
@@ -7806,27 +7938,27 @@
         },
         {
           "id": "pedago_9_14",
-          "text": "Pour un message de detresse, quelle procedure est correcte ?",
+          "text": "Concernant les canaux de securite, quelle reponse est exacte ?",
           "image": null,
           "answers": [
             {
               "id": "a",
-              "text": "Fréquence 156-162 MHz",
-              "correct": true
-            },
-            {
-              "id": "b",
-              "text": "Canal 16: détresse urgence",
+              "text": "ASN : équipement obligatoire",
               "correct": false
             },
             {
+              "id": "b",
+              "text": "Fréquence 156-162 MHz.",
+              "correct": true
+            },
+            {
               "id": "c",
-              "text": "Cv = Cc + W + δ",
+              "text": "Gilet autogonflant obligatoire.",
               "correct": false
             },
             {
               "id": "d",
-              "text": "Licence radio",
+              "text": "Force 5 : 17-21kt, 2m",
               "correct": false
             }
           ],
@@ -7839,27 +7971,27 @@
         },
         {
           "id": "pedago_9_15",
-          "text": "Pour un message de detresse, quelle procedure est correcte ?",
+          "text": "Concernant les canaux de securite, quelle reponse est exacte ?",
           "image": null,
           "answers": [
             {
               "id": "a",
-              "text": "Radeaux: selon tonnage",
+              "text": "Canal 16 : détresse urgence",
               "correct": false
             },
             {
               "id": "b",
-              "text": "Rattrapage trib: 2 brefs",
+              "text": "Douzièmes : 1,2,3,3,2,1",
               "correct": false
             },
             {
               "id": "c",
-              "text": "Gilet autogonflant obligatoire",
+              "text": "Gilet autogonflant obligatoire.",
               "correct": true
             },
             {
               "id": "d",
-              "text": "Mayday: 3 fois",
+              "text": "Licence radio.",
               "correct": false
             }
           ],
@@ -7872,28 +8004,28 @@
         },
         {
           "id": "pedago_9_16",
-          "text": "Pour un message de detresse, quelle procedure est correcte ?",
+          "text": "Concernant les canaux de securite, quelle reponse est exacte ?",
           "image": null,
           "answers": [
             {
               "id": "a",
-              "text": "Force 6: 22-27kt, 3m",
+              "text": "Manœuvre bâb : 2 coups",
               "correct": false
             },
             {
               "id": "b",
-              "text": "Licence radio",
-              "correct": false
+              "text": "Balise SOLAS.",
+              "correct": true
             },
             {
               "id": "c",
-              "text": "Fréquence 156-162 MHz",
+              "text": "Gilet autogonflant obligatoire.",
               "correct": false
             },
             {
               "id": "d",
-              "text": "Balise SOLAS",
-              "correct": true
+              "text": "Utiliser l'alphabet phonétique.",
+              "correct": false
             }
           ],
           "difficulty": 2,
@@ -7905,28 +8037,28 @@
         },
         {
           "id": "pedago_9_17",
-          "text": "Au PE, \"Radeaux\" designe :",
+          "text": "Concernant les canaux de securite, quelle reponse est exacte ?",
           "image": null,
           "answers": [
             {
               "id": "a",
-              "text": "3 fois",
+              "text": "Licence radio.",
               "correct": false
             },
             {
               "id": "b",
-              "text": "équipement obligatoire",
-              "correct": false
+              "text": "Radeaux : selon tonnage",
+              "correct": true
             },
             {
               "id": "c",
-              "text": "rouge cylindrique feu rouge",
+              "text": "Balise SOLAS.",
               "correct": false
             },
             {
               "id": "d",
-              "text": "selon tonnage",
-              "correct": true
+              "text": "Je bâbord : 2 brefs",
+              "correct": false
             }
           ],
           "difficulty": 2,
@@ -7938,27 +8070,27 @@
         },
         {
           "id": "pedago_9_18",
-          "text": "Pour un message de detresse, quelle procedure est correcte ?",
+          "text": "Concernant les canaux de securite, quelle reponse est exacte ?",
           "image": null,
           "answers": [
             {
               "id": "a",
-              "text": "Utiliser l'alphabet phonétique",
+              "text": "Utiliser l'alphabet phonétique.",
               "correct": true
             },
             {
               "id": "b",
-              "text": "ASN: équipement obligatoire",
+              "text": "Gilet autogonflant obligatoire.",
               "correct": false
             },
             {
               "id": "c",
-              "text": "Licence radio",
+              "text": "Fréquence 156-162 MHz.",
               "correct": false
             },
             {
               "id": "d",
-              "text": "Doute: 4 brefs rapides",
+              "text": "Pied pilote : sécurité 20cm",
               "correct": false
             }
           ],
@@ -7971,27 +8103,27 @@
         },
         {
           "id": "pedago_9_19",
-          "text": "Concernant les canaux VHF, quelle reponse est juste ?",
+          "text": "Pour un message radio de detresse, quelle proposition est juste ?",
           "image": null,
           "answers": [
             {
               "id": "a",
-              "text": "Licence radio",
-              "correct": true
+              "text": "Utiliser l'alphabet phonétique.",
+              "correct": false
             },
             {
               "id": "b",
-              "text": "Mayday: 3 fois",
+              "text": "Mayday : 3 fois",
               "correct": false
             },
             {
               "id": "c",
-              "text": "Canal 16: détresse urgence",
-              "correct": false
+              "text": "Canal 16 : détresse urgence",
+              "correct": true
             },
             {
               "id": "d",
-              "text": "Interpréter les cartes de pression",
+              "text": "Danger isolé : noir+bandes rouges, 2 sphères",
               "correct": false
             }
           ],
@@ -8004,28 +8136,28 @@
         },
         {
           "id": "pedago_9_20",
-          "text": "Concernant les canaux VHF, quelle reponse est juste ?",
+          "text": "Pour un message radio de detresse, quelle proposition est juste ?",
           "image": null,
           "answers": [
             {
               "id": "a",
-              "text": "Fréquence 156-162 MHz",
-              "correct": true
+              "text": "Interpréter les cartes de pression.",
+              "correct": false
             },
             {
               "id": "b",
-              "text": "Gilet autogonflant obligatoire",
+              "text": "Canal 16 : détresse urgence",
               "correct": false
             },
             {
               "id": "c",
-              "text": "Détresse: Mayday 3x, fusée, miroir, pavillon NC",
+              "text": "Fréquence 156-162 MHz.",
               "correct": false
             },
             {
               "id": "d",
-              "text": "ASN: équipement obligatoire",
-              "correct": false
+              "text": "Mayday : 3 fois",
+              "correct": true
             }
           ],
           "difficulty": 2,
@@ -8045,7 +8177,7 @@
       "questions": [
         {
           "id": "pedago_10_1",
-          "text": "Dans le cadre SUF, quelle regle de securite est exacte ?",
+          "text": "Le port de la brassiere est obligatoire :",
           "image": null,
           "answers": [
             {
@@ -8055,17 +8187,17 @@
             },
             {
               "id": "b",
-              "text": "Le cadre SUF privilegie la navigation de jour.",
-              "correct": false
-            },
-            {
-              "id": "c",
               "text": "La presence d un correspondant a terre est obligatoire.",
               "correct": false
             },
             {
+              "id": "c",
+              "text": "Utiliser le pied de pilote (sécurité).",
+              "correct": false
+            },
+            {
               "id": "d",
-              "text": "Manœuvre bâb: 2 coups",
+              "text": "Gérer une voie d'eau d'urgence.",
               "correct": false
             }
           ],
@@ -8078,28 +8210,28 @@
         },
         {
           "id": "pedago_10_2",
-          "text": "Dans le cadre SUF, quelle regle de securite est exacte ?",
+          "text": "Le port de la brassiere est obligatoire :",
           "image": null,
           "answers": [
             {
               "id": "a",
-              "text": "En voile legere, la limite meteo est force 3 avec rafales 4.",
-              "correct": false
+              "text": "Le cadre SUF privilegie la navigation de jour.",
+              "correct": true
             },
             {
               "id": "b",
-              "text": "Parallélogramme vectoriel",
+              "text": "Gérer une voie d'eau d'urgence.",
               "correct": false
             },
             {
               "id": "c",
-              "text": "Gérer une voie d'eau d'urgence",
+              "text": "La presence d un correspondant a terre est obligatoire.",
               "correct": false
             },
             {
               "id": "d",
-              "text": "Le cadre SUF privilegie la navigation de jour.",
-              "correct": true
+              "text": "Distance : échelle latitudes",
+              "correct": false
             }
           ],
           "difficulty": 2,
@@ -8111,27 +8243,27 @@
         },
         {
           "id": "pedago_10_3",
-          "text": "Dans le cadre SUF, quelle regle de securite est exacte ?",
+          "text": "Le port de la brassiere est obligatoire :",
           "image": null,
           "answers": [
             {
               "id": "a",
-              "text": "En navigation scoute, le port du gilet est obligatoire en permanence.",
+              "text": "δ: déviation.",
               "correct": false
             },
             {
               "id": "b",
+              "text": "En voile legere, la limite est de 2 milles d un abri.",
+              "correct": false
+            },
+            {
+              "id": "c",
               "text": "En habitable, la limite est de 6 milles d un abri.",
               "correct": true
             },
             {
-              "id": "c",
-              "text": "Interpréter les signaux sonores en brume",
-              "correct": false
-            },
-            {
               "id": "d",
-              "text": "Réagir en cas d'incendie à bord",
+              "text": "La presence d un correspondant a terre est obligatoire.",
               "correct": false
             }
           ],
@@ -8144,7 +8276,7 @@
         },
         {
           "id": "pedago_10_4",
-          "text": "Dans le cadre SUF, quelle regle de securite est exacte ?",
+          "text": "Le port de la brassiere est obligatoire :",
           "image": null,
           "answers": [
             {
@@ -8154,17 +8286,17 @@
             },
             {
               "id": "b",
-              "text": "En habitable, la limite est de 6 milles d un abri.",
+              "text": "Front chaud : pluie progressive",
               "correct": false
             },
             {
               "id": "c",
-              "text": "Réagir en cas d'incendie à bord",
+              "text": "La securite de l equipage prime sur l objectif pedagogique.",
               "correct": false
             },
             {
               "id": "d",
-              "text": "Mouillage: boule noire (j), feu blanc (n)",
+              "text": "Réagir en cas d'incendie à bord.",
               "correct": false
             }
           ],
@@ -8177,27 +8309,27 @@
         },
         {
           "id": "pedago_10_5",
-          "text": "Dans le cadre SUF, quelle regle de securite est exacte ?",
+          "text": "Le port de la brassiere est obligatoire :",
           "image": null,
           "answers": [
             {
               "id": "a",
-              "text": "En habitable, la limite meteo est force 4 avec rafales 5.",
-              "correct": true
+              "text": "Eaux saines : bandes rouges/blanches, feu blanc",
+              "correct": false
             },
             {
               "id": "b",
-              "text": "Manœuvre trib: 1 coup",
+              "text": "Le cadre SUF privilegie la navigation de jour.",
               "correct": false
             },
             {
               "id": "c",
-              "text": "La presence d un correspondant a terre est obligatoire.",
-              "correct": false
+              "text": "En habitable, la limite meteo est force 4 avec rafales 5.",
+              "correct": true
             },
             {
               "id": "d",
-              "text": "La securite de l equipage prime sur l objectif pedagogique.",
+              "text": "Gérer une voie d'eau d'urgence.",
               "correct": false
             }
           ],
@@ -8210,28 +8342,28 @@
         },
         {
           "id": "pedago_10_6",
-          "text": "Dans le cadre SUF, quelle regle de securite est exacte ?",
+          "text": "Le port de la brassiere est obligatoire :",
           "image": null,
           "answers": [
             {
               "id": "a",
-              "text": "En habitable, la limite meteo est force 4 avec rafales 5.",
+              "text": "En navigation scoute, le port du gilet est obligatoire en permanence.",
               "correct": false
             },
             {
               "id": "b",
-              "text": "BM: basse mer",
-              "correct": false
+              "text": "En voile legere, la limite meteo est force 3 avec rafales 4.",
+              "correct": true
             },
             {
               "id": "c",
-              "text": "En habitable, la limite est de 6 milles d un abri.",
+              "text": "Est : noir/jaune/noir, cônes opposés, 3 blancs/10s",
               "correct": false
             },
             {
               "id": "d",
-              "text": "En voile legere, la limite meteo est force 3 avec rafales 4.",
-              "correct": true
+              "text": "En habitable, la limite meteo est force 4 avec rafales 5.",
+              "correct": false
             }
           ],
           "difficulty": 2,
@@ -8243,17 +8375,17 @@
         },
         {
           "id": "pedago_10_7",
-          "text": "Dans le cadre SUF, quelle regle de securite est exacte ?",
+          "text": "Le port de la brassiere est obligatoire :",
           "image": null,
           "answers": [
             {
               "id": "a",
-              "text": "Échoué: 3 boules (j), blanc+2 rouges (n)",
-              "correct": false
+              "text": "La presence d un correspondant a terre est obligatoire.",
+              "correct": true
             },
             {
               "id": "b",
-              "text": "La securite de l equipage prime sur l objectif pedagogique.",
+              "text": "Rose : 360°",
               "correct": false
             },
             {
@@ -8263,8 +8395,8 @@
             },
             {
               "id": "d",
-              "text": "La presence d un correspondant a terre est obligatoire.",
-              "correct": true
+              "text": "En habitable, la limite meteo est force 4 avec rafales 5.",
+              "correct": false
             }
           ],
           "difficulty": 2,
@@ -8276,28 +8408,28 @@
         },
         {
           "id": "pedago_10_8",
-          "text": "Dans le cadre SUF, quelle regle de securite est exacte ?",
+          "text": "Le port de la brassiere est obligatoire :",
           "image": null,
           "answers": [
             {
               "id": "a",
-              "text": "En habitable, la limite meteo est force 4 avec rafales 5.",
+              "text": "Triangle fermé vecteurs.",
               "correct": false
             },
             {
               "id": "b",
-              "text": "Gérer une voie d'eau d'urgence",
+              "text": "En voile legere, la limite meteo est force 3 avec rafales 4.",
               "correct": false
             },
             {
               "id": "c",
-              "text": "Échoué: 3 boules (j), blanc+2 rouges (n)",
-              "correct": false
+              "text": "La securite de l equipage prime sur l objectif pedagogique.",
+              "correct": true
             },
             {
               "id": "d",
-              "text": "La securite de l equipage prime sur l objectif pedagogique.",
-              "correct": true
+              "text": "Gérer une voie d'eau d'urgence.",
+              "correct": false
             }
           ],
           "difficulty": 2,
@@ -8309,28 +8441,28 @@
         },
         {
           "id": "pedago_10_9",
-          "text": "Dans le cadre SUF, quelle regle de securite est exacte ?",
+          "text": "Le port de la brassiere est obligatoire :",
           "image": null,
           "answers": [
             {
               "id": "a",
-              "text": "En navigation scoute, le port du gilet est obligatoire en permanence.",
+              "text": "Le cadre SUF privilegie la navigation de jour.",
               "correct": false
             },
             {
               "id": "b",
-              "text": "Calculer le cap vrai à partir du cap compas",
+              "text": "En navigation scoute, le port du gilet est obligatoire en permanence.",
               "correct": false
             },
             {
               "id": "c",
-              "text": "Gérer une voie d'eau d'urgence",
-              "correct": false
+              "text": "Lister l'équipement obligatoire à bord.",
+              "correct": true
             },
             {
               "id": "d",
-              "text": "Lister l'équipement obligatoire à bord",
-              "correct": true
+              "text": "Remorqueur : feu blanc supplémentaire",
+              "correct": false
             }
           ],
           "difficulty": 2,
@@ -8342,28 +8474,28 @@
         },
         {
           "id": "pedago_10_10",
-          "text": "Dans le cadre SUF, quelle regle de securite est exacte ?",
+          "text": "Le port de la brassiere est obligatoire :",
           "image": null,
           "answers": [
             {
               "id": "a",
-              "text": "Force 5: 17-21kt, 2m",
+              "text": "La presence d un correspondant a terre est obligatoire.",
               "correct": false
             },
             {
               "id": "b",
-              "text": "Lister l'équipement obligatoire à bord",
-              "correct": false
+              "text": "Gérer une voie d'eau d'urgence.",
+              "correct": true
             },
             {
               "id": "c",
-              "text": "Réagir en cas d'incendie à bord",
+              "text": "En voile legere, la limite meteo est force 3 avec rafales 4.",
               "correct": false
             },
             {
               "id": "d",
-              "text": "Gérer une voie d'eau d'urgence",
-              "correct": true
+              "text": "Échoué : 3 boules (j), blanc+2 rouges (n)",
+              "correct": false
             }
           ],
           "difficulty": 2,
@@ -8375,27 +8507,27 @@
         },
         {
           "id": "pedago_10_11",
-          "text": "Dans le cadre SUF, quelle regle de securite est exacte ?",
+          "text": "Le port de la brassiere est obligatoire :",
           "image": null,
           "answers": [
             {
               "id": "a",
-              "text": "En habitable, la limite est de 6 milles d un abri.",
+              "text": "En voile legere, la limite est de 2 milles d un abri.",
               "correct": false
             },
             {
               "id": "b",
-              "text": "Réagir en cas d'incendie à bord",
-              "correct": true
-            },
-            {
-              "id": "c",
-              "text": "Force 0: <1kt",
+              "text": "Lister l'équipement obligatoire à bord.",
               "correct": false
             },
             {
+              "id": "c",
+              "text": "Réagir en cas d'incendie à bord.",
+              "correct": true
+            },
+            {
               "id": "d",
-              "text": "Gérer une voie d'eau d'urgence",
+              "text": "Licence radio.",
               "correct": false
             }
           ],
@@ -8408,22 +8540,22 @@
         },
         {
           "id": "pedago_10_12",
-          "text": "Pour la navigation scoute, quelle limite est correcte ?",
+          "text": "Pour une navigation scoute, quelle limite est correcte ?",
           "image": null,
           "answers": [
             {
               "id": "a",
-              "text": "Réagir en cas d'incendie à bord",
+              "text": "Le cadre SUF privilegie la navigation de jour.",
               "correct": false
             },
             {
               "id": "b",
-              "text": "Radeaux: selon tonnage",
+              "text": "Lister l'équipement obligatoire à bord.",
               "correct": false
             },
             {
               "id": "c",
-              "text": "En habitable, la limite meteo est force 4 avec rafales 5.",
+              "text": "Feu proue : blanc axial 225°",
               "correct": false
             },
             {
@@ -8441,27 +8573,27 @@
         },
         {
           "id": "pedago_10_13",
-          "text": "Pour la navigation scoute, quelle limite est correcte ?",
+          "text": "Pour une navigation scoute, quelle limite est correcte ?",
           "image": null,
           "answers": [
             {
               "id": "a",
-              "text": "Lister l'équipement obligatoire à bord",
-              "correct": false
-            },
-            {
-              "id": "b",
-              "text": "En navigation scoute, le port du gilet est obligatoire en permanence.",
-              "correct": false
-            },
-            {
-              "id": "c",
               "text": "Le cadre SUF privilegie la navigation de jour.",
               "correct": true
             },
             {
+              "id": "b",
+              "text": "Règle Cras : mesurer caps distances",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "text": "La securite de l equipage prime sur l objectif pedagogique.",
+              "correct": false
+            },
+            {
               "id": "d",
-              "text": "Force 0: <1kt",
+              "text": "En navigation scoute, le port du gilet est obligatoire en permanence.",
               "correct": false
             }
           ],
@@ -8474,13 +8606,13 @@
         },
         {
           "id": "pedago_10_14",
-          "text": "Pour la navigation scoute, quelle limite est correcte ?",
+          "text": "Pour une navigation scoute, quelle limite est correcte ?",
           "image": null,
           "answers": [
             {
               "id": "a",
-              "text": "La presence d un correspondant a terre est obligatoire.",
-              "correct": false
+              "text": "En habitable, la limite est de 6 milles d un abri.",
+              "correct": true
             },
             {
               "id": "b",
@@ -8489,13 +8621,13 @@
             },
             {
               "id": "c",
-              "text": "Déterminer la route surface avec dérive",
+              "text": "Le cadre SUF privilegie la navigation de jour.",
               "correct": false
             },
             {
               "id": "d",
-              "text": "En habitable, la limite est de 6 milles d un abri.",
-              "correct": true
+              "text": "Balise : carré",
+              "correct": false
             }
           ],
           "difficulty": 2,
@@ -8507,27 +8639,27 @@
         },
         {
           "id": "pedago_10_15",
-          "text": "Pour la navigation scoute, quelle limite est correcte ?",
+          "text": "Pour une navigation scoute, quelle limite est correcte ?",
           "image": null,
           "answers": [
             {
               "id": "a",
-              "text": "En voile legere, la limite est de 2 milles d un abri.",
-              "correct": true
+              "text": "En habitable, la limite est de 6 milles d un abri.",
+              "correct": false
             },
             {
               "id": "b",
-              "text": "Vérifier la cohérence des routes (surface vs fond)",
+              "text": "Doublage : s'écarter",
               "correct": false
             },
             {
               "id": "c",
-              "text": "Le cadre SUF privilegie la navigation de jour.",
-              "correct": false
+              "text": "En voile legere, la limite est de 2 milles d un abri.",
+              "correct": true
             },
             {
               "id": "d",
-              "text": "Lister l'équipement obligatoire à bord",
+              "text": "La securite de l equipage prime sur l objectif pedagogique.",
               "correct": false
             }
           ],
@@ -8540,28 +8672,28 @@
         },
         {
           "id": "pedago_10_16",
-          "text": "Pour la navigation scoute, quelle limite est correcte ?",
+          "text": "Pour une navigation scoute, quelle limite est correcte ?",
           "image": null,
           "answers": [
             {
               "id": "a",
-              "text": "En navigation scoute, le port du gilet est obligatoire en permanence.",
+              "text": "En voile legere, la limite meteo est force 3 avec rafales 4.",
               "correct": false
             },
             {
               "id": "b",
-              "text": "En habitable, la limite meteo est force 4 avec rafales 5.",
-              "correct": true
+              "text": "Phare : triangle+numéro",
+              "correct": false
             },
             {
               "id": "c",
-              "text": "Douzièmes: 1,2,3,3,2,1",
+              "text": "En voile legere, la limite est de 2 milles d un abri.",
               "correct": false
             },
             {
               "id": "d",
-              "text": "Le cadre SUF privilegie la navigation de jour.",
-              "correct": false
+              "text": "En habitable, la limite meteo est force 4 avec rafales 5.",
+              "correct": true
             }
           ],
           "difficulty": 2,
@@ -8573,7 +8705,7 @@
         },
         {
           "id": "pedago_10_17",
-          "text": "Pour la navigation scoute, quelle limite est correcte ?",
+          "text": "Pour une navigation scoute, quelle limite est correcte ?",
           "image": null,
           "answers": [
             {
@@ -8583,18 +8715,18 @@
             },
             {
               "id": "b",
-              "text": "Réagir en cas d'incendie à bord",
-              "correct": false
+              "text": "En voile legere, la limite meteo est force 3 avec rafales 4.",
+              "correct": true
             },
             {
               "id": "c",
-              "text": "W: déclinaison (W=-,E=+)",
+              "text": "Réagir en cas d'incendie à bord.",
               "correct": false
             },
             {
               "id": "d",
-              "text": "En voile legere, la limite meteo est force 3 avec rafales 4.",
-              "correct": true
+              "text": "Calculer le cap vrai à partir du cap compas.",
+              "correct": false
             }
           ],
           "difficulty": 2,
@@ -8606,7 +8738,7 @@
         },
         {
           "id": "pedago_10_18",
-          "text": "Pour la navigation scoute, quelle limite est correcte ?",
+          "text": "Pour une navigation scoute, quelle limite est correcte ?",
           "image": null,
           "answers": [
             {
@@ -8616,17 +8748,17 @@
             },
             {
               "id": "b",
-              "text": "La securite de l equipage prime sur l objectif pedagogique.",
+              "text": "Le cadre SUF privilegie la navigation de jour.",
               "correct": false
             },
             {
               "id": "c",
-              "text": "En navigation scoute, le port du gilet est obligatoire en permanence.",
+              "text": "Interpréter les cartes de pression.",
               "correct": false
             },
             {
               "id": "d",
-              "text": "Rs: route surface",
+              "text": "En habitable, la limite meteo est force 4 avec rafales 5.",
               "correct": false
             }
           ],
@@ -8639,27 +8771,27 @@
         },
         {
           "id": "pedago_10_19",
-          "text": "Pour la navigation scoute, quelle limite est correcte ?",
+          "text": "Pour une navigation scoute, quelle limite est correcte ?",
           "image": null,
           "answers": [
             {
               "id": "a",
-              "text": "En navigation scoute, le port du gilet est obligatoire en permanence.",
+              "text": "En voile legere, la limite est de 2 milles d un abri.",
               "correct": false
             },
             {
               "id": "b",
-              "text": "Réagir en cas d'incendie à bord",
-              "correct": false
-            },
-            {
-              "id": "c",
               "text": "La securite de l equipage prime sur l objectif pedagogique.",
               "correct": true
             },
             {
+              "id": "c",
+              "text": "Réagir en cas d'incendie à bord.",
+              "correct": false
+            },
+            {
               "id": "d",
-              "text": "Phare: triangle+numéro",
+              "text": "H3 : 3/12 (cumul 6/12)",
               "correct": false
             }
           ],
@@ -8672,27 +8804,27 @@
         },
         {
           "id": "pedago_10_20",
-          "text": "Pour la navigation scoute, quelle limite est correcte ?",
+          "text": "Pour une navigation scoute, quelle limite est correcte ?",
           "image": null,
           "answers": [
             {
               "id": "a",
-              "text": "Lister l'équipement obligatoire à bord",
+              "text": "Lister l'équipement obligatoire à bord.",
               "correct": true
             },
             {
               "id": "b",
-              "text": "En voile legere, la limite meteo est force 3 avec rafales 4.",
-              "correct": false
-            },
-            {
-              "id": "c",
               "text": "La securite de l equipage prime sur l objectif pedagogique.",
               "correct": false
             },
             {
+              "id": "c",
+              "text": "La presence d un correspondant a terre est obligatoire.",
+              "correct": false
+            },
+            {
               "id": "d",
-              "text": "Cirrus: -12-24h avant basse pression",
+              "text": "H1 : 1/12",
               "correct": false
             }
           ],
