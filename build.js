@@ -646,6 +646,7 @@ async function build() {
         const qcmLargePath = path.join(dataDir, 'qcm.large.generated.json');
         let qcmSourcePath = path.join(dataDir, 'qcm.json');
         if (await fs.pathExists(qcmMergedPath)) qcmSourcePath = qcmMergedPath;
+        else if (await fs.pathExists(path.join(dataDir, 'qcm.json'))) qcmSourcePath = path.join(dataDir, 'qcm.json');
         else if (await fs.pathExists(qcmPeGeneratedPath)) qcmSourcePath = qcmPeGeneratedPath;
         else if (await fs.pathExists(qcmLargePath)) qcmSourcePath = qcmLargePath;
         const qcmData = await loadJSON(qcmSourcePath, {
@@ -720,7 +721,17 @@ async function build() {
         const navigationTemplate = await fs.readFile(path.join(templateDir, 'navigation.mustache'), 'utf8');
 
         // Nettoyer puis recréer le dossier de sortie pour éviter les fichiers obsolètes
-        await fs.emptyDir(outputDir);
+        // Sous Windows, certains fichiers peuvent etre verrouilles temporairement (EBUSY).
+        try {
+            await fs.emptyDir(outputDir);
+        } catch (error) {
+            if (error && error.code === 'EBUSY') {
+                console.warn('⚠️ Impossible de vider docs (fichier verrouille). Build en mode ecrasement.');
+                await fs.ensureDir(outputDir);
+            } else {
+                throw error;
+            }
+        }
 
         // ========== FONCTION UTILITAIRE POUR GÉNÉRER UNE PAGE ==========
         async function generatePage(filename, template, data) {
