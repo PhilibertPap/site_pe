@@ -112,6 +112,23 @@
                 </ul>
             </div>
         </div>
+
+        <div class="card mt-4 reveal reveal-delay-4">
+            <div class="card-header bg-light-subtle">
+                <h2 class="h6 mb-0 section-head"><span class="icon-badge">🗂️</span>Annales QCM</h2>
+            </div>
+            <div class="card-body">
+                <ul class="list-group list-group-flush">
+                    {{#annalesQcmSessions}}
+                    <li class="list-group-item px-0">
+                        <strong>{{label}}</strong>
+                        {{#hasCorrige}}<span class="badge text-bg-success ms-1">corrigé</span>{{/hasCorrige}}
+                        {{#answerKeyAvailable}}<span class="badge text-bg-info ms-1">clé docx</span>{{/answerKeyAvailable}}
+                    </li>
+                    {{/annalesQcmSessions}}
+                </ul>
+            </div>
+        </div>
     </aside>
 </div>
 <script src="js/examens.js"></script>

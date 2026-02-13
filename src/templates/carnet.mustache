@@ -2,11 +2,11 @@
     <div class="row g-3 align-items-center">
         <div class="col-lg-8">
             <h1 class="display-6 mb-2">Carnet de bord</h1>
-            <p class="mb-0">Prépare des fiches de révision imprimables pour les modules validés.</p>
+            <p class="mb-0">Toutes les fiches de revision sont disponibles module par module.</p>
         </div>
         <div class="col-lg-4">
             <div class="soft-panel p-3 reveal reveal-delay-1">
-                <p class="kpi-label">Modules validés</p>
+                <p class="kpi-label">Fiches disponibles</p>
                 <p class="kpi-value mb-0">{{completedModulesCount}} / {{totalModulesCount}}</p>
             </div>
         </div>
@@ -14,97 +14,103 @@
 </section>
 
 <div class="row g-4 mb-5 reveal reveal-delay-1">
-    <section class="col-lg-6 reveal reveal-delay-2">
+    <section class="col-lg-6">
         <div class="card h-100">
             <div class="card-header bg-success text-white">
-                <h2 class="h5 mb-0 section-head"><span class="icon-badge">📚</span>Fiches disponibles</h2>
+                <h2 class="h5 mb-0 section-head"><span class="icon-badge">📚</span>Sommaire des fiches</h2>
             </div>
             <div class="card-body">
                 <div class="list-group">
                     {{#modules}}
-                    {{#isCompleted}}
-                    <a href="#fiche-{{id}}" class="list-group-item list-group-item-action">✅ {{name}}</a>
-                    {{/isCompleted}}
-                    {{^isCompleted}}
-                    <span class="list-group-item text-muted">🔒 {{name}} (à compléter)</span>
-                    {{/isCompleted}}
+                    <a href="#fiche-{{id}}" class="list-group-item list-group-item-action">
+                        Module {{moduleNumber}} - {{name}}
+                    </a>
                     {{/modules}}
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="col-lg-6 reveal reveal-delay-3">
+    <section class="col-lg-6">
         <div class="card h-100">
             <div class="card-header bg-info text-white">
                 <h2 class="h5 mb-0 section-head"><span class="icon-badge">🖨️</span>Impression</h2>
             </div>
             <div class="card-body">
-                <p class="mb-3">Sélectionne les fiches à imprimer :</p>
+                <p class="mb-3">Selectionne les fiches a imprimer :</p>
                 <form class="soft-panel p-3">
                     {{#modules}}
-                    {{#isCompleted}}
                     <div class="form-check">
                         <input class="form-check-input" type="checkbox" id="fiche-check-{{id}}" value="{{id}}" checked>
-                        <label class="form-check-label" for="fiche-check-{{id}}">{{name}}</label>
+                        <label class="form-check-label" for="fiche-check-{{id}}">Module {{moduleNumber}} - {{name}}</label>
                     </div>
-                    {{/isCompleted}}
                     {{/modules}}
                 </form>
-                <button class="btn btn-info mt-3 w-100" onclick="printSelectedFiches()">Imprimer les fiches sélectionnées</button>
+                <button class="btn btn-info mt-3 w-100" onclick="printSelectedFiches()">Imprimer les fiches selectionnees</button>
             </div>
         </div>
     </section>
 </div>
 
-<section id="fiches-content" class="reveal reveal-delay-4">
+<section id="fiches-content" class="reveal reveal-delay-2">
     {{#modules}}
-    {{#isCompleted}}
     <article id="fiche-{{id}}" class="fiche-printable mb-5 p-4 border">
-        <h2 class="h4 mb-2">{{name}}</h2>
-        <p class="text-muted small"><strong>Module {{moduleNumber}}</strong> • {{description}}</p>
+        <div class="d-flex justify-content-between align-items-start flex-wrap gap-2">
+            <div>
+                <h2 class="h4 mb-2">Module {{moduleNumber}} - {{name}}</h2>
+                <p class="text-muted small mb-0">{{description}}</p>
+            </div>
+            <a href="{{coursePage}}" class="btn btn-outline-primary btn-sm">Page de cours</a>
+        </div>
         <hr class="my-3">
 
-        <h3 class="h6"><strong>Objectifs clés</strong></h3>
+        <h3 class="h6"><strong>Objectifs cles</strong></h3>
         <ul class="small mb-3">
             {{#objectifs}}
             <li>{{.}}</li>
             {{/objectifs}}
         </ul>
 
-        <h3 class="h6"><strong>Points à retenir</strong></h3>
+        <h3 class="h6"><strong>Checklist</strong></h3>
         <ul class="small mb-3">
-            {{#keyPoints}}
+            {{#checklist}}
             <li>{{.}}</li>
-            {{/keyPoints}}
+            {{/checklist}}
         </ul>
 
-        <h3 class="h6"><strong>Formules / Concepts</strong></h3>
+        {{#hasFormulas}}
+        <h3 class="h6"><strong>Formules / reperes</strong></h3>
         <pre class="small bg-light p-2 rounded"><code>{{formulas}}</code></pre>
+        {{/hasFormulas}}
 
-        <hr class="my-3">
-        <p class="text-muted mb-0"><small>Carnet de bord - Préparation PE - NDC</small></p>
+        <p class="small mb-0"><strong>QCM module:</strong> {{qcmQuestionCount}} • <strong>Annales {{annalesDomainLabel}}:</strong> {{annalesCount}}</p>
     </article>
-    {{/isCompleted}}
     {{/modules}}
 </section>
 
 <script>
 function printSelectedFiches() {
-    const selected = [];
-    document.querySelectorAll('.form-check-input:checked').forEach(checkbox => {
-        selected.push(checkbox.value);
-    });
-    if(selected.length === 0) {
-        alert('Sélectionne au moins une fiche');
+    const selectedIds = new Set();
+    document.querySelectorAll('.form-check-input:checked').forEach(checkbox => selectedIds.add(checkbox.value));
+    if (selectedIds.size === 0) {
+        alert('Selectionne au moins une fiche');
         return;
     }
-    // Affiche les fiches sélectionnées et lance l'impression
+
+    document.querySelectorAll('#fiches-content article').forEach(article => {
+        const id = article.id.replace('fiche-', '');
+        article.style.display = selectedIds.has(id) ? '' : 'none';
+    });
+
     window.print();
+
+    document.querySelectorAll('#fiches-content article').forEach(article => {
+        article.style.display = '';
+    });
 }
 </script>
 
 <style media="print">
-    nav, footer, .form-check, .btn { display: none; }
-    body { background: white; }
+nav, footer, .form-check, .btn, .page-hero { display: none !important; }
+body { background: white; }
 </style>

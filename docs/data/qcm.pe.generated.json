@@ -1,8 +1,9 @@
 {
-  "generatedAt": "2026-02-12T23:25:47.835Z",
+  "generatedAt": "2026-02-13T12:12:16.751Z",
   "source": {
     "base": "qcm.json",
-    "extracted": "pe_course_dataset.normalized.json"
+    "extracted": "pe_course_dataset.normalized.json",
+    "theoryCoverage": "modules-content.json"
   },
   "categories": [
     {
@@ -3719,6 +3720,3436 @@
             "M14",
             "M14-EX1",
             "exercise_result"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "theory_module_2",
+      "name": "Couverture theorie module 2",
+      "description": "Questions de couverture pour le module 2",
+      "module": 2,
+      "questions": [
+        {
+          "id": "theory_2_1",
+          "text": "Module 2 (Signalisation (Sonore, Lumineuse, Portuaire)) : quel enonce est exact ?",
+          "image": null,
+          "answers": [
+            {
+              "id": "a",
+              "text": "Feu proue: blanc axial 225°",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "Moteur erre brume: 1 long/2min",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "text": "Échoué: 3 boules (j), blanc+2 rouges (n)",
+              "correct": true
+            },
+            {
+              "id": "d",
+              "text": "Manœuvre trib: 1 coup",
+              "correct": false
+            }
+          ],
+          "difficulty": 2,
+          "explanation": "Point de cours du module 2",
+          "tags": [
+            "module_2",
+            "theory_coverage"
+          ]
+        },
+        {
+          "id": "theory_2_2",
+          "text": "Module 2 (Signalisation (Sonore, Lumineuse, Portuaire)) : quel enonce est exact ?",
+          "image": null,
+          "answers": [
+            {
+              "id": "a",
+              "text": "Arrière: 3 coups",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "text": "Courants tidals: tables marées",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "text": "Manœuvre trib: 1 coup",
+              "correct": false
+            },
+            {
+              "id": "d",
+              "text": "Non maître: 2 boules (j), feu+route (n)",
+              "correct": false
+            }
+          ],
+          "difficulty": 2,
+          "explanation": "Point de cours du module 2",
+          "tags": [
+            "module_2",
+            "theory_coverage"
+          ]
+        },
+        {
+          "id": "theory_2_3",
+          "text": "Module 2 (Signalisation (Sonore, Lumineuse, Portuaire)) : quel enonce est exact ?",
+          "image": null,
+          "answers": [
+            {
+              "id": "a",
+              "text": "Reconnaître les feux de navires",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "Comprendre les signaux portuaires",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "text": "Lire et interpréter les symboles SHOM",
+              "correct": false
+            },
+            {
+              "id": "d",
+              "text": "Manœuvre trib: 1 coup",
+              "correct": false
+            }
+          ],
+          "difficulty": 2,
+          "explanation": "Point de cours du module 2",
+          "tags": [
+            "module_2",
+            "theory_coverage"
+          ]
+        },
+        {
+          "id": "theory_2_4",
+          "text": "Module 2 (Signalisation (Sonore, Lumineuse, Portuaire)) : quel enonce est exact ?",
+          "image": null,
+          "answers": [
+            {
+              "id": "a",
+              "text": "Feux route: rouge bâb, vert trib 112.5°",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "text": "Comprendre les signaux portuaires",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "text": "Reconnaître les feux de navires",
+              "correct": false
+            },
+            {
+              "id": "d",
+              "text": "Appliquer la règle des douzièmes",
+              "correct": false
+            }
+          ],
+          "difficulty": 2,
+          "explanation": "Point de cours du module 2",
+          "tags": [
+            "module_2",
+            "theory_coverage"
+          ]
+        },
+        {
+          "id": "theory_2_5",
+          "text": "Module 2 (Signalisation (Sonore, Lumineuse, Portuaire)) : quel enonce est exact ?",
+          "image": null,
+          "answers": [
+            {
+              "id": "a",
+              "text": "Interpréter les signaux sonores en brume",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "Feux route: rouge bâb, vert trib 112.5°",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "text": "Non maître: 2 boules (j), feu+route (n)",
+              "correct": true
+            },
+            {
+              "id": "d",
+              "text": "Force 5: 17-21kt, 2m",
+              "correct": false
+            }
+          ],
+          "difficulty": 2,
+          "explanation": "Point de cours du module 2",
+          "tags": [
+            "module_2",
+            "theory_coverage"
+          ]
+        },
+        {
+          "id": "theory_2_6",
+          "text": "Module 2 (Signalisation (Sonore, Lumineuse, Portuaire)) : quel enonce est exact ?",
+          "image": null,
+          "answers": [
+            {
+              "id": "a",
+              "text": "Manœuvre bâb: 2 coups",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "Échoué: 3 boules (j), blanc+2 rouges (n)",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "text": "Canal 16: détresse urgence",
+              "correct": false
+            },
+            {
+              "id": "d",
+              "text": "Manœuvre trib: 1 coup",
+              "correct": true
+            }
+          ],
+          "difficulty": 2,
+          "explanation": "Point de cours du module 2",
+          "tags": [
+            "module_2",
+            "theory_coverage"
+          ]
+        },
+        {
+          "id": "theory_2_7",
+          "text": "Module 2 (Signalisation (Sonore, Lumineuse, Portuaire)) : quel enonce est exact ?",
+          "image": null,
+          "answers": [
+            {
+              "id": "a",
+              "text": "Interpréter les signaux sonores en brume",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "Force 0: <1kt",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "text": "Reconnaître les feux de navires",
+              "correct": false
+            },
+            {
+              "id": "d",
+              "text": "Brume moteur erre: 1 long/2min",
+              "correct": true
+            }
+          ],
+          "difficulty": 2,
+          "explanation": "Point de cours du module 2",
+          "tags": [
+            "module_2",
+            "theory_coverage"
+          ]
+        },
+        {
+          "id": "theory_2_8",
+          "text": "Module 2 (Signalisation (Sonore, Lumineuse, Portuaire)) : quel enonce est exact ?",
+          "image": null,
+          "answers": [
+            {
+              "id": "a",
+              "text": "Mouillage: boule noire (j), feu blanc (n)",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "Reconnaître les feux de navires",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "text": "Cv: cap vrai",
+              "correct": false
+            },
+            {
+              "id": "d",
+              "text": "Identifier les feux de route (feux de bord)",
+              "correct": false
+            }
+          ],
+          "difficulty": 2,
+          "explanation": "Point de cours du module 2",
+          "tags": [
+            "module_2",
+            "theory_coverage"
+          ]
+        },
+        {
+          "id": "theory_2_9",
+          "text": "Module 2 (Signalisation (Sonore, Lumineuse, Portuaire)) : quel enonce est exact ?",
+          "image": null,
+          "answers": [
+            {
+              "id": "a",
+              "text": "Identifier les feux de route (feux de bord)",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "Feu arrière: blanc 135°",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "text": "Manœuvre bâb: 2 coups",
+              "correct": false
+            },
+            {
+              "id": "d",
+              "text": "Appliquer la règle des douzièmes",
+              "correct": false
+            }
+          ],
+          "difficulty": 2,
+          "explanation": "Point de cours du module 2",
+          "tags": [
+            "module_2",
+            "theory_coverage"
+          ]
+        },
+        {
+          "id": "theory_2_10",
+          "text": "Module 2 (Signalisation (Sonore, Lumineuse, Portuaire)) : quel enonce est exact ?",
+          "image": null,
+          "answers": [
+            {
+              "id": "a",
+              "text": "Mouillage: boule noire (j), feu blanc (n)",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "text": "Doute: 4 brefs rapides",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "text": "Feu arrière: blanc 135°",
+              "correct": false
+            },
+            {
+              "id": "d",
+              "text": "Feux route: rouge bâb, vert trib 112.5°",
+              "correct": false
+            }
+          ],
+          "difficulty": 2,
+          "explanation": "Point de cours du module 2",
+          "tags": [
+            "module_2",
+            "theory_coverage"
+          ]
+        },
+        {
+          "id": "theory_2_11",
+          "text": "Module 2 (Signalisation (Sonore, Lumineuse, Portuaire)) : quel enonce est exact ?",
+          "image": null,
+          "answers": [
+            {
+              "id": "a",
+              "text": "Non maître: 2 boules (j), feu+route (n)",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "Feu proue: blanc axial 225°",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "text": "Calculer le cap vrai à partir du cap compas",
+              "correct": false
+            },
+            {
+              "id": "d",
+              "text": "Reconnaître les feux de navires",
+              "correct": false
+            }
+          ],
+          "difficulty": 2,
+          "explanation": "Point de cours du module 2",
+          "tags": [
+            "module_2",
+            "theory_coverage"
+          ]
+        },
+        {
+          "id": "theory_2_12",
+          "text": "Module 2 (Signalisation (Sonore, Lumineuse, Portuaire)) : quel enonce est exact ?",
+          "image": null,
+          "answers": [
+            {
+              "id": "a",
+              "text": "Manœuvre bâb: 2 coups",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "text": "Feu arrière: blanc 135°",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "text": "Identifier les feux de route (feux de bord)",
+              "correct": false
+            },
+            {
+              "id": "d",
+              "text": "H2: 2/12 (cumul 3/12)",
+              "correct": false
+            }
+          ],
+          "difficulty": 2,
+          "explanation": "Point de cours du module 2",
+          "tags": [
+            "module_2",
+            "theory_coverage"
+          ]
+        },
+        {
+          "id": "theory_2_13",
+          "text": "Module 2 (Signalisation (Sonore, Lumineuse, Portuaire)) : quel enonce est exact ?",
+          "image": null,
+          "answers": [
+            {
+              "id": "a",
+              "text": "Chalutier pêche: 2 cônes, feu vert/blanc",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "Identifier les feux de route (feux de bord)",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "text": "Non maître: 2 boules (j), feu+route (n)",
+              "correct": false
+            },
+            {
+              "id": "d",
+              "text": "Interpréter les signaux sonores en brume",
+              "correct": true
+            }
+          ],
+          "difficulty": 2,
+          "explanation": "Point de cours du module 2",
+          "tags": [
+            "module_2",
+            "theory_coverage"
+          ]
+        },
+        {
+          "id": "theory_2_14",
+          "text": "Module 2 (Signalisation (Sonore, Lumineuse, Portuaire)) : quel enonce est exact ?",
+          "image": null,
+          "answers": [
+            {
+              "id": "a",
+              "text": "Connaître les canaux VHF importants (16, 9, 72)",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "Interpréter les signaux sonores en brume",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "text": "Arrière: 3 coups",
+              "correct": false
+            },
+            {
+              "id": "d",
+              "text": "Identifier les feux de route (feux de bord)",
+              "correct": true
+            }
+          ],
+          "difficulty": 2,
+          "explanation": "Point de cours du module 2",
+          "tags": [
+            "module_2",
+            "theory_coverage"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "theory_module_3",
+      "name": "Couverture theorie module 3",
+      "description": "Questions de couverture pour le module 3",
+      "module": 3,
+      "questions": [
+        {
+          "id": "theory_3_1",
+          "text": "Module 3 (RIPAM et Marques des Navires) : quel enonce est exact ?",
+          "image": null,
+          "answers": [
+            {
+              "id": "a",
+              "text": "Risque: gisement constant 3 temps",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "Appliquer les formules de variation",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "text": "Hiérarchie: Non-maître>Capacité>Tirant>Pêche>Voilier>Moteur",
+              "correct": false
+            },
+            {
+              "id": "d",
+              "text": "Voilier+moteur: traité moteur",
+              "correct": true
+            }
+          ],
+          "difficulty": 2,
+          "explanation": "Point de cours du module 3",
+          "tags": [
+            "module_3",
+            "theory_coverage"
+          ]
+        },
+        {
+          "id": "theory_3_2",
+          "text": "Module 3 (RIPAM et Marques des Navires) : quel enonce est exact ?",
+          "image": null,
+          "answers": [
+            {
+              "id": "a",
+              "text": "Routes opposées: tribord-tribord",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "ASN: équipement obligatoire",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "text": "Identifier les feux de route des navires",
+              "correct": false
+            },
+            {
+              "id": "d",
+              "text": "Routes convergentes: priorité droite",
+              "correct": true
+            }
+          ],
+          "difficulty": 2,
+          "explanation": "Point de cours du module 3",
+          "tags": [
+            "module_3",
+            "theory_coverage"
+          ]
+        },
+        {
+          "id": "theory_3_3",
+          "text": "Module 3 (RIPAM et Marques des Navires) : quel enonce est exact ?",
+          "image": null,
+          "answers": [
+            {
+              "id": "a",
+              "text": "Appliquer la hiérarchie des privilèges entre navires",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "Maîtriser les règles de barre (priorités de passage)",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "text": "Routes opposées: tribord-tribord",
+              "correct": true
+            },
+            {
+              "id": "d",
+              "text": "Douzièmes: 1,2,3,3,2,1",
+              "correct": false
+            }
+          ],
+          "difficulty": 2,
+          "explanation": "Point de cours du module 3",
+          "tags": [
+            "module_3",
+            "theory_coverage"
+          ]
+        },
+        {
+          "id": "theory_3_4",
+          "text": "Module 3 (RIPAM et Marques des Navires) : quel enonce est exact ?",
+          "image": null,
+          "answers": [
+            {
+              "id": "a",
+              "text": "Force 6: 22-27kt, 3m",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "Routes convergentes: priorité droite",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "text": "Chalutier pêche: 2 cônes, feu vert/blanc",
+              "correct": true
+            },
+            {
+              "id": "d",
+              "text": "Maîtriser les règles de barre (priorités de passage)",
+              "correct": false
+            }
+          ],
+          "difficulty": 2,
+          "explanation": "Point de cours du module 3",
+          "tags": [
+            "module_3",
+            "theory_coverage"
+          ]
+        },
+        {
+          "id": "theory_3_5",
+          "text": "Module 3 (RIPAM et Marques des Navires) : quel enonce est exact ?",
+          "image": null,
+          "answers": [
+            {
+              "id": "a",
+              "text": "Doublage: s'écarter",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "Hiérarchie: Non-maître>Capacité>Tirant>Pêche>Voilier>Moteur",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "text": "Remorqueur: feu blanc supplémentaire",
+              "correct": false
+            },
+            {
+              "id": "d",
+              "text": "Mouillage: boule noire (j), feu blanc (n)",
+              "correct": false
+            }
+          ],
+          "difficulty": 2,
+          "explanation": "Point de cours du module 3",
+          "tags": [
+            "module_3",
+            "theory_coverage"
+          ]
+        },
+        {
+          "id": "theory_3_6",
+          "text": "Module 3 (RIPAM et Marques des Navires) : quel enonce est exact ?",
+          "image": null,
+          "answers": [
+            {
+              "id": "a",
+              "text": "Appliquer la hiérarchie des privilèges entre navires",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "text": "Triangle fermé vecteurs",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "text": "Connaître les marques de jour",
+              "correct": false
+            },
+            {
+              "id": "d",
+              "text": "Remorqueur: feu blanc supplémentaire",
+              "correct": false
+            }
+          ],
+          "difficulty": 2,
+          "explanation": "Point de cours du module 3",
+          "tags": [
+            "module_3",
+            "theory_coverage"
+          ]
+        },
+        {
+          "id": "theory_3_7",
+          "text": "Module 3 (RIPAM et Marques des Navires) : quel enonce est exact ?",
+          "image": null,
+          "answers": [
+            {
+              "id": "a",
+              "text": "Eaux saines: bandes rouges/blanches, feu blanc",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "Hiérarchie: Non-maître>Capacité>Tirant>Pêche>Voilier>Moteur",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "text": "Voilier+moteur: traité moteur",
+              "correct": false
+            },
+            {
+              "id": "d",
+              "text": "Doublage: s'écarter",
+              "correct": true
+            }
+          ],
+          "difficulty": 2,
+          "explanation": "Point de cours du module 3",
+          "tags": [
+            "module_3",
+            "theory_coverage"
+          ]
+        },
+        {
+          "id": "theory_3_8",
+          "text": "Module 3 (RIPAM et Marques des Navires) : quel enonce est exact ?",
+          "image": null,
+          "answers": [
+            {
+              "id": "a",
+              "text": "Remorqueur: feu blanc supplémentaire",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "text": "Connaître les marques de jour",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "text": "Canal 16: détresse urgence",
+              "correct": false
+            },
+            {
+              "id": "d",
+              "text": "Doublage: s'écarter",
+              "correct": false
+            }
+          ],
+          "difficulty": 2,
+          "explanation": "Point de cours du module 3",
+          "tags": [
+            "module_3",
+            "theory_coverage"
+          ]
+        },
+        {
+          "id": "theory_3_9",
+          "text": "Module 3 (RIPAM et Marques des Navires) : quel enonce est exact ?",
+          "image": null,
+          "answers": [
+            {
+              "id": "a",
+              "text": "Hiérarchie: Non-maître>Capacité>Tirant>Pêche>Voilier>Moteur",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "Connaître les marques de jour",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "text": "Identifier les feux de route des navires",
+              "correct": false
+            },
+            {
+              "id": "d",
+              "text": "Manœuvre bâb: 2 coups",
+              "correct": false
+            }
+          ],
+          "difficulty": 2,
+          "explanation": "Point de cours du module 3",
+          "tags": [
+            "module_3",
+            "theory_coverage"
+          ]
+        },
+        {
+          "id": "theory_3_10",
+          "text": "Module 3 (RIPAM et Marques des Navires) : quel enonce est exact ?",
+          "image": null,
+          "answers": [
+            {
+              "id": "a",
+              "text": "Connaître les marques de jour",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "Hiérarchie: Non-maître>Capacité>Tirant>Pêche>Voilier>Moteur",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "text": "Risque: gisement constant 3 temps",
+              "correct": true
+            },
+            {
+              "id": "d",
+              "text": "Manœuvre bâb: 2 coups",
+              "correct": false
+            }
+          ],
+          "difficulty": 2,
+          "explanation": "Point de cours du module 3",
+          "tags": [
+            "module_3",
+            "theory_coverage"
+          ]
+        },
+        {
+          "id": "theory_3_11",
+          "text": "Module 3 (RIPAM et Marques des Navires) : quel enonce est exact ?",
+          "image": null,
+          "answers": [
+            {
+              "id": "a",
+              "text": "Règle Cras: mesurer caps distances",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "Maîtriser les règles de barre (priorités de passage)",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "text": "Identifier les feux de route des navires",
+              "correct": true
+            },
+            {
+              "id": "d",
+              "text": "Routes opposées: tribord-tribord",
+              "correct": false
+            }
+          ],
+          "difficulty": 2,
+          "explanation": "Point de cours du module 3",
+          "tags": [
+            "module_3",
+            "theory_coverage"
+          ]
+        },
+        {
+          "id": "theory_3_12",
+          "text": "Module 3 (RIPAM et Marques des Navires) : quel enonce est exact ?",
+          "image": null,
+          "answers": [
+            {
+              "id": "a",
+              "text": "Vc: vecteur courant",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "Doublage: s'écarter",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "text": "Maîtriser les règles de barre (priorités de passage)",
+              "correct": true
+            },
+            {
+              "id": "d",
+              "text": "Identifier les feux de route des navires",
+              "correct": false
+            }
+          ],
+          "difficulty": 2,
+          "explanation": "Point de cours du module 3",
+          "tags": [
+            "module_3",
+            "theory_coverage"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "theory_module_4",
+      "name": "Couverture theorie module 4",
+      "description": "Questions de couverture pour le module 4",
+      "module": 4,
+      "questions": [
+        {
+          "id": "theory_4_1",
+          "text": "Module 4 (La Carte Marine et la Règle Cras) : quel enonce est exact ?",
+          "image": null,
+          "answers": [
+            {
+              "id": "a",
+              "text": "Doute: 4 brefs rapides",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "Utiliser la règle Cras (rapporteur maritime)",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "text": "Coude: 1 long",
+              "correct": true
+            },
+            {
+              "id": "d",
+              "text": "Reconnaître les marques cardinales et leurs caractéristiques",
+              "correct": false
+            }
+          ],
+          "difficulty": 2,
+          "explanation": "Point de cours du module 4",
+          "tags": [
+            "module_4",
+            "theory_coverage"
+          ]
+        },
+        {
+          "id": "theory_4_2",
+          "text": "Module 4 (La Carte Marine et la Règle Cras) : quel enonce est exact ?",
+          "image": null,
+          "answers": [
+            {
+              "id": "a",
+              "text": "Mesurer des distances sur la carte",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "Détresse: Mayday 3x, fusée, miroir, pavillon NC",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "text": "Accord dépass: 1long+1bref",
+              "correct": true
+            },
+            {
+              "id": "d",
+              "text": "Hiérarchie: Non-maître>Capacité>Tirant>Pêche>Voilier>Moteur",
+              "correct": false
+            }
+          ],
+          "difficulty": 2,
+          "explanation": "Point de cours du module 4",
+          "tags": [
+            "module_4",
+            "theory_coverage"
+          ]
+        },
+        {
+          "id": "theory_4_3",
+          "text": "Module 4 (La Carte Marine et la Règle Cras) : quel enonce est exact ?",
+          "image": null,
+          "answers": [
+            {
+              "id": "a",
+              "text": "Je arrière: 3 brefs",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "France: W 0-2°",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "text": "Mesurer des distances sur la carte",
+              "correct": true
+            },
+            {
+              "id": "d",
+              "text": "Lire et interpréter les symboles SHOM",
+              "correct": false
+            }
+          ],
+          "difficulty": 2,
+          "explanation": "Point de cours du module 4",
+          "tags": [
+            "module_4",
+            "theory_coverage"
+          ]
+        },
+        {
+          "id": "theory_4_4",
+          "text": "Module 4 (La Carte Marine et la Règle Cras) : quel enonce est exact ?",
+          "image": null,
+          "answers": [
+            {
+              "id": "a",
+              "text": "Je arrière: 3 brefs",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "Comprendre les protocoles de communication",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "text": "Je bâbord: 2 brefs",
+              "correct": true
+            },
+            {
+              "id": "d",
+              "text": "Je tribord: 1 bref",
+              "correct": false
+            }
+          ],
+          "difficulty": 2,
+          "explanation": "Point de cours du module 4",
+          "tags": [
+            "module_4",
+            "theory_coverage"
+          ]
+        },
+        {
+          "id": "theory_4_5",
+          "text": "Module 4 (La Carte Marine et la Règle Cras) : quel enonce est exact ?",
+          "image": null,
+          "answers": [
+            {
+              "id": "a",
+              "text": "Feu proue: blanc axial 225°",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "Utiliser la règle Cras (rapporteur maritime)",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "text": "Je arrière: 3 brefs",
+              "correct": false
+            },
+            {
+              "id": "d",
+              "text": "Détresse: Mayday 3x, fusée, miroir, pavillon NC",
+              "correct": false
+            }
+          ],
+          "difficulty": 2,
+          "explanation": "Point de cours du module 4",
+          "tags": [
+            "module_4",
+            "theory_coverage"
+          ]
+        },
+        {
+          "id": "theory_4_6",
+          "text": "Module 4 (La Carte Marine et la Règle Cras) : quel enonce est exact ?",
+          "image": null,
+          "answers": [
+            {
+              "id": "a",
+              "text": "W: déclinaison (W=-,E=+)",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "Rattrapage trib: 2 brefs",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "text": "Je bâbord: 2 brefs",
+              "correct": false
+            },
+            {
+              "id": "d",
+              "text": "Accord dépass: 1long+1bref",
+              "correct": false
+            }
+          ],
+          "difficulty": 2,
+          "explanation": "Point de cours du module 4",
+          "tags": [
+            "module_4",
+            "theory_coverage"
+          ]
+        },
+        {
+          "id": "theory_4_7",
+          "text": "Module 4 (La Carte Marine et la Règle Cras) : quel enonce est exact ?",
+          "image": null,
+          "answers": [
+            {
+              "id": "a",
+              "text": "Distance: échelle latitudes",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "Je tribord: 1 bref",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "text": "Coude: 1 long",
+              "correct": false
+            },
+            {
+              "id": "d",
+              "text": "Moteur erre brume: 1 long/2min",
+              "correct": true
+            }
+          ],
+          "difficulty": 2,
+          "explanation": "Point de cours du module 4",
+          "tags": [
+            "module_4",
+            "theory_coverage"
+          ]
+        },
+        {
+          "id": "theory_4_8",
+          "text": "Module 4 (La Carte Marine et la Règle Cras) : quel enonce est exact ?",
+          "image": null,
+          "answers": [
+            {
+              "id": "a",
+              "text": "Accord dépass: 1long+1bref",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "Je bâbord: 2 brefs",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "text": "Déterminer la route surface avec dérive",
+              "correct": false
+            },
+            {
+              "id": "d",
+              "text": "Rattrapage bâb: 1long+2brefs",
+              "correct": true
+            }
+          ],
+          "difficulty": 2,
+          "explanation": "Point de cours du module 4",
+          "tags": [
+            "module_4",
+            "theory_coverage"
+          ]
+        },
+        {
+          "id": "theory_4_9",
+          "text": "Module 4 (La Carte Marine et la Règle Cras) : quel enonce est exact ?",
+          "image": null,
+          "answers": [
+            {
+              "id": "a",
+              "text": "Je arrière: 3 brefs",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "text": "Utiliser le pied de pilote (sécurité)",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "text": "Détresse: Mayday 3x, fusée, miroir, pavillon NC",
+              "correct": false
+            },
+            {
+              "id": "d",
+              "text": "Rattrapage trib: 2 brefs",
+              "correct": false
+            }
+          ],
+          "difficulty": 2,
+          "explanation": "Point de cours du module 4",
+          "tags": [
+            "module_4",
+            "theory_coverage"
+          ]
+        },
+        {
+          "id": "theory_4_10",
+          "text": "Module 4 (La Carte Marine et la Règle Cras) : quel enonce est exact ?",
+          "image": null,
+          "answers": [
+            {
+              "id": "a",
+              "text": "BM: basse mer",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "Je arrière: 3 brefs",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "text": "Doute: 4 brefs rapides",
+              "correct": true
+            },
+            {
+              "id": "d",
+              "text": "Je tribord: 1 bref",
+              "correct": false
+            }
+          ],
+          "difficulty": 2,
+          "explanation": "Point de cours du module 4",
+          "tags": [
+            "module_4",
+            "theory_coverage"
+          ]
+        },
+        {
+          "id": "theory_4_11",
+          "text": "Module 4 (La Carte Marine et la Règle Cras) : quel enonce est exact ?",
+          "image": null,
+          "answers": [
+            {
+              "id": "a",
+              "text": "Utiliser la règle Cras (rapporteur maritime)",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "Déterminer la route surface avec dérive",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "text": "Lire et interpréter les symboles SHOM",
+              "correct": false
+            },
+            {
+              "id": "d",
+              "text": "Je tribord: 1 bref",
+              "correct": true
+            }
+          ],
+          "difficulty": 2,
+          "explanation": "Point de cours du module 4",
+          "tags": [
+            "module_4",
+            "theory_coverage"
+          ]
+        },
+        {
+          "id": "theory_4_12",
+          "text": "Module 4 (La Carte Marine et la Règle Cras) : quel enonce est exact ?",
+          "image": null,
+          "answers": [
+            {
+              "id": "a",
+              "text": "Je arrière: 3 brefs",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "Moteur erre brume: 1 long/2min",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "text": "Détresse: Mayday 3x, fusée, miroir, pavillon NC",
+              "correct": true
+            },
+            {
+              "id": "d",
+              "text": "Routes opposées: tribord-tribord",
+              "correct": false
+            }
+          ],
+          "difficulty": 2,
+          "explanation": "Point de cours du module 4",
+          "tags": [
+            "module_4",
+            "theory_coverage"
+          ]
+        },
+        {
+          "id": "theory_4_13",
+          "text": "Module 4 (La Carte Marine et la Règle Cras) : quel enonce est exact ?",
+          "image": null,
+          "answers": [
+            {
+              "id": "a",
+              "text": "Rattrapage bâb: 1long+2brefs",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "Je tribord: 1 bref",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "text": "Nord: noir/jaune, cônes haut, continu blanc",
+              "correct": false
+            },
+            {
+              "id": "d",
+              "text": "Lire et interpréter les symboles SHOM",
+              "correct": true
+            }
+          ],
+          "difficulty": 2,
+          "explanation": "Point de cours du module 4",
+          "tags": [
+            "module_4",
+            "theory_coverage"
+          ]
+        },
+        {
+          "id": "theory_4_14",
+          "text": "Module 4 (La Carte Marine et la Règle Cras) : quel enonce est exact ?",
+          "image": null,
+          "answers": [
+            {
+              "id": "a",
+              "text": "Déterminer des coordonnées géographiques",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "text": "Marnage: PM-BM",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "text": "Accord dépass: 1long+1bref",
+              "correct": false
+            },
+            {
+              "id": "d",
+              "text": "Détresse: Mayday 3x, fusée, miroir, pavillon NC",
+              "correct": false
+            }
+          ],
+          "difficulty": 2,
+          "explanation": "Point de cours du module 4",
+          "tags": [
+            "module_4",
+            "theory_coverage"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "theory_module_5",
+      "name": "Couverture theorie module 5",
+      "description": "Questions de couverture pour le module 5",
+      "module": 5,
+      "questions": [
+        {
+          "id": "theory_5_1",
+          "text": "Module 5 (Météo et Environnement) : quel enonce est exact ?",
+          "image": null,
+          "answers": [
+            {
+              "id": "a",
+              "text": "Épave: croix+point",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "text": "Reconnaître les nuages par étage",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "text": "ASN: équipement obligatoire",
+              "correct": false
+            },
+            {
+              "id": "d",
+              "text": "Parc: pointillés fermés",
+              "correct": false
+            }
+          ],
+          "difficulty": 2,
+          "explanation": "Point de cours du module 5",
+          "tags": [
+            "module_5",
+            "theory_coverage"
+          ]
+        },
+        {
+          "id": "theory_5_2",
+          "text": "Module 5 (Météo et Environnement) : quel enonce est exact ?",
+          "image": null,
+          "answers": [
+            {
+              "id": "a",
+              "text": "H3: 3/12 (cumul 6/12)",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "Câble: pointillé+AC",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "text": "Balise: carré",
+              "correct": false
+            },
+            {
+              "id": "d",
+              "text": "Distance: échelle latitudes",
+              "correct": true
+            }
+          ],
+          "difficulty": 2,
+          "explanation": "Point de cours du module 5",
+          "tags": [
+            "module_5",
+            "theory_coverage"
+          ]
+        },
+        {
+          "id": "theory_5_3",
+          "text": "Module 5 (Météo et Environnement) : quel enonce est exact ?",
+          "image": null,
+          "answers": [
+            {
+              "id": "a",
+              "text": "Identifier les types de fronts météorologiques",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "text": "Haut-fond: point+profondeur",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "text": "Balise: carré",
+              "correct": false
+            },
+            {
+              "id": "d",
+              "text": "Calculer la dérive due au courant",
+              "correct": false
+            }
+          ],
+          "difficulty": 2,
+          "explanation": "Point de cours du module 5",
+          "tags": [
+            "module_5",
+            "theory_coverage"
+          ]
+        },
+        {
+          "id": "theory_5_4",
+          "text": "Module 5 (Météo et Environnement) : quel enonce est exact ?",
+          "image": null,
+          "answers": [
+            {
+              "id": "a",
+              "text": "Distance: échelle latitudes",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "Haut-fond: point+profondeur",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "text": "Épave: croix+point",
+              "correct": false
+            },
+            {
+              "id": "d",
+              "text": "Non maître: 2 boules (j), feu+route (n)",
+              "correct": false
+            }
+          ],
+          "difficulty": 2,
+          "explanation": "Point de cours du module 5",
+          "tags": [
+            "module_5",
+            "theory_coverage"
+          ]
+        },
+        {
+          "id": "theory_5_5",
+          "text": "Module 5 (Météo et Environnement) : quel enonce est exact ?",
+          "image": null,
+          "answers": [
+            {
+              "id": "a",
+              "text": "Identifier les types de fronts météorologiques",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "Reconnaître les nuages par étage",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "text": "Interpréter les cartes de pression",
+              "correct": true
+            },
+            {
+              "id": "d",
+              "text": "Connaître les canaux VHF importants (16, 9, 72)",
+              "correct": false
+            }
+          ],
+          "difficulty": 2,
+          "explanation": "Point de cours du module 5",
+          "tags": [
+            "module_5",
+            "theory_coverage"
+          ]
+        },
+        {
+          "id": "theory_5_6",
+          "text": "Module 5 (Météo et Environnement) : quel enonce est exact ?",
+          "image": null,
+          "answers": [
+            {
+              "id": "a",
+              "text": "Non maître: 2 boules (j), feu+route (n)",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "Règle Cras: mesurer caps distances",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "text": "Utiliser l'échelle de Beaufort",
+              "correct": false
+            },
+            {
+              "id": "d",
+              "text": "Reconnaître les nuages par étage",
+              "correct": false
+            }
+          ],
+          "difficulty": 2,
+          "explanation": "Point de cours du module 5",
+          "tags": [
+            "module_5",
+            "theory_coverage"
+          ]
+        },
+        {
+          "id": "theory_5_7",
+          "text": "Module 5 (Météo et Environnement) : quel enonce est exact ?",
+          "image": null,
+          "answers": [
+            {
+              "id": "a",
+              "text": "Haut-fond: point+profondeur",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "Balise: carré",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "text": "France: W 0-2°",
+              "correct": false
+            },
+            {
+              "id": "d",
+              "text": "Parc: pointillés fermés",
+              "correct": true
+            }
+          ],
+          "difficulty": 2,
+          "explanation": "Point de cours du module 5",
+          "tags": [
+            "module_5",
+            "theory_coverage"
+          ]
+        },
+        {
+          "id": "theory_5_8",
+          "text": "Module 5 (Météo et Environnement) : quel enonce est exact ?",
+          "image": null,
+          "answers": [
+            {
+              "id": "a",
+              "text": "Front froid: orages",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "Règle Cras: mesurer caps distances",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "text": "Parc: pointillés fermés",
+              "correct": false
+            },
+            {
+              "id": "d",
+              "text": "Profondeur: mètres côtier",
+              "correct": true
+            }
+          ],
+          "difficulty": 2,
+          "explanation": "Point de cours du module 5",
+          "tags": [
+            "module_5",
+            "theory_coverage"
+          ]
+        },
+        {
+          "id": "theory_5_9",
+          "text": "Module 5 (Météo et Environnement) : quel enonce est exact ?",
+          "image": null,
+          "answers": [
+            {
+              "id": "a",
+              "text": "Utiliser l'échelle de Beaufort",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "text": "Phare: triangle+numéro",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "text": "Chalutier pêche: 2 cônes, feu vert/blanc",
+              "correct": false
+            },
+            {
+              "id": "d",
+              "text": "Interpréter les cartes de pression",
+              "correct": false
+            }
+          ],
+          "difficulty": 2,
+          "explanation": "Point de cours du module 5",
+          "tags": [
+            "module_5",
+            "theory_coverage"
+          ]
+        },
+        {
+          "id": "theory_5_10",
+          "text": "Module 5 (Météo et Environnement) : quel enonce est exact ?",
+          "image": null,
+          "answers": [
+            {
+              "id": "a",
+              "text": "Parc: pointillés fermés",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "Front chaud: pluie progressive",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "text": "Balise: carré",
+              "correct": true
+            },
+            {
+              "id": "d",
+              "text": "Distance: échelle latitudes",
+              "correct": false
+            }
+          ],
+          "difficulty": 2,
+          "explanation": "Point de cours du module 5",
+          "tags": [
+            "module_5",
+            "theory_coverage"
+          ]
+        },
+        {
+          "id": "theory_5_11",
+          "text": "Module 5 (Météo et Environnement) : quel enonce est exact ?",
+          "image": null,
+          "answers": [
+            {
+              "id": "a",
+              "text": "Règle Cras: mesurer caps distances",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "Interpréter les cartes de pression",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "text": "Licence radio",
+              "correct": false
+            },
+            {
+              "id": "d",
+              "text": "Phare: triangle+numéro",
+              "correct": true
+            }
+          ],
+          "difficulty": 2,
+          "explanation": "Point de cours du module 5",
+          "tags": [
+            "module_5",
+            "theory_coverage"
+          ]
+        },
+        {
+          "id": "theory_5_12",
+          "text": "Module 5 (Météo et Environnement) : quel enonce est exact ?",
+          "image": null,
+          "answers": [
+            {
+              "id": "a",
+              "text": "Chenal bâb: vert+bande rouge, feu vert 2+1",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "Câble: pointillé+AC",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "text": "Épave: croix+point",
+              "correct": false
+            },
+            {
+              "id": "d",
+              "text": "Balise: carré",
+              "correct": false
+            }
+          ],
+          "difficulty": 2,
+          "explanation": "Point de cours du module 5",
+          "tags": [
+            "module_5",
+            "theory_coverage"
+          ]
+        },
+        {
+          "id": "theory_5_13",
+          "text": "Module 5 (Météo et Environnement) : quel enonce est exact ?",
+          "image": null,
+          "answers": [
+            {
+              "id": "a",
+              "text": "Reconnaître les nuages par étage",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "text": "Règle Cras: mesurer caps distances",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "text": "Utiliser l'échelle de Beaufort",
+              "correct": false
+            },
+            {
+              "id": "d",
+              "text": "Appliquer la règle des douzièmes",
+              "correct": false
+            }
+          ],
+          "difficulty": 2,
+          "explanation": "Point de cours du module 5",
+          "tags": [
+            "module_5",
+            "theory_coverage"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "theory_module_6",
+      "name": "Couverture theorie module 6",
+      "description": "Questions de couverture pour le module 6",
+      "module": 6,
+      "questions": [
+        {
+          "id": "theory_6_1",
+          "text": "Module 6 (Caps et Dérives) : quel enonce est exact ?",
+          "image": null,
+          "answers": [
+            {
+              "id": "a",
+              "text": "Gérer une voie d'eau d'urgence",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "Altocumulus: -12h",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "text": "Comprendre déclinaison et déviation magnétiques",
+              "correct": false
+            },
+            {
+              "id": "d",
+              "text": "Front chaud: pluie progressive",
+              "correct": false
+            }
+          ],
+          "difficulty": 2,
+          "explanation": "Point de cours du module 6",
+          "tags": [
+            "module_6",
+            "theory_coverage"
+          ]
+        },
+        {
+          "id": "theory_6_2",
+          "text": "Module 6 (Caps et Dérives) : quel enonce est exact ?",
+          "image": null,
+          "answers": [
+            {
+              "id": "a",
+              "text": "Chenal trib: rouge+bande verte, feu rouge 2+1",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "Déterminer la route surface avec dérive",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "text": "Calculer le cap vrai à partir du cap compas",
+              "correct": false
+            },
+            {
+              "id": "d",
+              "text": "Appliquer les formules de variation",
+              "correct": true
+            }
+          ],
+          "difficulty": 2,
+          "explanation": "Point de cours du module 6",
+          "tags": [
+            "module_6",
+            "theory_coverage"
+          ]
+        },
+        {
+          "id": "theory_6_3",
+          "text": "Module 6 (Caps et Dérives) : quel enonce est exact ?",
+          "image": null,
+          "answers": [
+            {
+              "id": "a",
+              "text": "Force 0: <1kt",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "Calculer le cap vrai à partir du cap compas",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "text": "Heure marée: 50min",
+              "correct": false
+            },
+            {
+              "id": "d",
+              "text": "Force 4: 11-16kt, 1m",
+              "correct": false
+            }
+          ],
+          "difficulty": 2,
+          "explanation": "Point de cours du module 6",
+          "tags": [
+            "module_6",
+            "theory_coverage"
+          ]
+        },
+        {
+          "id": "theory_6_4",
+          "text": "Module 6 (Caps et Dérives) : quel enonce est exact ?",
+          "image": null,
+          "answers": [
+            {
+              "id": "a",
+              "text": "Épave: croix+point",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "Comprendre déclinaison et déviation magnétiques",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "text": "Force 4: 11-16kt, 1m",
+              "correct": false
+            },
+            {
+              "id": "d",
+              "text": "Cirrus: -12-24h avant basse pression",
+              "correct": false
+            }
+          ],
+          "difficulty": 2,
+          "explanation": "Point de cours du module 6",
+          "tags": [
+            "module_6",
+            "theory_coverage"
+          ]
+        },
+        {
+          "id": "theory_6_5",
+          "text": "Module 6 (Caps et Dérives) : quel enonce est exact ?",
+          "image": null,
+          "answers": [
+            {
+              "id": "a",
+              "text": "Front chaud: pluie progressive",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "Altocumulus: -12h",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "text": "Heure marée: 50min",
+              "correct": false
+            },
+            {
+              "id": "d",
+              "text": "Force 0: <1kt",
+              "correct": true
+            }
+          ],
+          "difficulty": 2,
+          "explanation": "Point de cours du module 6",
+          "tags": [
+            "module_6",
+            "theory_coverage"
+          ]
+        },
+        {
+          "id": "theory_6_6",
+          "text": "Module 6 (Caps et Dérives) : quel enonce est exact ?",
+          "image": null,
+          "answers": [
+            {
+              "id": "a",
+              "text": "Force 4: 11-16kt, 1m",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "text": "Altocumulus: -12h",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "text": "Cv = Cc + W + δ",
+              "correct": false
+            },
+            {
+              "id": "d",
+              "text": "Comprendre déclinaison et déviation magnétiques",
+              "correct": false
+            }
+          ],
+          "difficulty": 2,
+          "explanation": "Point de cours du module 6",
+          "tags": [
+            "module_6",
+            "theory_coverage"
+          ]
+        },
+        {
+          "id": "theory_6_7",
+          "text": "Module 6 (Caps et Dérives) : quel enonce est exact ?",
+          "image": null,
+          "answers": [
+            {
+              "id": "a",
+              "text": "Front chaud: pluie progressive",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "Force 6: 22-27kt, 3m",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "text": "Déterminer la route surface avec dérive",
+              "correct": false
+            },
+            {
+              "id": "d",
+              "text": "Utiliser l'alphabet phonétique",
+              "correct": false
+            }
+          ],
+          "difficulty": 2,
+          "explanation": "Point de cours du module 6",
+          "tags": [
+            "module_6",
+            "theory_coverage"
+          ]
+        },
+        {
+          "id": "theory_6_8",
+          "text": "Module 6 (Caps et Dérives) : quel enonce est exact ?",
+          "image": null,
+          "answers": [
+            {
+              "id": "a",
+              "text": "Cirrus: -12-24h avant basse pression",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "Déterminer la route surface avec dérive",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "text": "Appliquer les formules de variation",
+              "correct": false
+            },
+            {
+              "id": "d",
+              "text": "Feux route: rouge bâb, vert trib 112.5°",
+              "correct": false
+            }
+          ],
+          "difficulty": 2,
+          "explanation": "Point de cours du module 6",
+          "tags": [
+            "module_6",
+            "theory_coverage"
+          ]
+        },
+        {
+          "id": "theory_6_9",
+          "text": "Module 6 (Caps et Dérives) : quel enonce est exact ?",
+          "image": null,
+          "answers": [
+            {
+              "id": "a",
+              "text": "Front froid: orages",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "Comprendre déclinaison et déviation magnétiques",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "text": "Front chaud: pluie progressive",
+              "correct": true
+            },
+            {
+              "id": "d",
+              "text": "Feu proue: blanc axial 225°",
+              "correct": false
+            }
+          ],
+          "difficulty": 2,
+          "explanation": "Point de cours du module 6",
+          "tags": [
+            "module_6",
+            "theory_coverage"
+          ]
+        },
+        {
+          "id": "theory_6_10",
+          "text": "Module 6 (Caps et Dérives) : quel enonce est exact ?",
+          "image": null,
+          "answers": [
+            {
+              "id": "a",
+              "text": "Cirrus: -12-24h avant basse pression",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "text": "H3: 3/12 (cumul 6/12)",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "text": "Calculer le cap vrai à partir du cap compas",
+              "correct": false
+            },
+            {
+              "id": "d",
+              "text": "Altocumulus: -12h",
+              "correct": false
+            }
+          ],
+          "difficulty": 2,
+          "explanation": "Point de cours du module 6",
+          "tags": [
+            "module_6",
+            "theory_coverage"
+          ]
+        },
+        {
+          "id": "theory_6_11",
+          "text": "Module 6 (Caps et Dérives) : quel enonce est exact ?",
+          "image": null,
+          "answers": [
+            {
+              "id": "a",
+              "text": "Fréquence 156-162 MHz",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "Force 0: <1kt",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "text": "Front chaud: pluie progressive",
+              "correct": false
+            },
+            {
+              "id": "d",
+              "text": "Force 5: 17-21kt, 2m",
+              "correct": true
+            }
+          ],
+          "difficulty": 2,
+          "explanation": "Point de cours du module 6",
+          "tags": [
+            "module_6",
+            "theory_coverage"
+          ]
+        },
+        {
+          "id": "theory_6_12",
+          "text": "Module 6 (Caps et Dérives) : quel enonce est exact ?",
+          "image": null,
+          "answers": [
+            {
+              "id": "a",
+              "text": "Cirrus: -12-24h avant basse pression",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "Front froid: orages",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "text": "Routes convergentes: priorité droite",
+              "correct": false
+            },
+            {
+              "id": "d",
+              "text": "Calculer le cap vrai à partir du cap compas",
+              "correct": false
+            }
+          ],
+          "difficulty": 2,
+          "explanation": "Point de cours du module 6",
+          "tags": [
+            "module_6",
+            "theory_coverage"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "theory_module_7",
+      "name": "Couverture theorie module 7",
+      "description": "Questions de couverture pour le module 7",
+      "module": 7,
+      "questions": [
+        {
+          "id": "theory_7_1",
+          "text": "Module 7 (Courants et Route Fond) : quel enonce est exact ?",
+          "image": null,
+          "answers": [
+            {
+              "id": "a",
+              "text": "W: déclinaison (W=-,E=+)",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "France: W 0-2°",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "text": "Cc: cap compas",
+              "correct": false
+            },
+            {
+              "id": "d",
+              "text": "Bâbord: rouge cylindrique feu rouge",
+              "correct": false
+            }
+          ],
+          "difficulty": 2,
+          "explanation": "Point de cours du module 7",
+          "tags": [
+            "module_7",
+            "theory_coverage"
+          ]
+        },
+        {
+          "id": "theory_7_2",
+          "text": "Module 7 (Courants et Route Fond) : quel enonce est exact ?",
+          "image": null,
+          "answers": [
+            {
+              "id": "a",
+              "text": "Calculer la dérive due au courant",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "France: W 0-2°",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "text": "Cc: cap compas",
+              "correct": true
+            },
+            {
+              "id": "d",
+              "text": "Force 5: 17-21kt, 2m",
+              "correct": false
+            }
+          ],
+          "difficulty": 2,
+          "explanation": "Point de cours du module 7",
+          "tags": [
+            "module_7",
+            "theory_coverage"
+          ]
+        },
+        {
+          "id": "theory_7_3",
+          "text": "Module 7 (Courants et Route Fond) : quel enonce est exact ?",
+          "image": null,
+          "answers": [
+            {
+              "id": "a",
+              "text": "Construire la route fond sur carte",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "Utiliser l'échelle de Beaufort",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "text": "δ: déviation",
+              "correct": true
+            },
+            {
+              "id": "d",
+              "text": "Cv: cap vrai",
+              "correct": false
+            }
+          ],
+          "difficulty": 2,
+          "explanation": "Point de cours du module 7",
+          "tags": [
+            "module_7",
+            "theory_coverage"
+          ]
+        },
+        {
+          "id": "theory_7_4",
+          "text": "Module 7 (Courants et Route Fond) : quel enonce est exact ?",
+          "image": null,
+          "answers": [
+            {
+              "id": "a",
+              "text": "Cv = Cc + W + δ",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "Rose: 360°",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "text": "Pied pilote: sécurité 20cm",
+              "correct": false
+            },
+            {
+              "id": "d",
+              "text": "Vérifier la cohérence des routes (surface vs fond)",
+              "correct": true
+            }
+          ],
+          "difficulty": 2,
+          "explanation": "Point de cours du module 7",
+          "tags": [
+            "module_7",
+            "theory_coverage"
+          ]
+        },
+        {
+          "id": "theory_7_5",
+          "text": "Module 7 (Courants et Route Fond) : quel enonce est exact ?",
+          "image": null,
+          "answers": [
+            {
+              "id": "a",
+              "text": "δ: déviation",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "Calculer la dérive due au courant",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "text": "Construire la route fond sur carte",
+              "correct": false
+            },
+            {
+              "id": "d",
+              "text": "Force 6: 22-27kt, 3m",
+              "correct": false
+            }
+          ],
+          "difficulty": 2,
+          "explanation": "Point de cours du module 7",
+          "tags": [
+            "module_7",
+            "theory_coverage"
+          ]
+        },
+        {
+          "id": "theory_7_6",
+          "text": "Module 7 (Courants et Route Fond) : quel enonce est exact ?",
+          "image": null,
+          "answers": [
+            {
+              "id": "a",
+              "text": "Cv: cap vrai",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "text": "Cc: cap compas",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "text": "Vérifier la cohérence des routes (surface vs fond)",
+              "correct": false
+            },
+            {
+              "id": "d",
+              "text": "Chenal bâb: vert+bande rouge, feu vert 2+1",
+              "correct": false
+            }
+          ],
+          "difficulty": 2,
+          "explanation": "Point de cours du module 7",
+          "tags": [
+            "module_7",
+            "theory_coverage"
+          ]
+        },
+        {
+          "id": "theory_7_7",
+          "text": "Module 7 (Courants et Route Fond) : quel enonce est exact ?",
+          "image": null,
+          "answers": [
+            {
+              "id": "a",
+              "text": "Déviation: propre navire",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "text": "Bâbord: rouge cylindrique feu rouge",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "text": "Représenter les vecteurs de courant",
+              "correct": false
+            },
+            {
+              "id": "d",
+              "text": "Cv = Cc + W + δ",
+              "correct": false
+            }
+          ],
+          "difficulty": 2,
+          "explanation": "Point de cours du module 7",
+          "tags": [
+            "module_7",
+            "theory_coverage"
+          ]
+        },
+        {
+          "id": "theory_7_8",
+          "text": "Module 7 (Courants et Route Fond) : quel enonce est exact ?",
+          "image": null,
+          "answers": [
+            {
+              "id": "a",
+              "text": "Construire la route fond sur carte",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "Déviation: propre navire",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "text": "W: déclinaison (W=-,E=+)",
+              "correct": true
+            },
+            {
+              "id": "d",
+              "text": "Rattrapage trib: 2 brefs",
+              "correct": false
+            }
+          ],
+          "difficulty": 2,
+          "explanation": "Point de cours du module 7",
+          "tags": [
+            "module_7",
+            "theory_coverage"
+          ]
+        },
+        {
+          "id": "theory_7_9",
+          "text": "Module 7 (Courants et Route Fond) : quel enonce est exact ?",
+          "image": null,
+          "answers": [
+            {
+              "id": "a",
+              "text": "Rose: 360°",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "Construire la route fond sur carte",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "text": "Calculer la dérive due au courant",
+              "correct": false
+            },
+            {
+              "id": "d",
+              "text": "Front froid: orages",
+              "correct": false
+            }
+          ],
+          "difficulty": 2,
+          "explanation": "Point de cours du module 7",
+          "tags": [
+            "module_7",
+            "theory_coverage"
+          ]
+        },
+        {
+          "id": "theory_7_10",
+          "text": "Module 7 (Courants et Route Fond) : quel enonce est exact ?",
+          "image": null,
+          "answers": [
+            {
+              "id": "a",
+              "text": "Distance: échelle latitudes",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "Déviation: propre navire",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "text": "Cv = Cc + W + δ",
+              "correct": true
+            },
+            {
+              "id": "d",
+              "text": "W: déclinaison (W=-,E=+)",
+              "correct": false
+            }
+          ],
+          "difficulty": 2,
+          "explanation": "Point de cours du module 7",
+          "tags": [
+            "module_7",
+            "theory_coverage"
+          ]
+        },
+        {
+          "id": "theory_7_11",
+          "text": "Module 7 (Courants et Route Fond) : quel enonce est exact ?",
+          "image": null,
+          "answers": [
+            {
+              "id": "a",
+              "text": "Triangle fermé vecteurs",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "Cv = Cc + W + δ",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "text": "Déviation: propre navire",
+              "correct": false
+            },
+            {
+              "id": "d",
+              "text": "Représenter les vecteurs de courant",
+              "correct": true
+            }
+          ],
+          "difficulty": 2,
+          "explanation": "Point de cours du module 7",
+          "tags": [
+            "module_7",
+            "theory_coverage"
+          ]
+        },
+        {
+          "id": "theory_7_12",
+          "text": "Module 7 (Courants et Route Fond) : quel enonce est exact ?",
+          "image": null,
+          "answers": [
+            {
+              "id": "a",
+              "text": "Rose: 360°",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "text": "Cc: cap compas",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "text": "Déviation: propre navire",
+              "correct": false
+            },
+            {
+              "id": "d",
+              "text": "Maîtriser les règles de barre (priorités de passage)",
+              "correct": false
+            }
+          ],
+          "difficulty": 2,
+          "explanation": "Point de cours du module 7",
+          "tags": [
+            "module_7",
+            "theory_coverage"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "theory_module_9",
+      "name": "Couverture theorie module 9",
+      "description": "Questions de couverture pour le module 9",
+      "module": 9,
+      "questions": [
+        {
+          "id": "theory_9_1",
+          "text": "Module 9 (VHF et Communication) : quel enonce est exact ?",
+          "image": null,
+          "answers": [
+            {
+              "id": "a",
+              "text": "Vc: vecteur courant",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "Connaître les canaux VHF importants (16, 9, 72)",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "text": "Utiliser l'alphabet phonétique",
+              "correct": false
+            },
+            {
+              "id": "d",
+              "text": "H1: 1/12",
+              "correct": true
+            }
+          ],
+          "difficulty": 2,
+          "explanation": "Point de cours du module 9",
+          "tags": [
+            "module_9",
+            "theory_coverage"
+          ]
+        },
+        {
+          "id": "theory_9_2",
+          "text": "Module 9 (VHF et Communication) : quel enonce est exact ?",
+          "image": null,
+          "answers": [
+            {
+              "id": "a",
+              "text": "Comprendre les protocoles de communication",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "Connaître les canaux VHF importants (16, 9, 72)",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "text": "Brume moteur erre: 1 long/2min",
+              "correct": false
+            },
+            {
+              "id": "d",
+              "text": "Utiliser l'alphabet phonétique",
+              "correct": true
+            }
+          ],
+          "difficulty": 2,
+          "explanation": "Point de cours du module 9",
+          "tags": [
+            "module_9",
+            "theory_coverage"
+          ]
+        },
+        {
+          "id": "theory_9_3",
+          "text": "Module 9 (VHF et Communication) : quel enonce est exact ?",
+          "image": null,
+          "answers": [
+            {
+              "id": "a",
+              "text": "Utiliser l'alphabet phonétique",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "Routes convergentes: priorité droite",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "text": "Maîtriser la procédure Mayday",
+              "correct": true
+            },
+            {
+              "id": "d",
+              "text": "Comprendre les protocoles de communication",
+              "correct": false
+            }
+          ],
+          "difficulty": 2,
+          "explanation": "Point de cours du module 9",
+          "tags": [
+            "module_9",
+            "theory_coverage"
+          ]
+        },
+        {
+          "id": "theory_9_4",
+          "text": "Module 9 (VHF et Communication) : quel enonce est exact ?",
+          "image": null,
+          "answers": [
+            {
+              "id": "a",
+              "text": "Marnage: PM-BM",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "text": "Comprendre déclinaison et déviation magnétiques",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "text": "Pied pilote: sécurité 20cm",
+              "correct": false
+            },
+            {
+              "id": "d",
+              "text": "Comprendre les protocoles de communication",
+              "correct": false
+            }
+          ],
+          "difficulty": 2,
+          "explanation": "Point de cours du module 9",
+          "tags": [
+            "module_9",
+            "theory_coverage"
+          ]
+        },
+        {
+          "id": "theory_9_5",
+          "text": "Module 9 (VHF et Communication) : quel enonce est exact ?",
+          "image": null,
+          "answers": [
+            {
+              "id": "a",
+              "text": "Identifier les marques latérales (bâbord/tribord)",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "H1: 1/12",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "text": "BM: basse mer",
+              "correct": true
+            },
+            {
+              "id": "d",
+              "text": "Connaître les canaux VHF importants (16, 9, 72)",
+              "correct": false
+            }
+          ],
+          "difficulty": 2,
+          "explanation": "Point de cours du module 9",
+          "tags": [
+            "module_9",
+            "theory_coverage"
+          ]
+        },
+        {
+          "id": "theory_9_6",
+          "text": "Module 9 (VHF et Communication) : quel enonce est exact ?",
+          "image": null,
+          "answers": [
+            {
+              "id": "a",
+              "text": "H3: 3/12 (cumul 6/12)",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "text": "Utiliser l'alphabet phonétique",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "text": "H2: 2/12 (cumul 3/12)",
+              "correct": false
+            },
+            {
+              "id": "d",
+              "text": "Détresse: Mayday 3x, fusée, miroir, pavillon NC",
+              "correct": false
+            }
+          ],
+          "difficulty": 2,
+          "explanation": "Point de cours du module 9",
+          "tags": [
+            "module_9",
+            "theory_coverage"
+          ]
+        },
+        {
+          "id": "theory_9_7",
+          "text": "Module 9 (VHF et Communication) : quel enonce est exact ?",
+          "image": null,
+          "answers": [
+            {
+              "id": "a",
+              "text": "Appliquer la hiérarchie des privilèges entre navires",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "Douzièmes: 1,2,3,3,2,1",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "text": "BM: basse mer",
+              "correct": false
+            },
+            {
+              "id": "d",
+              "text": "H2: 2/12 (cumul 3/12)",
+              "correct": false
+            }
+          ],
+          "difficulty": 2,
+          "explanation": "Point de cours du module 9",
+          "tags": [
+            "module_9",
+            "theory_coverage"
+          ]
+        },
+        {
+          "id": "theory_9_8",
+          "text": "Module 9 (VHF et Communication) : quel enonce est exact ?",
+          "image": null,
+          "answers": [
+            {
+              "id": "a",
+              "text": "Comprendre les protocoles de communication",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "text": "PM: pleine mer",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "text": "Heure marée: 50min",
+              "correct": false
+            },
+            {
+              "id": "d",
+              "text": "Comprendre les signaux portuaires",
+              "correct": false
+            }
+          ],
+          "difficulty": 2,
+          "explanation": "Point de cours du module 9",
+          "tags": [
+            "module_9",
+            "theory_coverage"
+          ]
+        },
+        {
+          "id": "theory_9_9",
+          "text": "Module 9 (VHF et Communication) : quel enonce est exact ?",
+          "image": null,
+          "answers": [
+            {
+              "id": "a",
+              "text": "Heure marée: 50min",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "text": "Marnage: PM-BM",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "text": "PM: pleine mer",
+              "correct": false
+            },
+            {
+              "id": "d",
+              "text": "Altocumulus: -12h",
+              "correct": false
+            }
+          ],
+          "difficulty": 2,
+          "explanation": "Point de cours du module 9",
+          "tags": [
+            "module_9",
+            "theory_coverage"
+          ]
+        },
+        {
+          "id": "theory_9_10",
+          "text": "Module 9 (VHF et Communication) : quel enonce est exact ?",
+          "image": null,
+          "answers": [
+            {
+              "id": "a",
+              "text": "H1: 1/12",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "Triangle fermé vecteurs",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "text": "Marnage: PM-BM",
+              "correct": false
+            },
+            {
+              "id": "d",
+              "text": "H2: 2/12 (cumul 3/12)",
+              "correct": true
+            }
+          ],
+          "difficulty": 2,
+          "explanation": "Point de cours du module 9",
+          "tags": [
+            "module_9",
+            "theory_coverage"
+          ]
+        },
+        {
+          "id": "theory_9_11",
+          "text": "Module 9 (VHF et Communication) : quel enonce est exact ?",
+          "image": null,
+          "answers": [
+            {
+              "id": "a",
+              "text": "Connaître les canaux VHF importants (16, 9, 72)",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "text": "Voilier+moteur: traité moteur",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "text": "H1: 1/12",
+              "correct": false
+            },
+            {
+              "id": "d",
+              "text": "H3: 3/12 (cumul 6/12)",
+              "correct": false
+            }
+          ],
+          "difficulty": 2,
+          "explanation": "Point de cours du module 9",
+          "tags": [
+            "module_9",
+            "theory_coverage"
+          ]
+        },
+        {
+          "id": "theory_9_12",
+          "text": "Module 9 (VHF et Communication) : quel enonce est exact ?",
+          "image": null,
+          "answers": [
+            {
+              "id": "a",
+              "text": "PM: pleine mer",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "text": "Douzièmes: 1,2,3,3,2,1",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "text": "Connaître les canaux VHF importants (16, 9, 72)",
+              "correct": false
+            },
+            {
+              "id": "d",
+              "text": "Dérive: Rf - Rs",
+              "correct": false
+            }
+          ],
+          "difficulty": 2,
+          "explanation": "Point de cours du module 9",
+          "tags": [
+            "module_9",
+            "theory_coverage"
+          ]
+        },
+        {
+          "id": "theory_9_13",
+          "text": "Module 9 (VHF et Communication) : quel enonce est exact ?",
+          "image": null,
+          "answers": [
+            {
+              "id": "a",
+              "text": "Pied pilote: sécurité 20cm",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "text": "H3: 3/12 (cumul 6/12)",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "text": "ASN: équipement obligatoire",
+              "correct": false
+            },
+            {
+              "id": "d",
+              "text": "H2: 2/12 (cumul 3/12)",
+              "correct": false
+            }
+          ],
+          "difficulty": 2,
+          "explanation": "Point de cours du module 9",
+          "tags": [
+            "module_9",
+            "theory_coverage"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "theory_module_10",
+      "name": "Couverture theorie module 10",
+      "description": "Questions de couverture pour le module 10",
+      "module": 10,
+      "questions": [
+        {
+          "id": "theory_10_1",
+          "text": "Module 10 (Cadre Scout et Sécurité de Bord) : quel enonce est exact ?",
+          "image": null,
+          "answers": [
+            {
+              "id": "a",
+              "text": "PM: pleine mer",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "Lister l'équipement obligatoire à bord",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "text": "Radeaux: selon tonnage",
+              "correct": true
+            },
+            {
+              "id": "d",
+              "text": "Licence radio",
+              "correct": false
+            }
+          ],
+          "difficulty": 2,
+          "explanation": "Point de cours du module 10",
+          "tags": [
+            "module_10",
+            "theory_coverage"
+          ]
+        },
+        {
+          "id": "theory_10_2",
+          "text": "Module 10 (Cadre Scout et Sécurité de Bord) : quel enonce est exact ?",
+          "image": null,
+          "answers": [
+            {
+              "id": "a",
+              "text": "Connaître la réglementation SUF (6 milles, force 4-5)",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "text": "Chenal trib: rouge+bande verte, feu rouge 2+1",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "text": "Gérer une voie d'eau d'urgence",
+              "correct": false
+            },
+            {
+              "id": "d",
+              "text": "Balise SOLAS",
+              "correct": false
+            }
+          ],
+          "difficulty": 2,
+          "explanation": "Point de cours du module 10",
+          "tags": [
+            "module_10",
+            "theory_coverage"
+          ]
+        },
+        {
+          "id": "theory_10_3",
+          "text": "Module 10 (Cadre Scout et Sécurité de Bord) : quel enonce est exact ?",
+          "image": null,
+          "answers": [
+            {
+              "id": "a",
+              "text": "Licence radio",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "text": "Gérer une voie d'eau d'urgence",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "text": "Comprendre déclinaison et déviation magnétiques",
+              "correct": false
+            },
+            {
+              "id": "d",
+              "text": "Lister l'équipement obligatoire à bord",
+              "correct": false
+            }
+          ],
+          "difficulty": 2,
+          "explanation": "Point de cours du module 10",
+          "tags": [
+            "module_10",
+            "theory_coverage"
+          ]
+        },
+        {
+          "id": "theory_10_4",
+          "text": "Module 10 (Cadre Scout et Sécurité de Bord) : quel enonce est exact ?",
+          "image": null,
+          "answers": [
+            {
+              "id": "a",
+              "text": "Mayday: 3 fois",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "text": "Gérer une voie d'eau d'urgence",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "text": "ASN: équipement obligatoire",
+              "correct": false
+            },
+            {
+              "id": "d",
+              "text": "Feux route: rouge bâb, vert trib 112.5°",
+              "correct": false
+            }
+          ],
+          "difficulty": 2,
+          "explanation": "Point de cours du module 10",
+          "tags": [
+            "module_10",
+            "theory_coverage"
+          ]
+        },
+        {
+          "id": "theory_10_5",
+          "text": "Module 10 (Cadre Scout et Sécurité de Bord) : quel enonce est exact ?",
+          "image": null,
+          "answers": [
+            {
+              "id": "a",
+              "text": "Gérer une voie d'eau d'urgence",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "text": "ASN: équipement obligatoire",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "text": "Comprendre les protocoles de communication",
+              "correct": false
+            },
+            {
+              "id": "d",
+              "text": "Gilet autogonflant obligatoire",
+              "correct": false
+            }
+          ],
+          "difficulty": 2,
+          "explanation": "Point de cours du module 10",
+          "tags": [
+            "module_10",
+            "theory_coverage"
+          ]
+        },
+        {
+          "id": "theory_10_6",
+          "text": "Module 10 (Cadre Scout et Sécurité de Bord) : quel enonce est exact ?",
+          "image": null,
+          "answers": [
+            {
+              "id": "a",
+              "text": "Canal 16: détresse urgence",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "text": "Licence radio",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "text": "Identifier les feux de route (feux de bord)",
+              "correct": false
+            },
+            {
+              "id": "d",
+              "text": "Réagir en cas d'incendie à bord",
+              "correct": false
+            }
+          ],
+          "difficulty": 2,
+          "explanation": "Point de cours du module 10",
+          "tags": [
+            "module_10",
+            "theory_coverage"
+          ]
+        },
+        {
+          "id": "theory_10_7",
+          "text": "Module 10 (Cadre Scout et Sécurité de Bord) : quel enonce est exact ?",
+          "image": null,
+          "answers": [
+            {
+              "id": "a",
+              "text": "Connaître la réglementation SUF (6 milles, force 4-5)",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "ASN: équipement obligatoire",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "text": "Fréquence 156-162 MHz",
+              "correct": true
+            },
+            {
+              "id": "d",
+              "text": "Triangle fermé vecteurs",
+              "correct": false
+            }
+          ],
+          "difficulty": 2,
+          "explanation": "Point de cours du module 10",
+          "tags": [
+            "module_10",
+            "theory_coverage"
+          ]
+        },
+        {
+          "id": "theory_10_8",
+          "text": "Module 10 (Cadre Scout et Sécurité de Bord) : quel enonce est exact ?",
+          "image": null,
+          "answers": [
+            {
+              "id": "a",
+              "text": "Lister l'équipement obligatoire à bord",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "Balise SOLAS",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "text": "Douzièmes: 1,2,3,3,2,1",
+              "correct": false
+            },
+            {
+              "id": "d",
+              "text": "Radeaux: selon tonnage",
+              "correct": false
+            }
+          ],
+          "difficulty": 2,
+          "explanation": "Point de cours du module 10",
+          "tags": [
+            "module_10",
+            "theory_coverage"
+          ]
+        },
+        {
+          "id": "theory_10_9",
+          "text": "Module 10 (Cadre Scout et Sécurité de Bord) : quel enonce est exact ?",
+          "image": null,
+          "answers": [
+            {
+              "id": "a",
+              "text": "Réagir en cas d'incendie à bord",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "text": "Canal 16: détresse urgence",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "text": "Courants tidals: tables marées",
+              "correct": false
+            },
+            {
+              "id": "d",
+              "text": "Radeaux: selon tonnage",
+              "correct": false
+            }
+          ],
+          "difficulty": 2,
+          "explanation": "Point de cours du module 10",
+          "tags": [
+            "module_10",
+            "theory_coverage"
+          ]
+        },
+        {
+          "id": "theory_10_10",
+          "text": "Module 10 (Cadre Scout et Sécurité de Bord) : quel enonce est exact ?",
+          "image": null,
+          "answers": [
+            {
+              "id": "a",
+              "text": "Réagir en cas d'incendie à bord",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "Lister l'équipement obligatoire à bord",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "text": "Licence radio",
+              "correct": false
+            },
+            {
+              "id": "d",
+              "text": "Utiliser l'échelle de Beaufort",
+              "correct": false
+            }
+          ],
+          "difficulty": 2,
+          "explanation": "Point de cours du module 10",
+          "tags": [
+            "module_10",
+            "theory_coverage"
+          ]
+        },
+        {
+          "id": "theory_10_11",
+          "text": "Module 10 (Cadre Scout et Sécurité de Bord) : quel enonce est exact ?",
+          "image": null,
+          "answers": [
+            {
+              "id": "a",
+              "text": "Marnage: PM-BM",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "Gérer une voie d'eau d'urgence",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "text": "Gilet autogonflant obligatoire",
+              "correct": true
+            },
+            {
+              "id": "d",
+              "text": "Lister l'équipement obligatoire à bord",
+              "correct": false
+            }
+          ],
+          "difficulty": 2,
+          "explanation": "Point de cours du module 10",
+          "tags": [
+            "module_10",
+            "theory_coverage"
+          ]
+        },
+        {
+          "id": "theory_10_12",
+          "text": "Module 10 (Cadre Scout et Sécurité de Bord) : quel enonce est exact ?",
+          "image": null,
+          "answers": [
+            {
+              "id": "a",
+              "text": "Lister l'équipement obligatoire à bord",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "Non maître: 2 boules (j), feu+route (n)",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "text": "ASN: équipement obligatoire",
+              "correct": true
+            },
+            {
+              "id": "d",
+              "text": "Balise SOLAS",
+              "correct": false
+            }
+          ],
+          "difficulty": 2,
+          "explanation": "Point de cours du module 10",
+          "tags": [
+            "module_10",
+            "theory_coverage"
           ]
         }
       ]

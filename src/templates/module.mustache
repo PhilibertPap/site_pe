@@ -1,0 +1,118 @@
+<section class="page-hero mb-4 reveal">
+    <div class="row g-3 align-items-center">
+        <div class="col-lg-8">
+            <h1 class="display-6 mb-2">Module {{moduleNumber}} - {{name}}</h1>
+            <p class="mb-0">{{description}}</p>
+        </div>
+        <div class="col-lg-4 text-lg-end">
+            <a href="parcours.html#module-{{id}}" class="btn btn-light btn-sm">Retour au parcours</a>
+            <a href="session.html?mode=quick&module={{id}}" class="btn btn-outline-light btn-sm ms-2">QCM du module</a>
+        </div>
+    </div>
+</section>
+
+<div class="row g-4">
+    <section class="col-lg-8 reveal reveal-delay-1">
+        <article class="card h-100">
+            <header class="card-header bg-light-subtle">
+                <h2 class="h5 mb-0 section-head"><span class="icon-badge">📘</span>Cours complet</h2>
+            </header>
+            <div class="card-body course-content">
+                {{{courseContentHtml}}}
+            </div>
+        </article>
+
+        <article class="card mt-4">
+            <header class="card-header bg-light-subtle">
+                <h2 class="h6 mb-0 section-head"><span class="icon-badge">✅</span>Checklist de revision</h2>
+            </header>
+            <div class="card-body">
+                <ul class="mb-0">
+                    {{#checklist}}
+                    <li>{{.}}</li>
+                    {{/checklist}}
+                </ul>
+            </div>
+        </article>
+    </section>
+
+    <aside class="col-lg-4 reveal reveal-delay-2">
+        <article class="card mb-4">
+            <header class="card-header bg-primary text-white">
+                <h2 class="h6 mb-0 section-head"><span class="icon-badge">🎯</span>Entrainement module</h2>
+            </header>
+            <div class="card-body">
+                <p class="mb-2"><strong>Questions disponibles:</strong> {{qcmQuestionCount}}</p>
+                <p class="mb-3"><strong>Annales {{annalesDomainLabel}}:</strong> {{annalesCount}}</p>
+                <div class="d-grid gap-2">
+                    <a href="session.html?mode=quick&module={{id}}" class="btn btn-primary">Lancer un QCM cible</a>
+                    <a href="examens.html" class="btn btn-outline-primary">Mode examen</a>
+                </div>
+            </div>
+        </article>
+
+        {{#hasFormulas}}
+        <article class="card mb-4">
+            <header class="card-header bg-light-subtle">
+                <h2 class="h6 mb-0 section-head"><span class="icon-badge">🧮</span>Formules et reperes</h2>
+            </header>
+            <div class="card-body">
+                <p class="mb-0"><code>{{formulas}}</code></p>
+            </div>
+        </article>
+        {{/hasFormulas}}
+
+        {{#hasResources}}
+        <article class="card mb-4">
+            <header class="card-header bg-light-subtle">
+                <h2 class="h6 mb-0 section-head"><span class="icon-badge">📂</span>Ressources du cours</h2>
+            </header>
+            <div class="card-body">
+                <ul class="list-group list-group-flush">
+                    {{#resources}}
+                    <li class="list-group-item px-0">
+                        <strong>{{label}}</strong><br>
+                        <small><code>{{path}}</code></small>
+                    </li>
+                    {{/resources}}
+                </ul>
+            </div>
+        </article>
+        {{/hasResources}}
+
+        {{#hasAnnalesExamples}}
+        <article class="card mb-4">
+            <header class="card-header bg-light-subtle">
+                <h2 class="h6 mb-0 section-head"><span class="icon-badge">🧪</span>Exemples annales</h2>
+            </header>
+            <div class="card-body">
+                {{#annalesExamples}}
+                <div class="annales-example mb-3 pb-3 border-bottom">
+                    <p class="small mb-2"><strong>Question {{questionNumber}}:</strong> {{question}}</p>
+                    {{#hasImage}}
+                    <img src="{{image}}" alt="Illustration annale question {{questionNumber}}" class="img-fluid rounded annales-thumb">
+                    {{/hasImage}}
+                </div>
+                {{/annalesExamples}}
+            </div>
+        </article>
+        {{/hasAnnalesExamples}}
+
+        <article class="card">
+            <header class="card-header bg-light-subtle">
+                <h2 class="h6 mb-0 section-head"><span class="icon-badge">🗂️</span>Sessions annales</h2>
+            </header>
+            <div class="card-body">
+                <ul class="list-group list-group-flush">
+                    {{#annalesSeries}}
+                    <li class="list-group-item px-0">
+                        <strong>{{label}}</strong>
+                        {{#hasCorrige}}<span class="badge text-bg-success ms-1">corrige</span>{{/hasCorrige}}
+                        {{#answerKeyAvailable}}<span class="badge text-bg-info ms-1">cle reponses</span>{{/answerKeyAvailable}}
+                    </li>
+                    {{/annalesSeries}}
+                </ul>
+            </div>
+        </article>
+    </aside>
+</div>

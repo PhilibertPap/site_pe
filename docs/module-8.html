@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Module 8 - Calcul de Marée - Préparation PE</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="bg-light">
+    <!-- Navigation persistante -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="index.html">🚤 Patron d'Embarcation</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html" >Dashboard</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="parcours.html" aria-current="page">Parcours</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="entrainement.html" >Entraînement</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="examens.html" >Examens</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="carnet.html" >Carnet</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Contenu principal -->
+    <main class="container py-5">
+        <section class="page-hero mb-4 reveal">
+    <div class="row g-3 align-items-center">
+        <div class="col-lg-8">
+            <h1 class="display-6 mb-2">Module 8 - Calcul de Marée</h1>
+            <p class="mb-0">Marees (extraits M14)</p>
+        </div>
+        <div class="col-lg-4 text-lg-end">
+            <a href="parcours.html#module-8" class="btn btn-light btn-sm">Retour au parcours</a>
+            <a href="session.html?mode=quick&module=8" class="btn btn-outline-light btn-sm ms-2">QCM du module</a>
+        </div>
+    </div>
+</section>
+
+<div class="row g-4">
+    <section class="col-lg-8 reveal reveal-delay-1">
+        <article class="card h-100">
+            <header class="card-header bg-light-subtle">
+                <h2 class="h5 mb-0 section-head"><span class="icon-badge">📘</span>Cours complet</h2>
+            </header>
+            <div class="card-body course-content">
+                <p>Pages source: 1-21.</p><h5>Principe (informatif)</h5><ul><li>La marée résulte de l’effet combiné des attractions gravitationnelles de la Lune et du Soleil et du mouvement du système Terre–Lune–Soleil.</li><li>Les marées de vives-eaux sont plus amples quand Soleil et Lune sont alignés (Nouvelle Lune et Pleine Lune).</li><li>Les marées de mortes-eaux sont moins amples quand Soleil et Lune sont en quadrature (Premier et Dernier Quartier).</li></ul><h5>Zéro des cartes et hauteur d’eau</h5><ul><li>Zéro des cartes : niveau de référence des sondes (souvent proche des plus basses mers théoriques).</li><li>Profondeur (au-dessus du fond) : P = H + S (hauteur d’eau H + sonde S).</li><li>Attention : certaines sondes peuvent être négatives et signalent un fond découvrant aux très grandes basses mers.</li></ul><h5>Tirant d’eau et pied de pilote</h5><ul><li>Le sondeur mesure sous la quille, pas le tirant d’eau total : bien distinguer profondeur, immersion (tirant d’eau) et lecture sondeur.</li><li>Toujours garder une marge de sécurité (pied de pilote), en règle générale 0,50 m.</li><li>Profondeur minimale nécessaire ≈ tirant d’eau + pied de pilote.</li></ul><h5>Annuaire des marées (SHOM) : lecture + corrections</h5><ul><li>L’Annuaire donne : coefficients journaliers, heures et hauteurs de PM/BM des ports principaux, et tables de corrections pour ports rattachés.</li><li>Heures : dans le cours, rappel que l’annuaire est en Temps Universel + 1 (= heure d’hiver). En été, ajouter +1 h supplémentaire.</li><li>Certaines sources web affichent en UTC+2 : vérifier avant d’appliquer des corrections.</li></ul><h5>Règle des douzièmes (calcul au brevet)</h5><ul><li>Approche du niveau d’eau entre BM et PM (ou inverse) par 6 'heures marées' de durée égale.</li><li>Répartition du marnage par tranches successives : 1/12, 2/12, 3/12, 3/12, 2/12, 1/12.</li><li>Permet d’estimer la hauteur à une heure donnée après BM (montant) ou après PM (descendant) en additionnant les fractions.</li></ul>
+            </div>
+        </article>
+
+        <article class="card mt-4">
+            <header class="card-header bg-light-subtle">
+                <h2 class="h6 mb-0 section-head"><span class="icon-badge">✅</span>Checklist de revision</h2>
+            </header>
+            <div class="card-body">
+                <ul class="mb-0">
+                    <li>La marée résulte de l’effet combiné des attractions gravitationnelles de la Lune et du Soleil et du mouvement du système Terre–Lune–Soleil.</li>
+                    <li>Les marées de vives-eaux sont plus amples quand Soleil et Lune sont alignés (Nouvelle Lune et Pleine Lune).</li>
+                    <li>Les marées de mortes-eaux sont moins amples quand Soleil et Lune sont en quadrature (Premier et Dernier Quartier).</li>
+                    <li>Zéro des cartes : niveau de référence des sondes (souvent proche des plus basses mers théoriques).</li>
+                    <li>Profondeur (au-dessus du fond) : P &#x3D; H + S (hauteur d’eau H + sonde S).</li>
+                    <li>Attention : certaines sondes peuvent être négatives et signalent un fond découvrant aux très grandes basses mers.</li>
+                    <li>Comprendre les phénomènes de marée</li>
+                    <li>Appliquer la règle des douzièmes</li>
+                    <li>Calculer la hauteur d&#39;eau à une heure donnée</li>
+                    <li>Utiliser le pied de pilote (sécurité)</li>
+                </ul>
+            </div>
+        </article>
+    </section>
+
+    <aside class="col-lg-4 reveal reveal-delay-2">
+        <article class="card mb-4">
+            <header class="card-header bg-primary text-white">
+                <h2 class="h6 mb-0 section-head"><span class="icon-badge">🎯</span>Entrainement module</h2>
+            </header>
+            <div class="card-body">
+                <p class="mb-2"><strong>Questions disponibles:</strong> 29</p>
+                <p class="mb-3"><strong>Annales Maree:</strong> 8</p>
+                <div class="d-grid gap-2">
+                    <a href="session.html?mode=quick&module=8" class="btn btn-primary">Lancer un QCM cible</a>
+                    <a href="examens.html" class="btn btn-outline-primary">Mode examen</a>
+                </div>
+            </div>
+        </article>
+
+        <article class="card mb-4">
+            <header class="card-header bg-light-subtle">
+                <h2 class="h6 mb-0 section-head"><span class="icon-badge">🧮</span>Formules et reperes</h2>
+            </header>
+            <div class="card-body">
+                <p class="mb-0"><code>Rf &#x3D; Rs + Vc vectoriel</code></p>
+            </div>
+        </article>
+
+        <article class="card mb-4">
+            <header class="card-header bg-light-subtle">
+                <h2 class="h6 mb-0 section-head"><span class="icon-badge">📂</span>Ressources du cours</h2>
+            </header>
+            <div class="card-body">
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item px-0">
+                        <strong>Cours calcul de maree</strong><br>
+                        <small><code>imports&#x2F;drive&#x2F;theorie&#x2F;Théorie&#x2F;MAREE&#x2F;Cours&#x2F;Cours calcul de marée.pdf</code></small>
+                    </li>
+                    <li class="list-group-item px-0">
+                        <strong>Methode calcul de maree</strong><br>
+                        <small><code>imports&#x2F;drive&#x2F;theorie&#x2F;Théorie&#x2F;MAREE&#x2F;Cours&#x2F;Méthode calcul de marée.pdf</code></small>
+                    </li>
+                    <li class="list-group-item px-0">
+                        <strong>Compte rendu maree</strong><br>
+                        <small><code>imports&#x2F;drive&#x2F;theorie&#x2F;Théorie&#x2F;Compte rendu de séance&#x2F;Compte rendu cours 3 PE.docx</code></small>
+                    </li>
+                </ul>
+            </div>
+        </article>
+
+
+        <article class="card">
+            <header class="card-header bg-light-subtle">
+                <h2 class="h6 mb-0 section-head"><span class="icon-badge">🗂️</span>Sessions annales</h2>
+            </header>
+            <div class="card-body">
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item px-0">
+                        <strong>2024 - Annuel</strong>
+                        <span class="badge text-bg-success ms-1">corrige</span>
+                        
+                    </li>
+                    <li class="list-group-item px-0">
+                        <strong>2022 - Octobre</strong>
+                        <span class="badge text-bg-success ms-1">corrige</span>
+                        
+                    </li>
+                    <li class="list-group-item px-0">
+                        <strong>2022 - Mars</strong>
+                        <span class="badge text-bg-success ms-1">corrige</span>
+                        
+                    </li>
+                    <li class="list-group-item px-0">
+                        <strong>2021 - Annuel</strong>
+                        <span class="badge text-bg-success ms-1">corrige</span>
+                        
+                    </li>
+                    <li class="list-group-item px-0">
+                        <strong>2020 - Annuel</strong>
+                        <span class="badge text-bg-success ms-1">corrige</span>
+                        
+                    </li>
+                    <li class="list-group-item px-0">
+                        <strong>2019 - Annuel</strong>
+                        <span class="badge text-bg-success ms-1">corrige</span>
+                        
+                    </li>
+                    <li class="list-group-item px-0">
+                        <strong>2018 - Annuel</strong>
+                        <span class="badge text-bg-success ms-1">corrige</span>
+                        
+                    </li>
+                    <li class="list-group-item px-0">
+                        <strong>2017 - Annuel</strong>
+                        <span class="badge text-bg-success ms-1">corrige</span>
+                        
+                    </li>
+                </ul>
+            </div>
+        </article>
+    </aside>
+</div>
+
+    </main>
+
+    <!-- Pied de page -->
+    <footer class="bg-dark text-white py-4 mt-5">
+        <div class="container text-center">
+            <p class="mb-0">Préparation au Patron d'Embarcation - Groupe NDC 🌊</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/qcm-engine.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>

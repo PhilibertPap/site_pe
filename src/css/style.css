@@ -252,6 +252,28 @@ a:hover {
     margin-bottom: 1.25rem;
 }
 
+.course-content h5 {
+    margin-top: 1.2rem;
+    color: var(--primary);
+}
+
+.course-content ul {
+    padding-left: 1.1rem;
+}
+
+.annales-example:last-child {
+    border-bottom: none !important;
+    margin-bottom: 0 !important;
+    padding-bottom: 0 !important;
+}
+
+.annales-thumb {
+    max-height: 190px;
+    width: auto;
+    border: 1px solid rgba(10, 47, 87, 0.12);
+    background: #fff;
+}
+
 .soft-panel {
     background: var(--surface);
     border-radius: 14px;

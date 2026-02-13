@@ -24,12 +24,15 @@ Site d'entraînement à l'examen du PE pour les scouts du groupe NDC.
   - `imports/drive/annales/annales.qcm.2022.raw.json`
   - `src/assets/annales/qcm/2022/*` (visuels)
 
-## Structure actuelle (5 pages)
+## Structure actuelle
 - `docs/index.html`
 - `docs/parcours.html`
+- `docs/module-1.html` ... `docs/module-10.html` (pages de cours detaillees)
 - `docs/entrainement.html`
 - `docs/examens.html`
 - `docs/carnet.html`
+- `docs/session.html`
+- `docs/navigation.html`
 
 Sources:
 - templates: `src/templates/`
@@ -37,5 +40,11 @@ Sources:
 - scripts: `src/js/`
 - donnees: `src/data/`
 
-## Pages futures
-Les templates et scripts pour des pages supplementaires (flashcards, game, calculator) sont conserves dans `src/templates/` et `src/js/` pour activation ulterieure.
+## Parcours de cours
+- La page `parcours.html` est une vue d'orientation (resume + acces rapide).
+- Chaque module ouvre une page dediee `module-{id}.html` avec:
+  - cours structure,
+  - checklist,
+  - QCM cible,
+  - sessions d'annales associees,
+  - exemples visuels extraits des annales 2022 quand disponibles.

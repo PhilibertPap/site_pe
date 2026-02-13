@@ -43,76 +43,528 @@
     <div class="row g-3 align-items-center">
         <div class="col-lg-8">
             <h1 class="display-6 mb-2">Carnet de bord</h1>
-            <p class="mb-0">Prépare des fiches de révision imprimables pour les modules validés.</p>
+            <p class="mb-0">Toutes les fiches de revision sont disponibles module par module.</p>
         </div>
         <div class="col-lg-4">
             <div class="soft-panel p-3 reveal reveal-delay-1">
-                <p class="kpi-label">Modules validés</p>
-                <p class="kpi-value mb-0">0 / 10</p>
+                <p class="kpi-label">Fiches disponibles</p>
+                <p class="kpi-value mb-0">10 / 10</p>
             </div>
         </div>
     </div>
 </section>
 
 <div class="row g-4 mb-5 reveal reveal-delay-1">
-    <section class="col-lg-6 reveal reveal-delay-2">
+    <section class="col-lg-6">
         <div class="card h-100">
             <div class="card-header bg-success text-white">
-                <h2 class="h5 mb-0 section-head"><span class="icon-badge">📚</span>Fiches disponibles</h2>
+                <h2 class="h5 mb-0 section-head"><span class="icon-badge">📚</span>Sommaire des fiches</h2>
             </div>
             <div class="card-body">
                 <div class="list-group">
-                    <span class="list-group-item text-muted">🔒 Balisage et Pictogrammes (à compléter)</span>
-                    <span class="list-group-item text-muted">🔒 Signalisation (Sonore, Lumineuse, Portuaire) (à compléter)</span>
-                    <span class="list-group-item text-muted">🔒 RIPAM et Marques des Navires (à compléter)</span>
-                    <span class="list-group-item text-muted">🔒 La Carte Marine et la Règle Cras (à compléter)</span>
-                    <span class="list-group-item text-muted">🔒 Météo et Environnement (à compléter)</span>
-                    <span class="list-group-item text-muted">🔒 Caps et Dérives (à compléter)</span>
-                    <span class="list-group-item text-muted">🔒 Courants et Route Fond (à compléter)</span>
-                    <span class="list-group-item text-muted">🔒 Calcul de Marée (à compléter)</span>
-                    <span class="list-group-item text-muted">🔒 VHF et Communication (à compléter)</span>
-                    <span class="list-group-item text-muted">🔒 Cadre Scout et Sécurité de Bord (à compléter)</span>
+                    <a href="#fiche-1" class="list-group-item list-group-item-action">
+                        Module 1 - Balisage et Pictogrammes
+                    </a>
+                    <a href="#fiche-2" class="list-group-item list-group-item-action">
+                        Module 2 - Signalisation (Sonore, Lumineuse, Portuaire)
+                    </a>
+                    <a href="#fiche-3" class="list-group-item list-group-item-action">
+                        Module 3 - RIPAM et Marques des Navires
+                    </a>
+                    <a href="#fiche-4" class="list-group-item list-group-item-action">
+                        Module 4 - La Carte Marine et la Règle Cras
+                    </a>
+                    <a href="#fiche-5" class="list-group-item list-group-item-action">
+                        Module 5 - Météo et Environnement
+                    </a>
+                    <a href="#fiche-6" class="list-group-item list-group-item-action">
+                        Module 6 - Caps et Dérives
+                    </a>
+                    <a href="#fiche-7" class="list-group-item list-group-item-action">
+                        Module 7 - Courants et Route Fond
+                    </a>
+                    <a href="#fiche-8" class="list-group-item list-group-item-action">
+                        Module 8 - Calcul de Marée
+                    </a>
+                    <a href="#fiche-9" class="list-group-item list-group-item-action">
+                        Module 9 - VHF et Communication
+                    </a>
+                    <a href="#fiche-10" class="list-group-item list-group-item-action">
+                        Module 10 - Cadre Scout et Sécurité de Bord
+                    </a>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="col-lg-6 reveal reveal-delay-3">
+    <section class="col-lg-6">
         <div class="card h-100">
             <div class="card-header bg-info text-white">
                 <h2 class="h5 mb-0 section-head"><span class="icon-badge">🖨️</span>Impression</h2>
             </div>
             <div class="card-body">
-                <p class="mb-3">Sélectionne les fiches à imprimer :</p>
+                <p class="mb-3">Selectionne les fiches a imprimer :</p>
                 <form class="soft-panel p-3">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="fiche-check-1" value="1" checked>
+                        <label class="form-check-label" for="fiche-check-1">Module 1 - Balisage et Pictogrammes</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="fiche-check-2" value="2" checked>
+                        <label class="form-check-label" for="fiche-check-2">Module 2 - Signalisation (Sonore, Lumineuse, Portuaire)</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="fiche-check-3" value="3" checked>
+                        <label class="form-check-label" for="fiche-check-3">Module 3 - RIPAM et Marques des Navires</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="fiche-check-4" value="4" checked>
+                        <label class="form-check-label" for="fiche-check-4">Module 4 - La Carte Marine et la Règle Cras</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="fiche-check-5" value="5" checked>
+                        <label class="form-check-label" for="fiche-check-5">Module 5 - Météo et Environnement</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="fiche-check-6" value="6" checked>
+                        <label class="form-check-label" for="fiche-check-6">Module 6 - Caps et Dérives</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="fiche-check-7" value="7" checked>
+                        <label class="form-check-label" for="fiche-check-7">Module 7 - Courants et Route Fond</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="fiche-check-8" value="8" checked>
+                        <label class="form-check-label" for="fiche-check-8">Module 8 - Calcul de Marée</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="fiche-check-9" value="9" checked>
+                        <label class="form-check-label" for="fiche-check-9">Module 9 - VHF et Communication</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="fiche-check-10" value="10" checked>
+                        <label class="form-check-label" for="fiche-check-10">Module 10 - Cadre Scout et Sécurité de Bord</label>
+                    </div>
                 </form>
-                <button class="btn btn-info mt-3 w-100" onclick="printSelectedFiches()">Imprimer les fiches sélectionnées</button>
+                <button class="btn btn-info mt-3 w-100" onclick="printSelectedFiches()">Imprimer les fiches selectionnees</button>
             </div>
         </div>
     </section>
 </div>
 
-<section id="fiches-content" class="reveal reveal-delay-4">
+<section id="fiches-content" class="reveal reveal-delay-2">
+    <article id="fiche-1" class="fiche-printable mb-5 p-4 border">
+        <div class="d-flex justify-content-between align-items-start flex-wrap gap-2">
+            <div>
+                <h2 class="h4 mb-2">Module 1 - Balisage et Pictogrammes</h2>
+                <p class="text-muted small mb-0">Le balisage</p>
+            </div>
+            <a href="module-1.html" class="btn btn-outline-primary btn-sm">Page de cours</a>
+        </div>
+        <hr class="my-3">
+
+        <h3 class="h6"><strong>Objectifs cles</strong></h3>
+        <ul class="small mb-3">
+            <li>Reconnaître les différents types de marques de balisage.</li>
+            <li>Identifier les marques courantes : latérales (chenal d’accès et chenal préféré), eaux saines, spéciales, danger isolé, cardinales, dangers nouveaux et urgence épave.</li>
+            <li>Savoir comment on identifie une marque de jour (voyant, couleur, forme) et de nuit (couleur et rythme du feu).</li>
+            <li>Identifier les marques latérales (bâbord&#x2F;tribord)</li>
+            <li>Reconnaître les marques cardinales et leurs caractéristiques</li>
+            <li>Distinguer les zones de danger et eaux saines</li>
+            <li>Connaître le système de balises français (Région A)</li>
+        </ul>
+
+        <h3 class="h6"><strong>Checklist</strong></h3>
+        <ul class="small mb-3">
+            <li>Reconnaître les différents types de marques de balisage.</li>
+            <li>Identifier les marques courantes : latérales (chenal d’accès et chenal préféré), eaux saines, spéciales, danger isolé, cardinales, dangers nouveaux et urgence épave.</li>
+            <li>Savoir comment on identifie une marque de jour (voyant, couleur, forme) et de nuit (couleur et rythme du feu).</li>
+            <li>Identifier les marques latérales (bâbord&#x2F;tribord)</li>
+            <li>Reconnaître les marques cardinales et leurs caractéristiques</li>
+            <li>Distinguer les zones de danger et eaux saines</li>
+            <li>Connaître le système de balises français (Région A)</li>
+            <li>De jour : regarder le voyant (topmark), la couleur du corps, la forme de la marque.</li>
+            <li>De nuit : identifier la couleur du feu et son rythme (caractère).</li>
+            <li>Système A (Europe, France) : en entrant depuis la mer vers le port : tribord &#x3D; vert, bâbord &#x3D; rouge.</li>
+        </ul>
+
+        <h3 class="h6"><strong>Formules / reperes</strong></h3>
+        <pre class="small bg-light p-2 rounded"><code>Codes visuels RIPAM</code></pre>
+
+        <p class="small mb-0"><strong>QCM module:</strong> 79 • <strong>Annales QCM:</strong> 8</p>
+    </article>
+    <article id="fiche-2" class="fiche-printable mb-5 p-4 border">
+        <div class="d-flex justify-content-between align-items-start flex-wrap gap-2">
+            <div>
+                <h2 class="h4 mb-2">Module 2 - Signalisation (Sonore, Lumineuse, Portuaire)</h2>
+                <p class="text-muted small mb-0">Signaux visuels et auditifs, feux et marques des ports</p>
+            </div>
+            <a href="module-2.html" class="btn btn-outline-primary btn-sm">Page de cours</a>
+        </div>
+        <hr class="my-3">
+
+        <h3 class="h6"><strong>Objectifs cles</strong></h3>
+        <ul class="small mb-3">
+            <li>Interpréter les signaux sonores en brume</li>
+            <li>Reconnaître les feux de navires</li>
+            <li>Comprendre les signaux portuaires</li>
+            <li>Identifier les feux de route (feux de bord)</li>
+        </ul>
+
+        <h3 class="h6"><strong>Checklist</strong></h3>
+        <ul class="small mb-3">
+            <li>Interpréter les signaux sonores en brume</li>
+            <li>Reconnaître les feux de navires</li>
+            <li>Comprendre les signaux portuaires</li>
+            <li>Identifier les feux de route (feux de bord)</li>
+            <li>Feu proue: blanc axial 225°</li>
+            <li>Feux route: rouge bâb, vert trib 112.5°</li>
+            <li>Feu arrière: blanc 135°</li>
+            <li>Mouillage: boule noire (j), feu blanc (n)</li>
+            <li>Non maître: 2 boules (j), feu+route (n)</li>
+            <li>Échoué: 3 boules (j), blanc+2 rouges (n)</li>
+        </ul>
+
+        <h3 class="h6"><strong>Formules / reperes</strong></h3>
+        <pre class="small bg-light p-2 rounded"><code>Sons brefs 1s, longs 4-6s</code></pre>
+
+        <p class="small mb-0"><strong>QCM module:</strong> 14 • <strong>Annales QCM:</strong> 8</p>
+    </article>
+    <article id="fiche-3" class="fiche-printable mb-5 p-4 border">
+        <div class="d-flex justify-content-between align-items-start flex-wrap gap-2">
+            <div>
+                <h2 class="h4 mb-2">Module 3 - RIPAM et Marques des Navires</h2>
+                <p class="text-muted small mb-0">Règles de priorité, feux de route et marques de jour - cœur du QCM (30 questions)</p>
+            </div>
+            <a href="module-3.html" class="btn btn-outline-primary btn-sm">Page de cours</a>
+        </div>
+        <hr class="my-3">
+
+        <h3 class="h6"><strong>Objectifs cles</strong></h3>
+        <ul class="small mb-3">
+            <li>Maîtriser les règles de barre (priorités de passage)</li>
+            <li>Identifier les feux de route des navires</li>
+            <li>Connaître les marques de jour</li>
+            <li>Appliquer la hiérarchie des privilèges entre navires</li>
+        </ul>
+
+        <h3 class="h6"><strong>Checklist</strong></h3>
+        <ul class="small mb-3">
+            <li>Maîtriser les règles de barre (priorités de passage)</li>
+            <li>Identifier les feux de route des navires</li>
+            <li>Connaître les marques de jour</li>
+            <li>Appliquer la hiérarchie des privilèges entre navires</li>
+            <li>Hiérarchie: Non-maître&gt;Capacité&gt;Tirant&gt;Pêche&gt;Voilier&gt;Moteur</li>
+            <li>Routes opposées: tribord-tribord</li>
+            <li>Routes convergentes: priorité droite</li>
+            <li>Doublage: s&#39;écarter</li>
+            <li>Voilier+moteur: traité moteur</li>
+            <li>Chalutier pêche: 2 cônes, feu vert&#x2F;blanc</li>
+        </ul>
+
+        <h3 class="h6"><strong>Formules / reperes</strong></h3>
+        <pre class="small bg-light p-2 rounded"><code>Géométrie gisement</code></pre>
+
+        <p class="small mb-0"><strong>QCM module:</strong> 12 • <strong>Annales QCM:</strong> 8</p>
+    </article>
+    <article id="fiche-4" class="fiche-printable mb-5 p-4 border">
+        <div class="d-flex justify-content-between align-items-start flex-wrap gap-2">
+            <div>
+                <h2 class="h4 mb-2">Module 4 - La Carte Marine et la Règle Cras</h2>
+                <p class="text-muted small mb-0">Lire une carte SHOM, coordonnées, symboles, utiliser la règle rapporteur</p>
+            </div>
+            <a href="module-4.html" class="btn btn-outline-primary btn-sm">Page de cours</a>
+        </div>
+        <hr class="my-3">
+
+        <h3 class="h6"><strong>Objectifs cles</strong></h3>
+        <ul class="small mb-3">
+            <li>Lire et interpréter les symboles SHOM</li>
+            <li>Déterminer des coordonnées géographiques</li>
+            <li>Utiliser la règle Cras (rapporteur maritime)</li>
+            <li>Mesurer des distances sur la carte</li>
+        </ul>
+
+        <h3 class="h6"><strong>Checklist</strong></h3>
+        <ul class="small mb-3">
+            <li>Lire et interpréter les symboles SHOM</li>
+            <li>Déterminer des coordonnées géographiques</li>
+            <li>Utiliser la règle Cras (rapporteur maritime)</li>
+            <li>Mesurer des distances sur la carte</li>
+            <li>Je tribord: 1 bref</li>
+            <li>Je bâbord: 2 brefs</li>
+            <li>Je arrière: 3 brefs</li>
+            <li>Rattrapage trib: 2 brefs</li>
+            <li>Rattrapage bâb: 1long+2brefs</li>
+            <li>Accord dépass: 1long+1bref</li>
+        </ul>
+
+        <h3 class="h6"><strong>Formules / reperes</strong></h3>
+        <pre class="small bg-light p-2 rounded"><code>Sons standards RIPAM</code></pre>
+
+        <p class="small mb-0"><strong>QCM module:</strong> 14 • <strong>Annales QCM:</strong> 8</p>
+    </article>
+    <article id="fiche-5" class="fiche-printable mb-5 p-4 border">
+        <div class="d-flex justify-content-between align-items-start flex-wrap gap-2">
+            <div>
+                <h2 class="h4 mb-2">Module 5 - Météo et Environnement</h2>
+                <p class="text-muted small mb-0">Pressions, fronts, nuages, échelle de Beaufort</p>
+            </div>
+            <a href="module-5.html" class="btn btn-outline-primary btn-sm">Page de cours</a>
+        </div>
+        <hr class="my-3">
+
+        <h3 class="h6"><strong>Objectifs cles</strong></h3>
+        <ul class="small mb-3">
+            <li>Interpréter les cartes de pression</li>
+            <li>Identifier les types de fronts météorologiques</li>
+            <li>Reconnaître les nuages par étage</li>
+            <li>Utiliser l&#39;échelle de Beaufort</li>
+        </ul>
+
+        <h3 class="h6"><strong>Checklist</strong></h3>
+        <ul class="small mb-3">
+            <li>Interpréter les cartes de pression</li>
+            <li>Identifier les types de fronts météorologiques</li>
+            <li>Reconnaître les nuages par étage</li>
+            <li>Utiliser l&#39;échelle de Beaufort</li>
+            <li>Distance: échelle latitudes</li>
+            <li>Épave: croix+point</li>
+            <li>Haut-fond: point+profondeur</li>
+            <li>Parc: pointillés fermés</li>
+            <li>Câble: pointillé+AC</li>
+            <li>Phare: triangle+numéro</li>
+        </ul>
+
+        <h3 class="h6"><strong>Formules / reperes</strong></h3>
+        <pre class="small bg-light p-2 rounded"><code>Outils Cras et compas</code></pre>
+
+        <p class="small mb-0"><strong>QCM module:</strong> 13 • <strong>Annales Cartographie:</strong> 8</p>
+    </article>
+    <article id="fiche-6" class="fiche-printable mb-5 p-4 border">
+        <div class="d-flex justify-content-between align-items-start flex-wrap gap-2">
+            <div>
+                <h2 class="h4 mb-2">Module 6 - Caps et Dérives</h2>
+                <p class="text-muted small mb-0">Déclinaison, déviation, cap vrai, route surface, dérive du vent</p>
+            </div>
+            <a href="module-6.html" class="btn btn-outline-primary btn-sm">Page de cours</a>
+        </div>
+        <hr class="my-3">
+
+        <h3 class="h6"><strong>Objectifs cles</strong></h3>
+        <ul class="small mb-3">
+            <li>Comprendre déclinaison et déviation magnétiques</li>
+            <li>Calculer le cap vrai à partir du cap compas</li>
+            <li>Déterminer la route surface avec dérive</li>
+            <li>Appliquer les formules de variation</li>
+        </ul>
+
+        <h3 class="h6"><strong>Checklist</strong></h3>
+        <ul class="small mb-3">
+            <li>Comprendre déclinaison et déviation magnétiques</li>
+            <li>Calculer le cap vrai à partir du cap compas</li>
+            <li>Déterminer la route surface avec dérive</li>
+            <li>Appliquer les formules de variation</li>
+            <li>Cirrus: -12-24h avant basse pression</li>
+            <li>Altocumulus: -12h</li>
+            <li>Force 0: &lt;1kt</li>
+            <li>Force 4: 11-16kt, 1m</li>
+            <li>Force 5: 17-21kt, 2m</li>
+            <li>Force 6: 22-27kt, 3m</li>
+        </ul>
+
+        <h3 class="h6"><strong>Formules / reperes</strong></h3>
+        <pre class="small bg-light p-2 rounded"><code>Beaufort ≈ (V²)&#x2F;2</code></pre>
+
+        <p class="small mb-0"><strong>QCM module:</strong> 12 • <strong>Annales Cartographie:</strong> 8</p>
+    </article>
+    <article id="fiche-7" class="fiche-printable mb-5 p-4 border">
+        <div class="d-flex justify-content-between align-items-start flex-wrap gap-2">
+            <div>
+                <h2 class="h4 mb-2">Module 7 - Courants et Route Fond</h2>
+                <p class="text-muted small mb-0">Courants (extraits M14)</p>
+            </div>
+            <a href="module-7.html" class="btn btn-outline-primary btn-sm">Page de cours</a>
+        </div>
+        <hr class="my-3">
+
+        <h3 class="h6"><strong>Objectifs cles</strong></h3>
+        <ul class="small mb-3">
+            <li>Flux : durée pendant laquelle la mer monte (de BM à PM).</li>
+            <li>Reflux : durée pendant laquelle la mer descend (de PM à BM).</li>
+            <li>Flot : courant associé au flux.</li>
+            <li>Jusant : courant associé au reflux.</li>
+            <li>Marnage (amplitude) : différence de niveau entre une PM et une BM consécutives.</li>
+            <li>Coefficient : mesure de la « force » de la marée (≈ 20 à 120). &gt;70 &#x3D; vives-eaux; &lt;70 &#x3D; mortes-eaux.</li>
+            <li>Représenter les vecteurs de courant</li>
+            <li>Construire la route fond sur carte</li>
+            <li>Calculer la dérive due au courant</li>
+            <li>Vérifier la cohérence des routes (surface vs fond)</li>
+        </ul>
+
+        <h3 class="h6"><strong>Checklist</strong></h3>
+        <ul class="small mb-3">
+            <li>Flux : durée pendant laquelle la mer monte (de BM à PM).</li>
+            <li>Reflux : durée pendant laquelle la mer descend (de PM à BM).</li>
+            <li>Flot : courant associé au flux.</li>
+            <li>Jusant : courant associé au reflux.</li>
+            <li>Marnage (amplitude) : différence de niveau entre une PM et une BM consécutives.</li>
+            <li>Coefficient : mesure de la « force » de la marée (≈ 20 à 120). &gt;70 &#x3D; vives-eaux; &lt;70 &#x3D; mortes-eaux.</li>
+            <li>Représenter les vecteurs de courant</li>
+            <li>Construire la route fond sur carte</li>
+            <li>Calculer la dérive due au courant</li>
+            <li>Vérifier la cohérence des routes (surface vs fond)</li>
+        </ul>
+
+        <h3 class="h6"><strong>Formules / reperes</strong></h3>
+        <pre class="small bg-light p-2 rounded"><code>Cv &#x3D; Cc + W + δ</code></pre>
+
+        <p class="small mb-0"><strong>QCM module:</strong> 19 • <strong>Annales Cartographie:</strong> 8</p>
+    </article>
+    <article id="fiche-8" class="fiche-printable mb-5 p-4 border">
+        <div class="d-flex justify-content-between align-items-start flex-wrap gap-2">
+            <div>
+                <h2 class="h4 mb-2">Module 8 - Calcul de Marée</h2>
+                <p class="text-muted small mb-0">Marees (extraits M14)</p>
+            </div>
+            <a href="module-8.html" class="btn btn-outline-primary btn-sm">Page de cours</a>
+        </div>
+        <hr class="my-3">
+
+        <h3 class="h6"><strong>Objectifs cles</strong></h3>
+        <ul class="small mb-3">
+            <li>La marée résulte de l’effet combiné des attractions gravitationnelles de la Lune et du Soleil et du mouvement du système Terre–Lune–Soleil.</li>
+            <li>Les marées de vives-eaux sont plus amples quand Soleil et Lune sont alignés (Nouvelle Lune et Pleine Lune).</li>
+            <li>Les marées de mortes-eaux sont moins amples quand Soleil et Lune sont en quadrature (Premier et Dernier Quartier).</li>
+            <li>Zéro des cartes : niveau de référence des sondes (souvent proche des plus basses mers théoriques).</li>
+            <li>Profondeur (au-dessus du fond) : P &#x3D; H + S (hauteur d’eau H + sonde S).</li>
+            <li>Attention : certaines sondes peuvent être négatives et signalent un fond découvrant aux très grandes basses mers.</li>
+            <li>Comprendre les phénomènes de marée</li>
+            <li>Appliquer la règle des douzièmes</li>
+            <li>Calculer la hauteur d&#39;eau à une heure donnée</li>
+            <li>Utiliser le pied de pilote (sécurité)</li>
+        </ul>
+
+        <h3 class="h6"><strong>Checklist</strong></h3>
+        <ul class="small mb-3">
+            <li>La marée résulte de l’effet combiné des attractions gravitationnelles de la Lune et du Soleil et du mouvement du système Terre–Lune–Soleil.</li>
+            <li>Les marées de vives-eaux sont plus amples quand Soleil et Lune sont alignés (Nouvelle Lune et Pleine Lune).</li>
+            <li>Les marées de mortes-eaux sont moins amples quand Soleil et Lune sont en quadrature (Premier et Dernier Quartier).</li>
+            <li>Zéro des cartes : niveau de référence des sondes (souvent proche des plus basses mers théoriques).</li>
+            <li>Profondeur (au-dessus du fond) : P &#x3D; H + S (hauteur d’eau H + sonde S).</li>
+            <li>Attention : certaines sondes peuvent être négatives et signalent un fond découvrant aux très grandes basses mers.</li>
+            <li>Comprendre les phénomènes de marée</li>
+            <li>Appliquer la règle des douzièmes</li>
+            <li>Calculer la hauteur d&#39;eau à une heure donnée</li>
+            <li>Utiliser le pied de pilote (sécurité)</li>
+        </ul>
+
+        <h3 class="h6"><strong>Formules / reperes</strong></h3>
+        <pre class="small bg-light p-2 rounded"><code>Rf &#x3D; Rs + Vc vectoriel</code></pre>
+
+        <p class="small mb-0"><strong>QCM module:</strong> 29 • <strong>Annales Maree:</strong> 8</p>
+    </article>
+    <article id="fiche-9" class="fiche-printable mb-5 p-4 border">
+        <div class="d-flex justify-content-between align-items-start flex-wrap gap-2">
+            <div>
+                <h2 class="h4 mb-2">Module 9 - VHF et Communication</h2>
+                <p class="text-muted small mb-0">ASN, canaux, procédures de détresse (Mayday), sécurité radio</p>
+            </div>
+            <a href="module-9.html" class="btn btn-outline-primary btn-sm">Page de cours</a>
+        </div>
+        <hr class="my-3">
+
+        <h3 class="h6"><strong>Objectifs cles</strong></h3>
+        <ul class="small mb-3">
+            <li>Connaître les canaux VHF importants (16, 9, 72)</li>
+            <li>Maîtriser la procédure Mayday</li>
+            <li>Comprendre les protocoles de communication</li>
+            <li>Utiliser l&#39;alphabet phonétique</li>
+        </ul>
+
+        <h3 class="h6"><strong>Checklist</strong></h3>
+        <ul class="small mb-3">
+            <li>Connaître les canaux VHF importants (16, 9, 72)</li>
+            <li>Maîtriser la procédure Mayday</li>
+            <li>Comprendre les protocoles de communication</li>
+            <li>Utiliser l&#39;alphabet phonétique</li>
+            <li>BM: basse mer</li>
+            <li>PM: pleine mer</li>
+            <li>Marnage: PM-BM</li>
+            <li>Douzièmes: 1,2,3,3,2,1</li>
+            <li>H1: 1&#x2F;12</li>
+            <li>H2: 2&#x2F;12 (cumul 3&#x2F;12)</li>
+        </ul>
+
+        <h3 class="h6"><strong>Formules / reperes</strong></h3>
+        <pre class="small bg-light p-2 rounded"><code>1&#x2F;12, 2&#x2F;12, 3&#x2F;12, 3&#x2F;12, 2&#x2F;12, 1&#x2F;12</code></pre>
+
+        <p class="small mb-0"><strong>QCM module:</strong> 13 • <strong>Annales QCM:</strong> 8</p>
+    </article>
+    <article id="fiche-10" class="fiche-printable mb-5 p-4 border">
+        <div class="d-flex justify-content-between align-items-start flex-wrap gap-2">
+            <div>
+                <h2 class="h4 mb-2">Module 10 - Cadre Scout et Sécurité de Bord</h2>
+                <p class="text-muted small mb-0">Réglementation SUF, matériel d&#39;armement, gestion des avaries</p>
+            </div>
+            <a href="module-10.html" class="btn btn-outline-primary btn-sm">Page de cours</a>
+        </div>
+        <hr class="my-3">
+
+        <h3 class="h6"><strong>Objectifs cles</strong></h3>
+        <ul class="small mb-3">
+            <li>Connaître la réglementation SUF (6 milles, force 4-5)</li>
+            <li>Lister l&#39;équipement obligatoire à bord</li>
+            <li>Gérer une voie d&#39;eau d&#39;urgence</li>
+            <li>Réagir en cas d&#39;incendie à bord</li>
+        </ul>
+
+        <h3 class="h6"><strong>Checklist</strong></h3>
+        <ul class="small mb-3">
+            <li>Connaître la réglementation SUF (6 milles, force 4-5)</li>
+            <li>Lister l&#39;équipement obligatoire à bord</li>
+            <li>Gérer une voie d&#39;eau d&#39;urgence</li>
+            <li>Réagir en cas d&#39;incendie à bord</li>
+            <li>Canal 16: détresse urgence</li>
+            <li>Mayday: 3 fois</li>
+            <li>ASN: équipement obligatoire</li>
+            <li>Licence radio</li>
+            <li>Fréquence 156-162 MHz</li>
+            <li>Gilet autogonflant obligatoire</li>
+        </ul>
+
+        <h3 class="h6"><strong>Formules / reperes</strong></h3>
+        <pre class="small bg-light p-2 rounded"><code>Procédures standardisées</code></pre>
+
+        <p class="small mb-0"><strong>QCM module:</strong> 12 • <strong>Annales QCM:</strong> 8</p>
+    </article>
 </section>
 
 <script>
 function printSelectedFiches() {
-    const selected = [];
-    document.querySelectorAll('.form-check-input:checked').forEach(checkbox => {
-        selected.push(checkbox.value);
-    });
-    if(selected.length === 0) {
-        alert('Sélectionne au moins une fiche');
+    const selectedIds = new Set();
+    document.querySelectorAll('.form-check-input:checked').forEach(checkbox => selectedIds.add(checkbox.value));
+    if (selectedIds.size === 0) {
+        alert('Selectionne au moins une fiche');
         return;
     }
-    // Affiche les fiches sélectionnées et lance l'impression
+
+    document.querySelectorAll('#fiches-content article').forEach(article => {
+        const id = article.id.replace('fiche-', '');
+        article.style.display = selectedIds.has(id) ? '' : 'none';
+    });
+
     window.print();
+
+    document.querySelectorAll('#fiches-content article').forEach(article => {
+        article.style.display = '';
+    });
 }
 </script>
 
 <style media="print">
-    nav, footer, .form-check, .btn { display: none; }
-    body { background: white; }
+nav, footer, .form-check, .btn, .page-hero { display: none !important; }
+body { background: white; }
 </style>
 
     </main>

@@ -520,6 +520,104 @@ function mergeWithBaseQcm(baseQcm, extractedQcm) {
     };
 }
 
+function toUniquePoints(list) {
+    const seen = new Set();
+    const out = [];
+    (list || []).forEach(item => {
+        const text = normalizeSpace(item);
+        if (text.length < 8) return;
+        const key = text.toLowerCase();
+        if (seen.has(key)) return;
+        seen.add(key);
+        out.push(text);
+    });
+    return out;
+}
+
+function countQuestionsByModule(categories) {
+    return (categories || []).reduce((acc, category) => {
+        const key = String(category.module);
+        acc[key] = (acc[key] || 0) + ((category.questions || []).length);
+        return acc;
+    }, {});
+}
+
+function buildTheoryCoverageCategories(modulesContent, siteData, existingCounts, rng) {
+    const moduleContentById = new Map((modulesContent.modules || []).map(m => [Number(m.id), m]));
+    const modules = (siteData.modules || []).map(module => ({
+        ...module,
+        content: moduleContentById.get(Number(module.id)) || {}
+    }));
+    const allPool = modules.flatMap(module => {
+        const points = toUniquePoints([
+            ...(module.content.keyPoints || []),
+            ...(module.objectifs || [])
+        ]);
+        return points.map(point => ({
+            moduleId: Number(module.id),
+            text: point
+        }));
+    });
+
+    const categories = [];
+    modules.forEach(module => {
+        const moduleId = Number(module.id);
+        const currentCount = existingCounts[String(moduleId)] || 0;
+        const targetCount = 20;
+        const needed = Math.max(0, targetCount - currentCount);
+        if (needed <= 0) return;
+
+        const modulePoints = toUniquePoints([
+            ...(module.content.keyPoints || []),
+            ...(module.objectifs || [])
+        ]);
+        if (!modulePoints.length) return;
+
+        const questions = [];
+        const selectedPoints = shuffle(modulePoints, rng).slice(0, Math.min(needed, modulePoints.length));
+        selectedPoints.forEach((point, idx) => {
+            const localDistractors = shuffle(modulePoints.filter(item => item !== point), rng).slice(0, 2);
+            const globalDistractors = shuffle(
+                allPool
+                    .filter(item => item.moduleId !== moduleId && item.text !== point)
+                    .map(item => item.text),
+                rng
+            ).filter(item => !localDistractors.includes(item)).slice(0, 3);
+            const wrong = [...localDistractors, ...globalDistractors].slice(0, 3);
+            if (wrong.length < 3) return;
+
+            const choices = shuffle([point, ...wrong], rng);
+            const answerIndex = choices.findIndex(choice => choice === point);
+            const answerIds = ['a', 'b', 'c', 'd', 'e'];
+
+            questions.push({
+                id: `theory_${moduleId}_${idx + 1}`,
+                text: `Module ${module.moduleNumber} (${module.name}) : quel enonce est exact ?`,
+                image: null,
+                answers: choices.map((choice, choiceIdx) => ({
+                    id: answerIds[choiceIdx] || String(choiceIdx),
+                    text: choice,
+                    correct: choiceIdx === answerIndex
+                })),
+                difficulty: 2,
+                explanation: `Point de cours du module ${module.moduleNumber}`,
+                tags: [`module_${moduleId}`, 'theory_coverage']
+            });
+        });
+
+        if (!questions.length) return;
+        categories.push({
+            id: `theory_module_${moduleId}`,
+            name: `Couverture theorie module ${module.moduleNumber}`,
+            description: `Questions de couverture pour le module ${module.moduleNumber}`,
+            module: moduleId,
+            questions
+        });
+    });
+
+    return categories;
+}
+
 function main() {
     const args = parseArgs(process.argv.slice(2));
     const seed = toInt(args.seed, 20260212);
@@ -536,6 +634,8 @@ function main() {
         String.raw`c:\Users\phili\Downloads\pe_qcm_bank.schema.json`
     ]);
     const baseQcmPath = path.join(root, 'src', 'data', 'qcm.json');
+    const modulesContentPath = path.join(root, 'src', 'data', 'modules-content.json');
+    const sitePath = path.join(root, 'src', 'data', 'site.json');
     const bankOutPath = path.join(root, 'src', 'data', 'pe_qcm_bank.generated.json');
     const extractedQcmOutPath = path.join(root, 'src', 'data', 'qcm.pe.extracted.generated.json');
     const mergedQcmOutPath = path.join(root, 'src', 'data', 'qcm.pe.generated.json');
@@ -547,11 +647,26 @@ function main() {
     const normalized = readJson(normalizedPath);
     const schema = readJson(schemaPath);
     const baseQcm = readJson(baseQcmPath);
+    const modulesContent = readJson(modulesContentPath);
+    const siteData = readJson(sitePath);
 
     const bank = buildMcqBankFromNormalized(normalized, { rng, variantsPerFact });
     assertBankSchema(bank, schema);
     const extractedQcm = convertBankToSiteQcm(bank);
-    const mergedQcm = mergeWithBaseQcm(baseQcm, extractedQcm);
+    const mergedBaseQcm = mergeWithBaseQcm(baseQcm, extractedQcm);
+    const existingCounts = countQuestionsByModule(mergedBaseQcm.categories);
+    const theoryCoverageCategories = buildTheoryCoverageCategories(modulesContent, siteData, existingCounts, rng);
+    const mergedQcm = {
+        ...mergedBaseQcm,
+        source: {
+            ...mergedBaseQcm.source,
+            theoryCoverage: 'modules-content.json'
+        },
+        categories: qcmEngine.sanitizeCategories([
+            ...(mergedBaseQcm.categories || []),
+            ...theoryCoverageCategories
+        ])
+    };
     const courseOverride = toCourseOverrideModules(normalized);
 
     writeJson(bankOutPath, bank);
@@ -566,6 +681,7 @@ function main() {
     console.log(`Generated bank: ${bankOutPath} (${bank.question_count} questions)`);
     console.log(`Generated extracted qcm: ${extractedQcmOutPath} (${totalExtracted} questions)`);
     console.log(`Generated merged qcm: ${mergedQcmOutPath} (${totalMerged} questions)`);
+    console.log(`Added theory coverage categories: ${theoryCoverageCategories.length}`);
     console.log(`Generated course override: ${courseOutPath} (${courseOverride.modules.length} modules)`);
 }
 

@@ -21,6 +21,312 @@ function createSeededRng(seed) {
     };
 }
 
+function toArray(value) {
+    return Array.isArray(value) ? value : [];
+}
+
+function uniqueStrings(list) {
+    const seen = new Set();
+    const out = [];
+    toArray(list).forEach(item => {
+        const text = String(item || '').trim();
+        if (!text) return;
+        const key = text.toLowerCase();
+        if (seen.has(key)) return;
+        seen.add(key);
+        out.push(text);
+    });
+    return out;
+}
+
+function stripHtml(text) {
+    return String(text || '')
+        .replace(/<[^>]+>/g, ' ')
+        .replace(/\s+/g, ' ')
+        .trim();
+}
+
+function escapeHtml(text) {
+    return String(text || '')
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#39;');
+}
+
+function buildFallbackCourseHtml(module, objectifs, keyPoints, formulas) {
+    const objectifsHtml = objectifs.map(item => `<li>${escapeHtml(item)}</li>`).join('');
+    const pointsHtml = keyPoints.map(item => `<li>${escapeHtml(item)}</li>`).join('');
+    const formulasHtml = formulas
+        ? `<h5>Formules et reperes</h5><p><code>${escapeHtml(formulas)}</code></p>`
+        : '';
+
+    return [
+        `<p>${escapeHtml(module.description || '')}</p>`,
+        objectifsHtml ? `<h5>Objectifs de progression</h5><ul>${objectifsHtml}</ul>` : '',
+        pointsHtml ? `<h5>Points cle a memoriser</h5><ul>${pointsHtml}</ul>` : '',
+        formulasHtml
+    ].filter(Boolean).join('');
+}
+
+function normalizeSessionLabel(session) {
+    if (session === 'mars') return 'Mars';
+    if (session === 'octobre') return 'Octobre';
+    return 'Annuel';
+}
+
+function sortAnnalesSeries(items) {
+    const rank = { annuel: 0, mars: 1, octobre: 2 };
+    return [...items].sort((a, b) => {
+        if ((b.year || 0) !== (a.year || 0)) return (b.year || 0) - (a.year || 0);
+        return (rank[b.session] || 0) - (rank[a.session] || 0);
+    });
+}
+
+function getAnnalesDomainByModule(moduleId) {
+    if ([5, 6, 7].includes(Number(moduleId))) return 'cartographie';
+    if (Number(moduleId) === 8) return 'maree';
+    return 'qcm';
+}
+
+function cleanAnnalesQuestionText(text) {
+    return String(text || '')
+        .replace(/\s*\|\s*/g, ' ')
+        .replace(/\s+/g, ' ')
+        .replace(/Question\s*\d+$/i, '')
+        .trim();
+}
+
+function pickAnnalesExamples(moduleId, annalesQcm2022) {
+    const questions = toArray(annalesQcm2022?.questions);
+    if (!questions.length) return [];
+
+    const byModulePatterns = {
+        1: [/bou[ée]e/i, /balis/i, /balise/i, /chenal/i, /cardinal/i, /marque/i],
+        2: [/signal/i, /sonore/i, /lumin/i, /canal/i, /\bvhf\b/i],
+        3: [/route/i, /crois/i, /priorit/i, /tribord/i, /b[âa]bord/i, /man[œo]uvr/i],
+        4: [/navire/i, /feux/i, /mouillage/i, /chalutier/i, /echou/i],
+        9: [/\bvhf\b/i, /canal/i, /d[eé]tresse/i],
+        10: [/brassi[eè]re/i, /abri/i, /s[ée]curit/i, /m[eé]t[eé]o/i]
+    };
+    const patterns = byModulePatterns[moduleId] || [];
+
+    const selected = questions
+        .map(item => ({
+            ...item,
+            cleanText: cleanAnnalesQuestionText(item.text)
+        }))
+        .filter(item => patterns.length && patterns.some(pattern => pattern.test(item.cleanText)));
+
+    return selected.slice(0, 3).map(item => {
+        const mediaAssets = toArray(item.mediaAssets);
+        return {
+            question: item.cleanText,
+            questionNumber: item.question,
+            image: mediaAssets[0] || null,
+            hasImage: Boolean(mediaAssets[0])
+        };
+    });
+}
+
+function buildModulesContentMap(modulesContentData) {
+    return new Map(
+        toArray(modulesContentData.modules).map(module => [Number(module.id), module])
+    );
+}
+
+function buildQcmCountByModule(qcmData) {
+    const countByModule = {};
+    toArray(qcmData.categories).forEach(category => {
+        const moduleId = String(category.module);
+        countByModule[moduleId] = (countByModule[moduleId] || 0) + toArray(category.questions).length;
+    });
+    return countByModule;
+}
+
+function buildAnnalesByDomain(annalesManifest) {
+    const grouped = { qcm: [], cartographie: [], maree: [] };
+    toArray(annalesManifest.series).forEach(series => {
+        const domain = series.domain;
+        if (!grouped[domain]) return;
+        const sujet = toArray(series.sujets)[0] || null;
+        grouped[domain].push({
+            year: series.year,
+            session: series.session,
+            sessionLabel: normalizeSessionLabel(series.session),
+            label: `${series.year} - ${normalizeSessionLabel(series.session)}`,
+            hasCorrige: toArray(series.corriges).length > 0,
+            subjectPath: sujet ? sujet.path : '',
+            answerKeyAvailable: Boolean(series.metadata?.hasDocxAnswerKey)
+        });
+    });
+
+    Object.keys(grouped).forEach(key => {
+        grouped[key] = sortAnnalesSeries(grouped[key]);
+    });
+
+    return grouped;
+}
+
+async function collectFilesRecursive(rootDir) {
+    const out = [];
+    if (!(await fs.pathExists(rootDir))) return out;
+
+    async function walk(dir) {
+        const entries = await fs.readdir(dir, { withFileTypes: true });
+        for (const entry of entries) {
+            const fullPath = path.join(dir, entry.name);
+            if (entry.isDirectory()) {
+                await walk(fullPath);
+                continue;
+            }
+            out.push(fullPath);
+        }
+    }
+
+    await walk(rootDir);
+    return out;
+}
+
+function uniqueByPath(items) {
+    const seen = new Set();
+    const out = [];
+    toArray(items).forEach(item => {
+        const key = String(item.path || '');
+        if (!key || seen.has(key)) return;
+        seen.add(key);
+        out.push(item);
+    });
+    return out;
+}
+
+async function buildTheoryResourcesByModule(theoryRoot) {
+    const files = await collectFilesRecursive(theoryRoot);
+    const normalizedFiles = files.map(fullPath => {
+        const rel = path.relative(path.join(__dirname), fullPath).split(path.sep).join('/');
+        const name = path.basename(fullPath);
+        return { fullPath, rel, name };
+    });
+
+    function pick(label, pattern) {
+        return normalizedFiles
+            .filter(file => pattern.test(file.rel))
+            .map(file => ({ label, path: file.rel }));
+    }
+
+    const resources = new Map();
+    resources.set(1, uniqueByPath([
+        ...pick('Cours QCM (slides)', /QCM\/Cours QCM\/Cours QCM\.pdf$/i),
+        ...pick('Fiche balisage', /QCM\/Cours QCM\/Fiche balisage\.(pdf|docx)$/i)
+    ]));
+    resources.set(2, uniqueByPath([
+        ...pick('Cours QCM (slides)', /QCM\/Cours QCM\/Cours QCM\.pdf$/i),
+        ...pick('Fiche signaux sonores et lumineux', /QCM\/Cours QCM\/Fiche signaux sonores et lumineux\.pdf$/i)
+    ]));
+    resources.set(3, uniqueByPath([
+        ...pick('Cours QCM (slides)', /QCM\/Cours QCM\/Cours QCM\.pdf$/i),
+        ...pick('Fiche regles de barre et de route', /QCM\/Cours QCM\/Fiche règle de barre et de route\.(pdf|docx)$/i)
+    ]));
+    resources.set(4, uniqueByPath([
+        ...pick('Cours QCM (slides)', /QCM\/Cours QCM\/Cours QCM\.pdf$/i),
+        ...pick('Fiche feux et marques des navires', /QCM\/Cours QCM\/Fiche feux et marques des navires\.(pdf|docx)$/i)
+    ]));
+    resources.set(5, uniqueByPath([
+        ...pick('Cours cartographie', /CARTO\/Cours\/Cours cartographie\.pdf$/i),
+        ...pick('Fiche cartographie', /CARTO\/Cours\/Fiche cartographie\.pdf$/i),
+        ...pick('Compte rendu cartographie', /Compte rendu de séance\/Compte rendu cours 4 PE\.docx$/i)
+    ]));
+    resources.set(6, uniqueByPath([
+        ...pick('Cours cartographie', /CARTO\/Cours\/Cours cartographie\.pdf$/i),
+        ...pick('Fiche cartographie', /CARTO\/Cours\/Fiche cartographie\.pdf$/i),
+        ...pick('Compte rendu cartographie', /Compte rendu de séance\/Compte rendu cours 4 PE\.docx$/i)
+    ]));
+    resources.set(7, uniqueByPath([
+        ...pick('Cours cartographie', /CARTO\/Cours\/Cours cartographie\.pdf$/i),
+        ...pick('Fiche cartographie', /CARTO\/Cours\/Fiche cartographie\.pdf$/i),
+        ...pick('Cours maree (courants)', /MAREE\/Cours\/Cours calcul de marée\.pdf$/i)
+    ]));
+    resources.set(8, uniqueByPath([
+        ...pick('Cours calcul de maree', /MAREE\/Cours\/Cours calcul de marée\.pdf$/i),
+        ...pick('Methode calcul de maree', /MAREE\/Cours\/Méthode calcul de marée\.pdf$/i),
+        ...pick('Compte rendu maree', /Compte rendu de séance\/Compte rendu cours 3 PE\.docx$/i)
+    ]));
+    resources.set(9, uniqueByPath([
+        ...pick('Cours QCM (slides)', /QCM\/Cours QCM\/Cours QCM\.pdf$/i),
+        ...pick('Compte rendu cours 2', /Compte rendu de séance\/Compte rendu cours 2 PE\.docx$/i)
+    ]));
+    resources.set(10, uniqueByPath([
+        ...pick('Cours QCM (slides)', /QCM\/Cours QCM\/Cours QCM\.pdf$/i),
+        ...pick('Compte rendu cours 2', /Compte rendu de séance\/Compte rendu cours 2 PE\.docx$/i),
+        ...pick('Comment utiliser ce drive', /Compte rendu de séance\/Comment utiliser ce drive\.docx$/i)
+    ]));
+
+    return resources;
+}
+
+function enrichModulesForLearning({
+    siteModules,
+    overridesById,
+    modulesContentMap,
+    qcmCountByModule,
+    annalesByDomain,
+    annalesQcm2022,
+    theoryResourcesByModule
+}) {
+    return toArray(siteModules).map(module => {
+        const moduleId = Number(module.id);
+        const override = overridesById.get(moduleId) || {};
+        const moduleContent = modulesContentMap.get(moduleId) || {};
+        const objectifs = uniqueStrings([
+            ...toArray(override.objectifs),
+            ...toArray(module.objectifs)
+        ]);
+        const keyPoints = uniqueStrings([
+            ...toArray(override.keyPoints),
+            ...toArray(moduleContent.keyPoints),
+            ...toArray(module.objectifs)
+        ]);
+        const formulas = moduleContent.formulas || '';
+        const courseContentHtml = override.content && String(override.content).trim().length > 40
+            ? String(override.content)
+            : buildFallbackCourseHtml(module, objectifs, keyPoints, formulas);
+        const domain = getAnnalesDomainByModule(moduleId);
+        const annalesSeries = toArray(annalesByDomain[domain]).slice(0, 8);
+        const annalesExamples = pickAnnalesExamples(moduleId, annalesQcm2022);
+        const resources = toArray(theoryResourcesByModule.get(moduleId)).slice(0, 8);
+        const synopsisSource = stripHtml(courseContentHtml) || module.description || '';
+        const synopsis = synopsisSource.length > 200
+            ? `${synopsisSource.slice(0, 200).trim()}...`
+            : synopsisSource;
+        const checklist = uniqueStrings([...objectifs, ...keyPoints]).slice(0, 10);
+
+        return {
+            ...module,
+            ...override,
+            objectifs,
+            keyPoints,
+            quickKeyPoints: keyPoints.slice(0, 4),
+            checklist,
+            formulas,
+            synopsis,
+            courseContentHtml,
+            coursePage: `module-${moduleId}.html`,
+            qcmQuestionCount: qcmCountByModule[String(moduleId)] || 0,
+            annalesDomain: domain,
+            annalesDomainLabel: domain === 'qcm' ? 'QCM' : (domain === 'maree' ? 'Maree' : 'Cartographie'),
+            annalesCount: annalesSeries.length,
+            annalesSeries,
+            annalesExamples,
+            resources,
+            resourcesCount: resources.length,
+            hasResources: resources.length > 0,
+            hasAnnalesExamples: annalesExamples.length > 0,
+            hasFormulas: Boolean(formulas)
+        };
+    });
+}
+
 // ========== TRANSFORMATION DES DONNÉES ==========
 
 /**
@@ -118,6 +424,19 @@ async function build() {
         const courseGeneratedData = await loadJSON(path.join(dataDir, 'course.generated.json'), {
             modules: []
         });
+        const modulesContentData = await loadJSON(path.join(dataDir, 'modules-content.json'), {
+            modules: []
+        });
+        const annalesManifestData = await loadJSON(path.join(dataDir, 'annales.manifest.json'), {
+            series: []
+        });
+        const annalesQcm2022Data = await loadJSON(
+            path.join(__dirname, 'imports', 'drive', 'annales', 'annales.qcm.2022.raw.json'),
+            { questions: [] }
+        );
+        const theoryResourcesByModule = await buildTheoryResourcesByModule(
+            path.join(__dirname, 'imports', 'drive', 'theorie', 'Théorie')
+        );
 
         const qcmPeGeneratedPath = path.join(dataDir, 'qcm.pe.generated.json');
         const qcmMergedPath = path.join(dataDir, 'qcm.drive.merged.json');
@@ -140,16 +459,6 @@ async function build() {
             trainingSessions: []
         });
 
-        // Enrichissement optionnel du contenu de cours (sans toucher au fichier source site.json)
-        const overridesById = new Map((courseGeneratedData.modules || []).map(module => [module.id, module]));
-        const enrichedSiteData = {
-            ...siteData,
-            modules: (siteData.modules || []).map(module => ({
-                ...module,
-                ...(overridesById.get(module.id) || {})
-            }))
-        };
-
         // ========== TRANSFORMATION DES DONNÉES ==========
         console.log("🔄 Transformation des données...");
 
@@ -161,6 +470,23 @@ async function build() {
         if (qcmErrors.length) {
             throw new Error(`QCM invalide: ${qcmErrors[0]}`);
         }
+        const qcmCountByModule = buildQcmCountByModule(enrichedQCMData);
+        const overridesById = new Map(toArray(courseGeneratedData.modules).map(module => [Number(module.id), module]));
+        const modulesContentMap = buildModulesContentMap(modulesContentData);
+        const annalesByDomain = buildAnnalesByDomain(annalesManifestData);
+        const enrichedModules = enrichModulesForLearning({
+            siteModules: siteData.modules,
+            overridesById,
+            modulesContentMap,
+            qcmCountByModule,
+            annalesByDomain,
+            annalesQcm2022: annalesQcm2022Data,
+            theoryResourcesByModule
+        });
+        const enrichedSiteData = {
+            ...siteData,
+            modules: enrichedModules
+        };
 
         // Préparer les données d'entraînement
         const trainingData = prepareTrainingData(enrichedQCMData, trainingSessionsData);
@@ -186,6 +512,7 @@ async function build() {
         const entrainementTemplate = await fs.readFile(path.join(templateDir, 'entrainement.mustache'), 'utf8');
         const examensTemplate = await fs.readFile(path.join(templateDir, 'examens.mustache'), 'utf8');
         const carnetTemplate = await fs.readFile(path.join(templateDir, 'carnet.mustache'), 'utf8');
+        const moduleTemplate = await fs.readFile(path.join(templateDir, 'module.mustache'), 'utf8');
         const sessionTemplate = await fs.readFile(path.join(templateDir, 'session.mustache'), 'utf8');
         const navigationTemplate = await fs.readFile(path.join(templateDir, 'navigation.mustache'), 'utf8');
 
@@ -196,12 +523,13 @@ async function build() {
         async function generatePage(filename, template, data) {
             const content = mustache.render(template, data);
             const page = filename.replace('.html', '');
+            const isModulePage = page.startsWith('module-');
             const html = mustache.render(layoutTemplate, {
                 content,
                 title: data.title || 'PE',
                 page, // Pour styliser la page active
                 isIndex: page === 'index',
-                isParcours: page === 'parcours',
+                isParcours: page === 'parcours' || isModulePage,
                 isEntrainement: page === 'entrainement',
                 isExamens: page === 'examens',
                 isCarnet: page === 'carnet'
@@ -218,7 +546,7 @@ async function build() {
             ...enrichedSiteData,
             title: "Dashboard",
             globalProgress: 0,
-            modules: enrichedSiteData.modules.slice(0, 3),
+            modules: enrichedSiteData.modules.slice(0, 6),
             ...trainingData.statistics
         };
         await generatePage('index.html', dashboardTemplate, dashboardData);
@@ -233,6 +561,15 @@ async function build() {
             }))
         };
         await generatePage('parcours.html', parcoursTemplate, parcoursData);
+
+        // Pages cours par module
+        for (const module of enrichedSiteData.modules) {
+            const modulePageData = {
+                ...module,
+                title: `Module ${module.moduleNumber} - ${module.name}`
+            };
+            await generatePage(`module-${module.id}.html`, moduleTemplate, modulePageData);
+        }
 
         // ========== PAGE ENTRAÎNEMENT (MODIFIÉE) ==========
         const entrainementData = {
@@ -255,19 +592,19 @@ async function build() {
             qcmQuestionCount: totalQcmCount,
             examHistory: [],
             ...configData,
-            categories: enrichedQCMData.categories // ✅ Ajouter les catégories
+            categories: enrichedQCMData.categories,
+            annalesQcmSessions: toArray(annalesByDomain.qcm).slice(0, 10)
         };
         await generatePage('examens.html', examensTemplate, examensData);
 
         // Carnet
         const carnetData = {
             title: "Carnet",
-            modules: enrichedSiteData.modules.map(m => ({
-                ...m,
-                isCompleted: false,
-                keyPoints: ['Point 1', 'Point 2']
+            modules: enrichedSiteData.modules.map(module => ({
+                ...module,
+                isCompleted: true
             })),
-            completedModulesCount: 0,
+            completedModulesCount: enrichedSiteData.modules.length,
             totalModulesCount: enrichedSiteData.modules.length
         };
         await generatePage('carnet.html', carnetTemplate, carnetData);
