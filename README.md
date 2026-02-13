@@ -19,6 +19,10 @@ Site d'entraînement à l'examen du PE pour les scouts du groupe NDC.
   - `src/data/qcm.pe.generated.json` (fusion avec base)
   - `src/data/course.generated.json`
 - `npm run import:attendus` fusionne `imports/drive/attendus-pe.json` vers `src/data/qcm.drive.merged.json`.
+- `npm run generate:annales` indexe `imports/drive/annales` (QCM/carto/maree), extrait les cles de reponses QCM quand disponibles en DOCX, parse le QCM 2022 `.ppsx` et produit:
+  - `src/data/annales.manifest.json`
+  - `imports/drive/annales/annales.qcm.2022.raw.json`
+  - `src/assets/annales/qcm/2022/*` (visuels)
 
 ## Structure actuelle (5 pages)
 - `docs/index.html`

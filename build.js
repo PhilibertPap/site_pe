@@ -104,6 +104,7 @@ async function build() {
         const templateDir = path.join(srcDir, 'templates');
         const cssDir = path.join(srcDir, 'css');
         const jsDir = path.join(srcDir, 'js');
+        const assetsDir = path.join(srcDir, 'assets');
         const outputDir = path.join(__dirname, 'docs');
 
         // ========== CHARGEMENT DES DONNÉES ==========
@@ -288,6 +289,9 @@ async function build() {
 
         await fs.copy(cssDir, path.join(outputDir, 'css'));
         await fs.copy(jsDir, path.join(outputDir, 'js'));
+        if (await fs.pathExists(assetsDir)) {
+            await fs.copy(assetsDir, path.join(outputDir, 'assets'));
+        }
 
         // Copier les données pour un accès dynamique côté client
         await fs.ensureDir(path.join(outputDir, 'data'));

@@ -47,3 +47,14 @@ Ce pipeline valide les champs contre `pe_qcm_bank.schema.json` puis genere:
 - `src/data/qcm.pe.extracted.generated.json`
 - `src/data/qcm.pe.generated.json`
 - `src/data/course.generated.json`
+
+## Annales (sujets/corriges)
+- Deposer les annales extraites dans `imports/drive/annales/` avec les sous-dossiers:
+  - `Annales QCM`
+  - `Annales cartographie`
+  - `Annales marée`
+- Lancer `npm run generate:annales` pour:
+  - indexer les sessions (annee + session),
+  - extraire les cles de reponses QCM presentes en DOCX,
+  - parser l'annale QCM 2022 au format `.ppsx` (questions + medias),
+  - copier les medias dans `src/assets/annales/qcm/2022`.

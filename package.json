@@ -11,7 +11,8 @@
     "generate:qcm:large": "node scripts/generate-large-qcm.js --variants=150 --objectiveVariants=3 --seed=20260212",
     "import:attendus": "node scripts/import-attendus-json.js",
     "generate:pe:data": "node scripts/generate-pe-datasets.js --perFact=8 --seed=20260212",
-    "generate:pe:extracted": "node scripts/generate-from-extracted-json.js --variants=5 --seed=20260212"
+    "generate:pe:extracted": "node scripts/generate-from-extracted-json.js --variants=5 --seed=20260212",
+    "generate:annales": "pwsh -File scripts/generate-annales-manifest.ps1"
   },
   "keywords": ["pe", "patron", "embarcation", "scout", "navigation"],
   "author": "Philibert Pap",
