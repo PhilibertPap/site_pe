@@ -15,6 +15,13 @@
 - `pe_qcm_bank.generated.json`: banque QCM intermediaire validee contre schema, generee via `npm run generate:pe:extracted`.
 - `qcm.pe.extracted.generated.json`: categories site derivees de la banque extraite, genere via `npm run generate:pe:extracted`.
 
+## Mode "en travaux"
+- Si `app-config.json` contient `content.placeholderOnly = true`, le build:
+  - publie uniquement des donnees locales whitelistees,
+  - ignore les datasets generes externes/web,
+  - genere des pages de cours/QCM/exercices en mode placeholder.
+- Dans ce mode, `qcm.json` peut etre vide (`categories: []`) avec `metadata.contentStatus = "work-in-progress"`.
+
 ## Convention QCM
 - Source de verite: `qcm.json`.
 - Chaque categorie contient `questions[]`.

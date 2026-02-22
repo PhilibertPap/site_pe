@@ -70,7 +70,7 @@ async function startSessionFromQuery() {
         const instantFeedback = parseFeedback(params, true);
         const questions = pickQuestionsFromPool(sitePE, { moduleId, count });
         if (!questions.length) {
-            setSessionHeader('Erreur', 'Aucune question disponible pour ce mode.');
+            setSessionHeader('Contenu en travaux', 'Le QCM de ce mode est en cours de redaction/validation.');
             return;
         }
         const moduleLabel = moduleId ? `module ${moduleId}` : 'tous modules';
@@ -93,7 +93,7 @@ async function startSessionFromQuery() {
         }
         const questions = pickQuestionsFromPool(sitePE, { moduleId: randomModule, count });
         if (!questions.length) {
-            setSessionHeader('Erreur', 'Aucune question disponible pour ce module.');
+            setSessionHeader('Contenu en travaux', 'Le QCM de ce module aleatoire est en cours de redaction/validation.');
             return;
         }
         setSessionHeader(
@@ -114,7 +114,7 @@ async function startSessionFromQuery() {
         }
         const questions = pickQuestionsFromPool(sitePE, { moduleId, count });
         if (!questions.length) {
-            setSessionHeader('Erreur', 'Aucune question disponible pour ce module.');
+            setSessionHeader('Contenu en travaux', 'Le mode examen de ce module est indisponible tant que le QCM n est pas redige.');
             return;
         }
         setSessionHeader(
@@ -131,7 +131,7 @@ async function startSessionFromQuery() {
 
     const series = await loadExamSeries();
     if (!series.length) {
-        setSessionHeader('Erreur', 'Aucune serie d examen disponible.');
+        setSessionHeader('Contenu en travaux', 'Les series d examen sont en travaux tant que la banque QCM n est pas finalisee.');
         return;
     }
 
@@ -140,7 +140,11 @@ async function startSessionFromQuery() {
             ? series.find(item => item.id === seriesId)
             : series[Math.floor(Math.random() * series.length)];
         if (!selected) {
-            setSessionHeader('Erreur', `Serie ${seriesId} introuvable.`);
+            setSessionHeader('Contenu en travaux', `Serie ${seriesId} introuvable ou en travaux.`);
+            return;
+        }
+        if (!Array.isArray(selected.questions) || !selected.questions.length) {
+            setSessionHeader('Contenu en travaux', 'Cette serie fixe est definie mais sans questions pour le moment.');
             return;
         }
         setSessionHeader(
@@ -158,6 +162,10 @@ async function startSessionFromQuery() {
 
     if (mode === 'full') {
         const selected = series[Math.floor(Math.random() * series.length)];
+        if (!selected || !Array.isArray(selected.questions) || !selected.questions.length) {
+            setSessionHeader('Contenu en travaux', 'Le mode examen complet est en travaux (QCM non publie).');
+            return;
+        }
         setSessionHeader(
             `Examen complet (${selected.name})`,
             `<strong>Mode:</strong> examen complet • <strong>Questions:</strong> ${selected.questions.length} • <strong>Temps:</strong> 30 minutes • Correction finale`

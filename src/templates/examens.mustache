@@ -15,6 +15,12 @@
     <strong>Format réel :</strong> 30 questions QCM + 1 problème de navigation/marée.
 </div>
 
+{{^hasQcmQuestions}}
+<div class="alert alert-warning reveal reveal-delay-1" role="alert">
+    <strong>Mode examen QCM en travaux :</strong> la structure est conservée, mais les séries QCM ne sont pas encore publiées.
+</div>
+{{/hasQcmQuestions}}
+
 <div class="row g-4 reveal reveal-delay-1">
     <section class="col-lg-8 reveal reveal-delay-2">
         <article class="card mb-4 reveal reveal-delay-2">
@@ -27,7 +33,12 @@
                     <li>Partie 1 : QCM 30 questions (5 fautes admises)</li>
                     <li>Partie 2 : problème navigation + marée</li>
                 </ul>
+                {{#hasQcmQuestions}}
                 <button class="btn btn-primary btn-lg" id="start-full-exam-btn">Démarrer l'examen complet</button>
+                {{/hasQcmQuestions}}
+                {{^hasQcmQuestions}}
+                <button class="btn btn-primary btn-lg" disabled>Examen complet (en travaux)</button>
+                {{/hasQcmQuestions}}
             </div>
         </article>
 
@@ -48,7 +59,12 @@
                         </select>
                     </div>
                     <div class="col-md-4 d-grid">
+                        {{#hasQcmQuestions}}
                         <button class="btn btn-success" id="start-module-exam-btn">Démarrer</button>
+                        {{/hasQcmQuestions}}
+                        {{^hasQcmQuestions}}
+                        <button class="btn btn-success" disabled>En travaux</button>
+                        {{/hasQcmQuestions}}
                     </div>
                 </div>
             </div>

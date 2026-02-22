@@ -3,13 +3,14 @@ let examSeries = [];
 function renderFixedSeriesList() {
     const list = document.getElementById('fixed-series-list');
     if (!list) return;
+    const usableSeries = examSeries.filter(series => Array.isArray(series.questions) && series.questions.length > 0);
 
-    if (!examSeries.length) {
-        list.innerHTML = '<p class="text-muted mb-0">Aucune serie disponible.</p>';
+    if (!usableSeries.length) {
+        list.innerHTML = '<p class="text-muted mb-0">Séries fixes en travaux (aucune série publiée pour le moment).</p>';
         return;
     }
 
-    list.innerHTML = examSeries.map(series => `
+    list.innerHTML = usableSeries.map(series => `
         <div class="col-md-6">
             <a class="btn btn-outline-secondary w-100" href="session.html?mode=fixed&seriesId=${series.id}">
                 ${series.name} (${series.questions?.length || 0} questions)

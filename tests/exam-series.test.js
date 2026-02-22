@@ -21,7 +21,9 @@ function createSeededRng(seed) {
 const root = path.join(__dirname, '..');
 const generatedPath = path.join(root, 'src', 'data', 'qcm.pe.generated.json');
 const fallbackPath = path.join(root, 'src', 'data', 'qcm.json');
-const qcmPath = fs.existsSync(generatedPath) ? generatedPath : fallbackPath;
+const fallbackQcm = readJson(fallbackPath);
+const placeholderOnly = fallbackQcm?.metadata?.contentStatus === 'work-in-progress';
+const qcmPath = (!placeholderOnly && fs.existsSync(generatedPath)) ? generatedPath : fallbackPath;
 const qcmData = readJson(qcmPath);
 const pool = qcmEngine.buildQuestionPool(qcmData);
 const requestedCount = 30;

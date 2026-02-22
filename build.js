@@ -476,6 +476,62 @@ function buildQcmCountByModule(qcmData) {
     return countByModule;
 }
 
+function buildWorkInProgressModule(module, moduleId) {
+    const courseContentHtml = [
+        '<div class="alert alert-warning" role="alert">',
+        '<strong>Contenu en travaux.</strong> ',
+        "Le cours de ce module n'a pas encore ete redige et valide dans cette version du site.",
+        '</div>',
+        '<p class="mb-0 text-muted">',
+        'Les contenus de cours, QCM et exercices seront ajoutes progressivement et uniquement a partir de contenus autorises.',
+        '</p>'
+    ].join('');
+    const courseSections = [{
+        id: 'travaux-1',
+        title: 'Contenu en travaux',
+        html: courseContentHtml
+    }];
+    const checklist = ['Verifier plus tard: cours + QCM + exercices de ce module'];
+    const checklistEntries = checklist.map((text, index) => ({
+        moduleId,
+        index: String(index),
+        text
+    }));
+
+    return {
+        ...module,
+        objectifs: [],
+        keyPoints: [],
+        quickKeyPoints: ['Contenu en travaux'],
+        checklist,
+        checklistEntries,
+        formulas: '',
+        formulaRepereItems: [],
+        synopsis: 'Contenu pedagogique en travaux pour ce module.',
+        courseContentHtml,
+        courseSections,
+        coursePage: `module-${moduleId}.html`,
+        qcmQuestionCount: 0,
+        annalesDomain: getAnnalesDomainByModule(moduleId),
+        annalesDomainLabel: getAnnalesDomainByModule(moduleId) === 'qcm'
+            ? 'QCM'
+            : (getAnnalesDomainByModule(moduleId) === 'maree' ? 'Maree' : 'Cartographie'),
+        annalesCount: 0,
+        annalesSeries: [],
+        annalesExamples: [],
+        courseIllustrations: [],
+        resources: [],
+        resourcesCount: 0,
+        hasResources: false,
+        hasAnnalesExamples: false,
+        hasFormulas: false,
+        hasCourseSections: true,
+        hasCourseIllustrations: false,
+        hasQcmQuestions: false,
+        isWorkInProgress: true
+    };
+}
+
 function buildAnnalesByDomain(annalesManifest) {
     const grouped = { qcm: [], cartographie: [], maree: [] };
     toArray(annalesManifest.series).forEach(series => {
@@ -614,10 +670,14 @@ function enrichModulesForLearning({
     qcmCountByModule,
     annalesByDomain,
     annalesQcm2022,
-    theoryResourcesByModule
+    theoryResourcesByModule,
+    placeholderOnly = false
 }) {
     return toArray(siteModules).map(module => {
         const moduleId = Number(module.id);
+        if (placeholderOnly) {
+            return buildWorkInProgressModule(module, moduleId);
+        }
         const override = overridesById.get(moduleId) || {};
         const moduleContent = resolveModuleContentForSiteModule(moduleId, modulesContentMap);
         const objectifs = uniqueStrings([
@@ -683,7 +743,9 @@ function enrichModulesForLearning({
             hasAnnalesExamples: annalesExamples.length > 0,
             hasFormulas: formulaRepereItems.length > 0,
             hasCourseSections: courseSections.length > 0,
-            hasCourseIllustrations: courseIllustrations.length > 0
+            hasCourseIllustrations: courseIllustrations.length > 0,
+            hasQcmQuestions: (qcmCountByModule[String(moduleId)] || 0) > 0,
+            isWorkInProgress: false
         };
     });
 }
@@ -782,33 +844,42 @@ async function build() {
             modules: [],
             etapes: []
         });
-        const courseGeneratedData = await loadJSON(path.join(dataDir, 'course.generated.json'), {
-            modules: []
-        });
-        const modulesContentData = await loadJSON(path.join(dataDir, 'modules-content.json'), {
-            modules: []
-        });
-        const annalesManifestData = await loadJSON(path.join(dataDir, 'annales.manifest.json'), {
-            series: []
-        });
-        const annalesQcm2022Data = await loadJSON(
-            path.join(__dirname, 'imports', 'drive', 'annales', 'annales.qcm.2022.raw.json'),
-            { questions: [] }
-        );
-        const theoryResourcesByModule = await buildTheoryResourcesByModule(
-            path.join(__dirname, 'imports', 'drive', 'theorie', 'Théorie')
-        );
+        const configData = await loadJSON(path.join(dataDir, 'app-config.json'), {});
+        const placeholderOnly = Boolean(configData?.content?.placeholderOnly);
+
+        const courseGeneratedData = placeholderOnly
+            ? { modules: [] }
+            : await loadJSON(path.join(dataDir, 'course.generated.json'), { modules: [] });
+        const modulesContentData = placeholderOnly
+            ? { modules: [] }
+            : await loadJSON(path.join(dataDir, 'modules-content.json'), { modules: [] });
+        const annalesManifestData = placeholderOnly
+            ? { series: [] }
+            : await loadJSON(path.join(dataDir, 'annales.manifest.json'), { series: [] });
+        const annalesQcm2022Data = placeholderOnly
+            ? { questions: [] }
+            : await loadJSON(
+                path.join(__dirname, 'imports', 'drive', 'annales', 'annales.qcm.2022.raw.json'),
+                { questions: [] }
+            );
+        const theoryResourcesByModule = placeholderOnly
+            ? new Map()
+            : await buildTheoryResourcesByModule(
+                path.join(__dirname, 'imports', 'drive', 'theorie', 'Théorie')
+            );
 
         const qcmWebCuratedPath = path.join(dataDir, 'qcm.web.curated.json');
         const qcmPeGeneratedPath = path.join(dataDir, 'qcm.pe.generated.json');
         const qcmMergedPath = path.join(dataDir, 'qcm.drive.merged.json');
         const qcmLargePath = path.join(dataDir, 'qcm.large.generated.json');
         let qcmSourcePath = path.join(dataDir, 'qcm.json');
-        if (await fs.pathExists(qcmMergedPath)) qcmSourcePath = qcmMergedPath;
-        else if (await fs.pathExists(qcmWebCuratedPath)) qcmSourcePath = qcmWebCuratedPath;
-        else if (await fs.pathExists(path.join(dataDir, 'qcm.json'))) qcmSourcePath = path.join(dataDir, 'qcm.json');
-        else if (await fs.pathExists(qcmPeGeneratedPath)) qcmSourcePath = qcmPeGeneratedPath;
-        else if (await fs.pathExists(qcmLargePath)) qcmSourcePath = qcmLargePath;
+        if (!placeholderOnly) {
+            if (await fs.pathExists(qcmMergedPath)) qcmSourcePath = qcmMergedPath;
+            else if (await fs.pathExists(qcmWebCuratedPath)) qcmSourcePath = qcmWebCuratedPath;
+            else if (await fs.pathExists(path.join(dataDir, 'qcm.json'))) qcmSourcePath = path.join(dataDir, 'qcm.json');
+            else if (await fs.pathExists(qcmPeGeneratedPath)) qcmSourcePath = qcmPeGeneratedPath;
+            else if (await fs.pathExists(qcmLargePath)) qcmSourcePath = qcmLargePath;
+        }
         const qcmData = await loadJSON(qcmSourcePath, {
             categories: [],
             totalQuestions: 0
@@ -818,7 +889,6 @@ async function build() {
             flashcards: []
         });
 
-        const configData = await loadJSON(path.join(dataDir, 'app-config.json'), {});
         const trainingSessionsData = await loadJSON(path.join(dataDir, 'training-sessions.json'), {
             trainingSessions: []
         });
@@ -845,7 +915,8 @@ async function build() {
             qcmCountByModule,
             annalesByDomain,
             annalesQcm2022: annalesQcm2022Data,
-            theoryResourcesByModule
+            theoryResourcesByModule,
+            placeholderOnly
         });
         const enrichedSiteData = {
             ...siteData,
@@ -857,9 +928,10 @@ async function build() {
         const totalQcmCount = trainingData.statistics.totalQCM;
         const examSeriesData = {
             generatedAt: new Date().toISOString(),
-            algorithm: 'balanced_under_constraints_v1',
+            algorithm: placeholderOnly ? 'balanced_under_constraints_v1_placeholder' : 'balanced_under_constraints_v1',
             seed: 20260212,
             totalQuestionsInPool: qcmPool.length,
+            placeholderOnly,
             series: qcmEngine.generateExamSeries(qcmPool, {
                 count: 30,
                 seriesCount: 6,
@@ -899,9 +971,10 @@ async function build() {
             const page = filename.replace('.html', '');
             const isModulePage = page.startsWith('module-');
             const html = mustache.render(layoutTemplate, {
-                content,
-                title: data.title || 'PE',
-                page, // Pour styliser la page active
+            content,
+            title: data.title || 'PE',
+            isWorkInProgress: Boolean(data.isWorkInProgress),
+            page, // Pour styliser la page active
                 isIndex: page === 'index',
                 isParcours: page === 'parcours' || isModulePage,
                 isEntrainement: page === 'entrainement',
@@ -921,6 +994,8 @@ async function build() {
             title: "Dashboard",
             globalProgress: 0,
             modules: enrichedSiteData.modules.slice(0, 6),
+            isWorkInProgress: placeholderOnly,
+            contentStatusWorkInProgress: placeholderOnly,
             ...trainingData.statistics
         };
         await generatePage('index.html', dashboardTemplate, dashboardData);
@@ -929,6 +1004,7 @@ async function build() {
         const parcoursData = {
             ...enrichedSiteData,
             title: "Parcours",
+            isWorkInProgress: placeholderOnly,
             etapes: enrichedSiteData.etapes.map(e => ({
                 ...e,
                 modules: enrichedSiteData.modules.filter(m => e.modules.includes(m.id))
@@ -949,6 +1025,8 @@ async function build() {
         const entrainementData = {
             title: "Entraînement",
             modules: enrichedSiteData.modules,
+            isWorkInProgress: placeholderOnly,
+            hasQcmQuestions: totalQcmCount > 0,
             ...trainingData,           // ✅ Données d'entraînement
             ...exercisesData,
             // Ajouter les données QCM pour les templates
@@ -964,6 +1042,8 @@ async function build() {
             title: "Examens",
             modules: enrichedSiteData.modules,
             qcmQuestionCount: totalQcmCount,
+            hasQcmQuestions: totalQcmCount > 0,
+            isWorkInProgress: placeholderOnly,
             examHistory: [],
             ...configData,
             categories: enrichedQCMData.categories,
@@ -974,6 +1054,7 @@ async function build() {
         // Carnet
         const carnetData = {
             title: "Carnet",
+            isWorkInProgress: placeholderOnly,
             modules: enrichedSiteData.modules.map(module => ({
                 ...module,
                 isCompleted: true
@@ -985,13 +1066,15 @@ async function build() {
 
         // Session QCM (page cible des redirections)
         const sessionData = {
-            title: "Session"
+            title: "Session",
+            isWorkInProgress: placeholderOnly
         };
         await generatePage('session.html', sessionTemplate, sessionData);
 
         // Navigation problem (page dédiée)
         const navigationData = {
-            title: "Navigation"
+            title: "Navigation",
+            isWorkInProgress: placeholderOnly
         };
         await generatePage('navigation.html', navigationTemplate, navigationData);
 
@@ -1000,16 +1083,29 @@ async function build() {
 
         await fs.copy(cssDir, path.join(outputDir, 'css'));
         await fs.copy(jsDir, path.join(outputDir, 'js'));
-        if (await fs.pathExists(assetsDir)) {
+        if (!placeholderOnly && await fs.pathExists(assetsDir)) {
             await fs.copy(assetsDir, path.join(outputDir, 'assets'));
         }
-        if (await fs.pathExists(annalesSourceDir)) {
+        if (!placeholderOnly && await fs.pathExists(annalesSourceDir)) {
             await fs.copy(annalesSourceDir, path.join(outputDir, 'annales'));
         }
 
         // Copier les données pour un accès dynamique côté client
         await fs.ensureDir(path.join(outputDir, 'data'));
-        await fs.copy(dataDir, path.join(outputDir, 'data'));
+        const publishedDataFiles = [
+            'site.json',
+            'qcm.json',
+            'exercises.json',
+            'navigation-problems.json',
+            'app-config.json',
+            'training-sessions.json'
+        ];
+        for (const filename of publishedDataFiles) {
+            const srcFile = path.join(dataDir, filename);
+            if (await fs.pathExists(srcFile)) {
+                await fs.copy(srcFile, path.join(outputDir, 'data', filename));
+            }
+        }
         await fs.writeJson(path.join(outputDir, 'data', 'exam-series.json'), examSeriesData, { spaces: 2 });
 
         console.log("✅ Build terminé avec succès!");

@@ -11,6 +11,13 @@
   </div>
 </section>
 
+{{^hasQcmQuestions}}
+<section class="alert alert-warning mb-5 reveal reveal-delay-1" role="alert">
+  <h2 class="h5 alert-heading mb-2">QCM en travaux</h2>
+  <p class="mb-0">Les modes d'entraînement sont conservés pour la structure, mais la banque de questions n'est pas encore republiée.</p>
+</section>
+{{/hasQcmQuestions}}
+
 <section class="mb-5 reveal reveal-delay-1">
   <h2 class="section-title h4 section-head"><span class="icon-badge">ST</span>Statistiques</h2>
   <div class="row g-3">
@@ -67,7 +74,7 @@
   <div class="card">
     <div class="card-body">
       <h2 class="h5 mb-2">Paramètres rapides</h2>
-      <p class="text-muted mb-3">Choisis un module si nécessaire, puis lance ton entraînement.</p>
+      <p class="text-muted mb-3">Choisis un module si nécessaire, puis lance ton entraînement. Si le contenu est en travaux, la session affichera un message de disponibilité.</p>
       <div class="row g-2 align-items-end">
         <div class="col-md-8">
           <label class="form-label" for="training-module-select">Module ciblé</label>

@@ -13,6 +13,7 @@ const site = readJson(path.join(dataDir, 'site.json'));
 const qcm = readJson(path.join(dataDir, 'qcm.json'));
 const exercises = readJson(path.join(dataDir, 'exercises.json'));
 const sessions = readJson(path.join(dataDir, 'training-sessions.json'));
+const isPlaceholderQcm = qcm?.metadata?.contentStatus === 'work-in-progress';
 
 test('site modules and steps are coherent', () => {
     const moduleIds = new Set(site.modules.map(module => module.id));
@@ -25,6 +26,10 @@ test('site modules and steps are coherent', () => {
 
 test('qcm categories point to known modules', () => {
     const moduleIds = new Set(site.modules.map(module => String(module.id)));
+    if (isPlaceholderQcm && (!Array.isArray(qcm.categories) || qcm.categories.length === 0)) {
+        assert.ok(true);
+        return;
+    }
     qcm.categories.forEach(category => {
         assert.ok(moduleIds.has(String(category.module)), `Unknown module for category ${category.id}`);
         assert.ok(Array.isArray(category.questions), `Category ${category.id} must have questions[]`);
@@ -33,6 +38,10 @@ test('qcm categories point to known modules', () => {
 });
 
 test('each qcm question has at least two answers and exactly one correct', () => {
+    if (isPlaceholderQcm && (!Array.isArray(qcm.categories) || qcm.categories.length === 0)) {
+        assert.ok(true);
+        return;
+    }
     qcm.categories.forEach(category => {
         category.questions.forEach(question => {
             assert.ok(Array.isArray(question.answers), `Question ${question.id} must have answers[]`);

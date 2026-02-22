@@ -35,6 +35,11 @@
         "bootstrapVersion": "5.3.2",
         "language": "fr"
     },
+    "content": {
+        "placeholderOnly": true,
+        "status": "work-in-progress",
+        "policy": "local-only-authorized-content"
+    },
     "features": {
         "flashcards": true,
         "miniGames": true,

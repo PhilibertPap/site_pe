@@ -11,6 +11,13 @@
     </div>
 </section>
 
+{{#isWorkInProgress}}
+<section class="alert alert-warning reveal reveal-delay-1" role="alert">
+    <h2 class="h5 alert-heading mb-2">Module en travaux</h2>
+    <p class="mb-0">Cours, QCM et exercices de ce module sont en cours de redaction et de validation.</p>
+</section>
+{{/isWorkInProgress}}
+
 <div class="row g-4">
     <section class="col-lg-8 reveal reveal-delay-1">
         <article class="card h-100">
@@ -76,8 +83,14 @@
                 <p class="mb-2"><strong>Questions disponibles:</strong> {{qcmQuestionCount}}</p>
                 <p class="mb-3"><strong>Annales {{annalesDomainLabel}}:</strong> {{annalesCount}}</p>
                 <div class="d-grid gap-2">
+                    {{#hasQcmQuestions}}
                     <a href="session.html?mode=quick&module={{id}}" class="btn btn-primary">Lancer un QCM cible</a>
                     <a href="session.html?mode=exam-module&module={{id}}" class="btn btn-outline-primary">Lancer l'examen module</a>
+                    {{/hasQcmQuestions}}
+                    {{^hasQcmQuestions}}
+                    <button class="btn btn-primary" type="button" disabled>QCM cible (en travaux)</button>
+                    <button class="btn btn-outline-primary" type="button" disabled>Examen module (en travaux)</button>
+                    {{/hasQcmQuestions}}
                 </div>
             </div>
         </article>
@@ -149,6 +162,9 @@
                             {{/downloads}}
                         </div>
                     </li>
+                    {{/annalesSeries}}
+                    {{^annalesSeries}}
+                    <li class="list-group-item px-0 text-muted">Aucune session publiée pour ce module pour le moment.</li>
                     {{/annalesSeries}}
                 </ul>
             </div>

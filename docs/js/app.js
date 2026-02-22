@@ -46,11 +46,7 @@ class SitePE {
             const [site, qcm, exercises, problems] = await Promise.all([
                 fetch('data/site.json').then(r => r.json()),
                 fetchFirstJson([
-                    'data/qcm.drive.merged.json',
-                    'data/qcm.web.curated.json',
-                    'data/qcm.json',
-                    'data/qcm.pe.generated.json',
-                    'data/qcm.large.generated.json'
+                    'data/qcm.json'
                 ]),
                 fetch('data/exercises.json').then(r => r.json()),
                 fetch('data/navigation-problems.json').then(r => r.json())
@@ -240,7 +236,7 @@ class SitePE {
             : [];
 
         if (!questions.length) {
-            alert('Aucune question disponible pour ce mode.');
+            alert('Contenu QCM en travaux pour ce mode. Les questions seront ajoutees apres redaction et validation.');
             return;
         }
 
@@ -264,7 +260,7 @@ class SitePE {
     startQCMFromQuestions(questions, metadata = {}) {
         this.stopQcmTimer();
         if (!Array.isArray(questions) || !questions.length) {
-            alert('Aucune question disponible dans cette serie.');
+            alert('Cette serie est en travaux ou vide pour le moment.');
             return;
         }
 
@@ -560,7 +556,7 @@ class SitePE {
             .sort(() => Math.random() - 0.5);
 
         if (!cards.length) {
-            alert('Aucune flashcard disponible pour ce module.');
+            alert('Flashcards en travaux pour ce module.');
             return;
         }
 
