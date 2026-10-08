@@ -15,6 +15,7 @@
     var t = localStorage.getItem('pe-theme');
     if (t) document.documentElement.setAttribute('data-theme', t);
   } catch (e) {}
+  try { if (!localStorage.getItem('pe-ok')) document.documentElement.classList.add('gate'); } catch (e) { document.documentElement.classList.add('gate'); }
 </script>
 </head>
 <body data-root="../">
@@ -22,7 +23,7 @@
 <header class="top">
   <div class="top-in">
     <a class="brand" href="../index.html">Patron d'embarcation</a>
-    <nav class="mainnav" aria-label="Parties du site"><a href="../cours/index.html">Cours</a><a href="../qcm/index.html">QCM</a><a href="../exercices/index.html" aria-current="page">Exercices</a><a href="../pratique/index.html">Pratique</a><a href="../annales/index.html">Annales</a></nav>
+    <nav class="mainnav" aria-label="Parties du site"><a href="../cours/index.html">Cours</a><a href="../qcm/index.html">QCM</a><a href="../exercices/index.html" aria-current="page">Exercices</a><a href="../pratique/index.html">Pratique</a><a href="../annales/index.html">Annales</a><a href="../questions/index.html">Questions</a></nav>
     <div class="acct" id="acct"></div>
     <button class="theme" type="button" aria-label="Changer de thème" title="Clair / sombre"><svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true"><circle cx="8" cy="8" r="6.5" fill="none" stroke="currentColor" stroke-width="1.3"/><path d="M8 1.5 A6.5 6.5 0 0 1 8 14.5 Z" fill="currentColor"/></svg></button>
   </div>
@@ -67,7 +68,7 @@
   </div>
 </footer>
 <script src="../js/site.js"></script>
-
+<script type="module" src="../js/auth.js"></script>
 <script type="module" src="../js/exos.js"></script>
 </body>
 </html>

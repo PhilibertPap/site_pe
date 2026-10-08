@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>QCM · Patron d'embarcation</title>
-<meta name="description" content="Épreuves blanches et entraînement par thème au QCM du brevet de patron d'embarcation, avec corrections expliquées.">
+<title>Questions · Patron d'embarcation</title>
+<meta name="description" content="Posez vos questions aux chefs ; tout le monde voit les réponses.">
 <link rel="icon" href="../img/favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -23,17 +23,16 @@
 <header class="top">
   <div class="top-in">
     <a class="brand" href="../index.html">Patron d'embarcation</a>
-    <nav class="mainnav" aria-label="Parties du site"><a href="../cours/index.html">Cours</a><a href="../qcm/index.html" aria-current="page">QCM</a><a href="../exercices/index.html">Exercices</a><a href="../pratique/index.html">Pratique</a><a href="../annales/index.html">Annales</a><a href="../questions/index.html">Questions</a></nav>
+    <nav class="mainnav" aria-label="Parties du site"><a href="../cours/index.html">Cours</a><a href="../qcm/index.html">QCM</a><a href="../exercices/index.html">Exercices</a><a href="../pratique/index.html">Pratique</a><a href="../annales/index.html">Annales</a><a href="../questions/index.html" aria-current="page">Questions</a></nav>
     <div class="acct" id="acct"></div>
     <button class="theme" type="button" aria-label="Changer de thème" title="Clair / sombre"><svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true"><circle cx="8" cy="8" r="6.5" fill="none" stroke="currentColor" stroke-width="1.3"/><path d="M8 1.5 A6.5 6.5 0 0 1 8 14.5 Z" fill="currentColor"/></svg></button>
   </div>
 </header>
 <main id="contenu">
-<div class="page "><p class="kicker">Partie II</p>
-<h1>QCM</h1>
-<p class="lede">L'épreuve écrite compte 30 questions, une minute par question, une seule bonne réponse. Les thèmes : balisage et symboles de la carte, règles de barre et de route, signaux, marques et feux des navires, sécurité et matériel, responsabilités du chef de bord, VHF.</p>
-<div id="qcm" data-root="../"><p class="muted">Chargement des questions…</p></div>
-<noscript><p>Le QCM nécessite JavaScript.</p></noscript>
+<div class="page wide"><p class="kicker">Questions-réponses</p>
+<h1>Questions aux chefs</h1>
+<p class="lede">Une notion du cours pas claire, un exercice qui ne tombe pas juste, une question sur une manœuvre ? Posez-la ici. Les chefs répondent, et tout le monde profite des réponses.</p>
+<div id="q-list"></div>
 </div>
 </main>
 <footer class="foot">
@@ -44,6 +43,6 @@
 </footer>
 <script src="../js/site.js"></script>
 <script type="module" src="../js/auth.js"></script>
-<script type="module" src="../js/qcm.js"></script>
+<script type="module" src="../js/questions.js"></script>
 </body>
 </html>
