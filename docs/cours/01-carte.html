@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>La Terre et la carte marine · Patron d'embarcation</title>
+<meta name="description" content="Se repérer en latitude et longitude, mesurer une distance, lire une carte du SHOM.">
+<link rel="icon" href="../img/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/style.css">
+<script>
+  try {
+    var t = localStorage.getItem('pe-theme');
+    if (t) document.documentElement.setAttribute('data-theme', t);
+  } catch (e) {}
+</script>
+</head>
+<body data-root="../">
+<a class="skip" href="#contenu">Aller au contenu</a>
+<header class="top">
+  <div class="top-in">
+    <a class="brand" href="../index.html">Patron d'embarcation</a>
+    <nav class="mainnav" aria-label="Parties du site"><a href="../cours/index.html" aria-current="page">Cours</a><a href="../qcm/index.html">QCM</a><a href="../exercices/index.html">Exercices</a><a href="../pratique/index.html">Pratique</a><a href="../annales/index.html">Annales</a></nav>
+    <div class="acct" id="acct"></div>
+    <button class="theme" type="button" aria-label="Changer de thème" title="Clair / sombre"><svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true"><circle cx="8" cy="8" r="6.5" fill="none" stroke="currentColor" stroke-width="1.3"/><path d="M8 1.5 A6.5 6.5 0 0 1 8 14.5 Z" fill="currentColor"/></svg></button>
+  </div>
+</header>
+<main id="contenu">
+
+<div class="doc">
+  <aside class="side">
+    <p class="side-h">Cours</p>
+    <ol class="chapters"><li><a href="../cours/01-carte.html" aria-current="page"><span class="tocnum">1</span>La carte marine</a></li><li><a href="../cours/02-compas.html"><span class="tocnum">2</span>Compas et caps</a></li><li><a href="../cours/03-estime.html"><span class="tocnum">3</span>Estime, dérive, courant</a></li><li><a href="../cours/04-maree.html"><span class="tocnum">4</span>La marée</a></li><li><a href="../cours/05-balisage.html"><span class="tocnum">5</span>Le balisage</a></li><li><a href="../cours/06-ripam.html"><span class="tocnum">6</span>Règles de barre (RIPAM)</a></li><li><a href="../cours/07-signaux.html"><span class="tocnum">7</span>Feux, marques, signaux</a></li><li><a href="../cours/08-meteo.html"><span class="tocnum">8</span>Météo marine</a></li><li><a href="../cours/09-securite.html"><span class="tocnum">9</span>Sécurité, réglementation</a></li><li><a href="../cours/10-vhf.html"><span class="tocnum">10</span>VHF</a></li></ol>
+  </aside>
+  <article class="chapter">
+    <header class="chap-head">
+      <p class="kicker">Chapitre 1</p>
+      <h1>La Terre et la carte marine</h1>
+      <p class="chap-desc">Se repérer en latitude et longitude, mesurer une distance, lire une carte du SHOM.</p>
+    </header>
+    <details class="toc-box" open><summary>Sommaire du chapitre</summary><ol class="toc"><li><a href="#coordonnees"><span class="tocnum">1.1</span>Se repérer sur la Terre</a></li><li><a href="#mille"><span class="tocnum">1.2</span>Le mille et le nœud</a></li><li><a href="#mercator"><span class="tocnum">1.3</span>La projection de Mercator</a></li><li><a href="#echelle"><span class="tocnum">1.4</span>L'échelle d'une carte</a></li><li><a href="#lire-carte"><span class="tocnum">1.5</span>Lire une carte du SHOM</a><ol><li><a href="#le-cartouche"><span class="tocnum">1.5.1</span>Le cartouche</a></li><li><a href="#couleurs-et-sondes"><span class="tocnum">1.5.2</span>Couleurs et sondes</a></li><li><a href="#symboles-principaux"><span class="tocnum">1.5.3</span>Symboles principaux</a></li><li><a href="#les-ouvrages-qui-accompagnent-la-carte"><span class="tocnum">1.5.4</span>Les ouvrages qui accompagnent la carte</a></li><li><a href="#tenir-ses-cartes-a-jour"><span class="tocnum">1.5.5</span>Tenir ses cartes à jour</a></li></ol></li></ol></details>
+    <h2 id="coordonnees"><span class="secnum">1.1</span>Se repérer sur la Terre</h2>
+
+<p>On assimile la Terre à une sphère de rayon <var>R</var> ≈ 6 366 km, tournant autour de l'axe des pôles. Le plan perpendiculaire à cet axe passant par le centre coupe la sphère selon l'<dfn>équateur</dfn>. Les demi-cercles joignant les deux pôles sont les <dfn>méridiens</dfn> ; les cercles parallèles à l'équateur sont les <dfn>parallèles</dfn>.</p>
+
+<figure>
+<svg viewBox="0 0 460 255" width="460" role="img" aria-label="Définition de la latitude et de la longitude">
+  <g>
+    <circle cx="110" cy="112" r="80" class="ln" stroke-width="1.4"/>
+    <line x1="110" y1="20" x2="110" y2="204" class="ln2" stroke-dasharray="4 3"/>
+    <line x1="22" y1="112" x2="198" y2="112" class="ln2" stroke-dasharray="4 3"/>
+    <line x1="110" y1="112" x2="163.5" y2="52.5" class="ln" stroke-width="1.4"/>
+    <circle cx="163.5" cy="52.5" r="3.5" class="fill-signal"/>
+    <path d="M140 112 A30 30 0 0 0 130.1 89.7" class="ln" stroke-width="1.2"/>
+    <text x="145" y="102" class="it" font-size="15">φ</text>
+    <text x="170" y="48" font-size="12">M</text>
+    <text x="110" y="14" font-size="11" text-anchor="middle">pôle Nord</text>
+    <text x="110" y="222" font-size="11" text-anchor="middle">pôle Sud</text>
+    <text x="200" y="128" font-size="11" text-anchor="end" class="mut">équateur</text>
+    <text x="104" y="125" font-size="11" text-anchor="end">O</text>
+    <text x="110" y="246" font-size="11" text-anchor="middle" class="mut">coupe dans le plan du méridien de M</text>
+  </g>
+  <g transform="translate(240 0)">
+    <circle cx="110" cy="112" r="80" class="ln" stroke-width="1.4"/>
+    <circle cx="110" cy="112" r="3" class="fill-ink"/>
+    <line x1="110" y1="112" x2="110" y2="192" class="ln" stroke-width="1.4"/>
+    <line x1="110" y1="112" x2="70" y2="181.3" class="ln" stroke-width="1.4"/>
+    <circle cx="70" cy="181.3" r="3.5" class="fill-signal"/>
+    <path d="M110 150 A38 38 0 0 1 91 144.9" class="ln" stroke-width="1.2"/>
+    <text x="96" y="166" class="it" font-size="15">G</text>
+    <text x="116" y="204" font-size="11">Greenwich</text>
+    <text x="50" y="198" font-size="12">M</text>
+    <text x="118" y="108" font-size="11">N</text>
+    <text x="196" y="116" font-size="11">E</text>
+    <text x="16" y="116" font-size="11">W</text>
+  </g>
+</svg>
+<figcaption><span class="fignum">Figure 1.1.</span> À gauche, la latitude φ de M est l'angle entre le plan de l'équateur et la droite OM. À droite, vue depuis le pôle Nord : la longitude G est l'angle entre le méridien de Greenwich et celui de M (ici environ 30° W).</figcaption>
+</figure>
+
+<div class="box def"><p class="box-label">Définition 1.1 <span class="box-title">(Latitude, longitude)</span>.</p>
+<p>La <dfn>latitude</dfn> d'un point M, notée φ ou L, est l'angle entre le plan de l'équateur et la droite qui joint le centre de la Terre à M. Elle va de 0° à l'équateur à 90° aux pôles, et se dit Nord (N) ou Sud (S).</p>
+<p>La <dfn>longitude</dfn> de M, notée G, est l'angle entre le plan du méridien de Greenwich et le plan du méridien de M. Elle va de 0° à 180°, et se dit Est (E) ou Ouest (W).</p>
+</div>
+
+<p>En navigation, on écrit les coordonnées en degrés et minutes, avec les minutes en décimales (et non en secondes) : la position de l'entrée du port de Brest s'écrit 48° 22,9′ N, 004° 29,6′ W. On garde trois chiffres pour les degrés de longitude, ce qui évite les confusions à la radio.</p>
+
+<p>Tous les points d'un même parallèle ont la même latitude ; tous les points d'un même méridien ont la même longitude. Sur la carte marine, les parallèles sont les lignes horizontales et les méridiens les lignes verticales ; le haut de la carte est le Nord vrai.</p>
+
+<h2 id="mille"><span class="secnum">1.2</span>Le mille et le nœud</h2>
+
+<div class="box def"><p class="box-label">Définition 1.2 <span class="box-title">(Mille marin)</span>.</p>
+<p>Le <dfn>mille marin</dfn> (symbole M, parfois NM ou Nq) est la longueur d'un arc de méridien de une minute d'angle. Par convention internationale, 1 M = 1 852 m.</p>
+</div>
+
+<p>Le calcul donne bien cet ordre de grandeur : un arc d'angle α sur un cercle de rayon <var>R</var> mesure <var>R</var>α (α en radians). Pour α = 1′ = π/(180 × 60) rad et <var>R</var> = 6 366 km, on trouve 1,852 km. La Terre n'étant pas parfaitement sphérique, la longueur réelle d'une minute de latitude varie de 1 843 m à l'équateur à 1 862 m aux pôles ; la valeur 1 852 m est une moyenne fixée par convention.</p>
+
+<div class="box def"><p class="box-label">Définition 1.3 <span class="box-title">(Nœud)</span>.</p>
+<p>Le <dfn>nœud</dfn> (nd) est l'unité de vitesse du marin : 1 nd = 1 M/h ≈ 0,514 m/s ≈ 1,852 km/h.</p>
+</div>
+
+<p>La relation entre distance, vitesse et durée s'écrit simplement avec ces unités :</p>
+<p class="formula"><var>d</var> (M) = <var>V</var> (nd) × <var>t</var> (h), soit <var>d</var> = <var>V</var> × <var>t</var><sub>min</sub> / 60.</p>
+<div class="box ex"><p class="box-label">Exemple 1.4.</p>
+<p>À 5 nd, en 1 h 36 min = 96 min, on parcourt 5 × 96 / 60 = 8 M. Pour 6,5 M à 4,5 nd, il faut 6,5 / 4,5 = 1,44 h, soit 1 h 27 min (0,44 × 60 ≈ 27).</p>
+</div>
+
+<div class="box warn"><p class="box-label">Attention.</p>
+<p>Une minute de longitude ne vaut pas un mille : les méridiens se resserrent vers les pôles, et une minute de longitude mesure 1 852 × cos φ mètres. À la latitude de la Bretagne (47° 30′ N), cela fait environ 1 250 m. On ne mesure donc <strong>jamais</strong> une distance sur l'échelle des longitudes (bord haut ou bas de la carte).</p>
+</div>
+
+<h2 id="mercator"><span class="secnum">1.3</span>La projection de Mercator</h2>
+
+<p>Représenter une sphère sur une feuille plane impose de déformer quelque chose. Les cartes marines utilisent presque toutes la <dfn>projection de Mercator</dfn>, une projection cylindrique dans laquelle les méridiens sont des droites verticales équidistantes et les parallèles des droites horizontales, de plus en plus espacées en s'éloignant de l'équateur.</p>
+
+<p>L'espacement des parallèles est choisi pour que la projection soit <dfn>conforme</dfn> : elle conserve les angles. Comme les méridiens sont écartés d'un facteur 1/cos φ par rapport à la réalité (ils sont parallèles sur la carte alors qu'ils se rejoignent aux pôles), on étire les distances Nord-Sud du même facteur. Une petite longueur <var>ℓ</var> sur Terre, à la latitude φ, mesure donc sur la carte :</p>
+<p class="formula"><var>ℓ</var><sub>carte</sub> = <var>k</var> · <var>ℓ</var> / cos φ, &nbsp;<var>k</var> étant l'échelle à l'équateur.</p>
+
+<figure>
+<svg viewBox="0 0 420 120" width="420" role="img" aria-label="Longueur d'un mille sur la carte selon la latitude">
+  <g font-size="12">
+    <text x="10" y="30">φ = 0°</text>
+    <line x1="90" y1="26" x2="140" y2="26" class="ln" stroke-width="3"/>
+    <text x="10" y="64">φ = 47° 30′</text>
+    <line x1="90" y1="60" x2="164" y2="60" class="ln" stroke-width="3"/>
+    <text x="10" y="98">φ = 60°</text>
+    <line x1="90" y1="94" x2="190" y2="94" class="ln" stroke-width="3"/>
+    <text x="210" y="30" class="mut">1 M → 1,00 unité</text>
+    <text x="210" y="64" class="mut">1 M → 1,48 unité</text>
+    <text x="210" y="98" class="mut">1 M → 2,00 unités</text>
+  </g>
+</svg>
+<figcaption><span class="fignum">Figure 1.2.</span> Sur une carte de Mercator, un même mille est représenté de plus en plus long quand la latitude augmente (facteur 1/cos φ).</figcaption>
+</figure>
+
+<div class="box prop"><p class="box-label">Règle 1.5 <span class="box-title">(Conséquences pratiques)</span>.</p>
+<ul>
+  <li>Les angles sont justes : un cap ou un relèvement mesuré sur la carte est le vrai. Une route à cap constant (une <em>loxodromie</em>) est une droite.</li>
+  <li>Les distances ne le sont pas d'un bout à l'autre de la carte. On mesure donc une distance <strong>sur l'échelle des latitudes</strong> (bords gauche et droit), <strong>à la hauteur du segment mesuré</strong>, où 1′ de latitude = 1 M.</li>
+</ul>
+</div>
+
+<p>Sur une carte côtière comme la 9999, qui couvre moins d'un demi-degré de latitude, la variation de 1/cos φ d'un bord à l'autre est inférieure à 1 % : mesurer « à peu près en face » suffit. L'erreur devient sensible sur une carte à petite échelle couvrant plusieurs degrés.</p>
+
+<h2 id="echelle"><span class="secnum">1.4</span>L'échelle d'une carte</h2>
+
+<div class="box def"><p class="box-label">Définition 1.6 <span class="box-title">(Échelle)</span>.</p>
+<p>L'<dfn>échelle</dfn> 1 : <var>n</var> signifie qu'une longueur de 1 cm sur la carte représente <var>n</var> cm sur le terrain. Une carte au 1 : 50 000 représente 500 m par centimètre.</p>
+</div>
+
+<p>Une carte est dite à <strong>grande échelle</strong> quand la fraction 1/<var>n</var> est grande, donc <var>n</var> petit (1 : 10 000, 1 : 25 000) : elle couvre une petite zone avec beaucoup de détails. Une carte à <strong>petite échelle</strong> (1 : 500 000) couvre une grande zone et montre peu de détails.</p>
+
+<div class="box maj"><p class="box-label">Mise à jour.</p>
+<p>Certains supports de cours disent l'inverse (« grande échelle : carte peu détaillée »). C'est une erreur : plus l'échelle est grande, plus la carte est détaillée. Pour la navigation côtière, on utilise des cartes au 1 : 50 000 environ ; pour entrer dans un port ou passer dans des cailloux, une carte au 1 : 25 000 ou plus grande.</p>
+</div>
+
+<h2 id="lire-carte"><span class="secnum">1.5</span>Lire une carte du SHOM</h2>
+
+<p>En France, les cartes officielles sont éditées par le Service hydrographique et océanographique de la Marine (SHOM). La carte d'examen 9999 est une reproduction de la carte 7033 (de la presqu'île de Quiberon au Croisic, Belle-Île et Houat-Hoëdic), réservée à l'apprentissage.</p>
+
+<h3 id="le-cartouche"><span class="secnum">1.5.1</span>Le cartouche</h3>
+<p>Le cartouche donne le titre et le numéro de la carte, son échelle, la projection, l'unité des sondes (le mètre), le <dfn>système géodésique</dfn> (WGS 84 pour les cartes récentes, le même que celui du GPS : on peut y reporter directement une position GPS) et la date des levés. La déclinaison magnétique est indiquée sur la rose des vents imprimée sur la carte, avec son année de référence et sa variation annuelle (chapitre 2).</p>
+
+<h3 id="couleurs-et-sondes"><span class="secnum">1.5.2</span>Couleurs et sondes</h3>
+<ul>
+  <li><strong>Beige</strong> : la terre, jamais recouverte.</li>
+  <li><strong>Vert</strong> : l'estran, zone qui couvre et découvre avec la marée.</li>
+  <li><strong>Bleu</strong> : les petits fonds (en général moins de 5 ou 10 m), à surveiller.</li>
+  <li><strong>Blanc</strong> : les fonds plus importants.</li>
+</ul>
+<p>Les <dfn>sondes</dfn> sont les profondeurs, en mètres et décimètres, au-dessus du <dfn>zéro des cartes</dfn>, niveau voisin des plus basses mers possibles. Le chiffre des décimètres est écrit en indice : 2<sub>4</sub> signifie 2,4 m. Une sonde <strong>soulignée</strong> est une hauteur au-dessus du zéro des cartes : le fond découvre de cette hauteur à basse mer de vives eaux. Ainsi <u>0<sub>2</sub></u> désigne un banc qui découvre de 0,2 m. Les lignes reliant les points de même profondeur sont les <dfn>isobathes</dfn> (lignes de sonde de 2, 5, 10, 20 m…).</p>
+<p>Le zéro des cartes et le calcul de la hauteur d'eau disponible sont traités au chapitre 4.</p>
+
+<h3 id="symboles-principaux"><span class="secnum">1.5.3</span>Symboles principaux</h3>
+<p>Les symboles des cartes sont normalisés au niveau international et décrits dans l'ouvrage 1D du SHOM (« Symboles, abréviations et termes utilisés sur les cartes marines »). Ceux qui reviennent le plus souvent :</p>
+
+<figure>
+<div class="figrow" style="gap:1rem 1.6rem">
+  <div><svg viewBox="0 0 60 50" width="60" height="50"><g class="ln" stroke-width="1.6"><path d="M30 13 V37 M18 25 H42 M21.5 16.5 L38.5 33.5 M38.5 16.5 L21.5 33.5"/></g><text x="42" y="45" font-size="10">(1<tspan font-size="7" dy="2">5</tspan>)</text></svg>Roche découvrante<br><span class="muted">(hauteur au-dessus du zéro)</span></div>
+  <div><svg viewBox="0 0 60 50" width="60" height="50"><g class="ln" stroke-width="1.6"><path d="M30 14 V36 M19 25 H41"/></g><g class="fill-ink"><circle cx="23" cy="18" r="1.8"/><circle cx="37" cy="18" r="1.8"/><circle cx="23" cy="32" r="1.8"/><circle cx="37" cy="32" r="1.8"/></g></svg>Roche à fleur d'eau<br><span class="muted">au niveau du zéro</span></div>
+  <div><svg viewBox="0 0 60 50" width="60" height="50"><circle cx="30" cy="25" r="15" class="ln" stroke-dasharray="2 2.4"/><g class="ln" stroke-width="1.6"><path d="M30 17 V33 M22 25 H38"/></g></svg>Roche toujours couverte<br><span class="muted">dangereuse, profondeur inconnue</span></div>
+  <div><svg viewBox="0 0 60 50" width="60" height="50"><g class="fill-ink"><path d="M12 28 Q30 20 48 28 L44 32 H16 Z"/><rect x="26" y="20" width="4" height="6"/></g></svg>Épave découvrante<br><span class="muted">coque visible</span></div>
+  <div><svg viewBox="0 0 60 50" width="60" height="50"><ellipse cx="30" cy="25" rx="22" ry="12" class="ln" stroke-dasharray="2 2.4"/><g class="ln" stroke-width="1.6"><path d="M15 25 H45 M22 19 V31 M30 17 V33 M38 19 V31"/></g></svg>Épave dangereuse<br><span class="muted">profondeur inconnue</span></div>
+  <div><svg viewBox="0 0 60 50" width="60" height="50"><g stroke="#a3307a" fill="none" stroke-width="1.8"><circle cx="30" cy="12" r="3"/><path d="M30 15 V38 M22 22 H38 M17 30 Q20 39 30 39 Q40 39 43 30"/></g></svg>Mouillage<br><span class="muted">zone recommandée</span></div>
+  <div><svg viewBox="0 0 60 50" width="60" height="50"><g stroke="#a3307a" fill="none" stroke-width="1.8"><circle cx="30" cy="12" r="3"/><path d="M30 15 V38 M22 22 H38 M17 30 Q20 39 30 39 Q40 39 43 30"/><path d="M14 8 L46 42" stroke-width="2.2"/></g></svg>Mouillage interdit</div>
+  <div><svg viewBox="0 0 60 50" width="60" height="50"><path d="M4 25 q7 -9 13 0 t13 0 t13 0 t13 0" stroke="#a3307a" fill="none" stroke-width="1.8"/></svg>Câble sous-marin<br><span class="muted">ne pas mouiller dessus</span></div>
+  <div><svg viewBox="0 0 60 50" width="60" height="50"><g class="fill-ink"><circle cx="24" cy="36" r="2.5"/></g><path d="M26 34 C 32 24, 40 18, 46 14 C 44 22, 38 30, 27 36 Z" fill="#a3307a"/></svg>Feu<br><span class="muted">(tache magenta)</span></div>
+</div>
+<figcaption><span class="fignum">Figure 1.3.</span> Quelques symboles de la carte marine, dessinés de façon simplifiée. Le magenta est réservé aux feux, aux limites réglementaires, aux câbles et aux informations de navigation.</figcaption>
+</figure>
+
+<p>Les <dfn>amers</dfn> sont des repères à terre, fixes, bien visibles depuis la mer et portés sur la carte : clochers, châteaux d'eau, phares, tourelles, sémaphores, pointes remarquables. Ils servent à faire le point par relèvements (chapitre 2). La <dfn>nature du fond</dfn> est notée par des abréviations, utiles pour choisir un mouillage : S (sable), M (vase), G (gravier), R (roche), Sh (coquilles) ; les cartes anciennes utilisent les abréviations françaises (S, V, G, R, Co).</p>
+
+<h3 id="les-ouvrages-qui-accompagnent-la-carte"><span class="secnum">1.5.4</span>Les ouvrages qui accompagnent la carte</h3>
+<ul>
+  <li>Les <strong>Instructions nautiques</strong> décrivent la côte, les dangers, les ports et les courants, avec des conseils d'approche.</li>
+  <li>Le <strong>Livre des feux</strong> donne les caractéristiques de chaque feu et phare.</li>
+  <li>L'<strong>annuaire des marées</strong> donne les heures et hauteurs de pleine et basse mer (chapitre 4).</li>
+  <li>Les cartes de courants (ou les cartouches de courant imprimés sur la carte) donnent la direction et la vitesse du courant de marée heure par heure.</li>
+</ul>
+
+<h3 id="tenir-ses-cartes-a-jour"><span class="secnum">1.5.5</span>Tenir ses cartes à jour</h3>
+<p>Le balisage change, des épaves apparaissent, des levés plus précis remplacent les anciens. Le SHOM publie chaque semaine les <dfn>Groupes d'avis aux navigateurs</dfn> (GAN), qui permettent de corriger soi-même ses cartes ; les corrections appliquées sont reportées dans la marge inférieure gauche. Une carte ancienne et non corrigée peut être dangereuse. Les cartes électroniques officielles sont mises à jour par téléchargement.</p>
+
+<div class="box retenir"><p class="box-label">À retenir.</p>
+<ul>
+  <li>Latitude : angle depuis l'équateur, de 0 à 90° N ou S. Longitude : angle depuis Greenwich, de 0 à 180° E ou W. Notation en degrés et minutes décimales.</li>
+  <li>1 M = 1 852 m = 1′ de latitude. 1 nd = 1 M/h. <var>d</var> = <var>V</var> × <var>t</var>.</li>
+  <li>Mercator conserve les angles ; on mesure les distances sur l'échelle des latitudes, à hauteur du segment.</li>
+  <li>Grande échelle = petite zone = beaucoup de détails.</li>
+  <li>Sonde = profondeur sous le zéro des cartes ; sonde soulignée = fond qui découvre de cette hauteur.</li>
+</ul>
+</div>
+
+    <nav class="pager"><span></span><a class="next" href="../cours/02-compas.html"><span>Suivant</span>Chapitre 2 · Compas, caps et relèvements</a></nav>
+  </article>
+</div>
+</main>
+<footer class="foot">
+  <div class="foot-in">
+    <p>Préparation au brevet de patron d'embarcation et à la navigation à voile. Rédigé à partir des cours de navigation des scouts marins de Brest, mis à jour et complétés.</p>
+    <p>Ce site ne remplace ni la réglementation (Division 240, RIPAM), ni les documents officiels du SHOM, ni le règlement de votre association. En cas de doute, ce sont eux qui font foi.</p>
+  </div>
+</footer>
+<script src="../js/site.js"></script>
+
+
+</body>
+</html>

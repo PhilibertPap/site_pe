@@ -1,27 +1,13 @@
 {
   "name": "site-pe",
-  "version": "1.0.0",
-  "description": "Site d'entraînement à l'examen du PE pour les scouts du groupe NDC",
-  "main": "build.js",
+  "version": "2.0.0",
+  "private": true,
+  "description": "Cours de navigation, QCM, exercices et pratique de la voile pour le brevet de patron d'embarcation",
+  "type": "module",
   "scripts": {
-    "build": "node build.js",
-    "start": "npm run build && http-server docs -p 8000 -o",
-    "test": "node --test tests",
-    "generate:series": "node scripts/generate-exam-series.js",
-    "generate:qcm:web": "node scripts/generate-qcm-web-curated.js",
-    "cache:qcm:images": "node scripts/cache-qcm-images.js",
-    "generate:qcm:large": "node scripts/generate-large-qcm.js --variants=150 --objectiveVariants=3 --seed=20260212",
-    "import:attendus": "node scripts/import-attendus-json.js",
-    "generate:pe:data": "node scripts/generate-pe-datasets.js --perFact=8 --seed=20260212",
-    "generate:pe:extracted": "node scripts/generate-from-extracted-json.js --variants=5 --seed=20260212",
-    "generate:annales": "pwsh -File scripts/generate-annales-manifest.ps1"
+    "build": "node build.mjs",
+    "serve": "node build.mjs && node serve.mjs"
   },
-  "keywords": ["pe", "patron", "embarcation", "scout", "navigation"],
-  "author": "Philibert Pap",
-  "license": "MIT",
-  "dependencies": {
-    "fs-extra": "^11.2.0",
-    "mustache": "^4.2.0",
-    "http-server": "^14.1.1"
-  }
+  "author": "Philibert Pappens",
+  "license": "UNLICENSED"
 }

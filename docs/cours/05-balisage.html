@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Le balisage · Patron d'embarcation</title>
+<meta name="description" content="Le système de balisage AISM (région A) : marques latérales, cardinales, danger isolé, eaux saines, spéciales, danger nouveau ; balisage des plages ; caractéristiques des feux.">
+<link rel="icon" href="../img/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/style.css">
+<script>
+  try {
+    var t = localStorage.getItem('pe-theme');
+    if (t) document.documentElement.setAttribute('data-theme', t);
+  } catch (e) {}
+</script>
+</head>
+<body data-root="../">
+<a class="skip" href="#contenu">Aller au contenu</a>
+<header class="top">
+  <div class="top-in">
+    <a class="brand" href="../index.html">Patron d'embarcation</a>
+    <nav class="mainnav" aria-label="Parties du site"><a href="../cours/index.html" aria-current="page">Cours</a><a href="../qcm/index.html">QCM</a><a href="../exercices/index.html">Exercices</a><a href="../pratique/index.html">Pratique</a><a href="../annales/index.html">Annales</a></nav>
+    <div class="acct" id="acct"></div>
+    <button class="theme" type="button" aria-label="Changer de thème" title="Clair / sombre"><svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true"><circle cx="8" cy="8" r="6.5" fill="none" stroke="currentColor" stroke-width="1.3"/><path d="M8 1.5 A6.5 6.5 0 0 1 8 14.5 Z" fill="currentColor"/></svg></button>
+  </div>
+</header>
+<main id="contenu">
+
+<div class="doc">
+  <aside class="side">
+    <p class="side-h">Cours</p>
+    <ol class="chapters"><li><a href="../cours/01-carte.html"><span class="tocnum">1</span>La carte marine</a></li><li><a href="../cours/02-compas.html"><span class="tocnum">2</span>Compas et caps</a></li><li><a href="../cours/03-estime.html"><span class="tocnum">3</span>Estime, dérive, courant</a></li><li><a href="../cours/04-maree.html"><span class="tocnum">4</span>La marée</a></li><li><a href="../cours/05-balisage.html" aria-current="page"><span class="tocnum">5</span>Le balisage</a></li><li><a href="../cours/06-ripam.html"><span class="tocnum">6</span>Règles de barre (RIPAM)</a></li><li><a href="../cours/07-signaux.html"><span class="tocnum">7</span>Feux, marques, signaux</a></li><li><a href="../cours/08-meteo.html"><span class="tocnum">8</span>Météo marine</a></li><li><a href="../cours/09-securite.html"><span class="tocnum">9</span>Sécurité, réglementation</a></li><li><a href="../cours/10-vhf.html"><span class="tocnum">10</span>VHF</a></li></ol>
+  </aside>
+  <article class="chapter">
+    <header class="chap-head">
+      <p class="kicker">Chapitre 5</p>
+      <h1>Le balisage</h1>
+      <p class="chap-desc">Le système de balisage AISM (région A) : marques latérales, cardinales, danger isolé, eaux saines, spéciales, danger nouveau ; balisage des plages ; caractéristiques des feux.</p>
+    </header>
+    <details class="toc-box" open><summary>Sommaire du chapitre</summary><ol class="toc"><li><a href="#systeme"><span class="tocnum">5.1</span>Le système AISM</a></li><li><a href="#laterales"><span class="tocnum">5.2</span>Les marques latérales</a><ol><li><a href="#bifurcation-et-chenal-prefere"><span class="tocnum">5.2.1</span>Bifurcation et chenal préféré</a></li></ol></li><li><a href="#cardinales"><span class="tocnum">5.3</span>Les marques cardinales</a><ol><li><a href="#retenir-les-voyants-et-les-couleurs"><span class="tocnum">5.3.1</span>Retenir les voyants et les couleurs</a></li><li><a href="#les-feux-des-cardinales"><span class="tocnum">5.3.2</span>Les feux des cardinales</a></li></ol></li><li><a href="#danger-isole"><span class="tocnum">5.4</span>Danger isolé</a></li><li><a href="#eaux-saines"><span class="tocnum">5.5</span>Eaux saines</a></li><li><a href="#speciales"><span class="tocnum">5.6</span>Marques spéciales</a></li><li><a href="#danger-nouveau"><span class="tocnum">5.7</span>Danger nouveau</a></li><li><a href="#plages"><span class="tocnum">5.8</span>Le balisage des plages</a></li><li><a href="#feux"><span class="tocnum">5.9</span>Les feux</a><ol><li><a href="#les-secteurs"><span class="tocnum">5.9.1</span>Les secteurs</a></li><li><a href="#portee"><span class="tocnum">5.9.2</span>Portée</a></li></ol></li></ol></details>
+    <h2 id="systeme"><span class="secnum">5.1</span>Le système AISM</h2>
+
+<p>Le balisage est le langage par lequel l'autorité maritime signale les dangers et indique les passages. Il est fixé au niveau mondial par l'Association internationale de signalisation maritime (AISM, ou IALA en anglais). Deux variantes coexistent : la <dfn>région A</dfn> (Europe, Afrique, la plus grande partie de l'Asie et l'Océanie) et la <dfn>région B</dfn> (Amériques, Japon, Corée, Philippines), où les couleurs des marques latérales sont inversées. Tout ce qui suit concerne la région A.</p>
+
+<p>Une marque se reconnaît, dans l'ordre de fiabilité, à :</p>
+<ol>
+  <li>son <strong>voyant</strong> (la forme posée à son sommet : cône, cylindre, sphères, croix) ;</li>
+  <li>ses <strong>couleurs</strong> et leur disposition (bandes horizontales ou verticales) ;</li>
+  <li>sa <strong>forme</strong> (cylindrique, conique, charpente, espar, tourelle), qui n'est significative que pour les marques latérales ;</li>
+  <li>la nuit, son <strong>feu</strong> : couleur et rythme.</li>
+</ol>
+<p>Une marque peut être une bouée flottante (ancrée par une chaîne, qui bouge un peu avec la marée), une perche ou une tourelle bâtie sur une roche, ou un phare. Sur la carte, chaque marque est dessinée avec ses couleurs (abréviations B noir, R rouge, G vert, Y jaune, W blanc) et la description de son feu.</p>
+
+<div class="box warn"><p class="box-label">Attention.</p>
+<p>Les couleurs se lisent mal à contre-jour et de loin : le voyant, qui se découpe sur le ciel, est souvent l'indice le plus sûr. On confirme toujours l'identification avec la carte avant de s'y fier.</p>
+</div>
+
+<h2 id="laterales"><span class="secnum">5.2</span>Les marques latérales</h2>
+
+<p>Les marques latérales délimitent les chenaux. Elles s'entendent dans le <dfn>sens conventionnel du balisage</dfn> : en venant du large vers un port, un estuaire ou une rivière. Ailleurs (le long d'une côte, entre deux îles), le sens est fixé par l'autorité et indiqué sur la carte par une flèche magenta.</p>
+
+<figure>
+<div class="figrow">
+  <div><svg class="balise" viewBox="0 0 100 165" width="92" height="152" role="img" aria-label="Marque latérale bâbord" xmlns="http://www.w3.org/2000/svg"><title>Marque latérale bâbord</title>
+<defs><clipPath id="b1"><path d="M31 80 H69 V141 H31 Z"/></clipPath></defs>
+<rect width="100" height="165" fill="#e3e9ee"/>
+<rect y="141" width="100" height="24" fill="#a9bdcb"/>
+
+<g clip-path="url(#b1)"><rect x="0" y="80" width="100" height="61.5" fill="#cf3a2e"/></g>
+<path d="M31 80 H69 V141 H31 Z" fill="none" stroke="#1e1e1e" stroke-width="1.2"/>
+<line x1="50" y1="22" x2="50" y2="80" stroke="#1e1e1e" stroke-width="2"/><rect x="41" y="14" width="18" height="20" fill="#cf3a2e" stroke="#1e1e1e" stroke-width="1"/>
+<path d="M0 142 q8 -3 16 0 t16 0 t16 0 t16 0 t16 0 t16 0 t16 0" fill="none" stroke="#93abbb" stroke-width="2"/>
+</svg>Bâbord<br><span class="muted">rouge, cylindre</span></div>
+  <div><svg class="balise" viewBox="0 0 100 165" width="92" height="152" role="img" aria-label="Marque latérale tribord" xmlns="http://www.w3.org/2000/svg"><title>Marque latérale tribord</title>
+<defs><clipPath id="b2"><path d="M44 72 H56 L73 141 H27 Z"/></clipPath></defs>
+<rect width="100" height="165" fill="#e3e9ee"/>
+<rect y="141" width="100" height="24" fill="#a9bdcb"/>
+
+<g clip-path="url(#b2)"><rect x="0" y="72" width="100" height="69.5" fill="#1f8a4c"/></g>
+<path d="M44 72 H56 L73 141 H27 Z" fill="none" stroke="#1e1e1e" stroke-width="1.2"/>
+<line x1="50" y1="22" x2="50" y2="72" stroke="#1e1e1e" stroke-width="2"/><path d="M50 17 L60 31 L40 31 Z" fill="#1f8a4c" stroke="#1e1e1e" stroke-width="1"/>
+<path d="M0 142 q8 -3 16 0 t16 0 t16 0 t16 0 t16 0 t16 0 t16 0" fill="none" stroke="#93abbb" stroke-width="2"/>
+</svg>Tribord<br><span class="muted">verte, cône pointe en haut</span></div>
+  <div><svg class="balise" viewBox="0 0 100 165" width="92" height="152" role="img" aria-label="Bifurcation, chenal préféré à tribord" xmlns="http://www.w3.org/2000/svg"><title>Bifurcation, chenal préféré à tribord</title>
+<defs><clipPath id="b3"><path d="M31 80 H69 V141 H31 Z"/></clipPath></defs>
+<rect width="100" height="165" fill="#e3e9ee"/>
+<rect y="141" width="100" height="24" fill="#a9bdcb"/>
+
+<g clip-path="url(#b3)"><rect x="0" y="80" width="100" height="20.019999999999996" fill="#cf3a2e"/><rect x="0" y="99.52" width="100" height="21.24000000000001" fill="#1f8a4c"/><rect x="0" y="120.26" width="100" height="21.239999999999995" fill="#cf3a2e"/></g>
+<path d="M31 80 H69 V141 H31 Z" fill="none" stroke="#1e1e1e" stroke-width="1.2"/>
+<line x1="50" y1="22" x2="50" y2="80" stroke="#1e1e1e" stroke-width="2"/><rect x="41" y="14" width="18" height="20" fill="#cf3a2e" stroke="#1e1e1e" stroke-width="1"/>
+<path d="M0 142 q8 -3 16 0 t16 0 t16 0 t16 0 t16 0 t16 0 t16 0" fill="none" stroke="#93abbb" stroke-width="2"/>
+</svg>Bifurcation :<br><span class="muted">chenal préféré à tribord</span></div>
+  <div><svg class="balise" viewBox="0 0 100 165" width="92" height="152" role="img" aria-label="Bifurcation, chenal préféré à bâbord" xmlns="http://www.w3.org/2000/svg"><title>Bifurcation, chenal préféré à bâbord</title>
+<defs><clipPath id="b4"><path d="M44 72 H56 L73 141 H27 Z"/></clipPath></defs>
+<rect width="100" height="165" fill="#e3e9ee"/>
+<rect y="141" width="100" height="24" fill="#a9bdcb"/>
+
+<g clip-path="url(#b4)"><rect x="0" y="72" width="100" height="22.58" fill="#1f8a4c"/><rect x="0" y="94.08" width="100" height="23.959999999999994" fill="#cf3a2e"/><rect x="0" y="117.53999999999999" width="100" height="23.960000000000008" fill="#1f8a4c"/></g>
+<path d="M44 72 H56 L73 141 H27 Z" fill="none" stroke="#1e1e1e" stroke-width="1.2"/>
+<line x1="50" y1="22" x2="50" y2="72" stroke="#1e1e1e" stroke-width="2"/><path d="M50 17 L60 31 L40 31 Z" fill="#1f8a4c" stroke="#1e1e1e" stroke-width="1"/>
+<path d="M0 142 q8 -3 16 0 t16 0 t16 0 t16 0 t16 0 t16 0 t16 0" fill="none" stroke="#93abbb" stroke-width="2"/>
+</svg>Bifurcation :<br><span class="muted">chenal préféré à bâbord</span></div>
+</div>
+<figcaption><span class="fignum">Figure 5.1.</span> Les marques latérales en région A. Les deux dernières, aux bifurcations, prennent la forme et le voyant de la marque latérale qui borde le chenal principal, avec une bande de l'autre couleur.</figcaption>
+</figure>
+
+<div class="box prop"><p class="box-label">Règle 5.1 <span class="box-title">(Marques latérales, région A)</span>.</p>
+<p>En entrant au port : on laisse les marques <strong>rouges à bâbord</strong> (à gauche) et les marques <strong>vertes à tribord</strong> (à droite). En sortant, c'est l'inverse.</p>
+<ul>
+  <li>Bâbord : rouge, forme cylindrique (ou espar), voyant cylindre rouge, feu rouge.</li>
+  <li>Tribord : vert, forme conique (ou espar), voyant cône vert pointe en haut, feu vert.</li>
+  <li>Les feux ont un rythme quelconque, sauf Fl(2+1), réservé aux marques de bifurcation.</li>
+  <li>En France, les marques sont numérotées depuis le large : numéros pairs à bâbord, impairs à tribord.</li>
+</ul>
+</div>
+
+<h3 id="bifurcation-et-chenal-prefere"><span class="secnum">5.2.1</span>Bifurcation et chenal préféré</h3>
+<p>Quand un chenal se divise, une marque latérale modifiée indique le <dfn>chenal préféré</dfn>, c'est-à-dire le chenal principal. Une marque rouge avec une large bande verte (voyant cylindre rouge) se traite comme une marque bâbord : on la laisse à bâbord pour suivre le chenal principal, qui est donc à tribord. Une marque verte à bande rouge (voyant cône vert) indique le chenal préféré à bâbord. Leur feu est Fl(2+1), rouge ou vert.</p>
+
+<div class="box ex"><p class="box-label">Exemple 5.2.</p>
+<p>Je rentre au port et je vois une bouée rouge à bande verte, voyant cylindrique. C'est une marque bâbord modifiée : le chenal principal passe en la laissant à bâbord, donc à droite de la bouée. Un petit bateau peut aussi passer de l'autre côté, dans le chenal secondaire, s'il y a assez d'eau.</p>
+</div>
+
+<h2 id="cardinales"><span class="secnum">5.3</span>Les marques cardinales</h2>
+
+<p>Une marque cardinale est placée dans l'un des quatre quadrants (Nord, Est, Sud, Ouest) d'un danger, et indique que les eaux saines se trouvent dans ce quadrant. Elle ne dépend pas du sens de navigation.</p>
+
+<figure>
+<div class="figrow">
+  <div><svg class="balise" viewBox="0 0 100 165" width="92" height="152" role="img" aria-label="Cardinale Nord" xmlns="http://www.w3.org/2000/svg"><title>Cardinale Nord</title>
+<defs><clipPath id="b5"><path d="M37 74 L63 74 L69 131 L31 131 Z"/></clipPath></defs>
+<rect width="100" height="165" fill="#e3e9ee"/>
+<rect y="141" width="100" height="24" fill="#a9bdcb"/>
+<rect x="22" y="129" width="56" height="16" fill="#4a4f55"/>
+<g clip-path="url(#b5)"><rect x="0" y="74" width="100" height="29" fill="#1e1e1e"/><rect x="0" y="102.5" width="100" height="29" fill="#f0c22b"/></g>
+<path d="M37 74 L63 74 L69 131 L31 131 Z" fill="none" stroke="#1e1e1e" stroke-width="1.2"/>
+<line x1="50" y1="22" x2="50" y2="74" stroke="#1e1e1e" stroke-width="2"/><path d="M50 9 L60 23 L40 23 Z" fill="#1e1e1e" stroke="#1e1e1e" stroke-width="1"/><path d="M50 27 L60 41 L40 41 Z" fill="#1e1e1e" stroke="#1e1e1e" stroke-width="1"/>
+<path d="M0 142 q8 -3 16 0 t16 0 t16 0 t16 0 t16 0 t16 0 t16 0" fill="none" stroke="#93abbb" stroke-width="2"/>
+</svg>Nord<br><span class="muted">noir sur jaune</span></div>
+  <div><svg class="balise" viewBox="0 0 100 165" width="92" height="152" role="img" aria-label="Cardinale Est" xmlns="http://www.w3.org/2000/svg"><title>Cardinale Est</title>
+<defs><clipPath id="b6"><path d="M37 74 L63 74 L69 131 L31 131 Z"/></clipPath></defs>
+<rect width="100" height="165" fill="#e3e9ee"/>
+<rect y="141" width="100" height="24" fill="#a9bdcb"/>
+<rect x="22" y="129" width="56" height="16" fill="#4a4f55"/>
+<g clip-path="url(#b6)"><rect x="0" y="74" width="100" height="18.74000000000001" fill="#1e1e1e"/><rect x="0" y="92.24000000000001" width="100" height="19.879999999999995" fill="#f0c22b"/><rect x="0" y="111.62" width="100" height="19.879999999999995" fill="#1e1e1e"/></g>
+<path d="M37 74 L63 74 L69 131 L31 131 Z" fill="none" stroke="#1e1e1e" stroke-width="1.2"/>
+<line x1="50" y1="22" x2="50" y2="74" stroke="#1e1e1e" stroke-width="2"/><path d="M50 9 L60 23 L40 23 Z" fill="#1e1e1e" stroke="#1e1e1e" stroke-width="1"/><path d="M50 39 L60 25 L40 25 Z" fill="#1e1e1e" stroke="#1e1e1e" stroke-width="1"/>
+<path d="M0 142 q8 -3 16 0 t16 0 t16 0 t16 0 t16 0 t16 0 t16 0" fill="none" stroke="#93abbb" stroke-width="2"/>
+</svg>Est<br><span class="muted">noir, jaune, noir</span></div>
+  <div><svg class="balise" viewBox="0 0 100 165" width="92" height="152" role="img" aria-label="Cardinale Sud" xmlns="http://www.w3.org/2000/svg"><title>Cardinale Sud</title>
+<defs><clipPath id="b7"><path d="M37 74 L63 74 L69 131 L31 131 Z"/></clipPath></defs>
+<rect width="100" height="165" fill="#e3e9ee"/>
+<rect y="141" width="100" height="24" fill="#a9bdcb"/>
+<rect x="22" y="129" width="56" height="16" fill="#4a4f55"/>
+<g clip-path="url(#b7)"><rect x="0" y="74" width="100" height="29" fill="#f0c22b"/><rect x="0" y="102.5" width="100" height="29" fill="#1e1e1e"/></g>
+<path d="M37 74 L63 74 L69 131 L31 131 Z" fill="none" stroke="#1e1e1e" stroke-width="1.2"/>
+<line x1="50" y1="22" x2="50" y2="74" stroke="#1e1e1e" stroke-width="2"/><path d="M50 23 L60 9 L40 9 Z" fill="#1e1e1e" stroke="#1e1e1e" stroke-width="1"/><path d="M50 41 L60 27 L40 27 Z" fill="#1e1e1e" stroke="#1e1e1e" stroke-width="1"/>
+<path d="M0 142 q8 -3 16 0 t16 0 t16 0 t16 0 t16 0 t16 0 t16 0" fill="none" stroke="#93abbb" stroke-width="2"/>
+</svg>Sud<br><span class="muted">jaune sur noir</span></div>
+  <div><svg class="balise" viewBox="0 0 100 165" width="92" height="152" role="img" aria-label="Cardinale Ouest" xmlns="http://www.w3.org/2000/svg"><title>Cardinale Ouest</title>
+<defs><clipPath id="b8"><path d="M37 74 L63 74 L69 131 L31 131 Z"/></clipPath></defs>
+<rect width="100" height="165" fill="#e3e9ee"/>
+<rect y="141" width="100" height="24" fill="#a9bdcb"/>
+<rect x="22" y="129" width="56" height="16" fill="#4a4f55"/>
+<g clip-path="url(#b8)"><rect x="0" y="74" width="100" height="18.74000000000001" fill="#f0c22b"/><rect x="0" y="92.24000000000001" width="100" height="19.879999999999995" fill="#1e1e1e"/><rect x="0" y="111.62" width="100" height="19.879999999999995" fill="#f0c22b"/></g>
+<path d="M37 74 L63 74 L69 131 L31 131 Z" fill="none" stroke="#1e1e1e" stroke-width="1.2"/>
+<line x1="50" y1="22" x2="50" y2="74" stroke="#1e1e1e" stroke-width="2"/><path d="M50 24 L60 10 L40 10 Z" fill="#1e1e1e" stroke="#1e1e1e" stroke-width="1"/><path d="M50 26 L60 40 L40 40 Z" fill="#1e1e1e" stroke="#1e1e1e" stroke-width="1"/>
+<path d="M0 142 q8 -3 16 0 t16 0 t16 0 t16 0 t16 0 t16 0 t16 0" fill="none" stroke="#93abbb" stroke-width="2"/>
+</svg>Ouest<br><span class="muted">jaune, noir, jaune</span></div>
+</div>
+<figcaption><span class="fignum">Figure 5.2.</span> Les quatre marques cardinales. Les pointes des cônes indiquent où se trouve le noir.</figcaption>
+</figure>
+
+<div class="box prop"><p class="box-label">Règle 5.3 <span class="box-title">(Marques cardinales)</span>.</p>
+<p>Une cardinale Nord est au Nord du danger : on passe <strong>au Nord</strong> de la marque. De même pour l'Est, le Sud et l'Ouest. Les quadrants sont délimités par les relèvements vrais NW-NE, NE-SE, SE-SW et SW-NW, vus depuis le danger.</p>
+</div>
+
+<h3 id="retenir-les-voyants-et-les-couleurs"><span class="secnum">5.3.1</span>Retenir les voyants et les couleurs</h3>
+<ul>
+  <li><strong>Nord</strong> : deux cônes pointe en haut, comme une flèche vers le Nord. <strong>Sud</strong> : deux cônes pointe en bas.</li>
+  <li><strong>Est</strong> : cônes opposés par la base, en losange. <strong>Ouest</strong> : cônes opposés par la pointe, en sablier.</li>
+  <li>Le noir est du côté où pointent les cônes : en haut pour la Nord, en bas pour la Sud, en haut et en bas pour l'Est (noir-jaune-noir), au milieu pour l'Ouest (jaune-noir-jaune).</li>
+</ul>
+
+<h3 id="les-feux-des-cardinales"><span class="secnum">5.3.2</span>Les feux des cardinales</h3>
+<p>Tous blancs, scintillants (Q, 50 à 60 éclats par minute) ou scintillants rapides (VQ, 100 à 120 par minute). Le nombre d'éclats suit le cadran d'une montre :</p>
+
+<div class="tbl-wrap"><table>
+<thead><tr><th>Marque</th><th>Feu</th><th>Rythme scintillant (Q)</th><th>Moyen mnémotechnique</th></tr></thead>
+<tbody>
+<tr><td>Nord</td><td><span class="feu" data-r="Q" data-c="W" data-p=""><span class="lamp" aria-hidden="true"><i></i></span><span class="lbl">Q</span></span></td><td>scintillement continu</td><td>midi</td></tr>
+<tr><td>Est</td><td><span class="feu" data-r="Q(3)" data-c="W" data-p="10"><span class="lamp" aria-hidden="true"><i></i></span><span class="lbl">Q(3) 10s</span></span></td><td>3 scintillements</td><td>3 heures</td></tr>
+<tr><td>Sud</td><td><span class="feu" data-r="Q(6)+LFl" data-c="W" data-p="15"><span class="lamp" aria-hidden="true"><i></i></span><span class="lbl">Q(6)+LFl 15s</span></span></td><td>6 scintillements et un éclat long</td><td>6 heures</td></tr>
+<tr><td>Ouest</td><td><span class="feu" data-r="Q(9)" data-c="W" data-p="15"><span class="lamp" aria-hidden="true"><i></i></span><span class="lbl">Q(9) 15s</span></span></td><td>9 scintillements</td><td>9 heures</td></tr>
+</tbody>
+<caption>Avec des scintillements rapides, les périodes sont plus courtes : VQ(3) 5 s, VQ(6)+LFl 10 s, VQ(9) 10 s. L'éclat long de la Sud évite de confondre 6 avec 3 ou 9 quand on compte mal.</caption>
+</table></div>
+
+<div class="box ex"><p class="box-label">Exemple 5.4 <span class="box-title">(annales)</span>.</p>
+<ul>
+  <li>Faisant route au Nord, je vois une cardinale Est droit devant : je dois passer à l'Est de la marque, donc à droite : je la laisse <strong>à bâbord</strong>.</li>
+  <li>Faisant route au 080, je vois droit devant une bouée jaune-noir-jaune (cardinale Ouest) : je dois passer à l'Ouest. Je viens au Nord ou au Sud pour la contourner par l'Ouest, puis je reprends ma route en gardant le danger à distance.</li>
+  <li>De nuit, faisant route au 045, je vois un feu blanc qui fait 6 scintillements et un éclat long : cardinale Sud, le danger est au Nord de la marque. Je dois passer au Sud de la marque ; en allant vers le Nord-Est, cela revient à la laisser <strong>à bâbord</strong>. Un petit dessin (la marque, le danger au-dessus, ma route) règle ce genre de question en dix secondes.</li>
+</ul>
+</div>
+
+<h2 id="danger-isole"><span class="secnum">5.4</span>Danger isolé</h2>
+<div class="two">
+<div>
+<p>Une marque de danger isolé est posée sur un danger de faible étendue, entouré d'eaux navigables. Elle est noire avec une ou plusieurs larges bandes horizontales rouges, et porte deux sphères noires superposées. Son feu est blanc, à deux éclats groupés : Fl(2), comme la lettre « i » (isolé) en morse.</p>
+<p>On peut passer de tous les côtés, mais pas trop près : la marque est <em>sur</em> le danger.</p>
+<p><span class="feu" data-r="Fl(2)" data-c="W" data-p="5"><span class="lamp" aria-hidden="true"><i></i></span><span class="lbl">Fl(2) 5s</span></span></p>
+</div>
+<div class="figrow"><div><svg class="balise" viewBox="0 0 100 165" width="100" height="165" role="img" aria-label="Danger isolé" xmlns="http://www.w3.org/2000/svg"><title>Danger isolé</title>
+<defs><clipPath id="b9"><path d="M37 74 L63 74 L69 131 L31 131 Z"/></clipPath></defs>
+<rect width="100" height="165" fill="#e3e9ee"/>
+<rect y="141" width="100" height="24" fill="#a9bdcb"/>
+<rect x="22" y="129" width="56" height="16" fill="#4a4f55"/>
+<g clip-path="url(#b9)"><rect x="0" y="74" width="100" height="18.74000000000001" fill="#1e1e1e"/><rect x="0" y="92.24000000000001" width="100" height="19.879999999999995" fill="#cf3a2e"/><rect x="0" y="111.62" width="100" height="19.879999999999995" fill="#1e1e1e"/></g>
+<path d="M37 74 L63 74 L69 131 L31 131 Z" fill="none" stroke="#1e1e1e" stroke-width="1.2"/>
+<line x1="50" y1="22" x2="50" y2="74" stroke="#1e1e1e" stroke-width="2"/><circle cx="50" cy="16" r="7.5" fill="#1e1e1e"/><circle cx="50" cy="33" r="7.5" fill="#1e1e1e"/>
+<path d="M0 142 q8 -3 16 0 t16 0 t16 0 t16 0 t16 0 t16 0 t16 0" fill="none" stroke="#93abbb" stroke-width="2"/>
+</svg>Danger isolé</div></div>
+</div>
+
+<h2 id="eaux-saines"><span class="secnum">5.5</span>Eaux saines</h2>
+<div class="two">
+<div>
+<p>Une marque d'eaux saines indique que les eaux sont navigables tout autour : milieu d'un chenal, point d'atterrissage avant une passe. Elle porte des bandes verticales rouges et blanches, et une sphère rouge. Son feu est blanc : isophase (Iso), à occultations (Oc), à un éclat long toutes les 10 s (LFl 10s) ou en morse « A » (Mo(A)).</p>
+<p><span class="feu" data-r="Iso" data-c="W" data-p="4"><span class="lamp" aria-hidden="true"><i></i></span><span class="lbl">Iso 4s</span></span> &emsp; <span class="feu" data-r="LFl" data-c="W" data-p="10"><span class="lamp" aria-hidden="true"><i></i></span><span class="lbl">LFl 10s</span></span></p>
+</div>
+<div class="figrow"><div><svg class="balise" viewBox="0 0 100 165" width="100" height="165" role="img" aria-label="Eaux saines" xmlns="http://www.w3.org/2000/svg"><title>Eaux saines</title>
+<defs><clipPath id="b10"><path d="M37 74 L63 74 L69 131 L31 131 Z"/></clipPath></defs>
+<rect width="100" height="165" fill="#e3e9ee"/>
+<rect y="141" width="100" height="24" fill="#a9bdcb"/>
+<rect x="22" y="129" width="56" height="16" fill="#4a4f55"/>
+<g clip-path="url(#b10)"><rect x="24" y="74" width="6.8" height="57" fill="#cf3a2e"/><rect x="30.5" y="74" width="6.8" height="57" fill="#f8f7f2"/><rect x="37" y="74" width="6.8" height="57" fill="#cf3a2e"/><rect x="43.5" y="74" width="6.8" height="57" fill="#f8f7f2"/><rect x="50" y="74" width="6.8" height="57" fill="#cf3a2e"/><rect x="56.5" y="74" width="6.8" height="57" fill="#f8f7f2"/><rect x="63" y="74" width="6.8" height="57" fill="#cf3a2e"/><rect x="69.5" y="74" width="6.8" height="57" fill="#f8f7f2"/></g>
+<path d="M37 74 L63 74 L69 131 L31 131 Z" fill="none" stroke="#1e1e1e" stroke-width="1.2"/>
+<line x1="50" y1="22" x2="50" y2="74" stroke="#1e1e1e" stroke-width="2"/><circle cx="50" cy="24" r="8.5" fill="#cf3a2e" stroke="#1e1e1e" stroke-width="1"/>
+<path d="M0 142 q8 -3 16 0 t16 0 t16 0 t16 0 t16 0 t16 0 t16 0" fill="none" stroke="#93abbb" stroke-width="2"/>
+</svg>Eaux saines</div></div>
+</div>
+
+<h2 id="speciales"><span class="secnum">5.6</span>Marques spéciales</h2>
+<div class="two">
+<div>
+<p>Les marques spéciales ne sont pas destinées à guider la navigation mais à signaler une zone ou un objet particulier : zone militaire, câble ou conduite sous-marine, zone de mouillage, de pêche ou de loisirs, bouée de mesure scientifique, limite de la bande des 300 m. Elles sont jaunes, avec un voyant en croix de Saint-André (X) jaune. Leur feu est jaune, d'un rythme quelconque qui ne prête pas à confusion avec celui des feux blancs.</p>
+<p>La carte et les instructions nautiques précisent ce qu'elles signalent. Leur forme peut indiquer de quel côté passer quand elles bordent un chenal.</p>
+</div>
+<div class="figrow"><div><svg class="balise" viewBox="0 0 100 165" width="100" height="165" role="img" aria-label="Marque spéciale" xmlns="http://www.w3.org/2000/svg"><title>Marque spéciale</title>
+<defs><clipPath id="b11"><path d="M37 74 L63 74 L69 131 L31 131 Z"/></clipPath></defs>
+<rect width="100" height="165" fill="#e3e9ee"/>
+<rect y="141" width="100" height="24" fill="#a9bdcb"/>
+<rect x="22" y="129" width="56" height="16" fill="#4a4f55"/>
+<g clip-path="url(#b11)"><rect x="0" y="74" width="100" height="57.5" fill="#f0c22b"/></g>
+<path d="M37 74 L63 74 L69 131 L31 131 Z" fill="none" stroke="#1e1e1e" stroke-width="1.2"/>
+<line x1="50" y1="22" x2="50" y2="74" stroke="#1e1e1e" stroke-width="2"/><g stroke="#1e1e1e" stroke-width="6"><path d="M41 14 L59 34 M59 14 L41 34"/></g><g stroke="#f0c22b" stroke-width="4"><path d="M41.6 14.7 L58.4 33.3 M58.4 14.7 L41.6 33.3"/></g>
+<path d="M0 142 q8 -3 16 0 t16 0 t16 0 t16 0 t16 0 t16 0 t16 0" fill="none" stroke="#93abbb" stroke-width="2"/>
+</svg>Spéciale</div></div>
+</div>
+
+<h2 id="danger-nouveau"><span class="secnum">5.7</span>Danger nouveau</h2>
+<div class="two">
+<div>
+<p>Un <dfn>danger nouveau</dfn> est un danger qui n'est pas encore porté sur les cartes : épave récente, banc de sable qui s'est formé. Depuis 2006, il est signalé par une <dfn>bouée d'urgence d'épave</dfn> à bandes verticales bleues et jaunes, voyant en croix droite (+) jaune, feu alternativement bleu et jaune (Al.Bu.Y). Avant cette marque, on doublait la marque normale (deux cardinales identiques côte à côte, par exemple) ; cette pratique peut encore se rencontrer.</p>
+<p><span class="feu" data-r="Al" data-c="Bu,Y" data-p="3"><span class="lamp" aria-hidden="true"><i></i></span><span class="lbl">Al.Bu.Y</span></span></p>
+</div>
+<div class="figrow"><div><svg class="balise" viewBox="0 0 100 165" width="100" height="165" role="img" aria-label="Danger nouveau (bouée d’urgence d’épave)" xmlns="http://www.w3.org/2000/svg"><title>Danger nouveau (bouée d’urgence d’épave)</title>
+<defs><clipPath id="b12"><path d="M37 74 L63 74 L69 131 L31 131 Z"/></clipPath></defs>
+<rect width="100" height="165" fill="#e3e9ee"/>
+<rect y="141" width="100" height="24" fill="#a9bdcb"/>
+<rect x="22" y="129" width="56" height="16" fill="#4a4f55"/>
+<g clip-path="url(#b12)"><rect x="24" y="74" width="6.8" height="57" fill="#2a62a8"/><rect x="30.5" y="74" width="6.8" height="57" fill="#f0c22b"/><rect x="37" y="74" width="6.8" height="57" fill="#2a62a8"/><rect x="43.5" y="74" width="6.8" height="57" fill="#f0c22b"/><rect x="50" y="74" width="6.8" height="57" fill="#2a62a8"/><rect x="56.5" y="74" width="6.8" height="57" fill="#f0c22b"/><rect x="63" y="74" width="6.8" height="57" fill="#2a62a8"/><rect x="69.5" y="74" width="6.8" height="57" fill="#f0c22b"/></g>
+<path d="M37 74 L63 74 L69 131 L31 131 Z" fill="none" stroke="#1e1e1e" stroke-width="1.2"/>
+<line x1="50" y1="22" x2="50" y2="74" stroke="#1e1e1e" stroke-width="2"/><g stroke="#1e1e1e" stroke-width="6"><path d="M50 12 V36 M39 24 H61"/></g><g stroke="#f0c22b" stroke-width="4"><path d="M50 12.8 V35.2 M39.8 24 H60.2"/></g>
+<path d="M0 142 q8 -3 16 0 t16 0 t16 0 t16 0 t16 0 t16 0 t16 0" fill="none" stroke="#93abbb" stroke-width="2"/>
+</svg>Danger nouveau</div></div>
+</div>
+
+<h2 id="plages"><span class="secnum">5.8</span>Le balisage des plages</h2>
+<p>Le long des plages s'étend la <dfn>bande des 300 m</dfn>, mesurée depuis la limite des eaux. Sa limite est souvent matérialisée par des bouées sphériques jaunes. Dans cette bande, la vitesse est limitée à 5 nd, et les zones réservées à la baignade (délimitées par des bouées jaunes) sont interdites aux engins et embarcations.</p>
+<p>Pour rejoindre la plage, les embarcations empruntent des <dfn>chenaux traversiers</dfn> : bouées jaunes, coiffées d'un voyant cylindrique rouge à bâbord et conique vert à tribord, en entrant vers la plage.</p>
+
+<figure>
+<div class="figrow">
+  <div><svg class="balise" viewBox="0 0 100 165" width="92" height="152" role="img" aria-label="Limite de zone (bande des 300 m, baignade)" xmlns="http://www.w3.org/2000/svg"><title>Limite de zone (bande des 300 m, baignade)</title>
+<defs><clipPath id="b13"><path d="M28 127 A22 22 0 1 1 72 127 L72 141 L28 141 Z"/></clipPath></defs>
+<rect width="100" height="165" fill="#e3e9ee"/>
+<rect y="141" width="100" height="24" fill="#a9bdcb"/>
+
+<g clip-path="url(#b13)"><rect x="0" y="105" width="100" height="36.5" fill="#f0c22b"/></g>
+<path d="M28 127 A22 22 0 1 1 72 127 L72 141 L28 141 Z" fill="none" stroke="#1e1e1e" stroke-width="1.2"/>
+
+<path d="M0 142 q8 -3 16 0 t16 0 t16 0 t16 0 t16 0 t16 0 t16 0" fill="none" stroke="#93abbb" stroke-width="2"/>
+</svg>Limite de zone<br><span class="muted">bande des 300 m, baignade</span></div>
+  <div><svg class="balise" viewBox="0 0 100 165" width="92" height="152" role="img" aria-label="Chenal traversier, côté bâbord" xmlns="http://www.w3.org/2000/svg"><title>Chenal traversier, côté bâbord</title>
+<defs><clipPath id="b14"><path d="M31 80 H69 V141 H31 Z"/></clipPath></defs>
+<rect width="100" height="165" fill="#e3e9ee"/>
+<rect y="141" width="100" height="24" fill="#a9bdcb"/>
+
+<g clip-path="url(#b14)"><rect x="0" y="80" width="100" height="61.5" fill="#f0c22b"/></g>
+<path d="M31 80 H69 V141 H31 Z" fill="none" stroke="#1e1e1e" stroke-width="1.2"/>
+<line x1="50" y1="22" x2="50" y2="80" stroke="#1e1e1e" stroke-width="2"/><rect x="41" y="14" width="18" height="20" fill="#cf3a2e" stroke="#1e1e1e" stroke-width="1"/>
+<path d="M0 142 q8 -3 16 0 t16 0 t16 0 t16 0 t16 0 t16 0 t16 0" fill="none" stroke="#93abbb" stroke-width="2"/>
+</svg>Chenal traversier,<br><span class="muted">côté bâbord</span></div>
+  <div><svg class="balise" viewBox="0 0 100 165" width="92" height="152" role="img" aria-label="Chenal traversier, côté tribord" xmlns="http://www.w3.org/2000/svg"><title>Chenal traversier, côté tribord</title>
+<defs><clipPath id="b15"><path d="M44 72 H56 L73 141 H27 Z"/></clipPath></defs>
+<rect width="100" height="165" fill="#e3e9ee"/>
+<rect y="141" width="100" height="24" fill="#a9bdcb"/>
+
+<g clip-path="url(#b15)"><rect x="0" y="72" width="100" height="69.5" fill="#f0c22b"/></g>
+<path d="M44 72 H56 L73 141 H27 Z" fill="none" stroke="#1e1e1e" stroke-width="1.2"/>
+<line x1="50" y1="22" x2="50" y2="72" stroke="#1e1e1e" stroke-width="2"/><path d="M50 17 L60 31 L40 31 Z" fill="#1f8a4c" stroke="#1e1e1e" stroke-width="1"/>
+<path d="M0 142 q8 -3 16 0 t16 0 t16 0 t16 0 t16 0 t16 0 t16 0" fill="none" stroke="#93abbb" stroke-width="2"/>
+</svg>Chenal traversier,<br><span class="muted">côté tribord</span></div>
+</div>
+<figcaption><span class="fignum">Figure 5.3.</span> Le balisage des plages. Ces marques sont jaunes (marques spéciales) ; les voyants rouge et vert des chenaux traversiers s'interprètent comme le balisage latéral, en venant du large vers la plage.</figcaption>
+</figure>
+
+<h2 id="feux"><span class="secnum">5.9</span>Les feux</h2>
+
+<p>De nuit, une marque se reconnaît à la couleur et au rythme de son feu. La carte et le livre des feux les décrivent avec une notation normalisée, par exemple :</p>
+<p class="formula"><span class="mono">Fl(3) WRG 12s 15m 11-8M</span></p>
+<p>qui se lit : trois éclats groupés (Fl(3)), à secteurs blanc, rouge et vert (WRG), période 12 secondes, feu situé à 15 m au-dessus des plus hautes mers, portée 11 milles pour le blanc et 8 milles pour les couleurs.</p>
+
+<div class="tbl-wrap"><table>
+<thead><tr><th>Notation</th><th>Nom</th><th>Description</th><th>Exemple</th></tr></thead>
+<tbody>
+<tr><td class="mono">F</td><td>fixe</td><td>allumé en permanence</td><td><span class="feu" data-r="F" data-c="R" data-p=""><span class="lamp" aria-hidden="true"><i></i></span></span></td></tr>
+<tr><td class="mono">Fl</td><td>à éclats</td><td>durée de lumière plus courte que l'obscurité</td><td><span class="feu" data-r="Fl" data-c="G" data-p="4"><span class="lamp" aria-hidden="true"><i></i></span><span class="lbl">Fl G 4s</span></span></td></tr>
+<tr><td class="mono">Fl(2)</td><td>à éclats groupés</td><td>groupe de 2 éclats, répété</td><td><span class="feu" data-r="Fl(2)" data-c="R" data-p="6"><span class="lamp" aria-hidden="true"><i></i></span><span class="lbl">Fl(2) R 6s</span></span></td></tr>
+<tr><td class="mono">Fl(2+1)</td><td>éclats groupés composés</td><td>groupe de 2 puis 1 éclat</td><td><span class="feu" data-r="Fl(2+1)" data-c="R" data-p="10"><span class="lamp" aria-hidden="true"><i></i></span><span class="lbl">Fl(2+1) R 10s</span></span></td></tr>
+<tr><td class="mono">LFl</td><td>à éclat long</td><td>éclat d'au moins 2 secondes</td><td><span class="feu" data-r="LFl" data-c="W" data-p="10"><span class="lamp" aria-hidden="true"><i></i></span><span class="lbl">LFl 10s</span></span></td></tr>
+<tr><td class="mono">Oc</td><td>à occultations</td><td>durée de lumière plus longue que l'obscurité</td><td><span class="feu" data-r="Oc" data-c="W" data-p="4"><span class="lamp" aria-hidden="true"><i></i></span><span class="lbl">Oc 4s</span></span></td></tr>
+<tr><td class="mono">Oc(2)</td><td>à occultations groupées</td><td>groupe de 2 occultations</td><td><span class="feu" data-r="Oc(2)" data-c="G" data-p="6"><span class="lamp" aria-hidden="true"><i></i></span><span class="lbl">Oc(2) G 6s</span></span></td></tr>
+<tr><td class="mono">Iso</td><td>isophase</td><td>lumière et obscurité de même durée</td><td><span class="feu" data-r="Iso" data-c="W" data-p="4"><span class="lamp" aria-hidden="true"><i></i></span><span class="lbl">Iso 4s</span></span></td></tr>
+<tr><td class="mono">Q</td><td>scintillant</td><td>50 à 60 éclats par minute</td><td><span class="feu" data-r="Q" data-c="W" data-p=""><span class="lamp" aria-hidden="true"><i></i></span><span class="lbl">Q</span></span></td></tr>
+<tr><td class="mono">VQ</td><td>scintillant rapide</td><td>100 à 120 éclats par minute</td><td><span class="feu" data-r="VQ" data-c="W" data-p=""><span class="lamp" aria-hidden="true"><i></i></span><span class="lbl">VQ</span></span></td></tr>
+<tr><td class="mono">Mo(A)</td><td>morse</td><td>lettre en code morse (ici · −)</td><td><span class="feu" data-r="Mo(A)" data-c="W" data-p="8"><span class="lamp" aria-hidden="true"><i></i></span><span class="lbl">Mo(A) 8s</span></span></td></tr>
+<tr><td class="mono">Al.WR</td><td>alternatif</td><td>change de couleur</td><td><span class="feu" data-r="Al" data-c="W,R" data-p="4"><span class="lamp" aria-hidden="true"><i></i></span><span class="lbl">Al.WR 4s</span></span></td></tr>
+</tbody></table></div>
+
+<div class="box def"><p class="box-label">Définition 5.5 <span class="box-title">(Période)</span>.</p>
+<p>La <dfn>période</dfn> d'un feu est la durée d'un cycle complet, du début d'un groupe d'éclats au début du suivant. Pour identifier un feu, on compte les éclats d'un groupe et on chronomètre la période (en comptant « un-et-deux-et-trois… ») sur plusieurs cycles.</p>
+</div>
+
+<h3 id="les-secteurs"><span class="secnum">5.9.1</span>Les secteurs</h3>
+<p>Un phare ou un feu d'entrée de port peut montrer des couleurs différentes selon la direction d'où on le voit. En général, le <strong>secteur blanc</strong> couvre la route sûre ; les secteurs <strong>rouge et vert</strong> couvrent les dangers de part et d'autre. Les limites des secteurs sont données sur la carte en relèvements vrais <em>vus du large</em>. Passer d'un secteur à l'autre donne une droite de position aussi utile qu'un relèvement.</p>
+
+<div class="box ex"><p class="box-label">Exemple 5.6 <span class="box-title">(annale octobre 2022)</span>.</p>
+<p>Depuis la position de 7 h 06, on voit le phare d'Argol (Hoëdic) dans son secteur blanc. Ses secteurs blancs encadrent un secteur vert : si l'on ne voyait que la couleur blanche, on saurait seulement que le courant nous a déportés soit à l'Est soit à l'Ouest du secteur vert.</p>
+</div>
+
+<h3 id="portee"><span class="secnum">5.9.2</span>Portée</h3>
+<p>La <dfn>portée nominale</dfn> donnée sur la carte est la distance à laquelle le feu est visible par une nuit claire (visibilité météorologique de 10 M). La rotondité de la Terre limite aussi la distance : la <dfn>portée géographique</dfn> vaut environ</p>
+<p class="formula"><var>D</var> (M) ≈ 2,1 (√<var>H</var> + √<var>e</var>),</p>
+<p>avec <var>H</var> la hauteur du feu et <var>e</var> la hauteur de l'œil de l'observateur, en mètres. Pour un feu à 25 m vu d'un petit voilier (œil à 2 m) : 2,1 × (5 + 1,4) ≈ 13 M. Par temps de brume, la portée chute.</p>
+
+<div class="box retenir"><p class="box-label">À retenir.</p>
+<ul>
+  <li>Région A : en rentrant au port, rouge à bâbord (cylindre), vert à tribord (cône).</li>
+  <li>Cardinale = côté où passer. Pointes des cônes = position du noir. Feux blancs : N continu, E 3, S 6 + long, W 9.</li>
+  <li>Danger isolé : noir et rouge, deux boules, Fl(2) blanc. Eaux saines : rouge et blanc vertical, une boule rouge, feu blanc lent.</li>
+  <li>Spéciale : jaune, X jaune, feu jaune. Danger nouveau : bleu et jaune, croix +, Al.Bu.Y.</li>
+  <li>Bande des 300 m : 5 nd maximum, zones de baignade interdites, chenaux traversiers jaunes.</li>
+</ul>
+</div>
+
+    <nav class="pager"><a class="prev" href="../cours/04-maree.html"><span>Précédent</span>Chapitre 4 · La marée</a><a class="next" href="../cours/06-ripam.html"><span>Suivant</span>Chapitre 6 · Règles de barre et de route</a></nav>
+  </article>
+</div>
+</main>
+<footer class="foot">
+  <div class="foot-in">
+    <p>Préparation au brevet de patron d'embarcation et à la navigation à voile. Rédigé à partir des cours de navigation des scouts marins de Brest, mis à jour et complétés.</p>
+    <p>Ce site ne remplace ni la réglementation (Division 240, RIPAM), ni les documents officiels du SHOM, ni le règlement de votre association. En cas de doute, ce sont eux qui font foi.</p>
+  </div>
+</footer>
+<script src="../js/site.js"></script>
+
+
+</body>
+</html>

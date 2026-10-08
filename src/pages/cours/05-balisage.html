@@ -1,0 +1,195 @@
+<!--meta {"title": "Le balisage", "short": "Le balisage", "part": "cours", "num": 5, "desc": "Le système de balisage AISM (région A) : marques latérales, cardinales, danger isolé, eaux saines, spéciales, danger nouveau ; balisage des plages ; caractéristiques des feux."} -->
+
+<h2 id="systeme">Le système AISM</h2>
+
+<p>Le balisage est le langage par lequel l'autorité maritime signale les dangers et indique les passages. Il est fixé au niveau mondial par l'Association internationale de signalisation maritime (AISM, ou IALA en anglais). Deux variantes coexistent : la <dfn>région A</dfn> (Europe, Afrique, la plus grande partie de l'Asie et l'Océanie) et la <dfn>région B</dfn> (Amériques, Japon, Corée, Philippines), où les couleurs des marques latérales sont inversées. Tout ce qui suit concerne la région A.</p>
+
+<p>Une marque se reconnaît, dans l'ordre de fiabilité, à :</p>
+<ol>
+  <li>son <strong>voyant</strong> (la forme posée à son sommet : cône, cylindre, sphères, croix) ;</li>
+  <li>ses <strong>couleurs</strong> et leur disposition (bandes horizontales ou verticales) ;</li>
+  <li>sa <strong>forme</strong> (cylindrique, conique, charpente, espar, tourelle), qui n'est significative que pour les marques latérales ;</li>
+  <li>la nuit, son <strong>feu</strong> : couleur et rythme.</li>
+</ol>
+<p>Une marque peut être une bouée flottante (ancrée par une chaîne, qui bouge un peu avec la marée), une perche ou une tourelle bâtie sur une roche, ou un phare. Sur la carte, chaque marque est dessinée avec ses couleurs (abréviations B noir, R rouge, G vert, Y jaune, W blanc) et la description de son feu.</p>
+
+<div class="box warn">
+<p>Les couleurs se lisent mal à contre-jour et de loin : le voyant, qui se découpe sur le ciel, est souvent l'indice le plus sûr. On confirme toujours l'identification avec la carte avant de s'y fier.</p>
+</div>
+
+<h2 id="laterales">Les marques latérales</h2>
+
+<p>Les marques latérales délimitent les chenaux. Elles s'entendent dans le <dfn>sens conventionnel du balisage</dfn> : en venant du large vers un port, un estuaire ou une rivière. Ailleurs (le long d'une côte, entre deux îles), le sens est fixé par l'autorité et indiqué sur la carte par une flèche magenta.</p>
+
+<figure>
+<div class="figrow">
+  <div><x-balise type="babord" />Bâbord<br><span class="muted">rouge, cylindre</span></div>
+  <div><x-balise type="tribord" />Tribord<br><span class="muted">verte, cône pointe en haut</span></div>
+  <div><x-balise type="chenal-pref-tribord" />Bifurcation :<br><span class="muted">chenal préféré à tribord</span></div>
+  <div><x-balise type="chenal-pref-babord" />Bifurcation :<br><span class="muted">chenal préféré à bâbord</span></div>
+</div>
+<figcaption>Les marques latérales en région A. Les deux dernières, aux bifurcations, prennent la forme et le voyant de la marque latérale qui borde le chenal principal, avec une bande de l'autre couleur.</figcaption>
+</figure>
+
+<div class="box prop" data-title="Marques latérales, région A">
+<p>En entrant au port : on laisse les marques <strong>rouges à bâbord</strong> (à gauche) et les marques <strong>vertes à tribord</strong> (à droite). En sortant, c'est l'inverse.</p>
+<ul>
+  <li>Bâbord : rouge, forme cylindrique (ou espar), voyant cylindre rouge, feu rouge.</li>
+  <li>Tribord : vert, forme conique (ou espar), voyant cône vert pointe en haut, feu vert.</li>
+  <li>Les feux ont un rythme quelconque, sauf Fl(2+1), réservé aux marques de bifurcation.</li>
+  <li>En France, les marques sont numérotées depuis le large : numéros pairs à bâbord, impairs à tribord.</li>
+</ul>
+</div>
+
+<h3>Bifurcation et chenal préféré</h3>
+<p>Quand un chenal se divise, une marque latérale modifiée indique le <dfn>chenal préféré</dfn>, c'est-à-dire le chenal principal. Une marque rouge avec une large bande verte (voyant cylindre rouge) se traite comme une marque bâbord : on la laisse à bâbord pour suivre le chenal principal, qui est donc à tribord. Une marque verte à bande rouge (voyant cône vert) indique le chenal préféré à bâbord. Leur feu est Fl(2+1), rouge ou vert.</p>
+
+<div class="box ex">
+<p>Je rentre au port et je vois une bouée rouge à bande verte, voyant cylindrique. C'est une marque bâbord modifiée : le chenal principal passe en la laissant à bâbord, donc à droite de la bouée. Un petit bateau peut aussi passer de l'autre côté, dans le chenal secondaire, s'il y a assez d'eau.</p>
+</div>
+
+<h2 id="cardinales">Les marques cardinales</h2>
+
+<p>Une marque cardinale est placée dans l'un des quatre quadrants (Nord, Est, Sud, Ouest) d'un danger, et indique que les eaux saines se trouvent dans ce quadrant. Elle ne dépend pas du sens de navigation.</p>
+
+<figure>
+<div class="figrow">
+  <div><x-balise type="cardinale-n" />Nord<br><span class="muted">noir sur jaune</span></div>
+  <div><x-balise type="cardinale-e" />Est<br><span class="muted">noir, jaune, noir</span></div>
+  <div><x-balise type="cardinale-s" />Sud<br><span class="muted">jaune sur noir</span></div>
+  <div><x-balise type="cardinale-w" />Ouest<br><span class="muted">jaune, noir, jaune</span></div>
+</div>
+<figcaption>Les quatre marques cardinales. Les pointes des cônes indiquent où se trouve le noir.</figcaption>
+</figure>
+
+<div class="box prop" data-title="Marques cardinales">
+<p>Une cardinale Nord est au Nord du danger : on passe <strong>au Nord</strong> de la marque. De même pour l'Est, le Sud et l'Ouest. Les quadrants sont délimités par les relèvements vrais NW-NE, NE-SE, SE-SW et SW-NW, vus depuis le danger.</p>
+</div>
+
+<h3>Retenir les voyants et les couleurs</h3>
+<ul>
+  <li><strong>Nord</strong> : deux cônes pointe en haut, comme une flèche vers le Nord. <strong>Sud</strong> : deux cônes pointe en bas.</li>
+  <li><strong>Est</strong> : cônes opposés par la base, en losange. <strong>Ouest</strong> : cônes opposés par la pointe, en sablier.</li>
+  <li>Le noir est du côté où pointent les cônes : en haut pour la Nord, en bas pour la Sud, en haut et en bas pour l'Est (noir-jaune-noir), au milieu pour l'Ouest (jaune-noir-jaune).</li>
+</ul>
+
+<h3>Les feux des cardinales</h3>
+<p>Tous blancs, scintillants (Q, 50 à 60 éclats par minute) ou scintillants rapides (VQ, 100 à 120 par minute). Le nombre d'éclats suit le cadran d'une montre :</p>
+
+<div class="tbl-wrap"><table>
+<thead><tr><th>Marque</th><th>Feu</th><th>Rythme scintillant (Q)</th><th>Moyen mnémotechnique</th></tr></thead>
+<tbody>
+<tr><td>Nord</td><td><x-feu r="Q" c="W" label="Q" /></td><td>scintillement continu</td><td>midi</td></tr>
+<tr><td>Est</td><td><x-feu r="Q(3)" c="W" p="10" label="Q(3) 10s" /></td><td>3 scintillements</td><td>3 heures</td></tr>
+<tr><td>Sud</td><td><x-feu r="Q(6)+LFl" c="W" p="15" label="Q(6)+LFl 15s" /></td><td>6 scintillements et un éclat long</td><td>6 heures</td></tr>
+<tr><td>Ouest</td><td><x-feu r="Q(9)" c="W" p="15" label="Q(9) 15s" /></td><td>9 scintillements</td><td>9 heures</td></tr>
+</tbody>
+<caption>Avec des scintillements rapides, les périodes sont plus courtes : VQ(3) 5 s, VQ(6)+LFl 10 s, VQ(9) 10 s. L'éclat long de la Sud évite de confondre 6 avec 3 ou 9 quand on compte mal.</caption>
+</table></div>
+
+<div class="box ex" data-title="annales">
+<ul>
+  <li>Faisant route au Nord, je vois une cardinale Est droit devant : je dois passer à l'Est de la marque, donc à droite : je la laisse <strong>à bâbord</strong>.</li>
+  <li>Faisant route au 080, je vois droit devant une bouée jaune-noir-jaune (cardinale Ouest) : je dois passer à l'Ouest. Je viens au Nord ou au Sud pour la contourner par l'Ouest, puis je reprends ma route en gardant le danger à distance.</li>
+  <li>De nuit, faisant route au 045, je vois un feu blanc qui fait 6 scintillements et un éclat long : cardinale Sud, le danger est au Nord de la marque. Je dois passer au Sud de la marque ; en allant vers le Nord-Est, cela revient à la laisser <strong>à bâbord</strong>. Un petit dessin (la marque, le danger au-dessus, ma route) règle ce genre de question en dix secondes.</li>
+</ul>
+</div>
+
+<h2 id="danger-isole">Danger isolé</h2>
+<div class="two">
+<div>
+<p>Une marque de danger isolé est posée sur un danger de faible étendue, entouré d'eaux navigables. Elle est noire avec une ou plusieurs larges bandes horizontales rouges, et porte deux sphères noires superposées. Son feu est blanc, à deux éclats groupés : Fl(2), comme la lettre « i » (isolé) en morse.</p>
+<p>On peut passer de tous les côtés, mais pas trop près : la marque est <em>sur</em> le danger.</p>
+<p><x-feu r="Fl(2)" c="W" p="5" label="Fl(2) 5s" /></p>
+</div>
+<div class="figrow"><div><x-balise type="danger-isole" w="100" />Danger isolé</div></div>
+</div>
+
+<h2 id="eaux-saines">Eaux saines</h2>
+<div class="two">
+<div>
+<p>Une marque d'eaux saines indique que les eaux sont navigables tout autour : milieu d'un chenal, point d'atterrissage avant une passe. Elle porte des bandes verticales rouges et blanches, et une sphère rouge. Son feu est blanc : isophase (Iso), à occultations (Oc), à un éclat long toutes les 10 s (LFl 10s) ou en morse « A » (Mo(A)).</p>
+<p><x-feu r="Iso" c="W" p="4" label="Iso 4s" /> &emsp; <x-feu r="LFl" c="W" p="10" label="LFl 10s" /></p>
+</div>
+<div class="figrow"><div><x-balise type="eaux-saines" w="100" />Eaux saines</div></div>
+</div>
+
+<h2 id="speciales">Marques spéciales</h2>
+<div class="two">
+<div>
+<p>Les marques spéciales ne sont pas destinées à guider la navigation mais à signaler une zone ou un objet particulier : zone militaire, câble ou conduite sous-marine, zone de mouillage, de pêche ou de loisirs, bouée de mesure scientifique, limite de la bande des 300 m. Elles sont jaunes, avec un voyant en croix de Saint-André (X) jaune. Leur feu est jaune, d'un rythme quelconque qui ne prête pas à confusion avec celui des feux blancs.</p>
+<p>La carte et les instructions nautiques précisent ce qu'elles signalent. Leur forme peut indiquer de quel côté passer quand elles bordent un chenal.</p>
+</div>
+<div class="figrow"><div><x-balise type="speciale" w="100" />Spéciale</div></div>
+</div>
+
+<h2 id="danger-nouveau">Danger nouveau</h2>
+<div class="two">
+<div>
+<p>Un <dfn>danger nouveau</dfn> est un danger qui n'est pas encore porté sur les cartes : épave récente, banc de sable qui s'est formé. Depuis 2006, il est signalé par une <dfn>bouée d'urgence d'épave</dfn> à bandes verticales bleues et jaunes, voyant en croix droite (+) jaune, feu alternativement bleu et jaune (Al.Bu.Y). Avant cette marque, on doublait la marque normale (deux cardinales identiques côte à côte, par exemple) ; cette pratique peut encore se rencontrer.</p>
+<p><x-feu r="Al" c="Bu,Y" p="3" label="Al.Bu.Y" /></p>
+</div>
+<div class="figrow"><div><x-balise type="danger-nouveau" w="100" />Danger nouveau</div></div>
+</div>
+
+<h2 id="plages">Le balisage des plages</h2>
+<p>Le long des plages s'étend la <dfn>bande des 300 m</dfn>, mesurée depuis la limite des eaux. Sa limite est souvent matérialisée par des bouées sphériques jaunes. Dans cette bande, la vitesse est limitée à 5 nd, et les zones réservées à la baignade (délimitées par des bouées jaunes) sont interdites aux engins et embarcations.</p>
+<p>Pour rejoindre la plage, les embarcations empruntent des <dfn>chenaux traversiers</dfn> : bouées jaunes, coiffées d'un voyant cylindrique rouge à bâbord et conique vert à tribord, en entrant vers la plage.</p>
+
+<figure>
+<div class="figrow">
+  <div><x-balise type="plage-limite" />Limite de zone<br><span class="muted">bande des 300 m, baignade</span></div>
+  <div><x-balise type="plage-babord" />Chenal traversier,<br><span class="muted">côté bâbord</span></div>
+  <div><x-balise type="plage-tribord" />Chenal traversier,<br><span class="muted">côté tribord</span></div>
+</div>
+<figcaption>Le balisage des plages. Ces marques sont jaunes (marques spéciales) ; les voyants rouge et vert des chenaux traversiers s'interprètent comme le balisage latéral, en venant du large vers la plage.</figcaption>
+</figure>
+
+<h2 id="feux">Les feux</h2>
+
+<p>De nuit, une marque se reconnaît à la couleur et au rythme de son feu. La carte et le livre des feux les décrivent avec une notation normalisée, par exemple :</p>
+<p class="formula"><span class="mono">Fl(3) WRG 12s 15m 11-8M</span></p>
+<p>qui se lit : trois éclats groupés (Fl(3)), à secteurs blanc, rouge et vert (WRG), période 12 secondes, feu situé à 15 m au-dessus des plus hautes mers, portée 11 milles pour le blanc et 8 milles pour les couleurs.</p>
+
+<div class="tbl-wrap"><table>
+<thead><tr><th>Notation</th><th>Nom</th><th>Description</th><th>Exemple</th></tr></thead>
+<tbody>
+<tr><td class="mono">F</td><td>fixe</td><td>allumé en permanence</td><td><x-feu r="F" c="R" nolabel="1" /></td></tr>
+<tr><td class="mono">Fl</td><td>à éclats</td><td>durée de lumière plus courte que l'obscurité</td><td><x-feu r="Fl" c="G" p="4" label="Fl G 4s" /></td></tr>
+<tr><td class="mono">Fl(2)</td><td>à éclats groupés</td><td>groupe de 2 éclats, répété</td><td><x-feu r="Fl(2)" c="R" p="6" label="Fl(2) R 6s" /></td></tr>
+<tr><td class="mono">Fl(2+1)</td><td>éclats groupés composés</td><td>groupe de 2 puis 1 éclat</td><td><x-feu r="Fl(2+1)" c="R" p="10" label="Fl(2+1) R 10s" /></td></tr>
+<tr><td class="mono">LFl</td><td>à éclat long</td><td>éclat d'au moins 2 secondes</td><td><x-feu r="LFl" c="W" p="10" label="LFl 10s" /></td></tr>
+<tr><td class="mono">Oc</td><td>à occultations</td><td>durée de lumière plus longue que l'obscurité</td><td><x-feu r="Oc" c="W" p="4" label="Oc 4s" /></td></tr>
+<tr><td class="mono">Oc(2)</td><td>à occultations groupées</td><td>groupe de 2 occultations</td><td><x-feu r="Oc(2)" c="G" p="6" label="Oc(2) G 6s" /></td></tr>
+<tr><td class="mono">Iso</td><td>isophase</td><td>lumière et obscurité de même durée</td><td><x-feu r="Iso" c="W" p="4" label="Iso 4s" /></td></tr>
+<tr><td class="mono">Q</td><td>scintillant</td><td>50 à 60 éclats par minute</td><td><x-feu r="Q" c="W" label="Q" /></td></tr>
+<tr><td class="mono">VQ</td><td>scintillant rapide</td><td>100 à 120 éclats par minute</td><td><x-feu r="VQ" c="W" label="VQ" /></td></tr>
+<tr><td class="mono">Mo(A)</td><td>morse</td><td>lettre en code morse (ici · −)</td><td><x-feu r="Mo(A)" c="W" p="8" label="Mo(A) 8s" /></td></tr>
+<tr><td class="mono">Al.WR</td><td>alternatif</td><td>change de couleur</td><td><x-feu r="Al" c="W,R" p="4" label="Al.WR 4s" /></td></tr>
+</tbody></table></div>
+
+<div class="box def" data-title="Période">
+<p>La <dfn>période</dfn> d'un feu est la durée d'un cycle complet, du début d'un groupe d'éclats au début du suivant. Pour identifier un feu, on compte les éclats d'un groupe et on chronomètre la période (en comptant « un-et-deux-et-trois… ») sur plusieurs cycles.</p>
+</div>
+
+<h3>Les secteurs</h3>
+<p>Un phare ou un feu d'entrée de port peut montrer des couleurs différentes selon la direction d'où on le voit. En général, le <strong>secteur blanc</strong> couvre la route sûre ; les secteurs <strong>rouge et vert</strong> couvrent les dangers de part et d'autre. Les limites des secteurs sont données sur la carte en relèvements vrais <em>vus du large</em>. Passer d'un secteur à l'autre donne une droite de position aussi utile qu'un relèvement.</p>
+
+<div class="box ex" data-title="annale octobre 2022">
+<p>Depuis la position de 7 h 06, on voit le phare d'Argol (Hoëdic) dans son secteur blanc. Ses secteurs blancs encadrent un secteur vert : si l'on ne voyait que la couleur blanche, on saurait seulement que le courant nous a déportés soit à l'Est soit à l'Ouest du secteur vert.</p>
+</div>
+
+<h3>Portée</h3>
+<p>La <dfn>portée nominale</dfn> donnée sur la carte est la distance à laquelle le feu est visible par une nuit claire (visibilité météorologique de 10 M). La rotondité de la Terre limite aussi la distance : la <dfn>portée géographique</dfn> vaut environ</p>
+<p class="formula"><var>D</var> (M) ≈ 2,1 (√<var>H</var> + √<var>e</var>),</p>
+<p>avec <var>H</var> la hauteur du feu et <var>e</var> la hauteur de l'œil de l'observateur, en mètres. Pour un feu à 25 m vu d'un petit voilier (œil à 2 m) : 2,1 × (5 + 1,4) ≈ 13 M. Par temps de brume, la portée chute.</p>
+
+<div class="box retenir">
+<ul>
+  <li>Région A : en rentrant au port, rouge à bâbord (cylindre), vert à tribord (cône).</li>
+  <li>Cardinale = côté où passer. Pointes des cônes = position du noir. Feux blancs : N continu, E 3, S 6 + long, W 9.</li>
+  <li>Danger isolé : noir et rouge, deux boules, Fl(2) blanc. Eaux saines : rouge et blanc vertical, une boule rouge, feu blanc lent.</li>
+  <li>Spéciale : jaune, X jaune, feu jaune. Danger nouveau : bleu et jaune, croix +, Al.Bu.Y.</li>
+  <li>Bande des 300 m : 5 nd maximum, zones de baignade interdites, chenaux traversiers jaunes.</li>
+</ul>
+</div>

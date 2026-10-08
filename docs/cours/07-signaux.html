@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Feux, marques et signaux · Patron d'embarcation</title>
+<meta name="description" content="Feux de navigation et marques de jour des navires, signaux sonores de manœuvre et de brume, signaux de port, pavillons utiles, signaux de détresse.">
+<link rel="icon" href="../img/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/style.css">
+<script>
+  try {
+    var t = localStorage.getItem('pe-theme');
+    if (t) document.documentElement.setAttribute('data-theme', t);
+  } catch (e) {}
+</script>
+</head>
+<body data-root="../">
+<a class="skip" href="#contenu">Aller au contenu</a>
+<header class="top">
+  <div class="top-in">
+    <a class="brand" href="../index.html">Patron d'embarcation</a>
+    <nav class="mainnav" aria-label="Parties du site"><a href="../cours/index.html" aria-current="page">Cours</a><a href="../qcm/index.html">QCM</a><a href="../exercices/index.html">Exercices</a><a href="../pratique/index.html">Pratique</a><a href="../annales/index.html">Annales</a></nav>
+    <div class="acct" id="acct"></div>
+    <button class="theme" type="button" aria-label="Changer de thème" title="Clair / sombre"><svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true"><circle cx="8" cy="8" r="6.5" fill="none" stroke="currentColor" stroke-width="1.3"/><path d="M8 1.5 A6.5 6.5 0 0 1 8 14.5 Z" fill="currentColor"/></svg></button>
+  </div>
+</header>
+<main id="contenu">
+
+<div class="doc">
+  <aside class="side">
+    <p class="side-h">Cours</p>
+    <ol class="chapters"><li><a href="../cours/01-carte.html"><span class="tocnum">1</span>La carte marine</a></li><li><a href="../cours/02-compas.html"><span class="tocnum">2</span>Compas et caps</a></li><li><a href="../cours/03-estime.html"><span class="tocnum">3</span>Estime, dérive, courant</a></li><li><a href="../cours/04-maree.html"><span class="tocnum">4</span>La marée</a></li><li><a href="../cours/05-balisage.html"><span class="tocnum">5</span>Le balisage</a></li><li><a href="../cours/06-ripam.html"><span class="tocnum">6</span>Règles de barre (RIPAM)</a></li><li><a href="../cours/07-signaux.html" aria-current="page"><span class="tocnum">7</span>Feux, marques, signaux</a></li><li><a href="../cours/08-meteo.html"><span class="tocnum">8</span>Météo marine</a></li><li><a href="../cours/09-securite.html"><span class="tocnum">9</span>Sécurité, réglementation</a></li><li><a href="../cours/10-vhf.html"><span class="tocnum">10</span>VHF</a></li></ol>
+  </aside>
+  <article class="chapter">
+    <header class="chap-head">
+      <p class="kicker">Chapitre 7</p>
+      <h1>Feux, marques et signaux</h1>
+      <p class="chap-desc">Feux de navigation et marques de jour des navires, signaux sonores de manœuvre et de brume, signaux de port, pavillons utiles, signaux de détresse.</p>
+    </header>
+    <details class="toc-box" open><summary>Sommaire du chapitre</summary><ol class="toc"><li><a href="#feux-route"><span class="tocnum">7.1</span>Les feux de navigation</a><ol><li><a href="#ce-que-l-on-voit-d-un-navire-qui-fait-route"><span class="tocnum">7.1.1</span>Ce que l'on voit d'un navire qui fait route</a></li></ol></li><li><a href="#speciaux"><span class="tocnum">7.2</span>Navires particuliers</a></li><li><a href="#sonores"><span class="tocnum">7.3</span>Les signaux sonores</a><ol><li><a href="#signaux-de-man-uvre-navires-en-vue-l-un-de-l-autre"><span class="tocnum">7.3.1</span>Signaux de manœuvre (navires en vue l'un de l'autre)</a></li><li><a href="#signaux-par-visibilite-reduite"><span class="tocnum">7.3.2</span>Signaux par visibilité réduite</a></li></ol></li><li><a href="#port"><span class="tocnum">7.4</span>Les signaux de port</a></li><li><a href="#pavillons"><span class="tocnum">7.5</span>Quelques pavillons</a></li><li><a href="#detresse"><span class="tocnum">7.6</span>Les signaux de détresse</a></li></ol></details>
+    <h2 id="feux-route"><span class="secnum">7.1</span>Les feux de navigation</h2>
+
+<p>Du coucher au lever du soleil, et de jour par visibilité réduite, chaque navire montre des feux qui indiquent ce qu'il est, ce qu'il fait et dans quel sens il va. Le jour, certains navires hissent des <dfn>marques</dfn> (boules, cônes, cylindres noirs) qui jouent le même rôle. Les feux sont définis par leur couleur et le secteur dans lequel ils sont visibles.</p>
+
+<figure>
+<svg viewBox="0 0 380 250" width="380" role="img" aria-label="Secteurs des feux de navigation">
+  <path d="M150 120 L150 40 A80 80 0 0 1 223.9 150.6 Z" fill="#1f8a4c" opacity=".22"/>
+  <path d="M150 120 L76.1 150.6 A80 80 0 0 1 150 40 Z" fill="#cf3a2e" opacity=".22"/>
+  <path d="M150 120 L223.9 150.6 A80 80 0 0 1 76.1 150.6 Z" class="fill-muted" opacity=".18"/>
+  <path d="M53 160.2 A105 105 0 1 1 247 160.2" class="ln" stroke-width="1.4" stroke-dasharray="5 3"/>
+  <path d="M150 104 C 156 110, 156 128, 154 136 L 146 136 C 144 128, 144 110, 150 104 Z" class="fill-ink"/>
+  <g font-size="11">
+    <text x="196" y="96" fill="#1f8a4c">vert</text><text x="196" y="110" font-size="10" class="mut">112,5°</text>
+    <text x="80" y="96" fill="#cf3a2e">rouge</text><text x="80" y="110" font-size="10" class="mut">112,5°</text>
+    <text x="150" y="190" text-anchor="middle">feu de poupe blanc, 135°</text>
+    <text x="150" y="10" text-anchor="middle">feu de mât blanc, 225°</text>
+    <text x="236" y="168" font-size="10" class="mut">22,5° sur l'arrière du travers</text>
+  </g>
+  <line x1="150" y1="120" x2="250" y2="120" class="ln2" stroke-dasharray="2 2"/>
+</svg>
+<figcaption><span class="fignum">Figure 7.1.</span> Secteurs des feux d'un navire à moteur faisant route, vu de dessus. Les feux de côté se recouvrent légèrement à l'avant ; le feu de poupe couvre exactement le secteur arrière laissé libre.</figcaption>
+</figure>
+
+<div class="tbl-wrap"><table>
+<thead><tr><th>Feu</th><th>Couleur</th><th>Secteur</th><th>Position</th></tr></thead>
+<tbody>
+<tr><td>Feu de tête de mât</td><td>blanc</td><td>225°, vers l'avant</td><td>dans l'axe, en hauteur</td></tr>
+<tr><td>Feux de côté</td><td>vert à tribord, rouge à bâbord</td><td>112,5° chacun</td><td>de chaque bord</td></tr>
+<tr><td>Feu de poupe</td><td>blanc</td><td>135°, vers l'arrière</td><td>à l'arrière</td></tr>
+<tr><td>Feu de remorquage</td><td>jaune</td><td>135°, vers l'arrière</td><td>au-dessus du feu de poupe</td></tr>
+<tr><td>Feu visible sur tout l'horizon</td><td>selon le cas</td><td>360°</td><td>—</td></tr>
+</tbody></table></div>
+
+<h3 id="ce-que-l-on-voit-d-un-navire-qui-fait-route"><span class="secnum">7.1.1</span>Ce que l'on voit d'un navire qui fait route</h3>
+<div class="figrow" style="justify-content:flex-start">
+  <div><svg class="nuit" viewBox="0 0 200 120" width="180" height="108" role="img" aria-label="Feux observés de nuit" xmlns="http://www.w3.org/2000/svg">
+<defs><filter id="g16" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="3"/></filter></defs>
+<rect width="200" height="120" fill="#0b1118"/>
+<rect y="96" width="200" height="24" fill="#0e1822"/>
+<line x1="0" y1="96" x2="200" y2="96" stroke="#1c2a38" stroke-width="1"/>
+<circle cx="100" cy="38" r="10" fill="#fff6d8" opacity=".18" filter="url(#g16)"/><circle cx="100" cy="38" r="3.6" fill="#fff6d8"/><circle cx="88" cy="84" r="10" fill="#3fe08a" opacity=".18" filter="url(#g16)"/><circle cx="88" cy="84" r="3.6" fill="#3fe08a"/><circle cx="112" cy="84" r="10" fill="#ff4b3a" opacity=".18" filter="url(#g16)"/><circle cx="112" cy="84" r="3.6" fill="#ff4b3a"/>
+</svg>Navire à moteur, de face :<br><span class="muted">il vient vers moi</span></div>
+  <div><svg class="nuit" viewBox="0 0 200 120" width="180" height="108" role="img" aria-label="Feux observés de nuit" xmlns="http://www.w3.org/2000/svg">
+<defs><filter id="g17" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="3"/></filter></defs>
+<rect width="200" height="120" fill="#0b1118"/>
+<rect y="96" width="200" height="24" fill="#0e1822"/>
+<line x1="0" y1="96" x2="200" y2="96" stroke="#1c2a38" stroke-width="1"/>
+<circle cx="120" cy="40" r="10" fill="#fff6d8" opacity=".18" filter="url(#g17)"/><circle cx="120" cy="40" r="3.6" fill="#fff6d8"/><circle cx="100" cy="84" r="10" fill="#3fe08a" opacity=".18" filter="url(#g17)"/><circle cx="100" cy="84" r="3.6" fill="#3fe08a"/>
+</svg>Je vois son tribord (vert) :<br><span class="muted">il va vers ma droite</span></div>
+  <div><svg class="nuit" viewBox="0 0 200 120" width="180" height="108" role="img" aria-label="Feux observés de nuit" xmlns="http://www.w3.org/2000/svg">
+<defs><filter id="g18" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="3"/></filter></defs>
+<rect width="200" height="120" fill="#0b1118"/>
+<rect y="96" width="200" height="24" fill="#0e1822"/>
+<line x1="0" y1="96" x2="200" y2="96" stroke="#1c2a38" stroke-width="1"/>
+<circle cx="80" cy="40" r="10" fill="#fff6d8" opacity=".18" filter="url(#g18)"/><circle cx="80" cy="40" r="3.6" fill="#fff6d8"/><circle cx="100" cy="84" r="10" fill="#ff4b3a" opacity=".18" filter="url(#g18)"/><circle cx="100" cy="84" r="3.6" fill="#ff4b3a"/>
+</svg>Je vois son bâbord (rouge) :<br><span class="muted">il va vers ma gauche</span></div>
+  <div><svg class="nuit" viewBox="0 0 200 120" width="180" height="108" role="img" aria-label="Feux observés de nuit" xmlns="http://www.w3.org/2000/svg">
+<defs><filter id="g19" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="3"/></filter></defs>
+<rect width="200" height="120" fill="#0b1118"/>
+<rect y="96" width="200" height="24" fill="#0e1822"/>
+<line x1="0" y1="96" x2="200" y2="96" stroke="#1c2a38" stroke-width="1"/>
+<circle cx="138" cy="50" r="10" fill="#fff6d8" opacity=".18" filter="url(#g19)"/><circle cx="138" cy="50" r="3.6" fill="#fff6d8"/><circle cx="72" cy="28" r="10" fill="#fff6d8" opacity=".18" filter="url(#g19)"/><circle cx="72" cy="28" r="3.6" fill="#fff6d8"/><circle cx="108" cy="86" r="10" fill="#3fe08a" opacity=".18" filter="url(#g19)"/><circle cx="108" cy="86" r="3.6" fill="#3fe08a"/>
+</svg>Plus de 50 m, vu de tribord :<br><span class="muted">deux feux de mât, l'arrière plus haut</span></div>
+  <div><svg class="nuit" viewBox="0 0 200 120" width="180" height="108" role="img" aria-label="Feux observés de nuit" xmlns="http://www.w3.org/2000/svg">
+<defs><filter id="g20" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="3"/></filter></defs>
+<rect width="200" height="120" fill="#0b1118"/>
+<rect y="96" width="200" height="24" fill="#0e1822"/>
+<line x1="0" y1="96" x2="200" y2="96" stroke="#1c2a38" stroke-width="1"/>
+<circle cx="90" cy="84" r="10" fill="#3fe08a" opacity=".18" filter="url(#g20)"/><circle cx="90" cy="84" r="3.6" fill="#3fe08a"/><circle cx="110" cy="84" r="10" fill="#ff4b3a" opacity=".18" filter="url(#g20)"/><circle cx="110" cy="84" r="3.6" fill="#ff4b3a"/>
+</svg>Voilier, de face :<br><span class="muted">pas de feu de mât</span></div>
+  <div><svg class="nuit" viewBox="0 0 200 120" width="180" height="108" role="img" aria-label="Feux observés de nuit" xmlns="http://www.w3.org/2000/svg">
+<defs><filter id="g21" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="3"/></filter></defs>
+<rect width="200" height="120" fill="#0b1118"/>
+<rect y="96" width="200" height="24" fill="#0e1822"/>
+<line x1="0" y1="96" x2="200" y2="96" stroke="#1c2a38" stroke-width="1"/>
+<circle cx="100" cy="76" r="10" fill="#fff6d8" opacity=".18" filter="url(#g21)"/><circle cx="100" cy="76" r="3.6" fill="#fff6d8"/>
+</svg>Un seul feu blanc :<br><span class="muted">je le vois par l'arrière</span></div>
+</div>
+
+<div class="box prop"><p class="box-label">Règle 7.1 <span class="box-title">(Feux des navires faisant route)</span>.</p>
+<ul>
+  <li><strong>Navire à moteur</strong> : feu de mât, feux de côté, feu de poupe. Au-delà de 50 m, un second feu de mât, plus haut et plus en arrière. Moins de 12 m : le feu de mât et le feu de poupe peuvent être remplacés par un feu blanc visible sur tout l'horizon. Moins de 7 m et moins de 7 nd : un simple feu blanc visible sur tout l'horizon suffit.</li>
+  <li><strong>Navire à voile</strong> : feux de côté et feu de poupe, <strong>sans</strong> feu de mât. Moins de 20 m : ils peuvent être réunis en un <dfn>feu tricolore</dfn> en tête de mât. Il peut porter en plus, en tête de mât, deux feux visibles sur tout l'horizon, rouge au-dessus de vert (jamais avec le tricolore).</li>
+  <li><strong>Voilier de moins de 7 m, bateau à l'aviron</strong> : s'il ne porte pas les feux du voilier, il doit avoir prête une lampe électrique à feu blanc, à montrer assez tôt pour éviter un abordage.</li>
+  <li><strong>Voilier au moteur</strong> : feux du navire à moteur (avec le feu de mât). De jour, un cône pointe en bas.</li>
+</ul>
+</div>
+
+<div class="box meth"><p class="box-label">Méthode 7.2 <span class="box-title">(Lire des feux de route)</span>.</p>
+<ul>
+  <li>Je vois un feu vert : je vois son flanc tribord, il se déplace vers ma droite. Un feu rouge : son flanc bâbord, il se déplace vers ma gauche. Les deux : il vient droit sur moi.</li>
+  <li>Un feu de mât blanc au-dessus des feux de côté : navire à moteur. Pas de feu de mât : voilier (ou petit navire).</li>
+  <li>Deux feux de mât : la position relative indique le sens. L'arrière est plus haut ; si le feu bas est à gauche, l'avant est à gauche.</li>
+  <li>Un feu blanc seul : je le rattrape, il est au mouillage, ou c'est un petit bateau. Regarder s'il bouge.</li>
+</ul>
+</div>
+
+<h2 id="speciaux"><span class="secnum">7.2</span>Navires particuliers</h2>
+
+<p>Les navires qui manœuvrent difficilement (chapitre 6) l'annoncent par des feux visibles sur tout l'horizon, disposés verticalement, et de jour par des marques noires. S'ils ont de l'erre, ils montrent en plus leurs feux de côté et de poupe ; les navires à capacité restreinte et handicapés par leur tirant d'eau montrent aussi leur feu de mât, pas le navire non maître de sa manœuvre.</p>
+
+<div class="tbl-wrap"><table>
+<thead><tr><th>Situation</th><th>Jour</th><th>Nuit</th><th>À retenir</th></tr></thead>
+<tbody>
+<tr><td><strong>Au mouillage</strong></td><td><svg class="marques" viewBox="0 0 70 82" width="34" height="40" role="img" aria-label="Marques : boule" xmlns="http://www.w3.org/2000/svg">
+<line x1="35" y1="4" x2="35" y2="78" class="ln2" stroke-width="1.5"/>
+<line x1="35" y1="18" x2="35" y2="60" class="ln" stroke-width="1"/>
+<circle cx="35" cy="41" r="11" class="fill-ink"/>
+</svg></td><td><svg class="nuit" viewBox="0 0 200 120" width="110" height="66" role="img" aria-label="Feux observés de nuit" xmlns="http://www.w3.org/2000/svg">
+<defs><filter id="g22" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="3"/></filter></defs>
+<rect width="200" height="120" fill="#0b1118"/>
+<rect y="96" width="200" height="24" fill="#0e1822"/>
+<line x1="0" y1="96" x2="200" y2="96" stroke="#1c2a38" stroke-width="1"/>
+<circle cx="100" cy="50" r="10" fill="#fff6d8" opacity=".18" filter="url(#g22)"/><circle cx="100" cy="50" r="3.6" fill="#fff6d8"/>
+</svg></td><td>une boule à l'avant ; un feu blanc 360° (deux au-delà de 50 m, l'avant plus haut)</td></tr>
+<tr><td><strong>Non maître de sa manœuvre</strong></td><td><svg class="marques" viewBox="0 0 70 112" width="34" height="54" role="img" aria-label="Marques : boule, boule" xmlns="http://www.w3.org/2000/svg">
+<line x1="35" y1="4" x2="35" y2="108" class="ln2" stroke-width="1.5"/>
+<line x1="35" y1="18" x2="35" y2="90" class="ln" stroke-width="1"/>
+<circle cx="35" cy="41" r="11" class="fill-ink"/><circle cx="35" cy="71" r="11" class="fill-ink"/>
+</svg></td><td><svg class="nuit" viewBox="0 0 200 120" width="110" height="66" role="img" aria-label="Feux observés de nuit" xmlns="http://www.w3.org/2000/svg">
+<defs><filter id="g23" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="3"/></filter></defs>
+<rect width="200" height="120" fill="#0b1118"/>
+<rect y="96" width="200" height="24" fill="#0e1822"/>
+<line x1="0" y1="96" x2="200" y2="96" stroke="#1c2a38" stroke-width="1"/>
+<circle cx="100" cy="34" r="10" fill="#ff4b3a" opacity=".18" filter="url(#g23)"/><circle cx="100" cy="34" r="3.6" fill="#ff4b3a"/><circle cx="100" cy="56" r="10" fill="#ff4b3a" opacity=".18" filter="url(#g23)"/><circle cx="100" cy="56" r="3.6" fill="#ff4b3a"/>
+</svg></td><td>deux boules ; deux feux rouges superposés</td></tr>
+<tr><td><strong>Échoué</strong></td><td><svg class="marques" viewBox="0 0 70 142" width="34" height="69" role="img" aria-label="Marques : boule, boule, boule" xmlns="http://www.w3.org/2000/svg">
+<line x1="35" y1="4" x2="35" y2="138" class="ln2" stroke-width="1.5"/>
+<line x1="35" y1="18" x2="35" y2="120" class="ln" stroke-width="1"/>
+<circle cx="35" cy="41" r="11" class="fill-ink"/><circle cx="35" cy="71" r="11" class="fill-ink"/><circle cx="35" cy="101" r="11" class="fill-ink"/>
+</svg></td><td><svg class="nuit" viewBox="0 0 200 120" width="110" height="66" role="img" aria-label="Feux observés de nuit" xmlns="http://www.w3.org/2000/svg">
+<defs><filter id="g24" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="3"/></filter></defs>
+<rect width="200" height="120" fill="#0b1118"/>
+<rect y="96" width="200" height="24" fill="#0e1822"/>
+<line x1="0" y1="96" x2="200" y2="96" stroke="#1c2a38" stroke-width="1"/>
+<circle cx="100" cy="34" r="10" fill="#ff4b3a" opacity=".18" filter="url(#g24)"/><circle cx="100" cy="34" r="3.6" fill="#ff4b3a"/><circle cx="100" cy="56" r="10" fill="#ff4b3a" opacity=".18" filter="url(#g24)"/><circle cx="100" cy="56" r="3.6" fill="#ff4b3a"/><circle cx="146" cy="62" r="10" fill="#fff6d8" opacity=".18" filter="url(#g24)"/><circle cx="146" cy="62" r="3.6" fill="#fff6d8"/>
+</svg></td><td>trois boules ; deux feux rouges + feux de mouillage</td></tr>
+<tr><td><strong>Capacité de manœuvre restreinte</strong></td><td><svg class="marques" viewBox="0 0 70 142" width="34" height="69" role="img" aria-label="Marques : boule, losange, boule" xmlns="http://www.w3.org/2000/svg">
+<line x1="35" y1="4" x2="35" y2="138" class="ln2" stroke-width="1.5"/>
+<line x1="35" y1="18" x2="35" y2="120" class="ln" stroke-width="1"/>
+<circle cx="35" cy="41" r="11" class="fill-ink"/><path d="M35 60 L46 71 L35 82 L24 71 Z" class="fill-ink"/><circle cx="35" cy="101" r="11" class="fill-ink"/>
+</svg></td><td><svg class="nuit" viewBox="0 0 200 120" width="110" height="66" role="img" aria-label="Feux observés de nuit" xmlns="http://www.w3.org/2000/svg">
+<defs><filter id="g25" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="3"/></filter></defs>
+<rect width="200" height="120" fill="#0b1118"/>
+<rect y="96" width="200" height="24" fill="#0e1822"/>
+<line x1="0" y1="96" x2="200" y2="96" stroke="#1c2a38" stroke-width="1"/>
+<circle cx="100" cy="30" r="10" fill="#ff4b3a" opacity=".18" filter="url(#g25)"/><circle cx="100" cy="30" r="3.6" fill="#ff4b3a"/><circle cx="100" cy="46" r="10" fill="#fff6d8" opacity=".18" filter="url(#g25)"/><circle cx="100" cy="46" r="3.6" fill="#fff6d8"/><circle cx="100" cy="62" r="10" fill="#ff4b3a" opacity=".18" filter="url(#g25)"/><circle cx="100" cy="62" r="3.6" fill="#ff4b3a"/>
+</svg></td><td>boule, losange, boule ; rouge, blanc, rouge</td></tr>
+<tr><td><strong>Handicapé par son tirant d'eau</strong></td><td><svg class="marques" viewBox="0 0 70 82" width="34" height="40" role="img" aria-label="Marques : cylindre" xmlns="http://www.w3.org/2000/svg">
+<line x1="35" y1="4" x2="35" y2="78" class="ln2" stroke-width="1.5"/>
+<line x1="35" y1="18" x2="35" y2="60" class="ln" stroke-width="1"/>
+<rect x="28" y="30" width="14" height="22" class="fill-ink"/>
+</svg></td><td><svg class="nuit" viewBox="0 0 200 120" width="110" height="66" role="img" aria-label="Feux observés de nuit" xmlns="http://www.w3.org/2000/svg">
+<defs><filter id="g26" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="3"/></filter></defs>
+<rect width="200" height="120" fill="#0b1118"/>
+<rect y="96" width="200" height="24" fill="#0e1822"/>
+<line x1="0" y1="96" x2="200" y2="96" stroke="#1c2a38" stroke-width="1"/>
+<circle cx="100" cy="22" r="10" fill="#ff4b3a" opacity=".18" filter="url(#g26)"/><circle cx="100" cy="22" r="3.6" fill="#ff4b3a"/><circle cx="100" cy="38" r="10" fill="#ff4b3a" opacity=".18" filter="url(#g26)"/><circle cx="100" cy="38" r="3.6" fill="#ff4b3a"/><circle cx="100" cy="54" r="10" fill="#ff4b3a" opacity=".18" filter="url(#g26)"/><circle cx="100" cy="54" r="3.6" fill="#ff4b3a"/><circle cx="120" cy="34" r="10" fill="#fff6d8" opacity=".18" filter="url(#g26)"/><circle cx="120" cy="34" r="3.6" fill="#fff6d8"/><circle cx="88" cy="88" r="10" fill="#3fe08a" opacity=".18" filter="url(#g26)"/><circle cx="88" cy="88" r="3.6" fill="#3fe08a"/><circle cx="112" cy="88" r="10" fill="#ff4b3a" opacity=".18" filter="url(#g26)"/><circle cx="112" cy="88" r="3.6" fill="#ff4b3a"/>
+</svg></td><td>un cylindre ; trois feux rouges superposés (+ feux de route)</td></tr>
+<tr><td><strong>Chalutier en pêche</strong></td><td><svg class="marques" viewBox="0 0 70 82" width="34" height="40" role="img" aria-label="Marques : sablier" xmlns="http://www.w3.org/2000/svg">
+<line x1="35" y1="4" x2="35" y2="78" class="ln2" stroke-width="1.5"/>
+<line x1="35" y1="18" x2="35" y2="60" class="ln" stroke-width="1"/>
+<path d="M24 30 L46 30 L35 41 Z M35 41 L46 52 L24 52 Z" class="fill-ink"/>
+</svg></td><td><svg class="nuit" viewBox="0 0 200 120" width="110" height="66" role="img" aria-label="Feux observés de nuit" xmlns="http://www.w3.org/2000/svg">
+<defs><filter id="g27" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="3"/></filter></defs>
+<rect width="200" height="120" fill="#0b1118"/>
+<rect y="96" width="200" height="24" fill="#0e1822"/>
+<line x1="0" y1="96" x2="200" y2="96" stroke="#1c2a38" stroke-width="1"/>
+<circle cx="100" cy="36" r="10" fill="#3fe08a" opacity=".18" filter="url(#g27)"/><circle cx="100" cy="36" r="3.6" fill="#3fe08a"/><circle cx="100" cy="56" r="10" fill="#fff6d8" opacity=".18" filter="url(#g27)"/><circle cx="100" cy="56" r="3.6" fill="#fff6d8"/>
+</svg></td><td>deux cônes pointe à pointe ; vert sur blanc</td></tr>
+<tr><td><strong>Autre navire en pêche</strong></td><td><svg class="marques" viewBox="0 0 70 82" width="34" height="40" role="img" aria-label="Marques : sablier" xmlns="http://www.w3.org/2000/svg">
+<line x1="35" y1="4" x2="35" y2="78" class="ln2" stroke-width="1.5"/>
+<line x1="35" y1="18" x2="35" y2="60" class="ln" stroke-width="1"/>
+<path d="M24 30 L46 30 L35 41 Z M35 41 L46 52 L24 52 Z" class="fill-ink"/>
+</svg></td><td><svg class="nuit" viewBox="0 0 200 120" width="110" height="66" role="img" aria-label="Feux observés de nuit" xmlns="http://www.w3.org/2000/svg">
+<defs><filter id="g28" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="3"/></filter></defs>
+<rect width="200" height="120" fill="#0b1118"/>
+<rect y="96" width="200" height="24" fill="#0e1822"/>
+<line x1="0" y1="96" x2="200" y2="96" stroke="#1c2a38" stroke-width="1"/>
+<circle cx="100" cy="36" r="10" fill="#ff4b3a" opacity=".18" filter="url(#g28)"/><circle cx="100" cy="36" r="3.6" fill="#ff4b3a"/><circle cx="100" cy="56" r="10" fill="#fff6d8" opacity=".18" filter="url(#g28)"/><circle cx="100" cy="56" r="3.6" fill="#fff6d8"/>
+</svg></td><td>deux cônes pointe à pointe ; rouge sur blanc</td></tr>
+<tr><td><strong>Bateau pilote en service</strong></td><td><svg class="pavillon" viewBox="0 0 66 44" width="48" height="32" role="img" aria-label="Pavillon H" xmlns="http://www.w3.org/2000/svg"><rect x="3" y="3" width="30" height="38" fill="#f8f7f2"/><rect x="33" y="3" width="30" height="38" fill="#cf3a2e"/><rect x="3" y="3" width="60" height="38" fill="none" stroke="#1e1e1e" stroke-width="1"/></svg></td><td><svg class="nuit" viewBox="0 0 200 120" width="110" height="66" role="img" aria-label="Feux observés de nuit" xmlns="http://www.w3.org/2000/svg">
+<defs><filter id="g29" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="3"/></filter></defs>
+<rect width="200" height="120" fill="#0b1118"/>
+<rect y="96" width="200" height="24" fill="#0e1822"/>
+<line x1="0" y1="96" x2="200" y2="96" stroke="#1c2a38" stroke-width="1"/>
+<circle cx="100" cy="36" r="10" fill="#fff6d8" opacity=".18" filter="url(#g29)"/><circle cx="100" cy="36" r="3.6" fill="#fff6d8"/><circle cx="100" cy="56" r="10" fill="#ff4b3a" opacity=".18" filter="url(#g29)"/><circle cx="100" cy="56" r="3.6" fill="#ff4b3a"/>
+</svg></td><td>pavillon H ; blanc sur rouge</td></tr>
+<tr><td><strong>Voilier au moteur</strong></td><td><svg class="marques" viewBox="0 0 70 82" width="34" height="40" role="img" aria-label="Marques : cone-bas" xmlns="http://www.w3.org/2000/svg">
+<line x1="35" y1="4" x2="35" y2="78" class="ln2" stroke-width="1.5"/>
+<line x1="35" y1="18" x2="35" y2="60" class="ln" stroke-width="1"/>
+<path d="M35 52 L46 30 L24 30 Z" class="fill-ink"/>
+</svg></td><td><svg class="nuit" viewBox="0 0 200 120" width="110" height="66" role="img" aria-label="Feux observés de nuit" xmlns="http://www.w3.org/2000/svg">
+<defs><filter id="g30" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="3"/></filter></defs>
+<rect width="200" height="120" fill="#0b1118"/>
+<rect y="96" width="200" height="24" fill="#0e1822"/>
+<line x1="0" y1="96" x2="200" y2="96" stroke="#1c2a38" stroke-width="1"/>
+<circle cx="100" cy="38" r="10" fill="#fff6d8" opacity=".18" filter="url(#g30)"/><circle cx="100" cy="38" r="3.6" fill="#fff6d8"/><circle cx="88" cy="84" r="10" fill="#3fe08a" opacity=".18" filter="url(#g30)"/><circle cx="88" cy="84" r="3.6" fill="#3fe08a"/><circle cx="112" cy="84" r="10" fill="#ff4b3a" opacity=".18" filter="url(#g30)"/><circle cx="112" cy="84" r="3.6" fill="#ff4b3a"/>
+</svg></td><td>cône pointe en bas ; feux d'un navire à moteur</td></tr>
+<tr><td><strong>Remorquage</strong></td><td><svg class="marques" viewBox="0 0 70 82" width="34" height="40" role="img" aria-label="Marques : losange" xmlns="http://www.w3.org/2000/svg">
+<line x1="35" y1="4" x2="35" y2="78" class="ln2" stroke-width="1.5"/>
+<line x1="35" y1="18" x2="35" y2="60" class="ln" stroke-width="1"/>
+<path d="M35 30 L46 41 L35 52 L24 41 Z" class="fill-ink"/>
+</svg></td><td><svg class="nuit" viewBox="0 0 200 120" width="110" height="66" role="img" aria-label="Feux observés de nuit" xmlns="http://www.w3.org/2000/svg">
+<defs><filter id="g31" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="3"/></filter></defs>
+<rect width="200" height="120" fill="#0b1118"/>
+<rect y="96" width="200" height="24" fill="#0e1822"/>
+<line x1="0" y1="96" x2="200" y2="96" stroke="#1c2a38" stroke-width="1"/>
+<circle cx="100" cy="24" r="10" fill="#fff6d8" opacity=".18" filter="url(#g31)"/><circle cx="100" cy="24" r="3.6" fill="#fff6d8"/><circle cx="100" cy="42" r="10" fill="#fff6d8" opacity=".18" filter="url(#g31)"/><circle cx="100" cy="42" r="3.6" fill="#fff6d8"/><circle cx="88" cy="86" r="10" fill="#3fe08a" opacity=".18" filter="url(#g31)"/><circle cx="88" cy="86" r="3.6" fill="#3fe08a"/><circle cx="112" cy="86" r="10" fill="#ff4b3a" opacity=".18" filter="url(#g31)"/><circle cx="112" cy="86" r="3.6" fill="#ff4b3a"/>
+</svg></td><td>losange si la remorque dépasse 200 m ; deux feux de mât superposés (trois au-delà de 200 m), feu jaune de remorquage au-dessus du feu de poupe</td></tr>
+<tr><td><strong>Déminage</strong></td><td>trois boules en triangle</td><td><svg class="nuit" viewBox="0 0 200 120" width="110" height="66" role="img" aria-label="Feux observés de nuit" xmlns="http://www.w3.org/2000/svg">
+<defs><filter id="g32" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="3"/></filter></defs>
+<rect width="200" height="120" fill="#0b1118"/>
+<rect y="96" width="200" height="24" fill="#0e1822"/>
+<line x1="0" y1="96" x2="200" y2="96" stroke="#1c2a38" stroke-width="1"/>
+<circle cx="100" cy="20" r="10" fill="#fff6d8" opacity=".18" filter="url(#g32)"/><circle cx="100" cy="20" r="3.6" fill="#fff6d8"/><circle cx="100" cy="36" r="10" fill="#3fe08a" opacity=".18" filter="url(#g32)"/><circle cx="100" cy="36" r="3.6" fill="#3fe08a"/><circle cx="80" cy="46" r="10" fill="#3fe08a" opacity=".18" filter="url(#g32)"/><circle cx="80" cy="46" r="3.6" fill="#3fe08a"/><circle cx="120" cy="46" r="10" fill="#3fe08a" opacity=".18" filter="url(#g32)"/><circle cx="120" cy="46" r="3.6" fill="#3fe08a"/><circle cx="88" cy="88" r="10" fill="#3fe08a" opacity=".18" filter="url(#g32)"/><circle cx="88" cy="88" r="3.6" fill="#3fe08a"/><circle cx="112" cy="88" r="10" fill="#ff4b3a" opacity=".18" filter="url(#g32)"/><circle cx="112" cy="88" r="3.6" fill="#ff4b3a"/>
+</svg></td><td>trois feux verts ; rester à plus de 1 000 m</td></tr>
+</tbody></table></div>
+
+<div class="box meth"><p class="box-label">Méthode 7.3 <span class="box-title">(Moyens mnémotechniques)</span>.</p>
+<ul>
+  <li>Deux rouges, « rouge sur rouge, rien ne bouge » : non maître de sa manœuvre. Trois boules : « échoué, il a vraiment les boules ».</li>
+  <li>Rouge-blanc-rouge, boule-losange-boule : capacité restreinte, il travaille.</li>
+  <li>Trois rouges ou un cylindre : tirant d'eau, il est coincé dans son chenal.</li>
+  <li>Les deux cônes pointe à pointe dessinent un sablier… ou un poisson qu'on regarde de face : pêche. « Vert sur blanc, chalutier ; rouge sur blanc, pêcheur. »</li>
+  <li>« Blanc sur rouge, pilote à bord. »</li>
+</ul>
+</div>
+
+<div class="box warn"><p class="box-label">Attention.</p>
+<p>Le losange (deux cônes opposés par la base) n'est pas le sablier (deux cônes opposés par la pointe). Le premier se trouve sur un navire à capacité restreinte ou un remorquage, le second sur un pêcheur. Certains textes appellent « bicône » les deux formes : regardez le dessin.</p>
+</div>
+
+<h2 id="sonores"><span class="secnum">7.3</span>Les signaux sonores</h2>
+
+<p>Un <dfn>son bref</dfn> dure environ une seconde, un <dfn>son prolongé</dfn> de quatre à six secondes. Cliquez sur un signal pour l'écouter (sons courts : 1 s, longs : 4,5 s).</p>
+
+<h3 id="signaux-de-man-uvre-navires-en-vue-l-un-de-l-autre"><span class="secnum">7.3.1</span>Signaux de manœuvre (navires en vue l'un de l'autre)</h3>
+<div class="tbl-wrap"><table>
+<thead><tr><th>Signal</th><th>Signification</th></tr></thead>
+<tbody>
+<tr><td><span class="son" data-s="."><button type="button" aria-label="Écouter le signal">•</button></span></td><td>Je viens sur tribord.</td></tr>
+<tr><td><span class="son" data-s=".."><button type="button" aria-label="Écouter le signal">• •</button></span></td><td>Je viens sur bâbord.</td></tr>
+<tr><td><span class="son" data-s="..."><button type="button" aria-label="Écouter le signal">• • •</button></span></td><td>Je bats en arrière (ma machine tourne en arrière).</td></tr>
+<tr><td><span class="son" data-s="....."><button type="button" aria-label="Écouter le signal">• • • • •</button></span></td><td>Au moins cinq sons brefs rapides : je ne comprends pas vos intentions, ou je doute que vous manœuvriez suffisamment. Signal d'avertissement.</td></tr>
+<tr><td><span class="son" data-s="-"><button type="button" aria-label="Écouter le signal">▬</button></span></td><td>À l'approche d'un coude ou d'un endroit masqué d'un chenal.</td></tr>
+<tr><td><span class="son" data-s="--."><button type="button" aria-label="Écouter le signal">▬ ▬ •</button></span></td><td>Dans un chenal : j'ai l'intention de vous rattraper par votre tribord.</td></tr>
+<tr><td><span class="son" data-s="--.."><button type="button" aria-label="Écouter le signal">▬ ▬ • •</button></span></td><td>Dans un chenal : j'ai l'intention de vous rattraper par votre bâbord.</td></tr>
+<tr><td><span class="son" data-s="-.-."><button type="button" aria-label="Écouter le signal">▬ • ▬ •</button></span></td><td>Réponse du navire rattrapé : je suis d'accord.</td></tr>
+</tbody></table></div>
+
+<h3 id="signaux-par-visibilite-reduite"><span class="secnum">7.3.2</span>Signaux par visibilité réduite</h3>
+<div class="tbl-wrap"><table>
+<thead><tr><th>Signal</th><th>Navire</th><th>Rythme</th></tr></thead>
+<tbody>
+<tr><td><span class="son" data-s="-"><button type="button" aria-label="Écouter le signal">▬</button></span></td><td>À moteur, faisant route avec de l'erre</td><td>au plus toutes les 2 min</td></tr>
+<tr><td><span class="son" data-s="--"><button type="button" aria-label="Écouter le signal">▬ ▬</button></span></td><td>À moteur, faisant route mais stoppé, sans erre</td><td>au plus toutes les 2 min</td></tr>
+<tr><td><span class="son" data-s="-.."><button type="button" aria-label="Écouter le signal">▬ • •</button></span></td><td>À voile, en pêche, non maître de sa manœuvre, à capacité restreinte, handicapé par son tirant d'eau, remorqueur</td><td>au plus toutes les 2 min</td></tr>
+<tr><td><span class="son" data-s="-..."><button type="button" aria-label="Écouter le signal">▬ • • •</button></span></td><td>Navire remorqué (s'il a un équipage), juste après le signal du remorqueur</td><td>au plus toutes les 2 min</td></tr>
+<tr><td><span class="son" data-s="...."><button type="button" aria-label="Écouter le signal">• • • •</button></span></td><td>Bateau pilote en service (en plus de son signal normal)</td><td>—</td></tr>
+<tr><td><span class="son" data-s="b"><button type="button" aria-label="Écouter le signal">cloche</button></span></td><td>Au mouillage : cloche tintée rapidement pendant 5 s (plus un gong à l'arrière au-delà de 100 m). Peut ajouter bref, prolongé, bref pour avertir.</td><td>au plus toutes les minutes</td></tr>
+<tr><td>3 coups + <span class="son" data-s="b"><button type="button" aria-label="Écouter le signal">cloche</button></span> + 3 coups</td><td>Échoué : trois coups de cloche distincts, cloche rapide 5 s, trois coups</td><td>au plus toutes les minutes</td></tr>
+</tbody>
+<caption>Un navire de moins de 12 m peut se contenter d'émettre un autre signal sonore efficace au moins toutes les 2 minutes. Le signal « long, bref, bref » est la lettre D en morse.</caption>
+</table></div>
+
+<div class="box ex"><p class="box-label">Exemple 7.4 <span class="box-title">(annales)</span>.</p>
+<p>Dans la brume, j'entends un son prolongé toutes les deux minutes : c'est un navire à moteur qui a de l'erre. Un son prolongé suivi de deux brefs : un voilier, un pêcheur, ou un navire qui manœuvre mal. Trois sons brefs d'un navire en vue : il bat en arrière.</p>
+</div>
+
+<h2 id="port"><span class="secnum">7.4</span>Les signaux de port</h2>
+
+<p>À l'entrée des ports importants, des feux disposés verticalement règlent le trafic. Ils sont visibles de jour comme de nuit, fixes ou à occultations lentes, sauf le signal d'urgence, à éclats.</p>
+
+<div class="tbl-wrap"><table>
+<thead><tr><th>Signal</th><th>Signification</th></tr></thead>
+<tbody>
+<tr><td><svg class="portsig" viewBox="0 0 64 120" width="40" height="75" role="img" aria-label="Signal de port R R R" xmlns="http://www.w3.org/2000/svg"><rect width="64" height="120" fill="#0b1118"/><circle cx="40" cy="28" r="14" fill="#ff4b3a" opacity=".18"/><circle cx="40" cy="28" r="9" fill="#ff4b3a"/><circle cx="40" cy="60" r="14" fill="#ff4b3a" opacity=".18"/><circle cx="40" cy="60" r="9" fill="#ff4b3a"/><circle cx="40" cy="92" r="14" fill="#ff4b3a" opacity=".18"/><circle cx="40" cy="92" r="9" fill="#ff4b3a"/><text x="32" y="114" text-anchor="middle" font-size="9" fill="#cfd6dd">à éclats</text></svg></td><td>Trois rouges <strong>à éclats</strong> : danger grave, tous les navires s'arrêtent ou se déroutent selon les instructions.</td></tr>
+<tr><td><svg class="portsig" viewBox="0 0 64 120" width="40" height="75" role="img" aria-label="Signal de port R R R" xmlns="http://www.w3.org/2000/svg"><rect width="64" height="120" fill="#0b1118"/><circle cx="40" cy="28" r="14" fill="#ff4b3a" opacity=".18"/><circle cx="40" cy="28" r="9" fill="#ff4b3a"/><circle cx="40" cy="60" r="14" fill="#ff4b3a" opacity=".18"/><circle cx="40" cy="60" r="9" fill="#ff4b3a"/><circle cx="40" cy="92" r="14" fill="#ff4b3a" opacity=".18"/><circle cx="40" cy="92" r="9" fill="#ff4b3a"/></svg></td><td>Trois rouges : entrée ou sortie interdite.</td></tr>
+<tr><td><svg class="portsig" viewBox="0 0 64 120" width="40" height="75" role="img" aria-label="Signal de port G G G" xmlns="http://www.w3.org/2000/svg"><rect width="64" height="120" fill="#0b1118"/><circle cx="40" cy="28" r="14" fill="#3fe08a" opacity=".18"/><circle cx="40" cy="28" r="9" fill="#3fe08a"/><circle cx="40" cy="60" r="14" fill="#3fe08a" opacity=".18"/><circle cx="40" cy="60" r="9" fill="#3fe08a"/><circle cx="40" cy="92" r="14" fill="#3fe08a" opacity=".18"/><circle cx="40" cy="92" r="9" fill="#3fe08a"/></svg></td><td>Trois verts : passage autorisé, trafic à sens unique.</td></tr>
+<tr><td><svg class="portsig" viewBox="0 0 64 120" width="40" height="75" role="img" aria-label="Signal de port G G W" xmlns="http://www.w3.org/2000/svg"><rect width="64" height="120" fill="#0b1118"/><circle cx="40" cy="28" r="14" fill="#3fe08a" opacity=".18"/><circle cx="40" cy="28" r="9" fill="#3fe08a"/><circle cx="40" cy="60" r="14" fill="#3fe08a" opacity=".18"/><circle cx="40" cy="60" r="9" fill="#3fe08a"/><circle cx="40" cy="92" r="14" fill="#fff6d8" opacity=".18"/><circle cx="40" cy="92" r="9" fill="#fff6d8"/></svg></td><td>Vert, vert, blanc : passage autorisé, trafic à double sens.</td></tr>
+<tr><td><svg class="portsig" viewBox="0 0 64 120" width="40" height="75" role="img" aria-label="Signal de port G W G" xmlns="http://www.w3.org/2000/svg"><rect width="64" height="120" fill="#0b1118"/><circle cx="40" cy="28" r="14" fill="#3fe08a" opacity=".18"/><circle cx="40" cy="28" r="9" fill="#3fe08a"/><circle cx="40" cy="60" r="14" fill="#fff6d8" opacity=".18"/><circle cx="40" cy="60" r="9" fill="#fff6d8"/><circle cx="40" cy="92" r="14" fill="#3fe08a" opacity=".18"/><circle cx="40" cy="92" r="9" fill="#3fe08a"/></svg></td><td>Vert, blanc, vert : passage autorisé seulement après avoir reçu des instructions.</td></tr>
+<tr><td><svg class="portsig" viewBox="0 0 64 120" width="40" height="75" role="img" aria-label="Signal de port R R R" xmlns="http://www.w3.org/2000/svg"><rect width="64" height="120" fill="#0b1118"/><circle cx="14" cy="28" r="8" fill="#ffd338"/><circle cx="40" cy="28" r="14" fill="#ff4b3a" opacity=".18"/><circle cx="40" cy="28" r="9" fill="#ff4b3a"/><circle cx="40" cy="60" r="14" fill="#ff4b3a" opacity=".18"/><circle cx="40" cy="60" r="9" fill="#ff4b3a"/><circle cx="40" cy="92" r="14" fill="#ff4b3a" opacity=".18"/><circle cx="40" cy="92" r="9" fill="#ff4b3a"/></svg></td><td>Feu jaune à gauche du feu supérieur : le signal ne s'applique pas aux navires qui naviguent en dehors du chenal principal (typiquement les petits bateaux).</td></tr>
+</tbody></table></div>
+
+<h2 id="pavillons"><span class="secnum">7.5</span>Quelques pavillons</h2>
+
+<p>Le code international des signaux attribue à chaque lettre un pavillon et une signification quand il est hissé seul. Quelques-uns sont à connaître.</p>
+<div class="figrow" style="justify-content:flex-start;gap:1rem 1.5rem">
+  <div><svg class="pavillon" viewBox="0 0 66 44" width="66" height="44" role="img" aria-label="Pavillon A" xmlns="http://www.w3.org/2000/svg"><rect x="3" y="3" width="30" height="38" fill="#f8f7f2"/><path d="M33 3 H63 L50 22 L63 41 H33 Z" fill="#2a62a8"/><path d="M3 3 H63 L50 22 L63 41 H3 Z" fill="none" stroke="#1e1e1e" stroke-width="1"/></svg>A : plongeur en immersion,<br><span class="muted">s'écarter et ralentir</span></div>
+  <div><svg class="pavillon" viewBox="0 0 66 44" width="66" height="44" role="img" aria-label="Pavillon B" xmlns="http://www.w3.org/2000/svg"><path d="M3 3 H63 L50 22 L63 41 H3 Z" fill="#cf3a2e" stroke="#1e1e1e" stroke-width="1"/></svg>B : matières<br><span class="muted">dangereuses</span></div>
+  <div><svg class="pavillon" viewBox="0 0 66 44" width="66" height="44" role="img" aria-label="Pavillon H" xmlns="http://www.w3.org/2000/svg"><rect x="3" y="3" width="30" height="38" fill="#f8f7f2"/><rect x="33" y="3" width="30" height="38" fill="#cf3a2e"/><rect x="3" y="3" width="60" height="38" fill="none" stroke="#1e1e1e" stroke-width="1"/></svg>H : pilote<br><span class="muted">à bord</span></div>
+  <div><svg class="pavillon" viewBox="0 0 66 44" width="66" height="44" role="img" aria-label="Pavillon O" xmlns="http://www.w3.org/2000/svg"><path d="M3 3 L63 41 H3 Z" fill="#f0c22b"/><path d="M3 3 H63 V41 Z" fill="#cf3a2e"/><rect x="3" y="3" width="60" height="38" fill="none" stroke="#1e1e1e" stroke-width="1"/></svg>O : homme<br><span class="muted">à la mer</span></div>
+  <div><svg class="pavillon" viewBox="0 0 66 44" width="66" height="44" role="img" aria-label="Pavillon V" xmlns="http://www.w3.org/2000/svg"><rect x="3" y="3" width="60" height="38" fill="#f8f7f2"/><path d="M3 3 L63 41 M63 3 L3 41" stroke="#cf3a2e" stroke-width="7"/><rect x="3" y="3" width="60" height="38" fill="none" stroke="#1e1e1e" stroke-width="1"/></svg>V : je demande<br><span class="muted">assistance</span></div>
+  <div><svg class="pavillon" viewBox="0 0 66 44" width="66" height="44" role="img" aria-label="Pavillon C" xmlns="http://www.w3.org/2000/svg"><rect x="3" y="3" width="60" height="7.7" fill="#2a62a8"/><rect x="3" y="10.6" width="60" height="7.7" fill="#f8f7f2"/><rect x="3" y="18.2" width="60" height="7.7" fill="#cf3a2e"/><rect x="3" y="25.799999999999997" width="60" height="7.7" fill="#f8f7f2"/><rect x="3" y="33.4" width="60" height="7.7" fill="#2a62a8"/><rect x="3" y="3" width="60" height="38" fill="none" stroke="#1e1e1e" stroke-width="1"/></svg>C : oui</div>
+  <div><svg class="pavillon" viewBox="0 0 66 44" width="66" height="44" role="img" aria-label="Pavillon N" xmlns="http://www.w3.org/2000/svg"><rect x="3" y="3" width="15.2" height="9.7" fill="#2a62a8"/><rect x="3" y="12.5" width="15.2" height="9.7" fill="#f8f7f2"/><rect x="3" y="22" width="15.2" height="9.7" fill="#2a62a8"/><rect x="3" y="31.5" width="15.2" height="9.7" fill="#f8f7f2"/><rect x="18" y="3" width="15.2" height="9.7" fill="#f8f7f2"/><rect x="18" y="12.5" width="15.2" height="9.7" fill="#2a62a8"/><rect x="18" y="22" width="15.2" height="9.7" fill="#f8f7f2"/><rect x="18" y="31.5" width="15.2" height="9.7" fill="#2a62a8"/><rect x="33" y="3" width="15.2" height="9.7" fill="#2a62a8"/><rect x="33" y="12.5" width="15.2" height="9.7" fill="#f8f7f2"/><rect x="33" y="22" width="15.2" height="9.7" fill="#2a62a8"/><rect x="33" y="31.5" width="15.2" height="9.7" fill="#f8f7f2"/><rect x="48" y="3" width="15.2" height="9.7" fill="#f8f7f2"/><rect x="48" y="12.5" width="15.2" height="9.7" fill="#2a62a8"/><rect x="48" y="22" width="15.2" height="9.7" fill="#f8f7f2"/><rect x="48" y="31.5" width="15.2" height="9.7" fill="#2a62a8"/><rect x="3" y="3" width="60" height="38" fill="none" stroke="#1e1e1e" stroke-width="1"/></svg>N : non</div>
+  <div><svg viewBox="0 0 66 88" width="54" height="72" role="img" aria-label="Pavillons N sur C" xmlns="http://www.w3.org/2000/svg"><rect x="3" y="3" width="15.2" height="9.7" fill="#2a62a8"/><rect x="3" y="12.5" width="15.2" height="9.7" fill="#f8f7f2"/><rect x="3" y="22" width="15.2" height="9.7" fill="#2a62a8"/><rect x="3" y="31.5" width="15.2" height="9.7" fill="#f8f7f2"/><rect x="18" y="3" width="15.2" height="9.7" fill="#f8f7f2"/><rect x="18" y="12.5" width="15.2" height="9.7" fill="#2a62a8"/><rect x="18" y="22" width="15.2" height="9.7" fill="#f8f7f2"/><rect x="18" y="31.5" width="15.2" height="9.7" fill="#2a62a8"/><rect x="33" y="3" width="15.2" height="9.7" fill="#2a62a8"/><rect x="33" y="12.5" width="15.2" height="9.7" fill="#f8f7f2"/><rect x="33" y="22" width="15.2" height="9.7" fill="#2a62a8"/><rect x="33" y="31.5" width="15.2" height="9.7" fill="#f8f7f2"/><rect x="48" y="3" width="15.2" height="9.7" fill="#f8f7f2"/><rect x="48" y="12.5" width="15.2" height="9.7" fill="#2a62a8"/><rect x="48" y="22" width="15.2" height="9.7" fill="#f8f7f2"/><rect x="48" y="31.5" width="15.2" height="9.7" fill="#2a62a8"/><rect x="3" y="3" width="60" height="38" fill="none" stroke="#1e1e1e" stroke-width="1"/><g transform="translate(0 44)"><rect x="3" y="3" width="60" height="7.7" fill="#2a62a8"/><rect x="3" y="10.6" width="60" height="7.7" fill="#f8f7f2"/><rect x="3" y="18.2" width="60" height="7.7" fill="#cf3a2e"/><rect x="3" y="25.799999999999997" width="60" height="7.7" fill="#f8f7f2"/><rect x="3" y="33.4" width="60" height="7.7" fill="#2a62a8"/><rect x="3" y="3" width="60" height="38" fill="none" stroke="#1e1e1e" stroke-width="1"/></g></svg>N sur C :<br><span class="muted">détresse</span></div>
+</div>
+
+<div class="box prop"><p class="box-label">Règle 7.5 <span class="box-title">(Plongée)</span>.</p>
+<p>En France, on se tient à plus de 100 m d'un pavillon A (ou de sa réplique rigide sur une bouée), et on passe à vitesse réduite. Les plongeurs peuvent faire surface n'importe où autour.</p>
+</div>
+
+<h2 id="detresse"><span class="secnum">7.6</span>Les signaux de détresse</h2>
+
+<p>Un navire en détresse, c'est-à-dire menacé d'un danger grave et imminent et ayant besoin d'une aide immédiate, peut signaler sa situation par tout moyen. Les signaux reconnus par le RIPAM (annexe IV) sont notamment :</p>
+<ul>
+  <li>le mot MAYDAY à la radio, ou une alerte de détresse par ASN (chapitre 10) ;</li>
+  <li>une fusée à parachute ou un feu à main à lumière rouge ; un signal fumigène orange ;</li>
+  <li>des mouvements lents et répétés des bras tendus, de haut en bas ;</li>
+  <li>le signal SOS en morse (· · · − − − · · ·), par son ou par lumière ;</li>
+  <li>un son continu (corne de brume) ; des coups de canon tirés à une minute d'intervalle ;</li>
+  <li>les pavillons N sur C, ou un pavillon carré avec une boule au-dessus ou au-dessous ;</li>
+  <li>des flammes sur le navire (un seau d'huile qui brûle, par exemple) ;</li>
+  <li>le déclenchement d'une balise de détresse (EPIRB, PLB).</li>
+</ul>
+
+<div class="box prop"><p class="box-label">Règle 7.6 <span class="box-title">(Assistance)</span>.</p>
+<p>Tout capitaine ou chef de bord est tenu de porter assistance à toute personne en danger de disparaître en mer, dans la mesure où il peut le faire sans danger grave pour son navire et son équipage. Il prévient le CROSS (chapitre 9).</p>
+</div>
+
+<div class="box meth"><p class="box-label">Méthode 7.7 <span class="box-title">(Utiliser les signaux pyrotechniques)</span>.</p>
+<ul>
+  <li>Un <strong>feu à main</strong> se tient à bout de bras, <strong>sous le vent</strong> du bateau, avec un gant ou un chiffon mouillé : il projette des scories brûlantes. Il est visible environ 3 M, pendant une minute.</li>
+  <li>Une <strong>fusée à parachute</strong> monte à 300 m et se voit à plus de 20 M par temps clair. On la tire légèrement au vent, pour que le parachute dérive au-dessus du bateau.</li>
+  <li>Un <strong>fumigène orange</strong> se voit de jour, surtout d'un hélicoptère, mais le vent l'écrase.</li>
+  <li>On ne tire pas tout d'un coup : on garde des signaux pour le moment où un navire ou un aéronef est en vue. Les feux périmés se rapportent au magasin d'accastillage ; on ne les tire jamais pour essayer.</li>
+</ul>
+</div>
+
+<div class="box retenir"><p class="box-label">À retenir.</p>
+<ul>
+  <li>Feux de route : vert à tribord, rouge à bâbord (112,5° chacun), blanc de poupe 135°, blanc de mât 225° pour les navires à moteur seulement.</li>
+  <li>Une boule : mouillage. Deux : non maître. Trois : échoué. Boule-losange-boule : capacité restreinte. Cylindre : tirant d'eau. Sablier : pêche. Cône pointe en bas : voilier au moteur.</li>
+  <li>Nuit : 2 rouges NUC, 3 rouges tirant d'eau, R-W-R capacité restreinte, vert/blanc chalutier, rouge/blanc pêcheur, blanc/rouge pilote.</li>
+  <li>1 bref tribord, 2 brefs bâbord, 3 brefs arrière, 5 brefs doute. Brume : 1 long moteur avec erre, 2 longs sans erre, long-bref-bref voilier.</li>
+  <li>Port : 3 rouges interdit, 3 verts sens unique, V-V-B double sens, V-B-V sur instructions.</li>
+</ul>
+</div>
+
+    <nav class="pager"><a class="prev" href="../cours/06-ripam.html"><span>Précédent</span>Chapitre 6 · Règles de barre et de route</a><a class="next" href="../cours/08-meteo.html"><span>Suivant</span>Chapitre 8 · Météo marine</a></nav>
+  </article>
+</div>
+</main>
+<footer class="foot">
+  <div class="foot-in">
+    <p>Préparation au brevet de patron d'embarcation et à la navigation à voile. Rédigé à partir des cours de navigation des scouts marins de Brest, mis à jour et complétés.</p>
+    <p>Ce site ne remplace ni la réglementation (Division 240, RIPAM), ni les documents officiels du SHOM, ni le règlement de votre association. En cas de doute, ce sont eux qui font foi.</p>
+  </div>
+</footer>
+<script src="../js/site.js"></script>
+
+
+</body>
+</html>

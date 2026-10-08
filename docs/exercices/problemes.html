@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Problèmes type examen · Patron d'embarcation</title>
+<meta name="description" content="Trois problèmes complets rédigés comme à l'examen (marée, estime, préparation d'une navigation), avec corrigés, et une méthode pour travailler sur la carte 9999.">
+<link rel="icon" href="../img/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/style.css">
+<script>
+  try {
+    var t = localStorage.getItem('pe-theme');
+    if (t) document.documentElement.setAttribute('data-theme', t);
+  } catch (e) {}
+</script>
+</head>
+<body data-root="../">
+<a class="skip" href="#contenu">Aller au contenu</a>
+<header class="top">
+  <div class="top-in">
+    <a class="brand" href="../index.html">Patron d'embarcation</a>
+    <nav class="mainnav" aria-label="Parties du site"><a href="../cours/index.html">Cours</a><a href="../qcm/index.html">QCM</a><a href="../exercices/index.html" aria-current="page">Exercices</a><a href="../pratique/index.html">Pratique</a><a href="../annales/index.html">Annales</a></nav>
+    <div class="acct" id="acct"></div>
+    <button class="theme" type="button" aria-label="Changer de thème" title="Clair / sombre"><svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true"><circle cx="8" cy="8" r="6.5" fill="none" stroke="currentColor" stroke-width="1.3"/><path d="M8 1.5 A6.5 6.5 0 0 1 8 14.5 Z" fill="currentColor"/></svg></button>
+  </div>
+</header>
+<main id="contenu">
+
+<div class="doc">
+  <aside class="side">
+    <p class="side-h">Exercices</p>
+    <ol class="chapters"><li><a href="../exercices/compas.html">Compas et caps</a></li><li><a href="../exercices/estime.html">Estime et courant</a></li><li><a href="../exercices/maree.html">Marée</a></li><li><a href="../exercices/problemes.html" aria-current="page">Problèmes type examen</a></li></ol>
+  </aside>
+  <article class="chapter">
+    <header class="chap-head">
+      <p class="kicker">Exercices</p>
+      <h1>Problèmes type examen</h1>
+      <p class="chap-desc">Trois problèmes complets rédigés comme à l'examen (marée, estime, préparation d'une navigation), avec corrigés, et une méthode pour travailler sur la carte 9999.</p>
+    </header>
+    <details class="toc-box"><summary>Sur cette page</summary><ol class="toc"><li><a href="#p1">Problème 1 : escale et mouillage</a></li><li><a href="#p2">Problème 2 : estime et courant</a></li><li><a href="#p3">Problème 3 : préparer une sortie de golfe</a></li><li><a href="#carte">S'entraîner sur la carte 9999</a></li></ol></details>
+    <p>Ces problèmes reprennent la forme de l'épreuve écrite : un scénario, des questions enchaînées, des points à justifier. Les ports et les valeurs sont inventés ; travaillez-les en temps limité (30 à 40 minutes chacun), sur papier, avant d'ouvrir le corrigé.</p>
+
+<h2 id="p1">Problème 1 : escale et mouillage</h2>
+
+<p>Nous sommes le 14 juillet (heure légale UTC+2). La flottille fait escale dans l'anse de Kerbihan, port rattaché à Port-Navalo. Voilier de tirant d'eau 1,50 m ; le chef de flottille impose 0,50 m de pied de pilote.</p>
+
+<div class="tbl-wrap"><table class="calc">
+<caption>Annuaire de Port-Navalo (heure UTC+1) et corrections de Kerbihan.</caption>
+<thead><tr><th>Port-Navalo</th><th>Heure</th><th>Hauteur</th><th>Coef.</th></tr></thead>
+<tbody>
+<tr><td class="lbl">BM</td><td>05 h 12</td><td>1,05 m</td><td></td></tr>
+<tr><td class="lbl">PM</td><td>11 h 20</td><td>4,70 m</td><td>82</td></tr>
+<tr><td class="lbl">BM</td><td>17 h 31</td><td>1,10 m</td><td></td></tr>
+<tr><td class="lbl">PM</td><td>23 h 45</td><td>4,85 m</td><td>85</td></tr>
+</tbody></table></div>
+<div class="tbl-wrap"><table class="calc">
+<thead><tr><th>Kerbihan</th><th>PM heure</th><th>BM heure</th><th>PM hauteur</th><th>BM hauteur</th></tr></thead>
+<tbody>
+<tr><td class="lbl">Vives eaux</td><td>−0 h 10</td><td>−0 h 05</td><td>+0,10 m</td><td>+0,05 m</td></tr>
+<tr><td class="lbl">Mortes eaux</td><td>−0 h 05</td><td>0 h 00</td><td>+0,05 m</td><td>0,00 m</td></tr>
+</tbody></table></div>
+
+<ol>
+  <li>Calculer les heures (légales) et hauteurs des pleines et basses mers de l'après-midi et du soir à Kerbihan. (1,5 pt)</li>
+  <li>Pour entrer dans l'anse, il faut franchir une barre de sable de sonde soulignée <u>0<sub>3</sub></u>. Quelle hauteur de marée faut-il ? Faire un schéma. (1 pt)</li>
+  <li>La flottille arrive par le jusant, dans l'après-midi. Jusqu'à quelle heure peut-elle franchir la barre ? (2 pts)</li>
+  <li>Retardée, elle arrive à 17 h. À partir de quelle heure pourra-t-elle entrer ? (1,5 pt)</li>
+  <li>Elle mouille pour la nuit par une sonde de 1<sub>4</sub>. La BM du lendemain matin donne 1,05 m à Kerbihan. Le mouillage est-il sûr ? Quelle longueur de chaîne filer ? (1 pt)</li>
+</ol>
+
+<details class="corr"><summary>Corrigé du problème 1</summary><div>
+<p><strong>1.</strong> Coefficients 82 et 85 : vives eaux, corrections VE. En été, on ajoute 1 h aux heures de l'annuaire.</p>
+<div class="tbl-wrap"><table class="calc">
+<thead><tr><th></th><th>Annuaire</th><th>+1 h</th><th>Correction</th><th>Kerbihan</th><th>Hauteur</th></tr></thead>
+<tbody>
+<tr><td class="lbl">PM</td><td>11 h 20</td><td>12 h 20</td><td>−0 h 10</td><td>12 h 10</td><td>4,70 + 0,10 = 4,80 m</td></tr>
+<tr><td class="lbl">BM</td><td>17 h 31</td><td>18 h 31</td><td>−0 h 05</td><td>18 h 26</td><td>1,10 + 0,05 = 1,15 m</td></tr>
+<tr><td class="lbl">PM</td><td>23 h 45</td><td>00 h 45</td><td>−0 h 10</td><td>00 h 35</td><td>4,85 + 0,10 = 4,95 m</td></tr>
+</tbody></table></div>
+
+<p><strong>2.</strong> La sonde soulignée indique que le sable découvre de 0,30 m au-dessus du zéro des cartes. Il faut que l'eau couvre le banc, puis le tirant d'eau, plus le pied de pilote : <var>h</var> ≥ 0,30 + 1,50 + 0,50 = <strong>2,30 m</strong>. (Schéma : zéro des cartes, banc qui dépasse de 0,30 m, quille, pied de pilote, niveau de la mer.)</p>
+
+<p><strong>3.</strong> Jusant de 12 h 10 (4,80 m) à 18 h 26 (1,15 m). Durée 6 h 16 = 376 min, HM ≈ 63 min. Marnage 3,65 m, douzième = 0,304 m.</p>
+<div class="tbl-wrap"><table class="calc">
+<thead><tr><th>Heure</th><th>Variation</th><th>Hauteur</th></tr></thead>
+<tbody>
+<tr><td>12 h 10</td><td>PM</td><td>4,800</td></tr>
+<tr><td>13 h 13</td><td>−0,304</td><td>4,496</td></tr>
+<tr><td>14 h 16</td><td>−0,608</td><td>3,888</td></tr>
+<tr class="hl"><td>15 h 19</td><td>−0,913</td><td>2,975</td></tr>
+<tr class="hl"><td>16 h 22</td><td>−0,913</td><td>2,063</td></tr>
+<tr><td>17 h 25</td><td>−0,608</td><td>1,454</td></tr>
+<tr><td>18 h 28</td><td>−0,304</td><td>1,150</td></tr>
+</tbody></table></div>
+<p>2,30 m est atteint dans la 4<sup>e</sup> heure-marée. Il faut descendre de 2,975 − 2,30 = 0,675 m sur 0,913 m : 63 × 0,675 / 0,913 ≈ 47 min. Heure limite : 15 h 19 + 47 min = <strong>16 h 06</strong>.</p>
+
+<p><strong>4.</strong> À 17 h, la mer est trop basse et descend encore jusqu'à 18 h 26. Il faut attendre le flot : de 18 h 26 (1,15 m) à 00 h 35 (4,95 m). Durée 6 h 09 = 369 min, HM ≈ 62 min. Marnage 3,80 m, douzième = 0,317 m.</p>
+<div class="tbl-wrap"><table class="calc">
+<thead><tr><th>Heure</th><th>Variation</th><th>Hauteur</th></tr></thead>
+<tbody>
+<tr><td>18 h 26</td><td>BM</td><td>1,150</td></tr>
+<tr><td>19 h 28</td><td>+0,317</td><td>1,467</td></tr>
+<tr class="hl"><td>20 h 30</td><td>+0,633</td><td>2,100</td></tr>
+<tr class="hl"><td>21 h 32</td><td>+0,950</td><td>3,050</td></tr>
+</tbody></table></div>
+<p>Il faut monter de 2,30 − 2,10 = 0,20 m sur 0,95 m : 62 × 0,20 / 0,95 ≈ 13 min. On peut entrer à partir de <strong>20 h 43</strong>, soit près de quatre heures d'attente au mouillage à l'extérieur : on prévient le chef de flottille et on vérifie que l'attente se fait en sécurité.</p>
+
+<p><strong>5.</strong> À la BM du matin : 1,40 + 1,05 = 2,45 m d'eau, pour 1,50 + 0,50 = 2,00 m nécessaires : le mouillage est sûr, avec 0,45 m de marge. La hauteur d'eau maximale de la nuit est à la PM de 00 h 35 : 1,40 + 4,95 = 6,35 m. On file environ 3 × 6,35 ≈ <strong>20 m</strong> de chaîne. On vérifie à basse mer que le cercle d'évitage, agrandi par cette chaîne, reste dégagé.</p>
+</div></details>
+
+<h2 id="p2">Problème 2 : estime et courant</h2>
+
+<p>À 9 h 00, un voilier quitte la position A, connue avec précision. La déclinaison est de −2°. Le vent vient de l'Ouest (270), force 4. Le voilier marche à 5 nd. On ne dispose pas de la carte : on répond par le calcul et des schémas.</p>
+<ol>
+  <li>Le barreur tient le cap compas 215 ; la courbe de déviation donne <var>d</var> = +3° pour ce cap. On estime la dérive à 8°. Calculer <var>Cv</var> puis <var>Rs</var>. Justifier le signe de la dérive. (2 pts)</li>
+  <li>Où est le point estimé E à 10 h 30, par rapport à A ? (1 pt)</li>
+  <li>À 10 h 30, un point par trois relèvements place le bateau en P, à 0,9 M dans le 120 de E. Quel courant a-t-on subi ? (1,5 pt)</li>
+  <li>On décide de rejoindre depuis P un mouillage B situé à 6 M dans le 180. Le courant est supposé inchangé. Quelle route surface suivre, à quelle vitesse fond, et à quelle heure arrivera-t-on ? Faire le schéma de la construction. (3 pts)</li>
+  <li>À cette nouvelle allure, la dérive est estimée à 4° et la courbe donne <var>d</var> = +2°. Quel cap compas donner au barreur ? (1,5 pt)</li>
+</ol>
+
+<details class="corr"><summary>Corrigé du problème 2</summary><div>
+<p><strong>1.</strong> <var>W</var> = <var>D</var> + <var>d</var> = −2 + 3 = +1°, donc <var>Cv</var> = 215 + 1 = <strong>216</strong>. Le vent vient du 270, soit 54° à droite de l'axe du bateau (270 − 216) : il vient de tribord, le bateau est tribord amures au près et il est poussé vers bâbord. La dérive est négative : <var>Rs</var> = 216 − 8 = <strong>208</strong>.</p>
+<p><strong>2.</strong> De 9 h 00 à 10 h 30 : 1 h 30 à 5 nd, soit 7,5 M. Le point estimé E est à <strong>7,5 M dans le 208 de A</strong>.</p>
+<p><strong>3.</strong> Le courant a déplacé le bateau de E vers P : il porte au <strong>120</strong>. Il l'a déplacé de 0,9 M en 1,5 h : vitesse 0,9 / 1,5 = <strong>0,6 nd</strong>.</p>
+<p><strong>4.</strong> Construction : depuis P, tracer le courant d'une heure (0,6 M au 120) jusqu'en C ; depuis C, un arc de rayon 5 M coupe la route fond (le 180 issu de P) en D. CD est la route surface, PD la vitesse fond.</p>
+<p>Par le calcul : la composante du courant perpendiculaire à la route fond vaut 0,6 × sin(120 − 180) = −0,52 nd (vers l'Est). Il faut la compenser : sin(<var>Rs</var> − 180) = 0,52 / 5 = 0,104, soit <var>Rs</var> − 180 ≈ +6°, <strong><var>Rs</var> ≈ 186</strong> : on remonte un peu vers l'Ouest pour ne pas être porté à l'Est. Vitesse fond : 5 cos 6° + 0,6 cos 60° ≈ 4,97 + 0,30 = <strong>5,3 nd</strong> (le courant aide un peu). Durée : 6 / 5,27 ≈ 1,14 h ≈ 1 h 08. Arrivée vers <strong>11 h 38</strong>.</p>
+<p><strong>5.</strong> Vent du 270 et route au 186 : le vent arrive à 84° sur tribord (travers) ; il pousse vers bâbord, la dérive est négative : <var>dér</var> = −4°. <var>Cv</var> = <var>Rs</var> − <var>dér</var> = 186 + 4 = 190. <var>W</var> = −2 + 2 = 0 : <strong><var>Cc</var> = 190</strong>.</p>
+<p>Contrôle de cohérence : on vise le Sud, le courant porte vers l'Est-Sud-Est et le vent pousse vers l'Est ; les deux corrections font donc remonter le cap vers l'Ouest (190 au lieu de 180). C'est cohérent.</p>
+</div></details>
+
+<h2 id="p3">Problème 3 : préparer une sortie de golfe</h2>
+
+<p>La flottille est au mouillage dans un golfe qui communique avec le large par un goulet étroit. Elle doit sortir ce matin pour rejoindre un port à 8 M. Il n'y a pas de vent ; les voiliers font 5 nd au moteur. La pleine mer est à 12 h. Les instructions nautiques donnent le courant dans le goulet :</p>
+<div class="tbl-wrap"><table class="calc">
+<thead><tr><th>Heure</th><th>PM−5</th><th>PM−4</th><th>PM−3</th><th>PM−2</th><th>PM−1</th><th>PM</th><th>PM+1</th><th>PM+2</th><th>PM+3</th><th>PM+4</th><th>PM+5</th></tr></thead>
+<tbody>
+<tr><td class="lbl">Vitesse (nd)</td><td>6,4</td><td>1,0</td><td>3,0</td><td>6,0</td><td>7,5</td><td>5,2</td><td>3,1</td><td>0</td><td>2,5</td><td>7,1</td><td>8,0</td></tr>
+<tr><td class="lbl">Sens</td><td>sortant</td><td>sortant</td><td>entrant</td><td>entrant</td><td>entrant</td><td>entrant</td><td>entrant</td><td>—</td><td>sortant</td><td>sortant</td><td>sortant</td></tr>
+</tbody></table></div>
+<ol>
+  <li>Quel risque voyez-vous ? (1 pt)</li>
+  <li>À quelle heure quitter le mouillage, situé à 2 M du goulet ? (1,5 pt)</li>
+  <li>Le bulletin annonce pour l'après-midi un vent d'Ouest de force 5, soufflant du large vers le goulet. Qu'en déduisez-vous ? (1 pt)</li>
+</ol>
+
+<details class="corr"><summary>Corrigé du problème 3</summary><div>
+<p><strong>1.</strong> Le courant dans le goulet atteint 6 à 8 nd, plus que la vitesse des voiliers (5 nd). Contre le courant, un voilier recule ; avec le courant, il passe très vite et se manœuvre mal (tourbillons, risque d'être drossé sur les roches). Il faut passer près de l'étale.</p>
+<p><strong>2.</strong> Pour sortir, il faut un courant faible ou sortant modéré. L'étale de jusant est vers PM+2 (14 h) ; le courant sortant reste raisonnable jusqu'à PM+3 (2,5 nd). On vise un passage du goulet vers 14 h, au plus tard 14 h 30, ce qui donne, pour 2 M à 5 nd (24 min), un départ du mouillage vers <strong>13 h 30</strong>. L'autre fenêtre (PM−4, vers 8 h, 1 nd sortant) est très courte et entourée de courants violents : on ne la retient pas sans une marge sûre.</p>
+<p><strong>3.</strong> À partir de PM+3, le courant sortant (vers le large) va s'opposer au vent d'Ouest qui souffle du large : vent contre courant dans un goulet, la mer devient courte, creuse et déferlante. Raison de plus pour passer tôt, à l'étale, et ne pas traîner : à 15 h, la sortie serait dangereuse.</p>
+</div></details>
+
+<h2 id="carte">S'entraîner sur la carte 9999</h2>
+<p>L'épreuve sur carte ne se prépare qu'avec la carte et les instruments. La carte d'examen 9999 (ou la 7033) se commande auprès du SHOM ou chez un shipchandler. Méthode conseillée :</p>
+<ol>
+  <li>Prendre un sujet d'annale (page Annales), le faire en temps limité, crayon bien taillé, gomme, règle Cras, compas à pointes sèches.</li>
+  <li>Comparer avec le corrigé, en vérifiant les tracés au millimètre : une erreur de 1° sur 5 M fait 160 m.</li>
+  <li>Noter ses erreurs types (signe de la déclinaison, lecture de la Cras dans le mauvais quadrant, longitude lue à l'envers) et les relire avant l'épreuve suivante.</li>
+  <li>Écrire proprement les justifications : le correcteur donne des points au raisonnement, même si le résultat final est faux.</li>
+</ol>
+
+    <nav class="pager"><a class="prev" href="../exercices/maree.html"><span>Précédent</span>Marée</a><span></span></nav>
+  </article>
+</div>
+</main>
+<footer class="foot">
+  <div class="foot-in">
+    <p>Préparation au brevet de patron d'embarcation et à la navigation à voile. Rédigé à partir des cours de navigation des scouts marins de Brest, mis à jour et complétés.</p>
+    <p>Ce site ne remplace ni la réglementation (Division 240, RIPAM), ni les documents officiels du SHOM, ni le règlement de votre association. En cas de doute, ce sont eux qui font foi.</p>
+  </div>
+</footer>
+<script src="../js/site.js"></script>
+
+
+</body>
+</html>

@@ -1,0 +1,203 @@
+<!--meta {"title": "Feux, marques et signaux", "short": "Feux, marques, signaux", "part": "cours", "num": 7, "desc": "Feux de navigation et marques de jour des navires, signaux sonores de manœuvre et de brume, signaux de port, pavillons utiles, signaux de détresse."} -->
+
+<h2 id="feux-route">Les feux de navigation</h2>
+
+<p>Du coucher au lever du soleil, et de jour par visibilité réduite, chaque navire montre des feux qui indiquent ce qu'il est, ce qu'il fait et dans quel sens il va. Le jour, certains navires hissent des <dfn>marques</dfn> (boules, cônes, cylindres noirs) qui jouent le même rôle. Les feux sont définis par leur couleur et le secteur dans lequel ils sont visibles.</p>
+
+<figure>
+<svg viewBox="0 0 380 250" width="380" role="img" aria-label="Secteurs des feux de navigation">
+  <path d="M150 120 L150 40 A80 80 0 0 1 223.9 150.6 Z" fill="#1f8a4c" opacity=".22"/>
+  <path d="M150 120 L76.1 150.6 A80 80 0 0 1 150 40 Z" fill="#cf3a2e" opacity=".22"/>
+  <path d="M150 120 L223.9 150.6 A80 80 0 0 1 76.1 150.6 Z" class="fill-muted" opacity=".18"/>
+  <path d="M53 160.2 A105 105 0 1 1 247 160.2" class="ln" stroke-width="1.4" stroke-dasharray="5 3"/>
+  <path d="M150 104 C 156 110, 156 128, 154 136 L 146 136 C 144 128, 144 110, 150 104 Z" class="fill-ink"/>
+  <g font-size="11">
+    <text x="196" y="96" fill="#1f8a4c">vert</text><text x="196" y="110" font-size="10" class="mut">112,5°</text>
+    <text x="80" y="96" fill="#cf3a2e">rouge</text><text x="80" y="110" font-size="10" class="mut">112,5°</text>
+    <text x="150" y="190" text-anchor="middle">feu de poupe blanc, 135°</text>
+    <text x="150" y="10" text-anchor="middle">feu de mât blanc, 225°</text>
+    <text x="236" y="168" font-size="10" class="mut">22,5° sur l'arrière du travers</text>
+  </g>
+  <line x1="150" y1="120" x2="250" y2="120" class="ln2" stroke-dasharray="2 2"/>
+</svg>
+<figcaption>Secteurs des feux d'un navire à moteur faisant route, vu de dessus. Les feux de côté se recouvrent légèrement à l'avant ; le feu de poupe couvre exactement le secteur arrière laissé libre.</figcaption>
+</figure>
+
+<div class="tbl-wrap"><table>
+<thead><tr><th>Feu</th><th>Couleur</th><th>Secteur</th><th>Position</th></tr></thead>
+<tbody>
+<tr><td>Feu de tête de mât</td><td>blanc</td><td>225°, vers l'avant</td><td>dans l'axe, en hauteur</td></tr>
+<tr><td>Feux de côté</td><td>vert à tribord, rouge à bâbord</td><td>112,5° chacun</td><td>de chaque bord</td></tr>
+<tr><td>Feu de poupe</td><td>blanc</td><td>135°, vers l'arrière</td><td>à l'arrière</td></tr>
+<tr><td>Feu de remorquage</td><td>jaune</td><td>135°, vers l'arrière</td><td>au-dessus du feu de poupe</td></tr>
+<tr><td>Feu visible sur tout l'horizon</td><td>selon le cas</td><td>360°</td><td>—</td></tr>
+</tbody></table></div>
+
+<h3>Ce que l'on voit d'un navire qui fait route</h3>
+<div class="figrow" style="justify-content:flex-start">
+  <div><x-nuit preset="moteur-face" w="180" />Navire à moteur, de face :<br><span class="muted">il vient vers moi</span></div>
+  <div><x-nuit preset="moteur-tribord" w="180" />Je vois son tribord (vert) :<br><span class="muted">il va vers ma droite</span></div>
+  <div><x-nuit preset="moteur-babord" w="180" />Je vois son bâbord (rouge) :<br><span class="muted">il va vers ma gauche</span></div>
+  <div><x-nuit preset="moteur50-tribord" w="180" />Plus de 50 m, vu de tribord :<br><span class="muted">deux feux de mât, l'arrière plus haut</span></div>
+  <div><x-nuit preset="voilier-face" w="180" />Voilier, de face :<br><span class="muted">pas de feu de mât</span></div>
+  <div><x-nuit preset="arriere" w="180" />Un seul feu blanc :<br><span class="muted">je le vois par l'arrière</span></div>
+</div>
+
+<div class="box prop" data-title="Feux des navires faisant route">
+<ul>
+  <li><strong>Navire à moteur</strong> : feu de mât, feux de côté, feu de poupe. Au-delà de 50 m, un second feu de mât, plus haut et plus en arrière. Moins de 12 m : le feu de mât et le feu de poupe peuvent être remplacés par un feu blanc visible sur tout l'horizon. Moins de 7 m et moins de 7 nd : un simple feu blanc visible sur tout l'horizon suffit.</li>
+  <li><strong>Navire à voile</strong> : feux de côté et feu de poupe, <strong>sans</strong> feu de mât. Moins de 20 m : ils peuvent être réunis en un <dfn>feu tricolore</dfn> en tête de mât. Il peut porter en plus, en tête de mât, deux feux visibles sur tout l'horizon, rouge au-dessus de vert (jamais avec le tricolore).</li>
+  <li><strong>Voilier de moins de 7 m, bateau à l'aviron</strong> : s'il ne porte pas les feux du voilier, il doit avoir prête une lampe électrique à feu blanc, à montrer assez tôt pour éviter un abordage.</li>
+  <li><strong>Voilier au moteur</strong> : feux du navire à moteur (avec le feu de mât). De jour, un cône pointe en bas.</li>
+</ul>
+</div>
+
+<div class="box meth" data-title="Lire des feux de route">
+<ul>
+  <li>Je vois un feu vert : je vois son flanc tribord, il se déplace vers ma droite. Un feu rouge : son flanc bâbord, il se déplace vers ma gauche. Les deux : il vient droit sur moi.</li>
+  <li>Un feu de mât blanc au-dessus des feux de côté : navire à moteur. Pas de feu de mât : voilier (ou petit navire).</li>
+  <li>Deux feux de mât : la position relative indique le sens. L'arrière est plus haut ; si le feu bas est à gauche, l'avant est à gauche.</li>
+  <li>Un feu blanc seul : je le rattrape, il est au mouillage, ou c'est un petit bateau. Regarder s'il bouge.</li>
+</ul>
+</div>
+
+<h2 id="speciaux">Navires particuliers</h2>
+
+<p>Les navires qui manœuvrent difficilement (chapitre 6) l'annoncent par des feux visibles sur tout l'horizon, disposés verticalement, et de jour par des marques noires. S'ils ont de l'erre, ils montrent en plus leurs feux de côté et de poupe ; les navires à capacité restreinte et handicapés par leur tirant d'eau montrent aussi leur feu de mât, pas le navire non maître de sa manœuvre.</p>
+
+<div class="tbl-wrap"><table>
+<thead><tr><th>Situation</th><th>Jour</th><th>Nuit</th><th>À retenir</th></tr></thead>
+<tbody>
+<tr><td><strong>Au mouillage</strong></td><td><x-marques seq="boule" w="34" /></td><td><x-nuit preset="mouillage" w="110" /></td><td>une boule à l'avant ; un feu blanc 360° (deux au-delà de 50 m, l'avant plus haut)</td></tr>
+<tr><td><strong>Non maître de sa manœuvre</strong></td><td><x-marques seq="boule,boule" w="34" /></td><td><x-nuit preset="nuc" w="110" /></td><td>deux boules ; deux feux rouges superposés</td></tr>
+<tr><td><strong>Échoué</strong></td><td><x-marques seq="boule,boule,boule" w="34" /></td><td><x-nuit preset="echoue" w="110" /></td><td>trois boules ; deux feux rouges + feux de mouillage</td></tr>
+<tr><td><strong>Capacité de manœuvre restreinte</strong></td><td><x-marques seq="boule,losange,boule" w="34" /></td><td><x-nuit preset="ram" w="110" /></td><td>boule, losange, boule ; rouge, blanc, rouge</td></tr>
+<tr><td><strong>Handicapé par son tirant d'eau</strong></td><td><x-marques seq="cylindre" w="34" /></td><td><x-nuit preset="tirant-eau" w="110" /></td><td>un cylindre ; trois feux rouges superposés (+ feux de route)</td></tr>
+<tr><td><strong>Chalutier en pêche</strong></td><td><x-marques seq="sablier" w="34" /></td><td><x-nuit preset="chalutier" w="110" /></td><td>deux cônes pointe à pointe ; vert sur blanc</td></tr>
+<tr><td><strong>Autre navire en pêche</strong></td><td><x-marques seq="sablier" w="34" /></td><td><x-nuit preset="peche" w="110" /></td><td>deux cônes pointe à pointe ; rouge sur blanc</td></tr>
+<tr><td><strong>Bateau pilote en service</strong></td><td><x-pavillon code="H" w="48" /></td><td><x-nuit preset="pilote" w="110" /></td><td>pavillon H ; blanc sur rouge</td></tr>
+<tr><td><strong>Voilier au moteur</strong></td><td><x-marques seq="cone-bas" w="34" /></td><td><x-nuit preset="moteur-face" w="110" /></td><td>cône pointe en bas ; feux d'un navire à moteur</td></tr>
+<tr><td><strong>Remorquage</strong></td><td><x-marques seq="losange" w="34" /></td><td><x-nuit preset="remorqueur-face" w="110" /></td><td>losange si la remorque dépasse 200 m ; deux feux de mât superposés (trois au-delà de 200 m), feu jaune de remorquage au-dessus du feu de poupe</td></tr>
+<tr><td><strong>Déminage</strong></td><td>trois boules en triangle</td><td><x-nuit preset="deminage-face" w="110" /></td><td>trois feux verts ; rester à plus de 1 000 m</td></tr>
+</tbody></table></div>
+
+<div class="box meth" data-title="Moyens mnémotechniques">
+<ul>
+  <li>Deux rouges, « rouge sur rouge, rien ne bouge » : non maître de sa manœuvre. Trois boules : « échoué, il a vraiment les boules ».</li>
+  <li>Rouge-blanc-rouge, boule-losange-boule : capacité restreinte, il travaille.</li>
+  <li>Trois rouges ou un cylindre : tirant d'eau, il est coincé dans son chenal.</li>
+  <li>Les deux cônes pointe à pointe dessinent un sablier… ou un poisson qu'on regarde de face : pêche. « Vert sur blanc, chalutier ; rouge sur blanc, pêcheur. »</li>
+  <li>« Blanc sur rouge, pilote à bord. »</li>
+</ul>
+</div>
+
+<div class="box warn">
+<p>Le losange (deux cônes opposés par la base) n'est pas le sablier (deux cônes opposés par la pointe). Le premier se trouve sur un navire à capacité restreinte ou un remorquage, le second sur un pêcheur. Certains textes appellent « bicône » les deux formes : regardez le dessin.</p>
+</div>
+
+<h2 id="sonores">Les signaux sonores</h2>
+
+<p>Un <dfn>son bref</dfn> dure environ une seconde, un <dfn>son prolongé</dfn> de quatre à six secondes. Cliquez sur un signal pour l'écouter (sons courts : 1 s, longs : 4,5 s).</p>
+
+<h3>Signaux de manœuvre (navires en vue l'un de l'autre)</h3>
+<div class="tbl-wrap"><table>
+<thead><tr><th>Signal</th><th>Signification</th></tr></thead>
+<tbody>
+<tr><td><x-son s="." /></td><td>Je viens sur tribord.</td></tr>
+<tr><td><x-son s=".." /></td><td>Je viens sur bâbord.</td></tr>
+<tr><td><x-son s="..." /></td><td>Je bats en arrière (ma machine tourne en arrière).</td></tr>
+<tr><td><x-son s="....." /></td><td>Au moins cinq sons brefs rapides : je ne comprends pas vos intentions, ou je doute que vous manœuvriez suffisamment. Signal d'avertissement.</td></tr>
+<tr><td><x-son s="-" /></td><td>À l'approche d'un coude ou d'un endroit masqué d'un chenal.</td></tr>
+<tr><td><x-son s="--." /></td><td>Dans un chenal : j'ai l'intention de vous rattraper par votre tribord.</td></tr>
+<tr><td><x-son s="--.." /></td><td>Dans un chenal : j'ai l'intention de vous rattraper par votre bâbord.</td></tr>
+<tr><td><x-son s="-.-." /></td><td>Réponse du navire rattrapé : je suis d'accord.</td></tr>
+</tbody></table></div>
+
+<h3>Signaux par visibilité réduite</h3>
+<div class="tbl-wrap"><table>
+<thead><tr><th>Signal</th><th>Navire</th><th>Rythme</th></tr></thead>
+<tbody>
+<tr><td><x-son s="-" /></td><td>À moteur, faisant route avec de l'erre</td><td>au plus toutes les 2 min</td></tr>
+<tr><td><x-son s="--" /></td><td>À moteur, faisant route mais stoppé, sans erre</td><td>au plus toutes les 2 min</td></tr>
+<tr><td><x-son s="-.." /></td><td>À voile, en pêche, non maître de sa manœuvre, à capacité restreinte, handicapé par son tirant d'eau, remorqueur</td><td>au plus toutes les 2 min</td></tr>
+<tr><td><x-son s="-..." /></td><td>Navire remorqué (s'il a un équipage), juste après le signal du remorqueur</td><td>au plus toutes les 2 min</td></tr>
+<tr><td><x-son s="...." /></td><td>Bateau pilote en service (en plus de son signal normal)</td><td>—</td></tr>
+<tr><td><x-son s="b" /></td><td>Au mouillage : cloche tintée rapidement pendant 5 s (plus un gong à l'arrière au-delà de 100 m). Peut ajouter bref, prolongé, bref pour avertir.</td><td>au plus toutes les minutes</td></tr>
+<tr><td>3 coups + <x-son s="b" /> + 3 coups</td><td>Échoué : trois coups de cloche distincts, cloche rapide 5 s, trois coups</td><td>au plus toutes les minutes</td></tr>
+</tbody>
+<caption>Un navire de moins de 12 m peut se contenter d'émettre un autre signal sonore efficace au moins toutes les 2 minutes. Le signal « long, bref, bref » est la lettre D en morse.</caption>
+</table></div>
+
+<div class="box ex" data-title="annales">
+<p>Dans la brume, j'entends un son prolongé toutes les deux minutes : c'est un navire à moteur qui a de l'erre. Un son prolongé suivi de deux brefs : un voilier, un pêcheur, ou un navire qui manœuvre mal. Trois sons brefs d'un navire en vue : il bat en arrière.</p>
+</div>
+
+<h2 id="port">Les signaux de port</h2>
+
+<p>À l'entrée des ports importants, des feux disposés verticalement règlent le trafic. Ils sont visibles de jour comme de nuit, fixes ou à occultations lentes, sauf le signal d'urgence, à éclats.</p>
+
+<div class="tbl-wrap"><table>
+<thead><tr><th>Signal</th><th>Signification</th></tr></thead>
+<tbody>
+<tr><td><x-port seq="R,R,R" flash="1" w="40" /></td><td>Trois rouges <strong>à éclats</strong> : danger grave, tous les navires s'arrêtent ou se déroutent selon les instructions.</td></tr>
+<tr><td><x-port seq="R,R,R" w="40" /></td><td>Trois rouges : entrée ou sortie interdite.</td></tr>
+<tr><td><x-port seq="G,G,G" w="40" /></td><td>Trois verts : passage autorisé, trafic à sens unique.</td></tr>
+<tr><td><x-port seq="G,G,W" w="40" /></td><td>Vert, vert, blanc : passage autorisé, trafic à double sens.</td></tr>
+<tr><td><x-port seq="G,W,G" w="40" /></td><td>Vert, blanc, vert : passage autorisé seulement après avoir reçu des instructions.</td></tr>
+<tr><td><x-port seq="R,R,R" exempt="Y" w="40" /></td><td>Feu jaune à gauche du feu supérieur : le signal ne s'applique pas aux navires qui naviguent en dehors du chenal principal (typiquement les petits bateaux).</td></tr>
+</tbody></table></div>
+
+<h2 id="pavillons">Quelques pavillons</h2>
+
+<p>Le code international des signaux attribue à chaque lettre un pavillon et une signification quand il est hissé seul. Quelques-uns sont à connaître.</p>
+<div class="figrow" style="justify-content:flex-start;gap:1rem 1.5rem">
+  <div><x-pavillon code="A" />A : plongeur en immersion,<br><span class="muted">s'écarter et ralentir</span></div>
+  <div><x-pavillon code="B" />B : matières<br><span class="muted">dangereuses</span></div>
+  <div><x-pavillon code="H" />H : pilote<br><span class="muted">à bord</span></div>
+  <div><x-pavillon code="O" />O : homme<br><span class="muted">à la mer</span></div>
+  <div><x-pavillon code="V" />V : je demande<br><span class="muted">assistance</span></div>
+  <div><x-pavillon code="C" />C : oui</div>
+  <div><x-pavillon code="N" />N : non</div>
+  <div><x-pavillon code="NC" w="54" />N sur C :<br><span class="muted">détresse</span></div>
+</div>
+
+<div class="box prop" data-title="Plongée">
+<p>En France, on se tient à plus de 100 m d'un pavillon A (ou de sa réplique rigide sur une bouée), et on passe à vitesse réduite. Les plongeurs peuvent faire surface n'importe où autour.</p>
+</div>
+
+<h2 id="detresse">Les signaux de détresse</h2>
+
+<p>Un navire en détresse, c'est-à-dire menacé d'un danger grave et imminent et ayant besoin d'une aide immédiate, peut signaler sa situation par tout moyen. Les signaux reconnus par le RIPAM (annexe IV) sont notamment :</p>
+<ul>
+  <li>le mot MAYDAY à la radio, ou une alerte de détresse par ASN (chapitre 10) ;</li>
+  <li>une fusée à parachute ou un feu à main à lumière rouge ; un signal fumigène orange ;</li>
+  <li>des mouvements lents et répétés des bras tendus, de haut en bas ;</li>
+  <li>le signal SOS en morse (· · · − − − · · ·), par son ou par lumière ;</li>
+  <li>un son continu (corne de brume) ; des coups de canon tirés à une minute d'intervalle ;</li>
+  <li>les pavillons N sur C, ou un pavillon carré avec une boule au-dessus ou au-dessous ;</li>
+  <li>des flammes sur le navire (un seau d'huile qui brûle, par exemple) ;</li>
+  <li>le déclenchement d'une balise de détresse (EPIRB, PLB).</li>
+</ul>
+
+<div class="box prop" data-title="Assistance">
+<p>Tout capitaine ou chef de bord est tenu de porter assistance à toute personne en danger de disparaître en mer, dans la mesure où il peut le faire sans danger grave pour son navire et son équipage. Il prévient le CROSS (chapitre 9).</p>
+</div>
+
+<div class="box meth" data-title="Utiliser les signaux pyrotechniques">
+<ul>
+  <li>Un <strong>feu à main</strong> se tient à bout de bras, <strong>sous le vent</strong> du bateau, avec un gant ou un chiffon mouillé : il projette des scories brûlantes. Il est visible environ 3 M, pendant une minute.</li>
+  <li>Une <strong>fusée à parachute</strong> monte à 300 m et se voit à plus de 20 M par temps clair. On la tire légèrement au vent, pour que le parachute dérive au-dessus du bateau.</li>
+  <li>Un <strong>fumigène orange</strong> se voit de jour, surtout d'un hélicoptère, mais le vent l'écrase.</li>
+  <li>On ne tire pas tout d'un coup : on garde des signaux pour le moment où un navire ou un aéronef est en vue. Les feux périmés se rapportent au magasin d'accastillage ; on ne les tire jamais pour essayer.</li>
+</ul>
+</div>
+
+<div class="box retenir">
+<ul>
+  <li>Feux de route : vert à tribord, rouge à bâbord (112,5° chacun), blanc de poupe 135°, blanc de mât 225° pour les navires à moteur seulement.</li>
+  <li>Une boule : mouillage. Deux : non maître. Trois : échoué. Boule-losange-boule : capacité restreinte. Cylindre : tirant d'eau. Sablier : pêche. Cône pointe en bas : voilier au moteur.</li>
+  <li>Nuit : 2 rouges NUC, 3 rouges tirant d'eau, R-W-R capacité restreinte, vert/blanc chalutier, rouge/blanc pêcheur, blanc/rouge pilote.</li>
+  <li>1 bref tribord, 2 brefs bâbord, 3 brefs arrière, 5 brefs doute. Brume : 1 long moteur avec erre, 2 longs sans erre, long-bref-bref voilier.</li>
+  <li>Port : 3 rouges interdit, 3 verts sens unique, V-V-B double sens, V-B-V sur instructions.</li>
+</ul>
+</div>

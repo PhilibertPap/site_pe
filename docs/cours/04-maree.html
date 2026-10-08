@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>La marée · Patron d'embarcation</title>
+<meta name="description" content="Origine de la marée, coefficient, annuaire et ports rattachés, hauteur d'eau disponible, règle des douzièmes, mouillage.">
+<link rel="icon" href="../img/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/style.css">
+<script>
+  try {
+    var t = localStorage.getItem('pe-theme');
+    if (t) document.documentElement.setAttribute('data-theme', t);
+  } catch (e) {}
+</script>
+</head>
+<body data-root="../">
+<a class="skip" href="#contenu">Aller au contenu</a>
+<header class="top">
+  <div class="top-in">
+    <a class="brand" href="../index.html">Patron d'embarcation</a>
+    <nav class="mainnav" aria-label="Parties du site"><a href="../cours/index.html" aria-current="page">Cours</a><a href="../qcm/index.html">QCM</a><a href="../exercices/index.html">Exercices</a><a href="../pratique/index.html">Pratique</a><a href="../annales/index.html">Annales</a></nav>
+    <div class="acct" id="acct"></div>
+    <button class="theme" type="button" aria-label="Changer de thème" title="Clair / sombre"><svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true"><circle cx="8" cy="8" r="6.5" fill="none" stroke="currentColor" stroke-width="1.3"/><path d="M8 1.5 A6.5 6.5 0 0 1 8 14.5 Z" fill="currentColor"/></svg></button>
+  </div>
+</header>
+<main id="contenu">
+
+<div class="doc">
+  <aside class="side">
+    <p class="side-h">Cours</p>
+    <ol class="chapters"><li><a href="../cours/01-carte.html"><span class="tocnum">1</span>La carte marine</a></li><li><a href="../cours/02-compas.html"><span class="tocnum">2</span>Compas et caps</a></li><li><a href="../cours/03-estime.html"><span class="tocnum">3</span>Estime, dérive, courant</a></li><li><a href="../cours/04-maree.html" aria-current="page"><span class="tocnum">4</span>La marée</a></li><li><a href="../cours/05-balisage.html"><span class="tocnum">5</span>Le balisage</a></li><li><a href="../cours/06-ripam.html"><span class="tocnum">6</span>Règles de barre (RIPAM)</a></li><li><a href="../cours/07-signaux.html"><span class="tocnum">7</span>Feux, marques, signaux</a></li><li><a href="../cours/08-meteo.html"><span class="tocnum">8</span>Météo marine</a></li><li><a href="../cours/09-securite.html"><span class="tocnum">9</span>Sécurité, réglementation</a></li><li><a href="../cours/10-vhf.html"><span class="tocnum">10</span>VHF</a></li></ol>
+  </aside>
+  <article class="chapter">
+    <header class="chap-head">
+      <p class="kicker">Chapitre 4</p>
+      <h1>La marée</h1>
+      <p class="chap-desc">Origine de la marée, coefficient, annuaire et ports rattachés, hauteur d'eau disponible, règle des douzièmes, mouillage.</p>
+    </header>
+    <details class="toc-box" open><summary>Sommaire du chapitre</summary><ol class="toc"><li><a href="#observer"><span class="tocnum">4.1</span>Observer la marée</a></li><li><a href="#origine"><span class="tocnum">4.2</span>D'où vient la marée</a><ol><li><a href="#la-force-generatrice"><span class="tocnum">4.2.1</span>La force génératrice</a></li><li><a href="#vives-eaux-et-mortes-eaux"><span class="tocnum">4.2.2</span>Vives eaux et mortes eaux</a></li></ol></li><li><a href="#coefficient"><span class="tocnum">4.3</span>Le coefficient de marée</a></li><li><a href="#annuaire"><span class="tocnum">4.4</span>L'annuaire des marées</a><ol><li><a href="#ports-rattaches"><span class="tocnum">4.4.1</span>Ports rattachés</a></li></ol></li><li><a href="#hauteur-eau"><span class="tocnum">4.5</span>Hauteur d'eau et tirant d'eau</a></li><li><a href="#douziemes"><span class="tocnum">4.6</span>La règle des douzièmes</a><ol><li><a href="#probleme-1-hauteur-d-eau-a-une-heure-donnee"><span class="tocnum">4.6.1</span>Problème 1 : hauteur d'eau à une heure donnée</a></li><li><a href="#probleme-2-heure-a-laquelle-on-atteint-une-hauteur"><span class="tocnum">4.6.2</span>Problème 2 : heure à laquelle on atteint une hauteur</a></li><li><a href="#precision-et-prudence"><span class="tocnum">4.6.3</span>Précision et prudence</a></li></ol></li><li><a href="#mouillage"><span class="tocnum">4.7</span>Mouiller avec la marée</a></li></ol></details>
+    <h2 id="observer"><span class="secnum">4.1</span>Observer la marée</h2>
+
+<p>Sur les côtes de l'Atlantique et de la Manche, le niveau de la mer monte et descend deux fois par jour. Le niveau le plus haut atteint est la <dfn>pleine mer</dfn> (PM), le plus bas la <dfn>basse mer</dfn> (BM).</p>
+
+<figure>
+<svg viewBox="0 0 400 230" width="420" role="img" aria-label="Courbe de marée">
+  <line x1="40" y1="200" x2="390" y2="200" class="ln2"/>
+  <line x1="40" y1="30" x2="40" y2="205" class="ln2"/>
+  <path d="M40 186 C 90 186, 120 44, 175 44 S 260 186, 310 186 S 360 70, 390 60" class="ln" stroke-width="1.8"/>
+  <line x1="175" y1="44" x2="390" y2="44" class="ln2" stroke-dasharray="3 3"/>
+  <line x1="310" y1="186" x2="390" y2="186" class="ln2" stroke-dasharray="3 3"/>
+  <line x1="350" y1="46" x2="350" y2="184" class="ln st-signal"/>
+  <path d="M350 44 l-4 9 h8 z M350 186 l-4 -9 h8 z" class="fill-signal"/>
+  <text x="344" y="120" font-size="11" text-anchor="end">marnage</text>
+  <g font-size="11">
+    <text x="160" y="34">PM</text><text x="300" y="180">BM</text><text x="44" y="180">BM</text>
+    <text x="64" y="110">flot</text><text x="262" y="110">jusant</text>
+    <text x="188" y="34" class="mut">étale</text>
+    <text x="370" y="216" class="mut">temps</text>
+    <text x="46" y="26" class="mut">hauteur</text>
+  </g>
+  <line x1="175" y1="196" x2="175" y2="204" class="ln2"/><line x1="310" y1="196" x2="310" y2="204" class="ln2"/>
+  <text x="242" y="216" font-size="10" text-anchor="middle" class="mut">≈ 6 h 12</text>
+</svg>
+<figcaption><span class="fignum">Figure 4.1.</span> Une marée semi-diurne : la mer monte pendant le flot, s'arrête à l'étale de pleine mer, redescend pendant le jusant.</figcaption>
+</figure>
+
+<div class="box def"><p class="box-label">Définition 4.1 <span class="box-title">(Vocabulaire de la marée)</span>.</p>
+<ul>
+  <li><dfn>Flot</dfn> : marée montante, de la BM à la PM. <dfn>Jusant</dfn> : marée descendante, de la PM à la BM.</li>
+  <li><dfn>Étale</dfn> : courte période autour de la PM ou de la BM où le niveau varie très peu.</li>
+  <li><dfn>Marnage</dfn> : différence de hauteur entre une PM et la BM qui la suit ou la précède.</li>
+  <li><dfn>Durée</dfn> de la marée montante ou descendante : environ 6 h 12 en moyenne. Une PM et la suivante sont séparées d'environ 12 h 25, si bien que les marées ont lieu environ 50 minutes plus tard chaque jour.</li>
+</ul>
+</div>
+
+<p>Le marnage varie au fil des jours : il est fort en <dfn>vives eaux</dfn> (VE) et faible en <dfn>mortes eaux</dfn> (ME), avec un cycle d'environ deux semaines. Il varie aussi beaucoup d'un endroit à l'autre : près de 14 m en baie du Mont-Saint-Michel par grande marée, 5 à 6 m en Bretagne Sud, quelques dizaines de centimètres en Méditerranée.</p>
+
+<h2 id="origine"><span class="secnum">4.2</span>D'où vient la marée</h2>
+
+<h3 id="la-force-generatrice"><span class="secnum">4.2.1</span>La force génératrice</h3>
+<p>La Lune attire chaque particule d'eau avec une force inversement proportionnelle au carré de la distance. La Terre entière est attirée aussi, et c'est ce mouvement d'ensemble qui fait « tomber » la Terre autour du centre de masse Terre-Lune. Ce qui déforme les océans n'est donc pas l'attraction elle-même, mais sa <strong>différence</strong> entre un point de la surface et le centre de la Terre.</p>
+
+<figure>
+<svg viewBox="0 0 420 200" width="420" role="img" aria-label="Bourrelets de marée">
+  <ellipse cx="140" cy="100" rx="92" ry="70" class="fill-sea" stroke="none"/>
+  <circle cx="140" cy="100" r="70" class="fill-card ln" stroke-width="1.4"/>
+  <circle cx="380" cy="100" r="16" class="fill-muted"/>
+  <text x="380" y="140" text-anchor="middle" font-size="11">Lune</text>
+  <text x="140" y="104" text-anchor="middle" font-size="11">Terre</text>
+  <g class="ln st-signal" stroke-width="1.6">
+    <line x1="212" y1="100" x2="244" y2="100"/><line x1="68" y1="100" x2="36" y2="100"/>
+    <line x1="140" y1="32" x2="140" y2="46"/><line x1="140" y1="168" x2="140" y2="154"/>
+  </g>
+  <g class="fill-signal"><path d="M246 100 l-9 -4 v8 z"/><path d="M34 100 l9 -4 v8 z"/><path d="M140 48 l-4 -8 h8 z"/><path d="M140 152 l-4 8 h8 z"/></g>
+  <text x="250" y="90" font-size="10" class="mut">PM</text><text x="10" y="90" font-size="10" class="mut">PM</text>
+  <text x="152" y="24" font-size="10" class="mut">BM</text><text x="152" y="184" font-size="10" class="mut">BM</text>
+</svg>
+<figcaption><span class="fignum">Figure 4.2.</span> La force de marée (flèches) tire l'eau vers la Lune du côté proche, et l'en éloigne du côté opposé, où l'attraction est plus faible qu'au centre de la Terre. Il se forme deux bourrelets (déformation très exagérée). En tournant sur elle-même, la Terre fait passer chaque côte sous les deux bourrelets : deux PM par jour lunaire.</figcaption>
+</figure>
+
+<div class="box rem"><p class="box-label">Remarque <span class="box-title">(pour les curieux)</span>.</p>
+<p>Soit <var>M</var> la masse de l'astre, <var>d</var> sa distance au centre de la Terre et <var>r</var> le rayon terrestre. Au point de la surface le plus proche de l'astre, l'accélération due à l'astre, diminuée de celle du centre de la Terre, vaut</p>
+<p class="formula"><var>a</var> = <var>GM</var>/(<var>d</var> − <var>r</var>)² − <var>GM</var>/<var>d</var>² ≈ 2<var>GMr</var>/<var>d</var>³ &emsp;(car <var>r</var> ≪ <var>d</var>).</p>
+<p>Elle décroît en 1/<var>d</var>³, et non en 1/<var>d</var>². C'est pourquoi la Lune l'emporte sur le Soleil : le Soleil attire la Terre environ 180 fois plus fort que la Lune, mais son effet de marée, dans le rapport (<var>M</var><sub>☉</sub>/<var>M</var><sub>☾</sub>)(<var>d</var><sub>☾</sub>/<var>d</var><sub>☉</sub>)³ ≈ 2,7·10⁷ × (2,57·10⁻³)³ ≈ 0,46, n'est que la moitié de celui de la Lune.</p>
+</div>
+
+<div class="box maj"><p class="box-label">Mise à jour.</p>
+<p>Les anciens supports attribuaient la marée à « l'énergie cinétique de la rotation de la Terre » et écrivaient la force de marée en <var>M</var>/<var>d</var>². Ce n'est pas le bon mécanisme : la rotation de la Terre fait seulement défiler les côtes sous les bourrelets, et c'est la variation en 1/<var>d</var>³ qui explique que la Lune domine.</p>
+</div>
+
+<h3 id="vives-eaux-et-mortes-eaux"><span class="secnum">4.2.2</span>Vives eaux et mortes eaux</h3>
+<p>Quand le Soleil, la Terre et la Lune sont alignés, à la nouvelle lune et à la pleine lune (<dfn>syzygies</dfn>), les bourrelets lunaire et solaire s'ajoutent : ce sont les vives eaux. Quand la Lune est en quartier (<dfn>quadratures</dfn>), les bourrelets sont à angle droit et se compensent partiellement : ce sont les mortes eaux. En réalité, le maximum se produit environ un jour et demi après la syzygie, le temps que l'océan réponde. Les plus grandes marées ont lieu près des équinoxes (mars et septembre), quand le Soleil est au-dessus de l'équateur.</p>
+
+<p>Le modèle des deux bourrelets explique le rythme, mais pas les amplitudes. L'océan réel est une masse d'eau qui oscille dans des bassins de formes compliquées ; la marée s'y propage comme une onde, amplifiée par résonance dans certaines baies (Manche, baie de Fundy) et presque nulle dans d'autres (Méditerranée). C'est pourquoi on ne calcule pas la marée à partir de la position de la Lune, mais à partir d'observations, par l'annuaire du SHOM.</p>
+
+<h2 id="coefficient"><span class="secnum">4.3</span>Le coefficient de marée</h2>
+
+<div class="box def"><p class="box-label">Définition 4.2 <span class="box-title">(Coefficient)</span>.</p>
+<p>Le <dfn>coefficient de marée</dfn> est un nombre sans unité, compris entre 20 et 120, proportionnel au marnage à Brest : un coefficient de 100 correspond à un marnage d'environ 6,10 m à Brest. Il est calculé pour chaque PM et vaut pour toutes les côtes françaises de l'Atlantique et de la Manche.</p>
+</div>
+
+<div class="tbl-wrap"><table>
+<thead><tr><th class="num">Coefficient</th><th>Type de marée</th><th class="num">Marnage à Brest</th></tr></thead>
+<tbody>
+<tr><td class="num">120</td><td>vives eaux exceptionnelles</td><td class="num">7,3 m</td></tr>
+<tr><td class="num">95</td><td>vives eaux moyennes</td><td class="num">5,8 m</td></tr>
+<tr><td class="num">70</td><td>marée moyenne</td><td class="num">4,3 m</td></tr>
+<tr><td class="num">45</td><td>mortes eaux moyennes</td><td class="num">2,7 m</td></tr>
+<tr><td class="num">20</td><td>mortes eaux exceptionnelles</td><td class="num">1,2 m</td></tr>
+</tbody></table></div>
+
+<p>On parle de vives eaux au-dessus de 70, de mortes eaux en dessous. Le coefficient indique aussi la force des courants de marée, qui est à peu près proportionnelle au marnage.</p>
+
+<h2 id="annuaire"><span class="secnum">4.4</span>L'annuaire des marées</h2>
+
+<p>L'annuaire du SHOM, les almanachs (Almanach du marin breton, Bloc Marine) et le site maree.shom.fr donnent, pour chaque jour et pour chaque <dfn>port de référence</dfn> (Brest, Port-Tudy, Port-Navalo, Saint-Nazaire…), les heures et hauteurs des PM et BM et le coefficient.</p>
+
+<div class="box warn"><p class="box-label">Attention <span class="box-title">(l'heure)</span>.</p>
+<p>L'annuaire imprimé du SHOM est en heure UTC+1, c'est-à-dire l'heure légale d'hiver. En été (heure légale UTC+2), il faut <strong>ajouter une heure</strong> aux heures lues. Certains almanachs et sites donnent directement l'heure légale : lire l'en-tête de la page. À l'examen, le sujet précise en quelle heure sont données les données.</p>
+</div>
+
+<p>Les hauteurs de l'annuaire sont comptées au-dessus du <dfn>zéro des cartes</dfn>, le même niveau de référence que les sondes de la carte : c'est ce qui permet de les additionner.</p>
+
+<h3 id="ports-rattaches"><span class="secnum">4.4.1</span>Ports rattachés</h3>
+<p>Pour un port qui n'est pas un port de référence, l'annuaire donne des <dfn>corrections</dfn> à appliquer aux heures et aux hauteurs du port de référence auquel il est rattaché, séparément pour les PM et les BM, en vives eaux et en mortes eaux.</p>
+
+<div class="box meth"><p class="box-label">Méthode 4.3 <span class="box-title">(Marée d'un port rattaché)</span>.</p>
+<ol>
+  <li>Relever au port de référence les heures et hauteurs des PM et BM qui encadrent l'instant étudié, et le coefficient.</li>
+  <li>Choisir les corrections : avec un coefficient de 70 ou plus, celles de vives eaux ; en dessous, celles de mortes eaux. C'est la méthode des corrigés d'examen. Pour plus de précision, interpoler entre les deux au prorata du coefficient (45 → ME, 95 → VE).</li>
+  <li>Ajouter les corrections (avec leur signe) aux heures et hauteurs de PM et de BM.</li>
+  <li>Faire ensuite tous les calculs avec les valeurs corrigées.</li>
+</ol>
+</div>
+
+<div class="box ex"><p class="box-label">Exemple 4.4 <span class="box-title">(annale 2019)</span>.</p>
+<p>Port-Navalo, 18 juillet (UTC+2), coefficient 77 : BM 13 h 01, 1,12 m ; PM 18 h 56, 4,77 m. Corrections de Pénerf en VE : PM −0 h 25 et +0,40 m ; BM −0 h 05 et +0,05 m. Coefficient 77 > 70 : vives eaux. À Pénerf : BM 12 h 56, 1,17 m ; PM 18 h 31, 5,17 m.</p>
+</div>
+
+<h2 id="hauteur-eau"><span class="secnum">4.5</span>Hauteur d'eau et tirant d'eau</h2>
+
+<figure>
+<svg viewBox="0 0 420 250" width="420" role="img" aria-label="Sonde, hauteur de marée, tirant d'eau et pied de pilote">
+  <rect x="0" y="62" width="420" height="168" class="fill-sea"/>
+  <line x1="0" y1="62" x2="420" y2="62" class="ln st-navy" stroke-width="1.5"/>
+  <line x1="0" y1="160" x2="420" y2="160" class="ln" stroke-dasharray="6 4"/>
+  <path d="M0 230 L0 210 L140 210 C 200 210, 240 120, 300 128 L420 128 L420 230 Z" class="fill-muted" opacity=".55"/>
+  <path d="M30 62 h70 l-6 22 h-58 z" class="fill-ink"/>
+  <rect x="62" y="84" width="6" height="40" class="fill-ink"/>
+  <g font-size="11">
+    <text x="236" y="56">niveau de la mer à l'instant <tspan class="it">t</tspan></text>
+    <text x="196" y="154">zéro des cartes</text>
+    <text x="330" y="145" class="mut" font-size="10"></text>
+  </g>
+  <g class="ln" stroke-width="1">
+    <line x1="160" y1="62" x2="160" y2="160"/><path d="M160 62 l-3 7 h6 z M160 160 l-3 -7 h6 z" class="fill-ink"/>
+    <line x1="130" y1="160" x2="130" y2="210"/><path d="M130 160 l-3 7 h6 z M130 210 l-3 -7 h6 z" class="fill-ink"/>
+    <line x1="20" y1="62" x2="20" y2="124"/><path d="M20 62 l-3 7 h6 z M20 124 l-3 -7 h6 z" class="fill-ink"/>
+    <line x1="80" y1="124" x2="80" y2="210"/><path d="M80 124 l-3 7 h6 z M80 210 l-3 -7 h6 z" class="fill-ink"/>
+    <line x1="355" y1="128" x2="355" y2="160"/><path d="M355 128 l-3 7 h6 z M355 160 l-3 -7 h6 z" class="fill-ink"/>
+  </g>
+  <g font-size="11">
+    <text x="166" y="112">hauteur de marée <tspan class="it">h</tspan></text>
+    <text x="136" y="190">sonde <tspan class="it">s</tspan> &gt; 0</text>
+    <text x="24" y="100">TE</text>
+    <text x="86" y="176" font-size="10">eau sous</text><text x="86" y="188" font-size="10">la quille</text>
+    <text x="300" y="100" font-size="10">sonde soulignée</text><text x="300" y="112" font-size="10">(le fond découvre)</text><line x1="340" y1="116" x2="353" y2="138" class="ln2"/>
+  </g>
+</svg>
+<figcaption><span class="fignum">Figure 4.3.</span> Les hauteurs de marée et les sondes ont la même origine, le zéro des cartes. La hauteur d'eau en un lieu est la somme de la sonde (négative si le fond découvre) et de la hauteur de marée.</figcaption>
+</figure>
+
+<div class="box def"><p class="box-label">Définition 4.5 <span class="box-title">(Zéro des cartes)</span>.</p>
+<p>Le <dfn>zéro des cartes</dfn> (ou zéro hydrographique) est le niveau de référence des sondes et des hauteurs de marée. En France, il est voisin du niveau des plus basses mers astronomiques : la mer ne descend presque jamais en dessous, et une sonde est donc la profondeur minimale qu'on peut trouver, hors effets météorologiques.</p>
+</div>
+
+<div class="box prop"><p class="box-label">Règle 4.6 <span class="box-title">(Hauteur d'eau disponible)</span>.</p>
+<p>À l'instant <var>t</var>, en un lieu de sonde <var>s</var> (comptée négativement si elle est soulignée), avec une hauteur de marée <var>h</var>(<var>t</var>) :</p>
+<p class="formula">hauteur d'eau = <var>s</var> + <var>h</var>(<var>t</var>).</p>
+<p>Un bateau de tirant d'eau <var>TE</var> passe en sécurité si</p>
+<p class="formula"><var>s</var> + <var>h</var>(<var>t</var>) ≥ <var>TE</var> + <var>pp</var>, &emsp; soit &emsp; <var>h</var>(<var>t</var>) ≥ <var>TE</var> + <var>pp</var> − <var>s</var>,</p>
+<p>où <var>pp</var> est le <dfn>pied de pilote</dfn>, marge de sécurité choisie par le chef de bord (souvent 0,5 m, davantage s'il y a de la houle ou si les fonds sont rocheux).</p>
+</div>
+
+<div class="box ex"><p class="box-label">Exemple 4.7 <span class="box-title">(annale 2024)</span>.</p>
+<p>Pour passer sur un banc de sable de sonde soulignée <u>0<sub>2</sub></u> (il découvre de 0,2 m) avec un tirant d'eau de 1,50 m et un pied de pilote de 0,50 m, il faut une hauteur de marée d'au moins 1,50 + 0,50 + 0,20 = 2,20 m. Pour simplement flotter, sans marge, il suffit de 1,50 + 0,20 = 1,70 m.</p>
+</div>
+
+<h2 id="douziemes"><span class="secnum">4.6</span>La règle des douzièmes</h2>
+
+<p>L'annuaire donne la hauteur aux PM et aux BM. Entre les deux, on admet que la mer monte ou descend selon une demi-sinusoïde : lentement près des étales, vite à mi-marée. La <dfn>règle des douzièmes</dfn> en donne une approximation simple, calculable de tête.</p>
+
+<div class="box prop"><p class="box-label">Règle 4.8 <span class="box-title">(Règle des douzièmes)</span>.</p>
+<p>On découpe la durée de la marée en six <dfn>heures-marée</dfn> (HM) égales et le marnage en douze <dfn>douzièmes</dfn>. Pendant les heures-marée successives, la mer varie de</p>
+<p class="formula">1, 2, 3, 3, 2, 1 douzièmes,</p>
+<p>soit, en cumulé depuis la BM ou la PM : 1, 3, 6, 9, 11, 12 douzièmes.</p>
+<p class="formula">HM = durée / 6, &emsp; 1 douzième = marnage / 12.</p>
+</div>
+
+<figure>
+<svg viewBox="0 0 400 230" width="420" role="img" aria-label="Règle des douzièmes comparée à la sinusoïde">
+  <line x1="50" y1="190" x2="360" y2="190" class="ln2"/>
+  <line x1="50" y1="40" x2="50" y2="195" class="ln2"/>
+  <g class="ln2" stroke-dasharray="2 3">
+    <line x1="100" y1="40" x2="100" y2="190"/><line x1="150" y1="40" x2="150" y2="190"/><line x1="200" y1="40" x2="200" y2="190"/><line x1="250" y1="40" x2="250" y2="190"/><line x1="300" y1="40" x2="300" y2="190"/><line x1="350" y1="40" x2="350" y2="190"/>
+  </g>
+  <path d="M50.0 190.0 L55.0 189.9 L60.0 189.6 L65.0 189.1 L70.0 188.4 L75.0 187.5 L80.0 186.5 L85.0 185.2 L90.0 183.8 L95.0 182.2 L100.0 180.4 L105.0 178.4 L110.0 176.2 L115.0 174.0 L120.0 171.5 L125.0 168.9 L130.0 166.2 L135.0 163.3 L140.0 160.3 L145.0 157.2 L150.0 154.0 L155.0 150.7 L160.0 147.3 L165.0 143.8 L170.0 140.2 L175.0 136.6 L180.0 133.0 L185.0 129.3 L190.0 125.5 L195.0 121.8 L200.0 118.0 L205.0 114.2 L210.0 110.5 L215.0 106.7 L220.0 103.0 L225.0 99.4 L230.0 95.8 L235.0 92.2 L240.0 88.7 L245.0 85.3 L250.0 82.0 L255.0 78.8 L260.0 75.7 L265.0 72.7 L270.0 69.8 L275.0 67.1 L280.0 64.5 L285.0 62.0 L290.0 59.8 L295.0 57.6 L300.0 55.6 L305.0 53.8 L310.0 52.2 L315.0 50.8 L320.0 49.5 L325.0 48.5 L330.0 47.6 L335.0 46.9 L340.0 46.4 L345.0 46.1 L350.0 46.0" class="ln2" stroke-width="2.4" opacity=".6"/>
+  <path d="M50 190 L100 178 L150 154 L200 118 L250 82 L300 58 L350 46" class="ln st-signal" stroke-width="1.6"/>
+  <g class="fill-signal"><circle cx="100" cy="178" r="2.5"/><circle cx="150" cy="154" r="2.5"/><circle cx="200" cy="118" r="2.5"/><circle cx="250" cy="82" r="2.5"/><circle cx="300" cy="58" r="2.5"/><circle cx="350" cy="46" r="2.5"/></g>
+  <g font-size="10" text-anchor="middle" class="mut">
+    <text x="75" y="204">1</text><text x="125" y="204">2</text><text x="175" y="204">3</text><text x="225" y="204">4</text><text x="275" y="204">5</text><text x="325" y="204">6</text>
+    <text x="200" y="220">heures-marée depuis la BM</text>
+  </g>
+  <g font-size="10" text-anchor="end">
+    <text x="46" y="193">0</text><text x="46" y="181">1</text><text x="46" y="157">3</text><text x="46" y="121">6</text><text x="46" y="85">9</text><text x="46" y="61">11</text><text x="46" y="49">12</text>
+  </g>
+  <text x="20" y="34" font-size="10" class="mut">douzièmes</text>
+</svg>
+<figcaption><span class="fignum">Figure 4.4.</span> En gris, la marée sinusoïdale ; en rouge, son approximation par la règle des douzièmes (1, 3, 6, 9, 11, 12 douzièmes cumulés).</figcaption>
+</figure>
+
+<div class="box rem"><p class="box-label">Remarque.</p>
+<p>Si la marée était exactement sinusoïdale, la hauteur <var>k</var> heures-marée après la BM vaudrait <var>h</var><sub>BM</sub> + (marnage/2)(1 − cos(<var>k</var>π/6)), soit en douzièmes : 0,80 ; 3 ; 6 ; 9 ; 11,2 ; 12. La règle des douzièmes est donc exacte à 2, 3 et 4 heures-marée, et se trompe d'environ 0,2 douzième (moins de 2 % du marnage) à 1 et 5 heures-marée. C'est largement suffisant devant les autres incertitudes.</p>
+</div>
+
+<div class="box meth"><p class="box-label">Méthode 4.9 <span class="box-title">(Construire la table de marée)</span>.</p>
+<ol>
+  <li>Encadrer l'instant étudié par la PM et la BM qui l'entourent (après corrections de port rattaché et d'heure légale).</li>
+  <li>Calculer la durée (en minutes), l'heure-marée HM = durée/6, le marnage, et le douzième = marnage/12.</li>
+  <li>Partir de l'extrémité la plus commode (PM ou BM) et dresser la table, heure-marée par heure-marée, en ajoutant (flot) ou retranchant (jusant) 1, 2, 3, 3, 2, 1 douzièmes.</li>
+  <li>Vérifier que la dernière ligne retombe sur la hauteur de l'annuaire, à quelques centimètres près.</li>
+  <li>Repérer l'heure-marée dans laquelle se trouve la valeur cherchée, et interpoler linéairement (règle de trois) à l'intérieur de cette heure-marée.</li>
+</ol>
+<p>Un dessin rapide de la courbe (où est la PM, où est la BM, la mer monte-t-elle ou descend-elle ?) évite les erreurs de sens.</p>
+</div>
+
+<h3 id="probleme-1-hauteur-d-eau-a-une-heure-donnee"><span class="secnum">4.6.1</span>Problème 1 : hauteur d'eau à une heure donnée</h3>
+
+<div class="box ex"><p class="box-label">Exemple 4.10 <span class="box-title">(cours de Brest, Vannes)</span>.</p>
+<p>Vannes, PM 08 h 06, 2,85 m ; BM 14 h 17, 0,90 m. Quelle hauteur d'eau à 11 h 30 ?</p>
+<p>Durée : 6 h 11 = 371 min, HM = 62 min. Marnage : 1,95 m, douzième : 0,1625 m. La mer descend.</p>
+<div class="tbl-wrap"><table class="calc">
+<thead><tr><th>Heure</th><th>Variation</th><th>Hauteur</th></tr></thead>
+<tbody>
+<tr><td>08 h 06</td><td>PM</td><td>2,850</td></tr>
+<tr><td>09 h 08</td><td>−1/12 = −0,163</td><td>2,688</td></tr>
+<tr><td>10 h 10</td><td>−2/12 = −0,325</td><td>2,363</td></tr>
+<tr class="hl"><td>11 h 12</td><td>−3/12 = −0,488</td><td>1,875</td></tr>
+<tr class="hl"><td>12 h 14</td><td>−3/12 = −0,488</td><td>1,388</td></tr>
+<tr><td>13 h 16</td><td>−2/12 = −0,325</td><td>1,063</td></tr>
+<tr><td>14 h 18</td><td>−1/12 = −0,163</td><td>0,900</td></tr>
+</tbody></table></div>
+<p>On garde trois décimales pendant le calcul : les erreurs d'arrondi s'ajoutent d'une ligne à l'autre. La dernière ligne tombe à 14 h 18 au lieu de 14 h 17 : l'écart d'une minute vient de l'arrondi de l'heure-marée, il est sans importance.</p>
+<p>11 h 30 est 18 min après 11 h 12, dans une heure-marée où la mer baisse de 0,488 m en 62 min. Baisse supplémentaire : 0,488 × 18/62 = 0,142 m. Hauteur de marée : 1,875 − 0,142 = 1,73 m.</p>
+</div>
+
+<h3 id="probleme-2-heure-a-laquelle-on-atteint-une-hauteur"><span class="secnum">4.6.2</span>Problème 2 : heure à laquelle on atteint une hauteur</h3>
+
+<div class="box ex"><p class="box-label">Exemple 4.11 <span class="box-title">(annale 2024)</span>.</p>
+<p>PM 12 h 35, 4,80 m ; BM 18 h 47, 1,20 m. Il faut 2,20 m de marée pour passer sur le banc de sable. Jusqu'à quelle heure peut-on passer ?</p>
+<p>Durée : 6 h 12 = 372 min, HM = 62 min. Marnage : 3,60 m, douzième : 0,30 m. La mer descend.</p>
+<div class="tbl-wrap"><table class="calc">
+<thead><tr><th>Heure</th><th>Variation</th><th>Hauteur</th></tr></thead>
+<tbody>
+<tr><td>12 h 35</td><td>PM</td><td>4,80</td></tr>
+<tr><td>13 h 37</td><td>−0,30</td><td>4,50</td></tr>
+<tr><td>14 h 39</td><td>−0,60</td><td>3,90</td></tr>
+<tr class="hl"><td>15 h 41</td><td>−0,90</td><td>3,00</td></tr>
+<tr class="hl"><td>16 h 43</td><td>−0,90</td><td>2,10</td></tr>
+<tr><td>17 h 45</td><td>−0,60</td><td>1,50</td></tr>
+<tr><td>18 h 47</td><td>−0,30</td><td>1,20</td></tr>
+</tbody></table></div>
+<p>2,20 m est atteint pendant la 4<sup>e</sup> heure-marée, entre 3,00 et 2,10 m. Il faut descendre de 3,00 − 2,20 = 0,80 m sur les 0,90 m de cette heure-marée, ce qui prend 62 × 0,80/0,90 = 55 min. Heure limite : 15 h 41 + 55 min = <strong>16 h 36</strong>.</p>
+<p class="small muted">Le corrigé officiel trouve 16 h 36 en partant de la BM et 16 h 37 en partant de la PM ; la seconde valeur vient d'une erreur d'addition (15 h 41 + 55 min = 16 h 36).</p>
+</div>
+
+<h3 id="precision-et-prudence"><span class="secnum">4.6.3</span>Précision et prudence</h3>
+<p>Le calcul donne la hauteur prédite par l'annuaire ; la mer réelle peut s'en écarter :</p>
+<ul>
+  <li><strong>Pression atmosphérique</strong> : le niveau monte d'environ 1 cm par hectopascal en dessous de 1 013 hPa (surcote) et baisse au-dessus (décote). Un anticyclone à 1 040 hPa abaisse la mer de près de 30 cm.</li>
+  <li><strong>Vent</strong> : un vent fort et durable vers la côte fait monter le niveau ; vers le large, il le fait baisser.</li>
+  <li><strong>Houle</strong> : dans le creux d'une vague, il y a moins d'eau. Augmenter le pied de pilote.</li>
+  <li><strong>Sondes</strong> : les fonds de sable bougent, certains levés sont anciens.</li>
+  <li><strong>Forme de la marée</strong> : dans certains ports (Le Havre, estuaires), la marée n'est pas sinusoïdale et la règle des douzièmes est fausse ; l'annuaire donne alors des courbes spécifiques.</li>
+</ul>
+
+<h2 id="mouillage"><span class="secnum">4.7</span>Mouiller avec la marée</h2>
+
+<p>Au mouillage, la hauteur d'eau varie pendant la nuit. Deux vérifications s'imposent.</p>
+<ol>
+  <li><strong>Ne pas s'échouer à basse mer</strong> : la hauteur d'eau à la prochaine BM (sonde + hauteur de BM) doit rester supérieure au tirant d'eau plus le pied de pilote, et cela sur tout le cercle d'évitage.</li>
+  <li><strong>Mouiller assez de chaîne pour la pleine mer</strong> : la longueur de mouillage (la <dfn>touée</dfn>) se calcule sur la hauteur d'eau maximale, à la PM. On compte environ <strong>3 fois</strong> la hauteur d'eau avec une ligne tout chaîne, <strong>5 fois</strong> avec un mouillage en cordage, davantage par vent fort.</li>
+</ol>
+
+<div class="box ex"><p class="box-label">Exemple 4.12 <span class="box-title">(annale 2024)</span>.</p>
+<p>Sonde 2<sub>4</sub>, tirant d'eau 1,50 m, BM 1,20 m, PM 4,80 m. À basse mer il reste 2,40 + 1,20 = 3,60 m d'eau : aucun risque d'échouage. À pleine mer il y aura 2,40 + 4,80 = 7,20 m d'eau ; on mouille environ 3 × 7 ≈ 21 m de chaîne. À basse mer, la chaîne en excès augmente le rayon d'évitage : vérifier qu'on ne touche ni un autre bateau ni un haut-fond en tournant.</p>
+</div>
+
+<p>Si l'on se retrouve échoué malgré tout, on attend la remontée de l'eau (problème 2 avec la marée montante). On ne fait jamais tourner un moteur dont les prises d'eau de refroidissement sont à sec : il chauffe et peut prendre feu.</p>
+
+<div class="box retenir"><p class="box-label">À retenir.</p>
+<ul>
+  <li>Deux PM par jour, environ 50 min plus tard chaque jour. Vives eaux à la pleine et à la nouvelle lune, mortes eaux aux quartiers.</li>
+  <li>Coefficient : 20 à 120, proportionnel au marnage, VE au-dessus de 70.</li>
+  <li>Annuaire SHOM en UTC+1 : ajouter 1 h en été. Corriger d'abord les ports rattachés.</li>
+  <li>Hauteur d'eau = sonde + hauteur de marée ; il faut <var>h</var> ≥ <var>TE</var> + <var>pp</var> − <var>s</var>.</li>
+  <li>HM = durée/6, douzième = marnage/12, variations 1-2-3-3-2-1, interpolation linéaire dans l'heure-marée.</li>
+  <li>Touée : 3 fois la hauteur d'eau à la PM en chaîne, 5 fois en cordage.</li>
+</ul>
+</div>
+
+    <nav class="pager"><a class="prev" href="../cours/03-estime.html"><span>Précédent</span>Chapitre 3 · Naviguer sur la carte</a><a class="next" href="../cours/05-balisage.html"><span>Suivant</span>Chapitre 5 · Le balisage</a></nav>
+  </article>
+</div>
+</main>
+<footer class="foot">
+  <div class="foot-in">
+    <p>Préparation au brevet de patron d'embarcation et à la navigation à voile. Rédigé à partir des cours de navigation des scouts marins de Brest, mis à jour et complétés.</p>
+    <p>Ce site ne remplace ni la réglementation (Division 240, RIPAM), ni les documents officiels du SHOM, ni le règlement de votre association. En cas de doute, ce sont eux qui font foi.</p>
+  </div>
+</footer>
+<script src="../js/site.js"></script>
+
+
+</body>
+</html>

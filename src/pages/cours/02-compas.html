@@ -1,0 +1,223 @@
+<!--meta {"title": "Compas, caps et relèvements", "short": "Compas et caps", "part": "cours", "num": 2, "desc": "Nord vrai, magnétique et compas ; déclinaison, déviation, variation ; passer d'un cap compas à un cap vrai ; faire le point par relèvements."} -->
+
+<h2 id="directions">Mesurer une direction</h2>
+
+<p>En mer, toutes les directions se mesurent en degrés, de 000° à 359°, à partir du Nord et dans le sens des aiguilles d'une montre : l'Est est au 090°, le Sud au 180°, l'Ouest au 270°. On écrit toujours trois chiffres (« cap au 045 ») pour éviter les malentendus.</p>
+
+<div class="box def" data-title="Cap, route, relèvement, gisement">
+<ul>
+  <li>Le <dfn>cap</dfn> est l'angle entre le Nord et l'axe du bateau, de l'arrière vers l'avant : c'est la direction vers laquelle pointe l'étrave.</li>
+  <li>La <dfn>route</dfn> est la direction suivant laquelle le bateau se déplace réellement. Elle diffère du cap à cause du vent (dérive) et du courant (section 3.4).</li>
+  <li>Le <dfn>relèvement</dfn> (noté <var>Z</var>, pour azimut) d'un objet est l'angle entre le Nord et la direction de l'observateur vers l'objet.</li>
+  <li>Le <dfn>gisement</dfn> d'un objet est l'angle entre l'axe du bateau et la direction de l'objet, compté de 0 à 360° vers tribord, ou de 0 à 180° « sur bâbord » ou « sur tribord ». On a toujours : relèvement = cap + gisement.</li>
+</ul>
+</div>
+
+<p>Pour donner rapidement une direction à la barre, on utilise aussi les points cardinaux et intercardinaux : la rose des vents à seize directions est à connaître par cœur.</p>
+
+<div class="tbl-wrap">
+<table>
+<thead><tr><th>Direction</th><th class="num">Degrés</th><th>Direction</th><th class="num">Degrés</th><th>Direction</th><th class="num">Degrés</th><th>Direction</th><th class="num">Degrés</th></tr></thead>
+<tbody>
+<tr><td>N</td><td class="num">000</td><td>E</td><td class="num">090</td><td>S</td><td class="num">180</td><td>W</td><td class="num">270</td></tr>
+<tr><td>NNE</td><td class="num">022,5</td><td>ESE</td><td class="num">112,5</td><td>SSW</td><td class="num">202,5</td><td>WNW</td><td class="num">292,5</td></tr>
+<tr><td>NE</td><td class="num">045</td><td>SE</td><td class="num">135</td><td>SW</td><td class="num">225</td><td>NW</td><td class="num">315</td></tr>
+<tr><td>ENE</td><td class="num">067,5</td><td>SSE</td><td class="num">157,5</td><td>WSW</td><td class="num">247,5</td><td>NNW</td><td class="num">337,5</td></tr>
+</tbody>
+</table>
+</div>
+
+<p>Attention au sens des mots : un vent <em>de</em> Nord-Ouest <strong>vient</strong> du 315 ; un courant <em>portant au</em> Nord-Ouest <strong>va</strong> vers le 315. On dit d'un bateau qu'il est « dans le Sud-Ouest » d'une bouée quand il se trouve au Sud-Ouest de celle-ci, donc qu'il relève la bouée au Nord-Est.</p>
+
+<h2 id="trois-nords">Les trois nords</h2>
+
+<p>Une direction dépend de la référence choisie pour le Nord. Il y en a trois, et toute la difficulté du compas est de passer de l'une à l'autre.</p>
+
+<figure>
+<svg viewBox="0 0 460 240" width="460" role="img" aria-label="Nord vrai, Nord magnétique, Nord compas">
+  <g stroke-width="1.5">
+    <line x1="200" y1="205" x2="200" y2="52" class="ln"/>
+    <line x1="200" y1="205" x2="153.6" y2="62.3" class="ln" stroke-dasharray="5 3"/>
+    <line x1="200" y1="205" x2="174" y2="57.3" class="ln2"/>
+    <line x1="200" y1="205" x2="329.9" y2="130" class="ln st-signal" stroke-width="2.2"/>
+  </g>
+  <path d="M329.9 130 l-10 1 l4 -8 z" class="fill-signal"/>
+  <path d="M200 70 l-4 10 h8 z" class="fill-ink"/>
+  <g fill="none" stroke-width="1.1">
+    <path d="M200 150 A55 55 0 0 1 247.6 177.5" class="ln"/>
+    <path d="M176.8 133.7 A75 75 0 0 1 265 167.5" class="ln" stroke-dasharray="4 2"/>
+    <path d="M183.5 111.4 A95 95 0 0 1 282.3 157.5" class="ln2"/>
+    <path d="M159.8 81.4 A130 130 0 0 1 200 75" class="ln"/>
+    <path d="M163.5 92.8 A118 118 0 0 1 179.5 88.8" class="ln2"/>
+  </g>
+  <g font-size="12">
+    <text x="204" y="48">Nv</text>
+    <text x="134" y="60">Nm</text>
+    <text x="164" y="46">Nc</text>
+    <text x="335" y="128">axe du bateau</text>
+    <text x="226" y="166" class="it">Cv</text>
+    <text x="246" y="146" class="it">Cm</text>
+    <text x="262" y="125" class="it">Cc</text>
+    <text x="176" y="70" class="it" font-size="12">D</text>
+    <text x="160" y="88" class="it" font-size="12">d</text>
+  </g>
+  <text x="10" y="232" font-size="10" class="mut">Angles exagérés. Ici D est négative (Nm à l'ouest de Nv) et d positive (Nc à l'est de Nm).</text>
+</svg>
+<figcaption>Le même cap s'exprime de trois façons selon le nord de référence : cap vrai <var>Cv</var>, cap magnétique <var>Cm</var>, cap compas <var>Cc</var>.</figcaption>
+</figure>
+
+<div class="box def" data-title="Nord vrai, magnétique, compas">
+<ul>
+  <li>Le <dfn>Nord vrai</dfn> (ou géographique) Nv est la direction du pôle Nord géographique. C'est celui de la carte : les méridiens pointent vers lui.</li>
+  <li>Le <dfn>Nord magnétique</dfn> Nm est la direction indiquée par une aiguille aimantée soumise au seul champ magnétique terrestre.</li>
+  <li>Le <dfn>Nord compas</dfn> Nc est la direction qu'indique réellement le compas du bord, perturbé par les masses métalliques et les circuits électriques du bateau.</li>
+</ul>
+</div>
+
+<h3>La déclinaison</h3>
+
+<div class="box def" data-title="Déclinaison">
+<p>La <dfn>déclinaison</dfn> <var>D</var> est l'angle entre le Nord vrai et le Nord magnétique. Elle est <strong>positive</strong> quand le Nord magnétique est à l'Est du Nord vrai, <strong>négative</strong> quand il est à l'Ouest.</p>
+</div>
+
+<p>Le champ magnétique terrestre est produit par les mouvements du noyau liquide de la Terre ; il varie d'un endroit à l'autre et lentement dans le temps. La carte donne donc la déclinaison pour une année de référence, avec sa variation annuelle, par exemple :</p>
+<p class="formula">2°20′ W 2020 (4′ E)</p>
+<p>ce qui se lit : en 2020, <var>D</var> = −2°20′, et la déclinaison augmente de 4′ vers l'Est chaque année.</p>
+
+<div class="box ex" data-title="annale 2024">
+<p>Avec l'indication ci-dessus, en 2024 : 4 ans × 4′ = 16′ vers l'Est, donc <var>D</var> = −2°20′ + 16′ = −2°04′, soit environ −2°.</p>
+</div>
+
+<div class="box maj">
+<p>Les valeurs imprimées sur les cartes anciennes sont souvent loin de la réalité actuelle. En Bretagne, la déclinaison réelle est de l'ordre de 0,5° à 1° W en 2026 et se déplace vers l'Est d'environ 6′ par an : elle s'approche de zéro. Pour une valeur précise, on utilise une carte récente ou un calculateur en ligne (NOAA, BCMT). À l'examen, on utilise évidemment la valeur de la carte d'examen.</p>
+</div>
+
+<h3>La déviation</h3>
+
+<div class="box def" data-title="Déviation">
+<p>La <dfn>déviation</dfn> <var>d</var> est l'angle entre le Nord magnétique et le Nord compas. Elle est positive quand le Nord compas est à l'Est du Nord magnétique.</p>
+</div>
+
+<p>Elle est due au fer du moteur, de la quille, aux haut-parleurs, aux circuits électriques. Comme ces masses tournent avec le bateau, la déviation <strong>dépend du cap</strong>. On la mesure pour différents caps (en relevant au compas des alignements connus, par exemple) et on la reporte sur une <dfn>courbe de déviation</dfn>, qui donne <var>d</var> en fonction du cap compas. Des aimants correcteurs permettent de la réduire : c'est la <dfn>compensation</dfn> du compas. Sur un petit voilier en bois ou en polyester avec peu de métal près du compas, on prend souvent <var>d</var> = 0.</p>
+
+<div class="box warn">
+<p>Un téléphone, une lampe torche, une VHF portable ou un couteau posé près du compas peuvent le faire dévier de plusieurs degrés. Les éloigner avant de lire un cap ou de faire un relèvement.</p>
+</div>
+
+<h3>La variation</h3>
+
+<div class="box def" data-title="Variation">
+<p>La <dfn>variation</dfn> <var>W</var> est l'angle entre le Nord vrai et le Nord compas : c'est la correction totale à appliquer au compas.</p>
+<p class="formula"><var>W</var> = <var>D</var> + <var>d</var></p>
+</div>
+
+<h2 id="caps">Passer du cap compas au cap vrai</h2>
+
+<p>Les angles s'ajoutent comme sur la figure 2.1. Si l'on compte tous les angles positivement vers l'Est (dans le sens des aiguilles d'une montre), on obtient les relations suivantes.</p>
+
+<div class="box prop" data-title="Correction des caps">
+<p class="formula"><var>Cm</var> = <var>Cc</var> + <var>d</var>, &emsp; <var>Cv</var> = <var>Cm</var> + <var>D</var>, &emsp; donc &emsp; <var>Cv</var> = <var>Cc</var> + <var>W</var>.</p>
+<p>Du compas vers le vrai, on <strong>ajoute</strong> les corrections avec leur signe ; du vrai vers le compas, on les <strong>retranche</strong> :</p>
+<p class="formula"><var>Cc</var> = <var>Cv</var> − <var>W</var> = <var>Cv</var> − <var>D</var> − <var>d</var>.</p>
+</div>
+
+<p>Pour ne pas se tromper de sens, on pose le calcul sous forme de <dfn>tableau de passage</dfn>, de gauche à droite du compas vers la route réelle. Les deux dernières colonnes (dérive et courant) sont expliquées au chapitre 3 ; on les ajoute de la même manière.</p>
+
+<div class="tbl-wrap">
+<table class="calc">
+<thead><tr><th>Cc</th><th>+ d</th><th>= Cm</th><th>+ D</th><th>= Cv</th><th>+ dér</th><th>= Rs</th><th>+ courant</th><th>= Rf</th></tr></thead>
+<tbody><tr><td>150</td><td>+2</td><td>152</td><td>−4</td><td>148</td><td>0</td><td>148</td><td></td><td></td></tr></tbody>
+<caption>Annale octobre 2022 : cap compas 150, déviation +2, déclinaison −4, vent arrière (dérive nulle). Le bateau fait route surface au 148.</caption>
+</table>
+</div>
+
+<div class="box meth" data-title="Calculer le cap compas à donner au barreur">
+<ol>
+  <li>Tracer la route sur la carte et mesurer le <strong>cap vrai</strong> à la règle Cras (section 2.5).</li>
+  <li>Calculer la déclinaison de l'année à partir des indications de la carte.</li>
+  <li>Lire la déviation sur la courbe de déviation, pour un cap compas voisin (la courbe varie lentement, une lecture approchée suffit).</li>
+  <li>Calculer <var>Cc</var> = <var>Cv</var> − <var>D</var> − <var>d</var>, puis vérifier « à l'œil » que le résultat est cohérent (un cap vers le Sud-Est doit être entre 90 et 180).</li>
+  <li>Ramener le résultat entre 0 et 359 en ajoutant ou retranchant 360 si besoin.</li>
+</ol>
+</div>
+
+<div class="box ex">
+<p>Je veux suivre le cap vrai 005. La carte donne <var>D</var> = −2°, la courbe donne <var>d</var> = +3° pour ce cap. Alors <var>W</var> = +1° et <var>Cc</var> = 005 − 1 = 004. Avec <var>D</var> = −3° et <var>d</var> = −4° : <var>W</var> = −7° et <var>Cc</var> = 005 + 7 = 012. Avec <var>Cv</var> = 358, <var>W</var> = +5° : <var>Cc</var> = 353.</p>
+</div>
+
+<h2 id="releve">Les relèvements</h2>
+
+<h3>Relèvement compas et relèvement vrai</h3>
+<p>Un relèvement pris au compas est un <dfn>relèvement compas</dfn> <var>Zc</var>. Pour le tracer sur la carte, il faut le convertir en <dfn>relèvement vrai</dfn> <var>Zv</var>, avec la même relation que pour les caps :</p>
+<p class="formula"><var>Zv</var> = <var>Zc</var> + <var>W</var> = <var>Zc</var> + <var>D</var> + <var>d</var>.</p>
+<p>La déviation à prendre est celle du compas utilisé, <strong>au cap du bateau</strong> au moment du relèvement (et non dans la direction relevée). Avec un compas de relèvement à main, tenu loin des masses métalliques, on prend en général <var>d</var> = 0, donc <var>W</var> = <var>D</var>.</p>
+
+<h3>Droite de relèvement</h3>
+<p>Si je relève un amer A au <var>Zv</var>, je me trouve sur la demi-droite issue de A dans la direction opposée, c'est-à-dire <var>Zv</var> ± 180°. On trace donc sur la carte la droite passant par A et orientée au <var>Zv</var> : c'est une <dfn>droite de position</dfn>, ou lieu géométrique des points d'où l'on voit A dans cette direction.</p>
+
+<h3>Faire le point par trois relèvements</h3>
+<p>Deux droites de position se coupent en un point : c'est la position. Avec deux droites seulement, on ne voit pas les erreurs ; on en prend donc trois. Elles forment en général un petit triangle, le <dfn>chapeau</dfn>, dont on retient le centre. Un grand chapeau signale une erreur (amer mal identifié, déclinaison oubliée, mauvais calcul).</p>
+
+<figure>
+<svg viewBox="0 0 380 220" width="380" role="img" aria-label="Point par trois relèvements">
+  <g class="fill-ink"><rect x="40" y="36" width="8" height="8"/><circle cx="330" cy="58" r="5"/><path d="M180 196 l7 -14 l7 14 z"/></g>
+  <g font-size="11"><text x="20" y="28">clocher</text><text x="300" y="44">château d'eau</text><text x="200" y="212">tourelle</text></g>
+  <polygon points="209.3,122.7 194.3,130.7 196.1,116.1" class="fill-signal" opacity=".35"/>
+  <g class="ln" stroke-width="1.2"><line x1="44" y1="40" x2="253.7" y2="144.8"/><line x1="330" y1="58" x2="152.1" y2="153.3"/><line x1="187" y1="189" x2="202.4" y2="65.5"/></g>
+  <text x="250" y="150" font-size="11" class="mut">chapeau</text><line x1="248" y1="146" x2="206" y2="124" class="ln2"/>
+</svg>
+<figcaption>Trois droites de relèvement. Le petit triangle qu'elles forment est le chapeau ; la position retenue est en son centre.</figcaption>
+</figure>
+
+<div class="box meth" data-title="Choisir et relever les amers">
+<ul>
+  <li>Choisir des amers bien identifiés sur la carte et à terre, plutôt proches (une erreur de 2° fait 60 m à 1 M, 300 m à 5 M).</li>
+  <li>Avec deux amers, viser un écart d'environ 90° entre les relèvements ; avec trois, environ 60°. Des droites presque parallèles se coupent mal.</li>
+  <li>Relever en premier les amers situés vers l'avant ou l'arrière, dont le relèvement change lentement, et en dernier ceux qui sont par le travers.</li>
+  <li>Noter l'heure du point, et éloigner tout objet métallique du compas.</li>
+  <li>Convertir les <var>Zc</var> en <var>Zv</var> avant de tracer.</li>
+</ul>
+</div>
+
+<h3>Les alignements</h3>
+<p>Deux amers vus l'un derrière l'autre forment un <dfn>alignement</dfn>. C'est la droite de position la plus précise qui soit : elle ne dépend d'aucun compas. Beaucoup de passes sont balisées par des alignements portés sur la carte avec leur direction vraie (« alignement au 347 »). Un alignement sert aussi à vérifier le compas : on relève l'alignement au compas, on en déduit <var>W</var> = <var>Zv</var> − <var>Zc</var>, puis <var>d</var> = <var>W</var> − <var>D</var>.</p>
+
+<div class="box ex" data-title="annale octobre 2022">
+<p>En sortant de la Trinité-sur-Mer, on suit l'alignement au 347 vrai par l'arrière et on le relève au compas à 350. Donc <var>W</var> = 347 − 350 = −3°. Avec <var>D</var> = −4°, la déviation vaut <var>d</var> = <var>W</var> − <var>D</var> = −3 + 4 = +1°.</p>
+</div>
+
+<h2 id="outils">Les instruments</h2>
+
+<h3>Le compas de route et le compas de relèvement</h3>
+<p>Le <dfn>compas de route</dfn> est fixé dans l'axe du bateau. Une <dfn>ligne de foi</dfn> matérialise l'axe : le cap compas se lit sous la ligne de foi. Le barreur garde la graduation demandée sous la ligne de foi ; un bon barreur tient le cap à ± 5° près, et annonce s'il ne peut pas le tenir.</p>
+<p>Le <dfn>compas de relèvement</dfn> est un compas à main muni d'un viseur. On vise l'amer et on lit le relèvement compas. Le compas électronique (capteur magnétique) fonctionne sur le même principe et a lui aussi une déviation.</p>
+
+<div class="box warn">
+<p>Le GPS n'indique pas le cap. Le « COG » (<i>course over ground</i>) qu'il affiche est la <strong>route fond</strong>, calculée à partir des positions successives, et elle n'a de sens que si le bateau avance. Elle diffère du cap dès qu'il y a de la dérive ou du courant.</p>
+</div>
+
+<h3 id="cras">La règle Cras</h3>
+<p>La règle Cras, inventée par l'amiral Jean Cras, est une règle transparente portant deux rapporteurs gradués, chacun avec un centre marqué d'un petit cercle, et une flèche centrale « vers la route ou l'objet relevé ». Elle permet de mesurer ou de tracer une direction par rapport aux méridiens ou aux parallèles de la carte.</p>
+
+<div class="box meth" data-title="Mesurer une route avec la règle Cras">
+<ol>
+  <li>Estimer d'abord à l'œil la direction cherchée (dans quel quadrant ?). C'est le contrôle final.</li>
+  <li>Poser la règle, inscriptions lisibles vers le haut, un bord le long de la route, la flèche dans le sens de la route.</li>
+  <li>Faire glisser la règle le long de la route jusqu'à ce que le centre d'un des rapporteurs soit sur un méridien (règle plutôt horizontale) ou sur un parallèle (règle plutôt verticale).</li>
+  <li>Lire la graduation là où ce même méridien (graduation extérieure) ou ce même parallèle (graduation intérieure) coupe le rapporteur. Chaque graduation porte deux valeurs distantes de 180° : garder celle qui correspond à l'estimation du 1.</li>
+</ol>
+<p>Pour tracer une direction donnée, on fait l'inverse : centre sur un méridien, graduation voulue sur ce même méridien, et on trace le long du bord.</p>
+</div>
+
+<h3>Le compas à pointes sèches</h3>
+<p>Il sert à mesurer et reporter des distances. On prend l'écartement entre deux points, puis on le reporte sur l'échelle des latitudes, à la hauteur des points, où 1′ = 1 M. Pour une distance plus longue que l'ouverture confortable, on prend un écartement de 1 ou 2 M sur l'échelle et on le reporte plusieurs fois le long du segment. Pour relever les coordonnées d'un point, on prend avec le compas la distance du point au parallèle (ou au méridien) gradué le plus proche et on la reporte sur l'échelle correspondante, en faisant attention au sens dans lequel croissent les graduations (vers le haut pour la latitude Nord, vers la gauche pour la longitude Ouest).</p>
+
+<div class="box retenir">
+<ul>
+  <li><var>W</var> = <var>D</var> + <var>d</var>, tous les angles comptés positifs vers l'Est.</li>
+  <li><var>Cv</var> = <var>Cc</var> + <var>W</var> et <var>Zv</var> = <var>Zc</var> + <var>W</var>. Dans l'autre sens, <var>Cc</var> = <var>Cv</var> − <var>W</var>.</li>
+  <li>La déviation dépend du cap du bateau ; au compas de relèvement à main, on prend généralement <var>d</var> = 0.</li>
+  <li>Un point se fait avec trois relèvements bien répartis ; un alignement est une droite de position exacte.</li>
+  <li>Toujours estimer le résultat à l'œil avant de faire confiance au calcul.</li>
+</ul>
+</div>

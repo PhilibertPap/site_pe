@@ -1,0 +1,200 @@
+<!--meta {"title": "Naviguer sur la carte", "short": "Estime, dérive, courant", "part": "cours", "num": 3, "desc": "Navigation à l'estime, dérive due au vent, courant, route surface et route fond, préparation d'une route, instruments électroniques."} -->
+
+<h2 id="estime">Le principe de l'estime</h2>
+
+<p>Entre deux points sûrs (relèvements, alignement, passage près d'une bouée), le navigateur reconstruit sa position à partir de ce qu'il sait : l'heure de départ, le cap suivi, la vitesse, la dérive et le courant. C'est la <dfn>navigation à l'estime</dfn>. Elle reste la base de la navigation même avec un GPS : c'est elle qui permet de savoir où l'on va, de vérifier que l'électronique ne se trompe pas, et de continuer quand elle tombe en panne.</p>
+
+<p>L'estime ne vaut que si l'on note tout. Le <dfn>journal de bord</dfn> consigne à chaque changement de cap, de voilure ou de conditions, et au moins toutes les heures : l'heure, le cap compas, la vitesse ou l'indication du loch, le vent, l'état de la mer, le baromètre, la position quand on la connaît, et tout événement notable.</p>
+
+<div class="box def" data-title="Point estimé, point observé">
+<p>Le <dfn>point estimé</dfn> est la position calculée à partir de la route et de la vitesse depuis le dernier point connu. Le <dfn>point observé</dfn> (ou point vrai) est une position obtenue par observation : relèvements, alignement, sonde, GPS. L'écart entre les deux, rapporté au temps écoulé, mesure le courant réellement subi (section 3.4.4).</p>
+</div>
+
+<h2 id="derive">La dérive due au vent</h2>
+
+<p>Sous l'effet du vent, un voilier ne se déplace pas exactement dans l'axe de sa coque : il glisse un peu sous le vent. L'angle entre le cap vrai et la direction dans laquelle le bateau se déplace dans l'eau est la <dfn>dérive</dfn>. La direction obtenue est la <dfn>route surface</dfn> <var>Rs</var> : c'est la route par rapport à l'eau, comme si la mer était immobile.</p>
+
+<div class="box prop" data-title="Dérive">
+<p class="formula"><var>Rs</var> = <var>Cv</var> + <var>dér</var></p>
+<p>La dérive est comptée <strong>positivement</strong> quand le vent vient de bâbord (le bateau dérive vers tribord, la route est décalée dans le sens des aiguilles d'une montre) et <strong>négativement</strong> quand le vent vient de tribord.</p>
+</div>
+
+<p>La dérive est maximale au près, où la force latérale des voiles est la plus grande, et quasi nulle au vent arrière. Ordres de grandeur pour un petit voilier : 5 à 15° au près, quelques degrés au travers, 0 au portant. Elle augmente avec la gîte et le vent, et quand le bateau va lentement. Pour un bateau à dérive relevée, elle peut devenir énorme.</p>
+
+<div class="box ex">
+<p>Vent de Nord, cap vrai 070, dérive estimée 10°. Quand on regarde vers le 070, le Nord est sur la gauche : le vent vient de bâbord (le bateau est bâbord amures), il pousse vers tribord, donc <var>dér</var> = +10° et <var>Rs</var> = 080.</p>
+<p>Contrôle : un vent du Nord pousse le bateau vers le Sud, donc la route surface doit être plus au Sud que le cap. 080 est bien plus au Sud que 070. Ce contrôle de bon sens évite la plupart des erreurs de signe.</p>
+</div>
+
+<h2 id="courant">Le courant</h2>
+
+<h3>D'où vient le courant</h3>
+<p>Sur les côtes de la Manche et de l'Atlantique, le courant est surtout un <dfn>courant de marée</dfn> : la marée qui monte et descend remplit et vide les baies, et l'eau circule. Sa direction s'inverse environ toutes les six heures, et sa vitesse dépend de l'heure par rapport à la pleine mer et du coefficient. Il peut dépasser 5 nd dans certains passages (la Jument à l'entrée du golfe du Morbihan, le Fromveur, le raz de Sein), ce qui est plus que la vitesse d'un petit voilier.</p>
+<p>Un courant se décrit par la direction vers laquelle il <strong>porte</strong> (l'endroit où il emmène l'eau) et sa vitesse : « courant de 1,5 nd portant au 233 ». C'est l'inverse du vent, qui est désigné par la direction d'où il <em>vient</em>.</p>
+
+<h3>Trouver le courant</h3>
+<p>Les cartes portent des losanges magenta marqués d'une lettre ; un tableau en marge donne, pour chaque lettre et pour chaque heure de PM − 6 à PM + 6 au port de référence, la direction et la vitesse du courant en vives eaux et en mortes eaux. On lit l'heure par rapport à la pleine mer du port indiqué, puis on interpole entre vives eaux (coefficient 95) et mortes eaux (coefficient 45) au prorata du coefficient du jour. Les atlas de courants du SHOM donnent la même information sous forme de cartes heure par heure.</p>
+
+<div class="box ex">
+<p>Le tableau donne 1,6 nd en vives eaux et 0,8 nd en mortes eaux. Coefficient 70 : il est à mi-chemin entre 45 et 95, donc le courant vaut à peu près 0,8 + (1,6 − 0,8) × (70 − 45)/(95 − 45) = 1,2 nd.</p>
+</div>
+
+<h2 id="route-fond">Route surface et route fond</h2>
+
+<p>Le bateau avance dans l'eau à la vitesse surface <var>Vs</var> suivant la route surface ; l'eau elle-même se déplace avec le courant. Par rapport au fond, le déplacement du bateau est la <strong>somme vectorielle</strong> des deux.</p>
+
+<div class="box def" data-title="Route fond, vitesse fond">
+<p>La <dfn>route fond</dfn> <var>Rf</var> et la <dfn>vitesse fond</dfn> <var>Vf</var> décrivent le déplacement réel du bateau par rapport au fond : c'est la trace qu'il laisse sur la carte, et ce qu'affiche le GPS (COG et SOG).</p>
+<p class="formula"><span style="text-decoration:overline">V</span><sub>fond</sub> = <span style="text-decoration:overline">V</span><sub>surface</sub> + <span style="text-decoration:overline">V</span><sub>courant</sub></p>
+</div>
+
+<p>En l'absence de courant, <var>Rf</var> = <var>Rs</var> et <var>Vf</var> = <var>Vs</var>. On complète ainsi le tableau de passage du chapitre 2 :</p>
+<p class="formula"><var>Cc</var> → (+<var>d</var>) → <var>Cm</var> → (+<var>D</var>) → <var>Cv</var> → (+<var>dér</var>) → <var>Rs</var> → (+ courant) → <var>Rf</var></p>
+<p>La dernière étape n'est pas une simple addition d'angles : elle se fait par une construction graphique, le <dfn>triangle des vitesses</dfn>. On la trace sur la carte en prenant, pour chaque vecteur, la distance parcourue en une heure (ou en une durée commode).</p>
+
+<h3>Problème direct : où vais-je arriver ?</h3>
+
+<figure>
+<svg viewBox="0 0 300 200" width="330" role="img" aria-label="Triangle des vitesses, problème direct">
+  <line x1="60" y1="20" x2="60" y2="50" class="ln2"/><text x="56" y="16" font-size="10">N</text>
+  <g stroke-width="1.8">
+    <line x1="60" y1="180" x2="189.9" y2="105" class="ln st-navy"/>
+    <line x1="189.9" y1="105" x2="219.9" y2="157" class="ln st-ok"/>
+    <line x1="60" y1="180" x2="219.9" y2="157" class="ln st-signal"/>
+  </g>
+  <path d="M189.9 105 l-10.5 2.2 l4.5 7.5 z" class="fill-navy"/>
+  <path d="M219.9 157 l-1.2 -10.5 l-7.6 4.4 z" class="fill-ok"/>
+  <path d="M219.9 157 l-10.6 -3.2 l1.3 8.7 z" class="fill-signal"/>
+  <g font-size="11">
+    <text x="48" y="194">A</text>
+    <text x="90" y="128" class="it" font-size="12">Rs, Vs × 1 h</text>
+    <text x="210" y="124">courant × 1 h</text>
+    <text x="120" y="186" class="it" font-size="12">Rf, Vf × 1 h</text>
+    <text x="194" y="100">B</text><text x="224" y="166">C</text>
+  </g>
+</svg>
+<figcaption>Depuis A, on trace la route surface sur la distance parcourue en une heure (AB), puis le courant d'une heure (BC). AC donne la route fond et la vitesse fond. Ici <var>Rs</var> = 060 à 5 nd, courant 2 nd portant au 150 : <var>Rf</var> ≈ 082, <var>Vf</var> ≈ 5,4 nd.</figcaption>
+</figure>
+
+<div class="box meth" data-title="Position estimée avec courant">
+<ol>
+  <li>Calculer <var>Rs</var> à partir du cap compas (tableau de passage).</li>
+  <li>Depuis le point de départ A, tracer <var>Rs</var> sur la distance <var>Vs</var> × durée. On obtient B.</li>
+  <li>Depuis B, tracer le courant sur la distance <var>Vc</var> × durée, dans la direction où il porte. On obtient C, le point estimé.</li>
+  <li>AC est la route fond ; sa longueur divisée par la durée donne la vitesse fond.</li>
+</ol>
+</div>
+
+<h3>Problème inverse : quel cap pour aller là-bas ?</h3>
+<p>C'est le cas le plus fréquent à l'examen et en mer : je veux rejoindre un point, donc je connais la route fond souhaitée, et je cherche la route surface (puis le cap compas) qui compense le courant.</p>
+
+<figure>
+<svg viewBox="0 0 300 220" width="330" role="img" aria-label="Triangle des vitesses, problème inverse">
+  <line x1="60" y1="20" x2="60" y2="50" class="ln2"/><text x="56" y="16" font-size="10">N</text>
+  <line x1="60" y1="140" x2="280" y2="101.2" class="ln2" stroke-dasharray="5 3"/>
+  <text x="250" y="96" font-size="10" class="mut">vers le but</text>
+  <path d="M138 104 A150 150 0 0 1 210 200" class="ln2" stroke-dasharray="2 3"/>
+  <g stroke-width="1.8">
+    <line x1="60" y1="140" x2="60" y2="200" class="ln st-ok"/>
+    <line x1="60" y1="200" x2="185.5" y2="117.9" class="ln st-navy"/>
+    <line x1="60" y1="140" x2="185.5" y2="117.9" class="ln st-signal"/>
+  </g>
+  <path d="M60 200 l-4 -10 h8 z" class="fill-ok"/>
+  <path d="M185.5 117.9 l-10.5 1.6 l5 7.6 z" class="fill-navy"/>
+  <path d="M185.5 117.9 l-10.2 -1.2 l1.6 8.6 z" class="fill-signal"/>
+  <g font-size="11">
+    <text x="44" y="138">A</text><text x="44" y="210">C</text><text x="188" y="112">D</text>
+    <text x="16" y="176">courant</text>
+    <text x="126" y="178" class="it" font-size="12">Rs, Vs × 1 h</text>
+    <text x="96" y="122" class="it" font-size="12">Rf</text>
+  </g>
+</svg>
+<figcaption>On trace le courant d'une heure depuis A (point C), puis un arc de rayon <var>Vs</var> × 1 h centré en C, qui coupe la route fond voulue en D. CD donne la route surface à suivre, AD la vitesse fond. Ici <var>Rf</var> voulue 080, courant 2 nd portant au 180, <var>Vs</var> = 5 nd : <var>Rs</var> ≈ 057, <var>Vf</var> ≈ 4,2 nd.</figcaption>
+</figure>
+
+<div class="box meth" data-title="Route à suivre pour compenser le courant">
+<ol>
+  <li>Tracer la route fond voulue, du point de départ A vers le but.</li>
+  <li>Depuis A, tracer le courant pendant une heure : point C.</li>
+  <li>Prendre au compas à pointes sèches la distance parcourue en une heure par le bateau (<var>Vs</var> × 1 h) et, depuis C, couper la route fond : point D.</li>
+  <li>La direction CD est la route surface <var>Rs</var>. La longueur AD est la vitesse fond <var>Vf</var>.</li>
+  <li>Durée du trajet = distance au but / <var>Vf</var>. Puis <var>Cv</var> = <var>Rs</var> − <var>dér</var> et <var>Cc</var> = <var>Cv</var> − <var>W</var>.</li>
+</ol>
+</div>
+
+<div class="box rem">
+<p>Le triangle se résout aussi par le calcul, en projetant les vecteurs sur les axes Est et Nord : une vitesse <var>V</var> au <var>θ</var> a pour composantes (<var>V</var> sin <var>θ</var>, <var>V</var> cos <var>θ</var>). Pour le problème inverse, la composante du courant perpendiculaire à la route fond doit être annulée : sin(<var>Rs</var> − <var>Rf</var>) = −(<var>Vc</var>/<var>Vs</var>) sin(<var>θ</var><sub>c</sub> − <var>Rf</var>). C'est ce que font les GPS et les logiciels ; à l'examen, la construction graphique suffit et elle est attendue.</p>
+</div>
+
+<h3>Courant de travers, courant de face</h3>
+<p>Quelques réflexes valent mieux qu'un tracé quand on navigue :</p>
+<ul>
+  <li>Un courant dans l'axe de la route ne change pas la route, seulement la vitesse fond : 5 nd avec 2 nd de courant contraire donnent 3 nd sur le fond, et le trajet prend 67 % de temps en plus.</li>
+  <li>Un courant de travers fait « crabe » : pour le compenser, on remonte vers le courant d'un angle dont le sinus vaut <var>Vc</var>/<var>Vs</var> (environ 12° pour 1 nd de courant à 5 nd, 24° pour 2 nd).</li>
+  <li>Si le courant est plus rapide que le bateau, il peut être impossible d'atteindre le but : on attend la renverse.</li>
+</ul>
+
+<h3>Déterminer le courant subi</h3>
+<p>Si à l'heure <var>t</var> on fait un point observé P alors que l'estime sans courant donnait le point E, l'écart EP est le déplacement dû au courant pendant la durée écoulée depuis le dernier point sûr.</p>
+
+<div class="box ex" data-title="annale octobre 2022">
+<p>Parti de A1 à 5 h 30, le point estimé de 7 h 06 est B1 ; le point observé par deux relèvements est C1. Le segment B1C1 est orienté au 088 et mesure 0,7 M. En 96 minutes, le courant a donc porté au 088 et déplacé le bateau de 0,7 M, soit une vitesse de 0,7 × 60 / 96 ≈ 0,4 nd.</p>
+</div>
+
+<h2 id="preparer">Préparer une route</h2>
+
+<p>Une navigation se prépare à terre, carte sur la table, avant d'appareiller. Le travail sur carte de l'examen n'est rien d'autre que cette préparation.</p>
+
+<div class="box meth" data-title="Préparation sur la carte">
+<ol>
+  <li>Repérer le départ, l'arrivée, et les dangers entre les deux : roches, hauts-fonds (à comparer à la hauteur d'eau, chapitre 4), zones interdites, câbles, passages à courant fort.</li>
+  <li>Tracer la route en segments droits, chacun passant à bonne distance des dangers. Un point tournant doit être reconnaissable en mer : une bouée, un alignement, un relèvement sur un amer.</li>
+  <li>Pour chaque segment : route fond, distance, courant prévu à l'heure du passage, route surface, dérive selon l'allure, cap compas, vitesse fond, durée et heure d'arrivée.</li>
+  <li>Noter les amers et les relèvements qui permettront de vérifier la position en route, et les <dfn>relèvements de sécurité</dfn> (« tant que je relève la tourelle à plus de 045, je suis dans les eaux saines »).</li>
+  <li>Prévoir une solution de repli : un abri accessible si le vent forcit, si l'horaire dérape, si quelqu'un est malade.</li>
+</ol>
+</div>
+
+<h3>Le vent dans la route : tirer des bords</h3>
+<p>Un voilier ne peut pas remonter directement face au vent. Il navigue au près, à 45° du vent réel environ pour un voilier moderne, souvent 55 à 60° pour un bateau traditionnel ou chargé, en tirant des bords de part et d'autre du lit du vent. Si le but est dans le vent, la distance réellement parcourue est multipliée par 1/cos 45° ≈ 1,4 au moins, sans compter la dérive et les virements. À l'examen comme en mer, on vérifie toujours que la route tracée est <strong>possible</strong> avec le vent du jour.</p>
+
+<div class="box ex" data-title="annale 2024">
+<p>Vent de Nord force 4. Le bateau fait 3 nd au près avec 10° de dérive, 5 nd au travers avec 5°, 4 nd au portant sans dérive. Une route fond au 090 se fait au travers ; une route au 020 est impossible directement (elle est à 20° du vent) et demande de tirer des bords.</p>
+</div>
+
+<h2 id="electronique">Les instruments électroniques</h2>
+
+<h3>Le GPS</h3>
+<p>Le récepteur GPS (ou plus généralement GNSS : GPS, Galileo, Glonass) calcule sa position à partir des temps de propagation des signaux de plusieurs satellites dont la position est connue. La précision est de l'ordre de 5 à 10 m. Il affiche :</p>
+<div class="tbl-wrap"><table>
+<thead><tr><th>Abréviation</th><th>Signification</th></tr></thead>
+<tbody>
+<tr><td>COG</td><td><i>Course over ground</i> : route fond</td></tr>
+<tr><td>SOG</td><td><i>Speed over ground</i> : vitesse fond</td></tr>
+<tr><td>WPT</td><td><i>Waypoint</i> : point de route enregistré</td></tr>
+<tr><td>BRG</td><td><i>Bearing</i> : relèvement du waypoint actif depuis le bateau</td></tr>
+<tr><td>RNG, DTW</td><td><i>Range, distance to waypoint</i> : distance au waypoint</td></tr>
+<tr><td>XTE</td><td><i>Cross-track error</i> : écart latéral par rapport à la route prévue</td></tr>
+<tr><td>TTG, ETA</td><td><i>Time to go</i> : temps restant ; <i>estimated time of arrival</i> : heure d'arrivée estimée</td></tr>
+<tr><td>MOB</td><td><i>Man over board</i> : enregistre instantanément la position d'un homme à la mer</td></tr>
+</tbody></table></div>
+
+<div class="box warn">
+<p>Le GPS donne une position, pas la sécurité. Il ne voit ni le balisage, ni les autres bateaux, ni la météo ; il peut tomber en panne ou perdre le signal ; une carte électronique peut être fausse ou mal zoomée (sur une carte vectorielle, des roches n'apparaissent qu'à fort zoom). On contrôle régulièrement la position GPS par un relèvement ou une bouée, et on reporte la position sur la carte papier à intervalles réguliers.</p>
+</div>
+
+<h3>L'AIS</h3>
+<p>L'<dfn>AIS</dfn> (<i>Automatic Identification System</i>) est un système où chaque navire équipé émet en VHF son identité, sa position, sa route et sa vitesse. Un récepteur AIS affiche les navires voisins et calcule pour chacun le <dfn>CPA</dfn> (<i>closest point of approach</i>, distance minimale de passage) et le <dfn>TCPA</dfn> (temps avant ce passage). C'est une aide précieuse pour évaluer un risque de collision, mais beaucoup de petits bateaux n'en sont pas équipés : la veille visuelle reste obligatoire.</p>
+
+<h3>Cartes électroniques</h3>
+<p>Une carte <dfn>raster</dfn> est une image scannée de la carte papier : elle se lit de la même façon, mais devient floue quand on zoome. Une carte <dfn>vectorielle</dfn> est une base de données d'objets (traits de côte, sondes, balises) redessinés à chaque échelle ; elle reste nette mais n'affiche pas tout à toutes les échelles.</p>
+
+<div class="box retenir">
+<ul>
+  <li><var>Rs</var> = <var>Cv</var> + <var>dér</var>, dérive positive quand le vent vient de bâbord. Vérifier le signe en se demandant où le vent pousse le bateau.</li>
+  <li>Le courant se désigne par la direction où il porte ; on le lit sur la carte ou l'atlas en fonction de l'heure par rapport à la PM et du coefficient.</li>
+  <li>Route fond = route surface + courant, par le triangle des vitesses tracé pour une heure.</li>
+  <li>Pour rejoindre un point : courant depuis le départ, puis arc de rayon <var>Vs</var> sur la route fond.</li>
+  <li>Le GPS affiche la route fond (COG), pas le cap.</li>
+</ul>
+</div>

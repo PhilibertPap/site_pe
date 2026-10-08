@@ -1,236 +1,69 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard - Préparation PE</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Patron d'embarcation</title>
+<meta name="description" content="Cours de navigation, QCM, exercices et pratique de la voile pour préparer le brevet de patron d'embarcation des scouts marins.">
+<link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<script>
+  try {
+    var t = localStorage.getItem('pe-theme');
+    if (t) document.documentElement.setAttribute('data-theme', t);
+  } catch (e) {}
+</script>
 </head>
-<body>
-    <!-- Navigation persistante -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top">
-        <div class="container">
-            <a class="navbar-brand fw-bold d-flex align-items-center gap-2" href="index.html">
-                <span>Patron d'Embarcation</span>
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link active" href="index.html" aria-current="page">Dashboard</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="parcours.html" >Parcours</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="entrainement.html" >Entraînement</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="examens.html" >Examens</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="carnet.html" >Carnet</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+<body data-root="">
+<a class="skip" href="#contenu">Aller au contenu</a>
+<header class="top">
+  <div class="top-in">
+    <a class="brand" href="index.html">Patron d'embarcation</a>
+    <nav class="mainnav" aria-label="Parties du site"><a href="cours/index.html">Cours</a><a href="qcm/index.html">QCM</a><a href="exercices/index.html">Exercices</a><a href="pratique/index.html">Pratique</a><a href="annales/index.html">Annales</a></nav>
+    <div class="acct" id="acct"></div>
+    <button class="theme" type="button" aria-label="Changer de thème" title="Clair / sombre"><svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true"><circle cx="8" cy="8" r="6.5" fill="none" stroke="currentColor" stroke-width="1.3"/><path d="M8 1.5 A6.5 6.5 0 0 1 8 14.5 Z" fill="currentColor"/></svg></button>
+  </div>
+</header>
+<main id="contenu">
+<div class="page "><header class="home-head">
+  <p class="kicker">Scouts marins · navigation à voile</p>
+  <h1>Patron d'embarcation</h1>
+  <p class="lede">Un cours de navigation complet pour préparer le brevet de patron d'embarcation, et plus largement pour apprendre à mener un voilier en mer : la théorie, l'entraînement à l'examen, et ce qu'on fait vraiment à bord.</p>
+</header>
 
-    <!-- Contenu principal -->
-    <main class="container py-5">
-        <section class="page-hero mb-4 reveal">
-    <div class="row g-3 align-items-center">
-        <div class="col-lg-8">
-            <h1 class="display-6 mb-2">Tableau de bord PE</h1>
-            <p class="lead mb-3">Prépare l'examen du <strong>Patron d'Embarcation</strong> étape par étape avec un suivi clair.</p>
-            <p class="page-tag mb-3">Navigation PE</p>
-            <a href="parcours.html" class="btn btn-light btn-sm">Voir mon parcours</a>
-            <a href="entrainement.html" class="btn btn-outline-light btn-sm ms-2">Lancer un entraînement</a>
-        </div>
-        <div class="col-lg-4">
-            <div class="soft-panel p-3 reveal reveal-delay-1">
-                <div class="d-flex justify-content-between align-items-center mb-2">
-                    <h2 class="h6 text-dark mb-0">Progression globale</h2>
-                    <span class="badge text-bg-light" data-progress-text>0%</span>
-                </div>
-                <div class="progress bg-light" role="progressbar">
-                    <div class="progress-bar" data-progress-bar style="width: 0%"></div>
-                </div>
-                <hr>
-                <label class="form-label small mb-1" for="profile-code-input">Code scout (local)</label>
-                <div class="input-group input-group-sm">
-                    <input id="profile-code-input" class="form-control" type="text" maxlength="24" placeholder="Ex: PATROUILLE-1">
-                    <button class="btn btn-outline-primary" id="save-profile-code-btn" type="button">Enregistrer</button>
-                </div>
-                <p class="small text-muted mb-0 mt-2">Profil actif: <strong id="current-profile-code">SCOUT-LOCAL</strong></p>
-            </div>
-        </div>
-    </div>
-</section>
+<ol class="parts">
+  <li><a href="cours/index.html"><span class="pn">I</span><span class="pt">Cours</span><span class="pd">Dix chapitres : carte, compas, navigation à l'estime, marée, balisage, règles de barre, feux et signaux, météo, sécurité, VHF.</span></a></li>
+  <li><a href="qcm/index.html"><span class="pn">II</span><span class="pt">QCM</span><span class="pd">Épreuves blanches de 30 questions au format de l'examen, ou entraînement par thème avec correction expliquée.</span></a></li>
+  <li><a href="exercices/index.html"><span class="pn">III</span><span class="pt">Exercices</span><span class="pd">Compas, estime, courant, marée : des énoncés générés à volonté avec corrigé détaillé, et des problèmes type examen.</span></a></li>
+  <li><a href="pratique/index.html"><span class="pn">IV</span><span class="pt">Pratique</span><span class="pd">Le voilier, le réglage des voiles, les manœuvres sous voiles et de port, le mouillage, l'homme à la mer, les nœuds.</span></a></li>
+  <li><a href="annales/index.html"><span class="pn">V</span><span class="pt">Annales</span><span class="pd">Sujets et corrigés des épreuves 2015 à 2024.</span></a></li>
+</ol>
 
-<section class="alert alert-warning reveal reveal-delay-1" role="alert">
-    <h2 class="h5 alert-heading mb-2">Contenus en travaux</h2>
-    <p class="mb-0">Les cours, QCM et exercices sont temporairement vides pendant la purge des contenus tiers et la reconstruction de la banque pedagogique.</p>
-</section>
+<h2>L'examen en bref</h2>
+<p>Le brevet de patron d'embarcation (PE) comporte une partie théorique écrite et une partie pratique évaluée en navigation. L'écrit se déroule en deux épreuves.</p>
+<div class="facts">
+  <div><b>30 questions</b><span>QCM, 1 minute par question, une seule bonne réponse</span></div>
+  <div><b>1 h 30</b><span>Problème de navigation sur carte (13 pts) et problème de marée (7 pts)</span></div>
+  <div><b>Carte 9999</b><span>Carte d'examen SHOM (baie de Quiberon), ou carte 7033</span></div>
+</div>
+<p>Thèmes du QCM : balisage et symboles de la carte, règles de barre et de route, signaux sonores et visuels, marques et feux des navires, sécurité et matériel d'armement, responsabilités du chef de bord, VHF. Pour l'épreuve sur carte : règle Cras, compas à pointes sèches, crayon bien taillé, gomme et calculatrice non programmable. Un minimum de points est exigé sur la partie carte (7 sur 13 en 2024).</p>
 
-<section class="mb-5 reveal reveal-delay-1">
-    <h2 class="section-title h4 section-head"><span class="icon-badge">VR</span>Vue rapide</h2>
-    <div class="row g-3">
-        <div class="col-6 col-lg-3">
-            <div class="card h-100 kpi-card">
-                <div class="card-body">
-                    <p class="kpi-label">Progression</p>
-                    <p class="kpi-value mb-0">0%</p>
-                </div>
-            </div>
-        </div>
-        <div class="col-6 col-lg-3">
-            <div class="card h-100 kpi-card">
-                <div class="card-body">
-                    <p class="kpi-label">QCM disponibles</p>
-                    <p class="kpi-value mb-0">0</p>
-                </div>
-            </div>
-        </div>
-        <div class="col-6 col-lg-3">
-            <div class="card h-100 kpi-card">
-                <div class="card-body">
-                    <p class="kpi-label">Catégories</p>
-                    <p class="kpi-value mb-0">0</p>
-                </div>
-            </div>
-        </div>
-        <div class="col-6 col-lg-3">
-            <div class="card h-100 kpi-card">
-                <div class="card-body">
-                    <p class="kpi-label">Types de test</p>
-                    <p class="kpi-value mb-0">4</p>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<section class="mb-5 reveal reveal-delay-2">
-    <div class="d-flex justify-content-between align-items-center mb-3">
-        <h2 class="section-title h4 mb-0 section-head"><span class="icon-badge">MD</span>Tes modules</h2>
-        <a href="parcours.html" class="btn btn-outline-primary btn-sm">Voir tout</a>
-    </div>
-    <div class="row g-4">
-        <div class="col-md-6 col-xl-4">
-            <article class="card h-100">
-                <div class="card-body d-flex flex-column">
-                    <div class="d-flex align-items-center mb-2">
-                        <span class="icon-badge me-2">M</span>
-                        <h3 class="h5 mb-0">Balisage et Pictogrammes</h3>
-                    </div>
-                    <p class="text-muted mb-3">Module conserve. Cours&#x2F;QCM&#x2F;exercices en travaux.</p>
-                    <div class="progress mb-2" role="progressbar">
-                        <div class="progress-bar" data-module-progress="1" style="width: 0%"></div>
-                    </div>
-                    <small class="text-muted" data-module-stat="1">0% • Score 0/100</small>
-                    <a href="module-1.html" class="btn btn-primary btn-sm mt-3">Ouvrir le cours</a>
-                </div>
-            </article>
-        </div>
-        <div class="col-md-6 col-xl-4">
-            <article class="card h-100">
-                <div class="card-body d-flex flex-column">
-                    <div class="d-flex align-items-center mb-2">
-                        <span class="icon-badge me-2">M</span>
-                        <h3 class="h5 mb-0">Signalisation (Sonore, Lumineuse, Portuaire)</h3>
-                    </div>
-                    <p class="text-muted mb-3">Module conserve. Cours&#x2F;QCM&#x2F;exercices en travaux.</p>
-                    <div class="progress mb-2" role="progressbar">
-                        <div class="progress-bar" data-module-progress="2" style="width: 0%"></div>
-                    </div>
-                    <small class="text-muted" data-module-stat="2">0% • Score 0/100</small>
-                    <a href="module-2.html" class="btn btn-primary btn-sm mt-3">Ouvrir le cours</a>
-                </div>
-            </article>
-        </div>
-        <div class="col-md-6 col-xl-4">
-            <article class="card h-100">
-                <div class="card-body d-flex flex-column">
-                    <div class="d-flex align-items-center mb-2">
-                        <span class="icon-badge me-2">M</span>
-                        <h3 class="h5 mb-0">RIPAM et Marques des Navires</h3>
-                    </div>
-                    <p class="text-muted mb-3">Module conserve. Cours&#x2F;QCM&#x2F;exercices en travaux.</p>
-                    <div class="progress mb-2" role="progressbar">
-                        <div class="progress-bar" data-module-progress="3" style="width: 0%"></div>
-                    </div>
-                    <small class="text-muted" data-module-stat="3">0% • Score 0/100</small>
-                    <a href="module-3.html" class="btn btn-primary btn-sm mt-3">Ouvrir le cours</a>
-                </div>
-            </article>
-        </div>
-        <div class="col-md-6 col-xl-4">
-            <article class="card h-100">
-                <div class="card-body d-flex flex-column">
-                    <div class="d-flex align-items-center mb-2">
-                        <span class="icon-badge me-2">M</span>
-                        <h3 class="h5 mb-0">La Carte Marine et la Regle Cras</h3>
-                    </div>
-                    <p class="text-muted mb-3">Module conserve. Cours&#x2F;QCM&#x2F;exercices en travaux.</p>
-                    <div class="progress mb-2" role="progressbar">
-                        <div class="progress-bar" data-module-progress="4" style="width: 0%"></div>
-                    </div>
-                    <small class="text-muted" data-module-stat="4">0% • Score 0/100</small>
-                    <a href="module-4.html" class="btn btn-primary btn-sm mt-3">Ouvrir le cours</a>
-                </div>
-            </article>
-        </div>
-        <div class="col-md-6 col-xl-4">
-            <article class="card h-100">
-                <div class="card-body d-flex flex-column">
-                    <div class="d-flex align-items-center mb-2">
-                        <span class="icon-badge me-2">M</span>
-                        <h3 class="h5 mb-0">Meteo et Environnement</h3>
-                    </div>
-                    <p class="text-muted mb-3">Module conserve. Cours&#x2F;QCM&#x2F;exercices en travaux.</p>
-                    <div class="progress mb-2" role="progressbar">
-                        <div class="progress-bar" data-module-progress="5" style="width: 0%"></div>
-                    </div>
-                    <small class="text-muted" data-module-stat="5">0% • Score 0/100</small>
-                    <a href="module-5.html" class="btn btn-primary btn-sm mt-3">Ouvrir le cours</a>
-                </div>
-            </article>
-        </div>
-        <div class="col-md-6 col-xl-4">
-            <article class="card h-100">
-                <div class="card-body d-flex flex-column">
-                    <div class="d-flex align-items-center mb-2">
-                        <span class="icon-badge me-2">M</span>
-                        <h3 class="h5 mb-0">Caps et Derives</h3>
-                    </div>
-                    <p class="text-muted mb-3">Module conserve. Cours&#x2F;QCM&#x2F;exercices en travaux.</p>
-                    <div class="progress mb-2" role="progressbar">
-                        <div class="progress-bar" data-module-progress="6" style="width: 0%"></div>
-                    </div>
-                    <small class="text-muted" data-module-stat="6">0% • Score 0/100</small>
-                    <a href="module-6.html" class="btn btn-primary btn-sm mt-3">Ouvrir le cours</a>
-                </div>
-            </article>
-        </div>
-    </div>
-</section>
+<h2>Par où commencer</h2>
+<p>Si vous partez de zéro, lisez les chapitres dans l'ordre : chacun s'appuie sur les précédents. Faites les exercices générés d'un chapitre dès que vous l'avez lu, puis passez aux problèmes d'annales. Les QCM se travaillent par thème d'abord, en épreuve blanche ensuite, une fois que vous ne faites plus d'erreurs grossières.</p>
+<p>La partie Pratique se lit avant une sortie et se relit après. Rien ne remplace les heures à la barre, mais savoir ce qu'on cherche à faire fait gagner beaucoup de temps sur l'eau.</p>
+</div>
+</main>
+<footer class="foot">
+  <div class="foot-in">
+    <p>Préparation au brevet de patron d'embarcation et à la navigation à voile. Rédigé à partir des cours de navigation des scouts marins de Brest, mis à jour et complétés.</p>
+    <p>Ce site ne remplace ni la réglementation (Division 240, RIPAM), ni les documents officiels du SHOM, ni le règlement de votre association. En cas de doute, ce sont eux qui font foi.</p>
+  </div>
+</footer>
+<script src="js/site.js"></script>
 
 
-    </main>
-
-    <!-- Pied de page -->
-    <footer class="site-footer text-white py-4 mt-5">
-        <div class="container text-center">
-            <p class="mb-0">Préparation au Patron d'Embarcation - Groupe NDC</p>
-        </div>
-    </footer>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="js/qcm-engine.js"></script>
-    <script src="js/app.js"></script>
 </body>
 </html>

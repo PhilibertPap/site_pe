@@ -1,9 +1,9 @@
 node_modules/
-#public/
 .DS_Store
 *.log
 .env
 .vscode/
-dist/
-*.swp
-*.swo
+
+# Documents de travail : trop lourds pour GitHub (vidéo de 386 Mo) et non publiés.
+Cours Nav pour scouts-marins/
+imports/

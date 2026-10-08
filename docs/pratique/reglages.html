@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Allures et réglages · Patron d'embarcation</title>
+<meta name="description" content="Les allures, le réglage de base des voiles, la lecture des penons, la forme des voiles selon le vent, l'équilibre, réduire la toile et naviguer au portant.">
+<link rel="icon" href="../img/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/style.css">
+<script>
+  try {
+    var t = localStorage.getItem('pe-theme');
+    if (t) document.documentElement.setAttribute('data-theme', t);
+  } catch (e) {}
+</script>
+</head>
+<body data-root="../">
+<a class="skip" href="#contenu">Aller au contenu</a>
+<header class="top">
+  <div class="top-in">
+    <a class="brand" href="../index.html">Patron d'embarcation</a>
+    <nav class="mainnav" aria-label="Parties du site"><a href="../cours/index.html">Cours</a><a href="../qcm/index.html">QCM</a><a href="../exercices/index.html">Exercices</a><a href="../pratique/index.html" aria-current="page">Pratique</a><a href="../annales/index.html">Annales</a></nav>
+    <div class="acct" id="acct"></div>
+    <button class="theme" type="button" aria-label="Changer de thème" title="Clair / sombre"><svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true"><circle cx="8" cy="8" r="6.5" fill="none" stroke="currentColor" stroke-width="1.3"/><path d="M8 1.5 A6.5 6.5 0 0 1 8 14.5 Z" fill="currentColor"/></svg></button>
+  </div>
+</header>
+<main id="contenu">
+
+<div class="doc">
+  <aside class="side">
+    <p class="side-h">Pratique</p>
+    <ol class="chapters"><li><a href="../pratique/voilier.html">Le voilier</a></li><li><a href="../pratique/physique.html">Comment avance un voilier</a></li><li><a href="../pratique/reglages.html" aria-current="page">Allures et réglages</a></li><li><a href="../pratique/manoeuvres.html">Manœuvres sous voiles</a></li><li><a href="../pratique/port.html">Manœuvres de port</a></li><li><a href="../pratique/mouillage.html">Le mouillage</a></li><li><a href="../pratique/hlm.html">Homme à la mer</a></li><li><a href="../pratique/noeuds.html">Nœuds et matelotage</a></li><li><a href="../pratique/chef-de-bord.html">Conduire une navigation</a></li><li><a href="../pratique/entrainement.html">S'entraîner sur l'eau</a></li></ol>
+  </aside>
+  <article class="chapter">
+    <header class="chap-head">
+      <p class="kicker">Pratique</p>
+      <h1>Allures et réglages</h1>
+      <p class="chap-desc">Les allures, le réglage de base des voiles, la lecture des penons, la forme des voiles selon le vent, l'équilibre, réduire la toile et naviguer au portant.</p>
+    </header>
+    <details class="toc-box"><summary>Sur cette page</summary><ol class="toc"><li><a href="#allures">Les allures</a></li><li><a href="#base">Le réglage de base</a></li><li><a href="#forme">La forme des voiles</a></li><li><a href="#equilibre">Équilibre et gîte</a></li><li><a href="#reduire">Réduire la toile</a></li><li><a href="#portant">Au portant</a></li></ol></details>
+    <h2 id="allures">Les allures</h2>
+
+<p>L'<dfn>allure</dfn> est l'angle entre la route du bateau et la direction d'où vient le vent réel.</p>
+
+<figure>
+<svg viewBox="0 0 440 370" width="440" role="img" aria-label="Les allures">
+  <path d="M210 190 L148.9 117.2 A95 95 0 0 1 271.1 117.2 Z" class="fill-signal" opacity=".12"/>
+  <line x1="210" y1="14" x2="210" y2="56" class="ln" stroke-width="2"/><path d="M210 62 l-5 -10 h10 z" class="fill-ink"/>
+  <text x="218" y="30" font-size="12">vent</text>
+  <text x="210" y="112" font-size="11" text-anchor="middle" class="mut">vent debout :</text>
+  <text x="210" y="125" font-size="11" text-anchor="middle" class="mut">impossible</text>
+  <g transform="translate(294.9 105.1) rotate(45)"><path d="M0 -16 C 7 -7, 7 9, 4.5 15 L -4.5 15 C -7 9, -7 -7, 0 -16 Z" class="fill-card ln" stroke-width="1.3"/><line x1="0" y1="-4" x2="3.6" y2="9.5" class="ln st-navy" stroke-width="2.4"/></g>
+  <text x="321.7" y="82.3" font-size="12">près</text>
+  <g transform="translate(318.8 139.3) rotate(65)"><path d="M0 -16 C 7 -7, 7 9, 4.5 15 L -4.5 15 C -7 9, -7 -7, 0 -16 Z" class="fill-card ln" stroke-width="1.3"/><line x1="0" y1="-4" x2="5.2" y2="9.0" class="ln st-navy" stroke-width="2.4"/></g>
+  <text x="350" y="127.2" font-size="12">bon plein</text>
+  <g transform="translate(330.0 190.0) rotate(90)"><path d="M0 -16 C 7 -7, 7 9, 4.5 15 L -4.5 15 C -7 9, -7 -7, 0 -16 Z" class="fill-card ln" stroke-width="1.3"/><line x1="0" y1="-4" x2="9.0" y2="6.7" class="ln st-navy" stroke-width="2.4"/></g>
+  <text x="362" y="194.0" font-size="12">travers</text>
+  <g transform="translate(313.9 250.0) rotate(120)"><path d="M0 -16 C 7 -7, 7 9, 4.5 15 L -4.5 15 C -7 9, -7 -7, 0 -16 Z" class="fill-card ln" stroke-width="1.3"/><line x1="0" y1="-4" x2="11.5" y2="4.0" class="ln st-navy" stroke-width="2.4"/></g>
+  <text x="346.8" y="273.0" font-size="12">largue</text>
+  <g transform="translate(270.0 293.9) rotate(150)"><path d="M0 -16 C 7 -7, 7 9, 4.5 15 L -4.5 15 C -7 9, -7 -7, 0 -16 Z" class="fill-card ln" stroke-width="1.3"/><line x1="0" y1="-4" x2="13.2" y2="0.8" class="ln st-navy" stroke-width="2.4"/></g>
+  <text x="289.0" y="330.8" font-size="12">grand largue</text>
+  <g transform="translate(210.0 310.0) rotate(180)"><path d="M0 -16 C 7 -7, 7 9, 4.5 15 L -4.5 15 C -7 9, -7 -7, 0 -16 Z" class="fill-card ln" stroke-width="1.3"/><line x1="0" y1="-4" x2="13.9" y2="-2.8" class="ln st-navy" stroke-width="2.4"/></g>
+  <text x="210.0" y="352.0" font-size="12" text-anchor="middle">vent arrière</text>
+  <g opacity=".55">
+  <g transform="translate(125.1 105.1) rotate(-45)"><path d="M0 -16 C 7 -7, 7 9, 4.5 15 L -4.5 15 C -7 9, -7 -7, 0 -16 Z" class="fill-card ln" stroke-width="1.3"/><line x1="0" y1="-4" x2="-3.6" y2="9.5" class="ln st-navy" stroke-width="2.4"/></g>
+  <g transform="translate(101.2 139.3) rotate(-65)"><path d="M0 -16 C 7 -7, 7 9, 4.5 15 L -4.5 15 C -7 9, -7 -7, 0 -16 Z" class="fill-card ln" stroke-width="1.3"/><line x1="0" y1="-4" x2="-5.2" y2="9.0" class="ln st-navy" stroke-width="2.4"/></g>
+  <g transform="translate(90.0 190.0) rotate(-90)"><path d="M0 -16 C 7 -7, 7 9, 4.5 15 L -4.5 15 C -7 9, -7 -7, 0 -16 Z" class="fill-card ln" stroke-width="1.3"/><line x1="0" y1="-4" x2="-9.0" y2="6.7" class="ln st-navy" stroke-width="2.4"/></g>
+  <g transform="translate(106.1 250.0) rotate(-120)"><path d="M0 -16 C 7 -7, 7 9, 4.5 15 L -4.5 15 C -7 9, -7 -7, 0 -16 Z" class="fill-card ln" stroke-width="1.3"/><line x1="0" y1="-4" x2="-11.5" y2="4.0" class="ln st-navy" stroke-width="2.4"/></g>
+  <g transform="translate(150.0 293.9) rotate(-150)"><path d="M0 -16 C 7 -7, 7 9, 4.5 15 L -4.5 15 C -7 9, -7 -7, 0 -16 Z" class="fill-card ln" stroke-width="1.3"/><line x1="0" y1="-4" x2="-13.2" y2="0.8" class="ln st-navy" stroke-width="2.4"/></g>
+  </g>
+  <text x="20" y="40" font-size="11" class="mut">tribord amures</text>
+  <text x="330" y="40" font-size="11" class="mut">bâbord amures</text>
+</svg>
+<figcaption>Les allures, à droite bâbord amures (vent reçu par bâbord, bôme à tribord), à gauche tribord amures. Plus on s'éloigne du vent, plus on choque les voiles.</figcaption>
+</figure>
+
+<div class="tbl-wrap"><table>
+<thead><tr><th>Allure</th><th>Angle au vent réel</th><th>Voiles</th><th>À savoir</th></tr></thead>
+<tbody>
+<tr><td>Près</td><td>40–50°</td><td>bordées à fond ou presque</td><td>on barre aux penons du foc ; forte gîte et dérive</td></tr>
+<tr><td>Bon plein</td><td>55–70°</td><td>légèrement choquées</td><td>bon compromis vitesse/cap</td></tr>
+<tr><td>Travers</td><td>90°</td><td>choquées à mi-course</td><td>souvent l'allure la plus rapide</td></tr>
+<tr><td>Largue</td><td>110–130°</td><td>bien choquées</td><td>rapide, confortable</td></tr>
+<tr><td>Grand largue</td><td>140–160°</td><td>choquées presque en grand</td><td>attention au roulis</td></tr>
+<tr><td>Vent arrière</td><td>180°</td><td>GV choquée en grand, foc en ciseaux</td><td>risque d'empannage involontaire</td></tr>
+</tbody></table></div>
+
+<p>Un bateau ne peut pas remonter à moins de 40 à 50° du vent réel (souvent 55 à 60° pour un bateau traditionnel ou un dériveur chargé) : pour aller vers le vent, on <dfn>tire des bords</dfn> au près, en virant de bord d'un côté à l'autre du lit du vent.</p>
+
+<h2 id="base">Le réglage de base</h2>
+
+<div class="box meth"><p class="box-label">Méthode <span class="box-title">(Régler une voile)</span>.</p>
+<p><strong>Une voile est bien réglée quand elle est la plus choquée possible sans faseyer.</strong></p>
+<ol>
+  <li>Choquer l'écoute jusqu'à ce que le guindant commence à faseyer (la voile « bat » près du mât ou de l'étai).</li>
+  <li>Border juste assez pour que le faseyement disparaisse.</li>
+  <li>Recommencer à chaque changement de cap ou de vent.</li>
+</ol>
+<p>Le défaut le plus courant est de trop border : la voile ne faseye pas, tout semble aller, mais elle décroche et le bateau gîte sans avancer.</p>
+</div>
+
+<h3>Lire les penons</h3>
+<p>Les penons sont des brins de laine collés des deux côtés de la voile, à environ 30 cm du guindant. Ils montrent l'écoulement de l'air.</p>
+
+<figure>
+<svg viewBox="0 0 540 200" width="540" role="img" aria-label="Lecture des penons">
+  <g transform="translate(20 0)">
+    <path d="M40 20 C 90 30, 120 70, 125 125" class="ln" stroke-width="2.5" fill="none"/>
+    <path d="M63 42 l30 0" class="ln st-ok" stroke-width="2"/><path d="M75 62 l30 2" class="ln st-ok" stroke-width="2"/>
+    <text x="80" y="160" font-size="11" text-anchor="middle">les deux penons filent :</text>
+    <text x="80" y="175" font-size="11" text-anchor="middle">réglage juste</text>
+  </g>
+  <g transform="translate(200 0)">
+    <path d="M40 20 C 90 30, 120 70, 125 125" class="ln" stroke-width="2.5" fill="none"/>
+    <path d="M63 42 l30 0" class="ln st-ok" stroke-width="2"/><path d="M76 64 q8 10 2 22" class="ln st-signal" stroke-width="2"/>
+    <text x="80" y="160" font-size="11" text-anchor="middle">le penon sous le vent tombe :</text>
+    <text x="80" y="175" font-size="11" text-anchor="middle">trop bordé, choquer (ou lofer)</text>
+  </g>
+  <g transform="translate(380 0)">
+    <path d="M40 20 C 90 30, 120 70, 125 125" class="ln" stroke-width="2.5" fill="none"/>
+    <path d="M60 40 q-4 -14 6 -22" class="ln st-signal" stroke-width="2"/><path d="M75 62 l30 2" class="ln st-ok" stroke-width="2"/>
+    <text x="80" y="160" font-size="11" text-anchor="middle">le penon au vent se lève :</text>
+    <text x="80" y="175" font-size="11" text-anchor="middle">pas assez bordé, border (ou abattre)</text>
+  </g>
+</svg>
+<figcaption>La voile vue de dessus. Le penon du haut est sur la face au vent, celui du bas sur la face sous le vent (on le voit par transparence ou par une fenêtre).</figcaption>
+</figure>
+
+<div class="box prop"><p class="box-label">Règle <span class="box-title">(Au près et aux autres allures)</span>.</p>
+<ul>
+  <li><strong>Au près</strong>, les voiles sont bordées et on ne peut plus les choquer sans perdre le cap : c'est le <em>barreur</em> qui suit les penons du foc. Penon au vent qui se lève : il lofe trop, il abat un peu. Penon sous le vent qui tombe : il abat trop, il lofe.</li>
+  <li><strong>Aux autres allures</strong>, le barreur tient le cap et ce sont les <em>régleurs</em> qui ajustent les écoutes aux penons.</li>
+</ul>
+</div>
+
+<h2 id="forme">La forme des voiles</h2>
+
+<p>Au-delà de l'angle de la voile (l'écoute), on règle sa <strong>forme</strong> : son creux, la position de ce creux, et le <dfn>vrillage</dfn>, c'est-à-dire l'ouverture plus grande du haut de la voile par rapport au bas.</p>
+
+<div class="tbl-wrap"><table>
+<thead><tr><th>Réglage</th><th>Effet</th></tr></thead>
+<tbody>
+<tr><td>Drisse, cunningham</td><td>Étarquer avance le creux et aplatit l'avant de la voile ; mollir donne plus de creux et de puissance. Des petits plis horizontaux le long du guindant : drisse trop molle (sauf par petit temps).</td></tr>
+<tr><td>Bordure (GV)</td><td>Tendue : voile plate dans le bas. Choquée : plus de creux, plus de puissance.</td></tr>
+<tr><td>Écoute de GV</td><td>Au près, elle règle surtout la tension de chute, donc le vrillage : bordée, la chute se ferme.</td></tr>
+<tr><td>Chariot de GV</td><td>Règle l'angle de la bôme sans changer la forme : au près, monter le chariot au vent par petit temps, le descendre sous le vent dans la brise.</td></tr>
+<tr><td>Hale-bas</td><td>Empêche la bôme de monter quand on choque : indispensable au largue et au portant pour garder la chute fermée.</td></tr>
+<tr><td>Pataras</td><td>Tendu, il cintre le mât (la GV s'aplatit et sa chute s'ouvre) et tend l'étai (le foc s'aplatit). Pour la brise.</td></tr>
+<tr><td>Point de tire du foc</td><td>Avancé : la chute du foc se ferme, plus de creux dans le bas, plus de puissance. Reculé : la bordure se tend et le haut du foc s'ouvre, plus de tolérance.</td></tr>
+</tbody></table></div>
+
+<div class="tbl-wrap"><table>
+<thead><tr><th></th><th>Petit temps, mer plate</th><th>Vent moyen</th><th>Brise, mer formée</th></tr></thead>
+<tbody>
+<tr><td>Objectif</td><td>puissance, garder l'écoulement attaché</td><td>vitesse et cap</td><td>limiter la gîte et la traînée</td></tr>
+<tr><td>Creux</td><td>moyen (trop creux, l'air décroche)</td><td>maximal utile</td><td>voiles plates</td></tr>
+<tr><td>Drisses</td><td>mollies</td><td>normales</td><td>étarquées</td></tr>
+<tr><td>Vrillage</td><td>ouvert (le haut de la voile respire)</td><td>modéré</td><td>ouvert (déventer le haut)</td></tr>
+<tr><td>Chariot</td><td>au vent</td><td>au centre</td><td>sous le vent</td></tr>
+<tr><td>Pataras</td><td>mou</td><td>un peu tendu</td><td>tendu</td></tr>
+<tr><td>Équipage</td><td>sous le vent ou au centre, mouvements doux</td><td>au vent</td><td>au rappel, au vent</td></tr>
+</tbody></table></div>
+
+<h2 id="equilibre">Équilibre et gîte</h2>
+<ul>
+  <li>Le bateau est trop ardent (barre dure, il part au lof) : choquer un peu la GV ou descendre le chariot, aplatir la GV, réduire la gîte, prendre un ris.</li>
+  <li>Le bateau est mou (il abat, la barre est sans force) : border la GV, réduire le foc.</li>
+  <li>Dans une risée au près, sur un petit bateau : on choque l'écoute de GV pour garder le bateau à plat, et on reborde dès qu'elle passe. Le barreur peut aussi lofer légèrement.</li>
+  <li>Trop de gîte n'est jamais rapide. Un petit quillard qui navigue durablement au-delà de 20 à 25° de gîte a trop de toile.</li>
+</ul>
+
+<h2 id="reduire">Réduire la toile</h2>
+<div class="box prop"><p class="box-label">Règle <span class="box-title">(Quand prendre un ris)</span>.</p>
+<p>Le premier ris se prend <strong>quand on y pense</strong>. Il est toujours plus facile de prendre un ris trop tôt, au calme, que trop tard, dans la brise, avec un équipage fatigué. On réduit aussi par anticipation : avant de passer une pointe connue pour ses accélérations, avant un grain, avant la nuit, avant de remonter au près après un long bord de portant.</p>
+</div>
+<p>L'ordre habituel : un ris dans la grand-voile, puis on réduit le foc (enrouleur ou changement pour un foc plus petit), puis un deuxième ris. Il faut garder un équilibre : réduire seulement le foc rend le bateau ardent, réduire seulement la GV peut le rendre mou. La manœuvre de prise de ris est décrite dans la page Manœuvres sous voiles.</p>
+
+<h2 id="portant">Au portant</h2>
+<ul>
+  <li>La grand-voile se choque jusqu'à toucher presque les haubans ; le hale-bas l'empêche de vriller et de monter.</li>
+  <li>Au vent arrière, le foc est déventé par la GV : on le passe de l'autre bord, « en ciseaux », tenu si possible par un tangon ou un bout-dehors.</li>
+  <li>Le risque principal est l'<dfn>empannage involontaire</dfn> : une vague ou une erreur de barre fait passer le vent de l'autre côté, la bôme traverse le cockpit à toute vitesse. Sur un bateau qui le permet, on frappe une <dfn>retenue de bôme</dfn> (un bout tendu de l'extrémité de la bôme vers l'avant). On préfère souvent le grand largue au vent arrière strict, quitte à empanner volontairement.</li>
+  <li>Le roulis augmente au vent arrière : barrer en anticipant les vagues, sans grands coups de barre.</li>
+</ul>
+
+<div class="box retenir"><p class="box-label">À retenir.</p>
+<ul>
+  <li>Allures : près, bon plein, travers, largue, grand largue, vent arrière. Pas de route à moins de 40-50° du vent.</li>
+  <li>Une voile bien réglée est la plus choquée possible sans faseyer.</li>
+  <li>Au près, le barreur suit les penons ; ailleurs, les régleurs règlent.</li>
+  <li>Petit temps : creux modéré, drisses mollies. Brise : voiles plates, chute ouverte, ris pris tôt.</li>
+</ul>
+</div>
+
+    <nav class="pager"><a class="prev" href="../pratique/physique.html"><span>Précédent</span>Comment avance un voilier</a><a class="next" href="../pratique/manoeuvres.html"><span>Suivant</span>Manœuvres sous voiles</a></nav>
+  </article>
+</div>
+</main>
+<footer class="foot">
+  <div class="foot-in">
+    <p>Préparation au brevet de patron d'embarcation et à la navigation à voile. Rédigé à partir des cours de navigation des scouts marins de Brest, mis à jour et complétés.</p>
+    <p>Ce site ne remplace ni la réglementation (Division 240, RIPAM), ni les documents officiels du SHOM, ni le règlement de votre association. En cas de doute, ce sont eux qui font foi.</p>
+  </div>
+</footer>
+<script src="../js/site.js"></script>
+
+
+</body>
+</html>

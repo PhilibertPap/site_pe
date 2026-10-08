@@ -1,0 +1,105 @@
+<!--meta {"title": "Comment avance un voilier", "part": "pratique", "order": 2, "desc": "Vent réel et vent apparent, force aérodynamique d'une voile, équilibre de route, stabilité. Ce qu'il faut comprendre pour bien régler.", "scripts": ["outils.js"]} -->
+
+<p>On peut apprendre à régler une voile par recettes. Mais les recettes ne couvrent pas tous les cas, et celui qui comprend ce qui se passe trouve seul le bon réglage. Cette page donne le minimum de mécanique des fluides nécessaire, sans les approximations fausses qu'on trouve souvent.</p>
+
+<h2 id="vent-apparent">Vent réel, vent apparent</h2>
+
+<p>Le vent qui agit sur les voiles n'est pas le vent qu'on mesure à terre. Un bateau qui avance à 5 nd dans un air immobile reçoit un vent de 5 nd venant de l'avant, comme un cycliste par temps calme. Ce <dfn>vent vitesse</dfn> s'ajoute vectoriellement au <dfn>vent réel</dfn> pour donner le <dfn>vent apparent</dfn>, celui que ressent l'équipage, qu'indique la girouette en tête de mât, et dans lequel travaillent les voiles.</p>
+<p class="formula"><span style="text-decoration:overline">V</span><sub>apparent</sub> = <span style="text-decoration:overline">V</span><sub>réel</sub> + <span style="text-decoration:overline">V</span><sub>vitesse</sub>, &emsp; avec <span style="text-decoration:overline">V</span><sub>vitesse</sub> = −<span style="text-decoration:overline">V</span><sub>bateau</sub>.</p>
+
+<div class="tool" id="outil-vent-apparent"><noscript>L'outil interactif nécessite JavaScript.</noscript></div>
+
+<div class="box prop" data-title="Conséquences">
+<ul>
+  <li>Le vent apparent vient toujours <strong>plus de l'avant</strong> que le vent réel : au près, on navigue en réalité à 25-30° du vent apparent pour 45° du vent réel.</li>
+  <li>Au près, il est <strong>plus fort</strong> que le vent réel ; au portant, plus faible. Un bateau qui a l'air tranquille au vent arrière peut se retrouver dans un vent apparent bien plus fort en remontant au près : on réduit la toile avant de lofer.</li>
+  <li>Quand le bateau accélère, le vent apparent refuse (il vient plus de l'avant) : il faut border un peu ou abattre. Dans une rafale, au contraire, le vent réel augmente et le vent apparent adonne (il recule) : on peut lofer un peu.</li>
+</ul>
+</div>
+
+<h2 id="force">La force aérodynamique</h2>
+
+<p>Une voile bien réglée est une aile souple placée en incidence dans le vent apparent. Elle <strong>dévie</strong> l'écoulement de l'air : l'air qui arrive dans une direction repart dans une autre. Pour dévier une masse d'air, il faut exercer une force sur elle ; par réaction, l'air exerce sur la voile une force égale et opposée. Cette déviation s'accompagne d'une surpression du côté au vent (l'intrados) et d'une dépression, plus importante, du côté sous le vent (l'extrados).</p>
+
+<p>La force totale <var>F</var> se décompose en deux parties : la <dfn>portance</dfn>, perpendiculaire au vent apparent, et la <dfn>traînée</dfn>, parallèle au vent apparent. Son intensité suit la loi générale des forces aérodynamiques :</p>
+<p class="formula"><var>F</var> = ½ ρ <var>S</var> <var>V</var><sub>a</sub>² <var>C</var>,</p>
+<p>avec ρ ≈ 1,2 kg/m³ la masse volumique de l'air, <var>S</var> la surface de voile, <var>V</var><sub>a</sub> la vitesse du vent apparent et <var>C</var> un coefficient (de l'ordre de 1 à 1,5) qui dépend de la forme de la voile et de son incidence.</p>
+
+<div class="box ex">
+<p>20 m² de voile dans 15 nd de vent apparent (7,7 m/s) : ½ × 1,2 × 20 × 7,7² × 1,2 ≈ 850 N, le poids d'une masse de 85 kg. Le même bateau dans 30 nd subit quatre fois plus : la force varie comme le <strong>carré</strong> du vent. C'est pourquoi il faut réduire la voilure bien avant de doubler la force du vent.</p>
+</div>
+
+<figure>
+<svg viewBox="0 0 360 260" width="360" role="img" aria-label="Décomposition de la force vélique">
+  <path d="M150 40 C 200 70, 215 140, 190 210" class="ln" stroke-width="3" fill="none"/>
+  <line x1="40" y1="20" x2="120" y2="90" class="ln2" stroke-width="1.5"/><path d="M124 94 l-11 -2 l5 -7 z" class="fill-muted"/>
+  <text x="20" y="16" font-size="11" class="mut">vent apparent</text>
+  <g stroke-width="2.2">
+    <line x1="200" y1="125" x2="300" y2="60" class="ln st-signal"/>
+    <line x1="200" y1="125" x2="270" y2="185" class="ln st-ok"/>
+    <line x1="200" y1="125" x2="200" y2="40" class="ln st-navy"/>
+    <line x1="200" y1="125" x2="300" y2="125" class="ln2"/>
+  </g>
+  <path d="M300 60 l-11 2 l4 7 z" class="fill-signal"/><path d="M270 185 l-4 -10 l-6 5 z" class="fill-ok"/><path d="M200 40 l-4 9 h8 z" class="fill-navy"/>
+  <g font-size="11">
+    <text x="304" y="58">force totale</text>
+    <text x="246" y="200">traînée</text>
+    <text x="206" y="48">propulsion</text>
+    <text x="304" y="129">force latérale</text>
+  </g>
+  <line x1="200" y1="125" x2="200" y2="250" class="ln2" stroke-dasharray="3 3"/>
+  <text x="206" y="246" font-size="10" class="mut">axe du bateau</text>
+</svg>
+<figcaption>Au près, la force totale de la voile (rouge) se projette sur l'axe du bateau (propulsion) et perpendiculairement (force latérale, qui fait gîter et dériver). Une forte traînée (vert) diminue la propulsion.</figcaption>
+</figure>
+
+<p>Projetée sur l'axe du bateau, la force donne la <strong>propulsion</strong> ; perpendiculairement, elle donne une <strong>force latérale</strong> qui fait gîter le bateau et le fait dériver. Au près, la force latérale est plusieurs fois plus grande que la propulsion : tout l'art est de garder assez de portance tout en limitant la traînée. Au vent arrière, la voile n'est plus une aile : elle fait obstacle, et c'est la traînée qui pousse.</p>
+
+<div class="box maj">
+<p>Deux explications fausses circulent dans les supports de cours. La première attribue la portance au fait que l'air « fait plus de chemin » sur l'extrados et doit aller plus vite pour arriver en même temps : rien n'oblige les deux filets à se rejoindre. La seconde parle d'un effet Venturi entre le foc et la grand-voile, qui accélérerait l'air dans la fente. Les mesures montrent l'inverse : le foc <em>ralentit</em> l'air près du bord d'attaque de la grand-voile, ce qui retarde son décrochage, tandis que la grand-voile place le foc dans un écoulement plus favorable. Les deux voiles forment une seule aile à fente, plus efficace que chacune séparément.</p>
+</div>
+
+<h3>Incidence et décrochage</h3>
+<p>La portance augmente avec l'angle d'incidence de la voile, jusqu'à un angle au-delà duquel l'écoulement ne suit plus la courbure de l'extrados : il se décolle et devient tourbillonnaire. C'est le <dfn>décrochage</dfn> : la portance s'effondre, la traînée augmente, le bateau ralentit et gîte sans avancer. Une voile trop bordée (ou un bateau trop abattu pour son réglage) décroche. Une voile pas assez bordée faseye : l'incidence est trop faible, elle ne porte plus.</p>
+
+<p>Les <dfn>penons</dfn>, brins de laine collés de part et d'autre de la voile près du guindant, montrent l'écoulement. Quand il est attaché, ils filent à l'horizontale des deux côtés. La partie Allures et réglages détaille comment les lire.</p>
+
+<h2 id="equilibre">L'équilibre de route</h2>
+
+<p>La force des voiles s'applique en un point appelé <dfn>centre vélique</dfn> (CV). La résistance de l'eau à la dérive, due surtout à la quille et au safran, s'applique au <dfn>centre de résistance latérale</dfn> (CRL, ou centre anti-dérive). Si les deux ne sont pas sur la même verticale, ils forment un couple qui fait tourner le bateau.</p>
+
+<div class="box def" data-title="Ardent, mou">
+<p>Un bateau est <dfn>ardent</dfn> quand il tend à lofer (remonter dans le vent) si l'on lâche la barre : le CV est en arrière du CRL. Il est <dfn>mou</dfn> quand il tend à abattre : le CV est en avant du CRL.</p>
+</div>
+
+<p>Un bateau légèrement ardent est souhaitable : il revient de lui-même face au vent si le barreur lâche la barre (sécurité), et le safran, braqué de quelques degrés, porte lui aussi et aide à remonter au vent. Un bateau trop ardent se barre « dur », le safran freine, et il part au lof dans les rafales.</p>
+
+<div class="box prop" data-title="Agir sur l'équilibre">
+<ul>
+  <li><strong>Plus ardent</strong> : plus de grand-voile ou moins de foc (le CV recule), plus de gîte (la force des voiles, déportée sous le vent, crée un couple lofeur), poids sur l'avant.</li>
+  <li><strong>Moins ardent</strong> : choquer la grand-voile ou descendre le chariot, prendre un ris dans la GV, redresser le bateau, réduire la gîte.</li>
+  <li><strong>Plus mou</strong> : plus de foc, moins de GV, poids sur l'arrière.</li>
+</ul>
+</div>
+
+<div class="box maj">
+<p>Les anciens supports parlent du « centre de carène » pour l'équilibre de route. Le centre de carène est le point d'application de la poussée d'Archimède : il joue pour la <em>stabilité</em> (gîte), pas pour l'équilibre de route, qui fait intervenir le centre de résistance latérale.</p>
+</div>
+
+<h2 id="stabilite">La stabilité</h2>
+
+<p>La force latérale des voiles, appliquée haut dans le mât, tend à coucher le bateau : c'est le <dfn>couple de chavirement</dfn>. Il est équilibré par le <dfn>couple de redressement</dfn>, formé par le poids du bateau (appliqué au centre de gravité) et la poussée d'Archimède (appliquée au centre de carène). Quand le bateau gîte, la carène immergée change de forme et le centre de carène se déplace sous le vent : poids et poussée ne sont plus alignés et forment un couple qui redresse.</p>
+<ul>
+  <li>Sur un <strong>quillard</strong>, le lest de la quille abaisse le centre de gravité : le couple de redressement augmente avec la gîte jusqu'à de grands angles.</li>
+  <li>Sur un <strong>dériveur</strong>, pas de lest : c'est l'équipage qui fait contrepoids en se mettant au rappel, et le bateau peut chavirer.</li>
+  <li>Dans les deux cas, trop de gîte fait perdre de la vitesse (la carène se déforme, la voile s'incline et perd de la surface utile, le bateau devient ardent). Au-delà de 20 à 25° de gîte sur un petit quillard, on réduit.</li>
+</ul>
+
+<div class="box retenir">
+<ul>
+  <li>Les voiles travaillent dans le vent apparent, qui vient plus de l'avant que le vent réel.</li>
+  <li>La force d'une voile varie comme le carré de la vitesse du vent : doubler le vent, c'est quadrupler l'effort.</li>
+  <li>Une voile porte en déviant l'air ; trop bordée, elle décroche ; pas assez, elle faseye.</li>
+  <li>CV en arrière du CRL : bateau ardent. Un peu d'ardeur est bon, trop est dangereux.</li>
+</ul>
+</div>

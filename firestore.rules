@@ -1,0 +1,80 @@
+rules_version = '2';
+
+// Règles de sécurité de la base Firestore du site.
+// À copier dans la console Firebase : Firestore Database > Règles > Publier.
+//
+// - Un compte créé est « en attente » (approved = false) tant qu'un chef ne l'a pas validé.
+// - Seuls les comptes validés lisent et écrivent les questions-réponses.
+// - Les chefs (role = 'chef') valident les comptes, modèrent, et leurs réponses sont mises en avant.
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    function signedIn() { return request.auth != null; }
+    function profile() { return get(/databases/$(database)/documents/users/$(request.auth.uid)).data; }
+    function approved() {
+      return signedIn()
+        && exists(/databases/$(database)/documents/users/$(request.auth.uid))
+        && profile().approved == true;
+    }
+    function chef() { return approved() && profile().role == 'chef'; }
+    function str(v, max) { return v is string && v.size() > 0 && v.size() <= max; }
+
+    match /users/{uid} {
+      allow read: if signedIn() && (request.auth.uid == uid || chef());
+      // inscription : uniquement son propre profil, en attente, rôle élève
+      allow create: if signedIn() && request.auth.uid == uid
+        && request.resource.data.keys().hasOnly(['name', 'unite', 'email', 'role', 'approved', 'createdAt'])
+        && str(request.resource.data.name, 80)
+        && request.resource.data.unite is string && request.resource.data.unite.size() <= 80
+        && request.resource.data.role == 'eleve'
+        && request.resource.data.approved == false;
+      // un chef modifie tout (validation, rôle) ; chacun peut corriger son nom et son unité
+      allow update: if chef()
+        || (signedIn() && request.auth.uid == uid
+            && request.resource.data.diff(resource.data).affectedKeys().hasOnly(['name', 'unite'])
+            && str(request.resource.data.name, 80));
+      allow delete: if chef();
+    }
+
+    match /questions/{qid} {
+      allow read: if approved();
+
+      allow create: if approved()
+        && request.resource.data.keys().hasOnly(['title', 'body', 'theme', 'authorId', 'authorName',
+             'createdAt', 'lastAt', 'answers', 'chefAnswered', 'resolved'])
+        && request.resource.data.authorId == request.auth.uid
+        && request.resource.data.authorName == profile().name
+        && str(request.resource.data.title, 200)
+        && str(request.resource.data.body, 5000)
+        && str(request.resource.data.theme, 40)
+        && request.resource.data.answers == 0
+        && request.resource.data.chefAnswered == false
+        && request.resource.data.resolved == false;
+
+      allow update: if chef()
+        // l'auteur peut marquer sa question comme résolue
+        || (approved() && resource.data.authorId == request.auth.uid
+            && request.resource.data.diff(resource.data).affectedKeys().hasOnly(['resolved']))
+        // toute réponse incrémente le compteur et la date d'activité
+        || (approved()
+            && request.resource.data.diff(resource.data).affectedKeys().hasOnly(['answers', 'lastAt', 'chefAnswered'])
+            && request.resource.data.answers == resource.data.answers + 1
+            && request.resource.data.chefAnswered == (resource.data.chefAnswered || profile().role == 'chef'));
+
+      allow delete: if chef()
+        || (approved() && resource.data.authorId == request.auth.uid && resource.data.answers == 0);
+
+      match /answers/{aid} {
+        allow read: if approved();
+        allow create: if approved()
+          && request.resource.data.keys().hasOnly(['body', 'authorId', 'authorName', 'byChef', 'createdAt'])
+          && request.resource.data.authorId == request.auth.uid
+          && request.resource.data.authorName == profile().name
+          && request.resource.data.byChef == (profile().role == 'chef')
+          && str(request.resource.data.body, 5000);
+        allow update, delete: if chef();
+      }
+    }
+  }
+}

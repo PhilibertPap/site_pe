@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Météo marine · Patron d'embarcation</title>
+<meta name="description" content="Pression et vent, dépressions et fronts, nuages, brises thermiques, échelle de Beaufort et état de la mer, baromètre, bulletins et prise de décision.">
+<link rel="icon" href="../img/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/style.css">
+<script>
+  try {
+    var t = localStorage.getItem('pe-theme');
+    if (t) document.documentElement.setAttribute('data-theme', t);
+  } catch (e) {}
+</script>
+</head>
+<body data-root="../">
+<a class="skip" href="#contenu">Aller au contenu</a>
+<header class="top">
+  <div class="top-in">
+    <a class="brand" href="../index.html">Patron d'embarcation</a>
+    <nav class="mainnav" aria-label="Parties du site"><a href="../cours/index.html" aria-current="page">Cours</a><a href="../qcm/index.html">QCM</a><a href="../exercices/index.html">Exercices</a><a href="../pratique/index.html">Pratique</a><a href="../annales/index.html">Annales</a></nav>
+    <div class="acct" id="acct"></div>
+    <button class="theme" type="button" aria-label="Changer de thème" title="Clair / sombre"><svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true"><circle cx="8" cy="8" r="6.5" fill="none" stroke="currentColor" stroke-width="1.3"/><path d="M8 1.5 A6.5 6.5 0 0 1 8 14.5 Z" fill="currentColor"/></svg></button>
+  </div>
+</header>
+<main id="contenu">
+
+<div class="doc">
+  <aside class="side">
+    <p class="side-h">Cours</p>
+    <ol class="chapters"><li><a href="../cours/01-carte.html"><span class="tocnum">1</span>La carte marine</a></li><li><a href="../cours/02-compas.html"><span class="tocnum">2</span>Compas et caps</a></li><li><a href="../cours/03-estime.html"><span class="tocnum">3</span>Estime, dérive, courant</a></li><li><a href="../cours/04-maree.html"><span class="tocnum">4</span>La marée</a></li><li><a href="../cours/05-balisage.html"><span class="tocnum">5</span>Le balisage</a></li><li><a href="../cours/06-ripam.html"><span class="tocnum">6</span>Règles de barre (RIPAM)</a></li><li><a href="../cours/07-signaux.html"><span class="tocnum">7</span>Feux, marques, signaux</a></li><li><a href="../cours/08-meteo.html" aria-current="page"><span class="tocnum">8</span>Météo marine</a></li><li><a href="../cours/09-securite.html"><span class="tocnum">9</span>Sécurité, réglementation</a></li><li><a href="../cours/10-vhf.html"><span class="tocnum">10</span>VHF</a></li></ol>
+  </aside>
+  <article class="chapter">
+    <header class="chap-head">
+      <p class="kicker">Chapitre 8</p>
+      <h1>Météo marine</h1>
+      <p class="chap-desc">Pression et vent, dépressions et fronts, nuages, brises thermiques, échelle de Beaufort et état de la mer, baromètre, bulletins et prise de décision.</p>
+    </header>
+    <details class="toc-box" open><summary>Sommaire du chapitre</summary><ol class="toc"><li><a href="#pression"><span class="tocnum">8.1</span>Pression et vent</a></li><li><a href="#perturbations"><span class="tocnum">8.2</span>Les perturbations</a><ol><li><a href="#le-passage-d-une-perturbation"><span class="tocnum">8.2.1</span>Le passage d'une perturbation</a></li></ol></li><li><a href="#nuages"><span class="tocnum">8.3</span>Les nuages</a></li><li><a href="#brises"><span class="tocnum">8.4</span>Les brises thermiques</a></li><li><a href="#beaufort"><span class="tocnum">8.5</span>Force du vent et état de la mer</a></li><li><a href="#barometre"><span class="tocnum">8.6</span>Le baromètre</a></li><li><a href="#bulletins"><span class="tocnum">8.7</span>S'informer</a><ol><li><a href="#les-sources"><span class="tocnum">8.7.1</span>Les sources</a></li><li><a href="#lire-un-bulletin-cotier"><span class="tocnum">8.7.2</span>Lire un bulletin côtier</a></li><li><a href="#les-signaux-des-semaphores"><span class="tocnum">8.7.3</span>Les signaux des sémaphores</a></li></ol></li></ol></details>
+    <h2 id="pression"><span class="secnum">8.1</span>Pression et vent</h2>
+
+<p>L'atmosphère pèse sur la surface de la Terre : la <dfn>pression atmosphérique</dfn> moyenne au niveau de la mer vaut 1 013 hPa (hectopascals, égaux aux anciens millibars). Elle varie d'un endroit à l'autre de quelques dizaines d'hectopascals. Sur une carte météo, les <dfn>isobares</dfn> relient les points de même pression, en général tous les 4 ou 5 hPa.</p>
+
+<div class="box def"><p class="box-label">Définition 8.1 <span class="box-title">(Anticyclone, dépression)</span>.</p>
+<p>Un <dfn>anticyclone</dfn> (A ou H) est une zone de hautes pressions, souvent supérieure à 1 020 hPa : temps généralement stable, vent faible au centre. Une <dfn>dépression</dfn> (D ou L) est une zone de basses pressions, souvent inférieure à 1 005 hPa : temps perturbé, vent souvent fort. Une pression de 993 hPa est clairement dépressionnaire.</p>
+</div>
+
+<p>L'air est poussé des hautes vers les basses pressions, d'autant plus fort que les isobares sont serrées. Mais la Terre tourne : vu depuis le sol, tout mouvement est dévié vers la droite dans l'hémisphère Nord (et vers la gauche dans l'hémisphère Sud). C'est l'effet de la <dfn>force de Coriolis</dfn>, une force d'inertie qui n'apparaît que parce que l'on observe le mouvement depuis un référentiel en rotation. À l'équilibre, le vent finit par souffler presque <strong>le long</strong> des isobares.</p>
+
+<div class="box prop"><p class="box-label">Règle 8.2 <span class="box-title">(Circulation du vent, hémisphère Nord)</span>.</p>
+<ul>
+  <li>Le vent tourne autour d'une dépression dans le <strong>sens inverse des aiguilles d'une montre</strong>, et autour d'un anticyclone dans le sens des aiguilles d'une montre. C'est l'inverse dans l'hémisphère Sud.</li>
+  <li>Près de la surface, le frottement freine le vent, qui coupe les isobares en direction des basses pressions, d'environ 15 à 20° en mer et davantage sur terre.</li>
+  <li>Plus les isobares sont serrées, plus le vent est fort.</li>
+  <li><dfn>Loi de Buys-Ballot</dfn> : dos au vent, on a la dépression sur sa gauche (et un peu devant).</li>
+</ul>
+</div>
+
+<figure>
+<svg viewBox="0 0 360 220" width="360" role="img" aria-label="Vent autour d'une dépression dans l'hémisphère Nord">
+  <g class="ln2" stroke-width="1.2">
+    <ellipse cx="180" cy="110" rx="40" ry="30"/><ellipse cx="180" cy="110" rx="80" ry="58"/><ellipse cx="180" cy="110" rx="125" ry="88"/>
+  </g>
+  <text x="180" y="116" text-anchor="middle" font-size="18" font-weight="600">D</text>
+  <g class="st-navy" stroke-width="1.8" fill="none">
+    <path d="M276 60 L 252 40"/><path d="M84 160 L108 180"/><path d="M110 46 L80 70"/><path d="M250 176 L282 152"/>
+  </g>
+  <g class="fill-navy">
+    <path d="M250 38 l9 3 l-5 6 z"/><path d="M110 182 l-9 -3 l5 -6 z"/><path d="M78 72 l2 -9 l6 5 z"/><path d="M284 150 l-2 9 l-6 -5 z"/>
+  </g>
+</svg>
+<figcaption><span class="fignum">Figure 8.1.</span> Autour d'une dépression de l'hémisphère Nord, le vent tourne dans le sens trigonométrique en convergeant légèrement vers le centre.</figcaption>
+</figure>
+
+<h2 id="perturbations"><span class="secnum">8.2</span>Les perturbations</h2>
+
+<p>Aux latitudes de la France, l'air froid d'origine polaire et l'air chaud d'origine tropicale se rencontrent le long du <dfn>front polaire</dfn>. Ce front ondule, et chaque ondulation donne naissance à une dépression qui se creuse en se déplaçant d'Ouest en Est, entraînant avec elle un <dfn>front chaud</dfn> à l'avant et un <dfn>front froid</dfn> à l'arrière. Ces systèmes arrivent souvent par familles de trois ou quatre, à un ou deux jours d'intervalle.</p>
+
+<div class="box def"><p class="box-label">Définition 8.3 <span class="box-title">(Fronts)</span>.</p>
+<ul>
+  <li><dfn>Front chaud</dfn> : l'air chaud, plus léger, glisse lentement au-dessus de l'air froid. Sur les cartes : demi-cercles rouges. Transition lente.</li>
+  <li><dfn>Front froid</dfn> : l'air froid, plus dense, s'enfonce comme un coin sous l'air chaud et le soulève brutalement. Sur les cartes : triangles bleus. Transition rapide et violente.</li>
+  <li><dfn>Front occlus</dfn> : le front froid, plus rapide, a rattrapé le front chaud. Sur les cartes : triangles et demi-cercles violets alternés.</li>
+</ul>
+</div>
+
+<h3 id="le-passage-d-une-perturbation"><span class="secnum">8.2.1</span>Le passage d'une perturbation</h3>
+<p>Pour un observateur en Bretagne, au Sud du centre de la dépression qui passe sur les îles Britanniques, la séquence typique est :</p>
+<div class="tbl-wrap"><table>
+<thead><tr><th></th><th>Ciel</th><th>Vent</th><th>Baromètre</th><th>Visibilité</th></tr></thead>
+<tbody>
+<tr><td><strong>Avant</strong> (12 à 24 h)</td><td>cirrus en filaments, puis voile de cirrostratus (halo autour du soleil), puis altostratus</td><td>de Sud, fraîchit</td><td>baisse</td><td>bonne puis moyenne</td></tr>
+<tr><td><strong>Front chaud</strong></td><td>nimbostratus, pluie continue</td><td>SW, fort</td><td>baisse, puis se stabilise</td><td>médiocre</td></tr>
+<tr><td><strong>Secteur chaud</strong></td><td>stratus bas, bruine, ciel couvert</td><td>SW à W, assez régulier</td><td>stable</td><td>médiocre, brumes</td></tr>
+<tr><td><strong>Front froid</strong></td><td>cumulonimbus, grains, averses violentes</td><td>saute brusquement au W ou NW, rafales</td><td>remonte d'un coup</td><td>mauvaise dans les grains</td></tr>
+<tr><td><strong>Traîne</strong></td><td>cumulus et averses, belles éclaircies</td><td>NW, irrégulier, avec grains</td><td>monte</td><td>excellente hors averses</td></tr>
+</tbody></table></div>
+
+<p>Au fil du passage, le vent tourne donc dans le sens des aiguilles d'une montre, du Sud vers le Nord-Ouest : dans le vocabulaire des bulletins, il <dfn>vire</dfn>. Pour choisir un mouillage de nuit, c'est la direction du vent <em>à venir</em> qui compte : un abri parfait par vent de Sud-Ouest devient un piège quand le vent passe au Nord-Ouest.</p>
+
+<h2 id="nuages"><span class="secnum">8.3</span>Les nuages</h2>
+
+<p>Les nuages se classent par l'altitude de leur base et leur aspect (en couche, <i>stratus</i> ; en tas, <i>cumulus</i> ; en filaments, <i>cirrus</i> ; porteur de pluie, <i>nimbus</i>).</p>
+
+<div class="tbl-wrap"><table>
+<thead><tr><th>Étage</th><th>Nuages</th><th>Ce qu'ils annoncent</th></tr></thead>
+<tbody>
+<tr><td>Supérieur (au-dessus de 6 km)</td><td>cirrus, cirrostratus, cirrocumulus</td><td>des cirrus qui envahissent le ciel, puis un voile avec halo : arrivée d'un front chaud dans les 12 à 24 h</td></tr>
+<tr><td>Moyen (2 à 6 km)</td><td>altostratus, altocumulus</td><td>altostratus qui s'épaissit : pluie dans les heures qui viennent</td></tr>
+<tr><td>Inférieur (sous 2 km)</td><td>stratus, stratocumulus, nimbostratus</td><td>stratus : grisaille, bruine ; nimbostratus : pluie continue</td></tr>
+<tr><td>À développement vertical</td><td>cumulus, cumulonimbus</td><td>petits cumulus : beau temps ; cumulonimbus en enclume : orage, grains, rafales violentes, saute de vent</td></tr>
+</tbody></table></div>
+
+<div class="box warn"><p class="box-label">Attention.</p>
+<p>Un cumulonimbus (énorme nuage en tour, sommet étalé en enclume) peut produire en quelques minutes des rafales de 50 nd, une saute de vent et une averse qui bouche la visibilité. Si on en voit un se développer au vent, on réduit la toilure <strong>avant</strong> qu'il arrive.</p>
+</div>
+
+<h2 id="brises"><span class="secnum">8.4</span>Les brises thermiques</h2>
+
+<p>Par beau temps, surtout au printemps et en été, la terre s'échauffe dans la journée beaucoup plus vite que la mer. L'air chaud monte au-dessus de la terre et est remplacé par l'air plus frais venu de la mer : c'est la <dfn>brise de mer</dfn>, qui souffle de la mer vers la terre.</p>
+<ul>
+  <li>Elle s'établit en fin de matinée, atteint son maximum vers 15 à 17 h (parfois force 4 à 5), et tombe vers le coucher du soleil.</li>
+  <li>Elle est signalée par une ligne de cumulus au-dessus de la côte, là où l'air chaud s'élève.</li>
+  <li>Dans l'hémisphère Nord, elle tourne progressivement vers la droite au cours de l'après-midi.</li>
+  <li>Elle se superpose au vent général : un vent de terre faible peut être annulé, un vent de mer renforcé.</li>
+</ul>
+<p>La nuit, la terre se refroidit plus vite que la mer et le phénomène s'inverse : la <dfn>brise de terre</dfn>, plus faible, souffle de la terre vers la mer jusqu'au matin.</p>
+
+<h2 id="beaufort"><span class="secnum">8.5</span>Force du vent et état de la mer</h2>
+
+<p>La force du vent s'exprime sur l'<dfn>échelle de Beaufort</dfn>, de 0 à 12. Elle correspond au vent moyen ; les rafales peuvent dépasser le vent moyen de 40 % ou plus.</p>
+
+<div class="tbl-wrap"><table>
+<thead><tr><th class="num">Force</th><th>Terme</th><th class="num">Vent (nd)</th><th>Aspect de la mer</th></tr></thead>
+<tbody>
+<tr><td class="num">0</td><td>calme</td><td class="num">&lt; 1</td><td>mer d'huile, comme un miroir</td></tr>
+<tr><td class="num">1</td><td>très légère brise</td><td class="num">1–3</td><td>quelques rides</td></tr>
+<tr><td class="num">2</td><td>légère brise</td><td class="num">4–6</td><td>vaguelettes qui ne déferlent pas</td></tr>
+<tr><td class="num">3</td><td>petite brise</td><td class="num">7–10</td><td>très petites vagues, premiers moutons épars</td></tr>
+<tr><td class="num">4</td><td>jolie brise</td><td class="num">11–16</td><td>petites vagues, moutons nombreux</td></tr>
+<tr><td class="num">5</td><td>bonne brise</td><td class="num">17–21</td><td>vagues modérées et allongées, moutons partout, embruns</td></tr>
+<tr><td class="num">6</td><td>vent frais</td><td class="num">22–27</td><td>lames, crêtes d'écume blanche, embruns ; le vent siffle dans le gréement</td></tr>
+<tr><td class="num">7</td><td>grand frais</td><td class="num">28–33</td><td>la mer grossit, l'écume est soufflée en traînées</td></tr>
+<tr><td class="num">8</td><td>coup de vent</td><td class="num">34–40</td><td>lames hautes, tourbillons d'écume arrachés aux crêtes</td></tr>
+<tr><td class="num">9</td><td>fort coup de vent</td><td class="num">41–47</td><td>grosses lames déferlantes, embruns qui réduisent la visibilité</td></tr>
+<tr><td class="num">10–12</td><td>tempête, violente tempête, ouragan</td><td class="num">48 et plus</td><td>conditions exceptionnelles</td></tr>
+</tbody></table></div>
+
+<p>L'état de la mer se décrit sur l'échelle de Douglas, par la hauteur des vagues : 0 calme, 1 ridée (moins de 0,1 m), 2 belle (jusqu'à 0,5 m), 3 peu agitée (jusqu'à 1,25 m), 4 agitée (jusqu'à 2,5 m), 5 forte (jusqu'à 4 m), 6 très forte (jusqu'à 6 m), puis grosse, très grosse, énorme. On distingue la <dfn>mer du vent</dfn>, levée par le vent local, et la <dfn>houle</dfn>, venue d'ailleurs, plus longue et plus régulière.</p>
+
+<div class="box warn"><p class="box-label">Attention.</p>
+<p>Depuis un port abrité ou une plage sous le vent, on sous-estime toujours la mer : les vagues sont écrasées et les moutons cachés. On évalue l'état de la mer en regardant face au vent, depuis un point dégagé. Un courant contraire au vent lève une mer courte et cassante, bien plus dure que ne le laisse penser la force du vent.</p>
+</div>
+
+<h2 id="barometre"><span class="secnum">8.6</span>Le baromètre</h2>
+
+<p>La valeur absolue de la pression renseigne peu ; c'est sa <strong>tendance</strong> qui compte. On note la pression dans le journal de bord toutes les heures ou toutes les trois heures.</p>
+<ul>
+  <li>Une baisse lente et régulière annonce l'approche d'une perturbation.</li>
+  <li>Une baisse rapide (de l'ordre de 1 hPa par heure ou plus, pendant plusieurs heures) annonce du vent fort ; plus elle est rapide, plus le vent sera fort.</li>
+  <li>Une remontée brutale accompagne le passage d'un front froid, souvent avec des rafales.</li>
+  <li>Une pression haute et stable accompagne en général le beau temps, mais pas forcément l'absence de vent : un anticyclone voisin d'une dépression donne des isobares serrées.</li>
+</ul>
+
+<h2 id="bulletins"><span class="secnum">8.7</span>S'informer</h2>
+
+<h3 id="les-sources"><span class="secnum">8.7.1</span>Les sources</h3>
+<ul>
+  <li><strong>Météo-France</strong> publie les bulletins côtiers (bande des 20 milles), les bulletins large et les <dfn>bulletins météorologiques spéciaux</dfn> (BMS), émis dès que le vent prévu atteint force 7 à la côte ou force 8 au large. Sur meteofrance.com (rubrique marine), par téléphone au 3250, et affichés dans les capitaineries.</li>
+  <li>Les <strong>CROSS</strong> diffusent les bulletins côtiers et les BMS par VHF plusieurs fois par jour, après une annonce sur le canal 16 indiquant le canal de diffusion.</li>
+  <li>Les <strong>sites et applications</strong> affichent les sorties des modèles numériques (AROME, ARPEGE, ECMWF, GFS) et les fichiers GRIB. Ils sont précieux mais lissent les phénomènes locaux : accélérations aux pointes, effets de site, rafales sous les grains. Comparer plusieurs modèles et lire le bulletin officiel, qui est rédigé par un prévisionniste.</li>
+  <li>Le <strong>NAVTEX</strong>, sur les bateaux qui en sont équipés, reçoit automatiquement les avis et bulletins écrits.</li>
+</ul>
+
+<h3 id="lire-un-bulletin-cotier"><span class="secnum">8.7.2</span>Lire un bulletin côtier</h3>
+<p>Un bulletin suit toujours le même plan : avis en cours (BMS : néant, ou numéro et contenu), situation générale (position et évolution des anticyclones et dépressions), prévisions pour la journée puis la nuit (vent, mer, houle, temps, visibilité), tendance ultérieure. Le vocabulaire est précis :</p>
+<dl class="gloss">
+  <dt>fraîchissant, mollissant</dt><dd>le vent augmente, diminue.</dd>
+  <dt>virant, revenant</dt><dd>le vent tourne dans le sens des aiguilles d'une montre, dans le sens inverse.</dd>
+  <dt>temporairement, localement, en rafales</dt><dd>pendant moins de la moitié du temps ; sur une partie de la zone ; pointes passagères.</dd>
+  <dt>mer du vent, houle</dt><dd>hauteur des vagues levées par le vent local ; vagues venues d'ailleurs, avec leur direction et leur hauteur.</dd>
+</dl>
+
+<h3 id="les-signaux-des-semaphores"><span class="secnum">8.7.3</span>Les signaux des sémaphores</h3>
+<p>Les sémaphores pouvaient hisser des signaux d'avis de vent fort, visibles depuis la mer. On ne s'informe plus guère ainsi aujourd'hui, mais ces signaux figurent dans d'anciens sujets d'examen. Avis de coup de vent ou de tempête (force 8 à 11), selon le quadrant d'où viendra le vent :</p>
+<div class="tbl-wrap"><table>
+<thead><tr><th>Quadrant</th><th>Jour</th><th>Nuit (de haut en bas)</th></tr></thead>
+<tbody>
+<tr><td>Nord-Ouest</td><td><svg class="marques" viewBox="0 0 70 82" width="30" height="35" role="img" aria-label="Marques : cone-haut" xmlns="http://www.w3.org/2000/svg">
+<line x1="35" y1="4" x2="35" y2="78" class="ln2" stroke-width="1.5"/>
+<line x1="35" y1="18" x2="35" y2="60" class="ln" stroke-width="1"/>
+<path d="M35 30 L46 52 L24 52 Z" class="fill-ink"/>
+</svg></td><td>rouge, rouge</td></tr>
+<tr><td>Nord-Est</td><td><svg class="marques" viewBox="0 0 70 112" width="30" height="48" role="img" aria-label="Marques : cone-haut, cone-haut" xmlns="http://www.w3.org/2000/svg">
+<line x1="35" y1="4" x2="35" y2="108" class="ln2" stroke-width="1.5"/>
+<line x1="35" y1="18" x2="35" y2="90" class="ln" stroke-width="1"/>
+<path d="M35 30 L46 52 L24 52 Z" class="fill-ink"/><path d="M35 60 L46 82 L24 82 Z" class="fill-ink"/>
+</svg></td><td>rouge, blanc</td></tr>
+<tr><td>Sud-Ouest</td><td><svg class="marques" viewBox="0 0 70 82" width="30" height="35" role="img" aria-label="Marques : cone-bas" xmlns="http://www.w3.org/2000/svg">
+<line x1="35" y1="4" x2="35" y2="78" class="ln2" stroke-width="1.5"/>
+<line x1="35" y1="18" x2="35" y2="60" class="ln" stroke-width="1"/>
+<path d="M35 52 L46 30 L24 30 Z" class="fill-ink"/>
+</svg></td><td>blanc, blanc</td></tr>
+<tr><td>Sud-Est</td><td><svg class="marques" viewBox="0 0 70 112" width="30" height="48" role="img" aria-label="Marques : cone-bas, cone-bas" xmlns="http://www.w3.org/2000/svg">
+<line x1="35" y1="4" x2="35" y2="108" class="ln2" stroke-width="1.5"/>
+<line x1="35" y1="18" x2="35" y2="90" class="ln" stroke-width="1"/>
+<path d="M35 52 L46 30 L24 30 Z" class="fill-ink"/><path d="M35 82 L46 60 L24 60 Z" class="fill-ink"/>
+</svg></td><td>blanc, rouge</td></tr>
+</tbody>
+<caption>Cônes pointe en haut pour les vents de secteur Nord, pointe en bas pour le Sud ; un cône pour l'Ouest, deux pour l'Est. La nuit : un cône, une seule couleur ; deux cônes, deux couleurs ; « au Nord, le rouge » en haut. S'y ajoutaient une boule pour le grand frais (force 7) et une croix pour l'ouragan.</caption>
+</table></div>
+
+<div class="box meth"><p class="box-label">Méthode 8.4 <span class="box-title">(Prendre la météo avant une sortie)</span>.</p>
+<ol>
+  <li>La veille : bulletin côtier et tendance, plusieurs modèles, carte des fronts. Repérer les créneaux et les risques.</li>
+  <li>Le matin : bulletin du jour, avis BMS en cours, observation du ciel et de la mer, baromètre.</li>
+  <li>Croiser avec la marée : un courant contre le vent durcit la mer dans les passes.</li>
+  <li>Décider avec une marge, et prévoir un repli. Pendant la navigation, écouter les bulletins VHF et surveiller le ciel et le baromètre.</li>
+</ol>
+</div>
+
+<div class="box scout"><p class="box-label">Scoutisme marin.</p>
+<p>Le règlement de votre association fixe des limites de vent et de mer pour naviguer en équipage scout. Elles s'appliquent quelle que soit l'envie d'y aller : en cas de doute, la sortie n'a pas lieu. Ces limites ne sont pas un objectif : avec un équipage jeune ou peu entraîné, on reste bien en dessous.</p>
+</div>
+
+<div class="box retenir"><p class="box-label">À retenir.</p>
+<ul>
+  <li>Hémisphère Nord : le vent tourne dans le sens inverse des aiguilles d'une montre autour d'une dépression ; dos au vent, la dépression est à gauche.</li>
+  <li>Front chaud : ciel qui se voile, pluie continue. Front froid : grains, rafales, saute de vent au NW, baromètre qui remonte. Traîne : averses et éclaircies.</li>
+  <li>Brise de mer le jour, brise de terre la nuit ; cumulus alignés sur la côte.</li>
+  <li>Force 4 : 11 à 16 nd. Rafales : jusqu'à 40 % de plus que le vent moyen.</li>
+  <li>C'est la tendance du baromètre qui compte : une baisse rapide annonce du vent fort.</li>
+  <li>BMS : avis de vent de force 7 à la côte, 8 au large. Bulletins CROSS annoncés sur le canal 16.</li>
+</ul>
+</div>
+
+    <nav class="pager"><a class="prev" href="../cours/07-signaux.html"><span>Précédent</span>Chapitre 7 · Feux, marques et signaux</a><a class="next" href="../cours/09-securite.html"><span>Suivant</span>Chapitre 9 · Sécurité et réglementation</a></nav>
+  </article>
+</div>
+</main>
+<footer class="foot">
+  <div class="foot-in">
+    <p>Préparation au brevet de patron d'embarcation et à la navigation à voile. Rédigé à partir des cours de navigation des scouts marins de Brest, mis à jour et complétés.</p>
+    <p>Ce site ne remplace ni la réglementation (Division 240, RIPAM), ni les documents officiels du SHOM, ni le règlement de votre association. En cas de doute, ce sont eux qui font foi.</p>
+  </div>
+</footer>
+<script src="../js/site.js"></script>
+
+
+</body>
+</html>

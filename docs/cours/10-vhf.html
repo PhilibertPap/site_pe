@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>La VHF et les communications · Patron d'embarcation</title>
+<meta name="description" content="Principe et portée de la VHF marine, canaux, procédures d'appel, messages de détresse, d'urgence et de sécurité, ASN, réglementation.">
+<link rel="icon" href="../img/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/style.css">
+<script>
+  try {
+    var t = localStorage.getItem('pe-theme');
+    if (t) document.documentElement.setAttribute('data-theme', t);
+  } catch (e) {}
+</script>
+</head>
+<body data-root="../">
+<a class="skip" href="#contenu">Aller au contenu</a>
+<header class="top">
+  <div class="top-in">
+    <a class="brand" href="../index.html">Patron d'embarcation</a>
+    <nav class="mainnav" aria-label="Parties du site"><a href="../cours/index.html" aria-current="page">Cours</a><a href="../qcm/index.html">QCM</a><a href="../exercices/index.html">Exercices</a><a href="../pratique/index.html">Pratique</a><a href="../annales/index.html">Annales</a></nav>
+    <div class="acct" id="acct"></div>
+    <button class="theme" type="button" aria-label="Changer de thème" title="Clair / sombre"><svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true"><circle cx="8" cy="8" r="6.5" fill="none" stroke="currentColor" stroke-width="1.3"/><path d="M8 1.5 A6.5 6.5 0 0 1 8 14.5 Z" fill="currentColor"/></svg></button>
+  </div>
+</header>
+<main id="contenu">
+
+<div class="doc">
+  <aside class="side">
+    <p class="side-h">Cours</p>
+    <ol class="chapters"><li><a href="../cours/01-carte.html"><span class="tocnum">1</span>La carte marine</a></li><li><a href="../cours/02-compas.html"><span class="tocnum">2</span>Compas et caps</a></li><li><a href="../cours/03-estime.html"><span class="tocnum">3</span>Estime, dérive, courant</a></li><li><a href="../cours/04-maree.html"><span class="tocnum">4</span>La marée</a></li><li><a href="../cours/05-balisage.html"><span class="tocnum">5</span>Le balisage</a></li><li><a href="../cours/06-ripam.html"><span class="tocnum">6</span>Règles de barre (RIPAM)</a></li><li><a href="../cours/07-signaux.html"><span class="tocnum">7</span>Feux, marques, signaux</a></li><li><a href="../cours/08-meteo.html"><span class="tocnum">8</span>Météo marine</a></li><li><a href="../cours/09-securite.html"><span class="tocnum">9</span>Sécurité, réglementation</a></li><li><a href="../cours/10-vhf.html" aria-current="page"><span class="tocnum">10</span>VHF</a></li></ol>
+  </aside>
+  <article class="chapter">
+    <header class="chap-head">
+      <p class="kicker">Chapitre 10</p>
+      <h1>La VHF et les communications</h1>
+      <p class="chap-desc">Principe et portée de la VHF marine, canaux, procédures d'appel, messages de détresse, d'urgence et de sécurité, ASN, réglementation.</p>
+    </header>
+    <details class="toc-box" open><summary>Sommaire du chapitre</summary><ol class="toc"><li><a href="#principe"><span class="tocnum">10.1</span>La VHF marine</a></li><li><a href="#canaux"><span class="tocnum">10.2</span>Les canaux</a></li><li><a href="#procedure"><span class="tocnum">10.3</span>Passer un appel</a><ol><li><a href="#l-alphabet-international"><span class="tocnum">10.3.1</span>L'alphabet international</a></li><li><a href="#appel-de-routine"><span class="tocnum">10.3.2</span>Appel de routine</a></li></ol></li><li><a href="#alerte"><span class="tocnum">10.4</span>Détresse, urgence, sécurité</a><ol><li><a href="#si-l-on-entend-un-mayday"><span class="tocnum">10.4.1</span>Si l'on entend un MAYDAY</a></li></ol></li><li><a href="#asn"><span class="tocnum">10.5</span>L'ASN et le SMDSM</a></li><li><a href="#reglementation"><span class="tocnum">10.6</span>Réglementation</a></li></ol></details>
+    <h2 id="principe"><span class="secnum">10.1</span>La VHF marine</h2>
+
+<p>La <dfn>VHF</dfn> (<i>very high frequency</i>) est le moyen de communication de base en mer : elle permet de joindre en même temps tous les navires à portée, les ports, les sémaphores et les CROSS. Elle émet dans la bande des 156 à 162 MHz, découpée en <dfn>canaux</dfn> (ou voies) numérotés.</p>
+
+<p>Les ondes VHF se propagent en ligne droite, un peu au-delà de l'horizon optique. La portée dépend donc surtout de la hauteur des antennes :</p>
+<p class="formula"><var>D</var> (M) ≈ 2,2 (√<var>h</var><sub>1</sub> + √<var>h</var><sub>2</sub>), &emsp; <var>h</var><sub>1</sub>, <var>h</var><sub>2</sub> en mètres.</p>
+<div class="box ex"><p class="box-label">Exemple 10.1.</p>
+<p>Entre deux VHF portatives tenues à 1,5 m au-dessus de l'eau : 2,2 × 2 × 1,2 ≈ 5 M. Entre une portative et l'antenne d'un CROSS à 100 m d'altitude : 2,2 × (1,2 + 10) ≈ 25 M. Une VHF fixe avec son antenne en tête de mât porte à 15 ou 25 M vers une station côtière, et c'est pourquoi on place l'antenne le plus haut possible.</p>
+</div>
+
+<p>Une VHF fixe émet jusqu'à 25 W, une portative jusqu'à 6 W. Un sélecteur permet de passer en <strong>faible puissance</strong> (1 W) pour les communications proches : on économise la batterie et on n'encombre pas le canal pour les autres. Le <dfn>squelch</dfn> coupe le bruit de fond quand personne n'émet : on le règle juste au seuil où le souffle disparaît.</p>
+
+<h2 id="canaux"><span class="secnum">10.2</span>Les canaux</h2>
+
+<div class="tbl-wrap"><table>
+<thead><tr><th>Canal</th><th>Usage</th></tr></thead>
+<tbody>
+<tr><td class="num">16</td><td>Appel, détresse, urgence et sécurité. <strong>Veille permanente</strong> en navigation. Après l'appel, on dégage sur un canal de travail.</td></tr>
+<tr><td class="num">70</td><td>Réservé à l'ASN (alertes numériques) : on n'y parle jamais.</td></tr>
+<tr><td class="num">9</td><td>Ports de plaisance, capitaineries.</td></tr>
+<tr><td class="num">6, 8, 72, 77</td><td>Communications entre navires.</td></tr>
+<tr><td class="num">12, 14</td><td>Opérations portuaires des ports de commerce (selon les ports).</td></tr>
+<tr><td>79, 80…</td><td>Diffusion des bulletins météo par les CROSS, annoncée sur le canal 16.</td></tr>
+</tbody></table></div>
+
+<div class="box warn"><p class="box-label">Attention.</p>
+<p>Le canal 16 est un canal de sécurité : on y fait un appel bref, puis on change de canal. On n'y bavarde pas, on n'y fait pas d'essai. Pour joindre la capitainerie en arrivant, on l'appelle directement sur le canal 9.</p>
+</div>
+
+<h2 id="procedure"><span class="secnum">10.3</span>Passer un appel</h2>
+
+<h3 id="l-alphabet-international"><span class="secnum">10.3.1</span>L'alphabet international</h3>
+<p>Pour épeler un nom (celui du bateau, d'un port), on utilise l'alphabet phonétique international. « Alizé » s'épelle : Alfa, Lima, India, Zulu, Echo.</p>
+<div class="tbl-wrap"><table>
+<tbody>
+<tr><td>A Alfa</td><td>B Bravo</td><td>C Charlie</td><td>D Delta</td><td>E Echo</td><td>F Foxtrot</td><td>G Golf</td></tr>
+<tr><td>H Hotel</td><td>I India</td><td>J Juliett</td><td>K Kilo</td><td>L Lima</td><td>M Mike</td><td>N November</td></tr>
+<tr><td>O Oscar</td><td>P Papa</td><td>Q Quebec</td><td>R Romeo</td><td>S Sierra</td><td>T Tango</td><td>U Uniform</td></tr>
+<tr><td>V Victor</td><td>W Whiskey</td><td>X X-ray</td><td>Y Yankee</td><td>Z Zulu</td><td></td><td></td></tr>
+</tbody></table></div>
+
+<h3 id="appel-de-routine"><span class="secnum">10.3.2</span>Appel de routine</h3>
+<div class="box meth"><p class="box-label">Méthode 10.2 <span class="box-title">(Appeler un autre bateau)</span>.</p>
+<ol>
+  <li>Écouter avant de parler : le canal est-il libre ?</li>
+  <li>Appuyer sur l'alternat, attendre une seconde, parler distinctement, micro à quelques centimètres de la bouche.</li>
+  <li>Sur le 16 : « <i>Loup-Garou, Loup-Garou, ici Alizé, Alizé, à vous</i> ».</li>
+  <li>Réponse : « <i>Alizé, ici Loup-Garou, je vous reçois, passez canal 72, à vous</i> ». « <i>Canal 72</i> ».</li>
+  <li>On passe sur le 72 et on échange. On termine par « <i>terminé</i> », et l'on revient en veille sur le 16.</li>
+</ol>
+<p>« À vous » signifie qu'on attend une réponse ; « terminé », que la communication est finie. On ne dit pas les deux à la fois.</p>
+</div>
+
+<h2 id="alerte"><span class="secnum">10.4</span>Détresse, urgence, sécurité</h2>
+
+<p>Trois signaux, émis sur le canal 16, ont priorité sur toutes les autres communications. Par ordre de priorité décroissante :</p>
+
+<div class="tbl-wrap"><table>
+<thead><tr><th>Signal</th><th>Situation</th><th>Exemples</th></tr></thead>
+<tbody>
+<tr><td><strong>MAYDAY</strong> (détresse)</td><td>danger grave et imminent ; besoin d'une aide immédiate</td><td>voie d'eau importante, incendie, chavirage, échouement dangereux, homme à la mer</td></tr>
+<tr><td><strong>PAN PAN</strong> (urgence)</td><td>situation urgente concernant la sécurité du bateau ou d'une personne, sans danger immédiat</td><td>blessé ou malade à bord, avarie de moteur ou de gouvernail loin des dangers, demande de remorquage</td></tr>
+<tr><td><strong>SÉCURITÉ</strong></td><td>information importante pour la sécurité de la navigation</td><td>épave ou conteneur à la dérive, feu éteint, avis de coup de vent</td></tr>
+</tbody></table></div>
+
+<div class="box meth"><p class="box-label">Méthode 10.3 <span class="box-title">(Message de détresse (canal 16, puissance maximale))</span>.</p>
+<p>Si la VHF a l'ASN, on envoie d'abord l'alerte de détresse (bouton rouge maintenu quelques secondes), puis on passe le message à la voix sur le 16 :</p>
+<p class="mono small" style="line-height:1.7">MAYDAY, MAYDAY, MAYDAY<br>
+ICI ALIZÉ, ALIZÉ, ALIZÉ (indicatif, MMSI)<br>
+MAYDAY ALIZÉ<br>
+POSITION : 47° 23,4′ N, 002° 54,0′ W (ou : 2 milles dans le Sud de Houat)<br>
+NATURE : voie d'eau importante<br>
+AIDE DEMANDÉE : assistance immédiate<br>
+PERSONNES À BORD : 6<br>
+AUTRES INFORMATIONS : voilier de 8 m, coque blanche ; nous évacuons dans le radeau<br>
+À VOUS</p>
+<p>On répète si personne ne répond. On note l'heure. On reste en veille.</p>
+</div>
+
+<div class="box maj"><p class="box-label">Mise à jour.</p>
+<p>Certains supports de cours indiquent d'émettre un PAN PAN pour un homme à la mer. Les CROSS et le manuel de l'ANFR rangent l'homme à la mer dans la <strong>détresse</strong> : c'est un MAYDAY, sans hésiter. Mieux vaut un MAYDAY annulé ensuite qu'un appel qui arrive trop tard.</p>
+</div>
+
+<p>Un message PAN PAN se construit de la même façon (« PAN PAN, PAN PAN, PAN PAN, à tous, ici… »), de même qu'un message SÉCURITÉ, qu'on annonce sur le 16 avant de le diffuser sur un canal de travail.</p>
+
+<h3 id="si-l-on-entend-un-mayday"><span class="secnum">10.4.1</span>Si l'on entend un MAYDAY</h3>
+<ul>
+  <li>Cesser toute émission, écouter, noter le message (position, nature, nombre de personnes).</li>
+  <li>Laisser répondre le CROSS. Si aucune station côtière ne répond dans les cinq minutes et que l'on peut aider, accuser réception au navire en détresse et se dérouter. Si l'on ne peut pas aider directement, relayer le message (MAYDAY RELAY).</li>
+  <li>Quand le CROSS impose le silence (« <i>silence mayday</i> »), on n'émet plus sur le canal jusqu'à « <i>silence fini</i> ».</li>
+</ul>
+
+<h2 id="asn"><span class="secnum">10.5</span>L'ASN et le SMDSM</h2>
+
+<p>L'<dfn>ASN</dfn> (appel sélectif numérique, DSC en anglais) transmet des messages numériques sur le canal 70. Chaque VHF ASN est identifiée par un numéro <dfn>MMSI</dfn> à neuf chiffres, attribué par l'ANFR (les MMSI français commencent par 227, 228 ou 226). Reliée au GPS, la VHF envoie automatiquement sa position avec l'alerte. On peut préciser la nature de la détresse : incendie (<i>fire</i>), voie d'eau (<i>flooding</i>), abordage, échouement, gîte, naufrage, dérive, abandon du navire, homme à la mer…</p>
+
+<p>L'ASN fait partie du <dfn>SMDSM</dfn> (système mondial de détresse et de sécurité en mer, GMDSS), qui regroupe aussi les balises de détresse par satellite (Cospas-Sarsat), le NAVTEX et les communications satellitaires.</p>
+
+<div class="box warn"><p class="box-label">Attention.</p>
+<p>Si l'on reçoit une alerte de détresse ASN, on ne l'acquitte pas par ASN (c'est le rôle des stations côtières) : on écoute le canal 16, où le message vocal va suivre, et on se tient prêt à aider. Une alerte déclenchée par erreur s'annule immédiatement et se signale au CROSS à la voix sur le 16.</p>
+</div>
+
+<h2 id="reglementation"><span class="secnum">10.6</span>Réglementation</h2>
+<ul>
+  <li>Une VHF fixe ou portative ASN doit faire l'objet d'une <strong>licence</strong> auprès de l'ANFR, qui attribue le MMSI.</li>
+  <li>Pour l'utiliser, il faut le <dfn>certificat restreint de radiotéléphoniste</dfn> (CRR), ou, dans les eaux territoriales françaises, le permis plaisance.</li>
+  <li>Depuis 2011, une VHF portative <strong>sans ASN</strong>, de 6 W au plus, peut être utilisée sans CRR ni permis dans les eaux territoriales françaises.</li>
+  <li>Le téléphone portable n'est pas un moyen de sécurité : réseau incertain en mer, un seul interlocuteur, les bateaux voisins ne sont pas prévenus. En dépannage, le <strong>196</strong> joint le CROSS.</li>
+</ul>
+
+<div class="box retenir"><p class="box-label">À retenir.</p>
+<ul>
+  <li>Portée VHF ≈ 2,2 (√<var>h</var><sub>1</sub> + √<var>h</var><sub>2</sub>) milles : quelques milles entre deux portatives.</li>
+  <li>16 : veille, appel, détresse. 70 : ASN. 9 : ports de plaisance. 6, 8, 72, 77 : entre navires.</li>
+  <li>Priorité : MAYDAY (détresse) &gt; PAN PAN (urgence) &gt; SÉCURITÉ.</li>
+  <li>MAYDAY : qui, où, quoi, quelle aide, combien de personnes. Homme à la mer : MAYDAY.</li>
+  <li>« À vous » : j'attends une réponse ; « terminé » : fin de communication.</li>
+</ul>
+</div>
+
+    <nav class="pager"><a class="prev" href="../cours/09-securite.html"><span>Précédent</span>Chapitre 9 · Sécurité et réglementation</a><span></span></nav>
+  </article>
+</div>
+</main>
+<footer class="foot">
+  <div class="foot-in">
+    <p>Préparation au brevet de patron d'embarcation et à la navigation à voile. Rédigé à partir des cours de navigation des scouts marins de Brest, mis à jour et complétés.</p>
+    <p>Ce site ne remplace ni la réglementation (Division 240, RIPAM), ni les documents officiels du SHOM, ni le règlement de votre association. En cas de doute, ce sont eux qui font foi.</p>
+  </div>
+</footer>
+<script src="../js/site.js"></script>
+
+
+</body>
+</html>
