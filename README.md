@@ -56,7 +56,7 @@ Tant que `src/js/firebase-config.js` est vide, le site est ouvert à tous et la 
 4. **Firestore Database** > Créer une base de données, en mode production, région `eur3`
    (Europe).
 5. **Firestore Database** > Règles : remplacer le contenu par celui de `firestore.rules`,
-   puis Publier.
+   puis Publier. À refaire à chaque modification de `firestore.rules`.
 6. **Paramètres du projet** > Vos applications > icône Web `</>` : enregistrer une
    application (sans Hosting). Copier l'objet `firebaseConfig` affiché dans
    `src/js/firebase-config.js`.
@@ -66,7 +66,10 @@ Tant que `src/js/firebase-config.js` est vide, le site est ouvert à tous et la 
    Ensuite tout se fait depuis le site : page **Comptes** (lien en haut quand on est chef)
    pour valider les inscriptions et nommer d'autres chefs.
 
-Fonctionnement : chaque élève crée un compte, un chef le valide. Tout le monde voit toutes
+Fonctionnement : chaque élève crée un compte, un chef le valide.
+Chaque QCM terminé par un inscrit est enregistré : l'élève voit ses résultats sur la page QCM,
+les chefs voient la page **Résultats** (réussite par thème, questions les plus ratées, détail
+par scout), pratique pour choisir quoi reprendre en séance. Tout le monde voit toutes
 les questions et réponses ; les réponses des chefs sont signalées. Un chef peut supprimer
 une question ou une réponse ; l'auteur d'une question peut la marquer résolue.
 

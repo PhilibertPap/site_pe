@@ -1,6 +1,7 @@
 // Moteur de QCM : épreuve blanche (30 questions, 30 minutes) et entraînement par thème.
-import * as F from './figures.js';
+import { figure } from './qcm/figure.js';
 import { THEMES, QUESTIONS, EXAM_PLAN } from './qcm/index.js';
+import * as fb from './fb.js';
 
 const root = document.getElementById('qcm');
 const ROOT_URL = root.dataset.root || '../';
@@ -33,34 +34,6 @@ function store(key, val) {
     localStorage.setItem('pe-qcm-' + key, JSON.stringify(val));
   } catch (e) {
     return null;
-  }
-}
-
-function figure(f) {
-  if (!f) return '';
-  switch (f.k) {
-    case 'balise':
-      return F.balise(f.v, { w: f.w || 96, aria: 'Marque à identifier' });
-    case 'balises':
-      return `<div class="figrow" style="justify-content:flex-start">${f.v
-        .map((v, i) => `<div>${F.balise(v, { w: 80, aria: 'Marque ' + (f.labels ? f.labels[i] : i + 1) })}${f.labels ? f.labels[i] : ''}</div>`)
-        .join('')}</div>`;
-    case 'marques':
-      return F.marques(f.v, { w: f.w || 52, aria: 'Marques à identifier' });
-    case 'nuit':
-      return F.nuit(f.v, { w: f.w || 220, aria: 'Feux observés' });
-    case 'pavillon':
-      return F.pavillon(f.v, { w: f.w || 80 });
-    case 'port':
-      return F.port(f.v, { w: 56, exempt: f.exempt, flash: f.flash, aria: 'Signal de port' });
-    case 'feu':
-      return F.feuHTML({ r: f.r, c: f.c || 'W', p: f.p, big: 1, nolabel: 1 });
-    case 'son':
-      return F.sonHTML({ s: f.v, label: 'écouter' });
-    case 'svg':
-      return f.v;
-    default:
-      return '';
   }
 }
 
@@ -108,6 +81,70 @@ function reveal(box, q, chosen) {
   return ok;
 }
 
+// ------------------------------------------------- enregistrement (comptes)
+
+const user = () => (window.PE && window.PE.userReady ? window.PE.userReady : Promise.resolve(null));
+
+// Enregistre le QCM terminé pour que l'élève et ses chefs suivent la progression.
+async function saveResult(r, slot) {
+  const me = await user();
+  if (!me || !r.total) return;
+  try {
+    await fb.saveResult(r, me);
+    if (slot) slot.textContent = 'Résultat enregistré : vos chefs le voient dans leur suivi.';
+  } catch (e) {
+    if (slot) slot.textContent = 'Résultat non enregistré (' + fb.message(e) + ').';
+  }
+}
+
+function tally(list) {
+  // list : [{ q, ok }] -> { themes, ok, ko, score }
+  const themes = {};
+  const ok = [];
+  const ko = [];
+  list.forEach(({ q, ok: good }) => {
+    themes[q.t] = themes[q.t] || [0, 0];
+    themes[q.t][1]++;
+    if (good) {
+      themes[q.t][0]++;
+      ok.push(q.id);
+    } else ko.push(q.id);
+  });
+  return { themes, ok, ko, score: ok.length, total: list.length };
+}
+
+const pct = (a, n) => (n ? Math.round((100 * a) / n) : 0);
+
+async function myHistory() {
+  const me = await user();
+  if (!me) return;
+  let rs;
+  try {
+    rs = await fb.myResults(me.uid);
+  } catch (e) {
+    return;
+  }
+  const slot = root.querySelector('#mes-resultats');
+  if (!slot || !rs.length) return;
+  const th = {};
+  rs.forEach((r) => Object.entries(r.themes || {}).forEach(([t, [a, n]]) => {
+    th[t] = th[t] || [0, 0];
+    th[t][0] += a;
+    th[t][1] += n;
+  }));
+  const exams = rs.filter((r) => r.mode === 'examen');
+  slot.innerHTML = `<h2 id="vos-resultats">Vos résultats</h2>
+  <p class="small muted">${exams.length} épreuve${exams.length > 1 ? 's' : ''} blanche${exams.length > 1 ? 's' : ''}, ${rs.length - exams.length} entraînement${rs.length - exams.length > 1 ? 's' : ''}. Ces résultats sont visibles par vos chefs.</p>
+  <div class="tbl-wrap"><table><thead><tr><th>Thème</th><th class="num">Réussite</th><th class="num">Questions</th></tr></thead><tbody>${Object.entries(THEMES)
+    .filter(([t]) => th[t])
+    .map(([t, v]) => `<tr><td>${v}</td><td class="num">${pct(th[t][0], th[t][1])} %</td><td class="num">${th[t][1]}</td></tr>`)
+    .join('')}</tbody></table></div>
+  <div class="tbl-wrap"><table><thead><tr><th>Date</th><th>Type</th><th class="num">Score</th></tr></thead><tbody>${rs
+    .slice(0, 8)
+    .map((r) => `<tr><td>${r.at ? r.at.toLocaleDateString('fr-FR') : ''}</td><td>${r.mode === 'examen' ? 'Épreuve blanche' : 'Entraînement'}</td><td class="num">${r.score}/${r.total}</td></tr>`)
+    .join('')}</tbody></table></div>`;
+}
+
 // ----------------------------------------------------------------- accueil
 
 function home() {
@@ -135,7 +172,9 @@ function home() {
     <button class="btn ghost" id="go-train-all" type="button">Toutes les questions des thèmes choisis</button>
   </div>
   ${(store('wrong') || []).length ? `<div class="btns"><button class="btn ghost" id="go-wrong" type="button">Reprendre mes ${store('wrong').length} erreurs enregistrées</button></div>` : ''}
-  <p class="small muted">La banque contient ${nb} questions. Les questions marquées « d'après » reprennent le sujet d'une épreuve passée, avec une correction rédigée pour ce site.</p>`;
+  <p class="small muted">La banque contient ${nb} questions. Les questions marquées « d'après » reprennent le sujet d'une épreuve passée, avec une correction rédigée pour ce site.</p>
+  <div id="mes-resultats"></div>`;
+  myHistory();
 
   root.querySelector('#go-exam').onclick = exam;
   const picked = () => [...root.querySelectorAll('.theme-pick input:checked')].map((i) => i.value);
@@ -199,11 +238,13 @@ function exam() {
     let score = 0;
     const byTheme = {};
     const wrong = [];
+    const res = [];
     qs.forEach((q) => {
       const box = list.querySelector('#q-' + q.id);
       const c = box.querySelector('input:checked');
       const chosen = c ? +c.value : null;
       const ok = reveal(box, q, chosen);
+      res.push({ q, ok });
       if (ok) score++;
       else wrong.push(q.id);
       byTheme[q.t] = byTheme[q.t] || [0, 0];
@@ -224,10 +265,12 @@ function exam() {
         .map(([t, [a, n]]) => `<span>${THEMES[t]}</span><span>${a}/${n}</span>`)
         .join('')}</div>
       <p class="small" style="margin:.8rem 0 0">Les erreurs sont enregistrées sur cet appareil ; vous pourrez les reprendre depuis la page du QCM.</p>
+      <p class="small muted saved" style="margin:.3rem 0 0"></p>
       <div class="btns"><button class="btn small" type="button" data-a="again">Nouvelle épreuve</button><button class="btn small ghost" type="button" data-a="home">Retour</button></div>`
     );
     root.insertBefore(sc, list);
     bar.remove();
+    saveResult({ mode: 'examen', dur: Math.round((Date.now() - (end - 30 * 60 * 1000)) / 1000), ...tally(res) }, sc.querySelector('.saved'));
     sc.querySelector('[data-a=again]').onclick = exam;
     sc.querySelector('[data-a=home]').onclick = home;
     window.scrollTo(0, root.offsetTop - 80);
@@ -260,6 +303,8 @@ function train(themes, n, ids) {
   let good = 0;
   let answered = 0;
   const wrongSet = new Set(store('wrong') || []);
+  const res = [];
+  let saved = false;
   root.innerHTML = '';
   const bar = el('div', { class: 'qcm-bar' }, `<span class="grow">Question <b class="cur">1</b>/${qs.length} · <span class="sc">0</span> bonne(s)</span><button class="btn small ghost" type="button">Arrêter</button>`);
   root.appendChild(bar);
@@ -277,6 +322,7 @@ function train(themes, n, ids) {
     box.addEventListener('change', (e) => {
       const chosen = +e.target.value;
       const ok = reveal(box, q, chosen);
+      res.push({ q, ok });
       answered++;
       if (ok) {
         good++;
@@ -299,9 +345,14 @@ function train(themes, n, ids) {
   function summary() {
     root.innerHTML = `<div class="score"><b>${good}/${answered}</b> <span class="muted">bonnes réponses</span>
       <p class="small" style="margin:.6rem 0 0">${wrongSet.size} question(s) à revoir enregistrée(s) sur cet appareil.</p>
+      <p class="small muted saved" style="margin:.3rem 0 0"></p>
       <div class="btns"><button class="btn small" type="button" data-a="again">Recommencer</button><button class="btn small ghost" type="button" data-a="home">Retour</button></div></div>`;
     root.querySelector('[data-a=again]').onclick = () => train(themes, n, ids && [...wrongSet]);
     root.querySelector('[data-a=home]').onclick = home;
+    if (!saved && res.length) {
+      saved = true;
+      saveResult({ mode: 'entrainement', ...tally(res) }, root.querySelector('.saved'));
+    }
   }
   show();
   window.scrollTo(0, root.offsetTop - 80);

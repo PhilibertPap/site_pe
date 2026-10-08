@@ -108,7 +108,7 @@ function header(profile) {
   const slot = document.getElementById('acct');
   if (!slot) return;
   slot.innerHTML = `<span class="acct-name">${esc(profile.name)}${profile.role === 'chef' ? ' <span class="tag">chef</span>' : ''}</span>
-    ${profile.role === 'chef' ? `<a href="${ROOT}chefs/index.html">Comptes</a>` : ''}
+    ${profile.role === 'chef' ? `<a href="${ROOT}chefs/index.html">Comptes</a> <a href="${ROOT}chefs/resultats.html">Résultats</a>` : ''}
     <button type="button" class="linkish">Déconnexion</button>`;
   slot.querySelector('button').onclick = async () => {
     store.set(null);

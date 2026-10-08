@@ -6,6 +6,7 @@ rules_version = '2';
 // - Un compte créé est « en attente » (approved = false) tant qu'un chef ne l'a pas validé.
 // - Seuls les comptes validés lisent et écrivent les questions-réponses.
 // - Les chefs (role = 'chef') valident les comptes, modèrent, et leurs réponses sont mises en avant.
+// - Chaque QCM terminé est enregistré dans results : l'élève voit les siens, les chefs voient tout.
 
 service cloud.firestore {
   match /databases/{database}/documents {
@@ -75,6 +76,25 @@ service cloud.firestore {
           && str(request.resource.data.body, 5000);
         allow update, delete: if chef();
       }
+    }
+
+    match /results/{rid} {
+      allow read: if chef() || (approved() && resource.data.uid == request.auth.uid);
+      allow create: if approved()
+        && request.resource.data.keys().hasOnly(['uid', 'name', 'unite', 'mode', 'score', 'total', 'dur',
+             'themes', 'ok', 'ko', 'at'])
+        && request.resource.data.uid == request.auth.uid
+        && request.resource.data.name == profile().name
+        && request.resource.data.mode in ['examen', 'entrainement']
+        && request.resource.data.score is int && request.resource.data.total is int
+        && request.resource.data.score >= 0 && request.resource.data.score <= request.resource.data.total
+        && request.resource.data.total > 0 && request.resource.data.total <= 400
+        && request.resource.data.themes is map
+        && request.resource.data.ok is list && request.resource.data.ko is list
+        && request.resource.data.ok.size() + request.resource.data.ko.size() <= 400
+        && request.resource.data.at == request.time;
+      allow update: if false;
+      allow delete: if chef();
     }
   }
 }

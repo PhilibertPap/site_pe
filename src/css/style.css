@@ -1533,3 +1533,98 @@ td.acts {
   font-family: var(--sans);
   white-space: nowrap;
 }
+
+/* ------------------------------------------------- suivi des QCM (chefs) */
+
+.res-tools {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  align-items: center;
+  margin: 1.5rem 0 1rem;
+  font-family: var(--sans);
+}
+.res-tools select {
+  padding: 0.45rem 0.5rem;
+  font: inherit;
+  font-size: 0.9rem;
+  color: var(--ink);
+  background: var(--card);
+  border: 1px solid var(--rule-2);
+  border-radius: 0;
+}
+.res-tools label {
+  white-space: nowrap;
+}
+.res-sum {
+  font-family: var(--sans);
+  font-size: 0.9rem;
+  color: var(--ink-2);
+  border-top: 1px solid var(--ink);
+  border-bottom: 1px solid var(--rule);
+  padding: 0.5rem 0;
+}
+.bar {
+  display: inline-block;
+  vertical-align: middle;
+  width: 7rem;
+  height: 0.55rem;
+  border: 1px solid var(--rule-2);
+  margin-right: 0.4rem;
+}
+.bar span {
+  display: block;
+  height: 100%;
+  background: var(--navy);
+}
+.bar span.weak {
+  background: var(--signal);
+}
+.res-missed {
+  padding-left: 1.4rem;
+}
+.res-missed li {
+  margin: 0 0 1.1rem;
+  padding-bottom: 0.9rem;
+  border-bottom: 1px solid var(--rule);
+}
+.res-missed .q-text {
+  margin: 0.2rem 0 0.4rem;
+}
+.res-missed details summary {
+  font-family: var(--sans);
+  font-size: 0.85rem;
+  color: var(--navy);
+  cursor: pointer;
+}
+.res-detail > td {
+  background: var(--card);
+  padding: 0.8rem 1rem 0.4rem;
+}
+.res-detail h4 {
+  margin: 0.2rem 0 0.4rem;
+  font-family: var(--sans);
+  font-size: 0.85rem;
+}
+.res-detail table {
+  font-size: 0.85rem;
+}
+.res-detail td {
+  padding: 0.25rem 0.4rem;
+}
+.res-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+@media (max-width: 760px) {
+  .res-grid {
+    grid-template-columns: 1fr;
+  }
+  .bar {
+    width: 4rem;
+  }
+}
+.nowrap {
+  white-space: nowrap;
+}

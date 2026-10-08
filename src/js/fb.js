@@ -176,3 +176,47 @@ export async function deleteAnswer(q, aid) {
   batch.update(F.doc(db, 'questions', q.id), { answers: Math.max(0, (q.answers || 1) - 1) });
   await batch.commit();
 }
+
+// ---------------------------------------------------------- résultats QCM
+
+// Un document par QCM terminé : score, détail par thème, questions réussies et ratées.
+export async function saveResult(r, me) {
+  const { F, db } = await sdk();
+  await F.addDoc(F.collection(db, 'results'), {
+    uid: me.uid,
+    name: me.name,
+    unite: me.unite || '',
+    mode: r.mode,
+    score: r.score,
+    total: r.total,
+    dur: r.dur || 0,
+    themes: r.themes,
+    ok: r.ok,
+    ko: r.ko,
+    at: F.serverTimestamp(),
+  });
+}
+
+export async function myResults(uid) {
+  const { F, db } = await sdk();
+  const s = await F.getDocs(F.query(F.collection(db, 'results'), F.where('uid', '==', uid)));
+  return s.docs.map((d) => ({ id: d.id, ...d.data(), at: toDate(d.data().at) })).sort((a, b) => b.at - a.at);
+}
+
+// Réservé aux chefs : tous les résultats depuis une date (ou tous si since est nul)
+export async function listResults(since) {
+  const { F, db } = await sdk();
+  const c = F.collection(db, 'results');
+  const q = since ? F.query(c, F.where('at', '>=', since), F.orderBy('at', 'desc')) : F.query(c, F.orderBy('at', 'desc'), F.limit(5000));
+  const s = await F.getDocs(q);
+  return s.docs.map((d) => ({ id: d.id, ...d.data(), at: toDate(d.data().at) }));
+}
+
+export async function deleteResults(ids) {
+  const { F, db } = await sdk();
+  for (let i = 0; i < ids.length; i += 400) {
+    const batch = F.writeBatch(db);
+    ids.slice(i, i + 400).forEach((id) => batch.delete(F.doc(db, 'results', id)));
+    await batch.commit();
+  }
+}
