@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>La flottille d'habitables · Patron d'embarcation</title>
+<meta name="description" content="Ce qui est propre au chef de flottille : encadrer quatre voiliers habitables depuis l'un d'eux, le bateau de maîtrise, les chefs de bord PE, les escales et l'intendance d'une navigation de plusieurs jours, départ, arrivée au port, mouillage de nuit, remorquage entre habitables, vie à bord, documents.">
+<link rel="icon" href="../img/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="../img/icon-180.png">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta name="theme-color" content="#11304d">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Patron d'emb.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/style.css">
+<script>
+  try {
+    var t = localStorage.getItem('pe-theme');
+    if (t) document.documentElement.setAttribute('data-theme', t);
+  } catch (e) {}
+  try { if (!localStorage.getItem('pe-ok')) document.documentElement.classList.add('gate'); } catch (e) { document.documentElement.classList.add('gate'); }
+</script>
+</head>
+<body data-root="../">
+<a class="skip" href="#contenu">Aller au contenu</a>
+<header class="top">
+  <div class="top-in">
+    <a class="brand" href="../index.html"><svg class="emb" viewBox="0 0 367 524" aria-hidden="true"><g class="emb-r"><path d="M152 72 L140 0 Q185 40 227 0 L215 72 Z"/><path d="M152 60 H215 V480 H152 Z"/><path d="M156 146 L15 126 Q62 168 22 214 L156 194 Z"/><path d="M 211 146 L 352 126 Q 305 168 345 214 L 211 194 Z"/><path d="M48 292 L8 388 Q24 376 38 372 C40 445 100 502 183.5 524 L183.5 474 C128 462 90 428 86 366 Q104 380 124 402 Z"/><path d="M 319 292 L 359 388 Q 343 376 329 372 C 327 445 267 502 183.5 524 L 183.5 474 C 239 462 277 428 281 366 Q 263 380 243 402 Z"/></g><g class="emb-y" transform="translate(183.5 66) scale(4.5) translate(-50 -17)"><path d="M50 17C55.5 23 57 30 54 37 53 39.5 51.5 41.5 50 43 48.5 41.5 47 39.5 46 37 43 30 44.5 23 50 17Z"/><path d="M51.3 42C52.5 36.5 56.8 32.2 61.8 32.5 65.8 32.8 68 36.4 66.5 39.7 65.3 42.3 61.9 42.5 60.9 40.4 62.6 41 63.9 39.6 63.3 38 62.6 36.2 60 35.8 58 37 55.4 38.5 53.7 41.4 53.1 43.9Z"/><path d="M48.7 42C47.5 36.5 43.2 32.2 38.2 32.5 34.2 32.8 32 36.4 33.5 39.7 34.7 42.3 38.1 42.5 39.1 40.4 37.4 41 36.1 39.6 36.7 38 37.4 36.2 40 35.8 42 37 44.6 38.5 46.3 41.4 46.9 43.9Z"/><rect x="42.5" y="43.5" width="15" height="3.4" rx=".8"/><path d="M50 46.9 54.5 52.5 50 58 45.5 52.5Z"/><path d="M47 46.9C46.4 49.5 45 51 43 51.6 44.3 49.3 44.4 48 44.3 46.9Z"/><path d="M53 46.9C53.6 49.5 55 51 57 51.6 55.7 49.3 55.6 48 55.7 46.9Z"/></g></svg><span class="brand-t"><b>Patron d'embarcation</b><small>Scouts marins · voile</small></span></a>
+    <button class="menu-btn" type="button" aria-expanded="false" aria-controls="mainnav"><span class="burger" aria-hidden="true"><i></i><i></i><i></i></span><span class="menu-l">Menu</span></button>
+    <nav class="mainnav" id="mainnav" aria-label="Parties du site"><a href="../cours/index.html">Cours</a><a href="../qcm/index.html">QCM</a><a href="../exercices/index.html">Exercices</a><a href="../pratique/index.html">Pratique</a><a href="../cqcf/index.html" aria-current="page">CQ / CF</a><a href="../annales/index.html">Annales</a><a href="../questions/index.html">Questions</a><a href="../equipages/index.html">Équipages</a></nav>
+    <div class="acct" id="acct"></div><script>
+try {
+  var pp = JSON.parse(localStorage.getItem('pe-profile') || 'null');
+  if (pp && pp.approved && localStorage.getItem('pe-ok') === pp.uid) {
+    var e = function (x) { return String(x || '').replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); };
+    document.getElementById('acct').innerHTML = '<a class="acct-name" href="../compte/index.html" title="Mon espace">' + e(pp.name) + (pp.role === 'chef' ? ' <span class="tag">chef</span>' : '') + '</a>' +
+      ' <button type="button" class="linkish">Déconnexion</button>';
+  }
+} catch (err) {}
+</script>
+    <button class="theme" type="button" aria-label="Changer de thème" title="Clair / sombre"><svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true"><circle cx="8" cy="8" r="6.5" fill="none" stroke="currentColor" stroke-width="1.3"/><path d="M8 1.5 A6.5 6.5 0 0 1 8 14.5 Z" fill="currentColor"/></svg></button>
+  </div>
+  <div class="grad" aria-hidden="true"></div>
+</header>
+<main id="contenu">
+
+<div class="doc">
+  <aside class="side">
+    <p class="side-h">CQ / CF</p>
+    <ol class="chapters"><li><a href="../cqcf/diplomes.html">Diplômes et examen</a></li><li><a href="../cqcf/dossier.html">Dossier de navigation</a></li><li><a href="../cqcf/preparer.html">Préparer la navigation</a></li><li><a href="../cqcf/flottille.html">Conduire une flottille</a></li><li><a href="../cqcf/habitables.html" aria-current="page">Flottille d'habitables</a></li><li><a href="../cqcf/bateau-secu.html">Bateau de sécurité</a></li><li><a href="../cqcf/avaries.html">Avaries et secours</a></li><li><a href="../cqcf/pedagogie.html">La dimension scoute</a></li><li><a href="../cqcf/oral.html">Questions d'oral</a></li></ol>
+  </aside>
+  <article class="chapter">
+    <header class="chap-head">
+      <p class="kicker">CQ / CF</p>
+      <h1>La flottille d'habitables</h1>
+      <p class="chap-desc">Ce qui est propre au chef de flottille : encadrer quatre voiliers habitables depuis l'un d'eux, le bateau de maîtrise, les chefs de bord PE, les escales et l'intendance d'une navigation de plusieurs jours, départ, arrivée au port, mouillage de nuit, remorquage entre habitables, vie à bord, documents.</p>
+    </header>
+    <details class="toc-box"><summary>Sur cette page</summary><ol class="toc"><li><a href="#cadre">Le cadre</a></li><li><a href="#differences">Ce qui change par rapport au CQ</a></li><li><a href="#bateaux">Les bateaux</a></li><li><a href="#chefs-de-bord">Les chefs de bord et le bateau du CF</a></li><li><a href="#escales">Plusieurs jours : escales, ports, intendance</a></li><li><a href="#depart">Le départ</a></li><li><a href="#en-mer">En mer</a></li><li><a href="#arrivee">L'arrivée au port</a></li><li><a href="#mouillage">Le mouillage de nuit</a></li><li><a href="#remorquer">Remorquer un habitable</a></li><li><a href="#vie-a-bord">La vie à bord</a></li><li><a href="#documents">Les documents à bord</a></li></ol></details>
+    <p>Le CQ encadre depuis un semi-rigide qui va vite et vient au contact. Le CF encadre depuis un voilier semblable à ceux des jeunes : il peut rejoindre chaque bateau, mais beaucoup plus lentement, et il peut difficilement lui porter assistance. Tout ce qui a été dit pour le CQ reste vrai (<a href="flottille.html">Conduire une flottille</a>) ; cette page reprend ce que le manuel du chef de flottille (2026) y ajoute. Son mot d'ordre : l'<strong>anticipation</strong>.</p>
+
+<h2 id="cadre">Le cadre</h2>
+
+<div class="box prop"><p class="box-label">Règle <span class="box-title">(Prérogative du CF en habitables)</span>.</p>
+<p>Encadrer une flottille de <strong>4 voiliers habitables</strong> au plus, depuis l'un d'entre eux, à moins de <strong>6 milles d'un abri</strong>, vent jusqu'à <strong>force 4 rafales à 5</strong>, chaque bateau étant dirigé par un chef de bord <strong>titulaire du PE</strong> (ou du CQ).</p>
+</div>
+
+<ul>
+  <li>Un cinquième habitable peut naviguer avec la flottille s'il est mené par un CQ, au titre de sa propre prérogative.</li>
+  <li>Le CF peut aussi encadrer <strong>depuis la côte</strong>, avec un lien visuel, un habitable seul ayant à son bord un PE majeur expérimenté, à moins de 2 milles d'un abri.</li>
+  <li>Le cadre réglementaire et la check-list sont sur la page <a href="diplomes.html#prerogatives">Les diplômes et l'examen</a>.</li>
+</ul>
+
+<div class="box rem"><p class="box-label">Remarque <span class="box-title">(Croisière ou navigation côtière)</span>.</p>
+<p>Le texte réglementaire parle d'activité « croisière ». Le manuel CF préfère parler de <strong>navigation côtière</strong> et prévient : « on n'organise pas une croisière ». Les habitables permettent d'aller plus loin qu'en randonnée nautique, mais la flottille reste près des côtes, de jour, d'abri en abri, avec un programme de camp scout et non un programme de milles.</p>
+</div>
+
+<h2 id="differences">Ce qui change par rapport au CQ</h2>
+
+<div class="tbl-wrap"><table>
+<thead><tr><th></th><th>CQ, depuis un semi-rigide</th><th>CF, depuis un habitable</th></tr></thead>
+<tbody>
+<tr><td>Rejoindre un bateau</td><td>en quelques minutes</td><td>à la vitesse d'un voilier ; il faut être placé à l'avance</td></tr>
+<tr><td>Porter assistance</td><td>pousser au boudin, prendre à couple, remorquer, recueillir l'équipage</td><td>accoster un autre habitable est très périlleux, même par temps calme ; remorquage possible mais lent à mettre en place</td></tr>
+<tr><td>Passer une consigne</td><td>à la voix, au contact, ou à la VHF</td><td>presque toujours à la VHF</td></tr>
+<tr><td>Chefs de bord</td><td>chef de bord reconnu, désigné par le CQ</td><td>PE obligatoire sur chaque bateau</td></tr>
+<tr><td>Bateau d'encadrement</td><td>la sécu, sans équipage scout</td><td>un voilier de la flottille, avec son équipage à mener</td></tr>
+<tr><td>Durée</td><td>une ou quelques journées, retour au camp ou au bivouac</td><td>souvent plusieurs jours, avec des escales au port ou au mouillage</td></tr>
+<tr><td>Distance d'un abri</td><td>2 milles</td><td>6 milles</td></tr>
+</tbody></table></div>
+
+<p>Conséquence directe : le CF donne ses consignes à la VHF et laisse les jeunes les appliquer en autonomie. C'est le sens même du PE. Il doit pouvoir faire entièrement confiance à ses chefs de bord, sur le niveau technique, le respect des consignes et l'attention portée à la navigation, et il travaille en permanence à <strong>réduire l'exposition</strong> de la flottille aux risques qu'il a identifiés.</p>
+
+<h2 id="bateaux">Les bateaux</h2>
+
+<ul>
+  <li><strong>Simples à manœuvrer, de taille raisonnable.</strong> Plus le bateau est grand, plus une erreur coûte cher, humainement et financièrement.</li>
+  <li><strong>Un équipage entier et une place de plus</strong>, pour qu'un chef puisse passer une journée à bord.</li>
+  <li><strong>Des performances proches.</strong> Si les bateaux ne sont pas identiques, les différences de vitesse, de cap au près et de trajectoire dispersent la flottille ; le programme se calcule sur le bateau le plus lent.</li>
+</ul>
+
+<h3>Le bateau de maîtrise</h3>
+<p>Le manuel conseille un bateau de maîtrise <strong>légèrement plus performant</strong> que le reste de la flottille : il peut ainsi rejoindre chaque bateau régulièrement. Il doit dans tous les cas être capable d'en <strong>remorquer</strong> un autre. Par souci d'exemplarité, les jeunes doivent comprendre pourquoi ce bateau est différent du leur. Il sert aussi dans les jeux : adversaire, bateau à rattraper, bateau à imiter.</p>
+
+<h2 id="chefs-de-bord">Les chefs de bord et le bateau du CF</h2>
+
+<ul>
+  <li>Chaque bateau est mené par un PE. Le CF peut placer un chef à bord pour le soulager, en particulier les premiers jours.</li>
+  <li>Les PE doivent savoir parler à la VHF : en cas d'avarie, le CROSS voudra souvent parler directement au bateau touché. Chaque bateau garde aussi un téléphone portable allumé, confié au chef de bord.</li>
+  <li>La première expérience de CF est difficile : nouveauté, stress, vérifications sans fin, coordination qui se rode en début de semaine. Le manuel recommande au nouveau CF d'avoir <strong>un PE sur son propre bateau</strong>, pour se consacrer à la flottille. Ce n'est pas une faiblesse, mais une preuve de maturité.</li>
+</ul>
+
+<div class="box ex"><p class="box-label">Exemple <span class="box-title">(Dans le dossier type du manuel CF)</span>.</p>
+<p>Cinq voiliers identiques : quatre équipages, chacun mené par un PE, et un bateau de maîtrise mené par un CQ. Le CF change de bateau chaque jour pour encadrer successivement les quatre équipages, et confie le rôle de chef de bord du bateau où il se trouve à un PE : pour former, pour la vie d'équipage, et pour alléger sa propre charge mentale.</p>
+</div>
+
+<h2 id="escales">Plusieurs jours : escales, ports, intendance</h2>
+
+<p>Une navigation en habitables dure souvent une semaine, d'escale en escale. Le programme de chaque jour dépend autant des ports que du vent.</p>
+
+<ul>
+  <li><strong>Les ports</strong> sont prévenus bien à l'avance, et les places réservées pour la nuit si possible. L'été, beaucoup de ports sont pleins et ne peuvent pas accueillir cinq bateaux à 17 h : on arrive tôt.</li>
+  <li><strong>Les accès</strong> : un port d'échouage, une porte ou une écluse imposent une heure d'arrivée ; leurs horaires figurent dans la fiche du jour et en annexe du dossier.</li>
+  <li><strong>L'intendance</strong> : avec des réfrigérateurs à bord, elle peut se prévoir pour toute la navigation ; sinon, le programme prévoit des escales pour se ravitailler, en produits frais surtout.</li>
+  <li><strong>L'eau, l'énergie, le carburant</strong> : il faut s'arrêter régulièrement au port pour faire le plein d'eau, recharger les batteries (branchement au quai) et, si besoin, faire le plein de carburant.</li>
+  <li><strong>L'hygiène</strong> : les jeunes doivent pouvoir se laver ; on choisit des ports avec des sanitaires en nombre suffisant.</li>
+  <li><strong>Le sommeil</strong> : une veillée ou une messe tardive se paie le lendemain ; on peut retarder le départ pour préserver une bonne nuit.</li>
+</ul>
+
+<p>Le programme de chaque escale, les replis et les mouillages possibles sont dans le dossier (voir <a href="dossier.html">Le dossier de navigation</a>). Le soir, le CF propose au correspondant à terre le programme du lendemain, éventuellement modifié (voir <a href="preparer.html#correspondant">Le correspondant à terre</a>).</p>
+
+<h2 id="depart">Le départ</h2>
+
+<ol>
+  <li>Les bateaux quittent la bouée ou le ponton <strong>un par un, dans un ordre fixé</strong> au briefing. Le CF reste en soutien pour superviser chaque départ et <strong>sort en dernier</strong>.</li>
+  <li>Le <strong>premier PPO</strong> est la sortie du chenal : tous les bateaux s'y attendent avant de hisser. Ce point de rendez-vous doit laisser assez de place pour attendre en sécurité.</li>
+  <li>Les voiles ne sont hissées qu'une fois la flottille rassemblée, <strong>sur autorisation du CF</strong>.</li>
+</ol>
+<p>On évite ainsi une flottille dispersée dans le chenal. Si un moteur tombe en panne dans la sortie, il faut pouvoir remorquer vite le bateau touché : c'est une raison de plus pour rester groupés.</p>
+
+<h2 id="en-mer">En mer</h2>
+
+<h3>Se placer</h3>
+<p>Le principe ne change pas : identifier le danger principal (courant, vent, haut-fond, chenal fréquenté, bateau qui risque de manquer son virement) et se placer entre lui et la flottille. Placé ainsi, le bateau du CF montre aux autres où est le danger et matérialise une limite à ne pas dépasser. Mais il met beaucoup plus de temps à corriger une erreur de placement que la sécu : le CF choisit sa position à l'avance, au vent et en amont du courant par rapport à la flottille, et la tient.</p>
+
+<h3>Garder la flottille groupée</h3>
+<p>C'est, d'après le manuel, l'un des défis les plus difficiles du CF. Des équipages de niveau inégal créent des écarts qui augmentent vite. Le CF fait réduire la toile aux plus rapides, fixe des regroupements aux PPO, et se tient lui-même à une position précise sur le plan d'eau : carte sous les yeux, route en tête, amers identifiés dès qu'ils apparaissent.</p>
+
+<h3>Communiquer</h3>
+<p>La VHF est indispensable : elle sert à passer les consignes et à animer les jeux. Les consignes sont claires et synthétiques (voir <a href="flottille.html#consignes">Passer des consignes par VHF</a>). Sur chaque bateau, un jeune peut être chargé de la veille VHF et de répondre ; ce rôle tourne.</p>
+
+<h3>Tenir le journal</h3>
+<p>Chaque bateau tient son journal de bord. Le CF tient en plus le journal de la flottille, toutes les heures et à chaque événement : position de la flottille, météo, marée et courant si nécessaire, allure de la flottille et voilure de chaque bateau.</p>
+
+<h3>Observer et douter</h3>
+<p>Le premier jour surtout, le CF prend du recul pour jauger ses équipages : les chefs de bord connaissent-ils leurs limites, suivent-ils le bateau de devant sans vérifier, les barreurs tournent-ils, voit-on des négligences en milieu de journée (jeunes qui dorment, gilets enlevés, virements sans regarder derrière) ? Il garde la posture du <strong>doute systématique</strong> : sur la météo, qu'il reprend en cours de journée ; sur ses calculs de marée et ses alignements de sécurité ; sur le comportement des jeunes, dont il a repéré à la préparation les endroits où ils risquent de faire une bêtise.</p>
+
+<h2 id="arrivee">L'arrivée au port</h2>
+
+<p>La fin de navigation est le moment où les équipages sont fatigués, alors que les manœuvres de port, souvent peu pratiquées, sont stressantes. Il faut remobiliser tout le monde.</p>
+<ol>
+  <li><strong>Prévenir la capitainerie</strong> en amont, puis une dizaine de minutes avant l'arrivée, pour obtenir des places proches les unes des autres ou à couple ; elle peut aussi aider les équipages au ponton.</li>
+  <li><strong>Préparer chaque équipage</strong> : vérifier sa forme, la bonne prise des consignes et la manœuvre prévue par le chef de bord (comment il s'arrêtera au ponton ou au corps-mort) ; lui expliquer l'organisation du port et les places à prendre, à l'aide du Bloc marine (accès, difficultés, ponton visiteurs).</li>
+  <li><strong>Définir une zone dégagée</strong> pour affaler ou attendre.</li>
+  <li><strong>Faire entrer les bateaux dans l'ordre établi</strong>, en envoyant de préférence en premier un équipage à l'aise, qui pourra aider les suivants au ponton.</li>
+  <li><strong>Le bateau du CF rentre toujours en dernier</strong>, pour rester disponible si un bateau a un problème en mer ou dans le chenal.</li>
+</ol>
+
+<p>Une fois amarrés, les équipages rangent, ferlent ou roulent les voiles et se branchent au quai. Le CF vérifie le rangement, la propreté et surtout les <strong>amarres pour la nuit</strong> ; à couple, il fait décaler les bateaux pour que les barres de flèche ne se touchent pas au roulis. Quand tous sont amarrés, il annonce la fin de navigation au correspondant à terre, en général par SMS.</p>
+
+<p>Vient ensuite le <strong>débriefing</strong> avec les chefs de bord : technique, moral des équipages, fatigue, intendance. Pendant ce temps, les autres chefs font le tour des bateaux pour sentir l'ambiance et recueillir les impressions des plus jeunes. Le CF appelle enfin le correspondant à terre pour la synthèse de la journée et le programme du lendemain.</p>
+
+<h2 id="mouillage">Le mouillage de nuit</h2>
+
+<p>Une escale peut se faire au mouillage, dans une anse ou devant une île. On le prépare comme une entrée de port :</p>
+<ul>
+  <li>un mouillage <strong>abrité du vent prévu pour la nuit</strong>, avec les secteurs dont il protège, notés au dossier ;</li>
+  <li>un <strong>fond qui tient</strong>, lu sur la carte, et une zone où le mouillage est autorisé (Nav&amp;Co donne la réglementation locale) ;</li>
+  <li>le <strong>calcul de marée</strong> et la <strong>longueur de chaîne</strong> (au moins trois fois la hauteur d'eau maximale avec une ligne tout chaîne ; voir <a href="../pratique/mouillage.html#touee">Le mouillage</a>) ; la longueur de chaîne disponible sur chaque bateau figure dans la présentation du dossier ;</li>
+  <li>l'espacement entre les bateaux, en tenant compte des cercles d'évitage.</li>
+</ul>
+
+<div class="box meth"><p class="box-label">Méthode <span class="box-title">(Mouiller la flottille)</span>.</p>
+<ol>
+  <li>Le CF désigne la zone de mouillage.</li>
+  <li>Il reste en attente à proximité et guide à vue chaque équipage pendant qu'il mouille.</li>
+  <li>Il vérifie que chaque bateau tient (amers, sondeur, position GPS), puis <strong>mouille en dernier</strong>.</li>
+</ol>
+<p>La position donnée par une application sur téléphone peut être imprécise dans une crique où le réseau passe mal : on vérifie la tenue du mouillage par des alignements à terre.</p>
+</div>
+
+<p>Pour descendre à terre, il n'y a pas de semi-rigide : les équipages utilisent les <strong>annexes</strong> des bateaux, en plusieurs allers-retours selon leur capacité, <strong>gilets portés</strong>. Attention aux gilets autogonflants : c'est souvent en montant ou en descendant de l'annexe qu'ils se déclenchent.</p>
+
+<h2 id="remorquer">Remorquer un habitable</h2>
+
+<p>Entre deux voiliers, le remorquage est plus lent à mettre en place qu'avec un semi-rigide, mais il suit les mêmes règles (voir <a href="bateau-secu.html#remorquage">Remorquer</a>). La méthode du manuel CF :</p>
+
+<div class="box meth"><p class="box-label">Méthode <span class="box-title">(Remorquage entre habitables)</span>.</p>
+<ol>
+  <li><strong>Patte d'oie</strong> : chacun des deux bateaux en prépare une, un bout frappé sur ses deux taquets (à l'arrière pour le remorqueur, à l'avant pour le remorqué) avec des <strong>nœuds de taquet</strong>, qui permettent de larguer la remorque en cas de problème.</li>
+  <li><strong>Transmission</strong> : c'est toujours le remorqueur qui donne la remorque au remorqué. Plus elle est longue, plus le remorquage est stable et sans à-coups.</li>
+  <li><strong>Mise en tension</strong>, lentement ; attention aux doigts. Pour un remorquage de plus de 5 minutes, on prend une très longue remorque, que l'on peut lester en son milieu ; elle doit traîner dans l'eau, ce qui oblige à aller très lentement, et ménage les taquets et la remorque.</li>
+  <li><strong>Le remorqué barre</strong> pour suivre le remorqueur.</li>
+</ol>
+</div>
+
+<h2 id="vie-a-bord">La vie à bord</h2>
+
+<p>Sur un habitable, l'équipage vit ensemble jour et nuit dans quelques mètres carrés. C'est ce qui fait la richesse pédagogique de la navigation, et ce qui la rend exigeante.</p>
+
+<ul>
+  <li><strong>Le service</strong> : la promiscuité demande une vraie discipline d'intendance, de rangement et d'hygiène. Le bateau doit être rangé avant chaque départ et propre au retour ; une fiche ménage par bateau évite les discussions et les mauvaises surprises à la restitution.</li>
+  <li><strong>Les rôles</strong> : barre, écoutes, navigation, veille VHF, journal de bord, intendance. Ils tournent, pour que chacun apprenne et qu'aucun équipier ne s'ennuie.</li>
+  <li><strong>Les plus jeunes</strong> : les premières années osent rarement dire qu'ils ont froid ou qu'ils sont fatigués ; les chefs vont au-devant d'eux.</li>
+  <li><strong>Les habitudes de club</strong> : des jeunes qui font de la voile en club peuvent avoir pris des réflexes qui ne conviennent pas à une navigation scoute (empannages de régate, manœuvres sans marge, gilet enlevé dans la pétole). C'est un point d'attention à fixer dès le briefing.</li>
+  <li><strong>La prière</strong> : au mouillage, au lever, au coucher du soleil ; la prière des scouts marins figure en annexe du dossier type.</li>
+</ul>
+
+<h3>Faire progresser chacun</h3>
+<p>Le dossier type du manuel CF prévoit chaque soir un débriefing pédagogique en maîtrise, en plus du débriefing de navigation, pour reprendre les objectifs de la veille et fixer ceux du lendemain selon le niveau :</p>
+<ul>
+  <li>les plus grands appliquent les cours du PE à la navigation du jour : navigation au compas, calculs de marée ;</li>
+  <li>les premières années reconstituent l'itinéraire sur la carte et parlent de leur rôle à bord ;</li>
+  <li>les autres font un retour d'expérience de la journée, avec des topos techniques (réglage des voiles, lecture de carte, règles de barre).</li>
+</ul>
+<p>Le journal de bord de chaque équipage peut entrer dans l'attribution d'un flot de navigation à l'équipage le plus méritant. Voir aussi <a href="pedagogie.html">La dimension scoute</a>.</p>
+
+<h2 id="documents">Les documents à bord</h2>
+
+<p>D'après la check-list du manuel CF, vis-à-vis des Affaires maritimes, des accueils de scoutisme et de la Commission marine :</p>
+
+<div class="tbl-wrap"><table>
+<thead><tr><th>Pour la navigation (avec le CF)</th><th>À bord de chaque bateau</th></tr></thead>
+<tbody>
+<tr><td>
+<ul>
+  <li>copies des registres de vérification spéciale annuelle, dont le procès-verbal de vérification du radeau de survie ;</li>
+  <li>copie du procès-verbal de vérification annuelle des brassières ;</li>
+  <li>acte de francisation, acte de propriété, attestation d'assurance de chaque bateau ;</li>
+  <li>copies des diplômes de l'encadrement : PE, CF, PSC1, CRR, permis côtier ;</li>
+  <li>visa d'année ou visa de camp ;</li>
+  <li>programme détaillé de navigation, avec itinéraires de repli et abris ;</li>
+  <li>liste des participants et des équipages par bateau ;</li>
+  <li>dossier de camp et autorisation de camper ;</li>
+  <li>tests d'aisance aquatique et fiches sanitaires de liaison des jeunes ;</li>
+  <li>fiche du correspondant à terre.</li>
+</ul>
+</td><td>
+<ul>
+  <li>le livre de bord, tenu à jour ;</li>
+  <li>la liste d'armement adaptée au bateau et à sa catégorie de navigation (Division 240) ;</li>
+  <li>la fiche de briefing de navigation, remplie <strong>avant chaque départ</strong> ;</li>
+  <li>la procédure d'urgence en navigation.</li>
+</ul>
+</td></tr>
+</tbody></table></div>
+
+<div class="box retenir"><p class="box-label">À retenir.</p>
+<ul>
+  <li>4 habitables au plus, le sien compris, un PE sur chacun, 6 M d'un abri, force 4 rafales 5 ; un cinquième bateau possible avec un CQ.</li>
+  <li>Depuis un voilier, on rejoint lentement et l'on assiste difficilement : anticiper, se placer à l'avance, faire confiance aux PE, passer les consignes à la VHF.</li>
+  <li>Bateau de maîtrise un peu plus performant, capable de remorquer ; un PE sur le bateau du CF pour une première expérience.</li>
+  <li>Départ un par un, CF en dernier, regroupement à la sortie du chenal, voiles hissées sur ordre ; retour au port avec le CF en dernier ; mouillage guidé par le CF, qui mouille en dernier.</li>
+  <li>Escales : ports réservés tôt, eau, batteries, carburant, ravitaillement, sanitaires.</li>
+  <li>Journal de flottille toutes les heures : position, météo, allure, voilure de chaque bateau.</li>
+</ul>
+</div>
+
+    <nav class="pager"><a class="prev" href="../cqcf/flottille.html"><span>Précédent</span>Conduire une flottille</a><a class="next" href="../cqcf/bateau-secu.html"><span>Suivant</span>Le bateau de sécurité</a></nav>
+  </article>
+</div>
+</main>
+<footer class="foot">
+  <div class="foot-in">
+    <p class="foot-sign"><svg class="emb" viewBox="0 0 367 524" aria-hidden="true"><g class="emb-r"><path d="M152 72 L140 0 Q185 40 227 0 L215 72 Z"/><path d="M152 60 H215 V480 H152 Z"/><path d="M156 146 L15 126 Q62 168 22 214 L156 194 Z"/><path d="M 211 146 L 352 126 Q 305 168 345 214 L 211 194 Z"/><path d="M48 292 L8 388 Q24 376 38 372 C40 445 100 502 183.5 524 L183.5 474 C128 462 90 428 86 366 Q104 380 124 402 Z"/><path d="M 319 292 L 359 388 Q 343 376 329 372 C 327 445 267 502 183.5 524 L 183.5 474 C 239 462 277 428 281 366 Q 263 380 243 402 Z"/></g><g class="emb-y" transform="translate(183.5 66) scale(4.5) translate(-50 -17)"><path d="M50 17C55.5 23 57 30 54 37 53 39.5 51.5 41.5 50 43 48.5 41.5 47 39.5 46 37 43 30 44.5 23 50 17Z"/><path d="M51.3 42C52.5 36.5 56.8 32.2 61.8 32.5 65.8 32.8 68 36.4 66.5 39.7 65.3 42.3 61.9 42.5 60.9 40.4 62.6 41 63.9 39.6 63.3 38 62.6 36.2 60 35.8 58 37 55.4 38.5 53.7 41.4 53.1 43.9Z"/><path d="M48.7 42C47.5 36.5 43.2 32.2 38.2 32.5 34.2 32.8 32 36.4 33.5 39.7 34.7 42.3 38.1 42.5 39.1 40.4 37.4 41 36.1 39.6 36.7 38 37.4 36.2 40 35.8 42 37 44.6 38.5 46.3 41.4 46.9 43.9Z"/><rect x="42.5" y="43.5" width="15" height="3.4" rx=".8"/><path d="M50 46.9 54.5 52.5 50 58 45.5 52.5Z"/><path d="M47 46.9C46.4 49.5 45 51 43 51.6 44.3 49.3 44.4 48 44.3 46.9Z"/><path d="M53 46.9C53.6 49.5 55 51 57 51.6 55.7 49.3 55.6 48 55.7 46.9Z"/></g></svg><span>Bon vent et bonne mer.</span></p>
+    <p>Préparation au brevet de patron d'embarcation et à la navigation à voile. Rédigé à partir des cours de navigation des Scouts marins d'Europe de Brest et de ceux du groupe Notre-Dame-des-Champs des Scouts unitaires de France, mis à jour et complétés.</p>
+    <p>Ce site ne remplace ni la réglementation (Division 240, RIPAM), ni les documents officiels du SHOM, ni le règlement de votre association. En cas de doute, ce sont eux qui font foi.</p>
+  </div>
+</footer>
+<script src="../js/site.js"></script>
+<script type="module" src="../js/auth.js"></script>
+
+</body>
+</html>
