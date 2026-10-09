@@ -1672,8 +1672,8 @@ td.acts {
   color: var(--bar-ink);
 }
 .brand .emb {
-  width: 1.6rem;
-  height: 2.1rem;
+  width: 1.55rem;
+  height: 2.2rem;
   flex: none;
   color: var(--bar-ink);
 }
@@ -2020,8 +2020,8 @@ h2::before {
   margin-bottom: 0.9rem !important;
 }
 .foot-sign .emb {
-  width: 1.4rem;
-  height: 1.84rem;
+  width: 1.3rem;
+  height: 1.86rem;
 }
 
 /* score QCM */
@@ -2080,4 +2080,11 @@ h2::before {
 }
 .home-grid li > a {
   flex: 1;
+}
+
+.emb .emb-r {
+  fill: #d0102f;
+}
+.emb .emb-y {
+  fill: #ffd400;
 }
