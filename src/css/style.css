@@ -2283,3 +2283,216 @@ table.compo select {
 .top a.acct-name:hover {
   text-decoration: underline;
 }
+
+/* ------------------------------------------- parcours, diplômes, vue d'ensemble */
+
+.prepare {
+  display: grid;
+  grid-template-columns: auto repeat(3, 1fr);
+  margin: 1.8rem 0 0;
+  border: 1px solid var(--rule);
+  border-top: 2px solid var(--ink);
+  background: var(--card);
+  font-family: var(--sans);
+}
+.prepare + .home-grid {
+  margin-top: 1.2rem;
+}
+.prepare-h {
+  align-self: center;
+  padding: 0.8rem 1.1rem;
+  font-size: 0.7rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.prepare a {
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+  padding: 0.75rem 1rem 0.85rem;
+  border-left: 1px solid var(--rule);
+  text-decoration: none;
+  color: var(--ink);
+}
+.prepare a b {
+  font-family: var(--serif);
+  font-size: 1.35rem;
+  font-weight: 600;
+  line-height: 1.1;
+  color: var(--navy);
+}
+.prepare a span {
+  font-size: 0.85rem;
+  color: var(--ink-2);
+}
+.prepare a:hover {
+  background: var(--navy-soft);
+}
+.prepare a:hover b {
+  color: var(--signal);
+}
+@media (max-width: 640px) {
+  .prepare {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .prepare-h {
+    grid-column: 1 / -1;
+    padding: 0.55rem 0.8rem 0;
+  }
+  .prepare a {
+    padding: 0.4rem 0.8rem 0.7rem;
+  }
+  .prepare a:nth-of-type(1) {
+    border-left: 0;
+  }
+  .prepare a span {
+    font-size: 0.78rem;
+    line-height: 1.25;
+  }
+}
+.etapes {
+  list-style: none;
+  counter-reset: etape;
+  padding: 0;
+  border-top: 1px solid var(--ink);
+}
+.etapes li {
+  counter-increment: etape;
+  position: relative;
+  margin: 0;
+  padding: 0.7rem 0 0.75rem 2.4rem;
+  border-bottom: 1px solid var(--rule);
+}
+.etapes li::before {
+  content: counter(etape);
+  position: absolute;
+  left: 0;
+  top: 0.65rem;
+  width: 1.6rem;
+  font-family: var(--mono);
+  font-size: 0.95rem;
+  color: var(--signal);
+  text-align: right;
+}
+.etapes p {
+  margin: 0;
+}
+.etape-t {
+  font-weight: 600;
+}
+.etape-d {
+  font-size: 0.95rem;
+  color: var(--ink-2);
+}
+.etape-l {
+  font-family: var(--sans);
+  font-size: 0.85rem;
+  margin-top: 0.2rem !important;
+}
+.parcours-box .etapes {
+  margin: 0.6rem 0 0.4rem;
+}
+.tag-dip {
+  border-color: var(--navy);
+  color: var(--navy);
+}
+.tag-dip.main {
+  background: var(--navy-soft);
+  font-weight: 600;
+}
+.prereq {
+  list-style: none;
+  padding: 0;
+  margin: 0.4rem 0 1rem;
+  font-family: var(--sans);
+  font-size: 0.92rem;
+}
+.prereq li {
+  margin: 0.25rem 0;
+  padding-left: 1.4rem;
+  text-indent: -1.4rem;
+}
+.pr-e {
+  display: inline-block;
+  width: 1.4rem;
+  text-indent: 0;
+  font-weight: 600;
+}
+.prereq .ok .pr-e {
+  color: var(--ok);
+}
+.prereq .manque .pr-e {
+  color: var(--signal);
+}
+.prereq .decl .pr-e {
+  color: var(--amber);
+}
+.prereq .info,
+.prereq .todo .pr-e {
+  color: var(--muted);
+}
+.carnet-secs {
+  font-family: var(--sans);
+  font-size: 0.9rem;
+  columns: 2 16rem;
+  column-gap: 2rem;
+  padding-left: 1.2rem;
+}
+.carnet-secs li {
+  margin: 0.15rem 0;
+  break-inside: avoid;
+}
+.obj-tabs {
+  margin-top: 0.6rem;
+}
+.obj-tabs button,
+.carnet-tabs button {
+  font-weight: 600;
+}
+.obj-n {
+  font-weight: 400;
+}
+@media (max-width: 640px) {
+  .obj-n {
+    display: none;
+  }
+}
+table.dips td {
+  vertical-align: middle;
+}
+.decl-list {
+  list-style: none;
+  padding: 0;
+  font-family: var(--sans);
+  font-size: 0.9rem;
+}
+.decl-list li {
+  margin: 0.3rem 0;
+}
+.box.modules ul {
+  margin: 0.2rem 0 0.4rem;
+}
+table.overview td {
+  vertical-align: top;
+}
+table.overview .dips-cell {
+  min-width: 9rem;
+}
+table.overview .dips-cell .tag {
+  margin-bottom: 0.2rem;
+}
+tr.dip-edit td {
+  background: var(--paper-2);
+}
+table.overview .bar {
+  width: 4rem;
+}
+table.overview td.liens {
+  min-width: 7.5rem;
+  line-height: 1.5;
+}
+.carnet-secs li {
+  margin: 0;
+  padding: 0.12rem 0;
+}

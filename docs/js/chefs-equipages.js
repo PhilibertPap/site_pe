@@ -1,6 +1,8 @@
 // Espace chefs : registre des équipages, composition de chaque saison, points bonus.
 import * as fb from './fb.js';
 import { saisonDe, saisonLabel, moisDeSaison, moisDe, moisLabel } from './saison.js';
+import { badges } from './diplomes.js';
+import { publier } from './agregats.js';
 
 const box = document.getElementById('chefs-equipages');
 const esc = (s) => String(s ?? '').replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' })[c]);
@@ -49,7 +51,7 @@ async function show(me, saison) {
       ? `<p class="small muted">Choisissez l’équipage de chaque inscrit, et cochez son chef d’équipage (un par équipage). Les chefs qui ne sont dans aucun équipage restent sur « — ».${prev.length ? ' <button class="linkish" type="button" id="reprendre">Reprendre la composition de la saison précédente</button>' : ''}</p>
   <div class="tbl-wrap"><table class="compo"><thead><tr><th>Inscrit</th><th>Unité</th><th>Équipage</th><th>Chef d’équipage</th></tr></thead><tbody>${users
     .map(
-      (u) => `<tr data-uid="${u.uid}" data-name="${esc(u.name)}"><td>${esc(u.name)}${u.role === 'chef' ? ' <span class="tag tag-chef">chef</span>' : ''}${u.pe ? ' <span class="tag">PE</span>' : ''}</td><td class="small">${esc(u.unite)}</td>
+      (u) => `<tr data-uid="${u.uid}" data-name="${esc(u.name)}"><td>${esc(u.name)}${u.role === 'chef' ? ' <span class="tag tag-chef">chef</span>' : ''} ${badges(u)}</td><td class="small">${esc(u.unite)}</td>
       <td><select>${['<option value="">—</option>', ...actifs.map((e) => `<option value="${e.id}"${aff[u.uid] === e.id ? ' selected' : ''}>${esc(e.nom)}</option>`)].join('')}</select></td>
       <td><input type="checkbox"${ce.has(u.uid) ? ' checked' : ''} aria-label="Chef d’équipage"></td></tr>`
     )
@@ -75,6 +77,8 @@ async function show(me, saison) {
     .join('')}</ul>`;
 
   box.querySelector('#s-saison').onchange = (e) => show(me, +e.target.value);
+  // le classement publié est recalculé à chaque ouverture de l'espace chefs
+  if (saison <= cur) publier(me, saison, { compos, bonus }).catch(() => {});
   box.querySelector('#eq-new').onsubmit = async (e) => {
     e.preventDefault();
     const nom = new FormData(e.target).get('nom').trim();
@@ -146,11 +150,19 @@ async function show(me, saison) {
           if (c.membres.length) await fb.saveComposition(saison, id, c);
           else if (compos.some((x) => x.id === id)) await fb.deleteComposition(saison, id);
         }
-        const nouveaux = new Set(Object.values(par).map((c) => c.chefEq).filter(Boolean));
-        for (const u of users) {
-          const avait = !!(u.ce && u.ce[String(saison)]);
-          if (avait !== nouveaux.has(u.uid)) await fb.setChefEq(u.uid, saison, nouveaux.has(u.uid));
-        }
+        // affectations recopiées sur les profils (users/{uid}.eq et .ce), pour les règles d'accès
+        const eqDe = {};
+        const ceDe = {};
+        Object.entries(par).forEach(([id, c]) => {
+          c.membres.forEach((m) => (eqDe[m.uid] = id));
+          if (c.chefEq) ceDe[c.chefEq] = id;
+        });
+        const S = String(saison);
+        const changes = users
+          .filter((u) => ((u.eq || {})[S] || '') !== (eqDe[u.uid] || '') || ((u.ce || {})[S] || '') !== (ceDe[u.uid] || ''))
+          .map((u) => ({ uid: u.uid, eq: eqDe[u.uid] || null, ce: ceDe[u.uid] || null }));
+        await fb.setAffectations(saison, changes);
+        await publier(me, saison).catch(() => {});
         await show(me, saison);
         const m2 = box.querySelector('#compo-msg');
         if (m2) m2.textContent = 'Composition enregistrée.';

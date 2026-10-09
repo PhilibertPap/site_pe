@@ -16,6 +16,8 @@ const PERIODS = { 30: '30 derniers jours', 90: '3 derniers mois', 365: '12 derni
 let all = [];
 let users = {};
 let me = null;
+// ?uid= (lien depuis la vue d'ensemble) : ouvre le détail de ce scout, sur toute la période
+let ouvrir = new URLSearchParams(location.search).get('uid');
 
 async function load(days) {
   box.querySelector('.res-body').innerHTML = '<p class="muted">Chargement…</p>';
@@ -171,6 +173,14 @@ function render() {
       wireDelete(d, s);
     };
   });
+  if (ouvrir) {
+    const b = body.querySelector(`.res-row[data-uid="${CSS.escape(ouvrir)}"] button`);
+    ouvrir = null;
+    if (b) {
+      b.click();
+      b.closest('tr').scrollIntoView({ block: 'start' });
+    } else body.insertAdjacentHTML('afterbegin', '<p class="muted">Ce scout n’a encore enregistré aucun QCM.</p>');
+  }
 }
 
 function detail(s) {
@@ -222,7 +232,7 @@ function start() {
   box.innerHTML = `
   <div class="res-tools">
     <select id="f-period" aria-label="Période">${Object.entries(PERIODS)
-      .map(([k, v]) => `<option value="${k}"${k === '90' ? ' selected' : ''}>${v}</option>`)
+      .map(([k, v]) => `<option value="${k}"${k === (ouvrir ? '0' : '90') ? ' selected' : ''}>${v}</option>`)
       .join('')}</select>
     <select id="f-unite" aria-label="Unité"><option value="">Toutes les unités</option></select>
     <select id="f-mode" aria-label="Type"><option value="">Épreuves et entraînements</option><option value="examen">Épreuves blanches</option><option value="entrainement">Entraînements</option></select>
@@ -231,7 +241,7 @@ function start() {
   <div class="res-body"></div>`;
   box.querySelector('#f-period').onchange = (e) => load(e.target.value);
   ['#f-unite', '#f-mode', '#f-chefs'].forEach((s) => (box.querySelector(s).onchange = render));
-  load(90);
+  load(ouvrir ? 0 : 90);
 }
 
 (window.PE && window.PE.userReady ? window.PE.userReady : Promise.resolve(null)).then((u) => {

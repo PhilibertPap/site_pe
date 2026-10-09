@@ -4,11 +4,18 @@ rules_version = '2';
 // À copier dans la console Firebase : Firestore Database > Règles > Publier.
 //
 // - Un compte créé est « en attente » (approved = false) tant qu'un chef ne l'a pas validé.
-// - Seuls les comptes validés lisent et écrivent les questions-réponses.
-// - Les chefs (role = 'chef') valident les comptes, modèrent, et leurs réponses sont mises en avant.
-// - Chaque QCM terminé est enregistré dans results : l'élève voit les siens, les chefs voient tout.
-// - Formateurs (chefs et titulaires du PE) : réponses mises en avant, validation des carnets.
-// - Équipages par saison, classement à partir de stats (résumés sans nom), points bonus des chefs.
+// - Chefs (role = 'chef') : accès à tout (comptes, résultats, statistiques, carnets, diplômes).
+// - Scouts : uniquement leurs propres résultats, statistiques, carnet, diplômes et déclarations.
+// - Chef d'équipage de la saison : les statistiques, le carnet, les demandes et le profil des membres
+//   de son équipage, et la validation de leur carnet. Pas les autres équipages.
+//   Les affectations sont recopiées sur les profils par les chefs : users/{uid}.eq = { '2026': '<id>' },
+//   users/{uid}.ce = { '2026': '<id>' } (saison en chaîne).
+// - Formateur (chef, ou titulaire confirmé du PE, du CQ ou du CF) : ses réponses aux questions sont
+//   mises en avant. C'est tout : il ne voit pas les carnets des autres.
+// - Diplômes : déclarés par le scout (diplomes/{uid}), confirmés par un chef (users/{uid}.dip).
+// - Classement : agrégats par équipage (classement/{saison}_{eq}), lisibles par tous les inscrits,
+//   écrits par un chef ou par le chef de cet équipage. Les notes individuelles ne sont pas exposées.
+// - Questions-réponses : ouvertes à tous les inscrits validés.
 
 service cloud.firestore {
   match /databases/{database}/documents {
@@ -21,18 +28,40 @@ service cloud.firestore {
         && profile().approved == true;
     }
     function chef() { return approved() && profile().role == 'chef'; }
-    // saison scoute en cours : année de septembre
+    // saison scoute en cours : année de septembre, en chaîne ('2026')
     function saisonCourante() { return request.time.month() >= 9 ? request.time.year() : request.time.year() - 1; }
-    // formateur : chef ou titulaire du PE ; ses réponses sont mises en avant
-    function estFormateur(p) { return p.role == 'chef' || p.get('pe', false) == true; }
-    function formateur() { return approved() && estFormateur(profile()); }
-    // chef d'équipage pour la saison en cours : users/{uid}.ce = { '2026': true }
-    function chefEq() { return approved() && profile().get('ce', {}).get(string(saisonCourante()), false) == true; }
-    function validateur() { return formateur() || chefEq(); }
+    function saisonS() { return string(saisonCourante()); }
+
+    // diplômes confirmés : users/{uid}.dip = { pe: '2025-07', ... } ; un ancien pe == true compte comme PE
+    function aDip(p, d) { return p.get('dip', {}).get(d, '') != ''; }
+    function aPE(p) { return aDip(p, 'pe') || p.get('pe', false) == true; }
+    function estFormateur(p) { return p.role == 'chef' || aPE(p) || aDip(p, 'cq') || aDip(p, 'cf'); }
+    // titre affiché à côté du nom dans une réponse : un diplôme que l'auteur a vraiment
+    function titreOk(p, t) { return (t == 'PE' && aPE(p)) || (t == 'CQ' && aDip(p, 'cq')) || (t == 'CF' && aDip(p, 'cf')); }
+
+    // chef d'équipage du scout uid pour la saison s (chaîne) : même identifiant d'équipage
+    // dans users/{moi}.ce[s] et users/{uid}.eq[s]
+    function ceDe(uid, s) {
+      return approved()
+        && profile().get('ce', {}).get(s, '-')
+           == get(/databases/$(database)/documents/users/$(uid)).data.get('eq', {}).get(s, '');
+    }
     function str(v, max) { return v is string && v.size() > 0 && v.size() <= max; }
+    function mois(m) { return m is string && m.matches('^[0-9]{4}-(0[1-9]|1[0-2])$'); }
+    function moisOk(d, k) { return !(k in d) || mois(d[k]); }
+    // déclarations de diplômes : { code: 'AAAA-MM' }
+    function declOk(d) {
+      return d is map
+        && d.keys().hasOnly(['pe_theo', 'pe_prat', 'pe', 'cq', 'cf', 'permis', 'psc1', 'cep1'])
+        && moisOk(d, 'pe_theo') && moisOk(d, 'pe_prat') && moisOk(d, 'pe') && moisOk(d, 'cq')
+        && moisOk(d, 'cf') && moisOk(d, 'permis') && moisOk(d, 'psc1') && moisOk(d, 'cep1');
+    }
 
     match /users/{uid} {
-      allow read: if signedIn() && (request.auth.uid == uid || chef());
+      // soi-même, un chef, ou le chef d'équipage de la saison en cours (badges, nom)
+      allow get: if signedIn() && (request.auth.uid == uid || chef()
+        || (approved() && resource.data.get('eq', {}).get(saisonS(), '') == profile().get('ce', {}).get(saisonS(), '-')));
+      allow list: if chef();
       // inscription : uniquement son propre profil, en attente, rôle élève
       allow create: if signedIn() && request.auth.uid == uid
         && request.resource.data.keys().hasOnly(['name', 'unite', 'email', 'role', 'approved', 'createdAt'])
@@ -40,11 +69,14 @@ service cloud.firestore {
         && request.resource.data.unite is string && request.resource.data.unite.size() <= 80
         && request.resource.data.role == 'eleve'
         && request.resource.data.approved == false;
-      // un chef modifie tout (validation, rôle) ; chacun peut corriger son nom et son unité
+      // un chef modifie tout (validation, rôle, diplômes, équipage) ; chacun corrige son nom,
+      // son unité et choisit son objectif
       allow update: if chef()
         || (signedIn() && request.auth.uid == uid
-            && request.resource.data.diff(resource.data).affectedKeys().hasOnly(['name', 'unite'])
-            && str(request.resource.data.name, 80));
+            && request.resource.data.diff(resource.data).affectedKeys().hasOnly(['name', 'unite', 'objectif'])
+            && str(request.resource.data.name, 80)
+            && request.resource.data.unite is string && request.resource.data.unite.size() <= 80
+            && (!('objectif' in request.resource.data) || request.resource.data.objectif in ['PE', 'CQ', 'CF']));
       allow delete: if chef();
     }
 
@@ -79,10 +111,11 @@ service cloud.firestore {
       match /answers/{aid} {
         allow read: if approved();
         allow create: if approved()
-          && request.resource.data.keys().hasOnly(['body', 'authorId', 'authorName', 'byChef', 'createdAt'])
+          && request.resource.data.keys().hasOnly(['body', 'authorId', 'authorName', 'byChef', 'titre', 'createdAt'])
           && request.resource.data.authorId == request.auth.uid
           && request.resource.data.authorName == profile().name
           && request.resource.data.byChef == estFormateur(profile())
+          && (!('titre' in request.resource.data) || titreOk(profile(), request.resource.data.titre))
           && str(request.resource.data.body, 5000);
         allow update, delete: if chef();
       }
@@ -128,9 +161,14 @@ service cloud.firestore {
       allow delete: if chef();
     }
 
-    // Résumé de saison d'un scout (sans nom), base du classement des équipages
+    // Résumé de saison d'un scout : lu par lui, les chefs, et le chef de son équipage cette saison-là
+    // (document par document : seuls les chefs peuvent faire une requête sur la collection).
     match /stats/{sid} {
-      allow read: if approved();
+      allow get: if chef()
+        || (approved() && (resource == null
+            || resource.data.uid == request.auth.uid
+            || ceDe(resource.data.uid, string(resource.data.saison))));
+      allow list: if chef();
       allow create, update: if approved()
         && sid == string(request.resource.data.saison) + '_' + request.auth.uid
         && request.resource.data.uid == request.auth.uid
@@ -140,21 +178,60 @@ service cloud.firestore {
       allow delete: if chef();
     }
 
-    // Carnet de progression : validé par les formateurs et les chefs d'équipage
-    match /carnets/{uid} {
-      allow read: if approved() && (request.auth.uid == uid || validateur());
-      allow create, update: if validateur() && request.resource.data.keys().hasOnly(['v']);
+    // Classement publié : agrégats par équipage, sans note individuelle
+    match /classement/{cid} {
+      allow read: if approved();
+      allow create, update: if approved()
+        && request.resource.data.saison is int
+        && request.resource.data.eq is string
+        && cid == string(request.resource.data.saison) + '_' + request.resource.data.eq
+        && request.resource.data.keys().hasOnly(['saison', 'eq', 'nom', 'membres', 'mois', 'total', 'sem', 'at'])
+        && request.resource.data.mois is map
+        && request.resource.data.at == request.time
+        && (chef() || profile().get('ce', {}).get(string(request.resource.data.saison), '-') == request.resource.data.eq);
       allow delete: if chef();
     }
+
+    // Carnet de progression (PE, CQ, CF) : validé par un chef ou par le chef d'équipage du scout,
+    // jamais par le scout lui-même
+    match /carnets/{uid} {
+      allow get: if approved() && (request.auth.uid == uid || chef() || ceDe(uid, saisonS()));
+      allow list: if chef();
+      allow create, update: if (chef() || ceDe(uid, saisonS()))
+        && request.auth.uid != uid
+        && request.resource.data.keys().hasOnly(['v']);
+      allow delete: if chef();
+    }
+    // Demandes de validation. Un chef d'équipage les lit par une requête sur l'uid de chaque équipier.
     match /demandes/{did} {
-      allow read: if approved() && (resource.data.uid == request.auth.uid || validateur());
+      // le chef d'équipage lit par une requête sur eq (son équipage de la saison)
+      allow read: if approved()
+        && (resource.data.uid == request.auth.uid || chef()
+            || (resource.data.get('eq', '') != ''
+                && resource.data.get('eq', '') == profile().get('ce', {}).get(saisonS(), '-')));
       allow create: if approved()
         && request.resource.data.uid == request.auth.uid
         && did == request.auth.uid + '_' + request.resource.data.item
-        && request.resource.data.keys().hasOnly(['uid', 'name', 'item', 'saison', 'at'])
+        && request.resource.data.keys().hasOnly(['uid', 'name', 'eq', 'item', 'saison', 'at'])
+        && request.resource.data.eq == profile().get('eq', {}).get(saisonS(), '')
         && request.resource.data.name == profile().name;
       allow update: if false;
-      allow delete: if approved() && (resource.data.uid == request.auth.uid || validateur());
+      // resource == null : valider un point sans demande supprime une demande absente (même lot d'écritures)
+      allow delete: if approved()
+        && (resource == null || resource.data.uid == request.auth.uid || chef() || ceDe(resource.data.uid, saisonS()));
+    }
+
+    // Diplômes déclarés par le scout, en attente de confirmation : { d: { cq: '2026-04' }, at }.
+    // La confirmation (par un chef) inscrit le diplôme dans users/{uid}.dip et retire la déclaration.
+    match /diplomes/{uid} {
+      allow get: if approved() && (request.auth.uid == uid || chef());
+      allow list: if chef();
+      allow create, update: if chef()
+        || (approved() && request.auth.uid == uid
+            && request.resource.data.keys().hasOnly(['d', 'at'])
+            && declOk(request.resource.data.d)
+            && request.resource.data.at == request.time);
+      allow delete: if approved() && (request.auth.uid == uid || chef());
     }
   }
 }

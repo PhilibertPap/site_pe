@@ -1,24 +1,29 @@
-// Carnet de progression du PE : ce que le scout sait faire, validé par un formateur ou son chef d'équipage.
+// Carnet de progression (PE, CQ ou CF) : ce que le scout sait faire, validé par un chef ou son chef d'équipage.
 import * as fb from './fb.js';
-import { SECTIONS, TOTAL } from './attendus.js';
+import { LISTES, TOTAUX, valides } from './attendus.js';
+import { OBJECTIFS, objectifDe, estChefEq, ceDe } from './diplomes.js';
 import { saisonDe } from './saison.js';
 
 const box = document.getElementById('carnet');
 const ROOT = document.body.dataset.root || '../';
 const esc = (s) => String(s ?? '').replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' })[c]);
-const date = (d) => (d && d.toDate ? d.toDate() : d instanceof Date ? d : null);
+const date = (d) => (d && d.toDate ? d.toDate() : d instanceof Date ? d : typeof d === 'number' ? new Date(d) : null);
 const jour = (d) => (date(d) ? date(d).toLocaleDateString('fr-FR', { day: 'numeric', month: 'short', year: 'numeric' }) : '');
-const validateur = (p) => !!p && (p.role === 'chef' || p.pe === true || !!(p.ce && p.ce[String(saisonDe())]));
+// chef, ou chef d'équipage de la saison (les règles vérifient que le scout est dans son équipage)
+const validateur = (p) => !!p && (p.role === 'chef' || estChefEq(p));
 
-async function show(me, uid) {
+async function show(me, uid, liste) {
   box.innerHTML = '<p class="muted">Chargement…</p>';
   const self = uid === me.uid;
-  let v, dem, nom = me.name;
+  let v, dem, nom = me.name, profil = me;
   try {
-    [v, dem] = await Promise.all([fb.getCarnet(uid), fb.mesDemandes(uid)]);
+    [v, dem] = await Promise.all([
+      fb.getCarnet(uid),
+      self || me.role === 'chef' ? fb.mesDemandes(uid) : fb.demandesEquipage(ceDe(me)).then((l) => l.filter((d) => d.uid === uid)),
+    ]);
     if (!self) {
-      const p = await fb.getProfile(uid).catch(() => null);
-      if (p) nom = p.name;
+      profil = await fb.getProfile(uid).catch(() => null);
+      if (profil) nom = profil.name;
       else {
         const c = await fb.compositions(saisonDe()).catch(() => []);
         const x = c.flatMap((e) => e.membres || []).find((m) => m.uid === uid);
@@ -26,17 +31,28 @@ async function show(me, uid) {
       }
     }
   } catch (e) {
-    box.innerHTML = `<p>${esc(fb.message(e))}</p>`;
+    box.innerHTML = `<p>${e && e.code === 'permission-denied' ? 'Vous n’avez pas accès au carnet de ce scout : seuls les chefs et son chef d’équipage le voient.' : esc(fb.message(e))}</p>`;
     return;
   }
+  const obj = objectifDe(profil);
+  liste = liste || obj;
+  const SECTIONS = LISTES[liste];
+  const TOTAL = TOTAUX[liste];
   const demandes = new Set(dem.map((d) => d.item));
-  const nv = Object.keys(v).length;
+  const nv = valides(v, liste);
+  const nd = SECTIONS.flatMap((s) => s.items).filter(([id]) => demandes.has(id) && !v[id]).length;
   const peutValider = !self && validateur(me);
   const barre = (a, n) => `<span class="bar"><span style="width:${n ? Math.round((100 * a) / n) : 0}%"></span></span>`;
 
   box.innerHTML = `
-  ${self ? '' : `<p class="small"><a href="${ROOT}equipage/index.html">← Tableau de bord</a></p><h2 class="carnet-nom">Carnet de ${esc(nom)}</h2>`}
-  <p class="carnet-total">${barre(nv, TOTAL)} <b>${nv}</b> point${nv > 1 ? 's' : ''} validé${nv > 1 ? 's' : ''} sur ${TOTAL}${demandes.size ? ` · ${demandes.size} demande${demandes.size > 1 ? 's' : ''} en attente` : ''}</p>
+  ${self ? '' : `<p class="small"><a href="${ROOT}${me.role === 'chef' ? 'chefs/index.html#inscrits' : 'equipage/index.html'}">← ${me.role === 'chef' ? 'Vue d’ensemble' : 'Tableau de bord'}</a></p><h2 class="carnet-nom">Carnet de ${esc(nom)}</h2>`}
+  <div class="gate-tabs carnet-tabs" role="tablist" aria-label="Liste">${Object.keys(LISTES)
+    .map(
+      (k) => `<button type="button" role="tab" data-l="${k}" aria-selected="${k === liste}">${k}${k === obj ? ' <span class="small muted">(objectif)</span>' : ''}</button>`
+    )
+    .join('')}</div>
+  <p class="small muted">${liste === 'PE' ? 'Liste « Avant de me présenter au PE » de la Passerelle SUF.' : `Liste établie d’après le manuel de formation du ${OBJECTIFS[liste].nom.toLowerCase()} de la Passerelle SUF.`} <a href="${ROOT}${OBJECTIFS[liste].page}">Le parcours ${liste}</a></p>
+  <p class="carnet-total">${barre(nv, TOTAL)} <b>${nv}</b> point${nv > 1 ? 's' : ''} validé${nv > 1 ? 's' : ''} sur ${TOTAL}${nd ? ` · ${nd} demande${nd > 1 ? 's' : ''} en attente` : ''}</p>
   ${SECTIONS.map((s) => {
     const n = s.items.filter(([id]) => v[id]).length;
     return `<section class="carnet-sec"><h2 id="${s.id}">${esc(s.titre)} <span class="small muted">${n}/${s.items.length}</span></h2>
@@ -57,6 +73,7 @@ async function show(me, uid) {
       .join('')}</ul></section>`;
   }).join('')}`;
 
+  box.querySelectorAll('[data-l]').forEach((b) => (b.onclick = () => show(me, uid, b.dataset.l)));
   box.querySelectorAll('[data-a]').forEach((b) => {
     b.onclick = async () => {
       const item = b.closest('li').dataset.item;
@@ -66,7 +83,7 @@ async function show(me, uid) {
         if (b.dataset.a === 'annuler') await fb.annulerDemande(me.uid, item);
         if (b.dataset.a === 'valider') await fb.valider(uid, item, me, true);
         if (b.dataset.a === 'retirer') await fb.valider(uid, item, me, false);
-        show(me, uid);
+        show(me, uid, liste);
       } catch (e) {
         b.disabled = false;
         b.textContent = fb.message(e);
@@ -80,10 +97,12 @@ async function show(me, uid) {
     box.innerHTML = '<p>Le carnet de progression n’est pas encore activé sur ce site.</p>';
     return;
   }
-  const uid = new URLSearchParams(location.search).get('uid') || me.uid;
+  const q = new URLSearchParams(location.search);
+  const uid = q.get('uid') || me.uid;
+  const liste = LISTES[q.get('liste')] ? q.get('liste') : null;
   if (uid !== me.uid && !validateur(me)) {
-    box.innerHTML = '<p>Seuls les formateurs et les chefs d’équipage peuvent voir le carnet d’un autre scout.</p>';
+    box.innerHTML = '<p>Seuls les chefs et le chef d’équipage d’un scout peuvent voir son carnet.</p>';
     return;
   }
-  show(me, uid);
+  show(me, uid, liste);
 });

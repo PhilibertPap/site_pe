@@ -11,6 +11,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import * as F from './src/js/figures.js';
+import { etapesHTML } from './src/js/diplomes.js';
 import { firebaseConfig } from './src/js/firebase-config.js';
 
 // Accès réservé et questions-réponses : actifs dès que Firebase est configuré
@@ -40,6 +41,8 @@ const PARTS = {
   cqcf: { label: 'CQ / CF', href: 'cqcf/index.html' },
   annales: { label: 'Annales', href: 'annales/index.html' },
 };
+// Parties sans place dans la barre de navigation
+const HORS_NAV = { parcours: { label: 'Je prépare' } };
 if (AUTH) {
   PARTS.questions = { label: 'Questions', href: 'questions/index.html' };
   PARTS.equipages = { label: 'Équipages', href: 'equipages/index.html' };
@@ -273,6 +276,11 @@ const cqcf = pages
   .filter((p) => p.meta.part === 'cqcf' && p.meta.order)
   .sort((a, b) => a.meta.order - b.meta.order);
 
+// Parcours par diplôme (PE, CQ, CF) : pages publiques, hors de la barre de navigation
+const parcours = pages
+  .filter((p) => p.meta.part === 'parcours' && p.meta.order)
+  .sort((a, b) => a.meta.order - b.meta.order);
+
 // Tableau des annales, construit d'après les noms de fichiers de docs/fichiers/annales :
 // épreuve-année[-session]-type.ext (épreuve : qcm, carto, maree ; type : sujet, corrige)
 function annalesHTML(root) {
@@ -404,8 +412,9 @@ for (const page of pages) {
     ${seriesNav(chapters, page, root, 'Chapitre')}
   </article>
 </div>`;
-  } else if (['pratique', 'exercices', 'cqcf'].includes(meta.part) && meta.order) {
-    const list = { pratique: pratiques, exercices: exos, cqcf }[meta.part];
+  } else if (['pratique', 'exercices', 'cqcf', 'parcours'].includes(meta.part) && meta.order) {
+    const list = { pratique: pratiques, exercices: exos, cqcf, parcours }[meta.part];
+    const label = (PARTS[meta.part] || HORS_NAV[meta.part]).label;
     body = boxesOnly(body);
     const r = sectionIds(body);
     body = r.html;
@@ -413,12 +422,12 @@ for (const page of pages) {
     main = `
 <div class="doc">
   <aside class="side">
-    <p class="side-h">${PARTS[meta.part].label}</p>
+    <p class="side-h">${label}</p>
     ${sideList(list, page, root, '')}
   </aside>
   <article class="chapter">
     <header class="chap-head">
-      <p class="kicker">${PARTS[meta.part].label}</p>
+      <p class="kicker">${label}</p>
       <h1>${meta.title}</h1>
       ${meta.desc ? `<p class="chap-desc">${meta.desc}</p>` : ''}
     </header>
@@ -465,6 +474,7 @@ for (const page of pages) {
       '</ol>'
     )
     .replace('<!--ANNALES-->', () => annalesHTML(root))
+    .replace(/<!--ETAPES:(PE|CQ|CF)-->/g, (m, obj) => typo(etapesHTML(obj, root)))
     .replace('<!--EXERCICES-->', () =>
       '<ol class="index-list">' +
       exos

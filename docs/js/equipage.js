@@ -1,9 +1,12 @@
-// Tableau de bord d'un équipage (chef d'équipage, chefs) et demandes de validation du carnet.
+// Tableau de bord d'un équipage et demandes de validation du carnet.
+// Chefs : tous les équipages. Chef d'équipage : le sien seulement (les règles Firestore l'imposent).
 import * as fb from './fb.js';
 import { classement, scoreMois, BAREME } from './classement.js';
-import { saisonDe, saisonLabel, moisDe, moisLabel, moisCourt, semaineDe } from './saison.js';
+import { publier, statsEquipage, lire, pts } from './agregats.js';
+import { saisonDe, saisonLabel, moisDe, moisLabel, moisCourt, semaineDe, moisDeSaison } from './saison.js';
 import { THEMES } from './qcm/index.js';
-import { ITEMS, TOTAL } from './attendus.js';
+import { ITEMS, TOTAUX, valides } from './attendus.js';
+import { badges, ceDe, estChefEq, objectifDe } from './diplomes.js';
 import { courbe } from './courbe.js';
 
 const box = document.getElementById('equipage');
@@ -13,22 +16,39 @@ const f1 = (x) => (Math.round(x * 10) / 10).toLocaleString('fr-FR');
 const pct = (a, n) => (n ? Math.round((100 * a) / n) : 0);
 const date = (d) => (d ? d.toLocaleDateString('fr-FR', { day: 'numeric', month: 'short' }) : '');
 
-export const estFormateur = (p) => !!p && (p.role === 'chef' || p.pe === true);
-export const estChefEq = (p) => !!(p && p.ce && p.ce[String(saisonDe())]);
-
 async function show(me, eqId) {
   box.innerHTML = '<p class="muted">Chargement…</p>';
   const saison = saisonDe();
-  let compos, stats, bonus, demandes;
+  const chef = me.role === 'chef';
+  let compos, stats, bonus, demandes, profils, tabPub;
+  let visibles, eq;
   try {
-    [compos, stats, bonus, demandes] = await Promise.all([fb.compositions(saison), fb.statsSaison(saison), fb.listBonus(saison), fb.toutesDemandes()]);
+    [compos, bonus] = await Promise.all([fb.compositions(saison), fb.listBonus(saison)]);
+    visibles = chef ? compos : compos.filter((c) => c.id === ceDe(me, saison));
+    eq = visibles.find((c) => c.id === eqId) || visibles.find((c) => c.chefEq === me.uid) || visibles[0];
+    const uids = ((eq && eq.membres) || []).map((x) => x.uid);
+    if (chef) {
+      let users;
+      [stats, demandes, users] = await Promise.all([fb.statsSaison(saison), fb.toutesDemandes(), fb.listUsers()]);
+      profils = Object.fromEntries(users.map((u) => [u.uid, u]));
+    } else {
+      // chef d'équipage : uniquement ses équipiers, document par document
+      const [st, dem, pr] = await Promise.all([
+        eq ? statsEquipage(saison, eq) : [],
+        eq ? fb.demandesEquipage(eq.id).catch(() => []) : [],
+        Promise.all(uids.map((u) => fb.getProfile(u).catch(() => null))),
+      ]);
+      stats = st;
+      demandes = dem.filter((d) => uids.includes(d.uid));
+      profils = Object.fromEntries(pr.filter(Boolean).map((u) => [u.uid, u]));
+    }
+    // publier le classement (tous les équipages pour un chef, le sien pour un chef d'équipage)
+    await publier(me, saison, { compos, bonus, stats }).catch(() => {});
+    tabPub = await lire(saison, compos).catch(() => null);
   } catch (e) {
     box.innerHTML = `<p>${esc(fb.message(e))}</p>`;
     return;
   }
-  const chef = me.role === 'chef';
-  const visibles = chef ? compos : compos.filter((c) => c.chefEq === me.uid);
-  const eq = visibles.find((c) => c.id === eqId) || visibles.find((c) => c.chefEq === me.uid) || visibles[0];
   const sel =
     visibles.length > 1
       ? `<label class="small">Équipage <select id="eq-sel">${visibles
@@ -44,11 +64,13 @@ async function show(me, eqId) {
   if (eq) {
     const membres = eq.membres || [];
     const carnets = await Promise.all(membres.map((x) => fb.getCarnet(x.uid).catch(() => ({}))));
-    const tab = classement(compos, stats, bonus, saison, now);
-    const rang = tab.map((e) => ({ id: e.id, t: e.parMois[m].total })).sort((a, b) => b.t - a.t).findIndex((e) => e.id === eq.id) + 1;
+    const moi = classement([eq], stats, bonus, saison, now)[0];
     const s = scoreMois(eq, st, m, bonus, now);
-    const moi = tab.find((e) => e.id === eq.id);
-    const mois = Object.keys(moi.parMois);
+    // rang d'après les agrégats publiés des autres équipages
+    const rang = tabPub
+      ? tabPub.map((e) => ({ id: e.id, t: e.id === eq.id ? s.total : pts(e, m).total })).sort((a, b) => b.t - a.t).findIndex((e) => e.id === eq.id) + 1
+      : 0;
+    const mois = moisDeSaison(saison, now);
     const rows = membres.map((x, i) => {
       const u = st[x.uid] || {};
       const mo = (u.mois || {})[m] || {};
@@ -67,15 +89,17 @@ async function show(me, eqId) {
         .slice(0, 2)
         .map(([t]) => `<span class="tag tag-open">${THEMES[t] || t}</span>`)
         .join('');
-      const nv = Object.keys(carnets[i] || {}).length;
+      const p = profils[x.uid] || {};
+      const obj = objectifDe(p);
+      const nv = valides(carnets[i], obj);
       const dernier = (u.epreuves || []).slice(-1)[0];
-      return `<tr${fait ? '' : ' class="idle"'}><td class="nowrap"><a href="${ROOT}carnet/index.html?uid=${x.uid}">${esc(x.name)}</a>${x.uid === eq.chefEq ? ' <span class="tag">CE</span>' : ''}</td>
+      return `<tr${fait ? '' : ' class="idle"'}><td class="nowrap"><a href="${ROOT}carnet/index.html?uid=${x.uid}">${esc(x.name)}</a>${x.uid === eq.chefEq ? ' <span class="tag">CE</span>' : ''}${badges(p)}</td>
         <td class="num">${fait ? 'oui' : '<span class="err-t">non</span>'}</td>
         <td class="num">${u.defis && u.defis[sem] != null ? u.defis[sem] + '/10' : '–'}</td>
         <td class="num">${mo.n || 0}</td><td class="num">${mo.best ? mo.best + '/30' : '–'}</td>
         <td class="num">${dernier ? dernier.s + '/30' : '–'}</td>
         <td>${faibles || '<span class="muted small">–</span>'}</td>
-        <td class="num">${nv}/${TOTAL}</td></tr>`;
+        <td class="num nowrap"><span class="small muted">${obj}</span> ${nv}/${TOTAUX[obj]}</td></tr>`;
     });
     html += `
     <h2 id="tableau">${esc(eq.nom)}</h2>
@@ -88,14 +112,14 @@ async function show(me, eqId) {
         : ''
     }`;
   } else if (!chef) {
-    html += estChefEq(me) ? '<p class="muted">Votre équipage n’a pas encore été composé.</p>' : '';
+    html += '<p class="muted">Votre équipage n’a pas encore été composé.</p>';
   } else {
     html += `<p class="muted">Aucun équipage composé pour cette saison. <a href="${ROOT}chefs/equipages.html">Composer les équipages</a>.</p>`;
   }
 
-  // demandes de validation : celles de l'équipage pour un chef d'équipage, toutes pour un formateur
+  // demandes de validation : toutes pour un chef, celles de l'équipage pour un chef d'équipage
   const uidsEq = new Set(((eq && eq.membres) || []).map((x) => x.uid));
-  const dem = (estFormateur(me) ? demandes : demandes.filter((d) => uidsEq.has(d.uid))).sort((a, b) => (a.at || 0) - (b.at || 0));
+  const dem = (chef ? demandes : demandes.filter((d) => uidsEq.has(d.uid))).filter((d) => d.uid !== me.uid).sort((a, b) => (a.at || 0) - (b.at || 0));
   const nomEq = (uid) => (compos.find((c) => (c.membres || []).some((x) => x.uid === uid)) || {}).nom || '';
   html += `<h2 id="demandes">Demandes de validation (${dem.length})</h2>
   <p class="small muted">Le scout demande qu’on valide un point de son carnet de progression. On signe son carnet papier, puis on valide ici : il sait ainsi ce qui lui reste à travailler.</p>
@@ -103,7 +127,7 @@ async function show(me, eqId) {
     dem.length
       ? `<ul class="demandes">${dem
           .map(
-            (d) => `<li data-uid="${d.uid}" data-item="${d.item}"><div><b>${esc(d.name)}</b> <span class="muted small">${esc(nomEq(d.uid))} · ${date(d.at)}</span><br>${esc((ITEMS[d.item] || {}).texte || d.item)}</div>
+            (d) => `<li data-uid="${d.uid}" data-item="${d.item}"><div><b>${esc(d.name)}</b> <span class="muted small">${esc(nomEq(d.uid))} · ${date(d.at)}${ITEMS[d.item] ? ' · carnet ' + ITEMS[d.item].liste : ''}</span><br>${esc((ITEMS[d.item] || {}).texte || d.item)}</div>
             <div class="btns"><button class="btn small" type="button" data-a="ok">Validé (signé)</button><button class="btn small ghost" type="button" data-a="non">Pas encore</button></div></li>`
           )
           .join('')}</ul>`
@@ -133,8 +157,8 @@ async function show(me, eqId) {
     box.innerHTML = '<p>Cette page n’est pas encore activée sur ce site.</p>';
     return;
   }
-  if (!(me.role === 'chef' || estFormateur(me) || estChefEq(me))) {
-    box.innerHTML = '<p>Cette page est réservée aux chefs d’équipage, aux formateurs et aux chefs.</p>';
+  if (!(me.role === 'chef' || estChefEq(me))) {
+    box.innerHTML = '<p>Cette page est réservée aux chefs d’équipage et aux chefs.</p>';
     return;
   }
   show(me, new URLSearchParams(location.search).get('eq'));

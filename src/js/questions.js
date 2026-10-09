@@ -1,5 +1,6 @@
 // Questions-réponses : liste, nouvelle question, fil d'une question.
 import * as fb from './fb.js';
+import { estFormateur } from './diplomes.js';
 
 const THEMES = {
   carte: 'Carte et compas',
@@ -139,14 +140,14 @@ async function showDetail(me, id) {
   <ol class="answers">${answers
     .map(
       (a) => `<li class="answer${a.byChef ? ' by-chef' : ''}">
-      <p class="q-meta"><strong>${esc(a.authorName)}</strong>${a.byChef ? ' <span class="tag tag-chef">formateur</span>' : ''} · ${date(a.createdAt)}${
+      <p class="q-meta"><strong>${esc(a.authorName)}</strong>${a.titre ? ` <span class="tag tag-dip main" title="Diplôme confirmé">${esc(a.titre)}</span>` : ''}${a.byChef ? ' <span class="tag tag-chef">formateur</span>' : ''} · ${date(a.createdAt)}${
         chef ? ` · <button type="button" class="linkish" data-del="${a.id}">supprimer</button>` : ''
       }</p>
       ${fmt(a.body)}</li>`
     )
     .join('')}</ol>
   <form class="q-form" id="a-form">
-    <label>${chef || me.pe ? 'Votre réponse (elle sera signalée comme réponse d’un formateur)' : 'Votre réponse ou un complément'}<textarea name="body" rows="5" maxlength="5000" required></textarea></label>
+    <label>${estFormateur(me) ? 'Votre réponse (elle sera signalée comme réponse d’un formateur)' : 'Votre réponse ou un complément'}<textarea name="body" rows="5" maxlength="5000" required></textarea></label>
     <div class="btns"><button class="btn" type="submit">Répondre</button></div>
   </form>`;
 

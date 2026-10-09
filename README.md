@@ -13,11 +13,13 @@ build.mjs             générateur (Node, sans dépendance)
 serve.mjs             petit serveur local pour relire le site
 firestore.rules       règles de sécurité de la base Firebase (questions-réponses)
 src/layout.html       gabarit commun
-src/pages/            contenu : cours/, qcm/, exercices/, pratique/, cqcf/, annales/, questions/, chefs/
+src/pages/            contenu : cours/, qcm/, exercices/, pratique/, cqcf/, parcours/, annales/,
+                      questions/, compte/, carnet/, equipage(s)/, chefs/
 src/sw.js             service worker (site installable et consultable hors ligne)
 src/css/style.css     mise en page
 src/js/               figures.js (balises, feux, pavillons), qcm.js, exos.js, outils.js,
-                      auth.js, fb.js, questions.js, chefs.js, firebase-config.js
+                      auth.js, fb.js, questions.js, chefs.js, diplomes.js, attendus.js,
+                      agregats.js (classement publié), firebase-config.js
 docs/                 site généré (ne pas modifier à la main)
 docs/fichiers/        fichiers servis tels quels (annales PDF), conservés par le build
 ```
@@ -35,19 +37,26 @@ Les questions du QCM sont dans `src/js/qcm/` : un fichier par thème, `index.js`
 d'épreuve `EXAM_PLAN`) et `generees.js`, qui fabrique des questions à partir des figures
 (marques, feux, pavillons, signaux sonores et de port) : ajouter une entrée à ses tables suffit. Les exercices sont générés aléatoirement par `src/js/exos.js`.
 
-## Équipages, défi, carnet de progression (comptes activés)
+## Parcours, diplômes, équipages (comptes activés)
 
-- **Rôles.** Un compte peut cumuler : chef (gère le site), titulaire du PE (case cochée par un chef
-  dans Comptes), chef d'équipage (pour une saison, coché dans Espace chefs > Équipages). Chefs et
-  titulaires du PE sont « formateurs » : leurs réponses aux questions sont mises en avant.
-- **Équipages.** Chaque saison (septembre à août), un chef compose les équipages dans Espace chefs >
-  Équipages. Les noms restent d'une année sur l'autre ; on peut créer ou fermer un équipage.
-- **Classement.** Page Équipages : points du mois (niveau 50, régularité 30, défi de la semaine 20,
-  bonus des chefs), total de la saison, courbes, et l'explication du calcul.
+- **Parcours.** Pages publiques `parcours/pe.html`, `cq.html`, `cf.html` (prérequis, examen, étapes ;
+  étapes définies dans `src/js/diplomes.js`), reliées depuis l'accueil (« Je prépare »). Chaque inscrit
+  choisit son objectif (PE, CQ ou CF) dans Mon espace, qui montre prérequis manquants et avancement.
+- **Diplômes.** Le scout déclare un diplôme et son mois (`diplomes/{uid}`) ; un chef le confirme dans la
+  Vue d'ensemble (`users/{uid}.dip`). Modules du PE : expiration à 18 mois affichée dans Mon espace.
+- **Rôles et accès** (imposés par `firestore.rules`) :
+  chef : tout, avec la Vue d'ensemble (inscrits, objectifs, diplômes, carnets) ;
+  scout : uniquement ses données ;
+  chef d'équipage : statistiques, carnet et demandes de son équipage de la saison, et validation de son carnet ;
+  titulaire confirmé du PE, du CQ ou du CF : « formateur » dans les questions, rien de plus.
+- **Équipages.** Un chef compose les équipages de chaque saison (Espace chefs > Équipages) ;
+  l'enregistrement recopie l'affectation sur les profils (`eq` et `ce` : `{ '2026': '<id>' }`).
+- **Classement.** Calculé à partir des statistiques individuelles et publié par équipage
+  (`classement/{saison}_{eq}`) quand un chef ouvre l'espace chefs ou la page Équipages, ou qu'un chef
+  d'équipage ouvre la page Équipages ou son tableau de bord. Les scouts ne lisent que ces agrégats.
 - **Défi de la semaine.** Dix questions identiques pour tous, un seul essai (page QCM).
-- **Carnet de progression.** La liste des attendus du PE (Passerelle SUF) ; le scout demande une
-  validation, un formateur ou son chef d'équipage la valide après avoir signé le carnet papier.
-- **Tableau de bord d'équipage** pour le chef d'équipage et les chefs.
+- **Carnets de progression** PE, CQ et CF (`src/js/attendus.js`) : le scout demande une validation,
+  son chef d'équipage ou un chef la donne après avoir signé le carnet papier.
 
 Après une mise à jour de `firestore.rules`, la recopier dans la console Firebase (Règles > Publier).
 

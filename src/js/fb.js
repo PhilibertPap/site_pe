@@ -1,6 +1,7 @@
 // Accès à Firebase (authentification et base Firestore), plan gratuit Spark.
 // Toutes les pages passent par ces fonctions : rien d'autre ne parle directement à Firebase.
 import { firebaseConfig } from './firebase-config.js';
+import { estFormateur, titre } from './diplomes.js';
 
 const V = '10.12.2';
 const CDN = `https://www.gstatic.com/firebasejs/${V}`;
@@ -137,13 +138,15 @@ export async function askQuestion({ title, body, theme }, me) {
 
 export async function answer(q, body, me) {
   const { F, db } = await sdk();
-  const byChef = me.role === 'chef' || me.pe === true; // réponse de formateur
+  const byChef = estFormateur(me); // réponse de formateur : chef, ou titulaire du PE, du CQ ou du CF
+  const t = titre(me); // plus haut diplôme confirmé, affiché à côté du nom
   const batch = F.writeBatch(db);
   batch.set(F.doc(F.collection(db, 'questions', q.id, 'answers')), {
     body,
     authorId: me.uid,
     authorName: me.name,
     byChef,
+    ...(t ? { titre: t } : {}),
     createdAt: F.serverTimestamp(),
   });
   batch.update(F.doc(db, 'questions', q.id), {
@@ -266,14 +269,22 @@ export async function deleteBonus(id) {
 }
 
 // --------------------------------------------- statistiques par saison
-// stats/{saison}_{uid} : résumé public (sans nom) qui sert au classement des équipages
+// stats/{saison}_{uid} : résumé de saison d'un scout, lisible par lui, les chefs et son chef d'équipage
 // { uid, saison, mois: { '2026-10': { best, n, sem: { '2026-W41': 1 }, th: { theme: [ok, n] } } },
 //   defis: { '2026-W41': 8 }, epreuves: [{ t: millis, s: score }] }
 
+// Réservé aux chefs : toutes les statistiques d'une saison
 export async function statsSaison(saison) {
   const { F, db } = await sdk();
   const s = await F.getDocs(F.query(F.collection(db, 'stats'), F.where('saison', '==', saison)));
   return s.docs.map((d) => d.data());
+}
+
+// Statistiques d'un scout (lui-même, un chef, ou son chef d'équipage : document par document)
+export async function getStats(saison, uid) {
+  const { F, db } = await sdk();
+  const s = await F.getDoc(F.doc(db, 'stats', `${saison}_${uid}`));
+  return s.exists() ? s.data() : null;
 }
 
 export async function updateStats(saison, uid, fn) {
@@ -315,13 +326,20 @@ export async function saveDefi(r, semaine, me) {
 }
 
 // ------------------------------------------- carnet de progression
-// carnets/{uid} = { v: { itemId: { by, byName, at } } }  (écrit par les formateurs et chefs d'équipage)
-// demandes/{uid}_{itemId} = { uid, name, item, saison, at }  (créée par le scout)
+// carnets/{uid} = { v: { itemId: { by, byName, at } } }  (PE, CQ et CF ; écrit par les chefs
+//   et par le chef d'équipage du scout)
+// demandes/{uid}_{itemId} = { uid, name, eq, item, saison, at }  (créée par le scout ; eq = son équipage de la saison)
 
 export async function getCarnet(uid) {
   const { F, db } = await sdk();
   const s = await F.getDoc(F.doc(db, 'carnets', uid));
   return s.exists() ? s.data().v || {} : {};
+}
+// Réservé aux chefs : tous les carnets, { uid: v }
+export async function tousCarnets() {
+  const { F, db } = await sdk();
+  const s = await F.getDocs(F.collection(db, 'carnets'));
+  return Object.fromEntries(s.docs.map((d) => [d.id, d.data().v || {}]));
 }
 export async function valider(uid, item, me, ok = true) {
   const { F, db } = await sdk();
@@ -334,25 +352,99 @@ export async function valider(uid, item, me, ok = true) {
 }
 export async function demander(me, item, saison) {
   const { F, db } = await sdk();
-  await F.setDoc(F.doc(db, 'demandes', `${me.uid}_${item}`), { uid: me.uid, name: me.name, item, saison, at: F.serverTimestamp() });
+  const eq = (me.eq && me.eq[String(saison)]) || '';
+  await F.setDoc(F.doc(db, 'demandes', `${me.uid}_${item}`), { uid: me.uid, name: me.name, eq, item, saison, at: F.serverTimestamp() });
 }
 export async function annulerDemande(uid, item) {
   const { F, db } = await sdk();
   await F.deleteDoc(F.doc(db, 'demandes', `${uid}_${item}`));
 }
+// Demandes d'un scout (lui-même, un chef, ou son chef d'équipage)
 export async function mesDemandes(uid) {
   const { F, db } = await sdk();
   const s = await F.getDocs(F.query(F.collection(db, 'demandes'), F.where('uid', '==', uid)));
   return s.docs.map((d) => ({ id: d.id, ...d.data(), at: toDate(d.data().at) }));
 }
+// Chef d'équipage : les demandes de son équipage (requête sur eq, que les règles savent vérifier)
+export async function demandesEquipage(eq) {
+  const { F, db } = await sdk();
+  const s = await F.getDocs(F.query(F.collection(db, 'demandes'), F.where('eq', '==', eq)));
+  return s.docs.map((d) => ({ id: d.id, ...d.data(), at: toDate(d.data().at) }));
+}
+// Réservé aux chefs
 export async function toutesDemandes() {
   const { F, db } = await sdk();
   const s = await F.getDocs(F.collection(db, 'demandes'));
   return s.docs.map((d) => ({ id: d.id, ...d.data(), at: toDate(d.data().at) }));
 }
 
-// Statut de chef d'équipage, par saison : users/{uid}.ce = { '2026': true }
-export async function setChefEq(uid, saison, on) {
+// Affectation d'un inscrit pour une saison, écrite par les chefs avec la composition :
+// users/{uid}.eq = { '2026': '<id équipage>' } et, pour le chef d'équipage, users/{uid}.ce = { '2026': '<id>' }
+export async function setAffectations(saison, list) {
   const { F, db } = await sdk();
-  await F.updateDoc(F.doc(db, 'users', uid), { [`ce.${saison}`]: on ? true : F.deleteField() });
+  for (let i = 0; i < list.length; i += 400) {
+    const batch = F.writeBatch(db);
+    list.slice(i, i + 400).forEach(({ uid, eq, ce }) =>
+      batch.update(F.doc(db, 'users', uid), {
+        [`eq.${saison}`]: eq || F.deleteField(),
+        [`ce.${saison}`]: ce || F.deleteField(),
+      })
+    );
+    await batch.commit();
+  }
+}
+
+// ---------------------------------------------- classement publié
+// classement/{saison}_{eqId} = { saison, eq, nom, membres, mois: { '2026-10': { niveau, regularite, defi,
+//   bonus, total } }, total, sem: { w, ep, df }, at }  (agrégats d'équipage, lisibles par tous les inscrits)
+
+export async function listClassement(saison) {
+  const { F, db } = await sdk();
+  const s = await F.getDocs(F.query(F.collection(db, 'classement'), F.where('saison', '==', saison)));
+  return s.docs.map((d) => ({ ...d.data(), at: toDate(d.data().at) }));
+}
+export async function saveClassement(saison, eq, data) {
+  const { F, db } = await sdk();
+  await F.setDoc(F.doc(db, 'classement', `${saison}_${eq}`), { ...data, saison, eq, at: F.serverTimestamp() });
+}
+export async function deleteClassement(saison, eq) {
+  const { F, db } = await sdk();
+  await F.deleteDoc(F.doc(db, 'classement', `${saison}_${eq}`));
+}
+
+// ---------------------------------------------------------- diplômes
+// users/{uid}.dip = { pe: '2025-07', psc1: '2024-03', ... }  (diplômes confirmés, écrits par les chefs)
+// diplomes/{uid} = { d: { cq: '2026-04' }, at }  (déclarations en attente, écrites par le scout)
+
+export async function mesDeclarations(uid) {
+  const { F, db } = await sdk();
+  const s = await F.getDoc(F.doc(db, 'diplomes', uid));
+  return s.exists() ? s.data().d || {} : {};
+}
+export async function declarer(uid, code, mois) {
+  const { F, db } = await sdk();
+  await F.setDoc(F.doc(db, 'diplomes', uid), { d: { [code]: mois }, at: F.serverTimestamp() }, { merge: true });
+}
+export async function annulerDeclaration(uid, code) {
+  const { F, db } = await sdk();
+  await F.setDoc(F.doc(db, 'diplomes', uid), { d: { [code]: F.deleteField() }, at: F.serverTimestamp() }, { merge: true });
+}
+// Réservé aux chefs : [{ uid, d, at }]
+export async function toutesDeclarations() {
+  const { F, db } = await sdk();
+  const s = await F.getDocs(F.collection(db, 'diplomes'));
+  return s.docs.map((d) => ({ uid: d.id, d: d.data().d || {}, at: toDate(d.data().at) })).filter((x) => Object.keys(x.d).length);
+}
+// Réservé aux chefs : confirmer (inscrit dans le profil) ou refuser une déclaration
+export async function confirmerDiplome(uid, code, mois, ok = true) {
+  const { F, db } = await sdk();
+  const batch = F.writeBatch(db);
+  if (ok) batch.update(F.doc(db, 'users', uid), { [`dip.${code}`]: mois });
+  batch.set(F.doc(db, 'diplomes', uid), { d: { [code]: F.deleteField() } }, { merge: true });
+  await batch.commit();
+}
+// Réservé aux chefs : inscrire ou retirer directement un diplôme
+export async function setDiplome(uid, code, mois) {
+  const { F, db } = await sdk();
+  await F.updateDoc(F.doc(db, 'users', uid), { [`dip.${code}`]: mois || F.deleteField() });
 }

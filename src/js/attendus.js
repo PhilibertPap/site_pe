@@ -1,5 +1,7 @@
-// Carnet de progression du PE : la liste « Avant de me présenter au PE »
-// de la Passerelle SUF (version septembre 2022). Les id ne doivent pas changer.
+// Carnets de progression : PE, CQ et CF. Les id ne doivent pas changer (ils sont enregistrés
+// dans carnets/{uid}.v) ; ceux du CQ et du CF sont préfixés (cq01, cf01).
+//
+// PE : la liste « Avant de me présenter au PE » de la Passerelle SUF (version septembre 2022).
 
 export const SECTIONS = [
   {
@@ -122,7 +124,190 @@ export const SECTIONS = [
   },
 ];
 
+// CQ : d'après le manuel de formation du chef de quart (2025, avec son autotest), la formation
+// théorique CQ/CF et les conditions de passage des examens (2022).
+export const SECTIONS_CQ = [
+  {
+    id: 'cq-cadre',
+    titre: '1. Prérequis et cadre',
+    items: [
+      ['cq01', 'Je maîtrise tout le programme du PE et je sais l’enseigner aux jeunes', 'cqcf/diplomes.html#prerequis'],
+      ['cq02', 'J’ai le permis côtier et le PSC1, et je les ai enregistrés sur Céphée', 'cqcf/diplomes.html#prerequis'],
+      ['cq03', 'Je connais les prérogatives du CQ : voile légère, randonnée nautique, habitable en autonomie (nombre de bateaux, distance d’un abri, vent)', 'cqcf/diplomes.html#prerogatives'],
+      ['cq04', 'Je sais ce qu’est un abri et je sais en repérer sur la carte selon le vent du jour', 'cqcf/diplomes.html#prerogatives'],
+      ['cq05', 'Je connais mes responsabilités de CQ et le partage des rôles avec le chef d’unité', 'cqcf/diplomes.html#responsabilite'],
+      ['cq06', 'Je connais les démarches de l’examen : inscription sur Céphée un mois avant, CV scout et marin, test préalable de navigation', 'cqcf/diplomes.html#inscription'],
+    ],
+  },
+  {
+    id: 'cq-prep',
+    titre: '2. Préparation et dossier',
+    items: [
+      ['cq07', 'Je sais choisir des bateaux et une zone de navigation adaptés aux jeunes et aux prérogatives du diplôme', 'cqcf/preparer.html#annee'],
+      ['cq08', 'Je sais faire une demande de visa marin sur Céphée et je connais ses délais', 'cqcf/preparer.html#annee'],
+      ['cq09', 'Je sais construire un dossier de navigation : présentation, journée type, une fiche par jour, carte résumé', 'cqcf/dossier.html#contenu'],
+      ['cq10', 'Je sais indiquer dans chaque fiche journalière les horaires, les dangers, les ports de repli et les activités pédagogiques', 'cqcf/dossier.html#trame'],
+      ['cq11', 'Je connais le rôle du correspondant à terre et je sais organiser les contacts avant, pendant et après la navigation', 'cqcf/preparer.html#correspondant'],
+      ['cq12', 'Je sais prendre en main une flottille que je ne connais pas : bateaux, matériel, équipages', 'cqcf/preparer.html#prise-en-main'],
+    ],
+  },
+  {
+    id: 'cq-meteo',
+    titre: '3. Météo, marée et sécurité',
+    items: [
+      ['cq13', 'Je sais lire un bulletin météo marine, et je sais que le bulletin expertisé de Météo-France fait foi', 'cqcf/preparer.html#meteo'],
+      ['cq14', 'Je sais croiser les sources météo, observer la situation sur zone et appliquer le doute systématique', 'cqcf/preparer.html#meteo'],
+      ['cq15', 'Je sais calculer la marée et prévoir les courants de la zone pour la journée', 'cqcf/preparer.html#maree'],
+      ['cq16', 'Je sais bâtir une journée qui rentre au plus tard 2 h avant le coucher du soleil, avec des marges', 'cqcf/preparer.html#journee'],
+      ['cq17', 'Je sais faire le tour des bateaux avant le départ et vérifier leur armement', 'cqcf/preparer.html#tour'],
+    ],
+  },
+  {
+    id: 'cq-flot',
+    titre: '4. Conduite de la flottille',
+    items: [
+      ['cq18', 'Je sais animer le briefing des chefs de bord et vérifier que les consignes sont notées', 'cqcf/preparer.html#briefing'],
+      ['cq19', 'Je sais me placer par rapport à la flottille et au danger, et garder les bateaux groupés', 'cqcf/flottille.html#position'],
+      ['cq20', 'Je sais passer des consignes claires par VHF, avec un ordre de réponse, et les noter', 'cqcf/flottille.html#consignes'],
+      ['cq21', 'Je sais organiser la sortie et l’entrée de port de la flottille', 'cqcf/flottille.html#port'],
+      ['cq22', 'Je sais organiser le mouillage de la flottille et faire la ronde de vérification', 'cqcf/flottille.html#mouillage'],
+      ['cq23', 'Je sais tenir le journal de flottille et mener le débriefing', 'cqcf/flottille.html#journal'],
+    ],
+  },
+  {
+    id: 'cq-secu',
+    titre: '5. Bateau de sécurité',
+    items: [
+      ['cq24', 'Je sais prendre en main la sécu et faire les vérifications du matin : moteur, carburant, armement, coupe-circuit', 'cqcf/bateau-secu.html#prise-en-main'],
+      ['cq25', 'Je sais conduire la sécu dans le clapot, en dosant les gaz sans à-coups', 'cqcf/bateau-secu.html#conduite'],
+      ['cq26', 'Je sais approcher un voilier, et y embarquer ou en débarquer une personne', 'cqcf/bateau-secu.html#approcher'],
+      ['cq27', 'Je sais remorquer un ou plusieurs bateaux, en flèche ou à couple, et donner les consignes de sécurité', 'cqcf/bateau-secu.html#remorquage'],
+      ['cq28', 'Je sais récupérer un homme à la mer et aider au redressement d’un dériveur', 'cqcf/bateau-secu.html#secours'],
+      ['cq29', 'Je sais dépanner un moteur hors-bord dans les cas simples', 'cqcf/bateau-secu.html#pannes'],
+    ],
+  },
+  {
+    id: 'cq-av',
+    titre: '6. Avaries et secours',
+    items: [
+      ['cq30', 'Je sais gérer une avarie de l’extérieur : rester calme, faire un état des lieux, rappeler la réaction immédiate, laisser agir le chef de bord', 'cqcf/avaries.html#principes'],
+      ['cq31', 'Je sais déclencher les secours (CROSS, VHF 16, 196) et rester factuel à la radio', 'cqcf/avaries.html#alerter'],
+      ['cq32', 'Je sais mettre le reste de la flottille en sécurité pendant un incident', 'cqcf/avaries.html#securiser'],
+      ['cq33', 'Je connais la conduite à tenir face aux incidents de flottille : dispersion, blessé, problème humain', 'cqcf/avaries.html#incidents'],
+    ],
+  },
+  {
+    id: 'cq-peda',
+    titre: '7. Pédagogie et dimension scoute',
+    items: [
+      ['cq34', 'Je sais intégrer la navigation dans la vie de l’unité : les cinq buts, l’équipage, l’imaginaire', 'cqcf/pedagogie.html#cinq-buts'],
+      ['cq35', 'Je sais proposer des jeux sur l’eau, avec la sécu, et des activités à terre en cas de mauvais temps', 'cqcf/pedagogie.html#jeu'],
+      ['cq36', 'Je sais faire progresser les jeunes pendant la navigation, en m’appuyant sur les chefs de bord', 'cqcf/pedagogie.html#progression'],
+    ],
+  },
+  {
+    id: 'cq-oral',
+    titre: '8. Oral',
+    items: [
+      ['cq37', 'Je sais présenter mon dossier au jury en 15 à 20 minutes', 'cqcf/diplomes.html#examen'],
+      ['cq38', 'Je sais répondre à une mise en situation : réaction immédiate, décisions, analyse de la nouvelle situation', 'cqcf/oral.html#situations'],
+      ['cq39', 'Je sais répondre aux questions classiques sur la réglementation, la météo et la conduite de flottille', 'cqcf/oral.html#reglementation'],
+    ],
+  },
+];
+
+// CF : d'après le manuel de formation du chef de flottille (2026), la formation théorique CQ/CF
+// et les conditions de passage des examens (2022).
+export const SECTIONS_CF = [
+  {
+    id: 'cf-cadre',
+    titre: '1. Prérequis et cadre',
+    items: [
+      ['cf01', 'Je maîtrise le programme du PE et j’ai navigué comme chef de bord sur le type de bateau choisi', 'cqcf/diplomes.html#prerequis'],
+      ['cf02', 'J’ai le permis côtier, le PSC1 et le CEP1', 'cqcf/diplomes.html#prerequis'],
+      ['cf03', 'J’ai une expérience d’encadrement de flottille, si possible comme CQ, et des navigations hors du cadre scout', 'cqcf/diplomes.html#prerequis'],
+      ['cf04', 'Je connais les prérogatives du CF : flottille de 4 habitables au plus, habitable seul encadré depuis la côte, prérogatives du CQ', 'cqcf/diplomes.html#prerogatives'],
+      ['cf05', 'Je connais les conditions d’une flottille d’habitables : un PE ou un CQ sur chaque bateau, 6 milles d’un abri, force 4 rafales à 5', 'cqcf/habitables.html#cadre'],
+      ['cf06', 'Je connais mes responsabilités et la place du chef d’unité, qui garde l’autorité pédagogique', 'cqcf/diplomes.html#responsabilite'],
+    ],
+  },
+  {
+    id: 'cf-prep',
+    titre: '2. Préparation et dossier',
+    items: [
+      ['cf07', 'Je sais répondre à un sujet de CF (ports, durée, nombre et type de bateaux) en prenant mon unité comme exemple', 'cqcf/dossier.html#contenu'],
+      ['cf08', 'Je sais rédiger un visa marin technique et le dossier d’une navigation de plusieurs jours', 'cqcf/dossier.html#trame'],
+      ['cf09', 'Je sais prévoir des horaires larges, des replis réels et des nuits tranquilles', 'cqcf/dossier.html#rediger'],
+      ['cf10', 'Je sais organiser les escales, les ports et l’intendance d’une navigation de plusieurs jours', 'cqcf/habitables.html#escales'],
+      ['cf11', 'Je sais choisir des habitables adaptés aux jeunes et à leur niveau, et organiser le bateau de maîtrise', 'cqcf/habitables.html#bateaux'],
+      ['cf12', 'Je sais organiser le rôle du correspondant à terre et les contacts de la journée', 'cqcf/preparer.html#correspondant'],
+    ],
+  },
+  {
+    id: 'cf-meteo',
+    titre: '3. Météo et sécurité',
+    items: [
+      ['cf13', 'Je sais préparer la météo et la marée d’une navigation de plusieurs jours, en croisant les sources', 'cqcf/preparer.html#meteo'],
+      ['cf14', 'Je sais analyser la carte pour choisir les routes, repérer les dangers et les abris de chaque étape', 'cqcf/dossier.html#trame'],
+      ['cf15', 'Je connais les documents à avoir à bord de chaque habitable', 'cqcf/habitables.html#documents'],
+      ['cf16', 'Je sais vérifier les habitables et leur armement à la prise en main et chaque matin', 'cqcf/preparer.html#tour'],
+    ],
+  },
+  {
+    id: 'cf-flot',
+    titre: '4. Conduite de la flottille d’habitables',
+    items: [
+      ['cf17', 'Je sais briefer les chefs de bord et vérifier ce qu’ils ont noté', 'cqcf/habitables.html#chefs-de-bord'],
+      ['cf18', 'Je sais organiser le départ et la sortie de port de la flottille', 'cqcf/habitables.html#depart'],
+      ['cf19', 'Je sais encadrer depuis mon habitable : me placer, garder la flottille groupée, communiquer', 'cqcf/habitables.html#en-mer'],
+      ['cf20', 'Je sais mener mon propre bateau en sécurité pendant que j’encadre', 'cqcf/flottille.html#position'],
+      ['cf21', 'Je sais organiser l’arrivée au port et les relations avec la capitainerie', 'cqcf/habitables.html#arrivee'],
+      ['cf22', 'Je sais organiser le mouillage de nuit et la veille', 'cqcf/habitables.html#mouillage'],
+      ['cf23', 'Je sais tenir le journal de flottille et remettre en question ma navigation', 'cqcf/flottille.html#journal'],
+    ],
+  },
+  {
+    id: 'cf-av',
+    titre: '5. Manœuvres, avaries et secours',
+    items: [
+      ['cf24', 'Je sais faire seul avec mon équipage une manœuvre d’homme à la mer sur un habitable', 'pratique/hlm.html'],
+      ['cf25', 'Je sais remorquer un habitable', 'cqcf/habitables.html#remorquer'],
+      ['cf26', 'Je sais réussir une manœuvre de port avec un habitable', 'pratique/port.html'],
+      ['cf27', 'Je sais gérer une avarie depuis un habitable : état des lieux, alerte, sécurité de la flottille', 'cqcf/avaries.html#agir'],
+      ['cf28', 'Je sais déclencher les secours et renseigner le CROSS', 'cqcf/avaries.html#alerter'],
+      ['cf29', 'Je sais prévenir le correspondant à terre et rendre compte après un incident', 'cqcf/avaries.html#apres'],
+    ],
+  },
+  {
+    id: 'cf-peda',
+    titre: '6. Pédagogie et dimension scoute',
+    items: [
+      ['cf30', 'Je sais organiser des journées complètes, en mer et à terre, cohérentes avec la pédagogie de l’unité', 'cqcf/pedagogie.html#annee'],
+      ['cf31', 'Je sais faire vivre l’équipage à bord : rôles, vie du bord, progression de chacun', 'cqcf/habitables.html#vie-a-bord'],
+      ['cf32', 'Je sais proposer un jeu à la flottille pendant la navigation', 'cqcf/pedagogie.html#jeu'],
+      ['cf33', 'Je sais former les jeunes qui me sont confiés, quel que soit leur âge', 'cqcf/pedagogie.html#progression'],
+    ],
+  },
+  {
+    id: 'cf-oral',
+    titre: '7. Oral',
+    items: [
+      ['cf34', 'Je sais présenter mon dossier à un jury qui suit la navigation sur sa carte', 'cqcf/diplomes.html#examen'],
+      ['cf35', 'Je sais répondre aux questions sur la réglementation et les prérogatives des diplômes', 'cqcf/oral.html#reglementation'],
+      ['cf36', 'Je sais répondre aux questions propres au CF et aux mises en situation', 'cqcf/oral.html#cf'],
+    ],
+  },
+];
+
+export const LISTES = { PE: SECTIONS, CQ: SECTIONS_CQ, CF: SECTIONS_CF };
+
+// Tous les points des trois listes, par id
 export const ITEMS = Object.fromEntries(
-  SECTIONS.flatMap((s) => s.items.map(([id, texte, ref]) => [id, { id, texte, ref, section: s.id }]))
+  Object.entries(LISTES).flatMap(([liste, secs]) =>
+    secs.flatMap((s) => s.items.map(([id, texte, ref]) => [id, { id, texte, ref, section: s.id, liste }]))
+  )
 );
-export const TOTAL = Object.keys(ITEMS).length;
+export const TOTAUX = Object.fromEntries(Object.entries(LISTES).map(([k, secs]) => [k, secs.reduce((n, s) => n + s.items.length, 0)]));
+export const TOTAL = TOTAUX.PE;
+// Points validés d'une liste : v = carnets/{uid}.v
+export const valides = (v, liste) => Object.keys(v || {}).filter((id) => ITEMS[id] && ITEMS[id].liste === liste).length;

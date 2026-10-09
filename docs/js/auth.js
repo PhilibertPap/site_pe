@@ -21,13 +21,18 @@ const cache = {
   set(p) {
     try {
       if (!p) return localStorage.removeItem('pe-profile');
-      const { uid, name, unite, role, approved, pe, ce } = p;
-      localStorage.setItem('pe-profile', JSON.stringify({ uid, name, unite, role, approved, pe: !!pe, ce: ce || {} }));
+      // ce qui sert hors réseau : rôle, objectif, diplômes confirmés, équipage et chef d'équipage par saison
+      const { uid, name, unite, role, approved, pe, objectif, dip, eq, ce } = p;
+      localStorage.setItem(
+        'pe-profile',
+        JSON.stringify({ uid, name, unite, role, approved, pe: !!pe, objectif: objectif || '', dip: dip || {}, eq: eq || {}, ce: ce || {} })
+      );
     } catch (e) {}
   },
 };
 
 window.PE = window.PE || {};
+window.PE.saveProfile = (p) => cache.set(p);
 let resolveUser;
 window.PE.userReady = new Promise((r) => (resolveUser = r));
 

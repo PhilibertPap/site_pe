@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Je prépare le CQ · Patron d'embarcation</title>
+<meta name="description" content="Le parcours pour préparer le chef de quart : prérequis, examen en trois actes, étapes dans l'ordre avec les pages du site à travailler.">
+<link rel="icon" href="../img/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="../img/icon-180.png">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta name="theme-color" content="#11304d">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Patron d'emb.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/style.css">
+<script>
+  try {
+    var t = localStorage.getItem('pe-theme');
+    if (t) document.documentElement.setAttribute('data-theme', t);
+  } catch (e) {}
+  try { if (!localStorage.getItem('pe-ok')) document.documentElement.classList.add('gate'); } catch (e) { document.documentElement.classList.add('gate'); }
+</script>
+</head>
+<body data-root="../">
+<a class="skip" href="#contenu">Aller au contenu</a>
+<header class="top">
+  <div class="top-in">
+    <a class="brand" href="../index.html"><svg class="emb" viewBox="0 0 367 524" aria-hidden="true"><g class="emb-r"><path d="M152 72 L140 0 Q185 40 227 0 L215 72 Z"/><path d="M152 60 H215 V480 H152 Z"/><path d="M156 146 L15 126 Q62 168 22 214 L156 194 Z"/><path d="M 211 146 L 352 126 Q 305 168 345 214 L 211 194 Z"/><path d="M48 292 L8 388 Q24 376 38 372 C40 445 100 502 183.5 524 L183.5 474 C128 462 90 428 86 366 Q104 380 124 402 Z"/><path d="M 319 292 L 359 388 Q 343 376 329 372 C 327 445 267 502 183.5 524 L 183.5 474 C 239 462 277 428 281 366 Q 263 380 243 402 Z"/></g><g class="emb-y" transform="translate(183.5 66) scale(4.5) translate(-50 -17)"><path d="M50 17C55.5 23 57 30 54 37 53 39.5 51.5 41.5 50 43 48.5 41.5 47 39.5 46 37 43 30 44.5 23 50 17Z"/><path d="M51.3 42C52.5 36.5 56.8 32.2 61.8 32.5 65.8 32.8 68 36.4 66.5 39.7 65.3 42.3 61.9 42.5 60.9 40.4 62.6 41 63.9 39.6 63.3 38 62.6 36.2 60 35.8 58 37 55.4 38.5 53.7 41.4 53.1 43.9Z"/><path d="M48.7 42C47.5 36.5 43.2 32.2 38.2 32.5 34.2 32.8 32 36.4 33.5 39.7 34.7 42.3 38.1 42.5 39.1 40.4 37.4 41 36.1 39.6 36.7 38 37.4 36.2 40 35.8 42 37 44.6 38.5 46.3 41.4 46.9 43.9Z"/><rect x="42.5" y="43.5" width="15" height="3.4" rx=".8"/><path d="M50 46.9 54.5 52.5 50 58 45.5 52.5Z"/><path d="M47 46.9C46.4 49.5 45 51 43 51.6 44.3 49.3 44.4 48 44.3 46.9Z"/><path d="M53 46.9C53.6 49.5 55 51 57 51.6 55.7 49.3 55.6 48 55.7 46.9Z"/></g></svg><span class="brand-t"><b>Patron d'embarcation</b><small>Scouts marins · voile</small></span></a>
+    <button class="menu-btn" type="button" aria-expanded="false" aria-controls="mainnav"><span class="burger" aria-hidden="true"><i></i><i></i><i></i></span><span class="menu-l">Menu</span></button>
+    <nav class="mainnav" id="mainnav" aria-label="Parties du site"><a href="../cours/index.html">Cours</a><a href="../qcm/index.html">QCM</a><a href="../exercices/index.html">Exercices</a><a href="../pratique/index.html">Pratique</a><a href="../cqcf/index.html">CQ / CF</a><a href="../annales/index.html">Annales</a><a href="../questions/index.html">Questions</a><a href="../equipages/index.html">Équipages</a></nav>
+    <div class="acct" id="acct"></div><script>
+try {
+  var pp = JSON.parse(localStorage.getItem('pe-profile') || 'null');
+  if (pp && pp.approved && localStorage.getItem('pe-ok') === pp.uid) {
+    var e = function (x) { return String(x || '').replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); };
+    document.getElementById('acct').innerHTML = '<a class="acct-name" href="../compte/index.html" title="Mon espace">' + e(pp.name) + (pp.role === 'chef' ? ' <span class="tag">chef</span>' : '') + '</a>' +
+      ' <button type="button" class="linkish">Déconnexion</button>';
+  }
+} catch (err) {}
+</script>
+    <button class="theme" type="button" aria-label="Changer de thème" title="Clair / sombre"><svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true"><circle cx="8" cy="8" r="6.5" fill="none" stroke="currentColor" stroke-width="1.3"/><path d="M8 1.5 A6.5 6.5 0 0 1 8 14.5 Z" fill="currentColor"/></svg></button>
+  </div>
+  <div class="grad" aria-hidden="true"></div>
+</header>
+<main id="contenu">
+
+<div class="doc">
+  <aside class="side">
+    <p class="side-h">Je prépare</p>
+    <ol class="chapters"><li><a href="../parcours/pe.html">Patron d'embarcation</a></li><li><a href="../parcours/cq.html" aria-current="page">Chef de quart</a></li><li><a href="../parcours/cf.html">Chef de flottille</a></li></ol>
+  </aside>
+  <article class="chapter">
+    <header class="chap-head">
+      <p class="kicker">Je prépare</p>
+      <h1>Je prépare le CQ</h1>
+      <p class="chap-desc">Le parcours pour préparer le chef de quart : prérequis, examen en trois actes, étapes dans l'ordre avec les pages du site à travailler.</p>
+    </header>
+    <details class="toc-box"><summary>Sur cette page</summary><ol class="toc"><li><a href="#prerequis">Prérequis</a></li><li><a href="#examen">L'examen</a></li><li><a href="#etapes">Les étapes</a></li><li><a href="#suivi">Suivre sa progression</a></li><li><a href="#apres">Et après</a></li></ol></details>
+    <p>Le chef de quart (CQ) est le premier diplôme d'encadrement du scoutisme marin. Il permet d'encadrer depuis un bateau à moteur une activité de voile légère (10 embarcations, force 3, 2 milles d'un abri) ou une randonnée nautique (4 bateaux collectifs non pontés, force 4 rafales à 5, 2 milles), et de mener un voilier habitable en autonomie jusqu'à 6 milles d'un abri. Le détail est à la page <a href="../cqcf/diplomes.html#prerogatives">Les diplômes et l'examen</a>.</p>
+
+<h2 id="prerequis">Prérequis</h2>
+<div class="tbl-wrap"><table>
+<tbody>
+<tr><th>Âge</th><td>Année des 18 ans ; le diplôme vaut à partir de 18 ans.</td></tr>
+<tr><th>Diplômes</th><td>Patron d'embarcation, permis côtier, PSC1.</td></tr>
+<tr><th>Expérience</th><td>CV nautique suffisant ; test préalable de navigation à la voile, à organiser avec la Passerelle.</td></tr>
+<tr><th>Inscription</th><td>Sur Céphée, un mois avant l'examen, avec le CV scout et marin.</td></tr>
+</tbody></table></div>
+<p>Le PE doit être maîtrisé, pas seulement obtenu : le CQ explique et réalise les manœuvres, la cartographie et la météo qu'il demande aux jeunes. On ne passe pas le PE pratique et le CQ dans la même session, ni à une semaine d'intervalle.</p>
+
+<h2 id="examen">L'examen</h2>
+<p>Trois actes ; l'oral et la navigation se valident ensemble, dans la même session.</p>
+<div class="tbl-wrap"><table>
+<thead><tr><th>Acte</th><th>Contenu</th><th>Quand, durée</th></tr></thead>
+<tbody>
+<tr><td><strong>Dossier</strong></td><td>Une navigation de voile légère (10 embarcations, une journée) ou de randonnée nautique (4 embarcations, une ou deux journées), avec un bateau de sécurité de 50 à 90 CV ; une fiche par jour, une carte résumé, une demande de visa marin</td><td>envoyé 15 jours avant</td></tr>
+<tr><td><strong>Oral</strong></td><td>Présentation du dossier, puis questions du jury : réglementation, météo, avaries, mises en situation</td><td class="nowrap">45 à 90 min</td></tr>
+<tr><td><strong>Navigation</strong></td><td>Briefing, puis encadrement d'une flottille de 2 à 4 voiliers depuis un bateau de sécurité, avec le jury à bord ; sortie et entrée de port, avaries simulées</td><td class="nowrap">environ 3 h</td></tr>
+</tbody></table></div>
+<p class="small muted">D'après le manuel de formation du chef de quart (2025) et les conditions de passage des examens (2022). Votre convocation fait foi.</p>
+
+<h2 id="etapes">Les étapes</h2>
+<ol class="etapes"><li><p class="etape-t">Maîtriser le PE</p><p class="etape-d">Le jury peut interroger sur tout le programme du PE, et le CQ doit pouvoir l’enseigner.</p><p class="etape-l"><a href="../cours/index.html">Cours</a> · <a href="../cours/09-securite.html">Sécurité et réglementation</a> · <a href="../pratique/chef-de-bord.html">Conduire une navigation</a> · <a href="../pratique/oral-pe.html">Oral du PE</a></p></li><li><p class="etape-t">Connaître le diplôme</p><p class="etape-d">Prérogatives, responsabilités, prérequis, examen en trois actes, inscription.</p><p class="etape-l"><a href="../cqcf/diplomes.html">Les diplômes et l’examen</a></p></li><li><p class="etape-t">Préparer la navigation</p><p class="etape-d">Bateaux et zone, visa marin, météo et marée, correspondant à terre, journée type, briefing.</p><p class="etape-l"><a href="../cqcf/preparer.html">Préparer la navigation</a></p></li><li><p class="etape-t">Rédiger le dossier</p><p class="etape-d">Une fiche par jour, des horaires larges, des replis réels, une carte résumé.</p><p class="etape-l"><a href="../cqcf/dossier.html">Le dossier de navigation</a></p></li><li><p class="etape-t">Conduire la flottille</p><p class="etape-d">Se placer, passer les consignes par VHF, sortir et rentrer au port, mouiller, débriefer.</p><p class="etape-l"><a href="../cqcf/flottille.html">Conduire une flottille</a></p></li><li><p class="etape-t">Mener le bateau de sécurité</p><p class="etape-d">Prise en main, conduite dans le clapot, approche, remorquage, pannes simples.</p><p class="etape-l"><a href="../cqcf/bateau-secu.html">Le bateau de sécurité</a></p></li><li><p class="etape-t">Gérer les avaries</p><p class="etape-d">De l’extérieur : état des lieux, alerte, mise en sécurité de la flottille.</p><p class="etape-l"><a href="../cqcf/avaries.html">Avaries et secours</a></p></li><li><p class="etape-t">Faire vivre la dimension scoute</p><p class="etape-d">Les cinq buts en mer, l’équipage, le jeu et l’imaginaire.</p><p class="etape-l"><a href="../cqcf/pedagogie.html">La dimension scoute</a></p></li><li><p class="etape-t">S’entraîner à l’oral</p><p class="etape-d">Présenter son dossier en 15 à 20 minutes, répondre aux mises en situation.</p><p class="etape-l"><a href="../cqcf/oral.html">Questions d’oral</a></p></li></ol>
+
+<h2 id="suivi">Suivre sa progression</h2>
+<p>Choisissez le CQ comme objectif dans <a href="../compte/index.html">Mon espace</a> : vous y voyez les prérequis qui manquent. Déclarez le PE, le permis côtier et le PSC1 avec leur mois d'obtention ; un chef les confirme. Le <a href="../carnet/index.html?liste=CQ">carnet de progression du CQ</a> se valide comme celui du PE.</p>
+
+<h2 id="apres">Et après</h2>
+<p>Le CQ est fortement conseillé avant le <a href="cf.html">chef de flottille</a> : l'expérience d'encadrement qu'il donne est attendue du candidat au CF.</p>
+
+    <nav class="pager"><a class="prev" href="../parcours/pe.html"><span>Précédent</span>Je prépare le PE</a><a class="next" href="../parcours/cf.html"><span>Suivant</span>Je prépare le CF</a></nav>
+  </article>
+</div>
+</main>
+<footer class="foot">
+  <div class="foot-in">
+    <p class="foot-sign"><svg class="emb" viewBox="0 0 367 524" aria-hidden="true"><g class="emb-r"><path d="M152 72 L140 0 Q185 40 227 0 L215 72 Z"/><path d="M152 60 H215 V480 H152 Z"/><path d="M156 146 L15 126 Q62 168 22 214 L156 194 Z"/><path d="M 211 146 L 352 126 Q 305 168 345 214 L 211 194 Z"/><path d="M48 292 L8 388 Q24 376 38 372 C40 445 100 502 183.5 524 L183.5 474 C128 462 90 428 86 366 Q104 380 124 402 Z"/><path d="M 319 292 L 359 388 Q 343 376 329 372 C 327 445 267 502 183.5 524 L 183.5 474 C 239 462 277 428 281 366 Q 263 380 243 402 Z"/></g><g class="emb-y" transform="translate(183.5 66) scale(4.5) translate(-50 -17)"><path d="M50 17C55.5 23 57 30 54 37 53 39.5 51.5 41.5 50 43 48.5 41.5 47 39.5 46 37 43 30 44.5 23 50 17Z"/><path d="M51.3 42C52.5 36.5 56.8 32.2 61.8 32.5 65.8 32.8 68 36.4 66.5 39.7 65.3 42.3 61.9 42.5 60.9 40.4 62.6 41 63.9 39.6 63.3 38 62.6 36.2 60 35.8 58 37 55.4 38.5 53.7 41.4 53.1 43.9Z"/><path d="M48.7 42C47.5 36.5 43.2 32.2 38.2 32.5 34.2 32.8 32 36.4 33.5 39.7 34.7 42.3 38.1 42.5 39.1 40.4 37.4 41 36.1 39.6 36.7 38 37.4 36.2 40 35.8 42 37 44.6 38.5 46.3 41.4 46.9 43.9Z"/><rect x="42.5" y="43.5" width="15" height="3.4" rx=".8"/><path d="M50 46.9 54.5 52.5 50 58 45.5 52.5Z"/><path d="M47 46.9C46.4 49.5 45 51 43 51.6 44.3 49.3 44.4 48 44.3 46.9Z"/><path d="M53 46.9C53.6 49.5 55 51 57 51.6 55.7 49.3 55.6 48 55.7 46.9Z"/></g></svg><span>Bon vent et bonne mer.</span></p>
+    <p>Préparation au brevet de patron d'embarcation et à la navigation à voile. Rédigé à partir des cours de navigation des Scouts marins d'Europe de Brest et de ceux du groupe Notre-Dame-des-Champs des Scouts unitaires de France, mis à jour et complétés.</p>
+    <p>Ce site ne remplace ni la réglementation (Division 240, RIPAM), ni les documents officiels du SHOM, ni le règlement de votre association. En cas de doute, ce sont eux qui font foi.</p>
+  </div>
+</footer>
+<script src="../js/site.js"></script>
+<script type="module" src="../js/auth.js"></script>
+
+</body>
+</html>
