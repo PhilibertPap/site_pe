@@ -1672,8 +1672,8 @@ td.acts {
   color: var(--bar-ink);
 }
 .brand .emb {
-  width: 1.55rem;
-  height: 1.9rem;
+  width: 1.6rem;
+  height: 2.1rem;
   flex: none;
   color: var(--bar-ink);
 }
@@ -2021,7 +2021,7 @@ h2::before {
 }
 .foot-sign .emb {
   width: 1.4rem;
-  height: 1.7rem;
+  height: 1.84rem;
 }
 
 /* score QCM */
