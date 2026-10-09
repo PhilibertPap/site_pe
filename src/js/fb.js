@@ -137,7 +137,7 @@ export async function askQuestion({ title, body, theme }, me) {
 
 export async function answer(q, body, me) {
   const { F, db } = await sdk();
-  const byChef = me.role === 'chef';
+  const byChef = me.role === 'chef' || me.pe === true; // réponse de formateur
   const batch = F.writeBatch(db);
   batch.set(F.doc(F.collection(db, 'questions', q.id, 'answers')), {
     body,
@@ -219,4 +219,140 @@ export async function deleteResults(ids) {
     ids.slice(i, i + 400).forEach((id) => batch.delete(F.doc(db, 'results', id)));
     await batch.commit();
   }
+}
+
+// ------------------------------------------------- équipages et saisons
+
+// Registre des équipages (les noms durent d'une année à l'autre)
+export async function listEquipages() {
+  const { F, db } = await sdk();
+  const s = await F.getDocs(F.collection(db, 'equipages'));
+  return s.docs.map((d) => ({ id: d.id, ...d.data() })).sort((a, b) => a.nom.localeCompare(b.nom, 'fr'));
+}
+export async function saveEquipage(id, data) {
+  const { F, db } = await sdk();
+  if (id) await F.setDoc(F.doc(db, 'equipages', id), data, { merge: true });
+  else await F.addDoc(F.collection(db, 'equipages'), data);
+}
+
+// Composition d'une saison : saisons/{s}/equipages/{id} = { nom, membres: [{uid, name}], chefEq, chefEqName }
+export async function compositions(saison) {
+  const { F, db } = await sdk();
+  const s = await F.getDocs(F.collection(db, 'saisons', String(saison), 'equipages'));
+  return s.docs.map((d) => ({ id: d.id, ...d.data() }));
+}
+export async function saveComposition(saison, id, data) {
+  const { F, db } = await sdk();
+  await F.setDoc(F.doc(db, 'saisons', String(saison), 'equipages', id), data);
+}
+export async function deleteComposition(saison, id) {
+  const { F, db } = await sdk();
+  await F.deleteDoc(F.doc(db, 'saisons', String(saison), 'equipages', id));
+}
+
+// Points bonus donnés par les chefs
+export async function listBonus(saison) {
+  const { F, db } = await sdk();
+  const s = await F.getDocs(F.query(F.collection(db, 'bonus'), F.where('saison', '==', saison)));
+  return s.docs.map((d) => ({ id: d.id, ...d.data(), at: toDate(d.data().at) }));
+}
+export async function addBonus(b, me) {
+  const { F, db } = await sdk();
+  await F.addDoc(F.collection(db, 'bonus'), { ...b, by: me.uid, byName: me.name, at: F.serverTimestamp() });
+}
+export async function deleteBonus(id) {
+  const { F, db } = await sdk();
+  await F.deleteDoc(F.doc(db, 'bonus', id));
+}
+
+// --------------------------------------------- statistiques par saison
+// stats/{saison}_{uid} : résumé public (sans nom) qui sert au classement des équipages
+// { uid, saison, mois: { '2026-10': { best, n, sem: { '2026-W41': 1 }, th: { theme: [ok, n] } } },
+//   defis: { '2026-W41': 8 }, epreuves: [{ t: millis, s: score }] }
+
+export async function statsSaison(saison) {
+  const { F, db } = await sdk();
+  const s = await F.getDocs(F.query(F.collection(db, 'stats'), F.where('saison', '==', saison)));
+  return s.docs.map((d) => d.data());
+}
+
+export async function updateStats(saison, uid, fn) {
+  const { F, db } = await sdk();
+  const ref = F.doc(db, 'stats', `${saison}_${uid}`);
+  await F.runTransaction(db, async (tx) => {
+    const snap = await tx.get(ref);
+    const cur = snap.exists() ? snap.data() : { uid, saison, mois: {}, defis: {}, epreuves: [] };
+    const next = fn(structuredClone(cur));
+    next.uid = uid;
+    next.saison = saison;
+    tx.set(ref, next);
+  });
+}
+
+// ------------------------------------------------- défi de la semaine
+
+export async function getDefi(semaine, uid) {
+  const { F, db } = await sdk();
+  const s = await F.getDoc(F.doc(db, 'results', `defi_${semaine}_${uid}`));
+  return s.exists() ? s.data() : null;
+}
+export async function saveDefi(r, semaine, me) {
+  const { F, db } = await sdk();
+  await F.setDoc(F.doc(db, 'results', `defi_${semaine}_${me.uid}`), {
+    uid: me.uid,
+    name: me.name,
+    unite: me.unite || '',
+    mode: 'defi',
+    semaine,
+    score: r.score,
+    total: r.total,
+    dur: 0,
+    themes: r.themes,
+    ok: r.ok,
+    ko: r.ko,
+    at: F.serverTimestamp(),
+  });
+}
+
+// ------------------------------------------- carnet de progression
+// carnets/{uid} = { v: { itemId: { by, byName, at } } }  (écrit par les formateurs et chefs d'équipage)
+// demandes/{uid}_{itemId} = { uid, name, item, saison, at }  (créée par le scout)
+
+export async function getCarnet(uid) {
+  const { F, db } = await sdk();
+  const s = await F.getDoc(F.doc(db, 'carnets', uid));
+  return s.exists() ? s.data().v || {} : {};
+}
+export async function valider(uid, item, me, ok = true) {
+  const { F, db } = await sdk();
+  const batch = F.writeBatch(db);
+  const ref = F.doc(db, 'carnets', uid);
+  if (ok) batch.set(ref, { v: { [item]: { by: me.uid, byName: me.name, at: F.serverTimestamp() } } }, { merge: true });
+  else batch.set(ref, { v: { [item]: F.deleteField() } }, { merge: true });
+  batch.delete(F.doc(db, 'demandes', `${uid}_${item}`));
+  await batch.commit();
+}
+export async function demander(me, item, saison) {
+  const { F, db } = await sdk();
+  await F.setDoc(F.doc(db, 'demandes', `${me.uid}_${item}`), { uid: me.uid, name: me.name, item, saison, at: F.serverTimestamp() });
+}
+export async function annulerDemande(uid, item) {
+  const { F, db } = await sdk();
+  await F.deleteDoc(F.doc(db, 'demandes', `${uid}_${item}`));
+}
+export async function mesDemandes(uid) {
+  const { F, db } = await sdk();
+  const s = await F.getDocs(F.query(F.collection(db, 'demandes'), F.where('uid', '==', uid)));
+  return s.docs.map((d) => ({ id: d.id, ...d.data(), at: toDate(d.data().at) }));
+}
+export async function toutesDemandes() {
+  const { F, db } = await sdk();
+  const s = await F.getDocs(F.collection(db, 'demandes'));
+  return s.docs.map((d) => ({ id: d.id, ...d.data(), at: toDate(d.data().at) }));
+}
+
+// Statut de chef d'équipage, par saison : users/{uid}.ce = { '2026': true }
+export async function setChefEq(uid, saison, on) {
+  const { F, db } = await sdk();
+  await F.updateDoc(F.doc(db, 'users', uid), { [`ce.${saison}`]: on ? true : F.deleteField() });
 }

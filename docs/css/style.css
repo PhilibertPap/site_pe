@@ -2088,3 +2088,198 @@ h2::before {
 .emb .emb-y {
   fill: #ffd400;
 }
+
+/* ------------------------------------------- équipages, carnet, progression */
+
+.defi {
+  border: 1px solid var(--ink);
+  border-left: 4px solid #e2b23a;
+  background: var(--card);
+  padding: 0.8rem 1rem 0.2rem;
+  margin: 1.5rem 0 0.5rem;
+}
+.defi .kicker {
+  margin-bottom: 0.2rem;
+}
+.courbe-fig {
+  margin: 1.2rem 0;
+}
+.courbe {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.cb-grid {
+  stroke: var(--rule);
+  stroke-width: 1;
+}
+.cb-t {
+  font-family: var(--sans);
+  font-size: 11px;
+  fill: var(--muted);
+}
+.cb-seuil {
+  stroke: var(--ok);
+  stroke-width: 1.2;
+  stroke-dasharray: 5 4;
+}
+.cb-seuil-t {
+  fill: var(--ok);
+}
+.cb-s path {
+  stroke-width: 2.2;
+}
+.cb-c0 { --cb: var(--navy); }
+.cb-c1 { --cb: var(--signal); }
+.cb-c2 { --cb: var(--ok); }
+.cb-c3 { --cb: #c08a00; }
+.cb-c4 { --cb: #7a4fa0; }
+.cb-c5 { --cb: #2a8a8a; }
+.cb-s path { stroke: var(--cb); }
+.cb-s circle { fill: var(--cb); }
+.cb-leg {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem 1.2rem;
+  font-family: var(--sans);
+  font-size: 0.82rem;
+  margin-top: 0.3rem;
+}
+.cb-leg i {
+  display: inline-block;
+  width: 1.1rem;
+  height: 3px;
+  background: var(--cb);
+  vertical-align: middle;
+  margin-right: 0.35rem;
+}
+table.classement td b {
+  font-weight: 600;
+}
+.eq-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
+  gap: 0;
+  border-top: 1px solid var(--ink);
+  border-left: 1px solid var(--rule);
+  margin: 1rem 0;
+}
+.eq-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  padding: 0.8rem 0.9rem;
+  border-right: 1px solid var(--rule);
+  border-bottom: 1px solid var(--rule);
+  background: var(--card);
+}
+.eq-card.mine {
+  background: var(--navy-soft);
+}
+table.dash tr.idle td {
+  color: var(--muted);
+}
+.err-t {
+  color: var(--signal);
+}
+.demandes {
+  list-style: none;
+  padding: 0;
+  border-top: 1px solid var(--ink);
+}
+.demandes li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.7rem 0;
+  border-bottom: 1px solid var(--rule);
+  margin: 0;
+}
+.demandes .btns {
+  margin: 0;
+  flex: none;
+}
+.carnet-total {
+  font-family: var(--sans);
+  font-size: 0.95rem;
+}
+.carnet-total .bar,
+.carnet-sec .bar {
+  width: 10rem;
+}
+.carnet {
+  list-style: none;
+  padding: 0;
+  border-top: 1px solid var(--ink);
+}
+.carnet li {
+  display: grid;
+  grid-template-columns: 1fr auto auto;
+  gap: 0.3rem 1rem;
+  align-items: center;
+  padding: 0.55rem 0;
+  border-bottom: 1px solid var(--rule);
+  margin: 0;
+}
+.carnet li.ok .carnet-t {
+  color: var(--muted);
+}
+.carnet li.ok .carnet-t::before {
+  content: "✓ ";
+  color: var(--ok);
+  font-weight: 600;
+}
+.carnet-t a {
+  font-family: var(--sans);
+}
+.carnet-e,
+.carnet-a {
+  white-space: nowrap;
+}
+@media (max-width: 640px) {
+  .carnet li {
+    grid-template-columns: 1fr;
+  }
+  .demandes li {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+.inline-form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  align-items: center;
+  margin: 0.8rem 0;
+}
+.inline-form input,
+.inline-form select {
+  padding: 0.45rem 0.5rem;
+  font: inherit;
+  font-family: var(--sans);
+  font-size: 0.9rem;
+  color: var(--ink);
+  background: var(--card);
+  border: 1px solid var(--rule-2);
+  border-radius: 0;
+}
+.eq-reg {
+  list-style: none;
+  padding: 0;
+}
+.eq-reg li {
+  margin: 0.3rem 0;
+}
+table.compo select {
+  font: inherit;
+  font-size: 0.88rem;
+  padding: 0.2rem;
+}
+.top a.acct-name {
+  color: var(--bar-ink);
+  text-decoration: none;
+}
+.top a.acct-name:hover {
+  text-decoration: underline;
+}

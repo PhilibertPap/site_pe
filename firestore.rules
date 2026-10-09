@@ -7,6 +7,8 @@ rules_version = '2';
 // - Seuls les comptes validés lisent et écrivent les questions-réponses.
 // - Les chefs (role = 'chef') valident les comptes, modèrent, et leurs réponses sont mises en avant.
 // - Chaque QCM terminé est enregistré dans results : l'élève voit les siens, les chefs voient tout.
+// - Formateurs (chefs et titulaires du PE) : réponses mises en avant, validation des carnets.
+// - Équipages par saison, classement à partir de stats (résumés sans nom), points bonus des chefs.
 
 service cloud.firestore {
   match /databases/{database}/documents {
@@ -19,6 +21,14 @@ service cloud.firestore {
         && profile().approved == true;
     }
     function chef() { return approved() && profile().role == 'chef'; }
+    // saison scoute en cours : année de septembre
+    function saisonCourante() { return request.time.month() >= 9 ? request.time.year() : request.time.year() - 1; }
+    // formateur : chef ou titulaire du PE ; ses réponses sont mises en avant
+    function estFormateur(p) { return p.role == 'chef' || p.get('pe', false) == true; }
+    function formateur() { return approved() && estFormateur(profile()); }
+    // chef d'équipage pour la saison en cours : users/{uid}.ce = { '2026': true }
+    function chefEq() { return approved() && profile().get('ce', {}).get(string(saisonCourante()), false) == true; }
+    function validateur() { return formateur() || chefEq(); }
     function str(v, max) { return v is string && v.size() > 0 && v.size() <= max; }
 
     match /users/{uid} {
@@ -61,7 +71,7 @@ service cloud.firestore {
         || (approved()
             && request.resource.data.diff(resource.data).affectedKeys().hasOnly(['answers', 'lastAt', 'chefAnswered'])
             && request.resource.data.answers == resource.data.answers + 1
-            && request.resource.data.chefAnswered == (resource.data.chefAnswered || profile().role == 'chef'));
+            && request.resource.data.chefAnswered == (resource.data.chefAnswered || estFormateur(profile())));
 
       allow delete: if chef()
         || (approved() && resource.data.authorId == request.auth.uid && resource.data.answers == 0);
@@ -72,20 +82,24 @@ service cloud.firestore {
           && request.resource.data.keys().hasOnly(['body', 'authorId', 'authorName', 'byChef', 'createdAt'])
           && request.resource.data.authorId == request.auth.uid
           && request.resource.data.authorName == profile().name
-          && request.resource.data.byChef == (profile().role == 'chef')
+          && request.resource.data.byChef == estFormateur(profile())
           && str(request.resource.data.body, 5000);
         allow update, delete: if chef();
       }
     }
 
     match /results/{rid} {
-      allow read: if chef() || (approved() && resource.data.uid == request.auth.uid);
+      // resource == null : un document absent (défi pas encore fait) se lit sans erreur
+      allow read: if chef() || (approved() && (resource == null || resource.data.uid == request.auth.uid));
       allow create: if approved()
         && request.resource.data.keys().hasOnly(['uid', 'name', 'unite', 'mode', 'score', 'total', 'dur',
-             'themes', 'ok', 'ko', 'at'])
+             'themes', 'ok', 'ko', 'at', 'semaine'])
         && request.resource.data.uid == request.auth.uid
         && request.resource.data.name == profile().name
-        && request.resource.data.mode in ['examen', 'entrainement']
+        && request.resource.data.mode in ['examen', 'entrainement', 'defi']
+        // un seul essai au défi de la semaine : identifiant imposé, pas de modification possible
+        && (request.resource.data.mode != 'defi'
+            || (rid == 'defi_' + request.resource.data.semaine + '_' + request.auth.uid && request.resource.data.total == 10))
         && request.resource.data.score is int && request.resource.data.total is int
         && request.resource.data.score >= 0 && request.resource.data.score <= request.resource.data.total
         && request.resource.data.total > 0 && request.resource.data.total <= 400
@@ -95,6 +109,52 @@ service cloud.firestore {
         && request.resource.data.at == request.time;
       allow update: if false;
       allow delete: if chef();
+    }
+
+    // ---------------------------------------------------- équipages et saisons
+    match /equipages/{id} {
+      allow read: if approved();
+      allow write: if chef();
+    }
+    match /saisons/{saison}/equipages/{id} {
+      allow read: if approved();
+      allow write: if chef();
+    }
+    match /bonus/{id} {
+      allow read: if approved();
+      allow create: if chef() && request.resource.data.pts is int
+        && request.resource.data.pts >= -20 && request.resource.data.pts <= 20;
+      allow update: if false;
+      allow delete: if chef();
+    }
+
+    // Résumé de saison d'un scout (sans nom), base du classement des équipages
+    match /stats/{sid} {
+      allow read: if approved();
+      allow create, update: if approved()
+        && sid == string(request.resource.data.saison) + '_' + request.auth.uid
+        && request.resource.data.uid == request.auth.uid
+        && request.resource.data.keys().hasOnly(['uid', 'saison', 'mois', 'defis', 'epreuves'])
+        && request.resource.data.mois is map && request.resource.data.defis is map
+        && request.resource.data.epreuves is list && request.resource.data.epreuves.size() <= 200;
+      allow delete: if chef();
+    }
+
+    // Carnet de progression : validé par les formateurs et les chefs d'équipage
+    match /carnets/{uid} {
+      allow read: if approved() && (request.auth.uid == uid || validateur());
+      allow create, update: if validateur() && request.resource.data.keys().hasOnly(['v']);
+      allow delete: if chef();
+    }
+    match /demandes/{did} {
+      allow read: if approved() && (resource.data.uid == request.auth.uid || validateur());
+      allow create: if approved()
+        && request.resource.data.uid == request.auth.uid
+        && did == request.auth.uid + '_' + request.resource.data.item
+        && request.resource.data.keys().hasOnly(['uid', 'name', 'item', 'saison', 'at'])
+        && request.resource.data.name == profile().name;
+      allow update: if false;
+      allow delete: if approved() && (resource.data.uid == request.auth.uid || validateur());
     }
   }
 }

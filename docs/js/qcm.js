@@ -2,6 +2,8 @@
 import { figure } from './qcm/figure.js';
 import { THEMES, QUESTIONS, EXAM_PLAN } from './qcm/index.js';
 import * as fb from './fb.js';
+import { appliquer, questionsDuDefi, saisonDe, semaineDe } from './classement.js';
+import { courbe } from './courbe.js';
 
 const root = document.getElementById('qcm');
 const ROOT_URL = root.dataset.root || '../';
@@ -90,8 +92,11 @@ async function saveResult(r, slot) {
   const me = await user();
   if (!me || !r.total) return;
   try {
-    await fb.saveResult(r, me);
-    if (slot) slot.textContent = 'Résultat enregistré : vos chefs le voient dans leur suivi.';
+    if (r.mode === 'defi') await fb.saveDefi(r, r.semaine, me);
+    else await fb.saveResult(r, me);
+    const now = new Date();
+    await fb.updateStats(saisonDe(now), me.uid, (st) => appliquer(st, r, now)).catch(() => {});
+    if (slot) slot.textContent = r.mode === 'defi' ? 'Résultat enregistré : il compte pour votre équipage.' : 'Résultat enregistré : vos chefs le voient dans leur suivi.';
   } catch (e) {
     if (slot) slot.textContent = 'Résultat non enregistré (' + fb.message(e) + ').';
   }
@@ -133,7 +138,9 @@ async function myHistory() {
     th[t][1] += n;
   }));
   const exams = rs.filter((r) => r.mode === 'examen');
+  const pts = exams.slice().reverse().map((r) => ({ x: r.at ? r.at.getTime() : Date.now(), y: r.score }));
   slot.innerHTML = `<h2 id="vos-resultats">Vos résultats</h2>
+  ${pts.length >= 2 ? `<figure class="courbe-fig">${courbe([{ nom: 'Épreuves blanches', pts }], { ymax: 30, seuil: 25, seuilLabel: 'reçu (25)' })}<figcaption>Vos épreuves blanches, dans l’ordre. Au-dessus de la ligne : reçu.</figcaption></figure>` : ''}
   <p class="small muted">${exams.length} épreuve${exams.length > 1 ? 's' : ''} blanche${exams.length > 1 ? 's' : ''}, ${rs.length - exams.length} entraînement${rs.length - exams.length > 1 ? 's' : ''}. Ces résultats sont visibles par vos chefs.</p>
   <div class="tbl-wrap"><table><thead><tr><th>Thème</th><th class="num">Réussite</th><th class="num">Questions</th></tr></thead><tbody>${Object.entries(THEMES)
     .filter(([t]) => th[t])
@@ -141,7 +148,7 @@ async function myHistory() {
     .join('')}</tbody></table></div>
   <div class="tbl-wrap"><table><thead><tr><th>Date</th><th>Type</th><th class="num">Score</th></tr></thead><tbody>${rs
     .slice(0, 8)
-    .map((r) => `<tr><td>${r.at ? r.at.toLocaleDateString('fr-FR') : ''}</td><td>${r.mode === 'examen' ? 'Épreuve blanche' : 'Entraînement'}</td><td class="num">${r.score}/${r.total}</td></tr>`)
+    .map((r) => `<tr><td>${r.at ? r.at.toLocaleDateString('fr-FR') : ''}</td><td>${{ examen: 'Épreuve blanche', defi: 'Défi de la semaine' }[r.mode] || 'Entraînement'}</td><td class="num">${r.score}/${r.total}</td></tr>`)
     .join('')}</tbody></table></div>`;
 }
 
@@ -153,6 +160,7 @@ function home() {
   const counts = {};
   QUESTIONS.forEach((q) => (counts[q.t] = (counts[q.t] || 0) + 1));
   root.innerHTML = `
+  <div id="defi-box"></div>
   <h2 id="epreuve">Épreuve blanche</h2>
   <p>30 questions tirées au sort dans la banque, réparties par thème comme à l'examen, en 30 minutes. Une seule bonne réponse par question. La correction détaillée s'affiche quand vous rendez la copie (ou à la fin du temps).</p>
   ${best ? `<p class="small muted">Meilleur score sur cet appareil : ${best.s}/30, le ${new Date(best.d).toLocaleDateString('fr-FR')}.</p>` : ''}
@@ -175,14 +183,41 @@ function home() {
   <p class="small muted">La banque contient ${nb} questions. Les questions marquées « d'après » reprennent le sujet d'une épreuve passée, avec une correction rédigée pour ce site.</p>
   <div id="mes-resultats"></div>`;
   myHistory();
+  defiBox();
 
-  root.querySelector('#go-exam').onclick = exam;
+  root.querySelector('#go-exam').onclick = () => exam();
   const picked = () => [...root.querySelectorAll('.theme-pick input:checked')].map((i) => i.value);
   root.querySelector('#go-train').onclick = () => train(picked(), 10);
   root.querySelector('#go-train-20').onclick = () => train(picked(), 20);
   root.querySelector('#go-train-all').onclick = () => train(picked(), 9999);
   const w = root.querySelector('#go-wrong');
   if (w) w.onclick = () => train(null, 9999, store('wrong'));
+}
+
+// ------------------------------------------------------ défi de la semaine
+
+async function defiBox() {
+  const me = await user();
+  const box = root.querySelector('#defi-box');
+  if (!me || !box) return;
+  const sem = semaineDe();
+  let fait = null;
+  try {
+    fait = await fb.getDefi(sem, me.uid);
+  } catch (e) {
+    return;
+  }
+  const num = +sem.slice(-2);
+  box.innerHTML = `<div class="defi">
+    <p class="kicker">Défi de la semaine ${num}</p>
+    ${
+      fait
+        ? `<p><b>${fait.score}/10</b> : défi relevé. Rendez-vous lundi pour le suivant. <a href="${ROOT_URL}equipages/index.html">Voir le classement des équipages</a></p>`
+        : `<p>Dix questions, les mêmes pour tous cette semaine, un seul essai, 10 minutes. Votre score compte pour votre équipage (<a href="${ROOT_URL}equipages/index.html#points">comment sont comptés les points</a>).</p>
+           <div class="btns"><button class="btn" type="button" id="go-defi">Relever le défi</button></div>`
+    }</div>`;
+  const b = box.querySelector('#go-defi');
+  if (b) b.onclick = () => exam({ mode: 'defi', semaine: sem, minutes: 10, qs: questionsDuDefi(QUESTIONS, sem).map(prepare) });
 }
 
 // ----------------------------------------------------------------- épreuve
@@ -200,14 +235,17 @@ function drawExam() {
   return shuffle(picked).slice(0, 30).map(prepare);
 }
 
-function exam() {
-  const qs = drawExam();
-  const end = Date.now() + 30 * 60 * 1000;
+function exam(opts = {}) {
+  const mode = opts.mode || 'examen';
+  const qs = opts.qs || drawExam();
+  const N = qs.length;
+  const minutes = opts.minutes || 30;
+  const end = Date.now() + minutes * 60 * 1000;
   root.innerHTML = '';
   const bar = el(
     'div',
     { class: 'qcm-bar' },
-    `<span class="timer">30:00</span><span class="grow"><span class="answered">0</span>/30 répondues</span><button class="btn small" type="button">Rendre la copie</button>`
+    `<span class="timer">${String(minutes).padStart(2, '0')}:00</span><span class="grow"><span class="answered">0</span>/${N} répondues</span><button class="btn small" type="button">Rendre la copie</button>`
   );
   root.appendChild(bar);
   const list = el('div');
@@ -255,10 +293,12 @@ function exam() {
     wrong.forEach((w) => prevWrong.add(w));
     store('wrong', [...prevWrong]);
     const best = store('best');
-    if (!best || score > best.s) store('best', { s: score, d: Date.now() });
-    const errors = 30 - score;
+    if (mode === 'examen' && (!best || score > best.s)) store('best', { s: score, d: Date.now() });
+    const errors = N - score;
     const verdict =
-      errors <= 5
+      mode !== 'examen'
+        ? ''
+        : errors <= 5
         ? '<span class="verdict ok">Reçu</span>'
         : errors <= 7
         ? '<span class="verdict mid">Rattrapage</span>'
@@ -266,25 +306,26 @@ function exam() {
     const sc = el(
       'div',
       { class: 'score' },
-      `<b>${score}/30</b> <span class="muted">· ${errors} erreur${errors > 1 ? 's' : ''}</span> ${verdict}
-      <p class="small" style="margin:.4rem 0 0">À l’examen : 5 fautes au plus pour être reçu, rattrapage à 6 ou 7 fautes.</p>
+      `<b>${score}/${N}</b> <span class="muted">· ${errors} erreur${errors > 1 ? 's' : ''}</span> ${verdict}
+      <p class="small" style="margin:.4rem 0 0">${mode === 'examen' ? 'À l’examen : 5 fautes au plus pour être reçu, rattrapage à 6 ou 7 fautes.' : 'Défi de la semaine : votre score compte pour votre équipage.'}</p>
       <div class="stat-row" style="margin-top:.6rem">${Object.entries(byTheme)
         .map(([t, [a, n]]) => `<span>${THEMES[t]}</span><span>${a}/${n}</span>`)
         .join('')}</div>
       <p class="small" style="margin:.8rem 0 0">Les erreurs sont enregistrées sur cet appareil ; vous pourrez les reprendre depuis la page du QCM.</p>
       <p class="small muted saved" style="margin:.3rem 0 0"></p>
-      <div class="btns"><button class="btn small" type="button" data-a="again">Nouvelle épreuve</button><button class="btn small ghost" type="button" data-a="home">Retour</button></div>`
+      <div class="btns">${mode === 'examen' ? '<button class="btn small" type="button" data-a="again">Nouvelle épreuve</button>' : ''}<button class="btn small ghost" type="button" data-a="home">Retour</button></div>`
     );
     root.insertBefore(sc, list);
     bar.remove();
-    saveResult({ mode: 'examen', dur: Math.round((Date.now() - (end - 30 * 60 * 1000)) / 1000), ...tally(res) }, sc.querySelector('.saved'));
-    sc.querySelector('[data-a=again]').onclick = exam;
+    saveResult({ mode, semaine: opts.semaine, dur: Math.round((Date.now() - (end - minutes * 60 * 1000)) / 1000), ...tally(res) }, sc.querySelector('.saved'));
+    const again = sc.querySelector('[data-a=again]');
+    if (again) again.onclick = () => exam();
     sc.querySelector('[data-a=home]').onclick = home;
     window.scrollTo(0, root.offsetTop - 80);
   }
   bar.querySelector('button').onclick = () => {
     const n = list.querySelectorAll('input:checked').length;
-    if (n < 30 && !confirmInline(bar, n)) return;
+    if (n < N && !confirmInline(bar, n)) return;
     finish();
   };
   function confirmInline(bar, n) {
@@ -292,7 +333,7 @@ function exam() {
     const b = bar.querySelector('button');
     if (b.dataset.confirm) return true;
     b.dataset.confirm = '1';
-    b.textContent = `${30 - n} sans réponse : confirmer`;
+    b.textContent = `${N - n} sans réponse : confirmer`;
     return false;
   }
 }

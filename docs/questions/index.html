@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Questions · Patron d'embarcation</title>
-<meta name="description" content="Posez vos questions aux chefs ; tout le monde voit les réponses.">
+<meta name="description" content="Posez vos questions aux formateurs ; tout le monde voit les réponses.">
 <link rel="icon" href="../img/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="../img/icon-180.png">
 <link rel="manifest" href="../manifest.webmanifest">
@@ -31,14 +31,13 @@
   <div class="top-in">
     <a class="brand" href="../index.html"><svg class="emb" viewBox="0 0 367 524" aria-hidden="true"><g class="emb-r"><path d="M152 72 L140 0 Q185 40 227 0 L215 72 Z"/><path d="M152 60 H215 V480 H152 Z"/><path d="M156 146 L15 126 Q62 168 22 214 L156 194 Z"/><path d="M 211 146 L 352 126 Q 305 168 345 214 L 211 194 Z"/><path d="M48 292 L8 388 Q24 376 38 372 C40 445 100 502 183.5 524 L183.5 474 C128 462 90 428 86 366 Q104 380 124 402 Z"/><path d="M 319 292 L 359 388 Q 343 376 329 372 C 327 445 267 502 183.5 524 L 183.5 474 C 239 462 277 428 281 366 Q 263 380 243 402 Z"/></g><g class="emb-y" transform="translate(183.5 66) scale(4.5) translate(-50 -17)"><path d="M50 17C55.5 23 57 30 54 37 53 39.5 51.5 41.5 50 43 48.5 41.5 47 39.5 46 37 43 30 44.5 23 50 17Z"/><path d="M51.3 42C52.5 36.5 56.8 32.2 61.8 32.5 65.8 32.8 68 36.4 66.5 39.7 65.3 42.3 61.9 42.5 60.9 40.4 62.6 41 63.9 39.6 63.3 38 62.6 36.2 60 35.8 58 37 55.4 38.5 53.7 41.4 53.1 43.9Z"/><path d="M48.7 42C47.5 36.5 43.2 32.2 38.2 32.5 34.2 32.8 32 36.4 33.5 39.7 34.7 42.3 38.1 42.5 39.1 40.4 37.4 41 36.1 39.6 36.7 38 37.4 36.2 40 35.8 42 37 44.6 38.5 46.3 41.4 46.9 43.9Z"/><rect x="42.5" y="43.5" width="15" height="3.4" rx=".8"/><path d="M50 46.9 54.5 52.5 50 58 45.5 52.5Z"/><path d="M47 46.9C46.4 49.5 45 51 43 51.6 44.3 49.3 44.4 48 44.3 46.9Z"/><path d="M53 46.9C53.6 49.5 55 51 57 51.6 55.7 49.3 55.6 48 55.7 46.9Z"/></g></svg><span class="brand-t"><b>Patron d'embarcation</b><small>Scouts marins · voile</small></span></a>
     <button class="menu-btn" type="button" aria-expanded="false" aria-controls="mainnav"><span class="burger" aria-hidden="true"><i></i><i></i><i></i></span><span class="menu-l">Menu</span></button>
-    <nav class="mainnav" id="mainnav" aria-label="Parties du site"><a href="../cours/index.html">Cours</a><a href="../qcm/index.html">QCM</a><a href="../exercices/index.html">Exercices</a><a href="../pratique/index.html">Pratique</a><a href="../cqcf/index.html">CQ / CF</a><a href="../annales/index.html">Annales</a><a href="../questions/index.html" aria-current="page">Questions</a></nav>
+    <nav class="mainnav" id="mainnav" aria-label="Parties du site"><a href="../cours/index.html">Cours</a><a href="../qcm/index.html">QCM</a><a href="../exercices/index.html">Exercices</a><a href="../pratique/index.html">Pratique</a><a href="../cqcf/index.html">CQ / CF</a><a href="../annales/index.html">Annales</a><a href="../questions/index.html" aria-current="page">Questions</a><a href="../equipages/index.html">Équipages</a></nav>
     <div class="acct" id="acct"></div><script>
 try {
   var pp = JSON.parse(localStorage.getItem('pe-profile') || 'null');
   if (pp && pp.approved && localStorage.getItem('pe-ok') === pp.uid) {
     var e = function (x) { return String(x || '').replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); };
-    document.getElementById('acct').innerHTML = '<span class="acct-name">' + e(pp.name) + (pp.role === 'chef' ? ' <span class="tag">chef</span>' : '') + '</span>' +
-      (pp.role === 'chef' ? ' <a href="../chefs/index.html">Comptes</a> <a href="../chefs/resultats.html">Résultats</a>' : '') +
+    document.getElementById('acct').innerHTML = '<a class="acct-name" href="../compte/index.html" title="Mon espace">' + e(pp.name) + (pp.role === 'chef' ? ' <span class="tag">chef</span>' : '') + '</a>' +
       ' <button type="button" class="linkish">Déconnexion</button>';
   }
 } catch (err) {}
@@ -49,8 +48,8 @@ try {
 </header>
 <main id="contenu">
 <div class="page wide"><p class="kicker">Questions-réponses</p>
-<h1>Questions aux chefs</h1>
-<p class="lede">Une notion du cours pas claire, un exercice qui ne tombe pas juste, une question sur une manœuvre ? Posez-la ici. Les chefs répondent, et tout le monde profite des réponses.</p>
+<h1>Questions aux formateurs</h1>
+<p class="lede">Une notion du cours pas claire, un exercice qui ne tombe pas juste, une question sur une manœuvre ? Posez-la ici. Les formateurs (les chefs et les anciens qui ont le PE) répondent, et tout le monde profite des réponses. Leurs réponses sont signalées.</p>
 <div id="q-list"></div>
 </div>
 </main>

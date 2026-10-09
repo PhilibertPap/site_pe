@@ -35,6 +35,28 @@ Les questions du QCM sont dans `src/js/qcm/` : un fichier par thème, `index.js`
 d'épreuve `EXAM_PLAN`) et `generees.js`, qui fabrique des questions à partir des figures
 (marques, feux, pavillons, signaux sonores et de port) : ajouter une entrée à ses tables suffit. Les exercices sont générés aléatoirement par `src/js/exos.js`.
 
+## Équipages, défi, carnet de progression (comptes activés)
+
+- **Rôles.** Un compte peut cumuler : chef (gère le site), titulaire du PE (case cochée par un chef
+  dans Comptes), chef d'équipage (pour une saison, coché dans Espace chefs > Équipages). Chefs et
+  titulaires du PE sont « formateurs » : leurs réponses aux questions sont mises en avant.
+- **Équipages.** Chaque saison (septembre à août), un chef compose les équipages dans Espace chefs >
+  Équipages. Les noms restent d'une année sur l'autre ; on peut créer ou fermer un équipage.
+- **Classement.** Page Équipages : points du mois (niveau 50, régularité 30, défi de la semaine 20,
+  bonus des chefs), total de la saison, courbes, et l'explication du calcul.
+- **Défi de la semaine.** Dix questions identiques pour tous, un seul essai (page QCM).
+- **Carnet de progression.** La liste des attendus du PE (Passerelle SUF) ; le scout demande une
+  validation, un formateur ou son chef d'équipage la valide après avoir signé le carnet papier.
+- **Tableau de bord d'équipage** pour le chef d'équipage et les chefs.
+
+Après une mise à jour de `firestore.rules`, la recopier dans la console Firebase (Règles > Publier).
+
+## Annales ajoutées par les chefs
+
+Déposer le fichier dans `docs/fichiers/annales` depuis GitHub (Add file > Upload files), nommé
+`qcm|carto|maree-ANNEE[-mois]-sujet|corrige.ext`. L'action GitHub `.github/workflows/build.yml`
+reconstruit le site à chaque push et publie la nouvelle ligne du tableau.
+
 ## Téléphone et hors ligne
 
 Le build produit `manifest.webmanifest` et `sw.js` : le site s'installe comme une application

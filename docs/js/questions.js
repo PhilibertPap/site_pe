@@ -36,7 +36,7 @@ async function showList(me) {
     <select id="q-theme" aria-label="Thème"><option value="">Tous les thèmes</option>${Object.entries(THEMES)
       .map(([k, v]) => `<option value="${k}">${v}</option>`)
       .join('')}</select>
-    <label class="small"><input type="checkbox" id="q-open"> sans réponse d’un chef</label>
+    <label class="small"><input type="checkbox" id="q-open"> sans réponse d’un formateur</label>
   </div>
   <form id="q-new" class="q-form" hidden>
     <label>Thème<select name="theme" required>${Object.entries(THEMES).map(([k, v]) => `<option value="${k}">${v}</option>`).join('')}</select></label>
@@ -96,7 +96,7 @@ async function showList(me) {
           <span class="q-title">${esc(q.title)}</span>
           <span class="q-meta">${THEMES[q.theme] || ''} · ${esc(q.authorName)} · ${date(q.lastAt)}</span>
           <span class="q-badges">${q.answers ? `<span class="tag">${q.answers} réponse${q.answers > 1 ? 's' : ''}</span>` : '<span class="tag tag-open">sans réponse</span>'}${
-              q.chefAnswered ? '<span class="tag tag-chef">réponse d’un chef</span>' : ''
+              q.chefAnswered ? '<span class="tag tag-chef">réponse d’un formateur</span>' : ''
             }${q.resolved ? '<span class="tag tag-ok">résolue</span>' : ''}</span>
         </a></li>`
           )
@@ -139,14 +139,14 @@ async function showDetail(me, id) {
   <ol class="answers">${answers
     .map(
       (a) => `<li class="answer${a.byChef ? ' by-chef' : ''}">
-      <p class="q-meta"><strong>${esc(a.authorName)}</strong>${a.byChef ? ' <span class="tag tag-chef">chef</span>' : ''} · ${date(a.createdAt)}${
+      <p class="q-meta"><strong>${esc(a.authorName)}</strong>${a.byChef ? ' <span class="tag tag-chef">formateur</span>' : ''} · ${date(a.createdAt)}${
         chef ? ` · <button type="button" class="linkish" data-del="${a.id}">supprimer</button>` : ''
       }</p>
       ${fmt(a.body)}</li>`
     )
     .join('')}</ol>
   <form class="q-form" id="a-form">
-    <label>${chef ? 'Votre réponse (elle sera signalée comme réponse d’un chef)' : 'Votre réponse ou un complément'}<textarea name="body" rows="5" maxlength="5000" required></textarea></label>
+    <label>${chef || me.pe ? 'Votre réponse (elle sera signalée comme réponse d’un formateur)' : 'Votre réponse ou un complément'}<textarea name="body" rows="5" maxlength="5000" required></textarea></label>
     <div class="btns"><button class="btn" type="submit">Répondre</button></div>
   </form>`;
 

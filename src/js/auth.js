@@ -21,8 +21,8 @@ const cache = {
   set(p) {
     try {
       if (!p) return localStorage.removeItem('pe-profile');
-      const { uid, name, unite, role, approved } = p;
-      localStorage.setItem('pe-profile', JSON.stringify({ uid, name, unite, role, approved }));
+      const { uid, name, unite, role, approved, pe, ce } = p;
+      localStorage.setItem('pe-profile', JSON.stringify({ uid, name, unite, role, approved, pe: !!pe, ce: ce || {} }));
     } catch (e) {}
   },
 };
@@ -120,8 +120,7 @@ function waitingPanel(profile) {
 function header(profile) {
   const slot = document.getElementById('acct');
   if (!slot) return;
-  slot.innerHTML = `<span class="acct-name">${esc(profile.name)}${profile.role === 'chef' ? ' <span class="tag">chef</span>' : ''}</span>
-    ${profile.role === 'chef' ? `<a href="${ROOT}chefs/index.html">Comptes</a> <a href="${ROOT}chefs/resultats.html">Résultats</a>` : ''}
+  slot.innerHTML = `<a class="acct-name" href="${ROOT}compte/index.html" title="Mon espace">${esc(profile.name)}${profile.role === 'chef' ? ' <span class="tag">chef</span>' : ''}</a>
     <button type="button" class="linkish">Déconnexion</button>`;
   slot.querySelector('button').onclick = async () => {
     store.set(null);

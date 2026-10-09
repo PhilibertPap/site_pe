@@ -18,21 +18,22 @@ async function show(me) {
   const open = qs.filter((q) => !q.chefAnswered && !q.resolved);
   const row = (u) => `<tr data-uid="${u.uid}">
     <td>${esc(u.name)}</td><td>${esc(u.unite)}</td><td class="small">${esc(u.email)}</td>
-    <td>${u.role === 'chef' ? '<span class="tag tag-chef">chef</span>' : 'élève'}</td>
+    <td>${u.role === 'chef' ? '<span class="tag tag-chef">chef</span>' : 'élève'}${u.pe ? ' <span class="tag">PE</span>' : ''}</td>
     <td class="acts">${
       !u.approved
         ? '<button class="btn small" data-a="approve">Valider</button> <button class="btn small ghost" data-a="refuse">Refuser</button>'
         : u.uid === me.uid
-        ? '<span class="muted small">vous</span>'
-        : `<button class="btn small ghost" data-a="${u.role === 'chef' ? 'demote' : 'promote'}">${u.role === 'chef' ? 'Retirer chef' : 'Nommer chef'}</button> <button class="btn small ghost" data-a="suspend">Suspendre</button>`
+        ? `<button class="btn small ghost" data-a="${u.pe ? 'nope' : 'pe'}">${u.pe ? 'Retirer le PE' : 'A le PE'}</button> <span class="muted small">vous</span>`
+        : `<button class="btn small ghost" data-a="${u.pe ? 'nope' : 'pe'}">${u.pe ? 'Retirer le PE' : 'A le PE'}</button> <button class="btn small ghost" data-a="${u.role === 'chef' ? 'demote' : 'promote'}">${u.role === 'chef' ? 'Retirer chef' : 'Nommer chef'}</button> <button class="btn small ghost" data-a="suspend">Suspendre</button>`
     }</td></tr>`;
   box.innerHTML = `
     <h2 id="attente">Comptes en attente (${pending.length})</h2>
     ${pending.length ? `<div class="tbl-wrap"><table><thead><tr><th>Nom</th><th>Unité</th><th>E-mail</th><th>Rôle</th><th></th></tr></thead><tbody>${pending.map(row).join('')}</tbody></table></div>` : '<p class="muted">Aucune inscription à valider.</p>'}
-    <h2 id="questions-ouvertes">Questions sans réponse d'un chef (${open.length})</h2>
+    <h2 id="questions-ouvertes">Questions sans réponse d'un formateur (${open.length})</h2>
     ${open.length ? `<ul>${open.map((q) => `<li><a href="../questions/question.html?id=${q.id}">${esc(q.title)}</a> <span class="muted small">· ${esc(q.authorName)}</span></li>`).join('')}</ul>` : '<p class="muted">Rien en attente.</p>'}
     <h2 id="comptes">Comptes validés (${ok.length})</h2>
     <div class="tbl-wrap"><table><thead><tr><th>Nom</th><th>Unité</th><th>E-mail</th><th>Rôle</th><th></th></tr></thead><tbody>${ok.map(row).join('')}</tbody></table></div>
+    <p class="small muted">« A le PE » fait de l’inscrit un <strong>formateur</strong> : ses réponses aux questions sont mises en avant et il peut valider les carnets de progression. Les chefs sont formateurs d’office. Les chefs d’équipage se nomment sur la page <a href="equipages.html">Équipages</a>.</p>
     <p class="small muted">« Refuser » supprime la fiche de l'inscrit ; il ne peut plus entrer sur le site. Pour supprimer définitivement son identifiant, passer par la console Firebase (Authentication).</p>`;
   box.querySelectorAll('[data-a]').forEach((b) => {
     b.onclick = async () => {
@@ -46,6 +47,8 @@ async function show(me) {
       b.disabled = true;
       try {
         if (a === 'approve') await fb.updateUser(uid, { approved: true });
+        if (a === 'pe') await fb.updateUser(uid, { pe: true });
+        if (a === 'nope') await fb.updateUser(uid, { pe: false });
         if (a === 'promote') await fb.updateUser(uid, { role: 'chef' });
         if (a === 'demote') await fb.updateUser(uid, { role: 'eleve' });
         if (a === 'suspend') await fb.updateUser(uid, { approved: false });

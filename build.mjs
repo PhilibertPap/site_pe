@@ -26,8 +26,7 @@ try {
   var pp = JSON.parse(localStorage.getItem('pe-profile') || 'null');
   if (pp && pp.approved && localStorage.getItem('pe-ok') === pp.uid) {
     var e = function (x) { return String(x || '').replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); };
-    document.getElementById('acct').innerHTML = '<span class="acct-name">' + e(pp.name) + (pp.role === 'chef' ? ' <span class="tag">chef</span>' : '') + '</span>' +
-      (pp.role === 'chef' ? ' <a href="{{root}}chefs/index.html">Comptes</a> <a href="{{root}}chefs/resultats.html">Résultats</a>' : '') +
+    document.getElementById('acct').innerHTML = '<a class="acct-name" href="{{root}}compte/index.html" title="Mon espace">' + e(pp.name) + (pp.role === 'chef' ? ' <span class="tag">chef</span>' : '') + '</a>' +
       ' <button type="button" class="linkish">Déconnexion</button>';
   }
 } catch (err) {}
@@ -41,7 +40,10 @@ const PARTS = {
   cqcf: { label: 'CQ / CF', href: 'cqcf/index.html' },
   annales: { label: 'Annales', href: 'annales/index.html' },
 };
-if (AUTH) PARTS.questions = { label: 'Questions', href: 'questions/index.html' };
+if (AUTH) {
+  PARTS.questions = { label: 'Questions', href: 'questions/index.html' };
+  PARTS.equipages = { label: 'Équipages', href: 'equipages/index.html' };
+}
 
 const BOX_LABELS = {
   def: 'Définition',
@@ -244,7 +246,7 @@ const pagesDir = path.join(SRC, 'pages');
 const files = walk(pagesDir).filter((f) => f.endsWith('.html'));
 
 const pages = files
-  .filter((file) => AUTH || !/[\\/](questions|chefs)[\\/]/.test(file))
+  .filter((file) => AUTH || !/[\\/](questions|chefs|equipages|equipage|carnet|compte)[\\/]/.test(file))
   .map((file) => {
   const raw = fs.readFileSync(file, 'utf8');
   const m = raw.match(/^<!--meta\s*([\s\S]*?)-->\s*/);
@@ -270,6 +272,39 @@ const exos = pages
 const cqcf = pages
   .filter((p) => p.meta.part === 'cqcf' && p.meta.order)
   .sort((a, b) => a.meta.order - b.meta.order);
+
+// Tableau des annales, construit d'après les noms de fichiers de docs/fichiers/annales :
+// épreuve-année[-session]-type.ext (épreuve : qcm, carto, maree ; type : sujet, corrige)
+function annalesHTML(root) {
+  const dir = path.join(OUT, 'fichiers', 'annales');
+  const files = fs.existsSync(dir) ? fs.readdirSync(dir) : [];
+  const RE = /^(qcm|carto|maree)-(\d{4})(?:-([a-z]+))?-(sujet|corrige)\.([a-z0-9]+)$/;
+  const rows = {};
+  for (const f of files) {
+    const m = f.match(RE);
+    if (!m) continue;
+    const [, ep, an, ses, type, ext] = m;
+    const key = an + (ses ? '-' + ses : '');
+    rows[key] = rows[key] || { an, ses, qcm: {}, carto: {}, maree: {} };
+    rows[key][ep][type] = { f, ext };
+  }
+  const keys = Object.keys(rows).sort((a, b) => b.localeCompare(a));
+  if (!keys.length) return '<p class="muted">Aucune annale dans le dossier pour l’instant.</p>';
+  const cell = (c) => {
+    const parts = ['sujet', 'corrige']
+      .filter((t) => c[t])
+      .map((t) => `<a href="${root}fichiers/annales/${c[t].f}">${t === 'sujet' ? 'sujet' : 'corrigé'}</a>${c[t].ext !== 'pdf' ? ` <span class="muted small">(${c[t].ext})</span>` : ''}`);
+    return parts.length ? parts.join(' · ') : '<span class="muted">—</span>';
+  };
+  return `<div class="tbl-wrap"><table>
+<thead><tr><th>Session</th><th>QCM</th><th>Navigation sur carte</th><th>Marée</th></tr></thead>
+<tbody>${keys
+    .map((k) => {
+      const r = rows[k];
+      return `<tr><td><strong>${r.an}</strong>${r.ses ? ` <span class="muted">(${r.ses})</span>` : ''}</td><td>${cell(r.qcm)}</td><td>${cell(r.carto)}</td><td>${cell(r.maree)}</td></tr>`;
+    })
+    .join('')}</tbody></table></div>`;
+}
 
 function rootOf(rel) {
   const depth = rel.split('/').length - 1;
@@ -429,6 +464,7 @@ for (const page of pages) {
         .join('') +
       '</ol>'
     )
+    .replace('<!--ANNALES-->', () => annalesHTML(root))
     .replace('<!--EXERCICES-->', () =>
       '<ol class="index-list">' +
       exos
