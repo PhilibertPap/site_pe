@@ -20,6 +20,19 @@ const ROOT = path.dirname(fileURLToPath(import.meta.url));
 const SRC = path.join(ROOT, 'src');
 const OUT = path.join(ROOT, 'docs');
 
+// Affiche tout de suite le compte mémorisé, pour que la barre ne bouge pas au chargement
+const INLINE_ACCT = `<script>
+try {
+  var pp = JSON.parse(localStorage.getItem('pe-profile') || 'null');
+  if (pp && pp.approved && localStorage.getItem('pe-ok') === pp.uid) {
+    var e = function (x) { return String(x || '').replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); };
+    document.getElementById('acct').innerHTML = '<span class="acct-name">' + e(pp.name) + (pp.role === 'chef' ? ' <span class="tag">chef</span>' : '') + '</span>' +
+      (pp.role === 'chef' ? ' <a href="{{root}}chefs/index.html">Comptes</a> <a href="{{root}}chefs/resultats.html">Résultats</a>' : '') +
+      ' <button type="button" class="linkish">Déconnexion</button>';
+  }
+} catch (err) {}
+</script>`;
+
 const PARTS = {
   cours: { label: 'Cours', href: 'cours/index.html' },
   qcm: { label: 'QCM', href: 'qcm/index.html' },
@@ -442,6 +455,7 @@ for (const page of pages) {
     .replace('{{main}}', main)
     .replace('{{scripts}}', scripts)
     .replace('{{gatehead}}', AUTH ? "  try { if (!localStorage.getItem('pe-ok')) document.documentElement.classList.add('gate'); } catch (e) { document.documentElement.classList.add('gate'); }\n" : '')
+    .replace('{{acctinline}}', AUTH ? INLINE_ACCT : '')
     .replace('{{authscript}}', AUTH ? `<script type="module" src="${root}js/auth.js"></script>` : '');
   html = html.replaceAll('{{root}}', root);
 

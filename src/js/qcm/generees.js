@@ -2,6 +2,8 @@
 // réponses sont prises parmi les cas qu'on confond le plus souvent. Chaque variante a un id
 // stable (le suivi des chefs peut donc la retrouver), seuls les distracteurs changent.
 
+import { situ } from './dessins.js';
+
 const B = 'cours/05-balisage.html';
 const S = 'cours/07-signaux.html';
 
@@ -366,6 +368,173 @@ const portSignals = PORT.map(([v, flash, good], i) =>
   )
 );
 
+
+// --------------------------------------------- règles de barre : situations
+// Situations tirées avec une graine fixe : chaque variante garde le même dessin (id stable).
+
+
+const R = 'cours/06-ripam.html';
+
+function rng(seed) {
+  let a = seed >>> 0;
+  return () => {
+    a = (a + 0x6d2b79f5) >>> 0;
+    let t = a;
+    t = Math.imul(t ^ (t >>> 15), t | 1);
+    t ^= t + Math.imul(t ^ (t >>> 7), t | 61);
+    return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
+  };
+}
+const norm = (a) => ((((a + 180) % 360) + 360) % 360) - 180; // dans ]-180, 180]
+const dir = (h) => [Math.sin((h * Math.PI) / 180), -Math.cos((h * Math.PI) / 180)];
+// gisement de Q vu de P (cap hP), en degrés dans [0, 360[
+function gisement(P, hP, Q) {
+  const b = (Math.atan2(Q.x - P.x, -(Q.y - P.y)) * 180) / Math.PI;
+  return (((b - hP) % 360) + 360) % 360;
+}
+const rattrape = (g) => g > 112.5 && g < 247.5; // vient de plus de 22,5° sur l'arrière du travers
+const amureDe = (h, w) => (norm(w - h) > 0 ? 't' : 'b');
+const AM = { t: 'tribord amures', b: 'bâbord amures' };
+const COTE = { t: 'tribord', b: 'bâbord' };
+const BOMME = { t: 'bâbord', b: 'tribord' };
+const auVent = (P, w) => P.x * dir(w)[0] + P.y * dir(w)[1]; // plus grand = plus au vent
+
+function inside(...bs) {
+  return bs.every((b) => b.x > 25 && b.x < 265 && b.y > 45 && b.y < 162 && Math.hypot(b.x - 30, b.y - 30) > 70);
+}
+function voileOk(h, w) {
+  const t = Math.abs(norm(w - h));
+  return t >= 55 && t <= 155;
+}
+const P0 = { x: 160, y: 118 };
+const place = (h, d) => ({ x: Math.round(P0.x - d * dir(h)[0]), y: Math.round(P0.y - d * dir(h)[1]) });
+
+function tirage(kind, seed) {
+  const r = rng(seed);
+  for (let essai = 0; essai < 4000; essai++) {
+    const w = Math.round(r() * 8) * 45;
+    const hA = Math.round(r() * 72) * 5;
+    const hB = Math.round(r() * 72) * 5;
+    const dA = 80 + r() * 30;
+    const dB = 80 + r() * 30;
+    let A = place(hA, dA);
+    let B = place(hB, dB);
+    const diff = Math.abs(norm(hA - hB));
+    const gAB = gisement(A, hA, B); // B vu de A
+    const gBA = gisement(B, hB, A); // A vu de B
+    if (kind === 'amures' || kind === 'meme') {
+      if (!voileOk(hA, w) || !voileOk(hB, w) || diff < 40) continue;
+      if (rattrape(gAB) || rattrape(gBA)) continue;
+      const aA = amureDe(hA, w);
+      const aB = amureDe(hB, w);
+      if (kind === 'amures' && aA === aB) continue;
+      if (kind === 'meme' && aA !== aB) continue;
+      if (kind === 'meme' && Math.abs(auVent(A, w) - auVent(B, w)) < 45) continue;
+      if (!inside(A, B)) continue;
+      return { w, A: { ...A, h: hA, amure: aA }, B: { ...B, h: hB, amure: aB } };
+    }
+    if (kind === 'moteur') {
+      if (!voileOk(hA, w) || diff < 40 || rattrape(gAB) || rattrape(gBA) || !inside(A, B)) continue;
+      return { w, A: { ...A, h: hA, amure: amureDe(hA, w) }, B: { ...B, h: hB, moteur: true } };
+    }
+    if (kind === 'croisement') {
+      if (diff < 50 || diff > 130 || rattrape(gAB) || rattrape(gBA) || !inside(A, B)) continue;
+      return { w, A: { ...A, h: hA, moteur: true }, B: { ...B, h: hB, moteur: true } };
+    }
+    if (kind === 'face') {
+      const h2 = hA + 180;
+      A = place(hA, 85);
+      B = place(h2, 85);
+      if (!inside(A, B)) continue;
+      return { w, A: { ...A, h: hA, moteur: true }, B: { ...B, h: h2, moteur: true } };
+    }
+    if (kind === 'rattrapant') {
+      const hR = hB + Math.round((r() - 0.5) * 30);
+      B = place(hB, 45 + r() * 15);
+      A = place(hR, 115 + r() * 15);
+      const g = gisement(B, hB, A);
+      if (!rattrape(g) || g < 125 || g > 235) continue;
+      const voileA = r() < 0.6;
+      const voileB = r() < 0.5;
+      if (voileA && !voileOk(hR, w)) continue;
+      if (voileB && !voileOk(hB, w)) continue;
+      if (!inside(A, B)) continue;
+      return {
+        w,
+        A: { ...A, h: hR, ...(voileA ? { amure: amureDe(hR, w) } : { moteur: true }) },
+        B: { ...B, h: hB, ...(voileB ? { amure: amureDe(hB, w) } : { moteur: true }) },
+      };
+    }
+  }
+  return null;
+}
+
+const nature = (b) => (b.moteur ? 'à moteur' : `à voile, ${AM[b.amure]}`);
+const CHOIX = ['Le navire A', 'Le navire B', 'Les deux, en venant chacun sur tribord', 'Aucun : chacun garde son cap'];
+
+function situation(kind, seed, n) {
+  const s = tirage(kind, seed);
+  if (!s) return null;
+  const { w, A, B } = s;
+  // A et B échangés une fois sur deux pour que la réponse ne soit pas toujours A
+  const swap = seed % 2 === 1;
+  const [X, Y] = swap ? [B, A] : [A, B];
+  const boats = [
+    { ...X, label: 'A' },
+    { ...Y, label: 'B' },
+  ];
+  let q = 'Les deux navires font route de collision. Lequel doit s’écarter ?';
+  let a;
+  let e;
+  if (kind === 'amures') {
+    const pA = X.amure === 'b';
+    a = pA ? 0 : 1;
+    e = `A reçoit le vent par ${COTE[X.amure]} (bôme sur ${BOMME[X.amure]}) : il est ${AM[X.amure]} ; B est ${AM[Y.amure]}. Amures différentes : le voilier bâbord amures s’écarte (règle 12 a) i).`;
+  } else if (kind === 'meme') {
+    const xVent = auVent(X, w) > auVent(Y, w);
+    a = xVent ? 0 : 1;
+    e = `Les deux voiliers sont ${AM[X.amure]}. ${xVent ? 'A' : 'B'} est le plus près de la direction d’où vient le vent : il est au vent de l’autre. Même amure : le voilier au vent s’écarte (règle 12 a) ii).`;
+  } else if (kind === 'moteur') {
+    a = X.moteur ? 0 : 1;
+    e = `${X.moteur ? 'A' : 'B'} est un navire à moteur, ${X.moteur ? 'B' : 'A'} un voilier faisant route à la voile, et aucun ne rattrape l’autre : le navire à moteur s’écarte du voilier (règle 18).`;
+  } else if (kind === 'croisement') {
+    const gX = gisement(X, X.h, Y);
+    a = gX < 180 ? 0 : 1;
+    e = `Deux navires à moteur dont les routes se croisent : celui qui voit l’autre sur son tribord s’écarte (règle 15). ${a === 0 ? 'A voit B sur son tribord' : 'B voit A sur son tribord'}. Il manœuvre de préférence en venant sur tribord pour passer derrière l’autre.`;
+  } else if (kind === 'face') {
+    a = 2;
+    q = 'Les deux navires à moteur font des routes directement opposées. Que doivent-ils faire ?';
+    e = 'Deux navires à moteur qui se rencontrent à contre-bord : chacun vient sur tribord, pour se croiser bâbord sur bâbord (règle 14).';
+  } else {
+    a = swap ? 1 : 0;
+    q = `${swap ? 'B' : 'A'} va plus vite que ${swap ? 'A' : 'B'} et se rapproche par l’arrière. Lequel doit s’écarter ?`;
+    e = `${swap ? 'B' : 'A'} vient de plus de 22,5° sur l’arrière du travers de l’autre : c’est un navire rattrapant. Le rattrapant s’écarte toujours, quel que soit le type des deux navires : un voilier qui rattrape un navire à moteur doit lui aussi s’écarter (règle 13).`;
+  }
+  const desc = `A : ${nature(X)} ; B : ${nature(Y)}.`;
+  const ref = { amures: '#voiliers', meme: '#voiliers', moteur: '#hierarchie', croisement: '#moteur', face: '#moteur', rattrapant: '#rattrapant' }[kind];
+  return {
+    id: `g-rp-${kind}-${n}`,
+    t: 'ripam',
+    q: `${q} <span class="small muted">(${desc})</span>`,
+    c: kind === 'face' ? CHOIX : CHOIX.slice(0, 3),
+    a,
+    fixed: true,
+    e,
+    ref: R + ref,
+    fig: { k: 'svg', v: situ(boats, w) },
+    gen: true,
+  };
+}
+
+export const SITUATIONS = [
+  ...Array.from({ length: 12 }, (_, i) => situation('amures', 1000 + i, i)),
+  ...Array.from({ length: 10 }, (_, i) => situation('meme', 2000 + i, i)),
+  ...Array.from({ length: 8 }, (_, i) => situation('moteur', 3000 + i, i)),
+  ...Array.from({ length: 8 }, (_, i) => situation('croisement', 4000 + i, i)),
+  ...Array.from({ length: 3 }, (_, i) => situation('face', 5000 + i, i)),
+  ...Array.from({ length: 8 }, (_, i) => situation('rattrapant', 6000 + i, i)),
+].filter(Boolean);
+
 export default [
   ...marks,
   ...nightMarks,
@@ -378,4 +547,5 @@ export default [
   ...soundsClear,
   ...soundsFog,
   ...portSignals,
+  ...SITUATIONS,
 ];

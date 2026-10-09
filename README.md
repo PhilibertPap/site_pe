@@ -96,6 +96,7 @@ Limites à connaître :
 
 ## Sources
 
-Cours repris et mis à jour à partir des supports de formation reçus à Brest (dossier
-`Cours Nav pour scouts-marins/`, non versionné à cause de la taille des vidéos), du RIPAM,
+Cours repris et mis à jour à partir des supports de formation des Scouts marins d'Europe de
+Brest (dossier `Cours Nav pour scouts-marins/`) et de ceux du groupe Notre-Dame-des-Champs des
+Scouts unitaires de France (dossier `cours_ndc/`), non versionnés (taille, données personnelles), du RIPAM,
 du système de balisage AISM région A et de la division 240.
