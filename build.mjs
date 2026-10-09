@@ -21,14 +21,26 @@ const ROOT = path.dirname(fileURLToPath(import.meta.url));
 const SRC = path.join(ROOT, 'src');
 const OUT = path.join(ROOT, 'docs');
 
-// Affiche tout de suite le compte mémorisé, pour que la barre ne bouge pas au chargement
+// Affiche tout de suite le compte mémorisé, pour que la barre ne bouge pas au chargement.
+// Même rendu que header() dans src/js/auth.js.
 const INLINE_ACCT = `<script>
 try {
   var pp = JSON.parse(localStorage.getItem('pe-profile') || 'null');
   if (pp && pp.approved && localStorage.getItem('pe-ok') === pp.uid) {
     var e = function (x) { return String(x || '').replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); };
-    document.getElementById('acct').innerHTML = '<a class="acct-name" href="{{root}}compte/index.html" title="Mon espace">' + e(pp.name) + (pp.role === 'chef' ? ' <span class="tag">chef</span>' : '') + '</a>' +
-      ' <button type="button" class="linkish">Déconnexion</button>';
+    var cur = function (d) { return location.pathname.indexOf('/' + d + '/') >= 0 ? ' aria-current="page"' : ''; };
+    var dt = new Date(), sa = String(dt.getMonth() >= 8 ? dt.getFullYear() : dt.getFullYear() - 1);
+    var h = '';
+    if (pp.role === 'chef') {
+      document.documentElement.classList.add('is-chef');
+      var n = 0;
+      try { var c = JSON.parse(sessionStorage.getItem('pe-afaire') || 'null'); if (c && c.uid === pp.uid) n = c.n; } catch (err) {}
+      h = '<a class="acct-chefs" href="{{root}}chefs/index.html"' + cur('chefs') + '>Espace chefs' + (n ? '<span class="acct-n">' + (n > 99 ? '99+' : n) + '</span>' : '') + '</a>';
+    } else if (pp.ce && typeof pp.ce[sa] === 'string' && pp.ce[sa]) {
+      h = '<a class="acct-ce" href="{{root}}equipage/index.html"' + cur('equipage') + '>Mon équipage</a>';
+    }
+    document.getElementById('acct').innerHTML = h + '<a class="acct-name" href="{{root}}compte/index.html" title="Mon espace : ' + e(pp.name) + '"' + cur('compte') + '><span class="acct-lbl">Mon espace · </span>' + e(pp.name) + '</a>' +
+      '<button type="button" class="linkish acct-out">Déconnexion</button>';
   }
 } catch (err) {}
 </script>`;
@@ -46,6 +58,22 @@ const HORS_NAV = { parcours: { label: 'Je prépare' } };
 if (AUTH) {
   PARTS.questions = { label: 'Questions', href: 'questions/index.html' };
   PARTS.equipages = { label: 'Équipages', href: 'equipages/index.html' };
+}
+
+// Onglets de l'espace chefs (meta "chefs": clé de l'onglet courant). Sur le tableau de bord
+// d'équipage, ouvert aussi aux chefs d'équipage, ils ne s'affichent que pour un chef (html.is-chef).
+const CHEFS_TABS = [
+  ['accueil', 'Accueil', 'chefs/index.html'],
+  ['inscrits', 'Inscrits', 'chefs/inscrits.html'],
+  ['equipages', 'Équipages', 'chefs/equipages.html'],
+  ['resultats', 'Résultats', 'chefs/resultats.html'],
+  ['tableaux', 'Tableaux de bord', 'equipage/index.html'],
+  ['guide', 'Guide', 'chefs/guide.html'],
+];
+function chefsTabs(cur, root, seulementChefs) {
+  return `<nav class="chefs-tabs${seulementChefs ? ' chefs-only' : ''}" aria-label="Espace chefs"><span class="chefs-tabs-h">Espace chefs</span>${CHEFS_TABS.map(
+    ([k, l, h]) => `<a href="${root}${h}"${k === cur ? ' aria-current="page"' : ''}>${l}</a>`
+  ).join('')}</nav>`;
 }
 
 const BOX_LABELS = {
@@ -297,7 +325,7 @@ function annalesHTML(root) {
     rows[key][ep][type] = { f, ext };
   }
   const keys = Object.keys(rows).sort((a, b) => b.localeCompare(a));
-  if (!keys.length) return '<p class="muted">Aucune annale dans le dossier pour l’instant.</p>';
+  if (!keys.length) return '<p class="vide">Aucune annale pour l’instant. Les chefs les ajoutent en déposant les PDF dans le dossier <code>docs/fichiers/annales</code> du dépôt GitHub (voir le README).</p>';
   const cell = (c) => {
     const parts = ['sujet', 'corrige']
       .filter((t) => c[t])
@@ -387,7 +415,8 @@ for (const e of fs.readdirSync(OUT)) {
 for (const page of pages) {
   const { meta, rel } = page;
   const root = rootOf(rel);
-  let body = typo(expandShortcodes(page.body));
+  // blocs réservés aux sites avec comptes : retirés avant la table des matières (ancres)
+  let body = typo(expandShortcodes(page.body)).replace(/<!--IF_AUTH-->([\s\S]*?)<!--END_IF_AUTH-->/g, (m, inner) => (AUTH ? inner : ''));
   let toc = [];
   let main;
 
@@ -438,7 +467,8 @@ for (const page of pages) {
 </div>`;
   } else {
     body = boxesOnly(body);
-    main = `<div class="page${meta.wide ? ' wide' : ''}${meta.part === 'home' ? ' home' : ''}">${body}</div>`;
+    const tabs = meta.chefs ? chefsTabs(meta.chefs, root, meta.part !== 'chefs') : '';
+    main = `<div class="page${meta.wide ? ' wide' : ''}${meta.part === 'home' ? ' home' : ''}">${tabs}${body}</div>`;
   }
 
   // Listes automatiques

@@ -1,4 +1,4 @@
-<!--meta {"title": "Patron d'embarcation", "part": "home", "desc": "Cours de navigation, QCM, exercices et pratique de la voile pour préparer le brevet de patron d'embarcation des scouts marins, et les diplômes de chef de quart et chef de flottille."} -->
+<!--meta {"title": "Patron d'embarcation", "part": "home", "scripts": ["accueil.js"], "desc": "Cours de navigation, QCM, exercices et pratique de la voile pour préparer le brevet de patron d'embarcation des scouts marins, et les diplômes de chef de quart et chef de flottille."} -->
 <div class="home-hero"><svg class="hero-chart" viewBox="0 0 1000 300" role="img" aria-label="Extrait de carte marine stylisé : côte, sondes, phare, cardinale et route tracée" xmlns="http://www.w3.org/2000/svg">
 <rect width="1000" height="300" class="ch-sea"/>
 <path d="M560.0 0.0 L585.0 30.0 L640.0 52.0 L690.0 48.0 L720.0 70.0 L760.0 96.0 L800.0 92.0 L835.0 120.0 L870.0 150.0 L905.0 162.0 L940.0 190.0 L1000.0 205.0 L1000.0 0.0 Z" class="ch-land"/>
@@ -242,6 +242,8 @@
   <p class="lede">Un cours de navigation complet pour préparer le brevet de patron d'embarcation, et plus largement pour apprendre à mener un voilier en mer : la théorie, l'entraînement à l'examen, et ce qu'on fait vraiment à bord. Puis, pour les chefs, le chef de quart et le chef de flottille.</p>
   <div class="pavois" role="img" aria-label="Pavois : B O N, V E N T"><x-pavillon code="B" /><x-pavillon code="O" /><x-pavillon code="N" /><span class="gap"></span><x-pavillon code="V" /><x-pavillon code="E" /><x-pavillon code="N" /><x-pavillon code="T" /></div>
 </header>
+
+<!--IF_AUTH--><div id="moi" class="moi" hidden></div><!--END_IF_AUTH-->
 
 <nav class="prepare" aria-label="Parcours par diplôme"><span class="prepare-h">Je prépare</span><a href="parcours/pe.html"><b>PE</b><span>Patron d'embarcation</span></a><a href="parcours/cq.html"><b>CQ</b><span>Chef de quart</span></a><a href="parcours/cf.html"><b>CF</b><span>Chef de flottille</span></a></nav>
 

@@ -19,6 +19,34 @@
 
 
   // ------------------------------------------------------- menu (téléphone)
+  // Menu replié sous 1180 px, ou dès que la barre ne tient pas sur une ligne
+  // (compte de chef avec un nom long, police plus grande…) : rien n'est jamais caché sans menu.
+  var docEl = document.documentElement;
+  var nav = document.querySelector('.mainnav');
+  var topIn = document.querySelector('.top-in');
+  function fit() {
+    if (!nav || !topIn) return;
+    var was = docEl.classList.contains('nav-compact');
+    docEl.classList.remove('nav-compact');
+    var trop = window.innerWidth <= 1180 || nav.scrollWidth > nav.clientWidth + 1 || topIn.scrollWidth > topIn.clientWidth + 1;
+    docEl.classList.toggle('nav-compact', trop);
+    if (was && !trop) {
+      docEl.classList.remove('menu-open');
+      if (menu) menu.setAttribute('aria-expanded', 'false');
+    }
+  }
+  var fitRaf = 0;
+  function fitLater() {
+    cancelAnimationFrame(fitRaf);
+    fitRaf = requestAnimationFrame(fit);
+  }
+  window.addEventListener('resize', fitLater);
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(fitLater);
+  var acctEl = document.getElementById('acct');
+  if (acctEl && window.MutationObserver) new MutationObserver(fitLater).observe(acctEl, { childList: true, subtree: true });
+  window.PE = window.PE || {};
+  window.PE.fitNav = fitLater;
+
   var menu = document.querySelector('.menu-btn');
   if (menu) {
     menu.addEventListener('click', function () {
@@ -27,11 +55,13 @@
     });
     document.addEventListener('click', function (e) {
       if (!document.documentElement.classList.contains('menu-open')) return;
-      if (e.target.closest('.menu-btn') || e.target.closest('.mainnav') || e.target.closest('.acct')) return;
+      if (e.target.closest('.menu-btn') || e.target.closest('.topmenu')) return;
       document.documentElement.classList.remove('menu-open');
       menu.setAttribute('aria-expanded', 'false');
     });
   }
+
+  fit();
 
   // ------------------------------------- application installable, hors ligne
   if ('serviceWorker' in navigator && (location.protocol === 'https:' || location.hostname === 'localhost')) {

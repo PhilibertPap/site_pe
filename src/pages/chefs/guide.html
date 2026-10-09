@@ -1,0 +1,111 @@
+<!--meta {"title": "Guide des chefs", "part": "chefs", "chefs": "guide", "desc": "Le mode d'emploi du site pour les chefs : inscriptions, rentrée, suivi au fil de l'année, examens, annales, rôles et droits."} -->
+<h1>Guide des chefs</h1>
+<p class="lede">Ce qu'il y a à faire, à quel moment, et où cliquer. Tout part de l'Espace chefs : le lien en haut de chaque page, avec le nombre de choses qui vous attendent.</p>
+
+<ol class="guide-toc">
+  <li><a href="#mise-en-route">Mettre le site en route</a></li>
+  <li><a href="#inscriptions">Valider les inscriptions</a></li>
+  <li><a href="#rentree">La rentrée de septembre</a></li>
+  <li><a href="#annee">Au fil de l'année</a></li>
+  <li><a href="#examen">Avant un examen</a></li>
+  <li><a href="#annales">Ajouter une annale</a></li>
+  <li><a href="#roles">Qui peut faire quoi</a></li>
+  <li><a href="#faq">Questions fréquentes</a></li>
+</ol>
+
+<h2 id="mise-en-route">Mettre le site en route</h2>
+<p>Une seule fois, par un chef à l'aise avec l'informatique : créer le projet Firebase (gratuit), coller sa configuration dans le site et publier les règles de sécurité. La marche à suivre est dans le fichier <code>README.md</code> du dépôt GitHub, section « Accès réservé et comptes ». Ensuite :</p>
+<ol>
+  <li>Créez votre compte sur le site.</li>
+  <li>Dans la console Firebase, Firestore, collection <code>users</code>, ouvrez votre fiche : <code>approved</code> à <code>true</code>, <code>role</code> à <code>"chef"</code>.</li>
+  <li>Rechargez le site : le lien Espace chefs apparaît en haut. Les autres chefs se nomment ensuite depuis la page Inscrits.</li>
+</ol>
+<div class="box warn"><p>Après chaque modification du fichier <code>firestore.rules</code>, il faut le recopier dans la console Firebase (Firestore Database, Règles, Publier). Sinon le site et la base ne sont plus d'accord, et certaines actions sont refusées.</p></div>
+
+<h2 id="inscriptions">Valider les inscriptions</h2>
+<ul>
+  <li>Le scout crée son compte depuis l'écran de connexion. Tant qu'un chef ne l'a pas validé, il voit « Compte en attente » et rien d'autre.</li>
+  <li><a href="inscrits.html#attente">Inscrits, Comptes à valider</a> : <b>Valider</b>, ou <b>Refuser</b> (second clic pour confirmer). Ne validez que des personnes que vous connaissez : le nom affiché est celui qu'elles ont tapé.</li>
+  <li><b>Nommer un chef</b> : page Inscrits, colonne Compte, « nommer chef ». Un chef a tous les droits du site.</li>
+  <li><b>Suspendre</b> bloque l'accès sans rien effacer ; le compte revient dans « Comptes à valider ».</li>
+</ul>
+
+<h2 id="rentree">La rentrée de septembre</h2>
+<p>La saison va de septembre à août. Les équipages se recomposent chaque année ; leurs noms restent d'une année sur l'autre. Dès août, l'accueil de l'espace chefs propose de préparer la saison suivante.</p>
+<ol>
+  <li><a href="equipages.html#registre">Équipages</a> : créez les nouveaux équipages, fermez ceux qui disparaissent.</li>
+  <li><a href="equipages.html#composition">Composition</a> de la saison : « Reprendre la composition de la saison précédente » si peu de choses changent, puis choisissez l'équipage de chaque scout et cochez son chef d'équipage (un par équipage).</li>
+  <li><b>Enregistrez la composition.</b> C'est l'enregistrement qui ouvre aux chefs d'équipage leur tableau de bord et les demandes de leurs équipiers.</li>
+  <li>Demandez aux scouts de choisir leur objectif (PE, CQ ou CF) dans Mon espace, « Je prépare » : le carnet et le parcours s'y adaptent. L'accueil de l'espace chefs indique combien ne l'ont pas encore fait.</li>
+  <li>Demandez-leur aussi de déclarer leurs diplômes (Mon espace, Mes diplômes), pour que vous puissiez les confirmer.</li>
+</ol>
+
+<h2 id="annee">Au fil de l'année</h2>
+<ul>
+  <li><b>Diplômes</b> : <a href="inscrits.html#diplomes">Inscrits, Diplômes à confirmer</a>. Confirmez après avoir vu le diplôme ou sa trace sur Céphée. Un PE, un CQ ou un CF confirmé fait de l'inscrit un formateur. Pour corriger ou dater un ancien diplôme : « diplômes » sur sa ligne.</li>
+  <li><b>Questions</b> : <a href="../questions/index.html?ouvertes=1">Questions en attente d'un formateur</a>. Il n'y a pas de notification par e-mail : le compteur de l'espace chefs les compte.</li>
+  <li><b>Carnets de progression</b> : le chef d'équipage valide les points de ses équipiers, après avoir vérifié avec eux et signé le carnet papier. Un chef peut le faire pour tout le monde : <a href="../equipage/index.html#demandes">Tableaux de bord, Demandes</a>, ou le carnet d'un scout depuis la page Inscrits.</li>
+  <li><b>Résultats</b> : <a href="resultats.html">Résultats aux QCM</a> pour les thèmes faibles et les questions les plus ratées (de quoi préparer une séance) ; <a href="../equipage/index.html">Tableaux de bord</a> pour voir qui s'entraîne chaque semaine.</li>
+  <li><b>Défi de la semaine</b> : rien à préparer. Chaque lundi, dix questions identiques pour tous, un seul essai. Il suffit de le rappeler aux scouts.</li>
+  <li><b>Points bonus</b> : <a href="equipages.html#bonus">Équipages, Points bonus</a>, de −20 à +20 pour un mois, avec un motif visible de tous.</li>
+  <li><b>Classement</b> : calculé à partir des QCM faits en étant connecté, et publié par les chefs seulement. C'est automatique : au plus toutes les 30 minutes quand un chef consulte le site, et à chaque composition ou bonus. Pour forcer : « Recalculer maintenant » sur l'<a href="index.html#classement">accueil de l'espace chefs</a>.</li>
+</ul>
+
+<h2 id="examen">Avant un examen</h2>
+<p>Pour chaque candidat, depuis sa ligne de la page <a href="inscrits.html#inscrits">Inscrits</a> :</p>
+<ul>
+  <li><b>Prérequis</b> : les badges montrent les diplômes confirmés. CQ : PE, permis côtier, PSC1. CF : les mêmes et le CEP1. Le Mon espace du scout liste ce qui manque.</li>
+  <li><b>Modules du PE</b> : chacun expire 18 mois après sa validation. Le scout est averti dans Mon espace trois mois avant.</li>
+  <li><b>Carnet</b> (lien « carnet ») : les points non validés sont ceux à reprendre avant l'examen.</li>
+  <li><b>Résultats</b> (lien « résultats ») : les épreuves blanches, 5 fautes au plus pour être reçu.</li>
+  <li><b>Dossier</b> : CV scout et marin, inscription sur Céphée un mois avant. Voir les parcours <a href="../parcours/pe.html">PE</a>, <a href="../parcours/cq.html">CQ</a> et <a href="../parcours/cf.html">CF</a>.</li>
+</ul>
+
+<h2 id="annales">Ajouter une annale</h2>
+<ol>
+  <li>Sur GitHub, dans le dépôt du site, ouvrez le dossier <code>docs/fichiers/annales</code>, puis Add file, Upload files.</li>
+  <li>Nommez le fichier <code>épreuve-année[-session]-type.pdf</code> : épreuve <code>qcm</code>, <code>carto</code> ou <code>maree</code> ; type <code>sujet</code> ou <code>corrige</code>. Par exemple <code>qcm-2026-sujet.pdf</code>, <code>carto-2026-juin-corrige.pdf</code>.</li>
+  <li>Commit changes. Le site est reconstruit tout seul en une ou deux minutes, et la ligne apparaît dans <a href="../annales/index.html">Annales</a>. Un fichier mal nommé n'apparaît pas.</li>
+</ol>
+
+<h2 id="roles">Qui peut faire quoi</h2>
+<p>Ces droits sont imposés par la base de données (règles Firestore), pas seulement par l'affichage.</p>
+<div class="tbl-wrap"><table class="roles">
+<thead><tr><th>Action</th><th>Chef</th><th>Chef d'équipage</th><th>Scout</th></tr></thead>
+<tbody>
+<tr><td>Valider les comptes, nommer un chef, suspendre</td><td>oui</td><td>non</td><td>non</td></tr>
+<tr><td>Confirmer un diplôme</td><td>oui</td><td>non</td><td>déclare les siens</td></tr>
+<tr><td>Créer, renommer, fermer un équipage</td><td>oui</td><td>non</td><td>non</td></tr>
+<tr><td>Composer les équipages, nommer les chefs d'équipage</td><td>oui</td><td>non</td><td>non</td></tr>
+<tr><td>Donner ou retirer des points bonus</td><td>oui</td><td>non</td><td>non</td></tr>
+<tr><td>Publier le classement</td><td>oui (automatique)</td><td>non</td><td>non</td></tr>
+<tr><td>Voir le classement</td><td>oui</td><td>oui</td><td>oui</td></tr>
+<tr><td>Tableau de bord d'équipage</td><td>tous</td><td>le sien</td><td>non</td></tr>
+<tr><td>Voir les résultats et le carnet d'un scout</td><td>tous</td><td>ses équipiers</td><td>les siens</td></tr>
+<tr><td>Valider un point de carnet</td><td>tous, sauf le sien</td><td>ses équipiers</td><td>non : il demande</td></tr>
+<tr><td>Supprimer des résultats de QCM</td><td>oui</td><td>non</td><td>non</td></tr>
+<tr><td>Poser une question, répondre</td><td>oui</td><td>oui</td><td>oui</td></tr>
+<tr><td>Supprimer une question ou une réponse</td><td>oui</td><td>non</td><td>sa question, tant qu'elle est sans réponse</td></tr>
+<tr><td>Modifier son nom, son unité, son objectif</td><td>oui</td><td>oui</td><td>oui</td></tr>
+</tbody></table></div>
+<p>Les titulaires confirmés du PE, du CQ ou du CF sont <b>formateurs</b> : leurs réponses aux questions sont mises en avant. Ils n'ont aucun autre droit.</p>
+
+<h2 id="faq">Questions fréquentes</h2>
+<dl class="faq">
+  <dt>Un chef d'équipage ne voit pas les demandes de ses équipiers, ou son tableau de bord est vide.</dt>
+  <dd>La composition n'a pas été enregistrée, ou il n'est pas coché chef d'équipage pour la saison en cours : page Équipages, vérifiez, puis « Enregistrer la composition ». Une demande faite avant que le scout soit placé dans l'équipage reste invisible pour le chef d'équipage : un chef la voit dans Tableaux de bord, ou le scout l'annule et la refait.</dd>
+  <dt>Un scout ne voit rien, il reste sur « Compte en attente ».</dt>
+  <dd>Son compte n'est pas validé : Inscrits, Comptes à valider. S'il a été validé entre-temps, il clique « J'ai été validé, réessayer ».</dd>
+  <dt>Un scout a oublié son mot de passe.</dt>
+  <dd>« Mot de passe oublié » sur l'écran de connexion : il reçoit un lien par e-mail. Les chefs ne voient ni ne changent les mots de passe.</dd>
+  <dt>Le classement ne bouge pas.</dt>
+  <dd>Il est recalculé au plus toutes les 30 minutes, quand un chef consulte le site ; « Recalculer maintenant » sur l'accueil de l'espace chefs le force. Seuls les QCM faits en étant connecté comptent, et les entraînements par thème ne rapportent pas de points.</dd>
+  <dt>Un scout change d'équipage en cours d'année.</dt>
+  <dd>Modifiez la composition et enregistrez. Ses points comptent alors pour son nouvel équipage, y compris ceux des mois passés : le classement est recalculé à partir des statistiques de chacun.</dd>
+  <dt>Un scout s'est inscrit deux fois.</dt>
+  <dd>Refusez le doublon dans Comptes à valider (ou suspendez-le s'il était déjà validé).</dd>
+  <dt>Supprimer définitivement une personne.</dt>
+  <dd>Suspendez ou refusez son compte sur le site, puis supprimez son identifiant dans la console Firebase, Authentication.</dd>
+  <dt>Le contenu du site est-il protégé ?</dt>
+  <dd>Les cours et les QCM sont lisibles sur GitHub par qui les cherche. Les données des scouts (résultats, carnets, diplômes, questions) sont protégées par les règles de la base.</dd>
+</dl>

@@ -2,6 +2,7 @@
 import * as fb from './fb.js';
 import { THEMES, QUESTIONS } from './qcm/index.js';
 import { figure } from './qcm/figure.js';
+import { toast } from './ui.js';
 
 const box = document.getElementById('resultats');
 const ROOT = document.body.dataset.root || '../';
@@ -222,8 +223,10 @@ function wireDelete(d, s) {
       const ids = new Set(s.list.map((r) => r.id));
       all = all.filter((r) => !ids.has(r.id));
       render();
+      toast(`${ids.size} QCM de ${s.name} effacés.`);
     } catch (err) {
-      b.textContent = fb.message(err);
+      b.disabled = false;
+      toast(fb.message(err), true);
     }
   };
 }
@@ -247,7 +250,7 @@ function start() {
 (window.PE && window.PE.userReady ? window.PE.userReady : Promise.resolve(null)).then((u) => {
   me = u;
   if (!me || me.role !== 'chef') {
-    box.innerHTML = '<p>Cette page est réservée aux chefs.</p>';
+    box.innerHTML = `<p>Cette page est réservée aux chefs. <a href="${ROOT}compte/index.html">Mon espace</a></p>`;
     return;
   }
   start();

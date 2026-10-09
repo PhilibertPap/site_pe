@@ -3,8 +3,9 @@ import * as fb from './fb.js';
 import { lire, pts } from './agregats.js';
 import { saisonDe, saisonLabel, moisDe, moisLabel } from './saison.js';
 import { LISTES, TOTAUX, valides } from './attendus.js';
-import { DIPLOMES, CODES, OBJECTIFS, MOIS_RE, objectifDe, diplomesDe, estFormateur, estChefEq, badges, etapesHTML, plusMois, moisRestants, VALIDITE_MODULE } from './diplomes.js';
+import { DIPLOMES, CODES, OBJECTIFS, MOIS_RE, objectifDe, diplomesDe, estFormateur, estChefEq, ceDe, badges, etapesHTML, plusMois, moisRestants, VALIDITE_MODULE } from './diplomes.js';
 import { courbe } from './courbe.js';
+import { allerAncre } from './ui.js';
 
 const box = document.getElementById('compte');
 const ROOT = document.body.dataset.root || '../';
@@ -89,11 +90,13 @@ async function show(me) {
   const chefEq = estChefEq(me, saison);
   const formateur = estFormateur(me);
   const obj = objectifDe(me);
-  const [rs, carnet, compos, decl] = await Promise.all([
+  const [rs, carnet, compos, decl, demEq] = await Promise.all([
     fb.myResults(me.uid).catch(() => []),
     fb.getCarnet(me.uid).catch(() => ({})),
     fb.compositions(saison).catch(() => []),
     fb.mesDeclarations(me.uid).catch(() => ({})),
+    // chef d'équipage : demandes de ses équipiers en attente
+    chefEq && !chef ? fb.demandesEquipage(ceDe(me, saison)).catch(() => []) : Promise.resolve([]),
   ]);
   const mien = compos.find((c) => (c.membres || []).some((x) => x.uid === me.uid));
   const m = moisDe();
@@ -117,10 +120,31 @@ async function show(me) {
     })
     .join('');
 
+  // rappel des outils d'un chef ou d'un chef d'équipage
+  let nAfaire = 0;
+  try {
+    const c = JSON.parse(sessionStorage.getItem('pe-afaire') || 'null');
+    if (c && c.uid === me.uid) nAfaire = c.n;
+  } catch (e) {}
+  const monEq = compos.find((c) => c.id === ceDe(me, saison));
+  const nDem = demEq.filter((d) => d.uid !== me.uid).length;
+  const outils = chef
+    ? `<div class="mes-outils"><p class="mes-outils-h">Vos outils de chef</p><ul>
+      <li><a href="${ROOT}chefs/index.html"><b>Espace chefs</b></a>${nAfaire ? ` <span class="acct-n">${nAfaire}</span> ${nAfaire > 1 ? 'choses' : 'chose'} à faire` : ' : ce qui attend, et tous les outils'}</li>
+      <li><a href="${ROOT}chefs/inscrits.html">Inscrits</a> · <a href="${ROOT}chefs/equipages.html">Équipages</a> · <a href="${ROOT}chefs/resultats.html">Résultats</a> · <a href="${ROOT}equipage/index.html">Tableaux de bord</a> · <a href="${ROOT}questions/index.html?ouvertes=1">Questions</a> · <a href="${ROOT}chefs/guide.html">Guide des chefs</a></li>
+      </ul></div>`
+    : chefEq
+    ? `<div class="mes-outils"><p class="mes-outils-h">Chef d’équipage${monEq ? ` · ${esc(monEq.nom)}` : ''}</p><ul>
+      <li><a href="${ROOT}equipage/index.html"><b>Tableau de bord de mon équipage</b></a> : qui s’entraîne, thèmes faibles, carnets.</li>
+      <li><a href="${ROOT}equipage/index.html#demandes">Demandes de validation</a>${nDem ? ` <span class="acct-n">${nDem}</span> en attente` : ' : aucune en attente'}</li>
+      </ul></div>`
+    : '';
+
   box.innerHTML = `
   <p class="kicker">Mon espace · ${saisonLabel(saison)}</p>
   <h1>${esc(me.name)}</h1>
   <p class="lede">${esc(me.unite || '')}${statuts.length ? ` · ${statuts.join(', ')}` : ''} ${badges(me, true)}</p>
+  ${outils}
 
   <h2 id="objectif">Je prépare</h2>
   <div class="gate-tabs obj-tabs" role="tablist" aria-label="Objectif">${Object.keys(OBJECTIFS)
@@ -146,21 +170,18 @@ async function show(me) {
       : `<p class="muted">Votre courbe apparaîtra après deux épreuves blanches. <a href="${ROOT}qcm/index.html">Faire une épreuve blanche</a></p>`
   }
   ${
-    chefEq || chef || formateur
-      ? `<h2 id="encadrer">Encadrer</h2><ul>
-      ${chefEq || chef ? `<li><a href="${ROOT}equipage/index.html">Tableau de bord d’équipage</a> : qui s’entraîne, thèmes faibles, carnets, demandes de validation.</li>` : ''}
-      ${formateur ? `<li><a href="${ROOT}questions/index.html">Questions des scouts</a> : vos réponses sont signalées comme réponses de formateur.</li>` : ''}
-      </ul>`
+    formateur && !chef
+      ? `<h2 id="formateur">Formateur</h2><p>Vous avez un diplôme qui fait de vous un formateur : vos réponses aux <a href="${ROOT}questions/index.html?ouvertes=1">questions des scouts</a> sont mises en avant.</p>`
       : ''
   }
-  ${
-    chef
-      ? `<h2 id="chefs">Espace chefs</h2><ul>
-      <li><a href="${ROOT}chefs/index.html">Vue d’ensemble</a> : inscrits, objectifs, diplômes à confirmer, carnets, comptes en attente.</li>
-      <li><a href="${ROOT}chefs/equipages.html">Équipages</a> : composer les équipages de la saison, points bonus.</li>
-      <li><a href="${ROOT}chefs/resultats.html">Résultats aux QCM</a> : thèmes faibles et questions les plus ratées.</li></ul>`
-      : ''
-  }`;
+  <h2 id="compte-h">Mon compte</h2>
+  <p class="small">Connecté en tant que ${esc(me.name)}${me.email ? ` (${esc(me.email)})` : ''}. Sur un ordinateur partagé, pensez à vous déconnecter.</p>
+  <div class="btns"><button class="btn small ghost" type="button" id="logout">Se déconnecter</button></div>`;
+  box.querySelector('#logout').onclick = () => {
+    const b = document.querySelector('.acct-out');
+    if (b) b.click();
+    else fb.logout();
+  };
 
   box.querySelectorAll('[data-obj]').forEach((b) => {
     b.onclick = async () => {
@@ -178,6 +199,7 @@ async function show(me) {
     };
   });
   wireDips(me);
+  allerAncre();
 }
 
 function wireDips(me) {

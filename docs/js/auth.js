@@ -43,6 +43,7 @@ function unlock() {
   html.classList.remove('gate');
   const g = document.getElementById('gate');
   if (g) g.remove();
+  if (window.PE.fitNav) window.PE.fitNav();
 }
 
 function panel(inner) {
@@ -122,15 +123,54 @@ function waitingPanel(profile) {
   g.querySelector('[data-a=logout]').onclick = () => fb.logout();
 }
 
+// Saison en cours, en chaîne ('2026' de septembre 2026 à août 2027)
+const saisonS = () => {
+  const d = new Date();
+  return String(d.getMonth() >= 8 ? d.getFullYear() : d.getFullYear() - 1);
+};
+const estCE = (p) => !!(p && p.ce && typeof p.ce[saisonS()] === 'string' && p.ce[saisonS()]);
+const ici = (dir) => location.pathname.indexOf('/' + dir + '/') >= 0;
+const cur = (dir) => (ici(dir) ? ' aria-current="page"' : '');
+
+// Zone compte de la barre du haut. Même rendu que le script en ligne de build.mjs (INLINE_ACCT),
+// qui l'affiche avant le chargement d'après le profil mémorisé.
 function header(profile) {
   const slot = document.getElementById('acct');
   if (!slot) return;
-  slot.innerHTML = `<a class="acct-name" href="${ROOT}compte/index.html" title="Mon espace">${esc(profile.name)}${profile.role === 'chef' ? ' <span class="tag">chef</span>' : ''}</a>
-    <button type="button" class="linkish">Déconnexion</button>`;
-  slot.querySelector('button').onclick = async () => {
+  const chef = profile.role === 'chef';
+  html.classList.toggle('is-chef', chef);
+  let n = 0;
+  if (chef) {
+    try {
+      const c = JSON.parse(sessionStorage.getItem('pe-afaire') || 'null');
+      if (c && c.uid === profile.uid) n = c.n;
+    } catch (e) {}
+  }
+  slot.innerHTML =
+    (chef
+      ? `<a class="acct-chefs" href="${ROOT}chefs/index.html"${cur('chefs')}>Espace chefs${n ? `<span class="acct-n" title="${n} chose${n > 1 ? 's' : ''} à faire">${n > 99 ? '99+' : n}</span>` : ''}</a>`
+      : estCE(profile)
+      ? `<a class="acct-ce" href="${ROOT}equipage/index.html"${cur('equipage')}>Mon équipage</a>`
+      : '') +
+    `<a class="acct-name" href="${ROOT}compte/index.html" title="Mon espace : ${esc(profile.name)}"${cur('compte')}><span class="acct-lbl">Mon espace · </span>${esc(profile.name)}</a>` +
+    '<button type="button" class="linkish acct-out">Déconnexion</button>';
+  slot.querySelector('.acct-out').onclick = async () => {
     store.set(null);
+    try {
+      sessionStorage.removeItem('pe-afaire');
+    } catch (e) {}
     await fb.logout();
   };
+  if (chef) taches(profile);
+}
+
+// Pour un chef : compteur « à faire » (au plus toutes les 10 minutes) et classement republié
+// en arrière-plan (au plus toutes les 30 minutes). Rien de bloquant : les erreurs sont ignorées.
+function taches(profile) {
+  import('./afaire.js').then((m) => m.compteur(profile)).catch(() => {});
+  setTimeout(() => {
+    import('./agregats.js').then((m) => m.publierSiBesoin(profile)).catch(() => {});
+  }, 2500);
 }
 
 if (!fb.enabled) {
@@ -143,6 +183,7 @@ if (!fb.enabled) {
     if (!u) {
       store.set(null);
       cache.set(null);
+      html.classList.remove('is-chef');
       loginPanel();
       return;
     }

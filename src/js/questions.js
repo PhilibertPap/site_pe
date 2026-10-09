@@ -37,7 +37,7 @@ async function showList(me) {
     <select id="q-theme" aria-label="Thème"><option value="">Tous les thèmes</option>${Object.entries(THEMES)
       .map(([k, v]) => `<option value="${k}">${v}</option>`)
       .join('')}</select>
-    <label class="small"><input type="checkbox" id="q-open"> sans réponse d’un formateur</label>
+    <label class="small"><input type="checkbox" id="q-open"> en attente d’un formateur</label>
   </div>
   <form id="q-new" class="q-form" hidden>
     <label>Thème<select name="theme" required>${Object.entries(THEMES).map(([k, v]) => `<option value="${k}">${v}</option>`).join('')}</select></label>
@@ -87,7 +87,7 @@ async function showList(me) {
     const shown = qs.filter(
       (q) =>
         (!t || q.theme === t) &&
-        (!open || !q.chefAnswered) &&
+        (!open || (!q.chefAnswered && !q.resolved)) &&
         words.every((w) => norm(q.title + ' ' + q.body).includes(w))
     );
     list.querySelector('.q-items').innerHTML = shown.length
@@ -102,9 +102,10 @@ async function showList(me) {
         </a></li>`
           )
           .join('')
-      : '<li class="muted">Aucune question pour l’instant.</li>';
+      : `<li class="muted">${qs.length ? (open ? 'Toutes les questions ont reçu une réponse d’un formateur.' : 'Aucune question ne correspond à la recherche.') : 'Aucune question pour l’instant : posez la première.'}</li>`;
   };
   list.addEventListener('input', render);
+  if (new URLSearchParams(location.search).get('ouvertes')) list.querySelector('#q-open').checked = true;
   render();
 }
 

@@ -3,6 +3,7 @@ import * as fb from './fb.js';
 import { LISTES, TOTAUX, valides } from './attendus.js';
 import { OBJECTIFS, objectifDe, estChefEq, ceDe } from './diplomes.js';
 import { saisonDe } from './saison.js';
+import { toast, deuxClics } from './ui.js';
 
 const box = document.getElementById('carnet');
 const ROOT = document.body.dataset.root || '../';
@@ -13,7 +14,6 @@ const jour = (d) => (date(d) ? date(d).toLocaleDateString('fr-FR', { day: 'numer
 const validateur = (p) => !!p && (p.role === 'chef' || estChefEq(p));
 
 async function show(me, uid, liste) {
-  box.innerHTML = '<p class="muted">Chargement…</p>';
   const self = uid === me.uid;
   let v, dem, nom = me.name, profil = me;
   try {
@@ -45,7 +45,7 @@ async function show(me, uid, liste) {
   const barre = (a, n) => `<span class="bar"><span style="width:${n ? Math.round((100 * a) / n) : 0}%"></span></span>`;
 
   box.innerHTML = `
-  ${self ? '' : `<p class="small"><a href="${ROOT}${me.role === 'chef' ? 'chefs/index.html#inscrits' : 'equipage/index.html'}">← ${me.role === 'chef' ? 'Vue d’ensemble' : 'Tableau de bord'}</a></p><h2 class="carnet-nom">Carnet de ${esc(nom)}</h2>`}
+  ${self ? '' : `<p class="small"><a href="${ROOT}${me.role === 'chef' ? 'chefs/inscrits.html#inscrits' : 'equipage/index.html'}">← ${me.role === 'chef' ? 'Inscrits' : 'Tableau de bord de mon équipage'}</a></p><h2 class="carnet-nom">Carnet de ${esc(nom)}</h2>`}
   <div class="gate-tabs carnet-tabs" role="tablist" aria-label="Liste">${Object.keys(LISTES)
     .map(
       (k) => `<button type="button" role="tab" data-l="${k}" aria-selected="${k === liste}">${k}${k === obj ? ' <span class="small muted">(objectif)</span>' : ''}</button>`
@@ -77,16 +77,28 @@ async function show(me, uid, liste) {
   box.querySelectorAll('[data-a]').forEach((b) => {
     b.onclick = async () => {
       const item = b.closest('li').dataset.item;
+      const a = b.dataset.a;
+      if (a === 'retirer' && !deuxClics(b, 'confirmer le retrait')) return;
       b.disabled = true;
       try {
-        if (b.dataset.a === 'demander') await fb.demander(me, item, saisonDe());
-        if (b.dataset.a === 'annuler') await fb.annulerDemande(me.uid, item);
-        if (b.dataset.a === 'valider') await fb.valider(uid, item, me, true);
-        if (b.dataset.a === 'retirer') await fb.valider(uid, item, me, false);
-        show(me, uid, liste);
+        if (a === 'demander') await fb.demander(me, item, saisonDe());
+        if (a === 'annuler') await fb.annulerDemande(me.uid, item);
+        if (a === 'valider') await fb.valider(uid, item, me, true);
+        if (a === 'retirer') await fb.valider(uid, item, me, false);
+        toast(
+          {
+            demander: 'Demande envoyée : votre chef d’équipage ou un chef la verra.',
+            annuler: 'Demande annulée.',
+            valider: `Point validé dans le carnet de ${nom}.`,
+            retirer: 'Validation retirée.',
+          }[a]
+        );
+        const y = window.scrollY;
+        await show(me, uid, liste);
+        window.scrollTo(0, y);
       } catch (e) {
         b.disabled = false;
-        b.textContent = fb.message(e);
+        toast(fb.message(e), true);
       }
     };
   });

@@ -3,19 +3,21 @@ rules_version = '2';
 // Règles de sécurité de la base Firestore du site.
 // À copier dans la console Firebase : Firestore Database > Règles > Publier.
 //
-// - Un compte créé est « en attente » (approved = false) tant qu'un chef ne l'a pas validé.
-// - Chefs (role = 'chef') : accès à tout (comptes, résultats, statistiques, carnets, diplômes).
-// - Scouts : uniquement leurs propres résultats, statistiques, carnet, diplômes et déclarations.
-// - Chef d'équipage de la saison : les statistiques, le carnet, les demandes et le profil des membres
-//   de son équipage, et la validation de leur carnet. Pas les autres équipages.
+// Qui modifie quoi :
+// - Chefs (role = 'chef', compte validé) : les comptes (validation, rôle, suspension), les diplômes
+//   confirmés, les équipages et leur composition (dont le chef d'équipage), les points bonus,
+//   le classement publié, la suppression des résultats, la modération des questions.
+// - Chef d'équipage (CE) de la saison : rien d'autre que son équipage. Il lit les statistiques, le
+//   carnet, les demandes et le profil de ses équipiers, valide leur carnet et traite leurs demandes.
+//   Il ne compose pas l'équipage, ne donne pas de bonus et ne publie pas le classement.
 //   Les affectations sont recopiées sur les profils par les chefs : users/{uid}.eq = { '2026': '<id>' },
 //   users/{uid}.ce = { '2026': '<id>' } (saison en chaîne).
+// - Scout : son nom, son unité, son objectif, ses déclarations de diplômes, ses demandes de validation,
+//   ses propres résultats et statistiques. Il lit le classement (agrégats par équipage, sans note
+//   individuelle) et les questions-réponses.
 // - Formateur (chef, ou titulaire confirmé du PE, du CQ ou du CF) : ses réponses aux questions sont
 //   mises en avant. C'est tout : il ne voit pas les carnets des autres.
-// - Diplômes : déclarés par le scout (diplomes/{uid}), confirmés par un chef (users/{uid}.dip).
-// - Classement : agrégats par équipage (classement/{saison}_{eq}), lisibles par tous les inscrits,
-//   écrits par un chef ou par le chef de cet équipage. Les notes individuelles ne sont pas exposées.
-// - Questions-réponses : ouvertes à tous les inscrits validés.
+// - Un compte créé est « en attente » (approved = false) tant qu'un chef ne l'a pas validé.
 
 service cloud.firestore {
   match /databases/{database}/documents {
@@ -155,7 +157,13 @@ service cloud.firestore {
     }
     match /bonus/{id} {
       allow read: if approved();
-      allow create: if chef() && request.resource.data.pts is int
+      allow create: if chef()
+        && request.resource.data.keys().hasOnly(['saison', 'eq', 'mois', 'pts', 'motif', 'by', 'byName', 'at'])
+        && request.resource.data.by == request.auth.uid
+        && request.resource.data.saison is int
+        && request.resource.data.eq is string
+        && str(request.resource.data.motif, 120)
+        && request.resource.data.pts is int
         && request.resource.data.pts >= -20 && request.resource.data.pts <= 20;
       allow update: if false;
       allow delete: if chef();
@@ -178,17 +186,17 @@ service cloud.firestore {
       allow delete: if chef();
     }
 
-    // Classement publié : agrégats par équipage, sans note individuelle
+    // Classement publié : agrégats par équipage, sans note individuelle, écrits par les chefs seulement
+    // (recalculés en arrière-plan quand un chef consulte le site)
     match /classement/{cid} {
       allow read: if approved();
-      allow create, update: if approved()
+      allow create, update: if chef()
         && request.resource.data.saison is int
         && request.resource.data.eq is string
         && cid == string(request.resource.data.saison) + '_' + request.resource.data.eq
         && request.resource.data.keys().hasOnly(['saison', 'eq', 'nom', 'membres', 'mois', 'total', 'sem', 'at'])
         && request.resource.data.mois is map
-        && request.resource.data.at == request.time
-        && (chef() || profile().get('ce', {}).get(string(request.resource.data.saison), '-') == request.resource.data.eq);
+        && request.resource.data.at == request.time;
       allow delete: if chef();
     }
 

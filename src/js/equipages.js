@@ -1,14 +1,14 @@
 // Classement des équipages (visible par tous les inscrits), lu dans les agrégats publiés.
-// Un chef recalcule et publie tous les équipages en ouvrant la page, un chef d'équipage le sien.
+// Un chef recalcule et publie tous les équipages en ouvrant la page (et en arrière-plan ailleurs).
 import * as fb from './fb.js';
 import { BAREME } from './classement.js';
 import { publier, lire, pts, majLe } from './agregats.js';
-import { estChefEq } from './diplomes.js';
 import { saisonDe, saisonLabel, moisDe, moisLabel, moisCourt, semaineDe, moisDeSaison } from './saison.js';
 import { courbe } from './courbe.js';
 
 const box = document.getElementById('equipages');
 const esc = (s) => String(s ?? '').replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' })[c]);
+const cap = (t) => t.charAt(0).toUpperCase() + t.slice(1);
 const f1 = (x) => (Math.round(x * 10) / 10).toLocaleString('fr-FR');
 const quand = (d) =>
   d ? d.toLocaleDateString('fr-FR', { day: 'numeric', month: 'long' }) + ' à ' + d.toLocaleTimeString('fr-FR', { hour: '2-digit', minute: '2-digit' }) : '';
@@ -19,8 +19,8 @@ async function show(me, saison) {
   let compos, bonus, tab;
   try {
     [compos, bonus] = await Promise.all([fb.compositions(saison), fb.listBonus(saison)]);
-    // un chef publie tous les équipages, un chef d'équipage le sien (saison en cours)
-    if (me.role === 'chef' || (saison === cur && estChefEq(me, saison))) await publier(me, saison, { compos, bonus }).catch(() => {});
+    // seuls les chefs publient le classement
+    if (me.role === 'chef') await publier(me, saison, { compos, bonus }).catch(() => {});
     tab = await lire(saison, compos);
   } catch (e) {
     box.innerHTML = `<p>${esc(fb.message(e))}</p>`;
@@ -30,7 +30,9 @@ async function show(me, saison) {
     .map((s) => `<option value="${s}"${s === saison ? ' selected' : ''}>${saisonLabel(s)}</option>`)
     .join('')}</select></label>`;
   if (!compos.length) {
-    box.innerHTML = `<div class="res-tools">${sel}</div><p class="muted">Les équipages de cette saison n’ont pas encore été composés par les chefs.</p>`;
+    box.innerHTML = `<div class="res-tools">${sel}</div><p class="vide">Les équipages de ${saisonLabel(saison)} n’ont pas encore été composés.${
+      me.role === 'chef' ? ` <a href="../chefs/equipages.html#composition">Composez-les ici</a>.` : ' Les chefs s’en occupent à la rentrée.'
+    }</p>`;
     wire(me);
     return;
   }
@@ -50,12 +52,12 @@ async function show(me, saison) {
 
   box.innerHTML = `
   <div class="res-tools">${sel}<span class="small muted">${
-    maj ? `Classement mis à jour le ${quand(maj)}` : 'Classement pas encore calculé'
+    maj ? `Classement mis à jour le ${quand(maj)}` : 'Classement pas encore calculé : il le sera dès qu’un chef consultera le site'
   }${maj && jamais ? ` (${jamais} équipage${jamais > 1 ? 's' : ''} pas encore calculé${jamais > 1 ? 's' : ''})` : ''}</span></div>
-  <h2 id="mois">${moisLabel(m)}</h2>
-  <div class="tbl-wrap"><table class="classement"><thead><tr><th class="num">#</th><th>Équipage</th><th class="num">Niveau /${BAREME.niveau}</th><th class="num">Régularité /${BAREME.regularite}</th><th class="num">Défi /${BAREME.defi}</th><th class="num">Bonus</th><th class="num">Total</th></tr></thead><tbody>${parMois
+  <h2 id="mois">${cap(moisLabel(m))}</h2>
+  <div class="tbl-wrap"><table class="classement"><thead><tr><th class="num">#</th><th>Équipage</th><th class="num">Total</th><th class="num">Niveau /${BAREME.niveau}</th><th class="num">Régularité /${BAREME.regularite}</th><th class="num">Défi /${BAREME.defi}</th><th class="num">Bonus</th></tr></thead><tbody>${parMois
     .map(
-      (e, i) => `<tr${mien && mien.id === e.id ? ' class="hl"' : ''}><td class="num">${i + 1}</td><td><b>${esc(e.nom)}</b></td><td class="num">${f1(e.s.niveau)}</td><td class="num">${f1(e.s.regularite)}</td><td class="num">${f1(e.s.defi)}</td><td class="num">${e.s.bonus ? (e.s.bonus > 0 ? '+' : '') + e.s.bonus : ''}</td><td class="num"><b>${f1(e.s.total)}</b></td></tr>`
+      (e, i) => `<tr${mien && mien.id === e.id ? ' class="hl"' : ''}><td class="num">${i + 1}</td><td><b>${esc(e.nom)}</b></td><td class="num"><b>${f1(e.s.total)}</b></td><td class="num">${f1(e.s.niveau)}</td><td class="num">${f1(e.s.regularite)}</td><td class="num">${f1(e.s.defi)}</td><td class="num">${e.s.bonus ? (e.s.bonus > 0 ? '+' : '') + e.s.bonus : ''}</td></tr>`
     )
     .join('')}</tbody></table></div>
   ${
@@ -66,14 +68,14 @@ async function show(me, saison) {
             return `<b>${esc(e.nom)}</b> ${x ? `${x[0]} en épreuve blanche, ${x[1]} au défi` : 'pas encore de données'}`;
           })
           .join(' · ')}.</p>
-        <p class="small muted">Le classement est recalculé quand un chef ou un chef d’équipage ouvre cette page : les points du jour peuvent ne pas encore y figurer.</p>`
+        <p class="small muted">Le classement est recalculé automatiquement quand un chef consulte le site, au plus toutes les 30 minutes : les points des dernières heures peuvent ne pas encore y figurer.</p>`
       : ''
   }
 
   <h2 id="saison">Saison ${saisonLabel(saison)}</h2>
-  <div class="tbl-wrap"><table class="classement"><thead><tr><th class="num">#</th><th>Équipage</th>${mois.map((x) => `<th class="num">${moisCourt(x)}</th>`).join('')}<th class="num">Total</th></tr></thead><tbody>${tab
+  <div class="tbl-wrap"><table class="classement"><thead><tr><th class="num">#</th><th>Équipage</th><th class="num">Total</th>${mois.map((x) => `<th class="num">${moisCourt(x)}</th>`).join('')}</tr></thead><tbody>${tab
     .map(
-      (e, i) => `<tr${mien && mien.id === e.id ? ' class="hl"' : ''}><td class="num">${i + 1}</td><td><b>${esc(e.nom)}</b></td>${mois.map((x) => `<td class="num">${f1(pts(e, x).total)}</td>`).join('')}<td class="num"><b>${f1(e.saison)}</b></td></tr>`
+      (e, i) => `<tr${mien && mien.id === e.id ? ' class="hl"' : ''}><td class="num">${i + 1}</td><td><b>${esc(e.nom)}</b></td><td class="num"><b>${f1(e.saison)}</b></td>${mois.map((x) => `<td class="num">${f1(pts(e, x).total)}</td>`).join('')}</tr>`
     )
     .join('')}</tbody></table></div>
   ${

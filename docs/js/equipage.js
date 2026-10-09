@@ -1,8 +1,10 @@
 // Tableau de bord d'un équipage et demandes de validation du carnet.
-// Chefs : tous les équipages. Chef d'équipage : le sien seulement (les règles Firestore l'imposent).
+// Chefs : tous les équipages, au choix. Chef d'équipage : le sien seulement (les règles Firestore l'imposent).
+// Lecture seule pour le classement : seuls les chefs le publient (en arrière-plan, voir auth.js).
 import * as fb from './fb.js';
 import { classement, scoreMois, BAREME } from './classement.js';
-import { publier, statsEquipage, lire, pts } from './agregats.js';
+import { statsEquipage, lire, pts } from './agregats.js';
+import { toast, allerAncre } from './ui.js';
 import { saisonDe, saisonLabel, moisDe, moisLabel, moisCourt, semaineDe, moisDeSaison } from './saison.js';
 import { THEMES } from './qcm/index.js';
 import { ITEMS, TOTAUX, valides } from './attendus.js';
@@ -17,7 +19,6 @@ const pct = (a, n) => (n ? Math.round((100 * a) / n) : 0);
 const date = (d) => (d ? d.toLocaleDateString('fr-FR', { day: 'numeric', month: 'short' }) : '');
 
 async function show(me, eqId) {
-  box.innerHTML = '<p class="muted">Chargement…</p>';
   const saison = saisonDe();
   const chef = me.role === 'chef';
   let compos, stats, bonus, demandes, profils, tabPub;
@@ -42,25 +43,26 @@ async function show(me, eqId) {
       demandes = dem.filter((d) => uids.includes(d.uid));
       profils = Object.fromEntries(pr.filter(Boolean).map((u) => [u.uid, u]));
     }
-    // publier le classement (tous les équipages pour un chef, le sien pour un chef d'équipage)
-    await publier(me, saison, { compos, bonus, stats }).catch(() => {});
     tabPub = await lire(saison, compos).catch(() => null);
   } catch (e) {
     box.innerHTML = `<p>${esc(fb.message(e))}</p>`;
     return;
   }
+  // chef : choix de l'équipage, bien visible
   const sel =
-    visibles.length > 1
-      ? `<label class="small">Équipage <select id="eq-sel">${visibles
-          .map((c) => `<option value="${c.id}"${eq && c.id === eq.id ? ' selected' : ''}>${esc(c.nom)}</option>`)
-          .join('')}</select></label>`
+    chef && visibles.length
+      ? `<div class="eq-pick" role="group" aria-label="Choisir l’équipage"><span class="eq-pick-h">Équipage</span>${visibles
+          .slice()
+          .sort((a, b) => a.nom.localeCompare(b.nom, 'fr'))
+          .map((c) => `<button type="button" data-eq="${c.id}" aria-pressed="${eq && c.id === eq.id}">${esc(c.nom)}</button>`)
+          .join('')}</div>`
       : '';
   const now = new Date();
   const m = moisDe(now);
   const sem = semaineDe(now);
   const st = Object.fromEntries(stats.map((s) => [s.uid, s]));
 
-  let html = `<div class="res-tools">${sel}<span class="small muted">Saison ${saisonLabel(saison)}</span></div>`;
+  let html = `${sel}<p class="small muted">Saison ${saisonLabel(saison)}${chef ? ' · vous voyez tous les équipages ; un chef d’équipage ne voit que le sien' : ''}</p>`;
   if (eq) {
     const membres = eq.membres || [];
     const carnets = await Promise.all(membres.map((x) => fb.getCarnet(x.uid).catch(() => ({}))));
@@ -102,8 +104,8 @@ async function show(me, eqId) {
         <td class="num nowrap"><span class="small muted">${obj}</span> ${nv}/${TOTAUX[obj]}</td></tr>`;
     });
     html += `
-    <h2 id="tableau">${esc(eq.nom)}</h2>
-    <p>${rang ? `<b>${rang}<sup>${rang === 1 ? 'er' : 'e'}</sup></b> en ${moisLabel(m)} avec <b>${f1(s.total)}</b> points` : ''} (niveau ${f1(s.niveau)}/${BAREME.niveau}, régularité ${f1(s.regularite)}/${BAREME.regularite}, défi ${f1(s.defi)}/${BAREME.defi}${s.bonus ? `, bonus ${s.bonus}` : ''}). <a href="${ROOT}equipages/index.html#points">Le calcul des points</a>.</p>
+    <h2 id="tableau">${chef ? '' : 'Mon équipage : '}${esc(eq.nom)}${eq.chefEqName ? ` <span class="small muted">· chef d’équipage ${esc(eq.chefEqName)}</span>` : chef ? ' <span class="small err-t">· pas de chef d’équipage</span>' : ''}</h2>
+    <p>${rang ? `<b>${rang}<sup>${rang === 1 ? 'er' : 'e'}</sup></b> en ${moisLabel(m)} avec <b>${f1(s.total)}</b> points` : `<b>${f1(s.total)}</b> points en ${moisLabel(m)}`} (niveau ${f1(s.niveau)}/${BAREME.niveau}, régularité ${f1(s.regularite)}/${BAREME.regularite}, défi ${f1(s.defi)}/${BAREME.defi}${s.bonus ? `, bonus ${s.bonus}` : ''}). <a href="${ROOT}equipages/index.html#points">Le calcul des points</a>.</p>
     <div class="tbl-wrap"><table class="dash"><thead><tr><th>Membre</th><th class="num">Épreuve cette semaine</th><th class="num">Défi</th><th class="num">Épreuves du mois</th><th class="num">Meilleure du mois</th><th class="num">Dernière</th><th>Thèmes faibles</th><th class="num">Carnet</th></tr></thead><tbody>${rows.join('')}</tbody></table></div>
     <p class="small muted">Thèmes faibles : moins de 70 % de bonnes réponses sur la saison (5 réponses au moins), tous QCM confondus. Cliquer sur un nom ouvre son carnet de progression.</p>
     ${
@@ -112,17 +114,17 @@ async function show(me, eqId) {
         : ''
     }`;
   } else if (!chef) {
-    html += '<p class="muted">Votre équipage n’a pas encore été composé.</p>';
+    html += '<p class="vide">Votre équipage n’a pas encore été composé pour cette saison. Les chefs s’en occupent.</p>';
   } else {
-    html += `<p class="muted">Aucun équipage composé pour cette saison. <a href="${ROOT}chefs/equipages.html">Composer les équipages</a>.</p>`;
+    html += `<p class="vide">Aucun équipage composé pour ${saisonLabel(saison)} : <a href="${ROOT}chefs/equipages.html#composition">composez-les ici</a>.</p>`;
   }
 
   // demandes de validation : toutes pour un chef, celles de l'équipage pour un chef d'équipage
   const uidsEq = new Set(((eq && eq.membres) || []).map((x) => x.uid));
   const dem = (chef ? demandes : demandes.filter((d) => uidsEq.has(d.uid))).filter((d) => d.uid !== me.uid).sort((a, b) => (a.at || 0) - (b.at || 0));
   const nomEq = (uid) => (compos.find((c) => (c.membres || []).some((x) => x.uid === uid)) || {}).nom || '';
-  html += `<h2 id="demandes">Demandes de validation (${dem.length})</h2>
-  <p class="small muted">Le scout demande qu’on valide un point de son carnet de progression. On signe son carnet papier, puis on valide ici : il sait ainsi ce qui lui reste à travailler.</p>
+  html += `<h2 id="demandes">${chef ? 'Demandes de validation, tous équipages' : 'Demandes de vos équipiers'} (${dem.length})</h2>
+  <p class="small muted">Le scout demande qu’on valide un point de son carnet de progression. Vérifiez avec lui, signez son carnet papier, puis cliquez « Validé ». « Pas encore » retire la demande : il pourra la refaire quand il sera prêt.</p>
   ${
     dem.length
       ? `<ul class="demandes">${dem
@@ -134,19 +136,31 @@ async function show(me, eqId) {
       : '<p class="muted">Aucune demande en attente.</p>'
   }`;
   box.innerHTML = html;
-  const s2 = box.querySelector('#eq-sel');
-  if (s2) s2.onchange = () => show(me, s2.value);
+  box.querySelectorAll('[data-eq]').forEach(
+    (b) =>
+      (b.onclick = () => {
+        history.replaceState(null, '', `?eq=${encodeURIComponent(b.dataset.eq)}`);
+        show(me, b.dataset.eq);
+      })
+  );
+  allerAncre();
   box.querySelectorAll('.demandes [data-a]').forEach((b) => {
     b.onclick = async () => {
       const li = b.closest('li');
       b.disabled = true;
+      const nom = li.querySelector('b').textContent;
       try {
         if (b.dataset.a === 'ok') await fb.valider(li.dataset.uid, li.dataset.item, me, true);
         else await fb.annulerDemande(li.dataset.uid, li.dataset.item);
         li.remove();
+        toast(b.dataset.a === 'ok' ? `Point validé dans le carnet de ${nom}.` : `Demande de ${nom} retirée : il pourra la refaire.`);
+        const h = box.querySelector('#demandes');
+        const n = box.querySelectorAll('.demandes li').length;
+        if (h) h.textContent = h.textContent.replace(/\(\d+\)$/, `(${n})`);
+        if (!n) box.querySelector('.demandes').outerHTML = '<p class="muted">Aucune demande en attente.</p>';
       } catch (e) {
         b.disabled = false;
-        b.textContent = fb.message(e);
+        toast(fb.message(e), true);
       }
     };
   });
@@ -158,7 +172,7 @@ async function show(me, eqId) {
     return;
   }
   if (!(me.role === 'chef' || estChefEq(me))) {
-    box.innerHTML = '<p>Cette page est réservée aux chefs d’équipage et aux chefs.</p>';
+    box.innerHTML = `<p>Cette page est réservée aux chefs d’équipage et aux chefs. Vos propres résultats et votre carnet sont dans <a href="${ROOT}compte/index.html">Mon espace</a>.</p>`;
     return;
   }
   show(me, new URLSearchParams(location.search).get('eq'));
