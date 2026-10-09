@@ -17,6 +17,40 @@
     });
   }
 
+
+  // ------------------------------------------------------- menu (téléphone)
+  var menu = document.querySelector('.menu-btn');
+  if (menu) {
+    menu.addEventListener('click', function () {
+      var open = document.documentElement.classList.toggle('menu-open');
+      menu.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+    document.addEventListener('click', function (e) {
+      if (!document.documentElement.classList.contains('menu-open')) return;
+      if (e.target.closest('.menu-btn') || e.target.closest('.mainnav') || e.target.closest('.acct')) return;
+      document.documentElement.classList.remove('menu-open');
+      menu.setAttribute('aria-expanded', 'false');
+    });
+  }
+
+  // ------------------------------------- application installable, hors ligne
+  if ('serviceWorker' in navigator && (location.protocol === 'https:' || location.hostname === 'localhost')) {
+    var root = document.body.getAttribute('data-root') || '';
+    window.addEventListener('load', function () {
+      navigator.serviceWorker.register(root + 'sw.js').catch(function () {});
+    });
+  }
+  var installBox = document.getElementById('install');
+  window.addEventListener('beforeinstallprompt', function (e) {
+    e.preventDefault();
+    if (!installBox) return;
+    installBox.hidden = false;
+    installBox.querySelector('button').onclick = function () {
+      e.prompt();
+      installBox.hidden = true;
+    };
+  });
+
   // ------------------------------------------------------------ feux
   // Rythmes : F, Fl, Fl(2), Fl(2+1), LFl, Oc, Oc(2), Iso, Q, Q(3), Q(6)+LFl,
   // VQ, VQ(3), VQ(6)+LFl, Mo(A), Al (couleurs alternées : c="W,R")

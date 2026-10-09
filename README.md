@@ -13,7 +13,8 @@ build.mjs             générateur (Node, sans dépendance)
 serve.mjs             petit serveur local pour relire le site
 firestore.rules       règles de sécurité de la base Firebase (questions-réponses)
 src/layout.html       gabarit commun
-src/pages/            contenu : cours/, qcm/, exercices/, pratique/, annales/, questions/, chefs/
+src/pages/            contenu : cours/, qcm/, exercices/, pratique/, cqcf/, annales/, questions/, chefs/
+src/sw.js             service worker (site installable et consultable hors ligne)
 src/css/style.css     mise en page
 src/js/               figures.js (balises, feux, pavillons), qcm.js, exos.js, outils.js,
                       auth.js, fb.js, questions.js, chefs.js, firebase-config.js
@@ -30,8 +31,15 @@ sont numérotés automatiquement. Les figures se décrivent par des balises cour
 <x-pavillon code="H"/>  <x-feu r="Q(3)" c="W" p="10"/>  <x-son s=".."/>
 ```
 
-Les questions du QCM sont dans `src/js/qcm/index.js` (tableau par thème, plan d'examen
-`EXAM_PLAN`). Les exercices sont générés aléatoirement par `src/js/exos.js`.
+Les questions du QCM sont dans `src/js/qcm/` : un fichier par thème, `index.js` (thèmes, plan
+d'épreuve `EXAM_PLAN`) et `generees.js`, qui fabrique des questions à partir des figures
+(marques, feux, pavillons, signaux sonores et de port) : ajouter une entrée à ses tables suffit. Les exercices sont générés aléatoirement par `src/js/exos.js`.
+
+## Téléphone et hors ligne
+
+Le build produit `manifest.webmanifest` et `sw.js` : le site s'installe comme une application
+(Android : « Installer l'application » ; iPhone : Partager > « Sur l'écran d'accueil ») et reste
+consultable sans réseau. Les PDF d'annales ne sont mis en cache qu'une fois ouverts.
 
 ## Construire et relire
 

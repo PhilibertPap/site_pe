@@ -146,4 +146,89 @@ export default [
     c: ['Avoir prête une lampe à feu blanc, à montrer à temps pour éviter un abordage', 'Rien, il est trop petit', 'Montrer un feu rouge', 'Rentrer au port avant la nuit, c’est la seule obligation'], a: 0,
     e: 'Règle 25 : un voilier de moins de 7 m qui ne peut porter ses feux doit avoir une lampe électrique blanche prête à être montrée.', ref: R + '#feux-route',
   },
+  {
+    id: 'f30', q: 'Un navire en travaux montre boule-losange-boule ; d’un côté, deux boules superposées ; de l’autre, deux losanges superposés. Je passe :', src: 'annale 2018',
+    c: ['Du côté des deux losanges', 'Du côté des deux boules', 'D’un côté ou de l’autre', 'Je ne passe pas : il est échoué'], a: 0,
+    e: 'Les deux boules (de nuit, deux feux rouges) marquent le côté de l’obstruction ; les deux losanges (deux feux verts), le côté où l’on peut passer. On passe lentement et à distance.', ref: R + '#speciaux',
+  },
+  {
+    id: 'f31', q: 'De nuit, une drague au travail montre rouge-blanc-rouge, deux feux rouges superposés d’un côté et deux feux verts superposés de l’autre. Je passe :',
+    c: ['Du côté des feux verts', 'Du côté des feux rouges', 'Entre les deux groupes de feux', 'Je ne peux pas savoir'], a: 0,
+    e: 'Deux rouges : côté de l’obstruction (câble, conduite, élinde). Deux verts : côté où le passage est libre.', ref: R + '#speciaux',
+  },
+  {
+    id: 'f32', q: 'Un voilier peut-il allumer en même temps son feu tricolore et les deux feux rouge sur vert de tête de mât ?',
+    c: ['Non, jamais ensemble', 'Oui, c’est même recommandé', 'Oui, mais seulement au moteur', 'Oui, mais seulement au mouillage'], a: 0,
+    e: 'Règle 25 c) : les feux rouge sur vert s’ajoutent aux feux de côté et de poupe séparés, jamais au tricolore.', ref: R + '#feux-route',
+  },
+  {
+    id: 'f33', q: 'Un navire remorqué montre, de nuit :',
+    c: ['Ses feux de côté et un feu de poupe, sans feu de mât', 'Un feu de mât et ses feux de côté', 'Trois feux blancs superposés', 'Un feu jaune au-dessus du feu de poupe'], a: 0,
+    e: 'Règle 24 : le remorqué n’a pas de feu de mât. Les feux de mât superposés et le feu jaune de remorquage sont ceux du remorqueur.', ref: R + '#speciaux',
+  },
+  {
+    id: 'f34', q: 'De nuit, vous voyez un remorqueur (feux de mât superposés) et, loin derrière lui, des feux de côté sans feu de mât :',
+    c: ['C’est le navire remorqué : je ne passe surtout pas entre les deux', 'C’est un voilier : je peux passer entre eux', 'Ce sont deux navires indépendants', 'C’est un navire au mouillage'], a: 0,
+    e: 'Le remorqué n’a pas de feu de mât. Entre lui et le remorqueur court la remorque, parfois longue de plusieurs centaines de mètres : on contourne l’ensemble.', ref: R + '#speciaux',
+  },
+  {
+    id: 'f35', q: 'Un chalutier montre vert sur blanc, et en plus ses feux de côté et son feu de poupe. Cela indique :',
+    c: ['Qu’il a de l’erre : il avance dans l’eau', 'Qu’il est au mouillage', 'Qu’il a fini de pêcher', 'Qu’il est non maître de sa manœuvre'], a: 0,
+    e: 'Comme les autres navires particuliers, le pêcheur ne montre ses feux de côté et de poupe que lorsqu’il fait route avec de l’erre.', ref: R + '#speciaux',
+  },
+  {
+    id: 'f36', q: 'Un navire non maître de sa manœuvre, arrêté dans l’eau (sans erre), montre :',
+    c: ['Seulement ses deux feux rouges superposés', 'Ses deux feux rouges et ses feux de côté', 'Ses deux feux rouges et son feu de mât', 'Un feu blanc de mouillage'], a: 0,
+    e: 'Les feux de côté et de poupe s’allument seulement s’il a de l’erre. Il ne montre jamais de feu de mât : il n’est plus manœuvrant.', ref: R + '#speciaux',
+  },
+  {
+    id: 'f37', q: 'De nuit, un petit bateau à moteur de 5 m, dont la vitesse maximale ne dépasse pas 7 nœuds, peut se contenter de montrer :',
+    c: ['Un feu blanc visible sur tout l’horizon (et, si possible, ses feux de côté)', 'Aucun feu', 'Un feu rouge visible sur tout l’horizon', 'Un feu de poupe seulement'], a: 0,
+    e: 'Règle 23 d) : moins de 7 m et vitesse maximale de 7 nd au plus. Jusqu’à 12 m, le feu de mât et le feu de poupe peuvent aussi être réunis en un feu blanc 360°, avec les feux de côté.', ref: R + '#feux-route',
+  },
+  {
+    id: 'f38', q: 'Quand doit-on allumer ses feux de navigation ?',
+    c: ['Du coucher au lever du soleil, et de jour par visibilité réduite', 'Seulement par nuit noire', 'Seulement dans les chenaux', 'Seulement quand on voit un autre bateau'], a: 0,
+    e: 'Règle 20. Dans la brume, même en plein jour, les feux aident les autres à vous identifier.', ref: R + '#feux-route',
+  },
+  {
+    id: 'f39', q: 'De nuit, vous naviguez à la voile, feu tricolore allumé. Vous démarrez le moteur pour avancer :',
+    c: ['J’éteins le tricolore et j’allume le feu de mât, les feux de côté et le feu de poupe', 'Je garde le tricolore et j’ajoute un feu rouge', 'Je garde le tricolore : les voiles sont toujours hautes', 'Je n’ai rien à changer'], a: 0,
+    e: 'Dès que le moteur propulse le bateau, c’est un navire à moteur : il montre un feu de mât. Le tricolore est réservé aux voiliers à la voile.', ref: R + '#feux-route',
+  },
+  {
+    id: 'f40', q: 'Le feu de poupe d’un navire est :',
+    c: ['Blanc, visible sur 135° vers l’arrière', 'Rouge, visible sur 135° vers l’arrière', 'Blanc, visible sur tout l’horizon', 'Jaune, visible sur 225° vers l’avant'], a: 0,
+    e: 'Il couvre exactement le secteur que laissent libre les feux de côté (2 × 112,5° = 225°).', ref: R + '#feux-route',
+  },
+  {
+    id: 'f41', q: 'De nuit, un feu rouge fixe, sans autre feu au-dessus, se rapproche sur votre avant tribord à relèvement constant :',
+    c: ['C’est probablement un voilier dont je vois le flanc bâbord', 'C’est un navire à moteur vu de face', 'C’est un navire au mouillage', 'C’est un navire non maître de sa manœuvre'], a: 0,
+    e: 'Un seul feu de côté, sans feu de mât : un voilier (ou un petit bateau) qui me présente son bâbord. Relèvement constant : risque d’abordage, à traiter selon les règles de barre.', ref: R + '#feux-route',
+  },
+  {
+    id: 'f42', q: 'De nuit, vous voyez les deux feux de mât d’un grand navire : le plus bas est à droite du plus haut. Ce navire se dirige :',
+    c: ['Vers ma droite', 'Vers ma gauche', 'Droit sur moi', 'On ne peut pas savoir'], a: 0,
+    e: 'Le feu de mât arrière est plus haut que celui de l’avant. Le plus bas, donc l’avant, est à droite : le navire va vers la droite. Son feu de côté (vert) le confirme.', ref: R + '#feux-route',
+  },
+  {
+    id: 'f43', q: 'Un navire à moteur vous montrait son feu de mât et son feu vert. Vous voyez maintenant aussi son feu rouge :',
+    c: ['Il a changé de cap : il vient maintenant droit sur moi', 'Il s’éloigne de moi', 'Il s’est mis au mouillage', 'Il a éteint son feu de mât'], a: 0,
+    e: 'Voir ses deux feux de côté en même temps, c’est le voir par l’avant : il fait route vers moi. On surveille son relèvement et on applique les règles de barre.', ref: R + '#feux-route',
+  },
+  {
+    id: 'f44', q: 'À la voile, de nuit, vous voyez vert sur blanc, plus le vert et le rouge de ses feux de côté, droit devant, à relèvement constant :',
+    c: ['C’est un chalutier en pêche qui vient vers moi : je m’écarte', 'C’est un navire à moteur : il doit s’écarter du voilier', 'C’est un bateau pilote : je garde mon cap', 'C’est un navire au mouillage : je le contourne'], a: 0,
+    e: 'Vert sur blanc : chalutier en pêche, avec de l’erre (feux de côté). Un voilier s’écarte d’un navire en train de pêcher (règle 18).', ref: R + '#speciaux',
+  },
+  {
+    id: 'f45', q: 'Dans un chenal, à la voile, vous voyez devant un navire portant trois feux rouges superposés :',
+    c: ['J’évite de gêner son passage : il ne peut pas quitter les eaux profondes', 'Il est non maître de sa manœuvre et s’arrête', 'C’est à lui de s’écarter du voilier', 'Il est échoué : il ne bouge plus'], a: 0,
+    e: 'Trois rouges : navire handicapé par son tirant d’eau. Tout navire évite de gêner son passage ; dans un chenal, un voilier ne gêne de toute façon pas un navire qui ne peut naviguer qu’à l’intérieur.', ref: R + '#speciaux',
+  },
+  {
+    id: 'f46', q: 'De nuit, un navire échoué de moins de 50 m montre :', src: 'annale 2016',
+    c: ['Deux feux rouges superposés et son feu de mouillage', 'Trois feux rouges superposés', 'Deux feux rouges superposés seulement', 'Ses feux de côté et son feu de poupe'], a: 0,
+    e: 'Échoué : les deux rouges du navire non maître de sa manœuvre, plus le feu de mouillage. Trois rouges : navire handicapé par son tirant d’eau.', ref: R + '#speciaux',
+  },
 ];

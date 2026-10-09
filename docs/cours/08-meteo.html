@@ -6,6 +6,13 @@
 <title>Météo marine · Patron d'embarcation</title>
 <meta name="description" content="Pression et vent, dépressions et fronts, nuages, brises thermiques, échelle de Beaufort et état de la mer, baromètre, bulletins et prise de décision.">
 <link rel="icon" href="../img/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="../img/icon-180.png">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta name="theme-color" content="#11304d">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Patron d'emb.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&display=swap" rel="stylesheet">
@@ -22,11 +29,13 @@
 <a class="skip" href="#contenu">Aller au contenu</a>
 <header class="top">
   <div class="top-in">
-    <a class="brand" href="../index.html">Patron d'embarcation</a>
-    <nav class="mainnav" aria-label="Parties du site"><a href="../cours/index.html" aria-current="page">Cours</a><a href="../qcm/index.html">QCM</a><a href="../exercices/index.html">Exercices</a><a href="../pratique/index.html">Pratique</a><a href="../annales/index.html">Annales</a><a href="../questions/index.html">Questions</a></nav>
+    <a class="brand" href="../index.html"><svg class="emb" viewBox="0 0 48 58" aria-hidden="true" fill="currentColor"><path d="M24 .5C29 5 30 10.5 24 16.5 18 10.5 19 5 24 .5Z"/><path d="M22.4 15.6C16 16.8 9.8 14.4 9.6 8.6 9.5 5.6 12.2 4.2 14.4 5.6 12.4 6.4 12.1 8.8 13.7 10.5 15.6 12.4 19 13 22.4 12.6Z"/><path d="M25.6 15.6C32 16.8 38.2 14.4 38.4 8.6 38.5 5.6 35.8 4.2 33.6 5.6 35.6 6.4 35.9 8.8 34.3 10.5 32.4 12.4 29 13 25.6 12.6Z"/><rect x="17" y="16" width="14" height="3" rx=".5"/><path d="M19.5 19C18 21.5 19.5 23.5 21.5 22.5L24 21l2.5 1.5c2 1 3.5-1 2-3.5Z"/><rect x="12" y="25" width="24" height="2.8"/><circle cx="12" cy="26.4" r="1.8"/><circle cx="36" cy="26.4" r="1.8"/><rect x="22.6" y="21" width="2.8" height="32"/><path d="M6.5 39C7 49 14.5 55 24 55S41 49 41.5 39" fill="none" stroke="currentColor" stroke-width="2.8"/><path d="M2.5 42.5l4-8 4 8ZM37.5 42.5l4-8 4 8Z"/></svg><span class="brand-t"><b>Patron d'embarcation</b><small>Scouts marins · voile</small></span></a>
+    <button class="menu-btn" type="button" aria-expanded="false" aria-controls="mainnav"><span class="burger" aria-hidden="true"><i></i><i></i><i></i></span><span class="menu-l">Menu</span></button>
+    <nav class="mainnav" id="mainnav" aria-label="Parties du site"><a href="../cours/index.html" aria-current="page">Cours</a><a href="../qcm/index.html">QCM</a><a href="../exercices/index.html">Exercices</a><a href="../pratique/index.html">Pratique</a><a href="../cqcf/index.html">CQ / CF</a><a href="../annales/index.html">Annales</a><a href="../questions/index.html">Questions</a></nav>
     <div class="acct" id="acct"></div>
     <button class="theme" type="button" aria-label="Changer de thème" title="Clair / sombre"><svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true"><circle cx="8" cy="8" r="6.5" fill="none" stroke="currentColor" stroke-width="1.3"/><path d="M8 1.5 A6.5 6.5 0 0 1 8 14.5 Z" fill="currentColor"/></svg></button>
   </div>
+  <div class="grad" aria-hidden="true"></div>
 </header>
 <main id="contenu">
 
@@ -41,7 +50,7 @@
       <h1>Météo marine</h1>
       <p class="chap-desc">Pression et vent, dépressions et fronts, nuages, brises thermiques, échelle de Beaufort et état de la mer, baromètre, bulletins et prise de décision.</p>
     </header>
-    <details class="toc-box" open><summary>Sommaire du chapitre</summary><ol class="toc"><li><a href="#pression"><span class="tocnum">8.1</span>Pression et vent</a></li><li><a href="#perturbations"><span class="tocnum">8.2</span>Les perturbations</a><ol><li><a href="#le-passage-d-une-perturbation"><span class="tocnum">8.2.1</span>Le passage d'une perturbation</a></li></ol></li><li><a href="#nuages"><span class="tocnum">8.3</span>Les nuages</a></li><li><a href="#brises"><span class="tocnum">8.4</span>Les brises thermiques</a></li><li><a href="#beaufort"><span class="tocnum">8.5</span>Force du vent et état de la mer</a></li><li><a href="#barometre"><span class="tocnum">8.6</span>Le baromètre</a></li><li><a href="#bulletins"><span class="tocnum">8.7</span>S'informer</a><ol><li><a href="#les-sources"><span class="tocnum">8.7.1</span>Les sources</a></li><li><a href="#lire-un-bulletin-cotier"><span class="tocnum">8.7.2</span>Lire un bulletin côtier</a></li><li><a href="#les-signaux-des-semaphores"><span class="tocnum">8.7.3</span>Les signaux des sémaphores</a></li></ol></li></ol></details>
+    <details class="toc-box" open><summary>Sommaire du chapitre</summary><ol class="toc"><li><a href="#pression"><span class="tocnum">8.1</span>Pression et vent</a></li><li><a href="#perturbations"><span class="tocnum">8.2</span>Les perturbations</a><ol><li><a href="#le-passage-d-une-perturbation"><span class="tocnum">8.2.1</span>Le passage d'une perturbation</a></li></ol></li><li><a href="#nuages"><span class="tocnum">8.3</span>Les nuages</a></li><li><a href="#brises"><span class="tocnum">8.4</span>Les brises thermiques</a><ol><li><a href="#effets-site"><span class="tocnum">8.4.1</span>Les effets de site</a></li></ol></li><li><a href="#beaufort"><span class="tocnum">8.5</span>Force du vent et état de la mer</a></li><li><a href="#barometre"><span class="tocnum">8.6</span>Le baromètre</a></li><li><a href="#bulletins"><span class="tocnum">8.7</span>S'informer</a><ol><li><a href="#les-sources"><span class="tocnum">8.7.1</span>Les sources</a></li><li><a href="#lire-un-bulletin-cotier"><span class="tocnum">8.7.2</span>Lire un bulletin côtier</a></li><li><a href="#semaphores"><span class="tocnum">8.7.3</span>Les signaux des sémaphores</a></li></ol></li></ol></details>
     <h2 id="pression"><span class="secnum">8.1</span>Pression et vent</h2>
 
 <p>L'atmosphère pèse sur la surface de la Terre : la <dfn>pression atmosphérique</dfn> moyenne au niveau de la mer vaut 1 013 hPa (hectopascals, égaux aux anciens millibars). Elle varie d'un endroit à l'autre de quelques dizaines d'hectopascals. Sur une carte météo, les <dfn>isobares</dfn> relient les points de même pression, en général tous les 4 ou 5 hPa.</p>
@@ -116,6 +125,17 @@
 <tr><td>À développement vertical</td><td>cumulus, cumulonimbus</td><td>petits cumulus : beau temps ; cumulonimbus en enclume : orage, grains, rafales violentes, saute de vent</td></tr>
 </tbody></table></div>
 
+<div class="box meth"><p class="box-label">Méthode 8.4 <span class="box-title">(Lire l'évolution du ciel)</span>.</p>
+<ul>
+  <li>Cirrus en filaments ou en crochets qui gagnent le ciel par l'Ouest, puis voile laiteux avec halo autour du soleil ou de la lune, puis soleil vu comme à travers un verre dépoli (altostratus) : une perturbation arrive, le vent va fraîchir et la pluie suivre dans la journée. Le baromètre baisse.</li>
+  <li>Petits cumulus aplatis, bien séparés, qui naissent le matin et fondent le soir : beau temps stable.</li>
+  <li>Cumulus qui gonflent en tours dans l'après-midi, altocumulus en petites tourelles dès le matin : risque d'orage dans la journée.</li>
+  <li>Ciel bouché de stratus bas, bruine, visibilité médiocre : secteur chaud, vent régulier de Sud-Ouest.</li>
+  <li>Après le passage d'une ligne de grains, ciel lavé, cumulus isolés et averses : traîne, vent de Nord-Ouest irrégulier et rafaleux.</li>
+</ul>
+<p>Un signe isolé ne suffit pas : on le confronte au bulletin et à la tendance du baromètre.</p>
+</div>
+
 <div class="box warn"><p class="box-label">Attention.</p>
 <p>Un cumulonimbus (énorme nuage en tour, sommet étalé en enclume) peut produire en quelques minutes des rafales de 50 nd, une saute de vent et une averse qui bouche la visibilité. Si on en voit un se développer au vent, on réduit la toilure <strong>avant</strong> qu'il arrive.</p>
 </div>
@@ -130,6 +150,18 @@
   <li>Elle se superpose au vent général : un vent de terre faible peut être annulé, un vent de mer renforcé.</li>
 </ul>
 <p>La nuit, la terre se refroidit plus vite que la mer et le phénomène s'inverse : la <dfn>brise de terre</dfn>, plus faible, souffle de la terre vers la mer jusqu'au matin.</p>
+
+<p>La brise ne s'établit que si le vent général est faible et le ciel assez dégagé pour que la terre chauffe. Pour un camp, elle compte : une matinée calme peut finir avec une brise de force 4 à l'heure du retour.</p>
+
+<h3 id="effets-site"><span class="secnum">8.4.1</span>Les effets de site</h3>
+<p>Le relief de la côte modifie le vent, la mer et le courant prévus par les bulletins, qui ne décrivent qu'une situation moyenne. En regardant la carte et la côte, on peut prévoir :</p>
+<ul>
+  <li><strong>Pointes et caps</strong> : le vent s'y accélère et y tourne ; le courant aussi, et la mer s'y creuse quand il s'oppose au vent.</li>
+  <li><strong>Côte haute sous le vent de laquelle on navigue</strong> : vent faible et irrégulier près de la falaise, mais rafales qui tombent du relief ; plus loin, le vent reprend.</li>
+  <li><strong>Goulets, vallées, passes entre deux îles</strong> : le vent et le courant s'y canalisent et s'y renforcent.</li>
+  <li><strong>Fond de baie</strong> : courant plus faible, parfois contre-courant le long de la côte ; mer plus calme si la baie est sous le vent.</li>
+  <li><strong>Hauts-fonds</strong> : la houle y lève, et peut y déferler même par beau temps.</li>
+</ul>
 
 <h2 id="beaufort"><span class="secnum">8.5</span>Force du vent et état de la mer</h2>
 
@@ -151,7 +183,7 @@
 <tr><td class="num">10–12</td><td>tempête, violente tempête, ouragan</td><td class="num">48 et plus</td><td>conditions exceptionnelles</td></tr>
 </tbody></table></div>
 
-<p>L'état de la mer se décrit sur l'échelle de Douglas, par la hauteur des vagues : 0 calme, 1 ridée (moins de 0,1 m), 2 belle (jusqu'à 0,5 m), 3 peu agitée (jusqu'à 1,25 m), 4 agitée (jusqu'à 2,5 m), 5 forte (jusqu'à 4 m), 6 très forte (jusqu'à 6 m), puis grosse, très grosse, énorme. On distingue la <dfn>mer du vent</dfn>, levée par le vent local, et la <dfn>houle</dfn>, venue d'ailleurs, plus longue et plus régulière.</p>
+<p>L'état de la mer se décrit sur l'échelle de Douglas, par la hauteur des vagues : 0 calme, 1 ridée (moins de 0,1 m), 2 belle (jusqu'à 0,5 m), 3 peu agitée (jusqu'à 1,25 m), 4 agitée (jusqu'à 2,5 m), 5 forte (jusqu'à 4 m), 6 très forte (jusqu'à 6 m), puis grosse, très grosse, énorme. On distingue la <dfn>mer du vent</dfn>, levée par le vent local, et la <dfn>houle</dfn>, venue d'ailleurs, plus longue et plus régulière. La mer du vent grossit avec la force du vent, sa durée et le <dfn>fetch</dfn>, la distance sur laquelle il souffle au-dessus de l'eau : par vent de terre, près de la côte, la mer reste plate même par vent fort.</p>
 
 <div class="box warn"><p class="box-label">Attention.</p>
 <p>Depuis un port abrité ou une plage sous le vent, on sous-estime toujours la mer : les vagues sont écrasées et les moutons cachés. On évalue l'état de la mer en regardant face au vent, depuis un point dégagé. Un courant contraire au vent lève une mer courte et cassante, bien plus dure que ne le laisse penser la force du vent.</p>
@@ -186,7 +218,7 @@
   <dt>mer du vent, houle</dt><dd>hauteur des vagues levées par le vent local ; vagues venues d'ailleurs, avec leur direction et leur hauteur.</dd>
 </dl>
 
-<h3 id="les-signaux-des-semaphores"><span class="secnum">8.7.3</span>Les signaux des sémaphores</h3>
+<h3 id="semaphores"><span class="secnum">8.7.3</span>Les signaux des sémaphores</h3>
 <p>Les sémaphores pouvaient hisser des signaux d'avis de vent fort, visibles depuis la mer. On ne s'informe plus guère ainsi aujourd'hui, mais ces signaux figurent dans d'anciens sujets d'examen. Avis de coup de vent ou de tempête (force 8 à 11), selon le quadrant d'où viendra le vent :</p>
 <div class="tbl-wrap"><table>
 <thead><tr><th>Quadrant</th><th>Jour</th><th>Nuit (de haut en bas)</th></tr></thead>
@@ -212,10 +244,10 @@
 <path d="M35 52 L46 30 L24 30 Z" class="fill-ink"/><path d="M35 82 L46 60 L24 60 Z" class="fill-ink"/>
 </svg></td><td>blanc, rouge</td></tr>
 </tbody>
-<caption>Cônes pointe en haut pour les vents de secteur Nord, pointe en bas pour le Sud ; un cône pour l'Ouest, deux pour l'Est. La nuit : un cône, une seule couleur ; deux cônes, deux couleurs ; « au Nord, le rouge » en haut. S'y ajoutaient une boule pour le grand frais (force 7) et une croix pour l'ouragan.</caption>
+<caption>Cônes pointe en haut pour les vents de secteur Nord, pointe en bas pour le Sud ; un cône pour l'Ouest, deux pour l'Est. La nuit : un cône, une seule couleur ; deux cônes, deux couleurs ; « au Nord, le rouge » en haut. S'y ajoutaient d'autres signes : une boule pour un avis de vent fort de direction quelconque, des signaux annonçant une saute de vent, une croix pour l'ouragan.</caption>
 </table></div>
 
-<div class="box meth"><p class="box-label">Méthode 8.4 <span class="box-title">(Prendre la météo avant une sortie)</span>.</p>
+<div class="box meth"><p class="box-label">Méthode 8.5 <span class="box-title">(Prendre la météo avant une sortie)</span>.</p>
 <ol>
   <li>La veille : bulletin côtier et tendance, plusieurs modèles, carte des fronts. Repérer les créneaux et les risques.</li>
   <li>Le matin : bulletin du jour, avis BMS en cours, observation du ciel et de la mer, baromètre.</li>
@@ -225,7 +257,7 @@
 </div>
 
 <div class="box scout"><p class="box-label">Scoutisme marin.</p>
-<p>Le règlement de votre association fixe des limites de vent et de mer pour naviguer en équipage scout. Elles s'appliquent quelle que soit l'envie d'y aller : en cas de doute, la sortie n'a pas lieu. Ces limites ne sont pas un objectif : avec un équipage jeune ou peu entraîné, on reste bien en dessous.</p>
+<p>Le règlement de la Passerelle limite le vent <strong>annoncé pour la journée au départ</strong> : force 4 rafales à 5 pour les voiliers habitables et collectifs (on rejoint un abri si le vent établi atteint force 5), force 3 rafales à 4 pour la voile légère (section 9.8). Ces limites s'appliquent quelle que soit l'envie d'y aller : en cas de doute, la sortie n'a pas lieu. Elles ne sont pas un objectif : avec un équipage jeune ou peu entraîné, on reste en dessous.</p>
 </div>
 
 <div class="box retenir"><p class="box-label">À retenir.</p>
@@ -245,6 +277,7 @@
 </main>
 <footer class="foot">
   <div class="foot-in">
+    <p class="foot-sign"><svg class="emb" viewBox="0 0 48 58" aria-hidden="true" fill="currentColor"><path d="M24 .5C29 5 30 10.5 24 16.5 18 10.5 19 5 24 .5Z"/><path d="M22.4 15.6C16 16.8 9.8 14.4 9.6 8.6 9.5 5.6 12.2 4.2 14.4 5.6 12.4 6.4 12.1 8.8 13.7 10.5 15.6 12.4 19 13 22.4 12.6Z"/><path d="M25.6 15.6C32 16.8 38.2 14.4 38.4 8.6 38.5 5.6 35.8 4.2 33.6 5.6 35.6 6.4 35.9 8.8 34.3 10.5 32.4 12.4 29 13 25.6 12.6Z"/><rect x="17" y="16" width="14" height="3" rx=".5"/><path d="M19.5 19C18 21.5 19.5 23.5 21.5 22.5L24 21l2.5 1.5c2 1 3.5-1 2-3.5Z"/><rect x="12" y="25" width="24" height="2.8"/><circle cx="12" cy="26.4" r="1.8"/><circle cx="36" cy="26.4" r="1.8"/><rect x="22.6" y="21" width="2.8" height="32"/><path d="M6.5 39C7 49 14.5 55 24 55S41 49 41.5 39" fill="none" stroke="currentColor" stroke-width="2.8"/><path d="M2.5 42.5l4-8 4 8ZM37.5 42.5l4-8 4 8Z"/></svg><span>Bon vent et bonne mer.</span></p>
     <p>Préparation au brevet de patron d'embarcation et à la navigation à voile. Rédigé à partir des cours de navigation des scouts marins de Brest, mis à jour et complétés.</p>
     <p>Ce site ne remplace ni la réglementation (Division 240, RIPAM), ni les documents officiels du SHOM, ni le règlement de votre association. En cas de doute, ce sont eux qui font foi.</p>
   </div>

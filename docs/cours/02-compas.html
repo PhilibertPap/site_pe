@@ -6,6 +6,13 @@
 <title>Compas, caps et relèvements · Patron d'embarcation</title>
 <meta name="description" content="Nord vrai, magnétique et compas ; déclinaison, déviation, variation ; passer d'un cap compas à un cap vrai ; faire le point par relèvements.">
 <link rel="icon" href="../img/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="../img/icon-180.png">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta name="theme-color" content="#11304d">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Patron d'emb.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&display=swap" rel="stylesheet">
@@ -22,11 +29,13 @@
 <a class="skip" href="#contenu">Aller au contenu</a>
 <header class="top">
   <div class="top-in">
-    <a class="brand" href="../index.html">Patron d'embarcation</a>
-    <nav class="mainnav" aria-label="Parties du site"><a href="../cours/index.html" aria-current="page">Cours</a><a href="../qcm/index.html">QCM</a><a href="../exercices/index.html">Exercices</a><a href="../pratique/index.html">Pratique</a><a href="../annales/index.html">Annales</a><a href="../questions/index.html">Questions</a></nav>
+    <a class="brand" href="../index.html"><svg class="emb" viewBox="0 0 48 58" aria-hidden="true" fill="currentColor"><path d="M24 .5C29 5 30 10.5 24 16.5 18 10.5 19 5 24 .5Z"/><path d="M22.4 15.6C16 16.8 9.8 14.4 9.6 8.6 9.5 5.6 12.2 4.2 14.4 5.6 12.4 6.4 12.1 8.8 13.7 10.5 15.6 12.4 19 13 22.4 12.6Z"/><path d="M25.6 15.6C32 16.8 38.2 14.4 38.4 8.6 38.5 5.6 35.8 4.2 33.6 5.6 35.6 6.4 35.9 8.8 34.3 10.5 32.4 12.4 29 13 25.6 12.6Z"/><rect x="17" y="16" width="14" height="3" rx=".5"/><path d="M19.5 19C18 21.5 19.5 23.5 21.5 22.5L24 21l2.5 1.5c2 1 3.5-1 2-3.5Z"/><rect x="12" y="25" width="24" height="2.8"/><circle cx="12" cy="26.4" r="1.8"/><circle cx="36" cy="26.4" r="1.8"/><rect x="22.6" y="21" width="2.8" height="32"/><path d="M6.5 39C7 49 14.5 55 24 55S41 49 41.5 39" fill="none" stroke="currentColor" stroke-width="2.8"/><path d="M2.5 42.5l4-8 4 8ZM37.5 42.5l4-8 4 8Z"/></svg><span class="brand-t"><b>Patron d'embarcation</b><small>Scouts marins · voile</small></span></a>
+    <button class="menu-btn" type="button" aria-expanded="false" aria-controls="mainnav"><span class="burger" aria-hidden="true"><i></i><i></i><i></i></span><span class="menu-l">Menu</span></button>
+    <nav class="mainnav" id="mainnav" aria-label="Parties du site"><a href="../cours/index.html" aria-current="page">Cours</a><a href="../qcm/index.html">QCM</a><a href="../exercices/index.html">Exercices</a><a href="../pratique/index.html">Pratique</a><a href="../cqcf/index.html">CQ / CF</a><a href="../annales/index.html">Annales</a><a href="../questions/index.html">Questions</a></nav>
     <div class="acct" id="acct"></div>
     <button class="theme" type="button" aria-label="Changer de thème" title="Clair / sombre"><svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true"><circle cx="8" cy="8" r="6.5" fill="none" stroke="currentColor" stroke-width="1.3"/><path d="M8 1.5 A6.5 6.5 0 0 1 8 14.5 Z" fill="currentColor"/></svg></button>
   </div>
+  <div class="grad" aria-hidden="true"></div>
 </header>
 <main id="contenu">
 
@@ -41,7 +50,7 @@
       <h1>Compas, caps et relèvements</h1>
       <p class="chap-desc">Nord vrai, magnétique et compas ; déclinaison, déviation, variation ; passer d'un cap compas à un cap vrai ; faire le point par relèvements.</p>
     </header>
-    <details class="toc-box" open><summary>Sommaire du chapitre</summary><ol class="toc"><li><a href="#directions"><span class="tocnum">2.1</span>Mesurer une direction</a></li><li><a href="#trois-nords"><span class="tocnum">2.2</span>Les trois nords</a><ol><li><a href="#la-declinaison"><span class="tocnum">2.2.1</span>La déclinaison</a></li><li><a href="#la-deviation"><span class="tocnum">2.2.2</span>La déviation</a></li><li><a href="#la-variation"><span class="tocnum">2.2.3</span>La variation</a></li></ol></li><li><a href="#caps"><span class="tocnum">2.3</span>Passer du cap compas au cap vrai</a></li><li><a href="#releve"><span class="tocnum">2.4</span>Les relèvements</a><ol><li><a href="#relevement-compas-et-relevement-vrai"><span class="tocnum">2.4.1</span>Relèvement compas et relèvement vrai</a></li><li><a href="#droite-de-relevement"><span class="tocnum">2.4.2</span>Droite de relèvement</a></li><li><a href="#faire-le-point-par-trois-relevements"><span class="tocnum">2.4.3</span>Faire le point par trois relèvements</a></li><li><a href="#les-alignements"><span class="tocnum">2.4.4</span>Les alignements</a></li></ol></li><li><a href="#outils"><span class="tocnum">2.5</span>Les instruments</a><ol><li><a href="#le-compas-de-route-et-le-compas-de-relevement"><span class="tocnum">2.5.1</span>Le compas de route et le compas de relèvement</a></li><li><a href="#cras"><span class="tocnum">2.5.2</span>La règle Cras</a></li><li><a href="#le-compas-a-pointes-seches"><span class="tocnum">2.5.3</span>Le compas à pointes sèches</a></li></ol></li></ol></details>
+    <details class="toc-box" open><summary>Sommaire du chapitre</summary><ol class="toc"><li><a href="#directions"><span class="tocnum">2.1</span>Mesurer une direction</a></li><li><a href="#trois-nords"><span class="tocnum">2.2</span>Les trois nords</a><ol><li><a href="#la-declinaison"><span class="tocnum">2.2.1</span>La déclinaison</a></li><li><a href="#la-deviation"><span class="tocnum">2.2.2</span>La déviation</a></li><li><a href="#la-variation"><span class="tocnum">2.2.3</span>La variation</a></li></ol></li><li><a href="#caps"><span class="tocnum">2.3</span>Passer du cap compas au cap vrai</a></li><li><a href="#releve"><span class="tocnum">2.4</span>Les relèvements</a><ol><li><a href="#relevement-compas-et-relevement-vrai"><span class="tocnum">2.4.1</span>Relèvement compas et relèvement vrai</a></li><li><a href="#droite-de-relevement"><span class="tocnum">2.4.2</span>Droite de relèvement</a></li><li><a href="#faire-le-point-par-trois-relevements"><span class="tocnum">2.4.3</span>Faire le point par trois relèvements</a></li><li><a href="#les-alignements"><span class="tocnum">2.4.4</span>Les alignements</a></li><li><a href="#un-amer"><span class="tocnum">2.4.5</span>Faute de trois amers</a></li></ol></li><li><a href="#outils"><span class="tocnum">2.5</span>Les instruments</a><ol><li><a href="#le-compas-de-route-et-le-compas-de-relevement"><span class="tocnum">2.5.1</span>Le compas de route et le compas de relèvement</a></li><li><a href="#cras"><span class="tocnum">2.5.2</span>La règle Cras</a></li><li><a href="#le-compas-a-pointes-seches"><span class="tocnum">2.5.3</span>Le compas à pointes sèches</a></li></ol></li></ol></details>
     <h2 id="directions"><span class="secnum">2.1</span>Mesurer une direction</h2>
 
 <p>En mer, toutes les directions se mesurent en degrés, de 000° à 359°, à partir du Nord et dans le sens des aiguilles d'une montre : l'Est est au 090°, le Sud au 180°, l'Ouest au 270°. On écrit toujours trois chiffres (« cap au 045 ») pour éviter les malentendus.</p>
@@ -228,6 +237,14 @@
 <p>En sortant de la Trinité-sur-Mer, on suit l'alignement au 347 vrai par l'arrière et on le relève au compas à 350. Donc <var>W</var> = 347 − 350 = −3°. Avec <var>D</var> = −4°, la déviation vaut <var>d</var> = <var>W</var> − <var>D</var> = −3 + 4 = +1°.</p>
 </div>
 
+<h3 id="un-amer"><span class="secnum">2.4.5</span>Faute de trois amers</h3>
+<p>Toute droite de position peut remplacer un relèvement, à condition de savoir ce qu'elle vaut :</p>
+<ul>
+  <li><strong>Un relèvement et un alignement</strong> : c'est le meilleur point possible avec deux droites, si elles se coupent sous un angle franc.</li>
+  <li><strong>Un relèvement et une sonde</strong> : on relève un amer au moment où le sondeur indique une profondeur qui, corrigée de la hauteur de marée (chapitre 4), correspond à une isobathe de la carte. Le point est à l'intersection. Il est peu précis sur des fonds réguliers et ne vaut que comme confirmation.</li>
+  <li><strong>Deux relèvements successifs du même amer</strong> : on relève l'amer, on note l'heure et le loch, on fait route quelques dizaines de minutes à cap constant, puis on le relève à nouveau. On reporte le premier relèvement en le déplaçant parallèlement à lui-même de la route parcourue entre-temps ; il coupe le second relèvement à la position. Ce point dépend de l'estime (vitesse, dérive, courant) : c'est un point estimé amélioré, pas un point observé.</li>
+</ul>
+
 <h2 id="outils"><span class="secnum">2.5</span>Les instruments</h2>
 
 <h3 id="le-compas-de-route-et-le-compas-de-relevement"><span class="secnum">2.5.1</span>Le compas de route et le compas de relèvement</h3>
@@ -270,6 +287,7 @@
 </main>
 <footer class="foot">
   <div class="foot-in">
+    <p class="foot-sign"><svg class="emb" viewBox="0 0 48 58" aria-hidden="true" fill="currentColor"><path d="M24 .5C29 5 30 10.5 24 16.5 18 10.5 19 5 24 .5Z"/><path d="M22.4 15.6C16 16.8 9.8 14.4 9.6 8.6 9.5 5.6 12.2 4.2 14.4 5.6 12.4 6.4 12.1 8.8 13.7 10.5 15.6 12.4 19 13 22.4 12.6Z"/><path d="M25.6 15.6C32 16.8 38.2 14.4 38.4 8.6 38.5 5.6 35.8 4.2 33.6 5.6 35.6 6.4 35.9 8.8 34.3 10.5 32.4 12.4 29 13 25.6 12.6Z"/><rect x="17" y="16" width="14" height="3" rx=".5"/><path d="M19.5 19C18 21.5 19.5 23.5 21.5 22.5L24 21l2.5 1.5c2 1 3.5-1 2-3.5Z"/><rect x="12" y="25" width="24" height="2.8"/><circle cx="12" cy="26.4" r="1.8"/><circle cx="36" cy="26.4" r="1.8"/><rect x="22.6" y="21" width="2.8" height="32"/><path d="M6.5 39C7 49 14.5 55 24 55S41 49 41.5 39" fill="none" stroke="currentColor" stroke-width="2.8"/><path d="M2.5 42.5l4-8 4 8ZM37.5 42.5l4-8 4 8Z"/></svg><span>Bon vent et bonne mer.</span></p>
     <p>Préparation au brevet de patron d'embarcation et à la navigation à voile. Rédigé à partir des cours de navigation des scouts marins de Brest, mis à jour et complétés.</p>
     <p>Ce site ne remplace ni la réglementation (Division 240, RIPAM), ni les documents officiels du SHOM, ni le règlement de votre association. En cas de doute, ce sont eux qui font foi.</p>
   </div>

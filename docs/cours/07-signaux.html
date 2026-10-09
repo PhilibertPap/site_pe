@@ -6,6 +6,13 @@
 <title>Feux, marques et signaux · Patron d'embarcation</title>
 <meta name="description" content="Feux de navigation et marques de jour des navires, signaux sonores de manœuvre et de brume, signaux de port, pavillons utiles, signaux de détresse.">
 <link rel="icon" href="../img/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="../img/icon-180.png">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta name="theme-color" content="#11304d">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Patron d'emb.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&display=swap" rel="stylesheet">
@@ -22,11 +29,13 @@
 <a class="skip" href="#contenu">Aller au contenu</a>
 <header class="top">
   <div class="top-in">
-    <a class="brand" href="../index.html">Patron d'embarcation</a>
-    <nav class="mainnav" aria-label="Parties du site"><a href="../cours/index.html" aria-current="page">Cours</a><a href="../qcm/index.html">QCM</a><a href="../exercices/index.html">Exercices</a><a href="../pratique/index.html">Pratique</a><a href="../annales/index.html">Annales</a><a href="../questions/index.html">Questions</a></nav>
+    <a class="brand" href="../index.html"><svg class="emb" viewBox="0 0 48 58" aria-hidden="true" fill="currentColor"><path d="M24 .5C29 5 30 10.5 24 16.5 18 10.5 19 5 24 .5Z"/><path d="M22.4 15.6C16 16.8 9.8 14.4 9.6 8.6 9.5 5.6 12.2 4.2 14.4 5.6 12.4 6.4 12.1 8.8 13.7 10.5 15.6 12.4 19 13 22.4 12.6Z"/><path d="M25.6 15.6C32 16.8 38.2 14.4 38.4 8.6 38.5 5.6 35.8 4.2 33.6 5.6 35.6 6.4 35.9 8.8 34.3 10.5 32.4 12.4 29 13 25.6 12.6Z"/><rect x="17" y="16" width="14" height="3" rx=".5"/><path d="M19.5 19C18 21.5 19.5 23.5 21.5 22.5L24 21l2.5 1.5c2 1 3.5-1 2-3.5Z"/><rect x="12" y="25" width="24" height="2.8"/><circle cx="12" cy="26.4" r="1.8"/><circle cx="36" cy="26.4" r="1.8"/><rect x="22.6" y="21" width="2.8" height="32"/><path d="M6.5 39C7 49 14.5 55 24 55S41 49 41.5 39" fill="none" stroke="currentColor" stroke-width="2.8"/><path d="M2.5 42.5l4-8 4 8ZM37.5 42.5l4-8 4 8Z"/></svg><span class="brand-t"><b>Patron d'embarcation</b><small>Scouts marins · voile</small></span></a>
+    <button class="menu-btn" type="button" aria-expanded="false" aria-controls="mainnav"><span class="burger" aria-hidden="true"><i></i><i></i><i></i></span><span class="menu-l">Menu</span></button>
+    <nav class="mainnav" id="mainnav" aria-label="Parties du site"><a href="../cours/index.html" aria-current="page">Cours</a><a href="../qcm/index.html">QCM</a><a href="../exercices/index.html">Exercices</a><a href="../pratique/index.html">Pratique</a><a href="../cqcf/index.html">CQ / CF</a><a href="../annales/index.html">Annales</a><a href="../questions/index.html">Questions</a></nav>
     <div class="acct" id="acct"></div>
     <button class="theme" type="button" aria-label="Changer de thème" title="Clair / sombre"><svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true"><circle cx="8" cy="8" r="6.5" fill="none" stroke="currentColor" stroke-width="1.3"/><path d="M8 1.5 A6.5 6.5 0 0 1 8 14.5 Z" fill="currentColor"/></svg></button>
   </div>
+  <div class="grad" aria-hidden="true"></div>
 </header>
 <main id="contenu">
 
@@ -141,7 +150,7 @@
 
 <h2 id="speciaux"><span class="secnum">7.2</span>Navires particuliers</h2>
 
-<p>Les navires qui manœuvrent difficilement (chapitre 6) l'annoncent par des feux visibles sur tout l'horizon, disposés verticalement, et de jour par des marques noires. S'ils ont de l'erre, ils montrent en plus leurs feux de côté et de poupe ; les navires à capacité restreinte et handicapés par leur tirant d'eau montrent aussi leur feu de mât, pas le navire non maître de sa manœuvre.</p>
+<p>Les navires qui manœuvrent difficilement (chapitre 6) l'annoncent par des feux visibles sur tout l'horizon, disposés verticalement, et de jour par des marques noires. S'ils ont de l'erre, ils montrent en plus leurs feux de côté et de poupe ; les navires à capacité restreinte et handicapés par leur tirant d'eau montrent aussi leur feu de mât, pas le navire non maître de sa manœuvre. Un chalutier peut montrer un feu de mât, en arrière et au-dessus de son feu vert (obligatoire au-delà de 50 m) ; un autre navire en pêche n'en montre pas.</p>
 
 <div class="tbl-wrap"><table>
 <thead><tr><th>Situation</th><th>Jour</th><th>Nuit</th><th>À retenir</th></tr></thead>
@@ -261,6 +270,10 @@
 </svg></td><td>trois feux verts ; rester à plus de 1 000 m</td></tr>
 </tbody></table></div>
 
+<div class="box rem"><p class="box-label">Remarque <span class="box-title">(petits bateaux)</span>.</p>
+<p>Un navire de moins de 7 m au mouillage, hors d'un chenal, d'un mouillage fréquenté ou d'une zone où les navires passent habituellement, n'est pas tenu de montrer le feu ni la boule de mouillage. Un navire de moins de 12 m échoué est dispensé des feux et marques d'échouement. Un voilier scout de 7 m ou plus au mouillage montre donc son feu blanc visible sur tout l'horizon.</p>
+</div>
+
 <div class="box meth"><p class="box-label">Méthode 7.3 <span class="box-title">(Moyens mnémotechniques)</span>.</p>
 <ul>
   <li>Deux rouges, « rouge sur rouge, rien ne bouge » : non maître de sa manœuvre. Trois boules : « échoué, il a vraiment les boules ».</li>
@@ -327,6 +340,16 @@
 <tr><td><svg class="portsig" viewBox="0 0 64 120" width="40" height="75" role="img" aria-label="Signal de port R R R" xmlns="http://www.w3.org/2000/svg"><rect width="64" height="120" fill="#0b1118"/><circle cx="14" cy="28" r="8" fill="#ffd338"/><circle cx="40" cy="28" r="14" fill="#ff4b3a" opacity=".18"/><circle cx="40" cy="28" r="9" fill="#ff4b3a"/><circle cx="40" cy="60" r="14" fill="#ff4b3a" opacity=".18"/><circle cx="40" cy="60" r="9" fill="#ff4b3a"/><circle cx="40" cy="92" r="14" fill="#ff4b3a" opacity=".18"/><circle cx="40" cy="92" r="9" fill="#ff4b3a"/></svg></td><td>Feu jaune à gauche du feu supérieur : le signal ne s'applique pas aux navires qui naviguent en dehors du chenal principal (typiquement les petits bateaux).</td></tr>
 </tbody></table></div>
 
+<p>Dans les ports, un navire qui charge, décharge ou transporte des matières dangereuses le signale de jour par le pavillon B, de nuit par un feu rouge visible sur tout l'horizon. Ce signal relève des règlements portuaires, pas du RIPAM : on s'en tient à l'écart. <svg class="nuit" viewBox="0 0 200 120" width="110" height="66" role="img" aria-label="Feux observés de nuit" xmlns="http://www.w3.org/2000/svg">
+<defs><filter id="g33" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="3"/></filter></defs>
+<rect width="200" height="120" fill="#0b1118"/>
+<rect y="96" width="200" height="24" fill="#0e1822"/>
+<line x1="0" y1="96" x2="200" y2="96" stroke="#1c2a38" stroke-width="1"/>
+<circle cx="100" cy="40" r="10" fill="#ff4b3a" opacity=".18" filter="url(#g33)"/><circle cx="100" cy="40" r="3.6" fill="#ff4b3a"/>
+</svg></p>
+
+<p>Les <dfn>sémaphores</dfn> de la Marine nationale, postés sur les caps, surveillent la côte à vue et veillent le canal 16. Ils hissaient autrefois des signaux d'avis de coup de vent, que l'on rencontre encore dans les QCM (<a href="08-meteo.html#semaphores">chapitre 8</a>).</p>
+
 <h2 id="pavillons"><span class="secnum">7.5</span>Quelques pavillons</h2>
 
 <p>Le code international des signaux attribue à chaque lettre un pavillon et une signification quand il est hissé seul. Quelques-uns sont à connaître.</p>
@@ -339,6 +362,22 @@
   <div><svg class="pavillon" viewBox="0 0 66 44" width="66" height="44" role="img" aria-label="Pavillon C" xmlns="http://www.w3.org/2000/svg"><rect x="3" y="3" width="60" height="7.7" fill="#2a62a8"/><rect x="3" y="10.6" width="60" height="7.7" fill="#f8f7f2"/><rect x="3" y="18.2" width="60" height="7.7" fill="#cf3a2e"/><rect x="3" y="25.799999999999997" width="60" height="7.7" fill="#f8f7f2"/><rect x="3" y="33.4" width="60" height="7.7" fill="#2a62a8"/><rect x="3" y="3" width="60" height="38" fill="none" stroke="#1e1e1e" stroke-width="1"/></svg>C : oui</div>
   <div><svg class="pavillon" viewBox="0 0 66 44" width="66" height="44" role="img" aria-label="Pavillon N" xmlns="http://www.w3.org/2000/svg"><rect x="3" y="3" width="15.2" height="9.7" fill="#2a62a8"/><rect x="3" y="12.5" width="15.2" height="9.7" fill="#f8f7f2"/><rect x="3" y="22" width="15.2" height="9.7" fill="#2a62a8"/><rect x="3" y="31.5" width="15.2" height="9.7" fill="#f8f7f2"/><rect x="18" y="3" width="15.2" height="9.7" fill="#f8f7f2"/><rect x="18" y="12.5" width="15.2" height="9.7" fill="#2a62a8"/><rect x="18" y="22" width="15.2" height="9.7" fill="#f8f7f2"/><rect x="18" y="31.5" width="15.2" height="9.7" fill="#2a62a8"/><rect x="33" y="3" width="15.2" height="9.7" fill="#2a62a8"/><rect x="33" y="12.5" width="15.2" height="9.7" fill="#f8f7f2"/><rect x="33" y="22" width="15.2" height="9.7" fill="#2a62a8"/><rect x="33" y="31.5" width="15.2" height="9.7" fill="#f8f7f2"/><rect x="48" y="3" width="15.2" height="9.7" fill="#f8f7f2"/><rect x="48" y="12.5" width="15.2" height="9.7" fill="#2a62a8"/><rect x="48" y="22" width="15.2" height="9.7" fill="#f8f7f2"/><rect x="48" y="31.5" width="15.2" height="9.7" fill="#2a62a8"/><rect x="3" y="3" width="60" height="38" fill="none" stroke="#1e1e1e" stroke-width="1"/></svg>N : non</div>
   <div><svg viewBox="0 0 66 88" width="54" height="72" role="img" aria-label="Pavillons N sur C" xmlns="http://www.w3.org/2000/svg"><rect x="3" y="3" width="15.2" height="9.7" fill="#2a62a8"/><rect x="3" y="12.5" width="15.2" height="9.7" fill="#f8f7f2"/><rect x="3" y="22" width="15.2" height="9.7" fill="#2a62a8"/><rect x="3" y="31.5" width="15.2" height="9.7" fill="#f8f7f2"/><rect x="18" y="3" width="15.2" height="9.7" fill="#f8f7f2"/><rect x="18" y="12.5" width="15.2" height="9.7" fill="#2a62a8"/><rect x="18" y="22" width="15.2" height="9.7" fill="#f8f7f2"/><rect x="18" y="31.5" width="15.2" height="9.7" fill="#2a62a8"/><rect x="33" y="3" width="15.2" height="9.7" fill="#2a62a8"/><rect x="33" y="12.5" width="15.2" height="9.7" fill="#f8f7f2"/><rect x="33" y="22" width="15.2" height="9.7" fill="#2a62a8"/><rect x="33" y="31.5" width="15.2" height="9.7" fill="#f8f7f2"/><rect x="48" y="3" width="15.2" height="9.7" fill="#f8f7f2"/><rect x="48" y="12.5" width="15.2" height="9.7" fill="#2a62a8"/><rect x="48" y="22" width="15.2" height="9.7" fill="#f8f7f2"/><rect x="48" y="31.5" width="15.2" height="9.7" fill="#2a62a8"/><rect x="3" y="3" width="60" height="38" fill="none" stroke="#1e1e1e" stroke-width="1"/><g transform="translate(0 44)"><rect x="3" y="3" width="60" height="7.7" fill="#2a62a8"/><rect x="3" y="10.6" width="60" height="7.7" fill="#f8f7f2"/><rect x="3" y="18.2" width="60" height="7.7" fill="#cf3a2e"/><rect x="3" y="25.799999999999997" width="60" height="7.7" fill="#f8f7f2"/><rect x="3" y="33.4" width="60" height="7.7" fill="#2a62a8"/><rect x="3" y="3" width="60" height="38" fill="none" stroke="#1e1e1e" stroke-width="1"/></g></svg>N sur C :<br><span class="muted">détresse</span></div>
+</div>
+
+<p>D'autres lettres hissées seules sont utiles à reconnaître :</p>
+<div class="tbl-wrap"><table>
+<thead><tr><th>Lettre</th><th>Signification</th><th>Lettre</th><th>Signification</th></tr></thead>
+<tbody>
+<tr><td>D</td><td>Écartez-vous de moi, je manœuvre avec difficulté.</td><td>P</td><td>Au port : le navire va appareiller, tout le monde à bord.</td></tr>
+<tr><td>E</td><td>Je viens sur tribord.</td><td>S</td><td>Je bats en arrière.</td></tr>
+<tr><td>I</td><td>Je viens sur bâbord.</td><td>U</td><td>Vous courez vers un danger.</td></tr>
+<tr><td>K</td><td>Je désire communiquer avec vous.</td><td>W</td><td>J'ai besoin d'assistance médicale.</td></tr>
+<tr><td>L</td><td>Stoppez immédiatement votre navire.</td><td>Y</td><td>Je chasse sur mon ancre.</td></tr>
+<tr><td>Q</td><td>Mon navire est indemne, je demande la libre pratique.</td><td>Z</td><td>J'ai besoin d'un remorqueur.</td></tr>
+</tbody></table></div>
+
+<div class="box warn"><p class="box-label">Attention.</p>
+<p>N seul signifie « non » et C seul « oui ». C'est la paire N au-dessus de C qui signale la détresse ; V seul demande assistance, sans détresse.</p>
 </div>
 
 <div class="box prop"><p class="box-label">Règle 7.5 <span class="box-title">(Plongée)</span>.</p>
@@ -358,6 +397,7 @@
   <li>des flammes sur le navire (un seau d'huile qui brûle, par exemple) ;</li>
   <li>le déclenchement d'une balise de détresse (EPIRB, PLB).</li>
 </ul>
+<p>Un miroir de signalisation ou une lampe servent à attirer l'attention ; ils ne deviennent un signal de détresse que s'ils transmettent SOS en morse. Inversement, un signal de détresse ne s'emploie qu'en détresse : une fusée tirée pour s'amuser déclenche des recherches, et un soir de feux d'artifice personne ne la remarquera. On alerte d'abord par la VHF.</p>
 
 <div class="box prop"><p class="box-label">Règle 7.6 <span class="box-title">(Assistance)</span>.</p>
 <p>Tout capitaine ou chef de bord est tenu de porter assistance à toute personne en danger de disparaître en mer, dans la mesure où il peut le faire sans danger grave pour son navire et son équipage. Il prévient le CROSS (chapitre 9).</p>
@@ -366,7 +406,7 @@
 <div class="box meth"><p class="box-label">Méthode 7.7 <span class="box-title">(Utiliser les signaux pyrotechniques)</span>.</p>
 <ul>
   <li>Un <strong>feu à main</strong> se tient à bout de bras, <strong>sous le vent</strong> du bateau, avec un gant ou un chiffon mouillé : il projette des scories brûlantes. Il est visible environ 3 M, pendant une minute.</li>
-  <li>Une <strong>fusée à parachute</strong> monte à 300 m et se voit à plus de 20 M par temps clair. On la tire légèrement au vent, pour que le parachute dérive au-dessus du bateau.</li>
+  <li>Une <strong>fusée à parachute</strong> monte à 300 m et se voit à plus de 20 M par temps clair. On la tire vers le haut, bras tendu, en suivant les pictogrammes de la notice (l'inclinaison conseillée par vent fort varie selon les fabricants), jamais en direction d'un navire ou d'un aéronef.</li>
   <li>Un <strong>fumigène orange</strong> se voit de jour, surtout d'un hélicoptère, mais le vent l'écrase.</li>
   <li>On ne tire pas tout d'un coup : on garde des signaux pour le moment où un navire ou un aéronef est en vue. Les feux périmés se rapportent au magasin d'accastillage ; on ne les tire jamais pour essayer.</li>
 </ul>
@@ -388,6 +428,7 @@
 </main>
 <footer class="foot">
   <div class="foot-in">
+    <p class="foot-sign"><svg class="emb" viewBox="0 0 48 58" aria-hidden="true" fill="currentColor"><path d="M24 .5C29 5 30 10.5 24 16.5 18 10.5 19 5 24 .5Z"/><path d="M22.4 15.6C16 16.8 9.8 14.4 9.6 8.6 9.5 5.6 12.2 4.2 14.4 5.6 12.4 6.4 12.1 8.8 13.7 10.5 15.6 12.4 19 13 22.4 12.6Z"/><path d="M25.6 15.6C32 16.8 38.2 14.4 38.4 8.6 38.5 5.6 35.8 4.2 33.6 5.6 35.6 6.4 35.9 8.8 34.3 10.5 32.4 12.4 29 13 25.6 12.6Z"/><rect x="17" y="16" width="14" height="3" rx=".5"/><path d="M19.5 19C18 21.5 19.5 23.5 21.5 22.5L24 21l2.5 1.5c2 1 3.5-1 2-3.5Z"/><rect x="12" y="25" width="24" height="2.8"/><circle cx="12" cy="26.4" r="1.8"/><circle cx="36" cy="26.4" r="1.8"/><rect x="22.6" y="21" width="2.8" height="32"/><path d="M6.5 39C7 49 14.5 55 24 55S41 49 41.5 39" fill="none" stroke="currentColor" stroke-width="2.8"/><path d="M2.5 42.5l4-8 4 8ZM37.5 42.5l4-8 4 8Z"/></svg><span>Bon vent et bonne mer.</span></p>
     <p>Préparation au brevet de patron d'embarcation et à la navigation à voile. Rédigé à partir des cours de navigation des scouts marins de Brest, mis à jour et complétés.</p>
     <p>Ce site ne remplace ni la réglementation (Division 240, RIPAM), ni les documents officiels du SHOM, ni le règlement de votre association. En cas de doute, ce sont eux qui font foi.</p>
   </div>

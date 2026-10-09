@@ -240,4 +240,200 @@ export default [
     c: ['La forme placée au sommet (cônes, cylindre, sphères, croix)', 'Le feu', 'Le numéro peint', 'Le réflecteur radar'], a: 0,
     e: 'Le voyant, qui se découpe sur le ciel, est souvent l’indice le plus fiable pour identifier une marque, surtout à contre-jour.', ref: R + '#systeme',
   },
+  {
+    id: 'b48', q: 'Un phare est décrit sur la carte par « Fl(2) 10s 87m 25M ». C’est un feu :', src: 'annale 2018',
+    c: ['À éclats, groupés par deux', 'Isophase', 'À occultations', 'Scintillant'], a: 0,
+    e: 'Fl : à éclats, la lumière dure moins longtemps que l’obscurité ; (2) : éclats groupés par deux ; 10s : période. Isophase s’écrirait Iso, occultations Oc, scintillant Q.', ref: R + '#feux',
+  },
+  {
+    id: 'b49', q: 'Dans la description « Fl(2) 10s 87m 25M », « 25M » est :',
+    c: ['La portée du feu : 25 milles', 'La hauteur du feu : 25 m', 'La période : 25 secondes', 'Le nombre d’éclats par minute'], a: 0,
+    e: 'M désigne les milles : c’est la portée nominale, par nuit claire. 87m est la hauteur du feu, en mètres ; 10s la période.', ref: R + '#feux',
+  },
+  {
+    id: 'b50', q: 'Un feu est décrit par « Fl(3) WRG 12s 15m 11-8M ». Que signifie « 11-8M » ?',
+    c: ['Le secteur blanc porte à 11 milles, les secteurs colorés à 8 milles', 'Le feu est allumé de 8 h à 11 h', 'Le feu est à 11 m de haut et porte à 8 milles', 'Il montre 11 éclats blancs et 8 éclats colorés'], a: 0,
+    e: 'Un feu coloré porte moins loin qu’un feu blanc : on donne la portée du blanc puis celle des couleurs. 15m est la hauteur du feu, 12s sa période.', ref: R + '#feux',
+  },
+  {
+    id: 'b51', q: 'Qu’est-ce qu’un phare à secteurs ?', src: 'annale 2016',
+    c: ['Un feu dont la couleur change selon la direction d’où on le voit', 'Un feu dont la couleur change selon l’heure de la nuit', 'Un feu qui ne s’allume que par mauvaise visibilité', 'Un feu réservé aux navires de commerce'], a: 0,
+    e: 'Les limites des secteurs sont portées sur la carte, en relèvements vrais vus du large. En général, le blanc couvre la route sûre, le rouge et le vert les dangers.', ref: R + '#feux',
+  },
+  {
+    id: 'b52', q: 'Pour entrer de nuit dans un port en évitant les écueils, on navigue dans le secteur :', src: 'annale 2022',
+    c: ['Blanc', 'Rouge', 'Vert', 'Rouge ou vert, indifféremment'], a: 0,
+    e: 'Le secteur blanc couvre en général la route sûre ; les secteurs rouge et vert couvrent les dangers de part et d’autre. On le vérifie toujours sur la carte.', ref: R + '#feux',
+  },
+  {
+    id: 'b53', q: 'De nuit, vous suivez le secteur blanc d’un feu d’entrée de port. Le feu vous apparaît soudain rouge :',
+    c: ['Je suis sorti du secteur sûr : je corrige ma route, carte en main, pour revenir dans le blanc', 'Le feu est en panne : je continue', 'Le port est fermé : je fais demi-tour', 'Rien à faire, je suis toujours dans le chenal'], a: 0,
+    e: 'Changer de couleur, c’est franchir une limite de secteur : la carte dit de quel côté on a dérivé. Cette limite est une droite de position aussi utile qu’un relèvement.', ref: R + '#feux',
+  },
+  {
+    id: 'b54', q: 'Un feu à occultations (Oc) est un feu :',
+    c: ['Dont la lumière dure plus longtemps que l’obscurité', 'Dont l’obscurité dure plus longtemps que la lumière', 'Dont la lumière et l’obscurité ont la même durée', 'Qui change de couleur'], a: 0,
+    e: 'Oc : allumé la plupart du temps, il s’éteint brièvement. Le feu à éclats (Fl) fait l’inverse ; l’isophase (Iso) partage le temps à égalité.', ref: R + '#feux',
+  },
+  {
+    id: 'b55', q: 'Devant vous, un feu jaune s’allume 2 secondes, puis reste éteint 4 secondes. C’est le feu :', fig: { k: 'feu', r: 'LFl', c: 'Y', p: 6 }, src: 'annale 2018',
+    c: ['D’une marque spéciale', 'D’un danger isolé', 'D’une cardinale Sud', 'D’une marque d’eaux saines'], a: 0,
+    e: 'Un feu jaune, quel que soit son rythme, est celui d’une marque spéciale. Cardinales, danger isolé et eaux saines ont un feu blanc.', ref: R + '#speciales',
+  },
+  {
+    id: 'b56', q: 'Sur une carte, une petite flamme magenta à côté du symbole d’une bouée indique :', src: 'annale 2015',
+    c: ['Qu’elle porte un feu', 'Qu’elle est sonore', 'Qu’elle est peinte en magenta', 'Qu’elle est provisoire'], a: 0,
+    e: 'La tache magenta en forme de flamme désigne un feu ; ses caractéristiques (rythme, couleur, période) sont écrites à côté.', ref: C1 + '#lire-carte',
+  },
+  {
+    id: 'b57', q: 'Sur une carte marine, ce symbole désigne :', fig: { k: 'svg', v: S.rocheFleur }, src: 'annale 2021',
+    c: ['Une roche à fleur d’eau, au niveau du zéro des cartes', 'Une roche qui découvre de plusieurs mètres', 'Une roche toujours couverte, de profondeur inconnue', 'Une marque de danger isolé'], a: 0,
+    e: 'Croix cantonnée de quatre points : roche à fleur d’eau. L’astérisque est une roche découvrante ; la croix entourée de pointillés, une roche toujours couverte.', ref: C1 + '#lire-carte',
+  },
+  {
+    id: 'b58', q: 'Sur une carte marine, ce symbole désigne :', fig: { k: 'svg', v: S.epaveDecouvrante },
+    c: ['Une épave dont la coque découvre', 'Une épave dangereuse, toujours couverte', 'Une roche découvrante', 'Une zone de mouillage'], a: 0,
+    e: 'La silhouette de coque représente une épave dont une partie émerge à basse mer. L’épave dangereuse toujours couverte est un trait barré entouré de pointillés.', ref: C1 + '#lire-carte',
+  },
+  {
+    id: 'b59', q: 'Sur la carte, un losange magenta marqué d’une lettre renvoie :',
+    c: ['À un tableau des courants de marée, heure par heure', 'À une zone de mouillage', 'À une épave signalée', 'À un point de rendez-vous des secours'], a: 0,
+    e: 'Pour chaque lettre, un tableau en marge donne la direction et la vitesse du courant de PM − 6 à PM + 6, en vives eaux et en mortes eaux.', ref: 'cours/03-estime.html#courant',
+  },
+  {
+    id: 'b60', q: 'Dans le tableau des courants d’une carte, les heures sont comptées :',
+    c: ['Par rapport à l’heure de pleine mer du port de référence indiqué', 'En heure légale', 'Par rapport à la basse mer du port le plus proche', 'Depuis minuit'], a: 0,
+    e: 'On cherche d’abord l’heure de PM au port de référence dans l’annuaire, puis la ligne (PM − 3, PM + 2…) qui correspond à l’heure de passage.', ref: 'cours/03-estime.html#courant',
+  },
+  {
+    id: 'b61', q: 'Le tableau des courants donne 2,0 nd en vives eaux et 1,0 nd en mortes eaux. Le coefficient du jour est 70. Le courant vaut environ :',
+    c: ['1,5 nd', '2,0 nd', '1,0 nd', '0,7 nd'], a: 0,
+    e: 'Vives eaux : coefficient 95 ; mortes eaux : 45. 70 est à mi-chemin : 1,0 + (2,0 − 1,0) × 25/50 = 1,5 nd.', ref: 'cours/03-estime.html#courant',
+  },
+  {
+    id: 'b62', q: 'Un courant de 1,5 nd « portant au 090 » :',
+    c: ['Pousse le bateau vers l’Est', 'Vient de l’Est', 'Pousse le bateau vers l’Ouest', 'Vient du Nord'], a: 0,
+    e: 'Un courant se désigne par la direction où il va, à l’inverse du vent, qui se désigne par la direction d’où il vient.', ref: 'cours/03-estime.html#courant',
+  },
+  {
+    id: 'b63', q: 'Au large d’une plage, vous rencontrez cette bouée jaune sphérique. Elle marque en général :', fig: { k: 'balise', v: 'plage-limite' }, src: 'annale 2023',
+    c: ['La limite de la bande des 300 m', 'La limite des 200 m', 'Un danger isolé', 'Un câble sous-marin'], a: 0,
+    e: 'Les bouées sphériques jaunes matérialisent la limite de la bande des 300 m ou d’une zone de baignade. En deçà : 5 nd au plus.', ref: R + '#plages',
+  },
+  {
+    id: 'b64', q: 'Près d’une plage, cette bouée jaune à voyant cylindrique rouge est :', fig: { k: 'balise', v: 'plage-babord' }, src: 'annale 2020',
+    c: ['La marque bâbord d’un chenal traversier', 'La limite d’une zone de baignade', 'Une marque bâbord du chenal d’un port', 'Un danger isolé'], a: 0,
+    e: 'Bouée jaune avec un voyant de marque latérale : chenal traversier. Le cylindre rouge se laisse à bâbord en allant vers la plage.', ref: R + '#plages',
+  },
+  {
+    id: 'b65', q: 'Avec un dériveur, vous voulez rejoindre une plage dont la bande des 300 m est balisée :',
+    c: ['J’emprunte le chenal traversier, à 5 nd au plus', 'Je traverse la zone de baignade au plus court', 'À la voile, la limite de vitesse ne s’applique pas', 'L’accès à la plage est interdit à tout bateau'], a: 0,
+    e: 'Les zones de baignade balisées sont interdites aux embarcations ; les chenaux traversiers servent à rejoindre le rivage. Les 5 nd valent pour tous, voiliers compris.', ref: R + '#plages',
+  },
+  {
+    id: 'b66', q: 'En quittant la plage vers le large par un chenal traversier, je laisse les bouées à voyant cylindrique rouge :',
+    c: ['À tribord', 'À bâbord', 'Indifféremment d’un côté ou de l’autre'], a: 0,
+    e: 'Le chenal traversier se lit en venant du large vers la plage : cylindre rouge à bâbord en entrant, donc à tribord en sortant.', ref: R + '#plages',
+  },
+  {
+    id: 'b67', q: 'Que signalent deux bouées rouges identiques mouillées côte à côte ?', fig: { k: 'balises', v: ['babord', 'babord'] }, src: 'annale 2021',
+    c: ['Un danger nouveau, pas encore porté sur les cartes', 'Une bifurcation du chenal', 'Le chenal préféré', 'Un rétrécissement du chenal'], a: 0,
+    e: 'Une marque doublée (deux marques identiques côte à côte) signale un danger nouveau, pas encore porté sur les cartes. Depuis 2006, on peut aussi poser une bouée d’urgence d’épave, bleue et jaune.', ref: R + '#danger-nouveau',
+  },
+  {
+    id: 'b68', q: 'Aux États-Unis (région B), en entrant au port, on laisse les marques rouges :',
+    c: ['À tribord', 'À bâbord', 'Indifféremment d’un côté ou de l’autre'], a: 0,
+    e: 'En région B (Amériques, Japon, Corée, Philippines), les couleurs des marques latérales sont inversées : rouge à tribord en entrant. Les cardinales ne changent pas.', ref: R + '#systeme',
+  },
+  {
+    id: 'b69', q: 'En France, les marques latérales d’un chenal sont numérotées depuis le large :',
+    c: ['Numéros pairs à bâbord (rouges), impairs à tribord (vertes)', 'Numéros impairs à bâbord, pairs à tribord', 'Dans l’ordre de leur mise en place', 'Seules les marques tribord sont numérotées'], a: 0,
+    e: 'En rentrant au port, on rencontre la 1 (verte) à tribord, la 2 (rouge) à bâbord, et les numéros augmentent vers le port.', ref: R + '#laterales',
+  },
+  {
+    id: 'b70', q: 'Entre deux îles, loin de tout port, comment savoir dans quel sens lire le balisage latéral ?',
+    c: ['La carte l’indique par une flèche magenta', 'On le lit toujours du Nord vers le Sud', 'On le lit toujours d’Ouest en Est', 'Il n’y a jamais de marques latérales hors des ports'], a: 0,
+    e: 'Le sens conventionnel va du large vers les ports et les estuaires ; ailleurs, l’autorité le fixe et la carte le porte par une flèche magenta.', ref: R + '#laterales',
+  },
+  {
+    id: 'b71', q: 'De nuit, en sortant du port, vous voyez devant vous ce feu vert scintillant :', fig: { k: 'feu', r: 'Q', c: 'G' }, src: 'annale 2015',
+    c: ['Je le laisse à bâbord', 'Je le laisse à tribord', 'Je passe d’un côté ou de l’autre'], a: 0,
+    e: 'Feu vert : marque tribord, qu’on laisse à tribord en entrant, donc à bâbord en sortant. Le rythme d’un feu latéral est quelconque, sauf Fl(2+1).', ref: R + '#laterales',
+  },
+  {
+    id: 'b72', q: 'De nuit, faisant route au 045, j’aperçois devant moi ce feu blanc :', fig: { k: 'feu', r: 'Q(6)+LFl', p: 15 }, src: 'annale 2023',
+    c: ['Je le laisse à bâbord', 'Je le laisse à tribord', 'En tant que voilier, ce feu ne me concerne pas', 'Je passe d’un côté ou de l’autre'], a: 0,
+    e: 'Six scintillements et un éclat long : cardinale Sud, on passe au Sud. En allant vers le Nord-Est, le Sud est sur ma droite : la marque reste à gauche, à bâbord.', ref: R + '#cardinales',
+  },
+  {
+    id: 'b73', q: 'Dans la brume, cap au Nord, vous apercevez droit devant ce feu blanc :', fig: { k: 'feu', r: 'Q(9)', p: 15 }, src: 'annale 2015',
+    c: ['Je le laisse à tribord', 'Je le laisse à bâbord', 'Je passe d’un côté ou de l’autre en m’écartant largement'], a: 0,
+    e: 'Neuf scintillements : cardinale Ouest, on passe à l’Ouest. Cap au Nord, l’Ouest est à gauche : la marque reste à droite, à tribord.', ref: R + '#cardinales',
+  },
+  {
+    id: 'b74', q: 'Faisant route au 170, j’aperçois devant moi cette marque :', fig: { k: 'balise', v: 'cardinale-e' }, src: 'annale 2017',
+    c: ['Je la laisse sur tribord', 'Je la laisse sur bâbord', 'Je la laisse indifféremment d’un côté ou de l’autre'], a: 0,
+    e: 'Noir-jaune-noir : cardinale Est, on passe à l’Est. En descendant vers le Sud, l’Est est à gauche : la marque reste à droite, sur tribord.', ref: R + '#cardinales',
+  },
+  {
+    id: 'b75', q: 'De nuit, cap au 090, vous voyez droit devant ce feu blanc :', fig: { k: 'feu', r: 'Q(3)', p: 10 }, src: 'annale 2020',
+    c: ['Le danger est entre la marque et moi : je change franchement de route, puis je regarde sur la carte comment le contourner', 'Je la laisse à bâbord en gardant mon cap', 'Je la laisse à tribord en gardant mon cap', 'Je passe d’un côté ou de l’autre en m’écartant'], a: 0,
+    e: 'Trois scintillements : cardinale Est, placée à l’Est du danger. Venant de l’Ouest, je fais route sur le danger avant même d’atteindre la marque : il faut s’écarter tout de suite.', ref: R + '#cardinales',
+  },
+  {
+    id: 'b76', q: 'Dans le brouillard, faisant route au Sud, vous apercevez devant vous ce feu blanc :', fig: { k: 'feu', r: 'Fl(2)', p: 5 }, src: 'annale 2016',
+    c: ['Je passe d’un côté ou de l’autre, en m’écartant largement', 'Je le laisse obligatoirement à bâbord', 'C’est une cardinale Est : je passe à l’Est', 'C’est une embarcation à moteur'], a: 0,
+    e: 'Deux éclats groupés : danger isolé, posé sur le danger. On passe de n’importe quel côté, mais à bonne distance.', ref: R + '#danger-isole',
+  },
+  {
+    id: 'b77', q: 'Laquelle de ces marques peut signaler un câble sous-marin ?', src: 'annale 2024',
+    fig: { k: 'balises', v: ['danger-isole', 'speciale', 'eaux-saines'], labels: ['A', 'B', 'C'] },
+    c: ['A', 'B', 'C'], a: 1, fixed: true,
+    e: 'Une marque spéciale (jaune, croix jaune) signale une zone ou un objet particulier : câble, zone militaire, zone de mouillage… A est un danger isolé, C une marque d’eaux saines.', ref: R + '#speciales',
+  },
+  {
+    id: 'b78', q: 'Tous les points d’un même parallèle ont :', src: 'annale 2023',
+    c: ['La même latitude', 'La même longitude', 'La même déclinaison magnétique', 'La même heure de pleine mer'], a: 0,
+    e: 'Un parallèle est un cercle parallèle à l’équateur : la latitude y est constante. Les méridiens, qui relient les pôles, sont les lignes de même longitude.', ref: C1 + '#coordonnees',
+  },
+  {
+    id: 'b79', q: 'Un bateau qui file 1 nœud parcourt en une heure :', src: 'annale 2020',
+    c: ['1 852 m', '1 000 m', '1 609 m', 'Une minute de longitude'], a: 0,
+    e: 'Le nœud vaut un mille par heure. Le mille, 1 852 m, est une minute de latitude ; une minute de longitude est plus courte dès qu’on quitte l’équateur.', ref: C1 + '#mille',
+  },
+  {
+    id: 'b80', q: 'À 5 nœuds, combien de temps faut-il pour parcourir 2,5 milles ?',
+    c: ['30 minutes', '20 minutes', '50 minutes', '2 heures'], a: 0,
+    e: 't = d / V = 2,5 / 5 = 0,5 h, soit 30 minutes.', ref: C1 + '#mille',
+  },
+  {
+    id: 'b81', q: 'Quel ouvrage donne les caractéristiques de chaque feu et phare ?',
+    c: ['Le Livre des feux', 'Les Instructions nautiques', 'L’annuaire des marées', 'Le RIPAM'], a: 0,
+    e: 'Le Livre des feux donne rythme, couleur, portée et secteurs de chaque feu. Les Instructions nautiques décrivent la côte, les dangers et les ports ; l’annuaire donne les marées ; le RIPAM, les règles de route.', ref: C1 + '#lire-carte',
+  },
+  {
+    id: 'b82', q: 'Sur une carte marine, une ligne qui relie les points de même profondeur s’appelle :',
+    c: ['Une isobathe', 'Une isobare', 'Un alignement', 'Un méridien'], a: 0,
+    e: 'Les isobathes (lignes de sonde de 2, 5, 10, 20 m…) dessinent le relief du fond. Les isobares, sur les cartes météo, relient les points de même pression.', ref: C1 + '#lire-carte',
+  },
+  {
+    id: 'b83', q: 'Pour choisir un mouillage, vous lisez « S » sur la carte, près d’une sonde. Le fond est :',
+    c: ['Du sable', 'De la vase', 'De la roche', 'Des coquilles'], a: 0,
+    e: 'S : sable ; M : vase ; R : roche ; Sh : coquilles. Une ancre tient bien dans le sable ou la vase, mal sur la roche.', ref: C1 + '#lire-carte',
+  },
+  {
+    id: 'b84', q: 'Le cartouche d’une carte récente indique « WGS 84 ». Cela signifie :',
+    c: ['Qu’on peut y reporter directement une position lue sur le GPS', 'Que la carte date de 1984', 'Que les sondes sont en pieds', 'Que la carte est au 1 : 84 000'], a: 0,
+    e: 'WGS 84 est le système géodésique du GPS. Sur une carte dans un autre système, la position GPS serait décalée.', ref: C1 + '#lire-carte',
+  },
+  {
+    id: 'b85', q: 'Une carte papier achetée il y a dix ans et jamais corrigée :',
+    c: ['Peut être dangereuse : le balisage et les dangers ont pu changer', 'Reste exacte : les fonds ne bougent pas', 'Est interdite à bord', 'N’est utilisable que de jour'], a: 0,
+    e: 'Le SHOM publie chaque semaine les Groupes d’avis aux navigateurs pour corriger ses cartes ; les corrections faites sont notées dans la marge.', ref: C1 + '#lire-carte',
+  },
+  {
+    id: 'b86', q: 'Le « COG » affiché par le GPS est :',
+    c: ['La route fond du bateau', 'Le cap compas', 'Le cap vrai', 'La direction du vent'], a: 0,
+    e: 'COG (course over ground) : route par rapport au fond, calculée à partir des positions successives. Elle diffère du cap dès qu’il y a dérive ou courant.', ref: 'cours/03-estime.html#electronique',
+  },
 ];

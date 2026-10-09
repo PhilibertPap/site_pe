@@ -14,6 +14,19 @@ const store = {
   },
 };
 
+const cache = {
+  get() {
+    try { return JSON.parse(localStorage.getItem('pe-profile') || 'null'); } catch (e) { return null; }
+  },
+  set(p) {
+    try {
+      if (!p) return localStorage.removeItem('pe-profile');
+      const { uid, name, unite, role, approved } = p;
+      localStorage.setItem('pe-profile', JSON.stringify({ uid, name, unite, role, approved }));
+    } catch (e) {}
+  },
+};
+
 window.PE = window.PE || {};
 let resolveUser;
 window.PE.userReady = new Promise((r) => (resolveUser = r));
@@ -125,17 +138,22 @@ if (!fb.enabled) {
   fb.onUser(async (u) => {
     if (!u) {
       store.set(null);
+      cache.set(null);
       loginPanel();
       return;
     }
     let profile = null;
     try {
       profile = await fb.getProfile(u.uid);
+      if (profile && profile.approved) cache.set(profile);
     } catch (e) {
-      profile = null;
+      // pas de réseau (en mer) : on reprend le profil validé mémorisé sur cet appareil
+      const c = cache.get();
+      profile = c && c.uid === u.uid ? c : null;
     }
     if (!profile || !profile.approved) {
       store.set(null);
+      cache.set(null);
       waitingPanel(profile);
       return;
     }

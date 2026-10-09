@@ -111,4 +111,119 @@ export default [
     c: ['De la distance à un abri à laquelle on navigue', 'De la longueur du bateau uniquement', 'Du nombre de voiles', 'De la saison'], a: 0,
     e: 'La Division 240 organise le matériel selon l’éloignement d’un abri : basique, côtier, semi-hauturier, hauturier.', ref: R + '#zones',
   },
+  {
+    id: 'se23', q: 'En navigation basique (moins de 2 milles d’un abri), lequel de ces équipements est obligatoire ?',
+    c: ['Un dispositif lumineux étanche (lampe torche)', 'Une bouée couronne', 'Trois feux rouges à main', 'Les cartes marines de la zone'], a: 0,
+    e: 'Basique : EIF, dispositif lumineux, extincteur selon le bateau, moyen d’assèchement, dispositif de remorquage, ligne de mouillage. Bouée, feux à main et cartes s’ajoutent en côtier.', ref: R + '#zones',
+  },
+  {
+    id: 'se24', q: 'En navigation côtière (2 à 6 milles d’un abri), quels documents doivent être à bord ?',
+    c: ['Les cartes marines officielles à jour, le RIPAM (ou un résumé) et la description du balisage', 'Le livre des feux et le journal de bord', 'Aucun document', 'Seulement l’annuaire des marées'], a: 0,
+    e: 'Livre des feux et journal de bord ne deviennent obligatoires qu’en semi-hauturier, au-delà de 6 milles.', ref: R + '#zones',
+  },
+  {
+    id: 'se25', q: 'Une radiobalise de détresse (EPIRB) est obligatoire :',
+    c: ['Au-delà de 60 milles d’un abri (hauturier)', 'Dès 2 milles d’un abri', 'Dès 6 milles d’un abri', 'Jamais en plaisance'], a: 0,
+    e: 'Hauturier : radiobalise, en plus du matériel semi-hauturier (radeau, VHF fixe, harnais…).', ref: R + '#zones',
+  },
+  {
+    id: 'se26', q: 'Pour une navigation scoute (jusqu’à 6 milles d’un abri), lequel de ces équipements est obligatoire ?', src: 'annale 2020',
+    c: ['Un gilet de sauvetage par personne embarquée', 'Trois fusées à parachute', 'Une radiobalise de détresse', 'Un projecteur de recherche d’homme à la mer'], a: 0,
+    e: 'Chaque personne a son gilet, porté en permanence. Projecteur et radiobalise ne sont exigés qu’au-delà de 6 et de 60 milles ; en côtier, on emporte des feux à main, pas de fusées obligatoires.', ref: R + '#zones',
+  },
+  {
+    id: 'se27', q: 'Un harnais et une longe par personne sont obligatoires à bord des voiliers :',
+    c: ['Au-delà de 6 milles d’un abri', 'Dès 2 milles d’un abri', 'Uniquement la nuit', 'Jamais : ils sont seulement recommandés'], a: 0,
+    e: 'C’est du matériel semi-hauturier. Plus près, le harnais reste utile par mauvais temps.', ref: R + '#zones',
+  },
+  {
+    id: 'se28', q: 'Une aide à la flottabilité de 50 N :',
+    c: ['Suppose que la personne sache nager : elle ne retourne pas une personne inconsciente', 'Retourne sur le dos une personne inconsciente', 'Suffit pour toutes les navigations', 'Ne se porte qu’en cas de danger'], a: 0,
+    e: 'À partir de 100 N, ce sont des gilets de sauvetage, conçus pour retourner une personne inconsciente sur le dos, d’autant mieux que la flottabilité est grande.', ref: R + '#zones',
+  },
+  {
+    id: 'se29', q: 'À quoi sert la sous-cutale d’un gilet ?',
+    c: ['À empêcher le gilet de remonter sur le visage dans l’eau', 'À accrocher la longe du harnais', 'À ranger le gilet', 'À déclencher le gonflage'], a: 0,
+    e: 'Un gilet ne protège que s’il est porté, ajusté et attaché, sous-cutale comprise.', ref: R + '#zones',
+  },
+  {
+    id: 'se30', q: 'Votre voilier est de catégorie de conception C. Le bulletin annonce force 7 :',
+    c: ['Il n’est pas conçu pour ces conditions : on ne sort pas', 'Aucun problème en restant à moins de 6 milles d’un abri', 'On sort avec un ris', 'On sort si le chef de bord est expérimenté'], a: 0,
+    e: 'Catégorie C : jusqu’à force 6 et 2 m de vagues. La catégorie limite les conditions, quelle que soit la distance à l’abri. Et la limite scoute est bien plus basse.', ref: R + '#categories',
+  },
+  {
+    id: 'se31', q: 'Quel CROSS coordonne les secours en Méditerranée ?',
+    c: ['La Garde', 'Étel', 'Gris-Nez', 'Jobourg'], a: 0,
+    e: 'La Garde, avec Aspretto en Corse. Gris-Nez et Jobourg couvrent la Manche, Corsen la pointe de Bretagne, Étel le golfe de Gascogne.', ref: R + '#sauvetage',
+  },
+  {
+    id: 'se32', q: 'La SNSM est :',
+    c: ['Une association de sauveteurs bénévoles qui arme les canots de sauvetage', 'Le service de l’État qui coordonne les secours en mer', 'Une entreprise de remorquage', 'Un service de la Marine nationale'], a: 0,
+    e: 'C’est le CROSS qui coordonne les secours ; il engage la SNSM, la Marine, des hélicoptères ou des navires proches.', ref: R + '#sauvetage',
+  },
+  {
+    id: 'se33', q: 'Les sémaphores de la côte :',
+    c: ['Sont des postes de la Marine nationale qui veillent la mer à vue et à la VHF', 'Sont des phares automatiques', 'Donnent les heures de marée', 'Sont tenus par la SNSM'], a: 0,
+    e: 'Ils surveillent les approches et relaient les alertes vers le CROSS.', ref: R + '#sauvetage',
+  },
+  {
+    id: 'se34', q: 'Vous avez alerté le CROSS pour une avarie ; la situation s’améliore et vous n’avez plus besoin d’aide :',
+    c: ['Je préviens le CROSS et je reste en veille', 'Je ne dis rien : le CROSS comprendra', 'J’éteins la VHF pour économiser la batterie', 'Je préviens seulement mon correspondant à terre'], a: 0,
+    e: 'On informe le CROSS de toute évolution, en mieux comme en pire, pour qu’il n’engage pas des moyens pour rien.', ref: R + '#sauvetage',
+  },
+  {
+    id: 'se35', q: 'Un navire en danger de se perdre est sauvé, avec sa cargaison, par un autre navire. Cette assistance aux biens :',
+    c: ['Ouvre droit à une rémunération', 'Est toujours gratuite', 'Est payée par le CROSS', 'Est interdite aux plaisanciers'], a: 0,
+    e: 'Seul le sauvetage des personnes est gratuit. L’assistance aux biens est rémunérée selon les biens sauvés et les moyens engagés.', ref: R + '#sauvetage',
+  },
+  {
+    id: 'se36', q: 'Pour éviter la chute à l’eau, l’accident le plus grave, on applique notamment :',
+    c: ['« Une main pour soi, une main pour le bateau », gilet porté et ajusté', 'On se tient aux écoutes', 'On reste debout à l’avant pendant les manœuvres', 'On retire son gilet pour être plus mobile'], a: 0,
+    e: 'Par mauvais temps, on s’attache aussi avec un harnais ; sans rôle dans la manœuvre, on reste dans le cockpit.', ref: R + '#prevention',
+  },
+  {
+    id: 'se37', q: 'Avant d’empanner, le barreur :',
+    c: ['Annonce la manœuvre et fait contrôler la bôme à l’écoute', 'Laisse passer la grand-voile seule', 'Fait lever l’équipage dans le cockpit pour aider', 'N’annonce rien : c’est une manœuvre courante'], a: 0,
+    e: 'Un empannage non contrôlé envoie la bôme d’un bord à l’autre avec violence : coup de bôme, casse, risque de chute à l’eau.', ref: R + '#prevention',
+  },
+  {
+    id: 'se38', q: 'Un équipier vient d’être repêché après une chute à l’eau, en été :',
+    c: ['On le sèche, on le change, on le réchauffe et on le surveille', 'Il reprend son poste aussitôt : l’eau est chaude', 'On lui donne de l’alcool pour le réchauffer', 'On le laisse sécher au vent'], a: 0,
+    e: 'Une personne tombée à l’eau se refroidit très vite, même en été. L’alcool accélère la perte de chaleur.', ref: R + '#prevention',
+  },
+  {
+    id: 'se39', q: 'Un passe-coque cède et l’eau entre. Pour boucher rapidement le trou, on utilise :',
+    c: ['Une pinoche (bouchon conique en bois) enfoncée dans le trou', 'Du ruban adhésif', 'Rien : on se contente d’écoper', 'Le moteur, pour rentrer plus vite'], a: 0,
+    e: 'On garde une pinoche près de chaque passe-coque. Puis on donne l’alerte et on fait route vers un abri en écopant.', ref: R + '#prevention',
+  },
+  {
+    id: 'se40', q: 'Après avoir utilisé le réchaud à gaz :',
+    c: ['On ferme le robinet de la bouteille', 'On laisse la bouteille ouverte pour la prochaine fois', 'On aère seulement la cabine', 'On ferme seulement le bouton du réchaud'], a: 0,
+    e: 'Le gaz est plus lourd que l’air : une fuite s’accumule dans les fonds et peut exploser.', ref: R + '#prevention',
+  },
+  {
+    id: 'se41', q: 'En navigation, les déchets du bord :',
+    c: ['Restent à bord jusqu’au port', 'Peuvent être jetés à la mer s’ils sont en papier', 'Se jettent au large, à plus de 3 milles', 'Se brûlent à bord'], a: 0,
+    e: 'Ne rien jeter à la mer : on trie à bord et on dépose les déchets au port.', ref: R + '#environnement',
+  },
+  {
+    id: 'se42', q: 'On peut vider les toilettes du bord (eaux noires) :',
+    c: ['Ni dans les ports, ni près des côtes, ni dans les zones de baignade', 'Partout : la mer dilue tout', 'Dans les ports, où l’eau est calme', 'À l’entrée des ports'], a: 0,
+    e: 'Les eaux noires polluent les plages et les parcs à coquillages. Beaucoup de ports ont une pompe de récupération.', ref: R + '#environnement',
+  },
+  {
+    id: 'se43', q: 'Que fait-on des feux à main périmés ?',
+    c: ['On les rapporte au magasin d’accastillage', 'On les tire en mer pour s’entraîner', 'On les jette avec les ordures ménagères', 'On les jette à la mer'], a: 0,
+    e: 'Un feu tiré sans détresse déclenche une fausse alerte. Les points de vente reprennent les engins pyrotechniques périmés.', ref: R + '#zones',
+  },
+  {
+    id: 'se44', q: 'Un équipier tombe à l’eau. Le premier réflexe :',
+    c: ['Crier « Un homme à la mer ! », lancer la bouée et désigner quelqu’un qui le montre du doigt sans le quitter des yeux', 'Faire demi-tour au moteur avant toute chose', 'Appeler d’abord la capitainerie', 'Affaler toutes les voiles avant toute chose'], a: 0,
+    e: 'Une tête dans les vagues se perd vite de vue. On marque la position (bouton MOB du GPS), on alerte le CROSS et on revient le chercher.', ref: R + '#prevention',
+  },
+  {
+    id: 'se45', q: 'Vous croisez un groupe de dauphins :',
+    c: ['Je ralentis et je garde mes distances', 'Je m’approche au moteur pour les voir de près', 'Je fonce dans le groupe : ils s’écartent toujours', 'Je les nourris'], a: 0,
+    e: 'Près des mammifères marins et des colonies d’oiseaux, on ralentit et on s’écarte ; les aires marines protégées ont leurs propres règles.', ref: R + '#environnement',
+  },
 ];

@@ -1,3 +1,4 @@
+import { createHash } from 'node:crypto';
 // Build du site : src/ -> docs/
 // Aucune dépendance. Lancer avec : node build.mjs
 //
@@ -24,6 +25,7 @@ const PARTS = {
   qcm: { label: 'QCM', href: 'qcm/index.html' },
   exercices: { label: 'Exercices', href: 'exercices/index.html' },
   pratique: { label: 'Pratique', href: 'pratique/index.html' },
+  cqcf: { label: 'CQ / CF', href: 'cqcf/index.html' },
   annales: { label: 'Annales', href: 'annales/index.html' },
 };
 if (AUTH) PARTS.questions = { label: 'Questions', href: 'questions/index.html' };
@@ -252,6 +254,10 @@ const exos = pages
   .filter((p) => p.meta.part === 'exercices' && p.meta.order)
   .sort((a, b) => a.meta.order - b.meta.order);
 
+const cqcf = pages
+  .filter((p) => p.meta.part === 'cqcf' && p.meta.order)
+  .sort((a, b) => a.meta.order - b.meta.order);
+
 function rootOf(rel) {
   const depth = rel.split('/').length - 1;
   return depth === 0 ? '' : '../'.repeat(depth);
@@ -350,8 +356,8 @@ for (const page of pages) {
     ${seriesNav(chapters, page, root, 'Chapitre')}
   </article>
 </div>`;
-  } else if ((meta.part === 'pratique' && meta.order) || (meta.part === 'exercices' && meta.order)) {
-    const list = meta.part === 'pratique' ? pratiques : exos;
+  } else if (['pratique', 'exercices', 'cqcf'].includes(meta.part) && meta.order) {
+    const list = { pratique: pratiques, exercices: exos, cqcf }[meta.part];
     body = boxesOnly(body);
     const r = sectionIds(body);
     body = r.html;
@@ -375,7 +381,7 @@ for (const page of pages) {
 </div>`;
   } else {
     body = boxesOnly(body);
-    main = `<div class="page ${meta.wide ? 'wide' : ''}">${body}</div>`;
+    main = `<div class="page${meta.wide ? ' wide' : ''}${meta.part === 'home' ? ' home' : ''}">${body}</div>`;
   }
 
   // Listes automatiques
@@ -400,6 +406,16 @@ for (const page of pages) {
         .join('') +
       '</ol>'
     )
+    .replace('<!--CQCF-->', () =>
+      '<ol class="index-list">' +
+      cqcf
+        .map(
+          (p, i) =>
+            `<li><a href="${root}${p.rel}"><span class="idx-num">${i + 1}</span><span class="idx-t">${p.meta.title}</span><span class="idx-d">${p.meta.desc || ''}</span></a></li>`
+        )
+        .join('') +
+      '</ol>'
+    )
     .replace('<!--EXERCICES-->', () =>
       '<ol class="index-list">' +
       exos
@@ -415,6 +431,8 @@ for (const page of pages) {
   const scripts = (meta.scripts || [])
     .map((s) => `<script type="module" src="${root}js/${s}"></script>`)
     .join('\n');
+
+  main = main.replace(/<!--IF_AUTH-->([\s\S]*?)<!--END_IF_AUTH-->/g, (m, inner) => (AUTH ? inner : ''));
 
   let html = layout
     .replaceAll('{{title}}', title)
@@ -439,5 +457,50 @@ copyDir(path.join(SRC, 'js'), path.join(OUT, 'js'));
 copyDir(path.join(SRC, 'img'), path.join(OUT, 'img'));
 copyDir(path.join(SRC, 'files'), path.join(OUT, 'files'));
 fs.writeFileSync(path.join(OUT, '.nojekyll'), '');
+
+// ------------------------------------------- application installable (PWA)
+
+fs.writeFileSync(
+  path.join(OUT, 'manifest.webmanifest'),
+  JSON.stringify(
+    {
+      name: "Patron d'embarcation",
+      short_name: "Patron d'emb.",
+      description: 'Cours de navigation, QCM, exercices et pratique de la voile pour les scouts marins.',
+      lang: 'fr',
+      start_url: './index.html',
+      scope: './',
+      display: 'standalone',
+      background_color: '#f5f1e6',
+      theme_color: '#11304d',
+      icons: [
+        { src: 'img/icon-192.png', sizes: '192x192', type: 'image/png', purpose: 'any maskable' },
+        { src: 'img/icon-512.png', sizes: '512x512', type: 'image/png', purpose: 'any maskable' },
+        { src: 'img/favicon.svg', sizes: 'any', type: 'image/svg+xml' },
+      ],
+    },
+    null,
+    2
+  )
+);
+
+// Service worker : tout le site (sauf les PDF d'annales) est mis en cache à l'installation,
+// pour fonctionner sans réseau. La version change à chaque build : l'ancien cache est remplacé.
+function listFiles(dir, base = dir) {
+  return fs.readdirSync(dir, { withFileTypes: true }).flatMap((e) => {
+    const f = path.join(dir, e.name);
+    if (e.isDirectory()) return e.name === 'fichiers' ? [] : listFiles(f, base);
+    return [path.relative(base, f).split(path.sep).join('/')];
+  });
+}
+const precache = listFiles(OUT).filter((f) => !f.startsWith('.') && !f.endsWith('.webmanifest') && f !== 'sw.js');
+const version = createHash('sha1')
+  .update(precache.map((f) => f + fs.readFileSync(path.join(OUT, f)).length + ':' + createHash('sha1').update(fs.readFileSync(path.join(OUT, f))).digest('hex')).join('|'))
+  .digest('hex')
+  .slice(0, 10);
+fs.writeFileSync(
+  path.join(OUT, 'sw.js'),
+  fs.readFileSync(path.join(SRC, 'sw.js'), 'utf8').replace('__VERSION__', version).replace('__FILES__', JSON.stringify(precache))
+);
 
 console.log(`${pages.length} pages générées dans docs/`);

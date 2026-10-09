@@ -126,14 +126,14 @@
 <h2 id="danger-nouveau">Danger nouveau</h2>
 <div class="two">
 <div>
-<p>Un <dfn>danger nouveau</dfn> est un danger qui n'est pas encore porté sur les cartes : épave récente, banc de sable qui s'est formé. Depuis 2006, il est signalé par une <dfn>bouée d'urgence d'épave</dfn> à bandes verticales bleues et jaunes, voyant en croix droite (+) jaune, feu alternativement bleu et jaune (Al.Bu.Y). Avant cette marque, on doublait la marque normale (deux cardinales identiques côte à côte, par exemple) ; cette pratique peut encore se rencontrer.</p>
+<p>Un <dfn>danger nouveau</dfn> est un danger qui n'est pas encore porté sur les cartes : épave récente, banc de sable qui s'est formé. Depuis 2006, il est signalé par une <dfn>bouée d'urgence d'épave</dfn> à bandes verticales bleues et jaunes, voyant en croix droite (+) jaune, feu alternativement bleu et jaune (Al.Bu.Y). On peut aussi signaler un danger nouveau en <strong>doublant</strong> la marque normale (deux cardinales identiques, par exemple) : cette possibilité existe toujours dans le système AISM.</p>
 <p><x-feu r="Al" c="Bu,Y" p="3" label="Al.Bu.Y" /></p>
 </div>
 <div class="figrow"><div><x-balise type="danger-nouveau" w="100" />Danger nouveau</div></div>
 </div>
 
 <h2 id="plages">Le balisage des plages</h2>
-<p>Le long des plages s'étend la <dfn>bande des 300 m</dfn>, mesurée depuis la limite des eaux. Sa limite est souvent matérialisée par des bouées sphériques jaunes. Dans cette bande, la vitesse est limitée à 5 nd, et les zones réservées à la baignade (délimitées par des bouées jaunes) sont interdites aux engins et embarcations.</p>
+<p>Le long des plages s'étend la <dfn>bande des 300 m</dfn>, mesurée depuis la limite des eaux. Sa limite est souvent matérialisée par des bouées sphériques jaunes. Dans cette bande, la vitesse est limitée à 5 nd, même là où aucune bouée ne la matérialise, et les zones réservées à la baignade, délimitées par des lignes de petites bouées sphériques jaunes rapprochées, sont interdites aux engins et embarcations. Ce balisage, fixé par les arrêtés des préfets maritimes et des maires, ne fait pas partie du système AISM ; ses marques ne sont en général pas lumineuses.</p>
 <p>Pour rejoindre la plage, les embarcations empruntent des <dfn>chenaux traversiers</dfn> : bouées jaunes, coiffées d'un voyant cylindrique rouge à bâbord et conique vert à tribord, en entrant vers la plage.</p>
 
 <figure>
@@ -149,7 +149,7 @@
 
 <p>De nuit, une marque se reconnaît à la couleur et au rythme de son feu. La carte et le livre des feux les décrivent avec une notation normalisée, par exemple :</p>
 <p class="formula"><span class="mono">Fl(3) WRG 12s 15m 11-8M</span></p>
-<p>qui se lit : trois éclats groupés (Fl(3)), à secteurs blanc, rouge et vert (WRG), période 12 secondes, feu situé à 15 m au-dessus des plus hautes mers, portée 11 milles pour le blanc et 8 milles pour les couleurs.</p>
+<p>qui se lit : trois éclats groupés (Fl(3)), à secteurs blanc, rouge et vert (WRG), période 12 secondes, feu situé à 15 m au-dessus du niveau des pleines mers de vives eaux moyennes (coefficient 95), portée 11 milles pour le blanc et 8 milles pour les couleurs.</p>
 
 <div class="tbl-wrap"><table>
 <thead><tr><th>Notation</th><th>Nom</th><th>Description</th><th>Exemple</th></tr></thead>
@@ -177,6 +177,14 @@
 
 <div class="box ex" data-title="annale octobre 2022">
 <p>Depuis la position de 7 h 06, on voit le phare d'Argol (Hoëdic) dans son secteur blanc. Ses secteurs blancs encadrent un secteur vert : si l'on ne voyait que la couleur blanche, on saurait seulement que le courant nous a déportés soit à l'Est soit à l'Ouest du secteur vert.</p>
+</div>
+
+<h3 id="phare-carte">Lire un phare sur la carte</h3>
+<p>Sur la carte, un feu est signalé par une tache magenta en forme de flamme, posée sur le point exact du feu (étoile ou point pour un phare, symbole de la bouée ou de la tourelle sinon). À côté figurent, toujours dans le même ordre : le rythme, la couleur (W est souvent omis pour un feu blanc), la période, l'élévation du foyer et la portée. Le livre des feux donne en plus la hauteur de la tour, sa description de jour et les limites précises des secteurs.</p>
+
+<div class="box ex" data-title="annales">
+<p>Un phare porte sur la carte l'indication <span class="mono">Fl(2) 10s 87m 25M</span> : feu blanc à deux éclats groupés, revenant toutes les 10 secondes, foyer à 87 m au-dessus des pleines mers de vives eaux moyennes, portée nominale 25 milles. C'est un feu <strong>à éclats</strong> (et non isophase ni à occultations). <x-feu r="Fl(2)" c="W" p="10" label="Fl(2) 10s" /></p>
+<p>Une bouée marquée <span class="mono">Fl G 4s</span> avec une flamme magenta est une bouée lumineuse à feu vert, un éclat toutes les 4 secondes. Sans flamme ni indication de feu, la marque n'est pas éclairée : on ne la verra pas de nuit.</p>
 </div>
 
 <h3>Portée</h3>

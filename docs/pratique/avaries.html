@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Avaries et incidents · Patron d'embarcation</title>
+<meta name="description" content="Une méthode commune à toutes les avaries ; voie d'eau, incendie, casse de barre, avarie de gréement, démâtage, bout dans l'hélice, panne moteur, échouement, voile déchirée, blessé ; remorquage, abandon du navire, hélitreuillage.">
+<link rel="icon" href="../img/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="../img/icon-180.png">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta name="theme-color" content="#11304d">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Patron d'emb.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/style.css">
+<script>
+  try {
+    var t = localStorage.getItem('pe-theme');
+    if (t) document.documentElement.setAttribute('data-theme', t);
+  } catch (e) {}
+  try { if (!localStorage.getItem('pe-ok')) document.documentElement.classList.add('gate'); } catch (e) { document.documentElement.classList.add('gate'); }
+</script>
+</head>
+<body data-root="../">
+<a class="skip" href="#contenu">Aller au contenu</a>
+<header class="top">
+  <div class="top-in">
+    <a class="brand" href="../index.html"><svg class="emb" viewBox="0 0 48 58" aria-hidden="true" fill="currentColor"><path d="M24 .5C29 5 30 10.5 24 16.5 18 10.5 19 5 24 .5Z"/><path d="M22.4 15.6C16 16.8 9.8 14.4 9.6 8.6 9.5 5.6 12.2 4.2 14.4 5.6 12.4 6.4 12.1 8.8 13.7 10.5 15.6 12.4 19 13 22.4 12.6Z"/><path d="M25.6 15.6C32 16.8 38.2 14.4 38.4 8.6 38.5 5.6 35.8 4.2 33.6 5.6 35.6 6.4 35.9 8.8 34.3 10.5 32.4 12.4 29 13 25.6 12.6Z"/><rect x="17" y="16" width="14" height="3" rx=".5"/><path d="M19.5 19C18 21.5 19.5 23.5 21.5 22.5L24 21l2.5 1.5c2 1 3.5-1 2-3.5Z"/><rect x="12" y="25" width="24" height="2.8"/><circle cx="12" cy="26.4" r="1.8"/><circle cx="36" cy="26.4" r="1.8"/><rect x="22.6" y="21" width="2.8" height="32"/><path d="M6.5 39C7 49 14.5 55 24 55S41 49 41.5 39" fill="none" stroke="currentColor" stroke-width="2.8"/><path d="M2.5 42.5l4-8 4 8ZM37.5 42.5l4-8 4 8Z"/></svg><span class="brand-t"><b>Patron d'embarcation</b><small>Scouts marins · voile</small></span></a>
+    <button class="menu-btn" type="button" aria-expanded="false" aria-controls="mainnav"><span class="burger" aria-hidden="true"><i></i><i></i><i></i></span><span class="menu-l">Menu</span></button>
+    <nav class="mainnav" id="mainnav" aria-label="Parties du site"><a href="../cours/index.html">Cours</a><a href="../qcm/index.html">QCM</a><a href="../exercices/index.html">Exercices</a><a href="../pratique/index.html" aria-current="page">Pratique</a><a href="../cqcf/index.html">CQ / CF</a><a href="../annales/index.html">Annales</a><a href="../questions/index.html">Questions</a></nav>
+    <div class="acct" id="acct"></div>
+    <button class="theme" type="button" aria-label="Changer de thème" title="Clair / sombre"><svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true"><circle cx="8" cy="8" r="6.5" fill="none" stroke="currentColor" stroke-width="1.3"/><path d="M8 1.5 A6.5 6.5 0 0 1 8 14.5 Z" fill="currentColor"/></svg></button>
+  </div>
+  <div class="grad" aria-hidden="true"></div>
+</header>
+<main id="contenu">
+
+<div class="doc">
+  <aside class="side">
+    <p class="side-h">Pratique</p>
+    <ol class="chapters"><li><a href="../pratique/voilier.html">Le voilier</a></li><li><a href="../pratique/bateaux.html">Les bateaux des scouts marins</a></li><li><a href="../pratique/physique.html">Comment avance un voilier</a></li><li><a href="../pratique/reglages.html">Allures et réglages</a></li><li><a href="../pratique/manoeuvres.html">Manœuvres sous voiles</a></li><li><a href="../pratique/port.html">Manœuvres de port</a></li><li><a href="../pratique/mouillage.html">Le mouillage</a></li><li><a href="../pratique/hlm.html">Homme à la mer</a></li><li><a href="../pratique/avaries.html" aria-current="page">Avaries et incidents</a></li><li><a href="../pratique/noeuds.html">Nœuds et matelotage</a></li><li><a href="../pratique/chef-de-bord.html">Conduire une navigation</a></li><li><a href="../pratique/entrainement.html">S'entraîner sur l'eau</a></li><li><a href="../pratique/oral-pe.html">L'oral et la navigation du PE</a></li></ol>
+  </aside>
+  <article class="chapter">
+    <header class="chap-head">
+      <p class="kicker">Pratique</p>
+      <h1>Avaries et incidents</h1>
+      <p class="chap-desc">Une méthode commune à toutes les avaries ; voie d'eau, incendie, casse de barre, avarie de gréement, démâtage, bout dans l'hélice, panne moteur, échouement, voile déchirée, blessé ; remorquage, abandon du navire, hélitreuillage.</p>
+    </header>
+    <details class="toc-box"><summary>Sur cette page</summary><ol class="toc"><li><a href="#methode">Une méthode pour toutes les avaries</a></li><li><a href="#voie-eau">Voie d'eau</a></li><li><a href="#incendie">Incendie</a></li><li><a href="#barre">Casse de barre ou de safran</a></li><li><a href="#greement">Avarie de gréement : hauban, étai, pataras</a></li><li><a href="#demate">Démâtage</a></li><li><a href="#helice">Bout dans l'hélice</a></li><li><a href="#moteur">Panne moteur</a></li><li><a href="#echouement">Échouement</a></li><li><a href="#voile">Voile déchirée, écoute ou drisse cassée</a></li><li><a href="#abordage">Abordage</a></li><li><a href="#blesse">Blessé ou malade</a></li><li><a href="#remorquage">Remorquage</a></li><li><a href="#abandon">Abandon du navire</a></li><li><a href="#helitreuillage">Hélitreuillage</a></li></ol></details>
+    <p>Une avarie arrive rarement seule : c'est la réaction précipitée qui la transforme en accident (le <dfn>sur-accident</dfn>). Un équipier qui se blesse en courant chercher la pompe, un bateau qu'on laisse partir sur les roches pendant que tout le monde regarde le hauban cassé, une ancre jetée sans être frappée au bateau : ce sont des scénarios classiques. Le patron d'embarcation n'a pas à tout savoir réparer. Il doit garder le bateau et l'équipage en sécurité, alerter tôt, et organiser le bord.</p>
+
+<h2 id="methode">Une méthode pour toutes les avaries</h2>
+
+<p>On reprend l'ordre des secouristes : <strong>protéger, alerter, secourir</strong>. Les deux premières étapes prennent quelques dizaines de secondes ; elles doivent devenir des réflexes.</p>
+
+<div class="box meth"><p class="box-label">Méthode <span class="box-title">(Protéger, alerter, secourir)</span>.</p>
+<ol>
+  <li><strong>Protéger.</strong> « Est-ce que je vais bien ? » Avec l'adrénaline, on peut être blessé sans s'en rendre compte : un chef de bord blessé confie la conduite des opérations à son second. Puis : tout le monde est-il à bord, et indemne ? Enfin, le bateau : confier la barre à un équipier sûr avec une consigne simple (« au travers, tu tiens ce cap », ou se mettre à la cape), regarder autour (dangers, navires proches), empêcher l'avarie de s'aggraver.</li>
+  <li><strong>Alerter.</strong> Prévenir le chef de flottille (CF) sur le canal de la flottille, calmement : ce qui se passe, où l'on est, ce qu'on a déjà fait, ce qu'on va faire. Si la situation est une détresse, appeler directement le CROSS (tableau ci-dessous). Confier la VHF à un équipier en lui dictant ce qu'il doit dire, si l'on a besoin de ses mains.</li>
+  <li><strong>Secourir</strong>, c'est-à-dire agir :
+    <ul>
+      <li><em>prendre l'information</em> : mesurer l'ampleur de l'avarie, chercher ses conséquences, imaginer comment la situation peut évoluer au pire ;</li>
+      <li><em>agir</em> : expliquer ce qu'on va faire, donner un rôle précis à chacun, en gardant toujours quelqu'un à la barre et quelqu'un à la veille ;</li>
+      <li><em>surveiller</em> : l'avarie, le bateau, l'équipage ; tenir le CF au courant de l'évolution, en mieux comme en pire.</li>
+    </ul>
+  </li>
+</ol>
+<p>S'il y a un blessé, il passe avant le bateau, mais seulement une fois la situation sécurisée : on ne fait pas un deuxième blessé en allant chercher le premier.</p>
+</div>
+
+<p>Le chef de bord reste celui qui reçoit l'information et décide. Il délègue tout ce qui peut l'être (pomper, préparer la remorque, tenir la VHF), choisit pour chaque tâche un équipier capable de la faire, et vérifie qu'elle est faite. Il reste calme : un équipage panique quand son chef panique.</p>
+
+<h3>Qui appeler, et comment</h3>
+
+<div class="tbl-wrap"><table>
+<thead><tr><th>Situation</th><th>Qui appeler</th><th>Message</th></tr></thead>
+<tbody>
+<tr><td><strong>Danger grave et imminent</strong> pour des personnes ou pour le bateau : homme à la mer, incendie non maîtrisé, voie d'eau qui gagne malgré le pompage, bateau drossé sur des roches, blessé en danger vital, abandon du navire</td><td>Le CROSS immédiatement (VHF canal 16, alerte ASN, ou téléphone 196), puis le CF</td><td>MAYDAY</td></tr>
+<tr><td><strong>Situation sérieuse sans danger immédiat</strong> : barre ou moteur hors d'usage loin des dangers, démâtage sans blessé ni voie d'eau, voie d'eau maîtrisée, blessé ou malade (demande d'avis médical)</td><td>Le CF d'abord ; le CROSS si le CF ne répond pas ou si la situation se dégrade</td><td>PAN PAN, si l'on appelle le CROSS</td></tr>
+<tr><td><strong>Avarie mineure</strong> : voile déchirée, écoute cassée, moteur qui ne démarre pas au mouillage</td><td>Le CF</td><td>appel ordinaire sur le canal de la flottille</td></tr>
+</tbody></table></div>
+
+<p>La forme des messages MAYDAY et PAN PAN est détaillée au <a href="../cours/10-vhf.html#alerte">chapitre 10</a>. On y donne la position la plus parlante possible (« un mille dans le sud-ouest de la cardinale », plutôt qu'une suite de chiffres qu'on comprend mal à la radio, ou les deux), la nature du problème, le nombre de personnes à bord en précisant qu'il s'agit de mineurs en activité de scoutisme marin, le type, la longueur et le nom du bateau. Si la VHF ne passe pas, le 196 depuis un téléphone portable joint le CROSS.</p>
+
+<div class="box maj"><p class="box-label">Mise à jour.</p>
+<p>Les fiches avaries et la Girafe disent d'appeler le CROSS « si le CF ne répond pas ». C'est la bonne règle pour une avarie sans danger immédiat. En détresse, on ne perd pas une minute à chercher le CF : MAYDAY sur le 16 (le CF l'entend aussi s'il veille ce canal), puis on l'informe sur le canal de flottille. Par ailleurs, la Girafe range l'échouement dans la détresse et le démâtage dans l'urgence : en réalité, c'est la situation qui décide (un échouement sur un banc de sable par beau temps n'est pas une détresse ; un démâtage avec une coque percée en est une), pas le nom de l'avarie.</p>
+</div>
+
+<h2 id="voie-eau">Voie d'eau</h2>
+
+<p>Une petite voie d'eau se règle en refermant une vanne ; une grosse peut faire couler un bateau en une dizaine de minutes. L'eau qui monte noie les batteries, donc la pompe électrique, la VHF fixe et le démarreur : il faut agir vite et alerter tant que l'électricité fonctionne.</p>
+
+<h3>Signes</h3>
+<ul>
+  <li>De l'eau au-dessus des planchers ; une pompe de cale automatique qui se déclenche souvent.</li>
+  <li>Un bateau qui devient lourd, mou à la barre, qui gîte sans raison ou ne se redresse pas.</li>
+  <li>Un bruit d'écoulement, un choc entendu un peu plus tôt.</li>
+</ul>
+
+<div class="box meth"><p class="box-label">Méthode <span class="box-title">(Réaction immédiate)</span>.</p>
+<ol>
+  <li>Barre à un équipier sûr ; ralentir (la vitesse fait entrer davantage d'eau par une brèche à l'avant). Gilets vérifiés et capelés pour tous.</li>
+  <li>Vider : pompe de cale électrique, pompe manuelle, et écopage au seau. Un équipier avec un seau évacue plus d'eau qu'une petite pompe à main.</li>
+  <li>Goûter l'eau : douce, elle vient du réservoir ou de la vache à eau, et ce n'est pas une voie d'eau de coque ; salée, elle vient de l'extérieur.</li>
+  <li>Chercher l'entrée d'eau avec méthode, en suivant le plan de sécurité du bord : chaque passe-coque et sa vanne (moteur, toilettes, évier, sondeur, loch), les tuyaux et leurs colliers, le presse-étoupe de l'arbre d'hélice, le tube de jaumière du safran, les boulons de quille, les hublots et panneaux.</li>
+  <li>Alerter le CF en donnant l'emplacement de la voie d'eau (au-dessus ou en dessous de la flottaison) et son débit (« un verre par minute », « deux seaux par minute »), et en disant si l'on vide plus vite que ça ne remplit.</li>
+</ol>
+</div>
+
+<h3>Solution</h3>
+<ul>
+  <li><strong>Tuyau arraché ou percé</strong> : fermer la vanne du passe-coque.</li>
+  <li><strong>Passe-coque arraché, trou rond</strong> : enfoncer une <dfn>pinoche</dfn> (cône en bois tendre) au marteau ou à la main. Beaucoup de bateaux en ont une attachée près de chaque passe-coque.</li>
+  <li><strong>Fissure, trou irrégulier</strong> : boucher de l'intérieur avec ce qu'on a (tee-shirt, coussin, ciré, gilet non gonflable), maintenu par une planche ou un plancher étayé. De l'extérieur, une voile passée sous la coque et tendue par ses coins se plaque sur la brèche sous la pression de l'eau et réduit fortement le débit.</li>
+  <li><strong>Brèche sur un flanc</strong> : faire gîter pour la sortir de l'eau, c'est-à-dire la mettre au vent (virer de bord si nécessaire) et faire passer l'équipage de l'autre côté.</li>
+  <li>Faire route vers l'abri le plus proche, ou vers une plage de sable où l'on pourra s'échouer si l'eau gagne. Démarrer le moteur, s'il n'est pas noyé, pour recharger les batteries qu'épuise la pompe.</li>
+</ul>
+
+<div class="box warn"><p class="box-label">Attention <span class="box-title">(Secours)</span>.</p>
+<p>Voie d'eau maîtrisée : le CF, éventuellement un PAN PAN pour que le CROSS suive la situation. Si l'eau gagne malgré le pompage : MAYDAY tout de suite, avant que les batteries ne soient noyées, et préparation de l'<a href="#abandon">abandon du navire</a>.</p>
+</div>
+
+<h2 id="incendie">Incendie</h2>
+
+<p>Sur un bateau, presque tout brûle (polyester, bois, tissus, carburant), les fumées sont très toxiques, et on ne peut pas s'éloigner. Un feu se gagne ou se perd dans la première minute.</p>
+
+<h3>Signes</h3>
+<ul>
+  <li>Odeur de brûlé ou de plastique chaud, fumée sortant de la descente, du compartiment moteur ou du tableau électrique.</li>
+  <li>Odeur de gaz : elle précède une explosion. Le butane et le propane sont plus lourds que l'air et s'accumulent dans les fonds.</li>
+</ul>
+
+<div class="box meth"><p class="box-label">Méthode <span class="box-title">(Réaction immédiate)</span>.</p>
+<ol>
+  <li>Crier « Au feu ! » et localiser le feu. Faire sortir de la cabine tous ceux qui ne combattent pas le feu ; personne ne doit rester coincé à l'avant d'un feu qui bloque la descente.</li>
+  <li>Couper ce qui l'alimente : le gaz au robinet de la bouteille, le moteur, l'électricité au coupe-batterie.</li>
+  <li>Attaquer aussitôt avec l'extincteur : dégoupiller, viser la base des flammes, presser par jets courts en balayant. Un extincteur de 2 kg se vide en une dizaine de secondes.</li>
+  <li>Alerter le CF en même temps (un équipier à la VHF) : origine du feu, importance, et surtout s'il recule ou s'il gagne.</li>
+</ol>
+</div>
+
+<h3>Solution</h3>
+<ul>
+  <li><strong>Feu de cuisine</strong> (huile, graisse) : étouffer avec un couvercle ou la couverture anti-feu, laisser en place jusqu'à refroidissement. Jamais d'eau : l'huile en feu projetée par la vapeur embrase toute la cabine. Ne pas déplacer la poêle.</li>
+  <li><strong>Feu de matériaux secs</strong> (bois, tissu, papier, couchette) : extincteur, ou eau de mer au seau une fois l'électricité coupée. Ces feux couvent : surveiller et arroser jusqu'à ce que tout soit froid.</li>
+  <li><strong>Feu électrique ou de carburant</strong> : extincteur à poudre ou à CO<sub>2</sub>, jamais d'eau.</li>
+  <li><strong>Feu moteur</strong> : moteur et carburant coupés, ne pas ouvrir le capot (l'appel d'air ranime le feu) ; vider l'extincteur par l'orifice prévu ou par l'entrebâillement le plus petit possible.</li>
+  <li><strong>Fuite de gaz enflammée</strong> : fermer le robinet de la bouteille, ce qui éteint la flamme. Ne pas souffler ni éteindre une flamme de gaz sans avoir coupé l'arrivée : le gaz continuerait à s'échapper sans brûler et s'accumulerait dans les fonds, prêt à exploser. Après tout incident de gaz : aérer, ne toucher à aucun interrupteur, ne rien allumer.</li>
+  <li>Priver le feu d'air : fermer hublots et panneaux. Orienter le bateau pour que le vent rabatte fumées et flammes loin du cockpit et de l'équipage.</li>
+  <li>Se protéger : rester bas, sous les fumées ; ne pas entrer dans une cabine enfumée ; couvrir mains et visage. Les vêtements synthétiques fondent sur la peau : on évite d'en porter près d'un feu, mais on ne perd pas de temps à se changer.</li>
+</ul>
+
+<div class="box warn"><p class="box-label">Attention <span class="box-title">(Secours)</span>.</p>
+<p>Un feu qui n'est pas éteint par le premier extincteur est une détresse : MAYDAY, gilets capelés, et préparation de l'abandon du navire. On ne quitte cependant le bateau qu'en dernier recours.</p>
+</div>
+
+<div class="box maj"><p class="box-label">Mise à jour.</p>
+<p>La Girafe et les fiches avaries fixent la limite à « des flammes de plus de 20 cm » pour préparer l'abandon. Le critère utile n'est pas la hauteur des flammes mais l'évolution du feu : s'il recule sous l'extincteur, on continue ; s'il gagne ou si la fumée envahit la cabine, on alerte en détresse sans attendre. La Girafe justifie aussi de ne pas éteindre une fuite de gaz enflammée par la toxicité du gaz : le vrai danger du gaz qui ne brûle pas est l'explosion.</p>
+</div>
+
+<h2 id="barre">Casse de barre ou de safran</h2>
+
+<p>Une barre franche qui casse, une tête de mèche qui lâche, des drosses de roue qui sautent, un safran bloqué par un bout ou un casier, ou perdu : le bateau n'est plus gouvernable. Le danger immédiat est la collision (dans un chenal, près des roches) et l'empannage involontaire si l'on était au portant.</p>
+
+<h3>Signes</h3>
+<ul>
+  <li>La barre devient molle et le bateau ne répond plus, ou la barre est bloquée.</li>
+  <li>Le bateau part au lof et ne revient pas.</li>
+</ul>
+
+<div class="box meth"><p class="box-label">Méthode <span class="box-title">(Réaction immédiate)</span>.</p>
+<ol>
+  <li>Ralentir et éviter le portant : un voilier sans safran, un peu ardent, monte de lui-même vers le lit du vent. On l'y aide en bordant la grand-voile et en choquant ou roulant le foc : il s'arrête à peu près face au vent, sans risque d'empannage.</li>
+  <li>Regarder autour : distance aux dangers, aux autres bateaux, direction de la dérive.</li>
+  <li>Alerter le CF : ce qui a cassé, si c'est réparable vite, distance aux dangers les plus proches.</li>
+</ol>
+</div>
+
+<h3>Solution</h3>
+<ul>
+  <li>Si seule la barre est cassée et le safran intact : installer la <strong>barre franche de secours</strong> (la plupart des bateaux à roue en ont une, qui se monte sur la tête de mèche).</li>
+  <li><strong>Gouverner aux voiles</strong> : border la GV et choquer le foc fait lofer ; border le foc et choquer la GV fait abattre. Le poids de l'équipage aide aussi : faire gîter sous le vent fait lofer, redresser ou faire gîter au vent fait abattre. On peut ainsi tenir à peu près une allure de près ou de travers, jamais une allure portante.</li>
+  <li>Un aviron ou une planche solidement amarrés au balcon arrière peuvent servir de gouvernail de fortune.</li>
+  <li>Si le safran a été perdu ou arraché, vérifier qu'il n'y a pas d'entrée d'eau par le tube de jaumière.</li>
+  <li>Préparer le <a href="#remorquage">remorquage</a> : patte d'oie à l'avant, pare-battages prêts.</li>
+  <li>Si le bateau dérive vers la côte : préparer le mouillage, en vérifiant d'abord que l'extrémité de la chaîne (l'étalingure) est bien frappée au bateau, puis mouiller avec toute la chaîne disponible. C'est dans l'urgence qu'on jette par-dessus bord un mouillage qui n'était pas attaché.</li>
+</ul>
+
+<div class="box warn"><p class="box-label">Attention <span class="box-title">(Secours)</span>.</p>
+<p>Le CF, qui organise en général le remorquage. PAN PAN au CROSS si le CF ne répond pas ; MAYDAY si le bateau dérive vers un danger sans pouvoir l'éviter.</p>
+</div>
+
+<h2 id="greement">Avarie de gréement : hauban, étai, pataras</h2>
+
+<p>Le gréement dormant travaille sous des charges de plusieurs tonnes. Il casse presque toujours aux extrémités (sertissage, embout, ridoir, cadène, axe ou goupille), rarement au milieu d'un câble. Le but est d'éviter que le mât tombe.</p>
+
+<h3>Signes</h3>
+<ul>
+  <li>Un claquement sec, un hauban qui pend ou bat, un mât qui se cintre anormalement.</li>
+  <li>Avant la rupture : un toron cassé qui dépasse du câble près d'un embout, un ridoir dont la goupille a disparu et qui se dévisse, une cadène qui bouge. On les cherche lors des vérifications du matin.</li>
+</ul>
+
+<div class="box meth"><p class="box-label">Méthode <span class="box-title">(Réaction immédiate : décharger le côté qui ne tient plus)</span>.</p>
+<ul>
+  <li><strong>Hauban au vent cassé</strong> : virer de bord tout de suite pour mettre le côté cassé sous le vent, où il ne porte plus. Choquer les voiles pour réduire l'effort.</li>
+  <li><strong>Hauban sous le vent cassé</strong> : rester sur ce bord, ne pas virer, réduire la toile.</li>
+  <li><strong>Étai cassé</strong> (ou étai d'enrouleur arraché) : abattre au vent arrière, pour que le vent pousse le mât vers l'avant.</li>
+  <li><strong>Pataras cassé</strong> : lofer au près, border la GV : la chute et l'écoute de grand-voile retiennent alors le mât vers l'arrière. Reprendre la balancine, qui joue le même rôle.</li>
+</ul>
+</div>
+
+<h3>Solution</h3>
+<ul>
+  <li>Remplacer le câble manquant par une drisse inutilisée (drisse de spi, de génois), frappée au plus près de la cadène sur un point solide, et raidie au winch.</li>
+  <li>Réduire la toile (ris, foc roulé) et rentrer, de préférence au moteur, doucement, en restant si possible sur le bord où le gréement de fortune travaille peu. Éviter de taper dans la mer : le tangage secoue le mât.</li>
+  <li>Ramasser les morceaux qui traînent sur le pont (dangereux pour les pieds et les mains) ou dans l'eau (danger pour l'hélice) avant de démarrer le moteur.</li>
+</ul>
+
+<div class="box warn"><p class="box-label">Attention <span class="box-title">(Secours)</span>.</p>
+<p>Le CF, en lui disant quel câble a cassé et ce qu'on a déjà fait.</p>
+</div>
+
+<h2 id="demate">Démâtage</h2>
+
+<p>Rare, mais violent : le mât peut blesser en tombant, percer le pont, et, une fois à l'eau, cogner la coque comme un bélier dans la houle. Les haubans et drisses qui le relient encore au bateau sont autant de cordages prêts à se prendre dans l'hélice. L'antenne de la VHF fixe est en tête de mât : elle ne fonctionne plus.</p>
+
+<div class="box meth"><p class="box-label">Méthode <span class="box-title">(Réaction immédiate)</span>.</p>
+<ol>
+  <li>Compter l'équipage : personne à l'eau, personne blessé ? Ne pas démarrer le moteur.</li>
+  <li>Vérifier que la coque n'est pas percée (pont, bordé, cadènes arrachées).</li>
+  <li>Alerter le CF avec la VHF portable ou un téléphone : blessés éventuels, position du mât (sur le pont, à l'eau, à moitié), état de la coque.</li>
+</ol>
+</div>
+
+<h3>Solution</h3>
+<ul>
+  <li><strong>Mât sur le pont</strong> : le saisir solidement pour qu'il ne bouge plus et ne parte pas à l'eau.</li>
+  <li><strong>Mât à l'eau</strong> : le tenir le long du bord, à l'écart de la coque (pare-battages, coussins), et le récupérer à bord si la mer et les forces de l'équipage le permettent. Si on ne peut pas et qu'il menace de percer la coque, on le libère : retirer les axes des ridoirs, couper drisses et câbles (pince coupe-câble, scie à métaux). C'est un dernier recours, pas le premier geste.</li>
+  <li>Avant de démarrer le moteur, vérifier qu'aucun bout ni câble ne traîne dans l'eau.</li>
+  <li>Rétablir les communications : VHF portable, téléphone (portées plus faibles).</li>
+  <li>Si le bateau dérive vers la côte et qu'on ne peut pas utiliser le moteur : mouiller, si la profondeur le permet (par 20 m de fond, la chaîne d'un petit croiseur ne suffit pas).</li>
+</ul>
+
+<div class="box warn"><p class="box-label">Attention <span class="box-title">(Secours)</span>.</p>
+<p>PAN PAN si personne n'est blessé et que la coque est saine ; MAYDAY s'il y a un blessé grave, une voie d'eau, ou si le bateau dérive vers un danger.</p>
+</div>
+
+<div class="box maj"><p class="box-label">Mise à jour.</p>
+<p>Les sources disent « si le mât est à l'eau, je coupe tous les haubans et toutes les drisses ». Couper prend du temps, laisse partir du matériel coûteux et des débris dangereux pour les autres : on ne le fait que si l'on ne peut pas tenir le mât loin de la coque.</p>
+</div>
+
+<h2 id="helice">Bout dans l'hélice</h2>
+
+<p>Une amarre ou une écoute qui traîne, l'orin d'un casier ou un filet : l'hélice l'enroule en une seconde. Le moteur cale ou se met à vibrer, le bateau n'a plus de propulsion, souvent au mauvais moment (manœuvre de port, sortie de chenal).</p>
+
+<div class="box meth"><p class="box-label">Méthode <span class="box-title">(Réaction immédiate)</span>.</p>
+<ol>
+  <li>Point mort et arrêt du moteur. Ne pas insister en avant ni en arrière : on serre davantage, on peut casser l'inverseur ou arracher l'arbre.</li>
+  <li>S'écarter des dangers à la voile, ou mouiller ; au port, s'amarrer au plus près ou se laisser déhaler.</li>
+  <li>Vérifier qu'il n'y a pas d'entrée d'eau au presse-étoupe : un arbre tordu ou déplacé peut faire une voie d'eau.</li>
+  <li>Prévenir le CF.</li>
+</ol>
+</div>
+
+<h3>Solution</h3>
+<ul>
+  <li>Moteur arrêté, tirer doucement sur le bout depuis le pont : il se dégage parfois s'il n'est pas trop serré.</li>
+  <li>Sinon, on continue à la voile et on demande de l'aide. Plonger sous un bateau qui tangue est dangereux (coque qui retombe, froid, courant) : un équipier ne le fait que par mer calme, avec l'accord du CF, moteur arrêté et clé retirée, longé, et surveillé.</li>
+</ul>
+
+<p>La prévention est simple : amarres et pare-battages rentrés dès l'appareillage, écoutes et drisses dans le bateau, coup d'œil autour de l'arrière avant d'embrayer, casiers évités de loin.</p>
+
+<h2 id="moteur">Panne moteur</h2>
+
+<p>Sur un voilier, une panne de moteur n'est pas une urgence en soi : il reste les voiles. Elle le devient dans un chenal, à l'entrée d'un port ou près des roches, quand on comptait sur le moteur.</p>
+
+<h3>Signes</h3>
+<ul>
+  <li>Le moteur cale, ne démarre pas, perd de la puissance, fume anormalement.</li>
+  <li>Une alarme : température (surchauffe) ou pression d'huile. Plus d'eau à l'échappement.</li>
+</ul>
+
+<div class="box meth"><p class="box-label">Méthode <span class="box-title">(Réaction immédiate)</span>.</p>
+<ol>
+  <li>Assurer la sécurité du bateau d'abord : dérouler le foc (c'est la voile qu'on établit le plus vite), ou mouiller si la dérive porte sur un danger.</li>
+  <li>Alarme de température ou d'huile : arrêter le moteur aussitôt. Un moteur qu'on laisse tourner sans refroidissement ou sans huile est détruit en quelques minutes.</li>
+  <li>Prévenir le CF.</li>
+</ol>
+</div>
+
+<h3>Solution : les vérifications simples</h3>
+<p>Un moteur a besoin de carburant, d'air, et de l'allumage (étincelle de bougie sur un moteur à essence, compression et préchauffage sur un diesel), plus le refroidissement.</p>
+<ul>
+  <li><strong>Carburant</strong> : niveau du réservoir, mise à l'air libre du réservoir ouverte, vanne de carburant ouverte (poignée dans l'axe du tuyau), filtre ou décanteur (eau ou dépôts au fond). Un diesel qui s'arrête après avoir aspiré de l'air ou de l'eau doit être purgé : c'est un travail pour quelqu'un qui connaît ce moteur.</li>
+  <li><strong>Électricité</strong> : coupe-batterie en place, batterie chargée (un démarreur qui tourne lentement), coupe-circuit à cordon d'un hors-bord enclenché. Sur un moteur à essence noyé, attendre, puis lancer plein gaz sans starter.</li>
+  <li><strong>Refroidissement</strong> : vanne d'eau de mer ouverte, filtre à eau de mer (souvent bouché par un sac plastique ou des algues), courroie de la pompe intacte. Ne jamais ouvrir le bouchon du circuit d'eau douce d'un moteur chaud : il est sous pression et brûlant.</li>
+  <li><strong>Hélice</strong> : un moteur qui tourne mais ne propulse pas a peut-être un bout dans l'hélice (ci-dessus).</li>
+</ul>
+<p>On ne change aucun réglage et on ne démonte rien sans l'avis du loueur ou du propriétaire.</p>
+
+<div class="box maj"><p class="box-label">Mise à jour.</p>
+<p>La Girafe attribue le non-démarrage d'un diesel à une batterie vide. C'est une cause fréquente, mais un diesel dont le démarreur tourne bien et qui ne part pas manque presque toujours de gasoil (réservoir, filtre bouché, air dans le circuit). Elle confond aussi la courroie de distribution (interne au moteur) avec la courroie d'accessoires (alternateur, pompe à eau), la seule qu'on vérifie à bord ; et le démarreur ne devient pas alternateur : ce sont deux appareils distincts.</p>
+</div>
+
+<h2 id="echouement">Échouement</h2>
+
+<div class="box meth"><p class="box-label">Méthode <span class="box-title">(Réaction immédiate)</span>.</p>
+<ol>
+  <li>Vérifier l'équipage (un échouement brutal fait tomber et projette) et la coque : boulons de quille, fonds, safran. Un échouement sur roche peut ouvrir une voie d'eau.</li>
+  <li>Regarder la marée. Montante : le bateau se libérera seul, il suffit souvent d'attendre en le tenant pour qu'il ne monte pas plus haut. Descendante : il faut se dégager dans les minutes qui suivent, ou se préparer à rester là jusqu'à la marée suivante.</li>
+  <li>Prévenir le CF.</li>
+</ol>
+</div>
+
+<h3>Solution</h3>
+<ul>
+  <li>Repartir par où l'on est venu : c'est là qu'on sait qu'il y a de l'eau.</li>
+  <li>Si le vent pousse sur le haut-fond, affaler ou rouler les voiles : elles enfoncent le bateau. S'il vient du haut-fond, elles peuvent aider à se dégager en le faisant gîter.</li>
+  <li>Faire gîter (équipage groupé d'un côté) diminue le tirant d'eau d'un quillard. Sur un dériveur, relever la dérive (et le safran relevable).</li>
+  <li>Marche arrière au moteur, en surveillant l'eau de refroidissement à l'échappement : en eau peu profonde, la prise d'eau aspire du sable.</li>
+  <li>Porter une ancre en eau profonde (à l'annexe) et se déhaler dessus au winch.</li>
+  <li>Si le bateau reste à sec : le faire se coucher du côté du haut de la pente, le mât vers le haut-fond, pour que la mer qui remonte atteigne la coque avant le pont ; protéger la coque (pare-battages, matelas) ; fermer panneaux et hublots ; vérifier qu'il ne fait pas d'eau quand il se redresse.</li>
+</ul>
+
+<div class="box warn"><p class="box-label">Attention <span class="box-title">(Secours)</span>.</p>
+<p>Le CF. Un MAYDAY seulement si l'échouement met des personnes en danger : houle qui fait taper la coque, voie d'eau, bateau couché que la mer montante risque d'envahir.</p>
+</div>
+
+<h2 id="voile">Voile déchirée, écoute ou drisse cassée</h2>
+
+<ul>
+  <li><strong>Voile déchirée</strong> (accroc, couture qui lâche, latte qui sort) : réduire tout de suite la charge, en choquant, roulant ou affalant. Une petite déchirure dans la brise devient une voile en deux en quelques minutes. Si l'accroc est dans le haut de la grand-voile, prendre un ris le met dans la partie ferlée. Réparation provisoire à l'adhésif de voilerie, des deux côtés, sur une toile sèche.</li>
+  <li><strong>Écoute de foc cassée</strong> : le foc bat violemment et l'écoute fouette. Rouler ou faire faseyer le foc, puis récupérer le point d'écoute calmement, sans aller le chercher à la main pendant qu'il bat, et frapper une nouvelle écoute (nœud de chaise).</li>
+  <li><strong>Drisse cassée</strong> : la voile tombe. L'affaler complètement, la saisir, continuer sous l'autre voile ou au moteur ; une autre drisse (spi, balancine) peut la remplacer pour rentrer.</li>
+</ul>
+
+<h2 id="abordage">Abordage</h2>
+<p>Après une collision : vérifier l'équipage, puis la coque (voie d'eau), le gréement et le safran. Prévenir le CF. Si personne n'est en danger, relever le nom et les coordonnées de l'autre bateau, noter l'heure, la position et les circonstances dans le journal de bord : c'est la pièce qui servira à établir les responsabilités. S'il y a une voie d'eau ou des blessés, on traite comme ci-dessus, et l'on porte assistance à l'autre bateau s'il en a besoin.</p>
+
+<h2 id="blesse">Blessé ou malade</h2>
+
+<div class="box meth"><p class="box-label">Méthode <span class="box-title">(Conduite à tenir)</span>.</p>
+<ol>
+  <li><strong>Protéger</strong> : rendre le bateau stable (à la cape, ou affaler), éviter que la cause frappe à nouveau (bôme, écoute, winch).</li>
+  <li><strong>Examiner</strong> : la victime répond-elle ? Respire-t-elle ? Saigne-t-elle abondamment ? Appliquer les gestes de premiers secours appris au PSC1.</li>
+  <li><strong>Alerter</strong> : MAYDAY si la vie est en jeu (inconscience, arrêt respiratoire, hémorragie qu'on n'arrête pas, traumatisme grave). Sinon, demander un avis médical au CROSS (PAN PAN sur le 16 ou 196) : il met en relation avec le médecin du centre de consultation médicale maritime, qui dira quoi faire et s'il faut évacuer. Prévenir le CF.</li>
+  <li><strong>Surveiller</strong> la victime, la couvrir, la rassurer, noter dans le journal de bord l'heure, ce qui s'est passé, ce qu'on a fait.</li>
+</ol>
+</div>
+
+<div class="tbl-wrap"><table>
+<thead><tr><th>Cas fréquent</th><th>Ce qu'on fait</th></tr></thead>
+<tbody>
+<tr><td>Coup de bôme sur la tête</td><td>Allonger, surveiller. Perte de connaissance même brève, vomissements, somnolence, mal de tête qui augmente, comportement anormal : avis médical sans attendre.</td></tr>
+<tr><td>Plaie qui saigne</td><td>Compression directe avec un tissu propre, sans relâcher. Si le saignement ne s'arrête pas : MAYDAY.</td></tr>
+<tr><td>Doigts pris dans un winch, un taquet, entre bateau et quai</td><td>Libérer en relâchant la charge, jamais en tirant sur la main. Refroidir, immobiliser, avis médical si déformation ou plaie profonde.</td></tr>
+<tr><td>Brûlure</td><td>Refroidir à l'eau tempérée pendant au moins dix minutes ; ne rien appliquer d'autre ; avis médical si elle est étendue, sur le visage, les mains ou les articulations.</td></tr>
+<tr><td>Hypothermie (après une chute à l'eau, ou équipier trempé et immobile)</td><td>À l'abri, vêtements mouillés retirés, couvert, allongé ; boisson chaude sucrée seulement s'il est bien conscient (voir <a href="hlm.html#recuperer">Homme à la mer</a>).</td></tr>
+<tr><td>Coup de chaleur, insolation</td><td>À l'ombre, rafraîchir, faire boire. Prévention : chapeau, crème, eau (2 à 3 litres par personne et par jour).</td></tr>
+<tr><td>Mal de mer</td><td>Regarder l'horizon, barrer, rester dehors au frais et au centre du bateau, manger un peu, boire. Un équipier malade se refroidit, se déshydrate, et peut tomber à l'eau en allant vomir : on l'accompagne, longé, du côté sous le vent. Les « cinq F » (faim, froid, fatigue, frousse, soif) favorisent le mal de mer.</td></tr>
+</tbody></table></div>
+
+<h2 id="remorquage">Remorquage</h2>
+
+<p>Après une avarie de barre, de moteur ou un démâtage, le bateau est souvent ramené en remorque par le CF ou un autre bateau. C'est le bateau remorqueur qui prépare et envoie la remorque et qui coordonne la manœuvre ; le bateau remorqué prépare son point d'attache.</p>
+
+<figure>
+<svg viewBox="0 0 440 170" width="440" role="img" aria-label="Patte d'oie pour un remorquage">
+  <path d="M40 60 L210 60 Q 280 85 210 110 L40 110 Q 28 85 40 60 Z" class="fill-card ln" stroke-width="1.5"/>
+  <g class="fill-ink"><rect x="196" y="62" width="10" height="5"/><rect x="196" y="103" width="10" height="5"/></g>
+  <g class="ln st-navy" stroke-width="2" fill="none">
+    <path d="M201 65 L232 74 L300 85"/>
+    <path d="M201 105 L232 96 L300 85"/>
+    <line x1="300" y1="85" x2="430" y2="85" stroke-dasharray="7 4"/>
+  </g>
+  <circle cx="300" cy="85" r="4" class="fill-navy"/>
+  <g font-size="11">
+    <text x="150" y="52">taquets avant</text>
+    <text x="236" y="64">chaumards</text>
+    <text x="270" y="118">patte d'oie</text>
+    <text x="360" y="76">remorque</text>
+    <text x="70" y="90" class="mut">bateau remorqué</text>
+  </g>
+</svg>
+<figcaption>La patte d'oie répartit l'effort de la remorque sur les deux bords de l'avant et garde le bateau remorqué dans l'axe.</figcaption>
+</figure>
+
+<div class="box meth"><p class="box-label">Méthode <span class="box-title">(Préparer une patte d'oie)</span>.</p>
+<ol>
+  <li>Prendre un bout solide (une amarre). Frapper ses deux extrémités sur deux points d'attache robustes de l'avant, un de chaque bord : les taquets d'amarrage avant, ou un taquet et un winch. Jamais un chandelier, une filière ou le balcon.</li>
+  <li>Faire passer chaque branche dans le chaumard de son bord, et protéger le cordage là où il frotte (chiffon, morceau de tuyau) : une remorque qui rague casse.</li>
+  <li>Les deux branches, de même longueur, forment un V devant l'étrave. La remorque se frappe à la pointe du V (nœud de chaise, manille), de façon à pouvoir la larguer rapidement ; un couteau à portée de main.</li>
+  <li>Préparer des pare-battages pour la fin du remorquage, quand on se mettra à couple dans le port.</li>
+</ol>
+</div>
+
+<div class="box prop"><p class="box-label">Règle <span class="box-title">(Pendant le remorquage)</span>.</p>
+<ul>
+  <li><strong>Longueur de la remorque</strong> : plus la mer est formée, plus elle est longue. L'idéal est que les deux bateaux soient en même temps sur une crête ou dans un creux : la remorque ne passe pas sans cesse de mou à tendu, avec des à-coups qui arrachent les taquets. On la raccourcit à l'approche du port, et l'on finit à couple.</li>
+  <li>Le barreur du bateau remorqué reste à la barre et suit le remorqueur, légèrement décalé de son sillage. Voiles affalées, moteur arrêté sauf consigne.</li>
+  <li>Personne ne tient la remorque à la main ni ne met le pied dessus, personne ne se tient dans son axe : si elle casse ou si un taquet s'arrache, elle revient comme un fouet.</li>
+  <li>Une veille VHF permanente sur le canal convenu, pour régler la vitesse et prévenir de tout problème. Le remorqueur accélère, tourne et ralentit progressivement.</li>
+</ul>
+</div>
+
+<h2 id="abandon">Abandon du navire</h2>
+
+<p>On n'abandonne un bateau qu'en dernier recours : même en mauvais état, il protège mieux et se voit de plus loin qu'un radeau ou que des têtes dans l'eau. La règle des marins : on ne quitte le bateau que pour <em>monter</em> dans le radeau. La décision appartient au chef de bord ; chez les scouts marins, le PE la prend avec le CF s'il est joignable.</p>
+
+<div class="box meth"><p class="box-label">Méthode <span class="box-title">(Si l'abandon devient inévitable)</span>.</p>
+<ol>
+  <li>MAYDAY, en précisant qu'on abandonne le navire, avec la position exacte. Déclencher l'ASN et la balise s'il y en a une.</li>
+  <li>Tout le monde habillé chaudement, gilet capelé et fermé, qu'on ne retire plus.</li>
+  <li>Réunir dans un sac étanche : VHF portable, téléphone, feux à main, lampe, couverture de survie, eau, trousse de secours, journal de bord.</li>
+  <li>S'il y a un radeau de survie : l'amarrer au bateau par sa bosse, le mettre à l'eau sous le vent, tirer sur la bosse jusqu'à ce qu'il se gonfle. Embarquer en restant le plus sec possible ; un équipier solide d'abord pour aider les autres. Rester amarré au bateau tant qu'il flotte et ne menace pas le radeau ; couper la bosse (le radeau a un couteau) s'il coule.</li>
+  <li>Sans radeau (cas fréquent en navigation côtière, où il n'est pas obligatoire) : rester groupés, attachés les uns aux autres, près du bateau ou de ce qui flotte (annexe, bouées, coussins), en position de protection contre le froid.</li>
+</ol>
+</div>
+
+<h2 id="helitreuillage">Hélitreuillage</h2>
+<ul>
+  <li>Suivre les instructions du CROSS et de l'équipage de l'hélicoptère (VHF). Affaler les voiles, dégager le cockpit, tenir le cap demandé.</li>
+  <li>Le treuilliste descend en général un plongeur, qui prend la direction des opérations.</li>
+  <li>Ne jamais saisir le câble ou le crochet avant qu'il ait touché l'eau ou le bateau (il est chargé d'électricité statique) ; ne jamais l'amarrer au bateau.</li>
+  <li>On évacue du plus jeune au chef de bord, dans l'ordre fixé par les sauveteurs.</li>
+</ul>
+
+<div class="box retenir"><p class="box-label">À retenir.</p>
+<ul>
+  <li>Protéger (soi, l'équipage, le bateau), alerter (CF ; CROSS en détresse), agir en répartissant les rôles, surveiller.</li>
+  <li>Voie d'eau : pomper, écoper, goûter, chercher passe-coque par passe-coque, boucher ; MAYDAY si l'eau gagne, avant que les batteries ne soient noyées.</li>
+  <li>Feu : couper gaz, moteur, électricité ; extincteur à la base des flammes ; jamais d'eau sur l'huile, le carburant ou l'électricité.</li>
+  <li>Barre cassée : laisser monter le bateau dans le vent, gouverner aux voiles, jamais au portant ; mouillage frappé avant d'être jeté.</li>
+  <li>Hauban cassé : le mettre sous le vent. Étai : vent arrière. Pataras : au près. Puis une drisse à la place.</li>
+  <li>Démâtage ou bout dans l'hélice : pas de moteur tant qu'un cordage traîne dans l'eau.</li>
+  <li>Remorque : patte d'oie sur deux points solides, protégée du ragage ; d'autant plus longue que la mer est formée.</li>
+</ul>
+</div>
+
+    <nav class="pager"><a class="prev" href="../pratique/hlm.html"><span>Précédent</span>Homme à la mer</a><a class="next" href="../pratique/noeuds.html"><span>Suivant</span>Nœuds et matelotage</a></nav>
+  </article>
+</div>
+</main>
+<footer class="foot">
+  <div class="foot-in">
+    <p class="foot-sign"><svg class="emb" viewBox="0 0 48 58" aria-hidden="true" fill="currentColor"><path d="M24 .5C29 5 30 10.5 24 16.5 18 10.5 19 5 24 .5Z"/><path d="M22.4 15.6C16 16.8 9.8 14.4 9.6 8.6 9.5 5.6 12.2 4.2 14.4 5.6 12.4 6.4 12.1 8.8 13.7 10.5 15.6 12.4 19 13 22.4 12.6Z"/><path d="M25.6 15.6C32 16.8 38.2 14.4 38.4 8.6 38.5 5.6 35.8 4.2 33.6 5.6 35.6 6.4 35.9 8.8 34.3 10.5 32.4 12.4 29 13 25.6 12.6Z"/><rect x="17" y="16" width="14" height="3" rx=".5"/><path d="M19.5 19C18 21.5 19.5 23.5 21.5 22.5L24 21l2.5 1.5c2 1 3.5-1 2-3.5Z"/><rect x="12" y="25" width="24" height="2.8"/><circle cx="12" cy="26.4" r="1.8"/><circle cx="36" cy="26.4" r="1.8"/><rect x="22.6" y="21" width="2.8" height="32"/><path d="M6.5 39C7 49 14.5 55 24 55S41 49 41.5 39" fill="none" stroke="currentColor" stroke-width="2.8"/><path d="M2.5 42.5l4-8 4 8ZM37.5 42.5l4-8 4 8Z"/></svg><span>Bon vent et bonne mer.</span></p>
+    <p>Préparation au brevet de patron d'embarcation et à la navigation à voile. Rédigé à partir des cours de navigation des scouts marins de Brest, mis à jour et complétés.</p>
+    <p>Ce site ne remplace ni la réglementation (Division 240, RIPAM), ni les documents officiels du SHOM, ni le règlement de votre association. En cas de doute, ce sont eux qui font foi.</p>
+  </div>
+</footer>
+<script src="../js/site.js"></script>
+<script type="module" src="../js/auth.js"></script>
+
+</body>
+</html>

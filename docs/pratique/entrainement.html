@@ -6,6 +6,13 @@
 <title>S'entraîner sur l'eau · Patron d'embarcation</title>
 <meta name="description" content="Une progression d'exercices à faire en sortie, du premier bord à la conduite d'une navigation, avec pour chacun l'objectif et le critère de réussite.">
 <link rel="icon" href="../img/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="../img/icon-180.png">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta name="theme-color" content="#11304d">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Patron d'emb.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&display=swap" rel="stylesheet">
@@ -22,18 +29,20 @@
 <a class="skip" href="#contenu">Aller au contenu</a>
 <header class="top">
   <div class="top-in">
-    <a class="brand" href="../index.html">Patron d'embarcation</a>
-    <nav class="mainnav" aria-label="Parties du site"><a href="../cours/index.html">Cours</a><a href="../qcm/index.html">QCM</a><a href="../exercices/index.html">Exercices</a><a href="../pratique/index.html" aria-current="page">Pratique</a><a href="../annales/index.html">Annales</a><a href="../questions/index.html">Questions</a></nav>
+    <a class="brand" href="../index.html"><svg class="emb" viewBox="0 0 48 58" aria-hidden="true" fill="currentColor"><path d="M24 .5C29 5 30 10.5 24 16.5 18 10.5 19 5 24 .5Z"/><path d="M22.4 15.6C16 16.8 9.8 14.4 9.6 8.6 9.5 5.6 12.2 4.2 14.4 5.6 12.4 6.4 12.1 8.8 13.7 10.5 15.6 12.4 19 13 22.4 12.6Z"/><path d="M25.6 15.6C32 16.8 38.2 14.4 38.4 8.6 38.5 5.6 35.8 4.2 33.6 5.6 35.6 6.4 35.9 8.8 34.3 10.5 32.4 12.4 29 13 25.6 12.6Z"/><rect x="17" y="16" width="14" height="3" rx=".5"/><path d="M19.5 19C18 21.5 19.5 23.5 21.5 22.5L24 21l2.5 1.5c2 1 3.5-1 2-3.5Z"/><rect x="12" y="25" width="24" height="2.8"/><circle cx="12" cy="26.4" r="1.8"/><circle cx="36" cy="26.4" r="1.8"/><rect x="22.6" y="21" width="2.8" height="32"/><path d="M6.5 39C7 49 14.5 55 24 55S41 49 41.5 39" fill="none" stroke="currentColor" stroke-width="2.8"/><path d="M2.5 42.5l4-8 4 8ZM37.5 42.5l4-8 4 8Z"/></svg><span class="brand-t"><b>Patron d'embarcation</b><small>Scouts marins · voile</small></span></a>
+    <button class="menu-btn" type="button" aria-expanded="false" aria-controls="mainnav"><span class="burger" aria-hidden="true"><i></i><i></i><i></i></span><span class="menu-l">Menu</span></button>
+    <nav class="mainnav" id="mainnav" aria-label="Parties du site"><a href="../cours/index.html">Cours</a><a href="../qcm/index.html">QCM</a><a href="../exercices/index.html">Exercices</a><a href="../pratique/index.html" aria-current="page">Pratique</a><a href="../cqcf/index.html">CQ / CF</a><a href="../annales/index.html">Annales</a><a href="../questions/index.html">Questions</a></nav>
     <div class="acct" id="acct"></div>
     <button class="theme" type="button" aria-label="Changer de thème" title="Clair / sombre"><svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true"><circle cx="8" cy="8" r="6.5" fill="none" stroke="currentColor" stroke-width="1.3"/><path d="M8 1.5 A6.5 6.5 0 0 1 8 14.5 Z" fill="currentColor"/></svg></button>
   </div>
+  <div class="grad" aria-hidden="true"></div>
 </header>
 <main id="contenu">
 
 <div class="doc">
   <aside class="side">
     <p class="side-h">Pratique</p>
-    <ol class="chapters"><li><a href="../pratique/voilier.html">Le voilier</a></li><li><a href="../pratique/physique.html">Comment avance un voilier</a></li><li><a href="../pratique/reglages.html">Allures et réglages</a></li><li><a href="../pratique/manoeuvres.html">Manœuvres sous voiles</a></li><li><a href="../pratique/port.html">Manœuvres de port</a></li><li><a href="../pratique/mouillage.html">Le mouillage</a></li><li><a href="../pratique/hlm.html">Homme à la mer</a></li><li><a href="../pratique/noeuds.html">Nœuds et matelotage</a></li><li><a href="../pratique/chef-de-bord.html">Conduire une navigation</a></li><li><a href="../pratique/entrainement.html" aria-current="page">S'entraîner sur l'eau</a></li></ol>
+    <ol class="chapters"><li><a href="../pratique/voilier.html">Le voilier</a></li><li><a href="../pratique/bateaux.html">Les bateaux des scouts marins</a></li><li><a href="../pratique/physique.html">Comment avance un voilier</a></li><li><a href="../pratique/reglages.html">Allures et réglages</a></li><li><a href="../pratique/manoeuvres.html">Manœuvres sous voiles</a></li><li><a href="../pratique/port.html">Manœuvres de port</a></li><li><a href="../pratique/mouillage.html">Le mouillage</a></li><li><a href="../pratique/hlm.html">Homme à la mer</a></li><li><a href="../pratique/avaries.html">Avaries et incidents</a></li><li><a href="../pratique/noeuds.html">Nœuds et matelotage</a></li><li><a href="../pratique/chef-de-bord.html">Conduire une navigation</a></li><li><a href="../pratique/entrainement.html" aria-current="page">S'entraîner sur l'eau</a></li><li><a href="../pratique/oral-pe.html">L'oral et la navigation du PE</a></li></ol>
   </aside>
   <article class="chapter">
     <header class="chap-head">
@@ -67,21 +76,25 @@
 <div class="tbl-wrap"><table>
 <thead><tr><th>Exercice</th><th>Déroulement</th><th>Réussi quand…</th></tr></thead>
 <tbody>
+<tr><td><strong>Hisser, affaler, rouler</strong></td><td>Hisser la GV face au vent au moteur, dérouler le foc, puis rouler le foc et affaler. Recommencer en changeant les postes.</td><td>La GV monte à la main jusqu'aux derniers décimètres, le foc se roule serré sans winch, personne n'est dans le passage de la bôme.</td></tr>
 <tr><td><strong>Virements en série</strong></td><td>Dix virements de bord de suite au près, chacun annoncé, chaque équipier changeant de poste tous les deux virements.</td><td>Aucun virement manqué, foc bordé avant de se remplir, vitesse retrouvée en moins de 30 s.</td></tr>
 <tr><td><strong>Empannages contrôlés</strong></td><td>Une série d'empannages au grand largue, GV bordée avant le passage.</td><td>La bôme passe sans claquer ; pas d'auloffée après l'empannage.</td></tr>
+<tr><td><strong>Ciseau</strong></td><td>Cinq minutes au vent arrière, foc en ciseau, chaque équipier à la barre.</td><td>Le foc reste gonflé, aucun empannage involontaire ; le barreur sait dire s'il doit lofer ou abattre.</td></tr>
 <tr><td><strong>Slalom</strong></td><td>Contourner une série de bouées au portant puis au près.</td><td>Trajectoire propre, voiles réglées entre chaque bouée.</td></tr>
 <tr><td><strong>Distance d'arrêt</strong></td><td>Lofer face au vent à une bouée choisie à différentes distances, voiles battantes.</td><td>L'équipage sait de combien de longueurs le bateau court sur son erre, par petit et par bon vent.</td></tr>
-<tr><td><strong>Panne</strong></td><td>Se mettre en panne, rester dix minutes, repartir sur l'une ou l'autre amure.</td><td>Le bateau reste stable sans toucher la barre ; départ propre.</td></tr>
+<tr><td><strong>Panne</strong></td><td>Se mettre en panne (à la cape), rester dix minutes, repartir sur l'une ou l'autre amure. Essayer aussi l'arrêt ralingue.</td><td>Le bateau reste stable au moins une minute sans toucher la barre ; départ propre.</td></tr>
 </tbody></table></div>
 
 <h2 id="etape3">Étape 3 : les manœuvres de sécurité</h2>
 <div class="tbl-wrap"><table>
 <thead><tr><th>Exercice</th><th>Déroulement</th><th>Réussi quand…</th></tr></thead>
 <tbody>
-<tr><td><strong>Prise de ris</strong></td><td>Prendre et larguer le premier ris, au près, chronométré.</td><td>Moins de cinq minutes, voile propre, sans ordre oublié ; chaque équipier sait le faire.</td></tr>
+<tr><td><strong>Prise de ris</strong></td><td>Prendre et larguer le premier ris, au près serré, chronométré.</td><td>Moins de quatre minutes, voile propre, sans ordre oublié ; chaque équipier sait le faire.</td></tr>
 <tr><td><strong>Homme à la mer</strong></td><td>Un objet lesté est jeté à l'eau sans prévenir. L'équipage déroule la procédure complète (cri, bouée, veilleur, MOB, appel VHF simulé) et récupère l'objet.</td><td>Récupération en moins de cinq minutes, aux deux amures et à toutes les allures de départ ; chacun a barré la manœuvre.</td></tr>
 <tr><td><strong>Prise de coffre</strong></td><td>Prendre une bouée à la voile et s'y amarrer, puis appareiller.</td><td>Le bateau s'arrête l'étrave sur la bouée ; aucune approche forcée.</td></tr>
+<tr><td><strong>Accostage</strong></td><td>Accoster à un ponton par vent qui plaque puis par vent qui écarte, postes répartis, puis vérifier l'amarrage.</td><td>Le bateau arrive arrêté, en deux essais au plus, sans que personne saute ni retienne à la main.</td></tr>
 <tr><td><strong>Mouillage</strong></td><td>Mouiller sur un point choisi, vérifier la tenue par des alignements, relever.</td><td>Ancre posée au bon endroit, touée correcte, tenue vérifiée.</td></tr>
+<tr><td><strong>Remorquage</strong></td><td>Préparer une patte d'oie à l'avant et se faire remorquer quelques minutes par le bateau du CF, puis remorquer à son tour.</td><td>Points d'attache solides, ragage protégé, longueur adaptée à la mer, personne dans l'axe de la remorque.</td></tr>
 <tr><td><strong>Avarie</strong></td><td>Le chef annonce une avarie (moteur, safran bloqué, écoute cassée) : l'équipage trouve et applique une solution.</td><td>Le bateau reste maîtrisé ; l'appel VHF adapté est préparé.</td></tr>
 </tbody></table></div>
 
@@ -90,21 +103,27 @@
 <thead><tr><th>Exercice</th><th>Déroulement</th><th>Réussi quand…</th></tr></thead>
 <tbody>
 <tr><td><strong>Le navigateur du jour</strong></td><td>Un équipier prépare seul la route d'une sortie (carte, marée, caps, horaires), la présente, puis la conduit.</td><td>Les points de passage sont reconnus à l'heure prévue, à quelques minutes près.</td></tr>
-<tr><td><strong>Point par relèvements</strong></td><td>Faire un point par trois relèvements toutes les demi-heures et le comparer au GPS.</td><td>Écart inférieur à 0,2 M.</td></tr>
+<tr><td><strong>Point par relèvements</strong></td><td>Faire un point par trois relèvements toutes les demi-heures et le comparer au GPS.</td><td>Point tracé en moins de quatre minutes, écart inférieur à 0,2 M.</td></tr>
+<tr><td><strong>Tenir un alignement</strong></td><td>Suivre un alignement de la carte par l'avant puis par l'arrière, en entrant ou en sortant d'un port.</td><td>Les amers restent l'un derrière l'autre ; la dérive est anticipée ; la veille est tenue par un autre équipier.</td></tr>
 <tr><td><strong>Estime aveugle</strong></td><td>Naviguer une heure sans GPS ni amer (comme dans la brume), à l'estime, puis vérifier.</td><td>L'erreur d'estime est expliquée (courant, dérive mal estimée).</td></tr>
 <tr><td><strong>Patron d'un jour</strong></td><td>Un équipier assure toute la sortie comme chef de bord : briefing, décisions, journal, compte rendu.</td><td>La sortie se déroule sans intervention du chef, ou avec des interventions que l'équipier comprend et accepte.</td></tr>
 </tbody></table></div>
+
+<div class="box meth"><p class="box-label">Méthode <span class="box-title">(Préparer l'examen)</span>.</p>
+<p>Pour un candidat au PE, l'étape 4 se complète d'oraux blancs : préparer en 30 minutes la navigation de la sortie du lendemain, la présenter en dix minutes à un chef, puis répondre à une situation d'avarie. La trame et des questions types sont dans la page <a href="oral-pe.html">L'oral et la navigation du PE</a>.</p>
+</div>
 
 <div class="box scout"><p class="box-label">Scoutisme marin.</p>
 <p>Ces exercices recoupent les épreuves des brevets de vigie-timonier, gabier, manœuvrier et navigateur, et les compétences attendues pour le brevet de patron d'embarcation. Un carnet de progression où chacun note les exercices réussis permet au chef de flottille de suivre la préparation de l'équipage.</p>
 </div>
 
-    <nav class="pager"><a class="prev" href="../pratique/chef-de-bord.html"><span>Précédent</span>Conduire une navigation</a><span></span></nav>
+    <nav class="pager"><a class="prev" href="../pratique/chef-de-bord.html"><span>Précédent</span>Conduire une navigation</a><a class="next" href="../pratique/oral-pe.html"><span>Suivant</span>L'oral et la navigation du PE</a></nav>
   </article>
 </div>
 </main>
 <footer class="foot">
   <div class="foot-in">
+    <p class="foot-sign"><svg class="emb" viewBox="0 0 48 58" aria-hidden="true" fill="currentColor"><path d="M24 .5C29 5 30 10.5 24 16.5 18 10.5 19 5 24 .5Z"/><path d="M22.4 15.6C16 16.8 9.8 14.4 9.6 8.6 9.5 5.6 12.2 4.2 14.4 5.6 12.4 6.4 12.1 8.8 13.7 10.5 15.6 12.4 19 13 22.4 12.6Z"/><path d="M25.6 15.6C32 16.8 38.2 14.4 38.4 8.6 38.5 5.6 35.8 4.2 33.6 5.6 35.6 6.4 35.9 8.8 34.3 10.5 32.4 12.4 29 13 25.6 12.6Z"/><rect x="17" y="16" width="14" height="3" rx=".5"/><path d="M19.5 19C18 21.5 19.5 23.5 21.5 22.5L24 21l2.5 1.5c2 1 3.5-1 2-3.5Z"/><rect x="12" y="25" width="24" height="2.8"/><circle cx="12" cy="26.4" r="1.8"/><circle cx="36" cy="26.4" r="1.8"/><rect x="22.6" y="21" width="2.8" height="32"/><path d="M6.5 39C7 49 14.5 55 24 55S41 49 41.5 39" fill="none" stroke="currentColor" stroke-width="2.8"/><path d="M2.5 42.5l4-8 4 8ZM37.5 42.5l4-8 4 8Z"/></svg><span>Bon vent et bonne mer.</span></p>
     <p>Préparation au brevet de patron d'embarcation et à la navigation à voile. Rédigé à partir des cours de navigation des scouts marins de Brest, mis à jour et complétés.</p>
     <p>Ce site ne remplace ni la réglementation (Division 240, RIPAM), ni les documents officiels du SHOM, ni le règlement de votre association. En cas de doute, ce sont eux qui font foi.</p>
   </div>

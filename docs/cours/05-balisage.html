@@ -6,6 +6,13 @@
 <title>Le balisage · Patron d'embarcation</title>
 <meta name="description" content="Le système de balisage AISM (région A) : marques latérales, cardinales, danger isolé, eaux saines, spéciales, danger nouveau ; balisage des plages ; caractéristiques des feux.">
 <link rel="icon" href="../img/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="../img/icon-180.png">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta name="theme-color" content="#11304d">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Patron d'emb.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&display=swap" rel="stylesheet">
@@ -22,11 +29,13 @@
 <a class="skip" href="#contenu">Aller au contenu</a>
 <header class="top">
   <div class="top-in">
-    <a class="brand" href="../index.html">Patron d'embarcation</a>
-    <nav class="mainnav" aria-label="Parties du site"><a href="../cours/index.html" aria-current="page">Cours</a><a href="../qcm/index.html">QCM</a><a href="../exercices/index.html">Exercices</a><a href="../pratique/index.html">Pratique</a><a href="../annales/index.html">Annales</a><a href="../questions/index.html">Questions</a></nav>
+    <a class="brand" href="../index.html"><svg class="emb" viewBox="0 0 48 58" aria-hidden="true" fill="currentColor"><path d="M24 .5C29 5 30 10.5 24 16.5 18 10.5 19 5 24 .5Z"/><path d="M22.4 15.6C16 16.8 9.8 14.4 9.6 8.6 9.5 5.6 12.2 4.2 14.4 5.6 12.4 6.4 12.1 8.8 13.7 10.5 15.6 12.4 19 13 22.4 12.6Z"/><path d="M25.6 15.6C32 16.8 38.2 14.4 38.4 8.6 38.5 5.6 35.8 4.2 33.6 5.6 35.6 6.4 35.9 8.8 34.3 10.5 32.4 12.4 29 13 25.6 12.6Z"/><rect x="17" y="16" width="14" height="3" rx=".5"/><path d="M19.5 19C18 21.5 19.5 23.5 21.5 22.5L24 21l2.5 1.5c2 1 3.5-1 2-3.5Z"/><rect x="12" y="25" width="24" height="2.8"/><circle cx="12" cy="26.4" r="1.8"/><circle cx="36" cy="26.4" r="1.8"/><rect x="22.6" y="21" width="2.8" height="32"/><path d="M6.5 39C7 49 14.5 55 24 55S41 49 41.5 39" fill="none" stroke="currentColor" stroke-width="2.8"/><path d="M2.5 42.5l4-8 4 8ZM37.5 42.5l4-8 4 8Z"/></svg><span class="brand-t"><b>Patron d'embarcation</b><small>Scouts marins · voile</small></span></a>
+    <button class="menu-btn" type="button" aria-expanded="false" aria-controls="mainnav"><span class="burger" aria-hidden="true"><i></i><i></i><i></i></span><span class="menu-l">Menu</span></button>
+    <nav class="mainnav" id="mainnav" aria-label="Parties du site"><a href="../cours/index.html" aria-current="page">Cours</a><a href="../qcm/index.html">QCM</a><a href="../exercices/index.html">Exercices</a><a href="../pratique/index.html">Pratique</a><a href="../cqcf/index.html">CQ / CF</a><a href="../annales/index.html">Annales</a><a href="../questions/index.html">Questions</a></nav>
     <div class="acct" id="acct"></div>
     <button class="theme" type="button" aria-label="Changer de thème" title="Clair / sombre"><svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true"><circle cx="8" cy="8" r="6.5" fill="none" stroke="currentColor" stroke-width="1.3"/><path d="M8 1.5 A6.5 6.5 0 0 1 8 14.5 Z" fill="currentColor"/></svg></button>
   </div>
+  <div class="grad" aria-hidden="true"></div>
 </header>
 <main id="contenu">
 
@@ -41,7 +50,7 @@
       <h1>Le balisage</h1>
       <p class="chap-desc">Le système de balisage AISM (région A) : marques latérales, cardinales, danger isolé, eaux saines, spéciales, danger nouveau ; balisage des plages ; caractéristiques des feux.</p>
     </header>
-    <details class="toc-box" open><summary>Sommaire du chapitre</summary><ol class="toc"><li><a href="#systeme"><span class="tocnum">5.1</span>Le système AISM</a></li><li><a href="#laterales"><span class="tocnum">5.2</span>Les marques latérales</a><ol><li><a href="#bifurcation-et-chenal-prefere"><span class="tocnum">5.2.1</span>Bifurcation et chenal préféré</a></li></ol></li><li><a href="#cardinales"><span class="tocnum">5.3</span>Les marques cardinales</a><ol><li><a href="#retenir-les-voyants-et-les-couleurs"><span class="tocnum">5.3.1</span>Retenir les voyants et les couleurs</a></li><li><a href="#les-feux-des-cardinales"><span class="tocnum">5.3.2</span>Les feux des cardinales</a></li></ol></li><li><a href="#danger-isole"><span class="tocnum">5.4</span>Danger isolé</a></li><li><a href="#eaux-saines"><span class="tocnum">5.5</span>Eaux saines</a></li><li><a href="#speciales"><span class="tocnum">5.6</span>Marques spéciales</a></li><li><a href="#danger-nouveau"><span class="tocnum">5.7</span>Danger nouveau</a></li><li><a href="#plages"><span class="tocnum">5.8</span>Le balisage des plages</a></li><li><a href="#feux"><span class="tocnum">5.9</span>Les feux</a><ol><li><a href="#les-secteurs"><span class="tocnum">5.9.1</span>Les secteurs</a></li><li><a href="#portee"><span class="tocnum">5.9.2</span>Portée</a></li></ol></li></ol></details>
+    <details class="toc-box" open><summary>Sommaire du chapitre</summary><ol class="toc"><li><a href="#systeme"><span class="tocnum">5.1</span>Le système AISM</a></li><li><a href="#laterales"><span class="tocnum">5.2</span>Les marques latérales</a><ol><li><a href="#bifurcation-et-chenal-prefere"><span class="tocnum">5.2.1</span>Bifurcation et chenal préféré</a></li></ol></li><li><a href="#cardinales"><span class="tocnum">5.3</span>Les marques cardinales</a><ol><li><a href="#retenir-les-voyants-et-les-couleurs"><span class="tocnum">5.3.1</span>Retenir les voyants et les couleurs</a></li><li><a href="#les-feux-des-cardinales"><span class="tocnum">5.3.2</span>Les feux des cardinales</a></li></ol></li><li><a href="#danger-isole"><span class="tocnum">5.4</span>Danger isolé</a></li><li><a href="#eaux-saines"><span class="tocnum">5.5</span>Eaux saines</a></li><li><a href="#speciales"><span class="tocnum">5.6</span>Marques spéciales</a></li><li><a href="#danger-nouveau"><span class="tocnum">5.7</span>Danger nouveau</a></li><li><a href="#plages"><span class="tocnum">5.8</span>Le balisage des plages</a></li><li><a href="#feux"><span class="tocnum">5.9</span>Les feux</a><ol><li><a href="#les-secteurs"><span class="tocnum">5.9.1</span>Les secteurs</a></li><li><a href="#phare-carte"><span class="tocnum">5.9.2</span>Lire un phare sur la carte</a></li><li><a href="#portee"><span class="tocnum">5.9.3</span>Portée</a></li></ol></li></ol></details>
     <h2 id="systeme"><span class="secnum">5.1</span>Le système AISM</h2>
 
 <p>Le balisage est le langage par lequel l'autorité maritime signale les dangers et indique les passages. Il est fixé au niveau mondial par l'Association internationale de signalisation maritime (AISM, ou IALA en anglais). Deux variantes coexistent : la <dfn>région A</dfn> (Europe, Afrique, la plus grande partie de l'Asie et l'Océanie) et la <dfn>région B</dfn> (Amériques, Japon, Corée, Philippines), où les couleurs des marques latérales sont inversées. Tout ce qui suit concerne la région A.</p>
@@ -267,7 +276,7 @@
 <h2 id="danger-nouveau"><span class="secnum">5.7</span>Danger nouveau</h2>
 <div class="two">
 <div>
-<p>Un <dfn>danger nouveau</dfn> est un danger qui n'est pas encore porté sur les cartes : épave récente, banc de sable qui s'est formé. Depuis 2006, il est signalé par une <dfn>bouée d'urgence d'épave</dfn> à bandes verticales bleues et jaunes, voyant en croix droite (+) jaune, feu alternativement bleu et jaune (Al.Bu.Y). Avant cette marque, on doublait la marque normale (deux cardinales identiques côte à côte, par exemple) ; cette pratique peut encore se rencontrer.</p>
+<p>Un <dfn>danger nouveau</dfn> est un danger qui n'est pas encore porté sur les cartes : épave récente, banc de sable qui s'est formé. Depuis 2006, il est signalé par une <dfn>bouée d'urgence d'épave</dfn> à bandes verticales bleues et jaunes, voyant en croix droite (+) jaune, feu alternativement bleu et jaune (Al.Bu.Y). On peut aussi signaler un danger nouveau en <strong>doublant</strong> la marque normale (deux cardinales identiques, par exemple) : cette possibilité existe toujours dans le système AISM.</p>
 <p><span class="feu" data-r="Al" data-c="Bu,Y" data-p="3"><span class="lamp" aria-hidden="true"><i></i></span><span class="lbl">Al.Bu.Y</span></span></p>
 </div>
 <div class="figrow"><div><svg class="balise" viewBox="0 0 100 165" width="100" height="165" role="img" aria-label="Danger nouveau (bouée d’urgence d’épave)" xmlns="http://www.w3.org/2000/svg"><title>Danger nouveau (bouée d’urgence d’épave)</title>
@@ -283,7 +292,7 @@
 </div>
 
 <h2 id="plages"><span class="secnum">5.8</span>Le balisage des plages</h2>
-<p>Le long des plages s'étend la <dfn>bande des 300 m</dfn>, mesurée depuis la limite des eaux. Sa limite est souvent matérialisée par des bouées sphériques jaunes. Dans cette bande, la vitesse est limitée à 5 nd, et les zones réservées à la baignade (délimitées par des bouées jaunes) sont interdites aux engins et embarcations.</p>
+<p>Le long des plages s'étend la <dfn>bande des 300 m</dfn>, mesurée depuis la limite des eaux. Sa limite est souvent matérialisée par des bouées sphériques jaunes. Dans cette bande, la vitesse est limitée à 5 nd, même là où aucune bouée ne la matérialise, et les zones réservées à la baignade, délimitées par des lignes de petites bouées sphériques jaunes rapprochées, sont interdites aux engins et embarcations. Ce balisage, fixé par les arrêtés des préfets maritimes et des maires, ne fait pas partie du système AISM ; ses marques ne sont en général pas lumineuses.</p>
 <p>Pour rejoindre la plage, les embarcations empruntent des <dfn>chenaux traversiers</dfn> : bouées jaunes, coiffées d'un voyant cylindrique rouge à bâbord et conique vert à tribord, en entrant vers la plage.</p>
 
 <figure>
@@ -326,7 +335,7 @@
 
 <p>De nuit, une marque se reconnaît à la couleur et au rythme de son feu. La carte et le livre des feux les décrivent avec une notation normalisée, par exemple :</p>
 <p class="formula"><span class="mono">Fl(3) WRG 12s 15m 11-8M</span></p>
-<p>qui se lit : trois éclats groupés (Fl(3)), à secteurs blanc, rouge et vert (WRG), période 12 secondes, feu situé à 15 m au-dessus des plus hautes mers, portée 11 milles pour le blanc et 8 milles pour les couleurs.</p>
+<p>qui se lit : trois éclats groupés (Fl(3)), à secteurs blanc, rouge et vert (WRG), période 12 secondes, feu situé à 15 m au-dessus du niveau des pleines mers de vives eaux moyennes (coefficient 95), portée 11 milles pour le blanc et 8 milles pour les couleurs.</p>
 
 <div class="tbl-wrap"><table>
 <thead><tr><th>Notation</th><th>Nom</th><th>Description</th><th>Exemple</th></tr></thead>
@@ -356,7 +365,15 @@
 <p>Depuis la position de 7 h 06, on voit le phare d'Argol (Hoëdic) dans son secteur blanc. Ses secteurs blancs encadrent un secteur vert : si l'on ne voyait que la couleur blanche, on saurait seulement que le courant nous a déportés soit à l'Est soit à l'Ouest du secteur vert.</p>
 </div>
 
-<h3 id="portee"><span class="secnum">5.9.2</span>Portée</h3>
+<h3 id="phare-carte"><span class="secnum">5.9.2</span>Lire un phare sur la carte</h3>
+<p>Sur la carte, un feu est signalé par une tache magenta en forme de flamme, posée sur le point exact du feu (étoile ou point pour un phare, symbole de la bouée ou de la tourelle sinon). À côté figurent, toujours dans le même ordre : le rythme, la couleur (W est souvent omis pour un feu blanc), la période, l'élévation du foyer et la portée. Le livre des feux donne en plus la hauteur de la tour, sa description de jour et les limites précises des secteurs.</p>
+
+<div class="box ex"><p class="box-label">Exemple 5.7 <span class="box-title">(annales)</span>.</p>
+<p>Un phare porte sur la carte l'indication <span class="mono">Fl(2) 10s 87m 25M</span> : feu blanc à deux éclats groupés, revenant toutes les 10 secondes, foyer à 87 m au-dessus des pleines mers de vives eaux moyennes, portée nominale 25 milles. C'est un feu <strong>à éclats</strong> (et non isophase ni à occultations). <span class="feu" data-r="Fl(2)" data-c="W" data-p="10"><span class="lamp" aria-hidden="true"><i></i></span><span class="lbl">Fl(2) 10s</span></span></p>
+<p>Une bouée marquée <span class="mono">Fl G 4s</span> avec une flamme magenta est une bouée lumineuse à feu vert, un éclat toutes les 4 secondes. Sans flamme ni indication de feu, la marque n'est pas éclairée : on ne la verra pas de nuit.</p>
+</div>
+
+<h3 id="portee"><span class="secnum">5.9.3</span>Portée</h3>
 <p>La <dfn>portée nominale</dfn> donnée sur la carte est la distance à laquelle le feu est visible par une nuit claire (visibilité météorologique de 10 M). La rotondité de la Terre limite aussi la distance : la <dfn>portée géographique</dfn> vaut environ</p>
 <p class="formula"><var>D</var> (M) ≈ 2,1 (√<var>H</var> + √<var>e</var>),</p>
 <p>avec <var>H</var> la hauteur du feu et <var>e</var> la hauteur de l'œil de l'observateur, en mètres. Pour un feu à 25 m vu d'un petit voilier (œil à 2 m) : 2,1 × (5 + 1,4) ≈ 13 M. Par temps de brume, la portée chute.</p>
@@ -377,6 +394,7 @@
 </main>
 <footer class="foot">
   <div class="foot-in">
+    <p class="foot-sign"><svg class="emb" viewBox="0 0 48 58" aria-hidden="true" fill="currentColor"><path d="M24 .5C29 5 30 10.5 24 16.5 18 10.5 19 5 24 .5Z"/><path d="M22.4 15.6C16 16.8 9.8 14.4 9.6 8.6 9.5 5.6 12.2 4.2 14.4 5.6 12.4 6.4 12.1 8.8 13.7 10.5 15.6 12.4 19 13 22.4 12.6Z"/><path d="M25.6 15.6C32 16.8 38.2 14.4 38.4 8.6 38.5 5.6 35.8 4.2 33.6 5.6 35.6 6.4 35.9 8.8 34.3 10.5 32.4 12.4 29 13 25.6 12.6Z"/><rect x="17" y="16" width="14" height="3" rx=".5"/><path d="M19.5 19C18 21.5 19.5 23.5 21.5 22.5L24 21l2.5 1.5c2 1 3.5-1 2-3.5Z"/><rect x="12" y="25" width="24" height="2.8"/><circle cx="12" cy="26.4" r="1.8"/><circle cx="36" cy="26.4" r="1.8"/><rect x="22.6" y="21" width="2.8" height="32"/><path d="M6.5 39C7 49 14.5 55 24 55S41 49 41.5 39" fill="none" stroke="currentColor" stroke-width="2.8"/><path d="M2.5 42.5l4-8 4 8ZM37.5 42.5l4-8 4 8Z"/></svg><span>Bon vent et bonne mer.</span></p>
     <p>Préparation au brevet de patron d'embarcation et à la navigation à voile. Rédigé à partir des cours de navigation des scouts marins de Brest, mis à jour et complétés.</p>
     <p>Ce site ne remplace ni la réglementation (Division 240, RIPAM), ni les documents officiels du SHOM, ni le règlement de votre association. En cas de doute, ce sont eux qui font foi.</p>
   </div>

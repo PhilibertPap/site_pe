@@ -63,7 +63,7 @@
 
 <h2 id="speciaux">Navires particuliers</h2>
 
-<p>Les navires qui manœuvrent difficilement (chapitre 6) l'annoncent par des feux visibles sur tout l'horizon, disposés verticalement, et de jour par des marques noires. S'ils ont de l'erre, ils montrent en plus leurs feux de côté et de poupe ; les navires à capacité restreinte et handicapés par leur tirant d'eau montrent aussi leur feu de mât, pas le navire non maître de sa manœuvre.</p>
+<p>Les navires qui manœuvrent difficilement (chapitre 6) l'annoncent par des feux visibles sur tout l'horizon, disposés verticalement, et de jour par des marques noires. S'ils ont de l'erre, ils montrent en plus leurs feux de côté et de poupe ; les navires à capacité restreinte et handicapés par leur tirant d'eau montrent aussi leur feu de mât, pas le navire non maître de sa manœuvre. Un chalutier peut montrer un feu de mât, en arrière et au-dessus de son feu vert (obligatoire au-delà de 50 m) ; un autre navire en pêche n'en montre pas.</p>
 
 <div class="tbl-wrap"><table>
 <thead><tr><th>Situation</th><th>Jour</th><th>Nuit</th><th>À retenir</th></tr></thead>
@@ -80,6 +80,10 @@
 <tr><td><strong>Remorquage</strong></td><td><x-marques seq="losange" w="34" /></td><td><x-nuit preset="remorqueur-face" w="110" /></td><td>losange si la remorque dépasse 200 m ; deux feux de mât superposés (trois au-delà de 200 m), feu jaune de remorquage au-dessus du feu de poupe</td></tr>
 <tr><td><strong>Déminage</strong></td><td>trois boules en triangle</td><td><x-nuit preset="deminage-face" w="110" /></td><td>trois feux verts ; rester à plus de 1 000 m</td></tr>
 </tbody></table></div>
+
+<div class="box rem" data-title="petits bateaux">
+<p>Un navire de moins de 7 m au mouillage, hors d'un chenal, d'un mouillage fréquenté ou d'une zone où les navires passent habituellement, n'est pas tenu de montrer le feu ni la boule de mouillage. Un navire de moins de 12 m échoué est dispensé des feux et marques d'échouement. Un voilier scout de 7 m ou plus au mouillage montre donc son feu blanc visible sur tout l'horizon.</p>
+</div>
 
 <div class="box meth" data-title="Moyens mnémotechniques">
 <ul>
@@ -147,6 +151,10 @@
 <tr><td><x-port seq="R,R,R" exempt="Y" w="40" /></td><td>Feu jaune à gauche du feu supérieur : le signal ne s'applique pas aux navires qui naviguent en dehors du chenal principal (typiquement les petits bateaux).</td></tr>
 </tbody></table></div>
 
+<p>Dans les ports, un navire qui charge, décharge ou transporte des matières dangereuses le signale de jour par le pavillon B, de nuit par un feu rouge visible sur tout l'horizon. Ce signal relève des règlements portuaires, pas du RIPAM : on s'en tient à l'écart. <x-nuit preset="dangereux" w="110" /></p>
+
+<p>Les <dfn>sémaphores</dfn> de la Marine nationale, postés sur les caps, surveillent la côte à vue et veillent le canal 16. Ils hissaient autrefois des signaux d'avis de coup de vent, que l'on rencontre encore dans les QCM (<a href="08-meteo.html#semaphores">chapitre 8</a>).</p>
+
 <h2 id="pavillons">Quelques pavillons</h2>
 
 <p>Le code international des signaux attribue à chaque lettre un pavillon et une signification quand il est hissé seul. Quelques-uns sont à connaître.</p>
@@ -159,6 +167,22 @@
   <div><x-pavillon code="C" />C : oui</div>
   <div><x-pavillon code="N" />N : non</div>
   <div><x-pavillon code="NC" w="54" />N sur C :<br><span class="muted">détresse</span></div>
+</div>
+
+<p>D'autres lettres hissées seules sont utiles à reconnaître :</p>
+<div class="tbl-wrap"><table>
+<thead><tr><th>Lettre</th><th>Signification</th><th>Lettre</th><th>Signification</th></tr></thead>
+<tbody>
+<tr><td>D</td><td>Écartez-vous de moi, je manœuvre avec difficulté.</td><td>P</td><td>Au port : le navire va appareiller, tout le monde à bord.</td></tr>
+<tr><td>E</td><td>Je viens sur tribord.</td><td>S</td><td>Je bats en arrière.</td></tr>
+<tr><td>I</td><td>Je viens sur bâbord.</td><td>U</td><td>Vous courez vers un danger.</td></tr>
+<tr><td>K</td><td>Je désire communiquer avec vous.</td><td>W</td><td>J'ai besoin d'assistance médicale.</td></tr>
+<tr><td>L</td><td>Stoppez immédiatement votre navire.</td><td>Y</td><td>Je chasse sur mon ancre.</td></tr>
+<tr><td>Q</td><td>Mon navire est indemne, je demande la libre pratique.</td><td>Z</td><td>J'ai besoin d'un remorqueur.</td></tr>
+</tbody></table></div>
+
+<div class="box warn">
+<p>N seul signifie « non » et C seul « oui ». C'est la paire N au-dessus de C qui signale la détresse ; V seul demande assistance, sans détresse.</p>
 </div>
 
 <div class="box prop" data-title="Plongée">
@@ -178,6 +202,7 @@
   <li>des flammes sur le navire (un seau d'huile qui brûle, par exemple) ;</li>
   <li>le déclenchement d'une balise de détresse (EPIRB, PLB).</li>
 </ul>
+<p>Un miroir de signalisation ou une lampe servent à attirer l'attention ; ils ne deviennent un signal de détresse que s'ils transmettent SOS en morse. Inversement, un signal de détresse ne s'emploie qu'en détresse : une fusée tirée pour s'amuser déclenche des recherches, et un soir de feux d'artifice personne ne la remarquera. On alerte d'abord par la VHF.</p>
 
 <div class="box prop" data-title="Assistance">
 <p>Tout capitaine ou chef de bord est tenu de porter assistance à toute personne en danger de disparaître en mer, dans la mesure où il peut le faire sans danger grave pour son navire et son équipage. Il prévient le CROSS (chapitre 9).</p>
@@ -186,7 +211,7 @@
 <div class="box meth" data-title="Utiliser les signaux pyrotechniques">
 <ul>
   <li>Un <strong>feu à main</strong> se tient à bout de bras, <strong>sous le vent</strong> du bateau, avec un gant ou un chiffon mouillé : il projette des scories brûlantes. Il est visible environ 3 M, pendant une minute.</li>
-  <li>Une <strong>fusée à parachute</strong> monte à 300 m et se voit à plus de 20 M par temps clair. On la tire légèrement au vent, pour que le parachute dérive au-dessus du bateau.</li>
+  <li>Une <strong>fusée à parachute</strong> monte à 300 m et se voit à plus de 20 M par temps clair. On la tire vers le haut, bras tendu, en suivant les pictogrammes de la notice (l'inclinaison conseillée par vent fort varie selon les fabricants), jamais en direction d'un navire ou d'un aéronef.</li>
   <li>Un <strong>fumigène orange</strong> se voit de jour, surtout d'un hélicoptère, mais le vent l'écrase.</li>
   <li>On ne tire pas tout d'un coup : on garde des signaux pour le moment où un navire ou un aéronef est en vue. Les feux périmés se rapportent au magasin d'accastillage ; on ne les tire jamais pour essayer.</li>
 </ul>

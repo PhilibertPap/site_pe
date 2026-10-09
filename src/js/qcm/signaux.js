@@ -126,4 +126,79 @@ export default [
     c: ['Est tenu de lui porter assistance, s’il peut le faire sans danger grave pour son navire et son équipage', 'N’a aucune obligation', 'Doit seulement prévenir la capitainerie', 'Doit lui porter assistance seulement s’il est à moins de 2 milles'], a: 0,
     e: 'L’obligation d’assistance aux personnes en danger est une règle fondamentale du droit maritime ; s’y soustraire est un délit.', ref: R + '#detresse',
   },
+  {
+    id: 's26', q: 'Parmi ces signaux, lequel est un signal de détresse ?', src: 'annale 2018',
+    c: ['Un son continu de corne de brume', 'Au moins cinq sons brefs', 'Trois sons brefs', 'Deux sons prolongés'], a: 0,
+    e: 'Le son continu figure dans les signaux de détresse (RIPAM, annexe IV). Cinq brefs : signal de doute ; trois brefs : je bats en arrière ; deux prolongés : navire à moteur stoppé dans la brume.', ref: R + '#detresse',
+  },
+  {
+    id: 's27', q: 'Lequel de ces signaux n’est PAS un signal de détresse ?', src: 'annale 2020',
+    c: ['Deux sons prolongés toutes les deux minutes', 'Un pavillon carré avec une boule au-dessus ou au-dessous', 'SOS en morse, avec une lampe ou un miroir', 'MAYDAY à la VHF'], a: 0,
+    e: 'Deux sons prolongés toutes les 2 minutes : navire à moteur stoppé, par visibilité réduite. Les trois autres sont des signaux de détresse.', ref: R + '#detresse',
+  },
+  {
+    id: 's28', q: 'Un feu automatique à main est :', src: 'annale 2015',
+    c: ['Un engin tenu à la main qui produit une lumière rouge vive', 'Une fusée qui monte à 300 m sous parachute', 'Un fumigène orange flottant', 'Une lampe flash blanche'], a: 0,
+    e: 'Il se voit à environ 3 milles et brûle une minute. La fusée à parachute monte à 300 m ; le fumigène se voit surtout de jour.', ref: R + '#detresse',
+  },
+  {
+    id: 's29', q: 'On tire une fusée à parachute :',
+    c: ['Bras tendu, vers le haut, quand un navire ou un aéronef peut la voir', 'À l’horizontale, en visant le navire qu’on veut alerter', 'Le plus tôt possible, même sans personne en vue', 'Dans le bateau, sous le vent du génois'], a: 0,
+    e: 'Elle monte à environ 300 m et se voit à plus de 20 M par temps clair. On la tire vers le haut, bras tendu, en suivant les pictogrammes de la notice, et on la garde pour le moment où quelqu’un peut la voir. Jamais vers un navire ou un aéronef.', ref: R + '#detresse',
+  },
+  {
+    id: 's30', q: 'Vous êtes en détresse avec trois feux à main. Un navire passe au loin sans vous voir :',
+    c: ['J’en allume un quand il peut le voir, et je garde les autres', 'J’allume les trois en même temps pour être bien vu', 'Je les garde : un feu à main ne se voit que de jour', 'Je les allume l’un après l’autre tout de suite, même s’il est trop loin'], a: 0,
+    e: 'Un feu à main se voit à environ 3 M et dure une minute : on le réserve au moment où un navire ou un aéronef est assez près pour le voir.', ref: R + '#detresse',
+  },
+  {
+    id: 's31', q: 'Un fumigène orange est surtout efficace :',
+    c: ['De jour, pour être repéré d’un hélicoptère ou d’un avion', 'De nuit', 'Par vent fort', 'À plus de 20 milles'], a: 0,
+    e: 'La fumée orange se voit bien d’en haut, de jour, mais le vent l’écrase. De nuit, on utilise feux à main et fusées.', ref: R + '#detresse',
+  },
+  {
+    id: 's32', q: 'Dans la brume, juste après le signal long-bref-bref d’un remorqueur, vous entendez ce signal :', fig: { k: 'son', v: '-...' },
+    c: ['Le navire remorqué, qui a un équipage', 'Un second remorqueur', 'Un navire au mouillage', 'Un navire en détresse'], a: 0,
+    e: 'Un prolongé et trois brefs : navire remorqué (s’il a du monde à bord), émis juste après le signal du remorqueur. Il rappelle qu’une remorque relie les deux.', ref: R + '#sonores',
+  },
+  {
+    id: 's33', q: 'Dans la brume, un navire émet ce signal en plus de son signal de brume habituel :', fig: { k: 'son', v: '....' },
+    c: ['C’est un bateau pilote en service', 'Il est en détresse', 'Il doute de vos intentions', 'Il est échoué'], a: 0,
+    e: 'Quatre sons brefs : signal d’identification du bateau pilote. À ne pas confondre avec cinq brefs ou plus, signal de doute.', ref: R + '#sonores',
+  },
+  {
+    id: 's34', q: 'Dans la brume, un navire au mouillage peut, en plus de sa cloche, émettre ce signal :', fig: { k: 'son', v: '.-.' },
+    c: ['Pour avertir un navire qui s’approche de sa position', 'Pour annoncer qu’il vient sur tribord', 'Pour demander assistance', 'Pour annoncer qu’il appareille'], a: 0,
+    e: 'Bref-prolongé-bref : « attention, je suis mouillé ici », pour prévenir un navire qui risque de l’aborder.', ref: R + '#sonores',
+  },
+  {
+    id: 's35', q: 'Dans la brume, vous entendez une cloche tintée rapidement, suivie aussitôt d’un gong :', fig: { k: 'son', v: 'bg' },
+    c: ['Un navire de 100 m ou plus au mouillage', 'Un navire à moteur sans erre', 'Un voilier faisant route', 'Un navire qui bat en arrière'], a: 0,
+    e: 'Cloche à l’avant, puis gong à l’arrière : grand navire au mouillage. L’échoué ajoute trois coups de cloche distincts avant et après.', ref: R + '#sonores',
+  },
+  {
+    id: 's36', q: 'Votre voilier de 8 m n’a pas de corne de brume réglementaire. Dans la brume, vous devez :',
+    c: ['Émettre un autre signal sonore efficace, au moins toutes les 2 minutes', 'Ne rien émettre : sous 12 m, on est dispensé de tout', 'Émettre seulement si vous entendez un autre navire', 'Seulement allumer vos feux'], a: 0,
+    e: 'Règle 35 : sous 12 m, on n’est pas tenu aux signaux réglementaires, mais on doit alors faire entendre un autre signal sonore efficace, à intervalles de 2 minutes au plus.', ref: R + '#sonores',
+  },
+  {
+    id: 's37', q: 'Dans la brume, vous affalez et faites route au moteur. Votre signal de brume devient :',
+    c: ['Un son prolongé, au moins toutes les 2 minutes', 'Un prolongé et deux brefs, toutes les 2 minutes', 'Deux sons prolongés, toutes les 2 minutes', 'Une cloche, toutes les minutes'], a: 0,
+    e: 'Au moteur avec de l’erre : un prolongé. À la voile : prolongé-bref-bref. Moteur stoppé, sans erre : deux prolongés.', ref: R + '#sonores',
+  },
+  {
+    id: 's38', q: 'Dans un chenal, vous émettez deux sons prolongés et un bref pour dépasser un navire par son tribord. Il répond par au moins cinq sons brefs :', src: 'annale 2016',
+    c: ['Il a un doute ou n’est pas d’accord : je ne dépasse pas pour l’instant', 'Il est d’accord : je dépasse', 'Il bat en arrière pour me laisser passer', 'Il me demande de passer par son bâbord'], a: 0,
+    e: 'Cinq brefs ou plus : signal de doute. S’il était d’accord, il répondrait long-bref-long-bref.', ref: R + '#sonores',
+  },
+  {
+    id: 's39', q: 'Signal de port vert-blanc-vert, avec un feu jaune à gauche du feu supérieur. Vous êtes sur un petit voilier qui reste en dehors du chenal principal :', fig: { k: 'port', v: ['G', 'W', 'G'], exempt: 'Y' },
+    c: ['Je peux passer sans attendre d’instructions, en restant hors du chenal principal', 'J’attends des instructions comme les autres', 'Le passage est interdit à tous', 'Le trafic est à sens unique'], a: 0,
+    e: 'Le feu jaune d’exemption signifie que le signal principal ne s’applique pas aux navires qui naviguent en dehors du chenal principal.', ref: R + '#port',
+  },
+  {
+    id: 's40', q: 'Un sémaphore hisse deux cônes noirs superposés, pointes en bas. Il annonce un coup de vent :', fig: { k: 'marques', v: ['cone-bas', 'cone-bas'] },
+    c: ['De Sud-Est', 'De Sud-Ouest', 'De Nord-Est', 'De Nord-Ouest'], a: 0,
+    e: 'Pointes en bas : secteur Sud ; pointes en haut : secteur Nord. Un cône : Ouest ; deux cônes : Est. Deux cônes pointes en bas : Sud-Est.', ref: 'cours/08-meteo.html#bulletins',
+  },
 ];

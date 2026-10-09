@@ -96,4 +96,74 @@ export default [
     c: ['La position', 'Le nombre de personnes à bord', 'La couleur du bateau', 'Le nom du chef de bord'], a: 0,
     e: 'La position d’abord (c’est le plus important si la communication est coupée), puis la nature de la détresse, l’aide demandée, le nombre de personnes, les autres informations.', ref: R + '#alerte',
   },
+  {
+    id: 'v20', q: 'Dans une alerte de détresse ASN, « FLOODING » signifie :', src: 'annale 2021',
+    c: ['Voie d’eau', 'Échouement', 'Incendie', 'Homme à la mer'], a: 0,
+    e: 'L’ASN code la nature de la détresse en anglais : flooding (voie d’eau), fire (incendie), grounding (échouement), man overboard (homme à la mer)…', ref: R + '#asn',
+  },
+  {
+    id: 'v21', q: 'Votre VHF reçoit une alerte de détresse ASN d’un autre navire :',
+    c: ['J’écoute le canal 16, où le message vocal va suivre, sans acquitter par ASN', 'J’efface le message : je ne suis pas concerné', 'J’acquitte aussitôt par ASN', 'Je passe sur le canal 70 pour parler au navire'], a: 0,
+    e: 'L’acquittement ASN revient aux stations côtières. On écoute le 16, on note la position et on se tient prêt à aider. On ne parle jamais sur le 70.', ref: R + '#asn',
+  },
+  {
+    id: 'v22', q: 'Vous déclenchez par erreur une alerte de détresse ASN :',
+    c: ['Je l’annule et je préviens le CROSS à la voix sur le canal 16', 'J’éteins la VHF et je ne dis rien', 'J’attends que le CROSS m’appelle', 'J’envoie une seconde alerte pour annuler la première'], a: 0,
+    e: 'Une fausse alerte non annulée mobilise des secours pour rien. On l’annule immédiatement et on le dit au CROSS sur le 16.', ref: R + '#asn',
+  },
+  {
+    id: 'v23', q: 'Une communication de routine avec un autre bateau :', src: 'annale 2017',
+    c: ['Commence par un appel bref sur le 16, puis on dégage sur un canal de travail', 'Se fait entièrement sur le canal 16', 'Se fait sur le canal 70', 'Se fait sur le canal 9'], a: 0,
+    e: 'Le 16 sert à l’appel, pas à la conversation : « passez canal 72 », et l’on échange sur le 72.', ref: R + '#procedure',
+  },
+  {
+    id: 'v24', q: 'Avant d’appuyer sur l’alternat pour appeler :',
+    c: ['J’écoute pour vérifier que le canal est libre', 'Je monte le volume au maximum', 'J’appuie plusieurs fois pour tester', 'Je passe en faible puissance quoi qu’il arrive'], a: 0,
+    e: 'On n’interrompt pas une communication en cours, encore moins une détresse. Puis on parle distinctement, micro à quelques centimètres.', ref: R + '#procedure',
+  },
+  {
+    id: 'v25', q: 'Le réglage « squelch » d’une VHF sert à :',
+    c: ['Couper le bruit de fond quand personne n’émet', 'Augmenter la portée', 'Choisir le canal', 'Envoyer une alerte ASN'], a: 0,
+    e: 'On le règle juste au seuil où le souffle disparaît ; trop haut, on n’entend plus les stations faibles.', ref: R + '#principe',
+  },
+  {
+    id: 'v26', q: 'Pour parler à un bateau de la flottille tout proche, on règle la VHF :',
+    c: ['En faible puissance (1 W)', 'En puissance maximale', 'Sur le canal 16', 'Sur le canal 70'], a: 0,
+    e: 'La faible puissance suffit à courte distance : on économise la batterie et on n’encombre pas le canal pour les autres.', ref: R + '#principe',
+  },
+  {
+    id: 'v27', q: 'Une VHF fixe porte bien plus loin qu’une portative surtout parce que :',
+    c: ['Son antenne est en tête de mât, beaucoup plus haut', 'Elle est branchée sur la batterie du bord', 'Elle a plus de canaux', 'Elle a l’ASN'], a: 0,
+    e: 'Les ondes VHF vont à peu près en ligne droite : la portée dépend surtout de la hauteur des antennes, D ≈ 2,2 (√h1 + √h2) milles. Sa puissance (25 W contre 6 W) aide aussi.', ref: R + '#principe',
+  },
+  {
+    id: 'v28', q: 'Vous entendez un MAYDAY. Aucune station côtière ne répond et vous ne pouvez pas aider directement :',
+    c: ['Je relaie le message (MAYDAY RELAY)', 'Je ne fais rien', 'J’appelle le navire en détresse pour bavarder', 'Je change de canal'], a: 0,
+    e: 'Si on ne peut pas aider soi-même, on relaie la détresse pour qu’elle atteigne une station côtière ou un navire capable d’intervenir.', ref: R + '#alerte',
+  },
+  {
+    id: 'v29', q: 'Le CROSS annonce « silence mayday » sur le canal 16 :',
+    c: ['Je n’émets plus sur ce canal jusqu’à « silence fini »', 'Je peux émettre si c’est urgent pour moi', 'Je dois répondre pour indiquer ma position', 'Je passe le message à tous les navires'], a: 0,
+    e: 'Le canal est réservé au traitement de la détresse en cours. Seuls le CROSS et les intervenants y parlent.', ref: R + '#alerte',
+  },
+  {
+    id: 'v30', q: 'Votre moteur est en panne, vous êtes loin de tout danger et vous demandez un remorquage. Le message est :',
+    c: ['PAN PAN', 'MAYDAY', 'SÉCURITÉ'], a: 0,
+    e: 'Urgence sans danger immédiat : PAN PAN. Si le bateau dérivait vers les cailloux sans moyen de l’arrêter, ce serait un MAYDAY.', ref: R + '#alerte',
+  },
+  {
+    id: 'v31', q: 'Votre GPS ou votre VHF affiche « MOB ». Cela signifie :', src: 'annale 2017',
+    c: ['Homme à la mer (man overboard) : la position de la chute est mémorisée', 'Voie d’eau', 'Abordage', 'Échouement'], a: 0,
+    e: 'Le bouton MOB enregistre instantanément la position : on peut y revenir même si l’on perd la personne de vue.', ref: 'cours/03-estime.html#electronique',
+  },
+  {
+    id: 'v32', q: 'À la VHF, « Golf, Romeo, Oscar, India, X-ray » épelle :',
+    c: ['GROIX', 'GROSI', 'GRAIX', 'CROIX'], a: 0,
+    e: 'Alphabet international : G Golf, R Romeo, O Oscar, I India, X X-ray.', ref: R + '#procedure',
+  },
+  {
+    id: 'v33', q: 'En mer, le téléphone portable :',
+    c: ['N’est pas un moyen de sécurité fiable : réseau incertain et un seul interlocuteur', 'Remplace avantageusement la VHF', 'Permet de prévenir tous les bateaux voisins', 'Est le premier moyen d’alerte à utiliser'], a: 0,
+    e: 'La VHF joint en même temps le CROSS et tous les navires proches, qui peuvent aider. En dépannage, le 196 joint le CROSS.', ref: R + '#reglementation',
+  },
 ];

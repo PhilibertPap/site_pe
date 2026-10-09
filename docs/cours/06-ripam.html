@@ -6,6 +6,13 @@
 <title>Règles de barre et de route · Patron d'embarcation</title>
 <meta name="description" content="Le règlement international pour prévenir les abordages en mer : veille, risque de collision, priorités entre voiliers, entre navires à moteur, hiérarchie des navires, chenaux, visibilité réduite.">
 <link rel="icon" href="../img/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="../img/icon-180.png">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta name="theme-color" content="#11304d">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Patron d'emb.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&display=swap" rel="stylesheet">
@@ -22,11 +29,13 @@
 <a class="skip" href="#contenu">Aller au contenu</a>
 <header class="top">
   <div class="top-in">
-    <a class="brand" href="../index.html">Patron d'embarcation</a>
-    <nav class="mainnav" aria-label="Parties du site"><a href="../cours/index.html" aria-current="page">Cours</a><a href="../qcm/index.html">QCM</a><a href="../exercices/index.html">Exercices</a><a href="../pratique/index.html">Pratique</a><a href="../annales/index.html">Annales</a><a href="../questions/index.html">Questions</a></nav>
+    <a class="brand" href="../index.html"><svg class="emb" viewBox="0 0 48 58" aria-hidden="true" fill="currentColor"><path d="M24 .5C29 5 30 10.5 24 16.5 18 10.5 19 5 24 .5Z"/><path d="M22.4 15.6C16 16.8 9.8 14.4 9.6 8.6 9.5 5.6 12.2 4.2 14.4 5.6 12.4 6.4 12.1 8.8 13.7 10.5 15.6 12.4 19 13 22.4 12.6Z"/><path d="M25.6 15.6C32 16.8 38.2 14.4 38.4 8.6 38.5 5.6 35.8 4.2 33.6 5.6 35.6 6.4 35.9 8.8 34.3 10.5 32.4 12.4 29 13 25.6 12.6Z"/><rect x="17" y="16" width="14" height="3" rx=".5"/><path d="M19.5 19C18 21.5 19.5 23.5 21.5 22.5L24 21l2.5 1.5c2 1 3.5-1 2-3.5Z"/><rect x="12" y="25" width="24" height="2.8"/><circle cx="12" cy="26.4" r="1.8"/><circle cx="36" cy="26.4" r="1.8"/><rect x="22.6" y="21" width="2.8" height="32"/><path d="M6.5 39C7 49 14.5 55 24 55S41 49 41.5 39" fill="none" stroke="currentColor" stroke-width="2.8"/><path d="M2.5 42.5l4-8 4 8ZM37.5 42.5l4-8 4 8Z"/></svg><span class="brand-t"><b>Patron d'embarcation</b><small>Scouts marins · voile</small></span></a>
+    <button class="menu-btn" type="button" aria-expanded="false" aria-controls="mainnav"><span class="burger" aria-hidden="true"><i></i><i></i><i></i></span><span class="menu-l">Menu</span></button>
+    <nav class="mainnav" id="mainnav" aria-label="Parties du site"><a href="../cours/index.html" aria-current="page">Cours</a><a href="../qcm/index.html">QCM</a><a href="../exercices/index.html">Exercices</a><a href="../pratique/index.html">Pratique</a><a href="../cqcf/index.html">CQ / CF</a><a href="../annales/index.html">Annales</a><a href="../questions/index.html">Questions</a></nav>
     <div class="acct" id="acct"></div>
     <button class="theme" type="button" aria-label="Changer de thème" title="Clair / sombre"><svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true"><circle cx="8" cy="8" r="6.5" fill="none" stroke="currentColor" stroke-width="1.3"/><path d="M8 1.5 A6.5 6.5 0 0 1 8 14.5 Z" fill="currentColor"/></svg></button>
   </div>
+  <div class="grad" aria-hidden="true"></div>
 </header>
 <main id="contenu">
 
@@ -97,6 +106,7 @@
   <li>Relever l'autre navire au compas de relèvement à intervalles réguliers. Si le relèvement ne change pas et que la distance diminue : collision.</li>
   <li>Sans compas : aligner l'autre bateau avec un repère fixe du bord (un hauban, un chandelier) en restant à la même place. S'il ne bouge pas par rapport au repère, danger. Si on le voit défiler devant un fond de côte lointain, il défile ; s'il reste devant le même point de la côte, il est en route de collision.</li>
   <li>Un navire qui défile vers l'avant passera devant ; vers l'arrière, il passera derrière.</li>
+  <li>Tant que l'on garde son cap, surveiller le gisement revient au même : gisement constant, relèvement constant. Si l'on vient de changer de cap, seul le relèvement compte.</li>
   <li>Avec un gros navire proche, le risque peut exister même si le relèvement varie un peu : l'avant et l'arrière ne sont pas au même endroit.</li>
 </ul>
 </div>
@@ -151,7 +161,7 @@
 </div>
 
 <div class="box warn"><p class="box-label">Attention.</p>
-<p>Ces règles ne valent qu'entre deux voiliers. Un voilier qui rattrape un autre navire, ou qui rencontre un navire de la hiérarchie supérieure (section 6.6), s'écarte quelle que soit son amure. Et dès que le moteur tourne, le voilier devient un navire à moteur.</p>
+<p>Ces règles ne valent qu'entre deux voiliers. Un voilier qui rattrape un autre navire, ou qui rencontre un navire de la hiérarchie supérieure (section 6.7), s'écarte quelle que soit son amure. Et dès que le moteur tourne, le voilier devient un navire à moteur.</p>
 </div>
 
 <h2 id="moteur"><span class="secnum">6.5</span>Entre navires à moteur</h2>
@@ -182,7 +192,7 @@
 <tr><td>tout navire (sauf NUC et capacité restreinte)</td><td>évite de gêner le passage d'un navire handicapé par son tirant d'eau</td></tr>
 </tbody></table></div>
 
-<p>Dans l'ordre : non maître de sa manœuvre et capacité de manœuvre restreinte, puis handicapé par son tirant d'eau (à ne pas gêner), puis pêche, puis voile, puis moteur. Les marques et feux qui permettent de reconnaître ces navires sont au chapitre 7.</p>
+<p>Dans l'ordre : non maître de sa manœuvre et capacité de manœuvre restreinte, puis handicapé par son tirant d'eau (à ne pas gêner), puis pêche, puis voile, puis moteur. Les marques et feux qui permettent de reconnaître ces navires sont au chapitre 7. Le statut dépend de ce que fait le navire, pas de ce qu'il est : un chalutier qui rentre au port sans pêcher est un simple navire à moteur.</p>
 
 <h2 id="chenaux"><span class="secnum">6.8</span>Chenaux étroits et rails</h2>
 
@@ -194,6 +204,8 @@
   <li>À l'approche d'un coude masqué, on émet un son prolongé.</li>
 </ul>
 </div>
+
+<p>Dans les ports, le règlement de police du port s'ajoute au RIPAM : il fixe notamment la vitesse maximale, affichée à l'entrée et à la capitainerie. Les QCM de la Passerelle retiennent 5 nd en l'absence d'indication ; c'est le règlement du port qui fait foi.</p>
 
 <p>Les <dfn>dispositifs de séparation du trafic</dfn> (DST, ou « rails ») organisent les grandes routes maritimes, comme au large d'Ouessant. On les évite autant que possible ; s'il faut les traverser, on le fait cap perpendiculaire à la direction du trafic, le plus vite possible, sans gêner les navires qui les suivent.</p>
 
@@ -226,6 +238,7 @@
 </main>
 <footer class="foot">
   <div class="foot-in">
+    <p class="foot-sign"><svg class="emb" viewBox="0 0 48 58" aria-hidden="true" fill="currentColor"><path d="M24 .5C29 5 30 10.5 24 16.5 18 10.5 19 5 24 .5Z"/><path d="M22.4 15.6C16 16.8 9.8 14.4 9.6 8.6 9.5 5.6 12.2 4.2 14.4 5.6 12.4 6.4 12.1 8.8 13.7 10.5 15.6 12.4 19 13 22.4 12.6Z"/><path d="M25.6 15.6C32 16.8 38.2 14.4 38.4 8.6 38.5 5.6 35.8 4.2 33.6 5.6 35.6 6.4 35.9 8.8 34.3 10.5 32.4 12.4 29 13 25.6 12.6Z"/><rect x="17" y="16" width="14" height="3" rx=".5"/><path d="M19.5 19C18 21.5 19.5 23.5 21.5 22.5L24 21l2.5 1.5c2 1 3.5-1 2-3.5Z"/><rect x="12" y="25" width="24" height="2.8"/><circle cx="12" cy="26.4" r="1.8"/><circle cx="36" cy="26.4" r="1.8"/><rect x="22.6" y="21" width="2.8" height="32"/><path d="M6.5 39C7 49 14.5 55 24 55S41 49 41.5 39" fill="none" stroke="currentColor" stroke-width="2.8"/><path d="M2.5 42.5l4-8 4 8ZM37.5 42.5l4-8 4 8Z"/></svg><span>Bon vent et bonne mer.</span></p>
     <p>Préparation au brevet de patron d'embarcation et à la navigation à voile. Rédigé à partir des cours de navigation des scouts marins de Brest, mis à jour et complétés.</p>
     <p>Ce site ne remplace ni la réglementation (Division 240, RIPAM), ni les documents officiels du SHOM, ni le règlement de votre association. En cas de doute, ce sont eux qui font foi.</p>
   </div>

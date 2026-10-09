@@ -56,4 +56,99 @@ export default [
     c: ['Porte son numéro d’immatriculation, qui figure aussi sur la coque', 'Remplace le permis', 'N’est utile qu’à l’étranger', 'Est délivré par l’ANFR'], a: 0,
     e: 'Carte de circulation ou acte de francisation : c’est le « papier » du bateau. L’ANFR délivre la licence radio.', ref: R + '#documents',
   },
+  {
+    id: 'bo12', q: 'En voile légère (dériveurs), la limite météo pour naviguer aux SUF est :',
+    c: ['Force 3 établie, rafales à 4', 'Force 4 établie, rafales à 5', 'Force 5 établie, rafales à 6', 'Elle dépend de la catégorie de conception du bateau'], a: 0,
+    e: 'Règlement SUF : force 3 rafales 4 en voile légère, force 4 rafales 5 en habitable. Ce sont des maximums, pas des objectifs.', ref: R + '#scoutisme',
+  },
+  {
+    id: 'bo13', q: 'Aux SUF, une flottille de voile légère navigue :',
+    c: ['À moins de 2 milles d’un abri, sous la surveillance d’un chef de quart', 'À moins de 6 milles d’un abri, sans encadrement', 'Où elle veut, si chaque bateau a un PE', 'Uniquement dans le port'], a: 0,
+    e: 'Voile légère : 2 milles d’un abri, chef de quart présent avec la flottille. Habitable : 6 milles d’un abri, chef de flottille présent.', ref: R + '#scoutisme',
+  },
+  {
+    id: 'bo14', q: 'Le patron d’embarcation mineur, sur un habitable :', src: 'annale 2018',
+    c: ['Navigue toujours sous la responsabilité et la surveillance d’un chef de flottille, qui reste avec la flottille', 'Peut naviguer de nuit par pleine lune, mer belle et force 3 au plus', 'Doit aviser les Affaires maritimes des déplacements de son bateau', 'Peut s’éloigner de la flottille s’il prévient par VHF'], a: 0,
+    e: 'Le PE est chef de bord de son embarcation, mais il navigue en flottille, en vue et sous l’autorité du chef de flottille. La navigation scoute se fait de jour.', ref: R + '#scoutisme',
+  },
+  {
+    id: 'bo15', q: 'Une navigation scoute en habitable a lieu :',
+    c: ['Uniquement de jour', 'De jour comme de nuit', 'De nuit si la mer est belle et la lune pleine', 'De nuit si le PE est majeur'], a: 0,
+    e: 'Le règlement SUF limite la navigation scoute au jour.', ref: R + '#scoutisme',
+  },
+  {
+    id: 'bo16', q: 'Dans une flottille scoute d’habitables, il faut à bord de chaque bateau :',
+    c: ['Un patron d’embarcation ou un chef de quart valide', 'Un moniteur diplômé d’État', 'Deux chefs de flottille', 'Un titulaire du permis hauturier'], a: 0,
+    e: 'Chaque bateau a son chef de bord (PE ou CQ) ; le chef de flottille encadre l’ensemble.', ref: R + '#scoutisme',
+  },
+  {
+    id: 'bo17', q: 'Avant une navigation scoute, on désigne :',
+    c: ['Un correspondant à terre, qui connaît le programme et l’heure de retour prévue', 'Un représentant des Affaires maritimes', 'Un moniteur de la fédération de voile', 'Un pilote'], a: 0,
+    e: 'Le correspondant à terre sait où va la flottille et quand elle doit rentrer : en cas de retard anormal, il peut donner l’alerte.', ref: R + '#scoutisme',
+  },
+  {
+    id: 'bo18', q: 'Le brevet de patron d’embarcation SUF donne ses prérogatives à partir de :',
+    c: ['16 ans', '14 ans', '18 ans', '12 ans'], a: 0,
+    e: 'On peut passer le module théorique dès 14 ans, mais le brevet n’est délivré qu’à 16 ans révolus.', ref: R + '#scoutisme',
+  },
+  {
+    id: 'bo19', q: 'En camp, une flottille d’habitables peut sortir :', src: 'annale 2020',
+    c: ['À moins de 6 milles d’un abri, par vent annoncé ne dépassant pas force 4, rafales à 5', 'À moins de 6 milles d’un abri, par force 5 rafales à 6 annoncé en baisse', 'À moins de 6 milles d’un abri, par force 3 forcissant 6 dans l’après-midi', 'À moins de 5 milles d’un abri, par force 6 au plus'], a: 0,
+    e: 'Limite SUF en habitable : force 4 établie, rafales à 5, à moins de 6 milles d’un abri. On regarde toute la prévision, y compris l’évolution prévue.', ref: R + '#scoutisme',
+  },
+  {
+    id: 'bo20', q: 'Les règles propres au scoutisme marin (gilet permanent, limites de vent…) :',
+    c: ['S’ajoutent à la réglementation générale, en plus strict', 'Remplacent la Division 240', 'Ne s’appliquent qu’en camp d’été', 'Sont de simples conseils'], a: 0,
+    e: 'Division 240 et RIPAM s’appliquent à tous ; l’association ajoute des règles plus strictes, que le PE fait respecter.', ref: R + '#scoutisme',
+  },
+  {
+    id: 'bo21', q: 'L’attestation d’assurance du bateau :',
+    c: ['Est exigée par la plupart des ports et indispensable en cas d’accident', 'Remplace le titre de navigation', 'N’est utile qu’à l’étranger', 'Est délivrée par le CROSS'], a: 0,
+    e: 'Elle fait partie des papiers du bord, avec le titre de navigation, le manuel du propriétaire et, s’il y a une VHF fixe, la licence radio.', ref: R + '#documents',
+  },
+  {
+    id: 'bo22', q: 'En navigation, le vent forcit plus qu’annoncé, de force 4 à force 6 :', src: 'annale 2017',
+    c: ['Je réduis la voilure et je rejoins l’abri de repli prévu', 'Je continue le programme : le bateau est de catégorie C', 'J’appelle la SNSM pour me faire remorquer', 'Je garde toute la toile pour rentrer plus vite'], a: 0,
+    e: 'On réduit la toile avant d’être débordé, et on applique la solution de repli préparée à terre. On prévient le chef de flottille.', ref: R + '#chef-de-bord',
+  },
+  {
+    id: 'bo23', q: 'En préparant une navigation, il faut toujours prévoir :',
+    c: ['Une solution de repli : un abri accessible si le vent forcit ou si l’horaire dérape', 'Un horaire sans marge', 'Une route qui passe au plus près des dangers pour gagner du temps', 'De décider de la route une fois en mer'], a: 0,
+    e: 'Un point de repli accessible avec le vent prévu fait partie de toute préparation, comme les amers et les relèvements de contrôle.', ref: 'cours/03-estime.html#preparer',
+  },
+  {
+    id: 'bo24', q: 'Le vent est de Nord, force 4. Le but est droit au 020 :',
+    c: ['Il faudra tirer des bords : la route est à 20° du vent', 'On peut y aller directement au près', 'Il faut mettre le spinnaker', 'C’est une route au travers'], a: 0,
+    e: 'Un voilier remonte au mieux à 45° du vent environ : un but à 20° du vent ne s’atteint qu’en louvoyant, ce qui allonge nettement la route (× 1,4 au moins si le but est plein vent debout).', ref: 'cours/03-estime.html#preparer',
+  },
+  {
+    id: 'bo25', q: 'Sur un voilier, la grand-voile et le génois masquent le secteur sous le vent. Le chef de bord :',
+    c: ['Fait regarder régulièrement sous la voile', 'Considère que les bateaux sous le vent doivent s’écarter', 'Ne s’en préoccupe que la nuit', 'Compte sur l’AIS'], a: 0,
+    e: 'La veille est le premier devoir à bord, et le secteur caché par les voiles est celui où l’on se fait surprendre.', ref: 'cours/06-ripam.html#veille',
+  },
+  {
+    id: 'bo26', q: 'Le GPS vous place au milieu du chenal, mais la bouée verte que vous deviez laisser à tribord est sur votre bâbord :',
+    c: ['Je me fie à ce que je vois : je ralentis et je vérifie ma position (carte, relèvements)', 'Je suis le GPS, précis à 10 m près', 'Je continue : la bouée a dû dériver', 'J’accélère pour sortir de la zone'], a: 0,
+    e: 'Doute systématique : le GPS ne voit pas le balisage, et une carte électronique peut être fausse ou mal zoomée. On recoupe toujours.', ref: 'cours/03-estime.html#electronique',
+  },
+  {
+    id: 'bo27', q: 'Avant le départ, un jeune équipier n’a pas de gilet à sa taille :',
+    c: ['On ne part pas tant qu’il n’a pas un gilet adapté et ajusté', 'Il part avec un gilet trop grand, bien serré', 'Il part sans gilet et reste dans le cockpit', 'Il garde le gilet à portée de main'], a: 0,
+    e: 'Un gilet trop grand remonte sur le visage dans l’eau. Le PE contrôle la tenue de chacun avant d’appareiller.', ref: R + '#scoutisme',
+  },
+  {
+    id: 'bo28', q: 'Au briefing de navigation avec le chef de flottille, le patron d’embarcation :',
+    c: ['Prend des notes (programme, météo, horaires, abris de repli, canal VHF) et les explique ensuite à son équipage', 'Écoute sans noter : le chef de flottille guidera en mer', 'Laisse un équipier y aller à sa place', 'Ne retient que l’heure du retour'], a: 0,
+    e: 'Le PE doit pouvoir mener sa navigation et expliquer à ses équipiers le programme du jour.', ref: R + '#chef-de-bord',
+  },
+  {
+    id: 'bo29', q: 'En faisant le tour du bateau avant le départ, vous trouvez un hauban effiloché :',
+    c: ['Je ne pars pas et je préviens le chef de flottille', 'Je pars en ménageant le bateau', 'Je pars en restant bâbord amures', 'Je le signale au retour'], a: 0,
+    e: 'Un hauban qui casse peut faire tomber le mât. On vérifie gréement, matériel de sécurité et moteur avant d’appareiller, et on ne part pas avec une avarie.', ref: R + '#chef-de-bord',
+  },
+  {
+    id: 'bo30', q: 'Avant un virement de bord, le patron d’embarcation :',
+    c: ['Annonce « Paré à virer ? », attend que chacun soit prêt et réponde, puis vire', 'Vire sans prévenir pour gagner du temps', 'Fait monter l’équipage sur le pont', 'Lâche la barre pour aider à border'], a: 0,
+    e: 'Annoncer, vérifier que chacun est à son poste, puis exécuter : on évite les coups de bôme et les écoutes mal tenues.', ref: R + '#chef-de-bord',
+  },
 ];

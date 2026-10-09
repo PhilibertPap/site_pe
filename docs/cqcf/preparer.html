@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Préparer la navigation · Patron d'embarcation</title>
+<meta name="description" content="Choisir bateaux et zone, prendre en main la flottille, travailler la météo et la marée, le rôle du correspondant à terre, la journée type, le briefing des chefs de bord et la check-list avant de partir.">
+<link rel="icon" href="../img/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="../img/icon-180.png">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta name="theme-color" content="#11304d">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Patron d'emb.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/style.css">
+<script>
+  try {
+    var t = localStorage.getItem('pe-theme');
+    if (t) document.documentElement.setAttribute('data-theme', t);
+  } catch (e) {}
+  try { if (!localStorage.getItem('pe-ok')) document.documentElement.classList.add('gate'); } catch (e) { document.documentElement.classList.add('gate'); }
+</script>
+</head>
+<body data-root="../">
+<a class="skip" href="#contenu">Aller au contenu</a>
+<header class="top">
+  <div class="top-in">
+    <a class="brand" href="../index.html"><svg class="emb" viewBox="0 0 48 58" aria-hidden="true" fill="currentColor"><path d="M24 .5C29 5 30 10.5 24 16.5 18 10.5 19 5 24 .5Z"/><path d="M22.4 15.6C16 16.8 9.8 14.4 9.6 8.6 9.5 5.6 12.2 4.2 14.4 5.6 12.4 6.4 12.1 8.8 13.7 10.5 15.6 12.4 19 13 22.4 12.6Z"/><path d="M25.6 15.6C32 16.8 38.2 14.4 38.4 8.6 38.5 5.6 35.8 4.2 33.6 5.6 35.6 6.4 35.9 8.8 34.3 10.5 32.4 12.4 29 13 25.6 12.6Z"/><rect x="17" y="16" width="14" height="3" rx=".5"/><path d="M19.5 19C18 21.5 19.5 23.5 21.5 22.5L24 21l2.5 1.5c2 1 3.5-1 2-3.5Z"/><rect x="12" y="25" width="24" height="2.8"/><circle cx="12" cy="26.4" r="1.8"/><circle cx="36" cy="26.4" r="1.8"/><rect x="22.6" y="21" width="2.8" height="32"/><path d="M6.5 39C7 49 14.5 55 24 55S41 49 41.5 39" fill="none" stroke="currentColor" stroke-width="2.8"/><path d="M2.5 42.5l4-8 4 8ZM37.5 42.5l4-8 4 8Z"/></svg><span class="brand-t"><b>Patron d'embarcation</b><small>Scouts marins · voile</small></span></a>
+    <button class="menu-btn" type="button" aria-expanded="false" aria-controls="mainnav"><span class="burger" aria-hidden="true"><i></i><i></i><i></i></span><span class="menu-l">Menu</span></button>
+    <nav class="mainnav" id="mainnav" aria-label="Parties du site"><a href="../cours/index.html">Cours</a><a href="../qcm/index.html">QCM</a><a href="../exercices/index.html">Exercices</a><a href="../pratique/index.html">Pratique</a><a href="../cqcf/index.html" aria-current="page">CQ / CF</a><a href="../annales/index.html">Annales</a><a href="../questions/index.html">Questions</a></nav>
+    <div class="acct" id="acct"></div>
+    <button class="theme" type="button" aria-label="Changer de thème" title="Clair / sombre"><svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true"><circle cx="8" cy="8" r="6.5" fill="none" stroke="currentColor" stroke-width="1.3"/><path d="M8 1.5 A6.5 6.5 0 0 1 8 14.5 Z" fill="currentColor"/></svg></button>
+  </div>
+  <div class="grad" aria-hidden="true"></div>
+</header>
+<main id="contenu">
+
+<div class="doc">
+  <aside class="side">
+    <p class="side-h">CQ / CF</p>
+    <ol class="chapters"><li><a href="../cqcf/diplomes.html">Diplômes et examen</a></li><li><a href="../cqcf/dossier.html">Dossier de navigation</a></li><li><a href="../cqcf/preparer.html" aria-current="page">Préparer la navigation</a></li><li><a href="../cqcf/flottille.html">Conduire une flottille</a></li><li><a href="../cqcf/bateau-secu.html">Bateau de sécurité</a></li><li><a href="../cqcf/avaries.html">Avaries et secours</a></li><li><a href="../cqcf/pedagogie.html">La dimension scoute</a></li><li><a href="../cqcf/oral.html">Questions d'oral</a></li></ol>
+  </aside>
+  <article class="chapter">
+    <header class="chap-head">
+      <p class="kicker">CQ / CF</p>
+      <h1>Préparer la navigation</h1>
+      <p class="chap-desc">Choisir bateaux et zone, prendre en main la flottille, travailler la météo et la marée, le rôle du correspondant à terre, la journée type, le briefing des chefs de bord et la check-list avant de partir.</p>
+    </header>
+    <details class="toc-box"><summary>Sur cette page</summary><ol class="toc"><li><a href="#annee">Pendant l'année</a></li><li><a href="#prise-en-main">Prendre en main la flottille</a></li><li><a href="#meteo">La météo</a></li><li><a href="#maree">La marée et les courants</a></li><li><a href="#correspondant">Le correspondant à terre</a></li><li><a href="#journee">La journée type</a></li><li><a href="#presentation">Présenter la journée à la flottille</a></li><li><a href="#briefing">Le briefing des chefs de bord</a></li><li><a href="#tour">Le tour des bateaux et la sécu</a></li><li><a href="#checklist">Check-list avant de partir</a></li></ol></details>
+    <p>La préparation est la partie la plus longue du travail du CQ, et celle qui rend le reste possible. Une navigation bien préparée n'a pas moins d'imprévus qu'une autre ; elle en a qui se règlent vite, parce qu'on a déjà réfléchi aux replis, aux horaires et aux dangers. Cette page suit l'ordre chronologique : l'année, la prise en main des bateaux, puis chaque journée.</p>
+
+<h2 id="annee">Pendant l'année</h2>
+
+<p>Un projet marin se décide en conseil des chefs d'équipage (CDH) dès septembre, et se traduit dans un <strong>pré-dossier marin</strong> transmis à la Passerelle (par le référent pédagogique) puis à la ComMar. Ce pré-dossier répond à trois questions : quelle zone, quels bateaux, quels diplômes. La ComMar donne un avis technique sur sa cohérence avec le niveau de l'unité, son plan de formation et le support choisi. Le visa marin de camp est rédigé ensuite.</p>
+
+<h3>Les bateaux</h3>
+<ul>
+  <li>En randonnée nautique, les bateaux sont <strong>non pontés</strong> (ni habitables, ni semi-habitables).</li>
+  <li>Chacun doit pouvoir embarquer un équipage entier, souvent 6 à 8 jeunes : le nombre de personnes autorisé figure sur le titre de navigation et sur la plaque du constructeur.</li>
+  <li>Le bateau de sécurité doit pouvoir recueillir l'équipage le plus nombreux en plus des chefs qui y sont : capacité ≥ CQ + chefs à bord + équipage le plus nombreux. C'est pour le vérifier que Céphée demande la répartition des personnes sur les bateaux.</li>
+</ul>
+<p>Pour chaque bateau, on rassemble avant le camp :</p>
+<ul>
+  <li>le titre de navigation : carte de circulation, ou acte de francisation (obligatoire en mer à partir de 7 m ou au-delà d'une certaine puissance moteur) ;</li>
+  <li>l'attestation d'assurance de l'année ;</li>
+  <li>le registre de vérification spéciale annuelle ;</li>
+  <li>le procès-verbal de vérification annuelle des brassières (gilets autogonflants vérifiés, gilets en mousse non abîmés) ;</li>
+  <li>pour un bateau loué à un particulier ou à une association, l'état d'entretien des moteurs.</li>
+</ul>
+<p>Il est difficile de réunir une flottille de bateaux collectifs identiques : beaucoup de clubs n'en ont qu'un ou deux. La Passerelle et les maîtrises d'autres unités marines savent où en trouver.</p>
+
+<h3>La zone</h3>
+<p>Le choix de la zone suit en général celui des bateaux. On privilégie des zones bien balisées et cartographiées, et le critère décisif est la <strong>densité des abris</strong> : en randonnée nautique, on reste partout à moins de 2 milles de l'un d'eux.</p>
+
+<h2 id="prise-en-main">Prendre en main la flottille</h2>
+
+<p>Même si tous les papiers sont en ordre, le CQ fait une prise en main complète de chaque bateau. Il connaîtra ainsi ce qu'il confie aux équipages, et il se protège en cas de défaillance du matériel. Le mieux est de la faire <strong>avant l'arrivée des jeunes</strong>, avec un ou deux autres chefs : on règle les derniers points avec le loueur sans personne qui attend sur le ponton, et l'on voit les défauts qu'on ne voit plus quand les sacs sont à bord. Une négligence à l'état des lieux peut coûter cher au budget du camp. On prend beaucoup de photos, que l'on envoie aussitôt au loueur.</p>
+
+<div class="box meth"><p class="box-label">Méthode <span class="box-title">(Prise en main d'un bateau)</span>.</p>
+<p><strong>Armement.</strong> Le matériel de sécurité exigé par la Division 240 pour la zone de navigation (voir <a href="../cours/09-securite.html#zones">le tableau du chapitre 9</a>). Les armements prêtés par d'autres associations sont parfois incomplets : le loueur doit fournir ce qui manque, et la question se pose avant, pas sur le ponton le jour du départ.</p>
+<p><strong>Extérieur</strong>, de l'avant vers l'arrière :</p>
+<ul>
+  <li>coque : rayures, chocs, étrave, tableau arrière ;</li>
+  <li>gréement dormant : cadènes, étai et haubans (sertissages, torons, tension), ridoirs, mât droit, barres de flèche, bôme et vit-de-mulet ; sur un habitable, pataras, chandeliers et filières ;</li>
+  <li>gréement courant : écoutes, drisses, amarres, pare-battages.</li>
+</ul>
+<p><strong>Intérieur</strong> (habitables) : état général ; varangues ; boulons de quille (photographiés avant de partir : après un talonnage, ils remontent ou une fissure en étoile apparaît) ; eau et fissures dans les fonds ; passe-coques.</p>
+<p><strong>Gilets</strong> : coutures, sangles, déclencheur des gilets gonflables.</p>
+<p><strong>VHF</strong> : essai longue portée avec le CROSS ou un sémaphore, selon la procédure en vigueur.</p>
+<p><strong>Moteur</strong> : niveaux d'huile, de carburant et de liquide de refroidissement ; courroie ; circuit de refroidissement ouvert ; arrêt d'urgence ; bac sous le moteur propre (de l'huile ou de l'eau dedans signale un problème).</p>
+<p><strong>Bateaux ouverts de type loup de mer</strong> : photographier les fissures (avirons et pièces en bois en particulier), vérifier les haubans qui ont tendance à se desserrer, les taquets, les ridoirs, la corne de grand-voile, la misaine et la sous-barbe ; compter les dames de nage.</p>
+</div>
+
+<p>Les équipages refont ensuite l'inventaire de leur bateau avec leur chef de bord, et dressent un <strong>plan de sécurité</strong> du bateau (où est chaque objet de sécurité) affiché bien en vue. Une fois l'avitaillement à bord, ce plan fait gagner un temps précieux. La prise en main du bateau de sécurité est traitée à part : <a href="bateau-secu.html">Le bateau de sécurité</a>.</p>
+
+<h2 id="meteo">La météo</h2>
+
+<div class="box prop"><p class="box-label">Règle <span class="box-title">(La référence)</span>.</p>
+<p>Le bulletin qui fait foi est le <strong>bulletin expertisé de Météo-France</strong>, même si d'autres sources annoncent moins de vent. C'est sur lui que s'appliquent les limites du diplôme (force 3 en voile légère, force 4 rafales à 5 en randonnée et en croisière), et c'est lui que le correspondant à terre regarde.</p>
+</div>
+
+<p>Le bulletin ne suffit pas pour autant. La méthode enseignée en formation CQ/CF :</p>
+<ol>
+  <li><strong>Comparer les modèles et croiser les sources</strong> : bulletin côtier, BMS, modèles numériques, stations d'observation en temps réel. Les modèles lissent les effets locaux (pointes, goulets, brise thermique) ; le bulletin, rédigé par un prévisionniste, est plus prudent.</li>
+  <li><strong>Observer la situation réelle sur zone</strong> : ciel, mer, baromètre, ce que font les autres bateaux, les drapeaux à terre.</li>
+  <li><strong>Douter systématiquement</strong> : les prévisions ont-elles changé depuis ce matin ? Le vent observé correspond-il à ce qui était annoncé ? Si la réponse n'est pas nette, on choisit l'option prudente.</li>
+</ol>
+
+<p>Le bulletin se lit avec l'équipage en tête : force 4 avec des rafales à 5 n'a pas le même sens pour un équipage qui navigue depuis trois jours et pour un équipage qui n'a jamais barré. La météo se reprend en cours de journée (bulletins des CROSS sur la VHF, stations en temps réel), et l'on prévoit à l'avance à quel moment, et à partir de quels signes, on rentre. Pour la lecture d'un bulletin, voir <a href="../cours/08-meteo.html#bulletins">le chapitre 8</a>.</p>
+
+<h2 id="maree">La marée et les courants</h2>
+
+<p>Pour chaque journée, on établit :</p>
+<ul>
+  <li>les heures et hauteurs de pleine et de basse mer au port de départ et au port d'arrivée, et le coefficient ;</li>
+  <li>les heures de renverse du courant dans les passages importants, et le sens du courant aux heures où l'on y passe ;</li>
+  <li>la hauteur d'eau aux endroits sensibles (entrée de port, haut-fond, mouillage), à l'heure où l'on y sera, avec le tirant d'eau et un pied de pilote ;</li>
+  <li>la longueur de chaîne nécessaire à chaque mouillage : au moins trois fois la hauteur d'eau maximale avec une ligne tout chaîne (voir <a href="../pratique/mouillage.html#touee">Le mouillage</a>).</li>
+</ul>
+<p>Ces éléments décident souvent des horaires de la journée bien plus que le vent : on traverse une embouchure à l'étale, on passe un goulet avec le courant, on entre dans un port qui assèche avant l'heure limite. Les sources : annuaire des marées et règle des douzièmes (<a href="../cours/04-maree.html#douziemes">chapitre 4</a>), cartouches de courant de la carte, atlas des courants, instructions nautiques, loueur et correspondant à terre.</p>
+
+<h2 id="correspondant">Le correspondant à terre</h2>
+
+<p>Une fois le visa marin validé, la ComMar désigne un <dfn>correspondant à terre</dfn> : un membre de la ComMar ou une personne de confiance, qui connaît en général bien la zone. Toute navigation scoute se fait en liaison avec lui. Son rôle :</p>
+<ul>
+  <li><strong>Veiller à ce que la flottille rentre</strong> chaque soir. Le CQ le prévient au départ, au passage des points importants (PPO) prévus, et quand la flottille est amarrée. Si un message manque, il alerte les secours en leur donnant le dernier contact et l'itinéraire prévu.</li>
+  <li><strong>Veiller au respect du cadre réglementaire</strong> : il regarde la météo, les horaires (navigation de jour, marges suffisantes en cas d'avarie ou de météo différente des prévisions).</li>
+  <li><strong>Épauler le CQ</strong> : il valide un programme modifié, conseille des alternatives, fait avec lui le retour d'expérience de la journée.</li>
+</ul>
+
+<div class="box prop"><p class="box-label">Règle <span class="box-title">(L'autorisation de naviguer)</span>.</p>
+<p>La navigation du lendemain n'a pas lieu tant que le correspondant à terre n'a pas validé le programme et les moments de contact prévus. Il ne peut pas obliger le CQ à partir ; le CQ ne peut pas partir sans son accord.</p>
+</div>
+
+<h3>Les contacts dans la journée</h3>
+<div class="tbl-wrap"><table>
+<thead><tr><th>Moment</th><th>Objet</th></tr></thead>
+<tbody>
+<tr><td>la veille au soir</td><td>bilan de la journée écoulée ; analyse de la météo et de la mer pour le lendemain ; programme proposé, éventuellement modifié par rapport au dossier</td></tr>
+<tr><td>le matin, avant le briefing</td><td>confirmation de la météo ; autorisation de naviguer</td></tr>
+<tr><td>au départ</td><td>la flottille part</td></tr>
+<tr><td>aux PPO convenus</td><td>position, état de la flottille</td></tr>
+<tr><td>à l'arrivée</td><td>la flottille est amarrée ; puis, une fois tous les jeunes à terre, fin de navigation</td></tr>
+<tr><td>à tout moment</td><td>changement de programme, retard, incident</td></tr>
+</tbody></table></div>
+
+<div class="box warn"><p class="box-label">Attention.</p>
+<p>Un message oublié déclenche une recherche. Si le réseau est incertain sur la zone, on le dit au correspondant et l'on convient d'avance de ce qu'il fait en l'absence de nouvelles (attendre combien de temps, appeler qui).</p>
+</div>
+
+<h2 id="journee">La journée type</h2>
+
+<p>Le manuel CQ propose une journée type, à adapter (temps de marche, explications plus longues, équipages lents) :</p>
+
+<div class="tbl-wrap"><table>
+<thead><tr><th>Heure</th><th>Activité</th></tr></thead>
+<tbody>
+<tr><td>7 h 30</td><td>lever</td></tr>
+<tr><td>7 h 50</td><td>rassemblement, prière, présentation de l'activité (saynète de l'imaginaire)</td></tr>
+<tr><td>8 h 30</td><td>petit-déjeuner</td></tr>
+<tr><td>9 h 00</td><td>rangement du camp</td></tr>
+<tr><td>9 h 30</td><td>marche vers les bateaux ; appel du correspondant à terre pour l'autorisation de naviguer</td></tr>
+<tr><td>9 h 45</td><td>briefing des chefs de bord</td></tr>
+<tr><td>10 h 05</td><td>embarquement, armement des bateaux</td></tr>
+<tr><td>10 h 40</td><td>départ</td></tr>
+<tr><td>15 h 30</td><td>arrivée, rangement des bateaux, message de fin de navigation au correspondant à terre</td></tr>
+<tr><td>15 h 45</td><td>débarquement des équipages</td></tr>
+<tr><td>16 h 10</td><td>marche vers le camp ou le bivouac ; montage du camp, goûter</td></tr>
+<tr><td>17 h 15</td><td>débriefing de navigation</td></tr>
+<tr><td>17 h 45</td><td>jeux, topos</td></tr>
+<tr><td>18 h 45</td><td>préparation du dîner ; appel du correspondant à terre</td></tr>
+<tr><td>19 h 45 – 22 h 30</td><td>dîner, veillée, prière, coucher</td></tr>
+</tbody></table></div>
+
+<p>On remarque que la navigation proprement dite occupe moins de cinq heures, et qu'au moins huit heures de sommeil consécutives sont préservées. Un programme qui demande davantage de temps sur l'eau doit le justifier.</p>
+
+<h2 id="presentation">Présenter la journée à la flottille</h2>
+
+<p>Une fois le programme confirmé, le CQ présente la journée à toute la flottille, lors du rassemblement par exemple, et si possible dans l'imaginaire du camp. Chaque équipage doit repartir en sachant :</p>
+<ul>
+  <li>l'itinéraire et les horaires ;</li>
+  <li>les objectifs techniques du jour (« on soigne les virements ») ;</li>
+  <li>la tenue (chaleur : crème, chapeau, eau ; pluie, froid) ;</li>
+  <li>l'intendance et ce qu'il faut faire avant de partir.</li>
+</ul>
+<p>Pendant que les chefs de bord sont en briefing, le second prépare le bateau et l'équipage.</p>
+
+<h2 id="briefing">Le briefing des chefs de bord</h2>
+
+<p>Le briefing est le moment où le CQ <strong>transfère</strong> aux chefs de bord la responsabilité de leur bateau et de leur équipage. C'est un temps pédagogique autant que technique, et celui où il doit s'appliquer le plus. Il vise une quinzaine de minutes, structurées en trois temps :</p>
+<ol>
+  <li><strong>Un échange</strong> : le CQ recueille l'état des bateaux et le moral des équipages.</li>
+  <li><strong>Un exposé</strong> : le CQ présente la navigation avec les données à jour ; les chefs de bord notent.</li>
+  <li><strong>Un échange</strong> : les chefs de bord posent leurs questions ; le CQ vérifie que tout est compris.</li>
+</ol>
+
+<div class="box meth"><p class="box-label">Méthode <span class="box-title">(Contenu de l'exposé)</span>.</p>
+<ul>
+  <li>Le départ : heure, marée, ordre de départ.</li>
+  <li>Les points de passage obligatoires et leurs heures estimées.</li>
+  <li>L'arrivée : heure, marée (et son calcul), ordre d'arrivée.</li>
+  <li>La météo : état de la mer, vent moyen et rafales, évolution dans la journée.</li>
+  <li>La route : caps, amers, alignements et cônes de sécurité.</li>
+  <li>Les activités : zone de jeu, déjeuner (en route, à la cape, au mouillage).</li>
+  <li>Les abris.</li>
+  <li>Les dangers : hauts-fonds, courants, autres usagers (vedettes, pêcheurs).</li>
+  <li>Le canal VHF de travail et le numéro de portable du CQ.</li>
+  <li>Le rappel de remplir le journal de bord.</li>
+</ul>
+</div>
+
+<p>Quelques principes tirés de la formation CQ/CF :</p>
+<ul>
+  <li>Le CQ remplit lui-même <strong>la même feuille de préparation que les jeunes</strong> : il sait ainsi ce qu'il leur demande et anticipe leurs difficultés.</li>
+  <li>Il <strong>associe les chefs de bord</strong> au tracé de la route et au repérage des dangers, plutôt que de leur dicter un résultat. Il peut leur demander d'apporter au briefing des informations qu'ils ont pu recueillir (bulletin VHF, capitainerie).</li>
+  <li>Il <strong>leur laisse le temps de noter</strong>, et s'assure que les consignes ont bien été notées : on relit une fiche, on fait répéter les points clés.</li>
+</ul>
+
+<h2 id="tour">Le tour des bateaux et la sécu</h2>
+
+<p>Avant le départ, le CQ fait le tour des bateaux : rangement, intendance, consignes passées. Par exemple :</p>
+<ul>
+  <li>niveaux d'eau et de carburant ; moteur qui tourne, s'il y en a un ;</li>
+  <li>VHF allumée, sur le bon canal ;</li>
+  <li>tenues adaptées, gilets capelés ;</li>
+  <li>remarques sur l'état du bateau.</li>
+</ul>
+<p>Il prépare ensuite le bateau de sécurité : essai VHF avec chaque bateau, carburant, matériel pédagogique, sac étanche avec les documents (dossier de camp, visa marin, diplômes, permis), carte et programme du jour à portée de main, eau et intendance, coordination avec la voiture à terre, démarrage et vérifications du moteur. Il envoie enfin son message de départ au correspondant à terre.</p>
+
+<h2 id="checklist">Check-list avant de partir</h2>
+
+<div class="box meth"><p class="box-label">Méthode <span class="box-title">(Avant de larguer)</span>.</p>
+<ul>
+  <li>Le correspondant à terre a donné son accord.</li>
+  <li>Le port ou le lieu d'arrivée est prévenu (en précisant qu'il s'agit d'une flottille de mineurs en activité scoute) ; les places ou corps-morts sont réservés si c'est possible.</li>
+  <li>Le sémaphore de la zone est prévenu.</li>
+  <li>La météo du matin est conforme à ce qui a été validé ; les rafales annoncées restent dans les limites.</li>
+  <li>Le briefing est fait, les chefs de bord ont noté, les questions sont réglées.</li>
+  <li>Le tour des bateaux est fait ; chaque bateau répond à la VHF.</li>
+  <li>Le bateau de sécurité est prêt : carburant avec marge, matériel de remorquage, documents, carte.</li>
+  <li>La voiture à terre connaît le programme et le lieu d'arrivée.</li>
+  <li>Le message de départ est envoyé au correspondant à terre.</li>
+</ul>
+</div>
+
+<div class="box retenir"><p class="box-label">À retenir.</p>
+<ul>
+  <li>Prise en main des bateaux sans les jeunes, avec le loueur, photos à l'appui ; armement conforme à la Division 240.</li>
+  <li>Météo : le bulletin expertisé Météo-France fait foi ; croiser les sources, observer, douter systématiquement.</li>
+  <li>Correspondant à terre : pas de navigation sans son accord ; message au départ, aux PPO, à l'arrivée.</li>
+  <li>Briefing des chefs de bord : environ 15 min, échange, exposé, échange ; vérifier que tout a été noté.</li>
+  <li>Avant de partir : accord du correspondant, port d'arrivée appelé, sémaphore prévenu.</li>
+</ul>
+</div>
+
+    <nav class="pager"><a class="prev" href="../cqcf/dossier.html"><span>Précédent</span>Le dossier de navigation</a><a class="next" href="../cqcf/flottille.html"><span>Suivant</span>Conduire une flottille</a></nav>
+  </article>
+</div>
+</main>
+<footer class="foot">
+  <div class="foot-in">
+    <p class="foot-sign"><svg class="emb" viewBox="0 0 48 58" aria-hidden="true" fill="currentColor"><path d="M24 .5C29 5 30 10.5 24 16.5 18 10.5 19 5 24 .5Z"/><path d="M22.4 15.6C16 16.8 9.8 14.4 9.6 8.6 9.5 5.6 12.2 4.2 14.4 5.6 12.4 6.4 12.1 8.8 13.7 10.5 15.6 12.4 19 13 22.4 12.6Z"/><path d="M25.6 15.6C32 16.8 38.2 14.4 38.4 8.6 38.5 5.6 35.8 4.2 33.6 5.6 35.6 6.4 35.9 8.8 34.3 10.5 32.4 12.4 29 13 25.6 12.6Z"/><rect x="17" y="16" width="14" height="3" rx=".5"/><path d="M19.5 19C18 21.5 19.5 23.5 21.5 22.5L24 21l2.5 1.5c2 1 3.5-1 2-3.5Z"/><rect x="12" y="25" width="24" height="2.8"/><circle cx="12" cy="26.4" r="1.8"/><circle cx="36" cy="26.4" r="1.8"/><rect x="22.6" y="21" width="2.8" height="32"/><path d="M6.5 39C7 49 14.5 55 24 55S41 49 41.5 39" fill="none" stroke="currentColor" stroke-width="2.8"/><path d="M2.5 42.5l4-8 4 8ZM37.5 42.5l4-8 4 8Z"/></svg><span>Bon vent et bonne mer.</span></p>
+    <p>Préparation au brevet de patron d'embarcation et à la navigation à voile. Rédigé à partir des cours de navigation des scouts marins de Brest, mis à jour et complétés.</p>
+    <p>Ce site ne remplace ni la réglementation (Division 240, RIPAM), ni les documents officiels du SHOM, ni le règlement de votre association. En cas de doute, ce sont eux qui font foi.</p>
+  </div>
+</footer>
+<script src="../js/site.js"></script>
+<script type="module" src="../js/auth.js"></script>
+
+</body>
+</html>

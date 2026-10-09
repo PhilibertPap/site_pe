@@ -132,4 +132,119 @@ export default [
     c: ['On va regarder face au vent depuis un point dégagé', 'On regarde la mer dans le port', 'On se fie uniquement à l’application', 'On attend d’être sorti'], a: 0,
     e: 'Depuis un endroit abrité ou sous le vent, la mer paraît toujours plus belle qu’elle n’est.', ref: R + '#beaufort',
   },
+  {
+    id: 'm27', q: 'La météo côtière annonce un avis de grand frais. Vous vous attendez à :', src: 'annale 2020',
+    c: ['Au moins force 7', 'Des rafales à force 6', 'Au moins force 5', 'Des rafales à force 7 seulement'], a: 0,
+    e: 'Grand frais : force 7 (28 à 33 nd) de vent moyen, avec des rafales plus fortes. C’est aussi le seuil du BMS côte.', ref: R + '#beaufort',
+  },
+  {
+    id: 'm28', q: 'Dans un bulletin, « coup de vent » désigne un vent de force :',
+    c: ['8', '6', '7', '10'], a: 0,
+    e: 'Force 7 : grand frais ; 8 : coup de vent ; 9 : fort coup de vent ; 10 et plus : tempête.', ref: R + '#beaufort',
+  },
+  {
+    id: 'm29', q: 'Qu’est-ce qu’une brise thermique ?', src: 'annale 2017',
+    c: ['Un vent créé par la différence de température entre la terre et la mer', 'Un vent chaud venu du Sud', 'Un vent qui souffle toujours de la mer vers la terre', 'Un vent qui précède un front chaud'], a: 0,
+    e: 'Le jour, la terre chauffe plus vite que la mer : brise de mer. La nuit, elle se refroidit plus vite : brise de terre.', ref: R + '#brises',
+  },
+  {
+    id: 'm30', q: 'Par beau temps d’été, la brise de mer est en général la plus forte :',
+    c: ['En milieu d’après-midi', 'Au lever du soleil', 'Vers minuit', 'Au coucher du soleil'], a: 0,
+    e: 'Elle s’établit en fin de matinée, culmine vers 15–17 h (parfois force 4 à 5) et tombe vers le coucher du soleil.', ref: R + '#brises',
+  },
+  {
+    id: 'm31', q: 'Dans l’hémisphère Nord, au fil de l’après-midi, la brise de mer :',
+    c: ['Tourne progressivement vers la droite', 'Tourne progressivement vers la gauche', 'Garde exactement la même direction', 'S’inverse en brise de terre'], a: 0,
+    e: 'Comme tout mouvement d’air dans l’hémisphère Nord, elle est déviée vers la droite par la force de Coriolis au cours de la journée.', ref: R + '#brises',
+  },
+  {
+    id: 'm32', q: 'Le matin, un faible vent de terre souffle. Par beau temps chaud, l’après-midi :',
+    c: ['La brise de mer peut l’annuler, puis s’établir', 'Il va forcément forcir', 'Il va tourner au Nord, quoi qu’il arrive', 'Rien ne changera'], a: 0,
+    e: 'La brise se superpose au vent général : elle annule un vent de terre faible et renforce un vent de mer. Attention à la pétole au moment de la bascule.', ref: R + '#brises',
+  },
+  {
+    id: 'm33', q: 'Un cumulonimbus (énorme nuage en tour, sommet en enclume) se développe au vent de vous :',
+    c: ['Je réduis la voilure avant son arrivée : grain, rafales et saute de vent sont probables', 'Je garde toute la toile pour profiter du vent', 'Rien à craindre : c’est un nuage de beau temps', 'Je vais sous le nuage pour profiter de l’abri'], a: 0,
+    e: 'Sous un cumulonimbus, rafales violentes (jusqu’à 50 nd), saute de vent et averse qui bouche la visibilité arrivent en quelques minutes.', ref: R + '#nuages',
+  },
+  {
+    id: 'm34', q: 'De petits cumulus blancs et isolés, dans un ciel bleu, annoncent en général :',
+    c: ['Le beau temps', 'Un front chaud dans les 12 heures', 'Un orage imminent', 'De la bruine'], a: 0,
+    e: 'Ce sont les cumulus qui grossissent en tours (cumulonimbus) qui annoncent orages et grains.', ref: R + '#nuages',
+  },
+  {
+    id: 'm35', q: 'Un ciel d’altostratus qui s’épaissit annonce :',
+    c: ['De la pluie dans les heures qui viennent', 'Une amélioration rapide', 'Une brise de mer', 'Un anticyclone'], a: 0,
+    e: 'Après les cirrus et le voile de cirrostratus, l’altostratus qui s’épaissit précède la pluie continue du front chaud.', ref: R + '#nuages',
+  },
+  {
+    id: 'm36', q: 'Ciel bas et gris, bruine, vent de Sud-Ouest régulier, baromètre stable après une baisse. Vous êtes probablement :',
+    c: ['Dans le secteur chaud d’une perturbation', 'Juste derrière un front froid', 'Au centre d’un anticyclone', 'Sous une brise de mer'], a: 0,
+    e: 'Entre front chaud et front froid : stratus, bruine, vent régulier de SW à W, pression stable. Il faut s’attendre au front froid : grains et saute de vent au NW.', ref: R + '#perturbations',
+  },
+  {
+    id: 'm37', q: 'Dans un bulletin, « vent virant » signifie que le vent :',
+    c: ['Tourne dans le sens des aiguilles d’une montre', 'Tourne dans le sens inverse des aiguilles d’une montre', 'Augmente', 'Diminue'], a: 0,
+    e: 'Virant : sens horaire (du Sud vers l’Ouest, par exemple) ; revenant : sens inverse. Fraîchissant et mollissant parlent de la force.', ref: R + '#bulletins',
+  },
+  {
+    id: 'm38', q: 'Dans un bulletin, « temporairement force 6 » signifie :',
+    c: ['Force 6 pendant moins de la moitié du temps', 'Force 6 en rafales seulement', 'Force 6 sur une partie de la zone', 'Force 6 toute la journée'], a: 0,
+    e: 'Temporairement : moins de la moitié du temps ; localement : sur une partie de la zone ; en rafales : pointes passagères.', ref: R + '#bulletins',
+  },
+  {
+    id: 'm39', q: 'Vent moyen annoncé : 15 nœuds. Les rafales peuvent atteindre :',
+    c: ['Une vingtaine de nœuds, voire plus', '15 nœuds au plus', '10 nœuds', 'On ne peut rien en dire'], a: 0,
+    e: 'Les rafales dépassent couramment le vent moyen de 40 % ou plus : 15 nd peuvent donner des rafales de 21 nd.', ref: R + '#beaufort',
+  },
+  {
+    id: 'm40', q: 'La houle est :', src: 'annale 2017',
+    c: ['Une ondulation levée par le vent, souvent loin d’ici, plus longue et régulière que la mer du vent', 'Une vague créée par les marées de fort coefficient', 'Une vague créée par la pression atmosphérique', 'La mer levée par le vent local'], a: 0,
+    e: 'La mer du vent est levée par le vent local ; la houle vient d’ailleurs. Sa taille dépend de la force du vent, de sa durée et de la distance sur laquelle il a soufflé.', ref: R + '#beaufort',
+  },
+  {
+    id: 'm41', q: 'Le bulletin annonce « mer agitée ». Les vagues font :',
+    c: ['Entre 1,25 et 2,5 m', 'Moins de 0,5 m', 'Entre 4 et 6 m', 'Plus de 9 m'], a: 0,
+    e: 'Échelle de Douglas : belle (jusqu’à 0,5 m), peu agitée (1,25 m), agitée (2,5 m), forte (4 m), très forte (6 m).', ref: R + '#beaufort',
+  },
+  {
+    id: 'm42', q: 'Sur une carte météo, des isobares très serrées indiquent :',
+    c: ['Un vent fort', 'Un vent faible', 'De la pluie', 'Un front chaud'], a: 0,
+    e: 'Plus les isobares sont serrées, plus la pression varie vite d’un point à l’autre, et plus le vent est fort.', ref: R + '#pression',
+  },
+  {
+    id: 'm43', q: 'Sur une carte météo, une ligne portant des triangles bleus représente :',
+    c: ['Un front froid', 'Un front chaud', 'Un front occlus', 'Une isobare'], a: 0,
+    e: 'Front froid : triangles bleus ; front chaud : demi-cercles rouges ; front occlus : triangles et demi-cercles violets.', ref: R + '#perturbations',
+  },
+  {
+    id: 'm44', q: 'Vous prévoyez de mouiller pour la nuit au fond d’une baie ouverte à l’Est. Le vent de Nord doit tourner à l’Est dans la nuit :', src: 'annale 2023',
+    c: ['Je choisis un autre mouillage, abrité du vent d’Est', 'Je mouille comme prévu : le vent de Nord n’entre pas dans la baie', 'Je mouille avec plus de chaîne, cela suffira', 'Je mouille au milieu de la baie pour avoir de la place'], a: 0,
+    e: 'Pour un mouillage de nuit, c’est le vent à venir qui compte : une baie ouverte à l’Est devient un piège quand le vent passe à l’Est.', ref: R + '#perturbations',
+  },
+  {
+    id: 'm45', q: 'Sonde soulignée 0,5 (le fond découvre de 0,5 m), hauteur de marée 2,0 m. La hauteur d’eau est de :',
+    c: ['1,5 m', '2,5 m', '2,0 m', '0,5 m'], a: 0,
+    e: 'Une sonde soulignée se compte négativement : hauteur d’eau = −0,5 + 2,0 = 1,5 m.', ref: M + '#hauteur-eau',
+  },
+  {
+    id: 'm46', q: 'Tirant d’eau 1,50 m, pied de pilote 0,50 m, sonde 1,0 m (non soulignée). Quelle hauteur de marée faut-il au minimum pour passer ?',
+    c: ['1,00 m', '2,00 m', '3,00 m', '0,50 m'], a: 0,
+    e: 'Il faut sonde + hauteur de marée ≥ TE + pied de pilote, donc h ≥ 1,50 + 0,50 − 1,0 = 1,00 m.', ref: M + '#hauteur-eau',
+  },
+  {
+    id: 'm47', q: 'La mer monte de 08 h 00 à 14 h 12. L’heure-marée vaut :',
+    c: ['1 h 02', '1 h 00', '1 h 12', '2 h 04'], a: 0,
+    e: 'Durée 6 h 12 = 372 min ; heure-marée = 372 / 6 = 62 min.', ref: M + '#douziemes',
+  },
+  {
+    id: 'm48', q: 'Pour un port rattaché, le coefficient du jour est 60. Avec la méthode des corrigés d’examen, on applique les corrections :',
+    c: ['De mortes eaux', 'De vives eaux', 'Aucune : le coefficient suffit', 'De vives eaux pour la PM et de mortes eaux pour la BM'], a: 0,
+    e: 'Coefficient de 70 ou plus : corrections de vives eaux ; en dessous : mortes eaux. Pour plus de précision, on peut interpoler entre 45 et 95.', ref: M + '#annuaire',
+  },
+  {
+    id: 'm49', q: 'Les plus grandes marées de l’année ont lieu :',
+    c: ['Près des équinoxes (mars et septembre)', 'Près des solstices (juin et décembre)', 'En plein été', 'À chaque pleine lune, toute l’année de la même façon'], a: 0,
+    e: 'Aux équinoxes, le Soleil est au-dessus de l’équateur : les vives eaux de nouvelle et de pleine lune sont alors les plus fortes.', ref: M + '#origine',
+  },
 ];

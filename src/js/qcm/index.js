@@ -6,6 +6,7 @@ import securite from './securite.js';
 import bord from './bord.js';
 import vhf from './vhf.js';
 import meteo from './meteo.js';
+import generees from './generees.js';
 
 export const THEMES = {
   balisage: 'Balisage et carte',
@@ -41,4 +42,5 @@ export const QUESTIONS = [
   ...tag('bord', bord),
   ...tag('vhf', vhf),
   ...tag('meteo', meteo),
+  ...generees,
 ];

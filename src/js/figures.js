@@ -337,6 +337,8 @@ export function pavillon(code, o = {}) {
       .map((c, i) => `<rect x="3" y="${3 + i * 7.6}" width="60" height="7.7" fill="${c}"/>`)
       .join('') + `<rect x="3" y="3" width="60" height="38" fill="none" ${S}/>`,
     D: `<rect x="3" y="3" width="60" height="38" fill="${C.Y}"/><rect x="3" y="12.5" width="60" height="19" fill="${C.Bu}"/><rect x="3" y="3" width="60" height="38" fill="none" ${S}/>`,
+    E: `<rect x="3" y="3" width="60" height="19" fill="${C.Bu}"/><rect x="3" y="22" width="60" height="19" fill="${C.R}"/><rect x="3" y="3" width="60" height="38" fill="none" ${S}/>`,
+    T: `<rect x="3" y="3" width="20" height="38" fill="${C.R}"/><rect x="23" y="3" width="20" height="38" fill="${C.W}"/><rect x="43" y="3" width="20" height="38" fill="${C.Bu}"/><rect x="3" y="3" width="60" height="38" fill="none" ${S}/>`,
     H: `<rect x="3" y="3" width="30" height="38" fill="${C.W}"/><rect x="33" y="3" width="30" height="38" fill="${C.R}"/><rect x="3" y="3" width="60" height="38" fill="none" ${S}/>`,
     N: (() => {
       let s = '';

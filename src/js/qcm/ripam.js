@@ -135,4 +135,120 @@ export default [
     c: ['Le voilier s’écarte', 'Le navire non maître s’écarte', 'Le voilier est privilégié s’il est tribord amures'], a: 0,
     e: 'Un navire non maître de sa manœuvre ne peut pas s’écarter : tous les autres s’écartent de lui.', ref: R + '#hierarchie',
   },
+  {
+    id: 'r27', q: 'Un voilier au près bâbord amures est privilégié par rapport à :', src: 'annale 2018',
+    c: ['Un bateau de plaisance à moteur', 'Un voilier au grand largue tribord amures', 'Un chalutier en action de pêche', 'Un voilier au vent arrière tribord amures'], a: 0,
+    e: 'Le navire à moteur s’écarte du voilier (règle 18). Le voilier bâbord amures, lui, s’écarte de tout voilier tribord amures, quelle que soit l’allure, et du chalutier en pêche.', ref: R + '#hierarchie',
+  },
+  {
+    id: 'r28', q: 'Un navire à moteur qui en rattrape un autre :', src: 'annale 2021',
+    c: ['Peut le dépasser d’un côté ou de l’autre, en s’écartant de sa route', 'Ne peut le dépasser que par son bâbord', 'Ne peut le dépasser que sous son vent', 'Doit attendre que l’autre s’écarte'], a: 0,
+    e: 'La règle 13 n’impose pas de côté : le rattrapant s’écarte jusqu’à être complètement paré. Dans un chenal, il annonce son intention par signal sonore.', ref: R + '#rattrapant',
+  },
+  {
+    id: 'r29', q: 'De nuit, au moteur, j’aperçois sur mon avant tribord le feu vert d’un bateau, dont le relèvement change nettement :', src: 'annale 2021',
+    c: ['Je poursuis ma route en le surveillant', 'Je dois m’écarter, car il est sur mon tribord', 'Je fais demi-tour', 'Je stoppe et j’attends qu’il soit passé'], a: 0,
+    e: 'Je vois son flanc tribord : il se déplace vers ma droite. Son relèvement change : pas de risque d’abordage. « Vert, je ne m’en fais pas », mais la veille continue.', ref: R + '#moteur',
+  },
+  {
+    id: 'r30', q: 'Bâbord amures, j’aperçois au vent un voilier dont je ne peux pas déterminer l’amure :',
+    c: ['Je m’écarte', 'Je garde mon cap : il est au vent, c’est à lui de s’écarter', 'J’émets un son bref', 'Je lofe pour passer devant lui'], a: 0,
+    e: 'Règle 12 a) iii) : dans le doute, le voilier bâbord amures s’écarte, car l’autre est peut-être tribord amures.', ref: R + '#voiliers',
+  },
+  {
+    id: 'r31', q: 'Au vent arrière, pour le RIPAM, l’amure d’un voilier se détermine :',
+    c: ['Par le côté opposé à celui où se trouve la bôme de grand-voile', 'Par le côté où se trouve la bôme', 'Par le côté où est établi le foc', 'Par le côté vers lequel le bateau gîte'], a: 0,
+    e: 'Le côté du vent est réputé être celui opposé à la bôme (règle 12 b). Bôme à tribord : bâbord amures ; bôme à bâbord : tribord amures.', ref: R + '#voiliers',
+  },
+  {
+    id: 'r32', q: 'A descend au vent arrière, B remonte au près. Lequel doit s’écarter ?',
+    fig: { k: 'svg', v: situ([{ x: 150, y: 55, h: 180, amure: 'b', label: 'A' }, { x: 230, y: 160, h: 315, amure: 't', label: 'B' }], 0) },
+    c: ['Le voilier A', 'Le voilier B', 'Les deux'], a: 0, fixed: true,
+    e: 'La bôme de A est à tribord : il est bâbord amures. B reçoit le vent par tribord : il est tribord amures. Amures différentes : A s’écarte, même au vent arrière.', ref: R + '#voiliers',
+  },
+  {
+    id: 'r33', q: 'Je suis tribord amures, sous le vent d’un voilier bâbord amures qui converge vers moi :',
+    c: ['C’est lui qui s’écarte, car il est bâbord amures', 'C’est moi qui m’écarte, car je suis sous le vent', 'Le plus rapide s’écarte', 'Nous lofons tous les deux'], a: 0,
+    e: 'La règle « au vent / sous le vent » ne sert qu’entre voiliers de même amure. Amures différentes : le bâbord amures s’écarte, toujours.', ref: R + '#voiliers',
+  },
+  {
+    id: 'r34', q: 'Sans compas de relèvement, comment savoir si un voilier qui se rapproche est en route de collision ?', src: 'annale 2020',
+    c: ['Je garde mon cap et je regarde s’il reste aligné avec un même repère du bord (hauban, chandelier)', 'Je regarde s’il grossit vite', 'Je compare sa vitesse à la mienne', 'C’est impossible sans compas'], a: 0,
+    e: 'À cap constant, s’il reste dans l’alignement du même repère, son gisement ne change pas : route de collision. S’il défile, il passera devant ou derrière.', ref: R + '#risque',
+  },
+  {
+    id: 'r35', q: 'Un navire qui se rapproche défile vers l’avant par rapport à un repère fixe du bord :',
+    c: ['Il passera devant moi', 'Il passera derrière moi', 'Nous sommes en route de collision', 'Il est au mouillage'], a: 0,
+    e: 'Il défile vers l’avant : il passera sur mon avant. Vers l’arrière, il passerait derrière ; s’il ne défile pas, nous allons nous aborder.', ref: R + '#risque',
+  },
+  {
+    id: 'r36', q: 'Un grand cargo se rapproche à courte distance ; son relèvement varie un peu :',
+    c: ['Le risque d’abordage peut quand même exister', 'Il n’y a aucun risque', 'Il est forcément au mouillage', 'C’est toujours à lui de s’écarter'], a: 0,
+    e: 'Règle 7 : avec un grand navire, un remorquage ou à courte distance, une légère variation du relèvement ne suffit pas à écarter le risque.', ref: R + '#risque',
+  },
+  {
+    id: 'r37', q: 'Un chalutier en pêche et un navire non maître de sa manœuvre sont en route de collision. Qui s’écarte ?',
+    c: ['Le chalutier', 'Le navire non maître de sa manœuvre', 'Les deux'], a: 0,
+    e: 'Règle 18 : le navire en train de pêcher s’écarte des navires non maîtres de leur manœuvre et à capacité de manœuvre restreinte.', ref: R + '#hierarchie',
+  },
+  {
+    id: 'r38', q: 'Un voilier rencontre un navire handicapé par son tirant d’eau (cylindre noir) :',
+    c: ['Il évite de gêner son passage', 'Il garde son cap : un voilier est privilégié', 'Il émet cinq sons brefs pour qu’il s’écarte', 'Il ne s’en occupe pas : cette règle ne vaut que dans les ports'], a: 0,
+    e: 'Règle 18 d) : tout navire, sauf non maître de sa manœuvre ou à capacité restreinte, évite de gêner un navire handicapé par son tirant d’eau, qui ne peut quitter les eaux profondes.', ref: R + '#hierarchie',
+  },
+  {
+    id: 'r39', q: 'Un petit voilier peut-il traverser un chenal étroit juste devant un cargo qui ne peut naviguer qu’à l’intérieur ?',
+    c: ['Non, s’il gêne son passage', 'Oui, s’il est à la voile', 'Oui, s’il est tribord amures', 'Oui, à condition d’émettre un son prolongé'], a: 0,
+    e: 'Règle 9 d) : on ne traverse pas un chenal si cela gêne un navire qui ne peut naviguer qu’à l’intérieur. On attend qu’il soit passé.', ref: R + '#chenaux',
+  },
+  {
+    id: 'r40', q: 'Peut-on mouiller dans un chenal étroit ?',
+    c: ['On l’évite autant que possible', 'Oui, en montrant une boule noire', 'Oui, de jour seulement', 'Oui, si le chenal est balisé'], a: 0,
+    e: 'Règle 9 g) : on évite de mouiller dans un chenal étroit, où l’on gênerait les autres navires et risquerait d’être abordé.', ref: R + '#chenaux',
+  },
+  {
+    id: 'r41', q: 'Dans une voie d’un dispositif de séparation du trafic (rail), un voilier :',
+    c: ['Ne doit pas gêner les navires à moteur qui suivent la voie', 'Est privilégié sur les cargos', 'Doit naviguer à contresens pour être vu', 'Doit allumer ses feux de jour'], a: 0,
+    e: 'Règle 10 j) : un voilier ou un navire de moins de 20 m ne gêne pas le passage des navires à moteur qui suivent la voie. Mieux vaut éviter les rails.', ref: R + '#chenaux',
+  },
+  {
+    id: 'r42', q: 'Dans la brume, vous entendez sur l’avant de votre travers le signal de brume d’un navire que vous ne voyez pas :',
+    c: ['Je réduis ma vitesse au minimum, et si nécessaire je casse mon erre', 'Je garde cap et vitesse : je suis à la voile', 'J’accélère pour m’éloigner', 'Je viens franchement sur bâbord'], a: 0,
+    e: 'Règle 19 e) : réduire la vitesse au minimum pour gouverner, casser l’erre si besoin, et manœuvrer avec prudence jusqu’à ce que le risque soit écarté.', ref: R + '#brume',
+  },
+  {
+    id: 'r43', q: 'Par visibilité réduite, un navire est détecté au radar sur l’avant de votre travers. Si vous changez de cap, vous évitez :',
+    c: ['De venir sur bâbord', 'De venir sur tribord', 'De ralentir', 'D’émettre vos signaux de brume'], a: 0,
+    e: 'Règle 19 d) : on évite de venir sur bâbord pour un navire situé sur l’avant du travers (sauf s’il est rattrapé).', ref: R + '#brume',
+  },
+  {
+    id: 'r44', q: 'La vitesse de sécurité dépend notamment :',
+    c: ['De la visibilité, du trafic, de la manœuvrabilité du bateau, de la mer et de la proximité des dangers', 'Uniquement de la limitation du port', 'Uniquement de la visibilité', 'De la puissance du moteur'], a: 0,
+    e: 'Règle 6 : c’est la vitesse qui permet d’éviter un abordage et de s’arrêter sur une distance adaptée aux circonstances.', ref: R + '#veille',
+  },
+  {
+    id: 'r45', q: 'Au moteur, de nuit, vous voyez droit devant ces feux, à relèvement constant :', fig: { k: 'nuit', v: 'moteur-face' },
+    c: ['Je viens sur tribord', 'Je viens sur bâbord', 'Je garde cap et vitesse', 'Je fais demi-tour'], a: 0,
+    e: 'Feu de mât, vert et rouge : navire à moteur qui vient droit sur moi. Face à face, chacun vient sur tribord et on se croise bâbord contre bâbord (règle 14).', ref: R + '#moteur',
+  },
+  {
+    id: 'r46', q: 'Au moteur, de nuit, vous voyez sur votre avant bâbord ces feux d’un navire à moteur, dont le relèvement ne change pas :', fig: { k: 'nuit', v: 'moteur-tribord' },
+    c: ['C’est à lui de s’écarter : je garde cap et vitesse, prêt à agir', 'Je m’écarte en venant sur bâbord', 'Je m’écarte en venant sur tribord', 'Nous venons tous les deux sur tribord'], a: 0,
+    e: 'Je vois son feu vert : je suis sur son tribord. C’est lui qui a l’autre sur tribord, donc lui qui s’écarte (règle 15). Je reste prêt à manœuvrer s’il ne le fait pas.', ref: R + '#moteur',
+  },
+  {
+    id: 'r47', q: 'Un navire qui en rattrape un autre se retrouve ensuite sur son travers, en route croisée :',
+    c: ['Il reste rattrapant jusqu’à être complètement paré', 'Il devient privilégié s’il est sur le tribord de l’autre', 'Les règles de croisement s’appliquent dès lors', 'Les deux doivent s’écarter'], a: 0,
+    e: 'Règle 13 d) : un changement de relèvement ultérieur ne fait pas du rattrapant un navire qui croise ; il s’écarte jusqu’à être paré.', ref: R + '#rattrapant',
+  },
+  {
+    id: 'r48', q: 'Au moteur, vous croisez un voilier à la voile qui arrive sur votre bâbord :',
+    c: ['Je m’écarte : un navire à moteur s’écarte d’un voilier', 'Il s’écarte : il m’a sur son tribord', 'Le plus rapide s’écarte', 'Nous venons tous les deux sur tribord'], a: 0,
+    e: 'La règle « celui qui a l’autre sur tribord s’écarte » ne vaut qu’entre navires à moteur. Face à un voilier, le navire à moteur s’écarte (règle 18), de quelque côté qu’il arrive.', ref: R + '#hierarchie',
+  },
+  {
+    id: 'r49', q: 'Votre voilier a un récepteur AIS. Pour la veille :',
+    c: ['La veille visuelle reste obligatoire : beaucoup de bateaux n’émettent pas d’AIS', 'L’AIS dispense de la veille visuelle', 'L’AIS suffit la nuit', 'L’AIS remplace les feux de navigation'], a: 0,
+    e: 'L’AIS aide à évaluer un risque (distance et heure du passage au plus près), mais ne montre que les navires équipés. Règle 5 : veille visuelle et auditive permanente.', ref: R + '#veille',
+  },
 ];

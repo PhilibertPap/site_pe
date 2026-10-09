@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Avaries, incidents et secours · Patron d'embarcation</title>
+<meta name="description" content="Gérer un problème de l'extérieur : rester calme, faire un état des lieux, alerter, mettre la flottille en sécurité, agir ; déclencher les secours, parler au CROSS, prévenir le correspondant à terre ; conduite à tenir pour les avaries courantes.">
+<link rel="icon" href="../img/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="../img/icon-180.png">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta name="theme-color" content="#11304d">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Patron d'emb.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/style.css">
+<script>
+  try {
+    var t = localStorage.getItem('pe-theme');
+    if (t) document.documentElement.setAttribute('data-theme', t);
+  } catch (e) {}
+  try { if (!localStorage.getItem('pe-ok')) document.documentElement.classList.add('gate'); } catch (e) { document.documentElement.classList.add('gate'); }
+</script>
+</head>
+<body data-root="../">
+<a class="skip" href="#contenu">Aller au contenu</a>
+<header class="top">
+  <div class="top-in">
+    <a class="brand" href="../index.html"><svg class="emb" viewBox="0 0 48 58" aria-hidden="true" fill="currentColor"><path d="M24 .5C29 5 30 10.5 24 16.5 18 10.5 19 5 24 .5Z"/><path d="M22.4 15.6C16 16.8 9.8 14.4 9.6 8.6 9.5 5.6 12.2 4.2 14.4 5.6 12.4 6.4 12.1 8.8 13.7 10.5 15.6 12.4 19 13 22.4 12.6Z"/><path d="M25.6 15.6C32 16.8 38.2 14.4 38.4 8.6 38.5 5.6 35.8 4.2 33.6 5.6 35.6 6.4 35.9 8.8 34.3 10.5 32.4 12.4 29 13 25.6 12.6Z"/><rect x="17" y="16" width="14" height="3" rx=".5"/><path d="M19.5 19C18 21.5 19.5 23.5 21.5 22.5L24 21l2.5 1.5c2 1 3.5-1 2-3.5Z"/><rect x="12" y="25" width="24" height="2.8"/><circle cx="12" cy="26.4" r="1.8"/><circle cx="36" cy="26.4" r="1.8"/><rect x="22.6" y="21" width="2.8" height="32"/><path d="M6.5 39C7 49 14.5 55 24 55S41 49 41.5 39" fill="none" stroke="currentColor" stroke-width="2.8"/><path d="M2.5 42.5l4-8 4 8ZM37.5 42.5l4-8 4 8Z"/></svg><span class="brand-t"><b>Patron d'embarcation</b><small>Scouts marins · voile</small></span></a>
+    <button class="menu-btn" type="button" aria-expanded="false" aria-controls="mainnav"><span class="burger" aria-hidden="true"><i></i><i></i><i></i></span><span class="menu-l">Menu</span></button>
+    <nav class="mainnav" id="mainnav" aria-label="Parties du site"><a href="../cours/index.html">Cours</a><a href="../qcm/index.html">QCM</a><a href="../exercices/index.html">Exercices</a><a href="../pratique/index.html">Pratique</a><a href="../cqcf/index.html" aria-current="page">CQ / CF</a><a href="../annales/index.html">Annales</a><a href="../questions/index.html">Questions</a></nav>
+    <div class="acct" id="acct"></div>
+    <button class="theme" type="button" aria-label="Changer de thème" title="Clair / sombre"><svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true"><circle cx="8" cy="8" r="6.5" fill="none" stroke="currentColor" stroke-width="1.3"/><path d="M8 1.5 A6.5 6.5 0 0 1 8 14.5 Z" fill="currentColor"/></svg></button>
+  </div>
+  <div class="grad" aria-hidden="true"></div>
+</header>
+<main id="contenu">
+
+<div class="doc">
+  <aside class="side">
+    <p class="side-h">CQ / CF</p>
+    <ol class="chapters"><li><a href="../cqcf/diplomes.html">Diplômes et examen</a></li><li><a href="../cqcf/dossier.html">Dossier de navigation</a></li><li><a href="../cqcf/preparer.html">Préparer la navigation</a></li><li><a href="../cqcf/flottille.html">Conduire une flottille</a></li><li><a href="../cqcf/bateau-secu.html">Bateau de sécurité</a></li><li><a href="../cqcf/avaries.html" aria-current="page">Avaries et secours</a></li><li><a href="../cqcf/pedagogie.html">La dimension scoute</a></li><li><a href="../cqcf/oral.html">Questions d'oral</a></li></ol>
+  </aside>
+  <article class="chapter">
+    <header class="chap-head">
+      <p class="kicker">CQ / CF</p>
+      <h1>Avaries, incidents et secours</h1>
+      <p class="chap-desc">Gérer un problème de l'extérieur : rester calme, faire un état des lieux, alerter, mettre la flottille en sécurité, agir ; déclencher les secours, parler au CROSS, prévenir le correspondant à terre ; conduite à tenir pour les avaries courantes.</p>
+    </header>
+    <details class="toc-box"><summary>Sur cette page</summary><ol class="toc"><li><a href="#principes">Les principes</a></li><li><a href="#etat-des-lieux">L'état des lieux</a></li><li><a href="#alerter">Alerter</a></li><li><a href="#securiser">Mettre la flottille en sécurité</a></li><li><a href="#agir">Agir</a></li><li><a href="#conduites">Conduite à tenir</a></li><li><a href="#incidents">Incidents de flottille</a></li><li><a href="#apres">Prévenir et rendre compte</a></li></ol></details>
+    <p>Le patron d'embarcation gère une avarie <strong>de l'intérieur</strong> : il est à bord, il agit sur son bateau. Le CQ ou le CF la gère <strong>de l'extérieur</strong> : il n'est pas sur le bateau touché (ou, pour le CF, il est sur un autre voilier), il dispose d'informations partielles, et il a d'autres bateaux sous sa responsabilité. Son travail n'est pas de tout faire lui-même, mais de comprendre la situation, d'alerter, de protéger le reste de la flottille, puis d'aider.</p>
+
+<h2 id="principes">Les principes</h2>
+
+<div class="box prop"><p class="box-label">Règle <span class="box-title">(Qui déclenche les secours)</span>.</p>
+<p>C'est le <strong>CQ ou le CF</strong> qui déclenche les secours, pas le patron d'embarcation. Le chef de bord prévient d'abord son CQ ou son CF ; il n'appelle lui-même le CROSS que s'il n'obtient pas de réponse. Le CQ, qui a une vue d'ensemble, décide de l'alerte et la donne de façon complète, y compris le nombre de mineurs en cause.</p>
+</div>
+
+<p>La formation CQ/CF résume la conduite à tenir en quelques règles :</p>
+<ol>
+  <li><strong>Rester calme.</strong> Les jeunes calent leur comportement sur celui du chef. Une voix posée à la VHF rassure tout le monde.</li>
+  <li><strong>Prendre les informations et donner les premières consignes</strong> : faire un état des lieux précis et objectif ; rappeler au chef de bord la réaction immédiate, puis le laisser gérer son bord.</li>
+  <li><strong>S'occuper de la flottille</strong> : les autres bateaux ne doivent pas devenir le deuxième problème.</li>
+  <li><strong>Se déplacer avec sa flottille</strong> : ne pas laisser les autres bateaux derrière soi pour foncer vers le bateau en difficulté.</li>
+  <li><strong>Demander de l'aide</strong> au CROSS, et <strong>prévenir les secours au moindre doute</strong>.</li>
+  <li><strong>Prévenir le correspondant à terre.</strong></li>
+</ol>
+
+<div class="box meth"><p class="box-label">Méthode <span class="box-title">(L'ordre des actions (manuel CQ))</span>.</p>
+<ol>
+  <li><strong>Alerter.</strong> Informer les secours qu'un incident est en cours dans la flottille, même s'il paraît minime : on encadre des mineurs.</li>
+  <li><strong>Mettre en sécurité.</strong> Protéger le reste de la flottille pour éviter le suraccident.</li>
+  <li><strong>Agir.</strong> Prendre en charge l'avarie, en concertation avec les secours.</li>
+</ol>
+</div>
+
+<h2 id="etat-des-lieux">L'état des lieux</h2>
+
+<p>À la VHF, le chef de bord est souvent ému, et il décrit ce qu'il ressent plutôt que ce qu'il voit. Le CQ pose des questions fermées et précises, dans cet ordre :</p>
+<ol>
+  <li>Tout le monde est-il à bord ? Y a-t-il des blessés ?</li>
+  <li>Quel est le problème, exactement ? (« De l'eau entre : par où, combien ? Un verre par minute, ou plusieurs seaux ? Arrivez-vous à vider plus vite qu'elle n'entre ? »)</li>
+  <li>Où êtes-vous, et qu'y a-t-il autour : danger sous le vent, autres bateaux ?</li>
+  <li>Que faites-vous déjà ?</li>
+</ol>
+<p>Il rappelle alors la réaction immédiate attendue (« Mettez-vous à la cape », « Coupez le moteur », « Mouillez ») et donne au chef de bord le temps de l'exécuter. Il note l'heure et les informations reçues dans le journal de flottille.</p>
+
+<div class="box warn"><p class="box-label">Attention.</p>
+<p>Le CQ ne doit pas se mettre à manœuvrer le bateau à distance, phrase par phrase. Le chef de bord connaît sa réaction immédiate, l'a apprise pour le PE ; on la lui rappelle, puis on le laisse faire. Le CQ garde la tête libre pour l'ensemble.</p>
+</div>
+
+<h2 id="alerter">Alerter</h2>
+
+<h3>Les moyens</h3>
+<div class="tbl-wrap"><table>
+<thead><tr><th>Moyen</th><th>Usage</th></tr></thead>
+<tbody>
+<tr><td><strong>VHF, canal 16</strong></td><td>Le moyen prioritaire : le CROSS l'entend, et les bateaux proches aussi, qui peuvent se dérouter d'eux-mêmes pour porter assistance. Le CROSS peut ensuite demander de passer sur un autre canal ou au téléphone.</td></tr>
+<tr><td><strong>196</strong></td><td>Numéro d'urgence en mer, depuis un portable : il aboutit au CROSS. À utiliser si la VHF ne passe pas ou si l'on n'obtient pas de réponse.</td></tr>
+<tr><td><strong>112</strong></td><td>Numéro d'urgence européen, pour un problème à terre ou si le 196 ne passe pas.</td></tr>
+</tbody></table></div>
+
+<p>Une alerte au CROSS n'entraîne pas forcément l'envoi de moyens de secours. Si l'on maîtrise la situation, on le dit, on explique ce qu'on fait, et le CROSS suit. Il vaut mieux un CROSS informé trop tôt d'un problème qui se règle qu'un CROSS prévenu trop tard d'un problème qui s'est aggravé.</p>
+
+<h3>Le message</h3>
+<p>On choisit le signal selon la gravité (voir <a href="../cours/10-vhf.html#alerte">le chapitre 10</a>) :</p>
+<ul>
+  <li><strong>MAYDAY</strong> (détresse) : danger grave et imminent, besoin d'une aide immédiate : voie d'eau non maîtrisée, incendie, chavirage, homme à la mer non récupéré ;</li>
+  <li><strong>PAN PAN</strong> (urgence) : problème sérieux sans danger immédiat : blessé à bord, démâtage loin des dangers, demande de remorquage ;</li>
+  <li><strong>SÉCURITÉ</strong> : information pour la sécurité de la navigation.</li>
+</ul>
+
+<div class="box ex"><p class="box-label">Exemple <span class="box-title">(Message d'urgence d'un CQ (fictif))</span>.</p>
+<p class="mono small" style="line-height:1.7">PAN PAN, PAN PAN, PAN PAN<br>
+ICI ARMOR, ARMOR, ARMOR (semi-rigide de sécurité)<br>
+POSITION : 0,5 mille dans le Nord-Est de la pointe de Pen al Lann<br>
+NATURE : démâtage d'un voilier collectif de 6 mètres de ma flottille, pas de blessé<br>
+PERSONNES : 7 mineurs à bord de ce bateau ; flottille scoute de 3 voiliers et 1 semi-rigide, 24 personnes dont 21 mineurs<br>
+INTENTIONS : je sécurise le mât et je prends le voilier en remorque vers Carantec ; le reste de la flottille est à la cape sous ma surveillance<br>
+AIDE DEMANDÉE : aucune pour le moment<br>
+À VOUS</p>
+</div>
+
+<div class="box prop"><p class="box-label">Règle <span class="box-title">(Être factuel)</span>.</p>
+<ul>
+  <li>Donner la position, la nature du problème, le nombre de personnes, ce qu'on fait, ce dont on a besoin. Rien d'autre.</li>
+  <li><strong>Indiquer qu'on encadre des mineurs, et combien</strong> : l'information rend l'incident prioritaire et permet au CROSS d'adapter les moyens.</li>
+  <li>Ne pas interpréter, ne pas minimiser, ne pas dramatiser.</li>
+  <li>Rester en veille, et tenir le CROSS informé de toute évolution, en mieux comme en pire.</li>
+</ul>
+</div>
+
+<h2 id="securiser">Mettre la flottille en sécurité</h2>
+
+<p>Le CQ a trois ou quatre bateaux sous sa responsabilité. Pendant qu'il s'occupe du bateau en difficulté, les autres doivent être dans une situation stable, qui ne demande ni surveillance rapprochée ni décision.</p>
+<ul>
+  <li><strong>En zone dégagée</strong> : à la cape, ou en tirant des bords de travers (ni empannage ni allure portante), dans une zone désignée.</li>
+  <li><strong>Près de la côte</strong> : prendre des coffres, ou mouiller.</li>
+  <li><strong>Si l'abri est proche</strong> et le chemin simple : les y envoyer, sous la conduite du chef de bord le plus sûr.</li>
+</ul>
+<p>Les autres chefs (ceux du semi-rigide, ceux qui sont à bord des voiliers) sont mis à contribution : l'un garde les bateaux groupés, l'autre tient la VHF ou le journal. Le CF, sur son voilier, a en plus son propre équipage à faire manœuvrer : il délègue la barre et la VHF du bord à son second.</p>
+
+<h2 id="agir">Agir</h2>
+
+<p>Le CQ peut alors s'occuper de l'avarie, en concertation avec les secours s'ils sont engagés. Il fait attention à ne pas créer un suraccident avec sa propre sécu : déchirer un boudin sur une roche, casser son moteur sur un haut-fond, prendre un bout dans l'hélice, blesser un homme à la mer avec l'hélice.</p>
+
+<p>Il rassure aussi les jeunes : un équipage inquiet fait des erreurs, et l'anxiété se propage d'un bateau à l'autre par la VHF. Les autres chefs l'aident dans ce rôle.</p>
+
+<h2 id="conduites">Conduite à tenir</h2>
+
+<p>Pour chaque avarie, le CQ doit connaître la réaction immédiate du chef de bord (programme du PE) et savoir ce qu'il fait lui-même.</p>
+
+<div class="tbl-wrap"><table>
+<thead><tr><th>Situation</th><th>Réaction immédiate à bord</th><th>Rôle du CQ / CF</th></tr></thead>
+<tbody>
+<tr><td><strong>Voie d'eau</strong></td><td>localiser (sous ou au-dessus de la flottaison, passe-coque), faire gîter pour la sortir de l'eau si elle est sur le côté, écoper ou pomper, boucher (pinoche, tissus, voile plaquée à l'extérieur de la coque), faire route vers l'abri ou une côte où échouer</td><td>état des lieux chiffré (débit, vide-t-on plus vite que ça n'entre ?), alerte (PAN PAN, MAYDAY si non maîtrisée), mise en sécurité de la flottille, rejoindre le bateau ; préparer le transfert de l'équipage sur la sécu</td></tr>
+<tr><td><strong>Feu</strong></td><td>couper le moteur et le gaz, localiser, extincteur, étouffer ; fermer ce qui fait appel d'air ; éloigner les équipiers du feu ; si les flammes dépassent 20 cm environ, préparer l'abandon</td><td>MAYDAY si le feu n'est pas maîtrisé ; rejoindre pour évacuer l'équipage ; éloigner les autres bateaux</td></tr>
+<tr><td><strong>Homme à la mer</strong></td><td>crier, lancer la bouée, désigner quelqu'un pour le montrer du doigt, manœuvre de récupération</td><td>se rendre sur place avec la sécu ; récupérer la personne si le voilier n'y arrive pas vite (hélice débrayée) ; alerte (MAYDAY) si la récupération n'est pas immédiate ou si on la perd de vue ; surveiller le froid ensuite</td></tr>
+<tr><td><strong>Démâtage, casse d'un hauban</strong></td><td>hauban cassé : virer pour le mettre sous le vent, remplacer par une drisse ; mât tombé : vérifier les blessés, empêcher le mât de taper la coque, couper le gréement s'il est à l'eau, vérifier l'hélice avant de démarrer</td><td>PAN PAN ; remorquage ; remplacer la VHF fixe si elle dépendait de l'antenne en tête de mât</td></tr>
+<tr><td><strong>Casse de barre</strong></td><td>équilibrer le bateau aux voiles (border la grand-voile pour lofer, la voile d'avant pour abattre), gouverner à l'aviron, éviter les allures portantes, préparer le mouillage si la côte est proche</td><td>remorquage ou à couple ; le voilier ne dirigeant plus, préférer le remorquage en flèche</td></tr>
+<tr><td><strong>Chavirage</strong> (dériveur, collectif)</td><td>compter les équipiers ; tout le monde reste accroché au bateau ; redresser si c'est possible</td><td>compter avec le chef de bord ; récupérer d'abord les personnes (froid), puis aider au redressement ; MAYDAY si quelqu'un manque</td></tr>
+<tr><td><strong>Échouement</strong></td><td>affaler, vérifier la coque et les fonds, mesurer l'eau autour</td><td>selon la marée (montante ou descendante) et la mer : attendre la marée, déhaler, ou évacuer l'équipage ; alerte si la coque est touchée ou si la mer se lève</td></tr>
+<tr><td><strong>Blessé, malade</strong> (hypothermie, insolation, coup de bôme)</td><td>premiers secours, mettre à l'abri, couvrir ou rafraîchir, rassurer</td><td>PSC1 ; évacuer par la sécu ; consultation médicale par le CROSS (PAN PAN) si nécessaire</td></tr>
+</tbody></table></div>
+
+<p>Les fiches avaries du PE précisent le travail à bord. À l'oral, le jury attend surtout du candidat CQ ou CF la partie de droite : ce qu'il fait, lui, de l'extérieur.</p>
+
+<h2 id="incidents">Incidents de flottille</h2>
+
+<p>Certains problèmes ne sont pas des avaries matérielles, mais menacent la sécurité tout autant :</p>
+<ul>
+  <li><strong>La flottille s'éparpille</strong> : arrêter les bateaux de tête (cape), rameuter les derniers, remorquer le plus lent ; revoir les consignes de distance.</li>
+  <li><strong>Un bateau ne répond plus à la VHF</strong> : le rejoindre, pas seulement le rappeler ; s'il est introuvable, l'alerte suit.</li>
+  <li><strong>La météo se dégrade</strong> plus vite que prévu : décider tôt ; regrouper, réduire la toile, rentrer au repli le plus sûr, remorquer si besoin ; prévenir le correspondant à terre.</li>
+  <li><strong>Le programme prend du retard</strong> : raccourcir l'étape, remorquer, choisir un autre point d'arrivée ; l'heure limite de retour ne se négocie pas.</li>
+  <li><strong>Un équipage est épuisé</strong> ou un chef de bord dépassé : mettre un chef à bord, remorquer, arrêter la journée.</li>
+</ul>
+
+<h2 id="apres">Prévenir et rendre compte</h2>
+
+<div class="box scout"><p class="box-label">Scoutisme marin <span class="box-title">(Après l'alerte)</span>.</p>
+<ul>
+  <li><strong>Le correspondant à terre</strong> est prévenu dès que possible : il connaît la zone, peut conseiller, et sait qu'il ne doit pas déclencher de recherche inutile.</li>
+  <li><strong>Les chefs de groupe</strong> sont prévenus si l'incident est sérieux.</li>
+  <li>Si l'on a besoin d'aide, ou si des conséquences sont à prévoir (blessé, évacuation, parents à prévenir, presse), on appelle la <strong>cellule de soutien des SUF</strong>, dont le numéro figure sur la <strong>fiche « urgence en navigation »</strong> de la Commission marine. Cette fiche est remplie avant la navigation et se trouve à bord de chaque bateau.</li>
+  <li>Les demandes de la presse sont renvoyées vers le Centre national.</li>
+</ul>
+</div>
+
+<p>Après coup, le CQ note les faits dans le journal de flottille (heures, positions, messages, décisions), fait un retour d'expérience avec les chefs de bord, et décide avec le correspondant à terre de la suite de la navigation. C'est aussi le moment de reparler de l'incident avec les jeunes : ce qui s'est passé, ce qui a été bien fait, ce qu'on fera autrement.</p>
+
+<div class="box retenir"><p class="box-label">À retenir.</p>
+<ul>
+  <li>Le CQ ou le CF déclenche les secours, pas le PE.</li>
+  <li>Rester calme ; état des lieux précis ; rappeler la réaction immédiate et laisser le chef de bord gérer.</li>
+  <li>Alerter, mettre la flottille en sécurité, agir.</li>
+  <li>CROSS par VHF 16 en priorité, sinon 196 ; 112 en dernier recours. Message factuel, avec le nombre de mineurs.</li>
+  <li>Prévenir le correspondant à terre ; cellule de soutien SUF via la fiche urgence en navigation.</li>
+</ul>
+</div>
+
+    <nav class="pager"><a class="prev" href="../cqcf/bateau-secu.html"><span>Précédent</span>Le bateau de sécurité</a><a class="next" href="../cqcf/pedagogie.html"><span>Suivant</span>La dimension scoute</a></nav>
+  </article>
+</div>
+</main>
+<footer class="foot">
+  <div class="foot-in">
+    <p class="foot-sign"><svg class="emb" viewBox="0 0 48 58" aria-hidden="true" fill="currentColor"><path d="M24 .5C29 5 30 10.5 24 16.5 18 10.5 19 5 24 .5Z"/><path d="M22.4 15.6C16 16.8 9.8 14.4 9.6 8.6 9.5 5.6 12.2 4.2 14.4 5.6 12.4 6.4 12.1 8.8 13.7 10.5 15.6 12.4 19 13 22.4 12.6Z"/><path d="M25.6 15.6C32 16.8 38.2 14.4 38.4 8.6 38.5 5.6 35.8 4.2 33.6 5.6 35.6 6.4 35.9 8.8 34.3 10.5 32.4 12.4 29 13 25.6 12.6Z"/><rect x="17" y="16" width="14" height="3" rx=".5"/><path d="M19.5 19C18 21.5 19.5 23.5 21.5 22.5L24 21l2.5 1.5c2 1 3.5-1 2-3.5Z"/><rect x="12" y="25" width="24" height="2.8"/><circle cx="12" cy="26.4" r="1.8"/><circle cx="36" cy="26.4" r="1.8"/><rect x="22.6" y="21" width="2.8" height="32"/><path d="M6.5 39C7 49 14.5 55 24 55S41 49 41.5 39" fill="none" stroke="currentColor" stroke-width="2.8"/><path d="M2.5 42.5l4-8 4 8ZM37.5 42.5l4-8 4 8Z"/></svg><span>Bon vent et bonne mer.</span></p>
+    <p>Préparation au brevet de patron d'embarcation et à la navigation à voile. Rédigé à partir des cours de navigation des scouts marins de Brest, mis à jour et complétés.</p>
+    <p>Ce site ne remplace ni la réglementation (Division 240, RIPAM), ni les documents officiels du SHOM, ni le règlement de votre association. En cas de doute, ce sont eux qui font foi.</p>
+  </div>
+</footer>
+<script src="../js/site.js"></script>
+<script type="module" src="../js/auth.js"></script>
+
+</body>
+</html>

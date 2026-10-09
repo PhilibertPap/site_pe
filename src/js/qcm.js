@@ -257,10 +257,17 @@ function exam() {
     const best = store('best');
     if (!best || score > best.s) store('best', { s: score, d: Date.now() });
     const errors = 30 - score;
+    const verdict =
+      errors <= 5
+        ? '<span class="verdict ok">Reçu</span>'
+        : errors <= 7
+        ? '<span class="verdict mid">Rattrapage</span>'
+        : '<span class="verdict ko">Ajourné</span>';
     const sc = el(
       'div',
       { class: 'score' },
-      `<b>${score}/30</b> <span class="muted">· ${errors} erreur${errors > 1 ? 's' : ''}</span>
+      `<b>${score}/30</b> <span class="muted">· ${errors} erreur${errors > 1 ? 's' : ''}</span> ${verdict}
+      <p class="small" style="margin:.4rem 0 0">À l’examen : 5 fautes au plus pour être reçu, rattrapage à 6 ou 7 fautes.</p>
       <div class="stat-row" style="margin-top:.6rem">${Object.entries(byTheme)
         .map(([t, [a, n]]) => `<span>${THEMES[t]}</span><span>${a}/${n}</span>`)
         .join('')}</div>

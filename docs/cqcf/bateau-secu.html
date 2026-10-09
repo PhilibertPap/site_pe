@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Le bateau de sécurité · Patron d'embarcation</title>
+<meta name="description" content="Le semi-rigide du CQ : capacité, prise en main, vérifications quotidiennes, carburant, conduite dans le clapot, approche d'un bateau, remorquage, homme à la mer, mouillage, radio et pannes simples.">
+<link rel="icon" href="../img/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="../img/icon-180.png">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta name="theme-color" content="#11304d">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Patron d'emb.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/style.css">
+<script>
+  try {
+    var t = localStorage.getItem('pe-theme');
+    if (t) document.documentElement.setAttribute('data-theme', t);
+  } catch (e) {}
+  try { if (!localStorage.getItem('pe-ok')) document.documentElement.classList.add('gate'); } catch (e) { document.documentElement.classList.add('gate'); }
+</script>
+</head>
+<body data-root="../">
+<a class="skip" href="#contenu">Aller au contenu</a>
+<header class="top">
+  <div class="top-in">
+    <a class="brand" href="../index.html"><svg class="emb" viewBox="0 0 48 58" aria-hidden="true" fill="currentColor"><path d="M24 .5C29 5 30 10.5 24 16.5 18 10.5 19 5 24 .5Z"/><path d="M22.4 15.6C16 16.8 9.8 14.4 9.6 8.6 9.5 5.6 12.2 4.2 14.4 5.6 12.4 6.4 12.1 8.8 13.7 10.5 15.6 12.4 19 13 22.4 12.6Z"/><path d="M25.6 15.6C32 16.8 38.2 14.4 38.4 8.6 38.5 5.6 35.8 4.2 33.6 5.6 35.6 6.4 35.9 8.8 34.3 10.5 32.4 12.4 29 13 25.6 12.6Z"/><rect x="17" y="16" width="14" height="3" rx=".5"/><path d="M19.5 19C18 21.5 19.5 23.5 21.5 22.5L24 21l2.5 1.5c2 1 3.5-1 2-3.5Z"/><rect x="12" y="25" width="24" height="2.8"/><circle cx="12" cy="26.4" r="1.8"/><circle cx="36" cy="26.4" r="1.8"/><rect x="22.6" y="21" width="2.8" height="32"/><path d="M6.5 39C7 49 14.5 55 24 55S41 49 41.5 39" fill="none" stroke="currentColor" stroke-width="2.8"/><path d="M2.5 42.5l4-8 4 8ZM37.5 42.5l4-8 4 8Z"/></svg><span class="brand-t"><b>Patron d'embarcation</b><small>Scouts marins · voile</small></span></a>
+    <button class="menu-btn" type="button" aria-expanded="false" aria-controls="mainnav"><span class="burger" aria-hidden="true"><i></i><i></i><i></i></span><span class="menu-l">Menu</span></button>
+    <nav class="mainnav" id="mainnav" aria-label="Parties du site"><a href="../cours/index.html">Cours</a><a href="../qcm/index.html">QCM</a><a href="../exercices/index.html">Exercices</a><a href="../pratique/index.html">Pratique</a><a href="../cqcf/index.html" aria-current="page">CQ / CF</a><a href="../annales/index.html">Annales</a><a href="../questions/index.html">Questions</a></nav>
+    <div class="acct" id="acct"></div>
+    <button class="theme" type="button" aria-label="Changer de thème" title="Clair / sombre"><svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true"><circle cx="8" cy="8" r="6.5" fill="none" stroke="currentColor" stroke-width="1.3"/><path d="M8 1.5 A6.5 6.5 0 0 1 8 14.5 Z" fill="currentColor"/></svg></button>
+  </div>
+  <div class="grad" aria-hidden="true"></div>
+</header>
+<main id="contenu">
+
+<div class="doc">
+  <aside class="side">
+    <p class="side-h">CQ / CF</p>
+    <ol class="chapters"><li><a href="../cqcf/diplomes.html">Diplômes et examen</a></li><li><a href="../cqcf/dossier.html">Dossier de navigation</a></li><li><a href="../cqcf/preparer.html">Préparer la navigation</a></li><li><a href="../cqcf/flottille.html">Conduire une flottille</a></li><li><a href="../cqcf/bateau-secu.html" aria-current="page">Bateau de sécurité</a></li><li><a href="../cqcf/avaries.html">Avaries et secours</a></li><li><a href="../cqcf/pedagogie.html">La dimension scoute</a></li><li><a href="../cqcf/oral.html">Questions d'oral</a></li></ol>
+  </aside>
+  <article class="chapter">
+    <header class="chap-head">
+      <p class="kicker">CQ / CF</p>
+      <h1>Le bateau de sécurité</h1>
+      <p class="chap-desc">Le semi-rigide du CQ : capacité, prise en main, vérifications quotidiennes, carburant, conduite dans le clapot, approche d'un bateau, remorquage, homme à la mer, mouillage, radio et pannes simples.</p>
+    </header>
+    <details class="toc-box"><summary>Sur cette page</summary><ol class="toc"><li><a href="#choisir">Choisir la sécu</a></li><li><a href="#prise-en-main">La prise en main</a></li><li><a href="#chaque-jour">Chaque matin</a></li><li><a href="#carburant">Le carburant</a></li><li><a href="#conduite">Conduire</a></li><li><a href="#approcher">Approcher un bateau</a></li><li><a href="#remorquage">Remorquer</a></li><li><a href="#secours">Porter secours</a></li><li><a href="#mouillage">Mouiller la sécu</a></li><li><a href="#radio">À la radio</a></li><li><a href="#pannes">Les pannes simples</a></li></ol></details>
+    <p>En voile légère comme en randonnée nautique, le CQ encadre depuis un bateau à moteur, la <dfn>sécu</dfn>. C'est le plus souvent un <strong>semi-rigide</strong> : une vraie coque en fibre de verre ou en aluminium, qui donne la rigidité et permet de planer, entourée de boudins gonflables collés qui donnent flottabilité et stabilité. Rien à voir avec l'annexe pneumatique d'un voilier, à fond souple.</p>
+
+<p>La sécu est à la fois un outil de sécurité (intervenir vite, pousser, remorquer, recueillir un équipage) et un outil pédagogique (aller au contact, débarquer un chef sur un bateau, animer un jeu). Ce n'est pas un jouet : le carburant coûte cher, le moindre dégât peut arrêter la navigation, et l'hélice est dangereuse pour tout ce qui l'entoure.</p>
+
+<h2 id="choisir">Choisir la sécu</h2>
+
+<ul>
+  <li><strong>Puissance</strong> : au moins 50 CV d'après la fiche de prise en main ; les conditions d'examen parlent d'un bateau de 50 à 90 CV. Il faut pouvoir remorquer un voilier contre le vent et le courant.</li>
+  <li><strong>Capacité</strong> : la sécu doit pouvoir recueillir l'équipage le plus nombreux en plus du CQ et des chefs déjà à bord.</li>
+  <li><strong>Permis</strong> : le permis côtier pour la conduire en mer, le permis fluvial en eaux intérieures.</li>
+  <li><strong>Armement</strong> : celui de la Division 240 pour la zone, comme tout bateau.</li>
+</ul>
+
+<h2 id="prise-en-main">La prise en main</h2>
+
+<p>On la fait avec le loueur, en même temps que celle des voiliers, en prenant des photos.</p>
+
+<div class="box meth"><p class="box-label">Méthode <span class="box-title">(Vérifications à la prise en main)</span>.</p>
+<ul>
+  <li><strong>Coque</strong> : étrave en particulier.</li>
+  <li><strong>Boudins</strong> : gonflage, décollements.</li>
+  <li><strong>Moteur</strong> : deux-temps ou quatre-temps ? Pour un quatre-temps :
+    <ul>
+      <li>niveau d'huile ; niveau et <strong>type</strong> de carburant (SP98, SP95, SP95-E10 : ils ne sont pas toujours interchangeables) ;</li>
+      <li>état de l'embase et de l'hélice, <strong>photographiées</strong> : c'est une source fréquente de litige ;</li>
+      <li>coupe-circuit ; manette des gaz sans point dur ;</li>
+      <li>fonctionnement du trim ;</li>
+      <li>démarrage : le moteur tourne rond, sans à-coups, et le témoin de refroidissement crache ;</li>
+      <li>direction : le moteur tourne facilement d'un bord à l'autre, sans blocage.</li>
+    </ul>
+  </li>
+  <li><strong>Carburant de réserve</strong> : une seconde nourrice ou un jerrican.</li>
+  <li><strong>Cordages</strong> : assez d'amarres pour la sécu et pour récupérer un bateau (dans la panique, mieux vaut lancer son bout que d'attendre le leur) ; des bouts de remorquage ; un bout assez long pour une patte d'oie.</li>
+  <li><strong>Points de fixation</strong> : à l'avant (piton d'étrave) et autour du moteur (taquets arrière). Jamais sur les boudins, et pas sur les petites saisines latérales, trop faibles pour remorquer ou amarrer.</li>
+  <li><strong>Électronique et matériel</strong> : sondeur, VHF, deux cordons de coupe-circuit.</li>
+</ul>
+</div>
+
+<h2 id="chaque-jour">Chaque matin</h2>
+
+<div class="box meth"><p class="box-label">Méthode <span class="box-title">(Avant de partir)</span>.</p>
+<ul>
+  <li>La clé, le <strong>coupe-circuit au poignet</strong> du pilote, le sac du bateau.</li>
+  <li>La VHF portable, chargée ; essai avec chaque bateau de la flottille.</li>
+  <li>La carte de la zone <strong>sous plastique</strong> et un compas de relèvement. Les semi-rigides de location ont souvent un bon traceur, mais la carte papier donne la vue d'ensemble, permet de se repérer par relèvements, et reste disponible quand l'électronique tombe en panne.</li>
+  <li>Le livre de bord, tenu par le CQ (les bateaux collectifs n'en ont souvent pas).</li>
+  <li>Son gilet, ses lunettes et des gants, enfilés au départ et non au moment de passer une remorque.</li>
+  <li>Le carburant, avec la marge (ci-dessous).</li>
+  <li>Le matériel pédagogique (déguisements, matériel de jeu) ; le sac étanche avec les documents (dossier de camp, visa marin, diplômes, permis) ; la carte et le programme du jour à portée de main ; eau et intendance pour les occupants de la sécu.</li>
+  <li><strong>Les vide-vite ouverts</strong>, en particulier si l'on prévoit de la mer formée.</li>
+  <li>Démarrage et vérifications du moteur ; message au correspondant à terre.</li>
+</ul>
+</div>
+
+<h2 id="carburant">Le carburant</h2>
+
+<p>La panne sèche est le problème le plus banal et l'un des plus graves : une sécu en panne ne protège plus personne. Le carburant se vérifie <strong>chaque jour</strong>.</p>
+
+<div class="box prop"><p class="box-label">Règle <span class="box-title">(Estimer sa consommation (manuel CQ))</span>.</p>
+<ul>
+  <li>On estime la consommation horaire en litres à environ <strong>le tiers de la puissance maximale</strong> en chevaux : de l'ordre de 16 L/h pour un 50 CV.</li>
+  <li>On ajoute toujours <strong>30 % de marge</strong>.</li>
+</ul>
+</div>
+
+<div class="box ex"><p class="box-label">Exemple.</p>
+<p>Semi-rigide de 60 CV, environ 3 h de moteur effectif prévues : 3 × 20 = 60 L ; avec la marge, 60 × 1,3 = 78 L. Le réservoir ne suffit pas : on embarque une nourrice pleine, et la voiture à terre en apporte une seconde pour refaire le plein le soir.</p>
+</div>
+
+<p>La consommation réelle dépend de la conduite, du courant et surtout des remorquages, qui la multiplient. On corrige l'estimation dès le premier soir avec ce qu'on a réellement consommé.</p>
+
+<h2 id="conduite">Conduire</h2>
+
+<p>Les petites vagues levées par le vent et le courant n'ont l'air de rien, mais à vitesse de planage un semi-rigide tape, et les chocs se transmettent au dos et aux genoux.</p>
+<ul>
+  <li>On barre <strong>debout</strong>, les fesses juste calées contre le coussin du siège, et l'on encaisse avec les jambes.</li>
+  <li>Les équipiers restent debout eux aussi par mer formée, ou s'assoient sur une banquette près du moteur.</li>
+  <li><strong>Personne ne s'assoit sur les boudins</strong> : c'est la chute assurée au premier choc.</li>
+  <li>Le pilote, qui se tient à la console, a la meilleure position : les autres sont plus secoués que lui.</li>
+</ul>
+
+<h3>Dans les vagues</h3>
+<p>On joue sur le <strong>trim</strong> (l'inclinaison du moteur, qui règle l'assiette du bateau), sur les gaz et sur la trajectoire, en s'adaptant à la fréquence et à la direction de la houle :</p>
+<ul>
+  <li>en arrivant au sommet d'une vague, empêcher le bateau de lever le nez, pour que le vent ne s'engouffre pas dessous ;</li>
+  <li>en descendant la vague, ne pas planter le nez dans la suivante : on embarquerait beaucoup d'eau par l'avant, et l'on risque de se mettre en travers et de se faire rouler.</li>
+</ul>
+
+<div class="box warn"><p class="box-label">Attention <span class="box-title">(Paquet de mer)</span>.</p>
+<p>Si l'on embarque un paquet de mer, il faut s'en débarrasser tout de suite : on <strong>accélère</strong> pour cabrer le bateau, et l'eau s'évacue par l'arrière, à condition que les vide-vite soient ouverts.</p>
+</div>
+
+<h2 id="approcher">Approcher un bateau</h2>
+
+<ul>
+  <li>Pour parler à un équipage : se placer <strong>au vent, sur le côté</strong>, à quelques mètres ; la voix porte et l'on ne risque pas de se faire tomber dessus.</li>
+  <li>Pour aider un bateau à virer ou à changer de cap près d'un danger : venir au contact et le <strong>pousser avec le boudin</strong>, en général à l'avant. Il ne faut pas hésiter : le boudin est fait pour ça.</li>
+  <li>Pour le déplacer vite (s'écarter d'un danger, rejoindre un mouillage) : se mettre <strong>à couple</strong> (ci-dessous).</li>
+  <li>Pour débarquer ou embarquer un chef : à couple, moteur au point mort, au moment où les deux bateaux sont stables.</li>
+</ul>
+<p>Dans toutes ces approches, on pense à l'hélice : bouts qui traînent, avirons, nageurs. On débraye dès qu'il y a un doute.</p>
+
+<h2 id="remorquage">Remorquer</h2>
+
+<p>Le CQ remorque souvent : par nécessité (avarie, calme, équipage épuisé) ou par commodité, pour accélérer une manœuvre ou réduire l'exposition au risque (traversée d'un chenal, renverse du courant). C'est une manœuvre risquée, qui demande l'attention de tous : des bouts traînent près de l'hélice, la sécu manœuvre beaucoup moins bien, et la consommation explose.</p>
+
+<div class="box prop"><p class="box-label">Règle <span class="box-title">(Règles du remorquage)</span>.</p>
+<ul>
+  <li>La manœuvre est <strong>dirigée par le remorqueur</strong>, c'est-à-dire le CQ : c'est lui qui passe la remorque. D'où l'intérêt d'avoir toujours des bouts en plus sur la sécu.</li>
+  <li>La remorque est <strong>aussi longue et aussi élastique que possible</strong> : une grande aussière, ou la ligne de mouillage léger du voilier. C'est sa courbure (sa flèche) qui amortit les à-coups.</li>
+  <li><strong>La remorque ne doit jamais sortir entièrement de l'eau.</strong> Si elle en sort, elle est trop courte ou l'on va trop vite.</li>
+  <li>Un voilier pèse bien plus lourd qu'un semi-rigide : avec une remorque courte et trop de vitesse, c'est le voilier qui finit par entraîner la sécu.</li>
+</ul>
+</div>
+
+<div class="box meth"><p class="box-label">Méthode <span class="box-title">(Remorquage en flèche)</span>.</p>
+<ol>
+  <li><strong>Préparer la patte d'oie</strong> sur la sécu avant de partir : un long bout tourné sur les deux taquets arrière, avec une boucle au milieu (double nœud de huit). On y accroche un petit pare-battage pour qu'elle flotte et ne se prenne pas dans l'hélice. S'il y a un piton d'étrave, on y fixe dès le départ un cordage de 2 à 4 m, utile pour se faire remorquer soi-même.</li>
+  <li><strong>Sur le voilier</strong>, frapper la remorque sur les points les plus solides : les taquets d'amarrage avant, en principe boulonnés à travers la liaison pont-coque. Côté sécu, c'est la patte d'oie qui répartit l'effort entre les deux taquets et centre la remorque.</li>
+  <li><strong>Passer la remorque</strong> en approchant par le côté, au vent ou en amont du courant, l'hélice loin du bout.</li>
+  <li><strong>Faire route au ralenti</strong> pendant qu'un équipier file progressivement la remorque jusqu'à ce qu'elle se tende sur la patte d'oie (nœud de chaise dans la boucle), puis prendre de la vitesse doucement.</li>
+  <li><strong>Raccourcir</strong> la remorque et réduire la vitesse à l'approche d'un port, par petits fonds et pendant les manœuvres.</li>
+  <li>Le voilier remorqué <strong>barre</strong> pour suivre la sécu ; dérive ou safran en place.</li>
+</ol>
+<p>Les nœuds sont choisis pour pouvoir être défaits après avoir encaissé plusieurs tonnes de traction : chaise, huit.</p>
+</div>
+
+<h3>À couple</h3>
+<p>Pour un déplacement court et rapide (s'éloigner d'un danger, amener un voilier à un mouillage), on se met à couple, amarres avant, arrière et gardes. La sécu fournit la propulsion, le voilier dirige avec son safran en compensant la rotation créée par la poussée décentrée. C'est simple à mettre en œuvre si l'on a des amarres préparées sur la sécu.</p>
+
+<p>Le programme du PE comprend la préparation d'une patte d'oie et l'adaptation de la longueur de remorque : les chefs de bord peuvent préparer leur côté de la manœuvre.</p>
+
+<h2 id="secours">Porter secours</h2>
+
+<p>Le programme de l'épreuve pratique du CQ, d'après <i>La Cardinale</i>, comprend :</p>
+<ul>
+  <li><strong>aborder un voilier et évacuer son équipage</strong> : à couple, au vent ou en amont du courant, équipiers transférés un par un, gilets portés ;</li>
+  <li><strong>récupérer un homme à la mer</strong> : recherche, approche, récupération ;</li>
+  <li><strong>aider au redressement</strong> d'un dériveur ou d'un bateau collectif chaviré ;</li>
+  <li><strong>remorquer</strong>.</li>
+</ul>
+
+<div class="box warn"><p class="box-label">Attention <span class="box-title">(L'hélice et l'homme à la mer)</span>.</p>
+<p>Une hélice peut blesser gravement une personne dans l'eau. On approche la victime lentement, en la gardant à vue sur le côté de la console, et l'on <strong>débraye</strong> (moteur au point mort, voire coupé) avant qu'elle n'arrive à hauteur du bateau. On la hisse par le côté, jamais à proximité du moteur. Pour la manœuvre côté voilier, voir <a href="../pratique/hlm.html#recuperer">Récupérer l'équipier</a>.</p>
+</div>
+
+<h2 id="mouillage">Mouiller la sécu</h2>
+
+<ul>
+  <li>Même principe que pour un voilier : de la chaîne pour donner du poids, et une longueur d'au moins <strong>trois fois la hauteur d'eau à pleine mer</strong>. Sans cela, l'ancre dérape au moindre vent.</li>
+  <li>On peut demander au loueur une <strong>ancre flottante</strong>, qui limite la dérive si l'on doit s'arrêter ou si l'on est en panne.</li>
+  <li>Pour la nuit, un semi-rigide est sensible à la houle : on préfère un port ou un corps-mort.</li>
+</ul>
+
+<h2 id="radio">À la radio</h2>
+
+<ul>
+  <li>Le canal est public : on parle vite et sans ambiguïté.</li>
+  <li>On dit « affirmatif » ou « négatif » plutôt que « oui » ou « non » : un mot d'une syllabe se perd dans une micro-coupure.</li>
+  <li>On finit par « à vous », pour que l'autre puisse répondre sans parler en même temps.</li>
+  <li>Une VHF portable qui a pris l'eau se secoue avant d'émettre, pour ne pas parler à travers une couche d'eau.</li>
+</ul>
+
+<h2 id="pannes">Les pannes simples</h2>
+
+<p>Le CQ doit savoir identifier les causes de panne courantes d'un moteur hors-bord. Avant d'appeler à l'aide, on vérifie dans l'ordre :</p>
+<div class="tbl-wrap"><table>
+<thead><tr><th>Symptôme</th><th>Causes à vérifier</th></tr></thead>
+<tbody>
+<tr><td>Le moteur ne démarre pas</td><td>coupe-circuit en place ; manette au point mort ; batterie et démarreur ; carburant dans la nourrice et robinet ouvert ; circuit amorcé (poire)</td></tr>
+<tr><td>Le moteur cale après quelques minutes</td><td>mise à l'air de la nourrice fermée (le carburant ne descend plus) ; nourrice presque vide ; eau dans le carburant</td></tr>
+<tr><td>Le moteur tourne mal</td><td>bougies ; carburant de mauvaise qualité ou mélange incorrect (deux-temps) ; filtre</td></tr>
+<tr><td>Le témoin de refroidissement ne crache plus</td><td>prise d'eau bouchée (algues, sac plastique) : arrêter le moteur avant qu'il ne chauffe</td></tr>
+<tr><td>Le moteur s'emballe sans avancer</td><td>hélice abîmée ou bout pris dedans : couper le moteur avant d'aller voir</td></tr>
+</tbody></table></div>
+<p>Un <strong>deux-temps</strong> fonctionne avec un mélange d'essence et d'huile (ou un réservoir d'huile séparé avec injection) ; un <strong>quatre-temps</strong> a un carter d'huile dont on vérifie le niveau, et ne reçoit que de l'essence. Se tromper de carburant immobilise le moteur.</p>
+
+<div class="box retenir"><p class="box-label">À retenir.</p>
+<ul>
+  <li>Sécu de 50 CV au moins, capable d'embarquer l'équipage le plus nombreux en plus des chefs ; permis côtier.</li>
+  <li>Coupe-circuit au poignet, carte sous plastique, vide-vite ouverts, carburant vérifié chaque jour.</li>
+  <li>Carburant : environ un tiers de la puissance (CV) en litres par heure, plus 30 % de marge.</li>
+  <li>Remorquage : c'est le remorqueur qui dirige ; remorque longue, élastique, jamais hors de l'eau ; patte d'oie avec un flotteur ; à couple pour les déplacements courts.</li>
+  <li>Personne sur les boudins ; on barre debout ; on débraye près d'une personne dans l'eau.</li>
+</ul>
+</div>
+
+    <nav class="pager"><a class="prev" href="../cqcf/flottille.html"><span>Précédent</span>Conduire une flottille</a><a class="next" href="../cqcf/avaries.html"><span>Suivant</span>Avaries, incidents et secours</a></nav>
+  </article>
+</div>
+</main>
+<footer class="foot">
+  <div class="foot-in">
+    <p class="foot-sign"><svg class="emb" viewBox="0 0 48 58" aria-hidden="true" fill="currentColor"><path d="M24 .5C29 5 30 10.5 24 16.5 18 10.5 19 5 24 .5Z"/><path d="M22.4 15.6C16 16.8 9.8 14.4 9.6 8.6 9.5 5.6 12.2 4.2 14.4 5.6 12.4 6.4 12.1 8.8 13.7 10.5 15.6 12.4 19 13 22.4 12.6Z"/><path d="M25.6 15.6C32 16.8 38.2 14.4 38.4 8.6 38.5 5.6 35.8 4.2 33.6 5.6 35.6 6.4 35.9 8.8 34.3 10.5 32.4 12.4 29 13 25.6 12.6Z"/><rect x="17" y="16" width="14" height="3" rx=".5"/><path d="M19.5 19C18 21.5 19.5 23.5 21.5 22.5L24 21l2.5 1.5c2 1 3.5-1 2-3.5Z"/><rect x="12" y="25" width="24" height="2.8"/><circle cx="12" cy="26.4" r="1.8"/><circle cx="36" cy="26.4" r="1.8"/><rect x="22.6" y="21" width="2.8" height="32"/><path d="M6.5 39C7 49 14.5 55 24 55S41 49 41.5 39" fill="none" stroke="currentColor" stroke-width="2.8"/><path d="M2.5 42.5l4-8 4 8ZM37.5 42.5l4-8 4 8Z"/></svg><span>Bon vent et bonne mer.</span></p>
+    <p>Préparation au brevet de patron d'embarcation et à la navigation à voile. Rédigé à partir des cours de navigation des scouts marins de Brest, mis à jour et complétés.</p>
+    <p>Ce site ne remplace ni la réglementation (Division 240, RIPAM), ni les documents officiels du SHOM, ni le règlement de votre association. En cas de doute, ce sont eux qui font foi.</p>
+  </div>
+</footer>
+<script src="../js/site.js"></script>
+<script type="module" src="../js/auth.js"></script>
+
+</body>
+</html>

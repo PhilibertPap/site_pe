@@ -6,6 +6,8 @@
 
 <p>L'estime ne vaut que si l'on note tout. Le <dfn>journal de bord</dfn> consigne à chaque changement de cap, de voilure ou de conditions, et au moins toutes les heures : l'heure, le cap compas, la vitesse ou l'indication du loch, le vent, l'état de la mer, le baromètre, la position quand on la connaît, et tout événement notable.</p>
 
+<p>La carte doit aussi « parler » : n'importe quel équipier doit pouvoir reprendre la navigation en la regardant. On trace au crayon gras, on note l'heure à côté de chaque point et on distingue d'un coup d'œil le point observé (en général entouré d'un cercle) du point estimé (entouré d'un carré ou marqué d'un triangle, selon les habitudes du bord). Les routes portent leur direction et la vitesse prévue.</p>
+
 <div class="box def" data-title="Point estimé, point observé">
 <p>Le <dfn>point estimé</dfn> est la position calculée à partir de la route et de la vitesse depuis le dernier point connu. Le <dfn>point observé</dfn> (ou point vrai) est une position obtenue par observation : relèvements, alignement, sonde, GPS. L'écart entre les deux, rapporté au temps écoulé, mesure le courant réellement subi (section 3.4.4).</p>
 </div>
@@ -21,6 +23,8 @@
 
 <p>La dérive est maximale au près, où la force latérale des voiles est la plus grande, et quasi nulle au vent arrière. Ordres de grandeur pour un petit voilier : 5 à 15° au près, quelques degrés au travers, 0 au portant. Elle augmente avec la gîte et le vent, et quand le bateau va lentement. Pour un bateau à dérive relevée, elle peut devenir énorme.</p>
 
+<p>Un sujet d'examen donne souvent la dérive sous forme de tableau par allure, ou de <dfn>courbe de dérive</dfn> : la dérive (en degrés) en fonction de l'angle entre le cap et la direction d'où vient le vent. On calcule cet angle (par exemple vent de 000, cap 070 : 70°), on lit la dérive sur la courbe, puis on lui donne son signe selon le bord d'où vient le vent. La courbe ne donne qu'une valeur absolue ; le signe, c'est toujours le dessin qui le fixe.</p>
+
 <div class="box ex">
 <p>Vent de Nord, cap vrai 070, dérive estimée 10°. Quand on regarde vers le 070, le Nord est sur la gauche : le vent vient de bâbord (le bateau est bâbord amures), il pousse vers tribord, donc <var>dér</var> = +10° et <var>Rs</var> = 080.</p>
 <p>Contrôle : un vent du Nord pousse le bateau vers le Sud, donc la route surface doit être plus au Sud que le cap. 080 est bien plus au Sud que 070. Ce contrôle de bon sens évite la plupart des erreurs de signe.</p>
@@ -33,10 +37,33 @@
 <p>Un courant se décrit par la direction vers laquelle il <strong>porte</strong> (l'endroit où il emmène l'eau) et sa vitesse : « courant de 1,5 nd portant au 233 ». C'est l'inverse du vent, qui est désigné par la direction d'où il <em>vient</em>.</p>
 
 <h3>Trouver le courant</h3>
-<p>Les cartes portent des losanges magenta marqués d'une lettre ; un tableau en marge donne, pour chaque lettre et pour chaque heure de PM − 6 à PM + 6 au port de référence, la direction et la vitesse du courant en vives eaux et en mortes eaux. On lit l'heure par rapport à la pleine mer du port indiqué, puis on interpole entre vives eaux (coefficient 95) et mortes eaux (coefficient 45) au prorata du coefficient du jour. Les atlas de courants du SHOM donnent la même information sous forme de cartes heure par heure.</p>
+<p>Les cartes portent des losanges magenta marqués d'une lettre ; un tableau en marge, le <dfn>cartouche de courant</dfn>, donne pour chaque lettre et pour chaque heure de PM − 6 à PM + 6 au port de référence la direction et la vitesse du courant en vives eaux et en mortes eaux. Les atlas de courants du SHOM donnent la même information sous forme de cartes heure par heure.</p>
+
+<div class="tbl-wrap"><table>
+<thead><tr><th>Heure</th><th class="num">Direction (°)</th><th class="num">VE (nd)</th><th class="num">ME (nd)</th></tr></thead>
+<tbody>
+<tr><td>PM − 2</td><td class="num">070</td><td class="num">1,4</td><td class="num">0,7</td></tr>
+<tr><td>PM − 1</td><td class="num">075</td><td class="num">0,9</td><td class="num">0,4</td></tr>
+<tr><td>PM</td><td class="num">—</td><td class="num">0,1</td><td class="num">0,0</td></tr>
+<tr><td>PM + 1</td><td class="num">245</td><td class="num">0,8</td><td class="num">0,4</td></tr>
+<tr><td>PM + 2</td><td class="num">250</td><td class="num">1,5</td><td class="num">0,7</td></tr>
+<tr class="hl"><td>PM + 3</td><td class="num">250</td><td class="num">1,6</td><td class="num">0,8</td></tr>
+</tbody>
+<caption>Extrait d'un cartouche de courant (valeurs d'exemple) pour le losange <span class="mono">A</span>, heures comptées par rapport à la pleine mer du port de référence indiqué en tête du tableau. Les directions sont vraies et indiquent où porte le courant.</caption>
+</table></div>
+
+<div class="box meth" data-title="Lire un cartouche de courant">
+<ol>
+  <li>Choisir le losange le plus proche de l'endroit où l'on sera, et lire en tête du tableau le port de référence (ce n'est pas forcément le port de départ).</li>
+  <li>Relever l'heure de la pleine mer de ce port le jour même, à l'heure légale, et le coefficient.</li>
+  <li>Calculer l'écart entre l'heure de passage et cette PM, et l'arrondir à l'heure entière la plus proche : 10 h 50 avec une PM à 8 h 05, c'est PM + 2 h 45, on lit la ligne PM + 3.</li>
+  <li>Lire la direction et les deux vitesses, puis interpoler la vitesse au coefficient, entre mortes eaux (45) et vives eaux (95).</li>
+  <li>Si la traversée dure plusieurs heures, recommencer pour chaque heure : le courant tourne pendant la route.</li>
+</ol>
+</div>
 
 <div class="box ex">
-<p>Le tableau donne 1,6 nd en vives eaux et 0,8 nd en mortes eaux. Coefficient 70 : il est à mi-chemin entre 45 et 95, donc le courant vaut à peu près 0,8 + (1,6 − 0,8) × (70 − 45)/(95 − 45) = 1,2 nd.</p>
+<p>À PM + 3, le tableau donne 1,6 nd en vives eaux et 0,8 nd en mortes eaux. Coefficient 70 : il est à mi-chemin entre 45 et 95, donc le courant vaut à peu près 0,8 + (1,6 − 0,8) × (70 − 45)/(95 − 45) = 1,2 nd, portant au 250.</p>
 </div>
 
 <h2 id="route-fond">Route surface et route fond</h2>
@@ -154,6 +181,21 @@
   <li>Prévoir une solution de repli : un abri accessible si le vent forcit, si l'horaire dérape, si quelqu'un est malade.</li>
 </ol>
 </div>
+
+<div class="box prop" data-title="Doute systématique">
+<p>Le chef de bord prépare sa navigation en supposant que quelque chose ne se passera pas comme prévu : la météo peut se dégrader plus tôt qu'annoncé, l'électronique tomber en panne, le courant être plus fort, l'équipage se fatiguer. Il croise plusieurs sources (bulletin officiel, modèles, observation du ciel et du baromètre, section 8.7), vérifie toute position par un second moyen, et prévoit pour chaque étape un abri de repli et l'heure limite au-delà de laquelle il y renonce.</p>
+</div>
+
+<h3 id="presenter">Présenter sa navigation</h3>
+<p>À l'oral du PE comme au briefing de l'équipage, on expose la navigation dans l'ordre où elle se déroulera :</p>
+<ol>
+  <li><strong>Résumé</strong> : de quel port à quel port ou mouillage, distance, durée, heures de départ et d'arrivée.</li>
+  <li><strong>Conditions</strong> : météo du jour et tendance, marée (heures, coefficient, courants aux passages délicats), ce qu'on en déduit (allure, voilure, horaires imposés).</li>
+  <li><strong>Départ</strong> : sortie du port, chenal, dangers proches, premier point tournant.</li>
+  <li><strong>Route</strong> : segments, caps, amers et alignements à surveiller, passages à courant, replis possibles.</li>
+  <li><strong>Arrivée</strong> : approche, hauteur d'eau et longueur de chaîne au mouillage (section 4.7), ou place au port et canal VHF de la capitainerie.</li>
+</ol>
+<p>Le briefing de l'équipage, l'organisation du bord et les vérifications avant de partir sont détaillés dans la partie Pratique (<a href="../pratique/chef-de-bord.html">Conduire une navigation</a>).</p>
 
 <h3>Le vent dans la route : tirer des bords</h3>
 <p>Un voilier ne peut pas remonter directement face au vent. Il navigue au près, à 45° du vent réel environ pour un voilier moderne, souvent 55 à 60° pour un bateau traditionnel ou chargé, en tirant des bords de part et d'autre du lit du vent. Si le but est dans le vent, la distance réellement parcourue est multipliée par 1/cos 45° ≈ 1,4 au moins, sans compter la dérive et les virements. À l'examen comme en mer, on vérifie toujours que la route tracée est <strong>possible</strong> avec le vent du jour.</p>
