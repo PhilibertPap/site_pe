@@ -6,6 +6,7 @@ import { toast, deuxClics, allerAncre } from './ui.js';
 import { TOTAUX, valides } from './attendus.js';
 import { DIPLOMES, CODES, MOIS_RE, badges, diplomesDe, objectifDe, ceDe } from './diplomes.js';
 import { saisonDe, saisonLabel, moisDe, moisLabel } from './saison.js';
+import { publier } from './agregats.js';
 
 const box = document.getElementById('chefs');
 const ROOT = document.body.dataset.root || '../';
@@ -41,7 +42,7 @@ async function show(me) {
       (!filtre.eq || (filtre.eq === '-' ? !eqDe[u.uid] : eqDe[u.uid] && eqDe[u.uid].id === filtre.eq))
   );
   const rowPending = (u) => `<tr data-uid="${u.uid}"><td>${esc(u.name)}</td><td>${esc(u.unite)}</td><td class="small">${esc(u.email)}</td>
-    <td class="acts"><button class="btn small" data-a="approve">Valider</button> <button class="btn small ghost" data-a="refuse">Refuser</button></td></tr>`;
+    <td class="acts"><button class="btn small" data-a="approve">Valider</button> <button class="btn small ghost" data-a="refuse">Refuser</button> <button class="btn small ghost" data-a="fusion" title="La même personne a déjà un compte">Doublon…</button></td></tr>`;
   const row = (u) => {
     const obj = objectifDe(u);
     const nv = valides(carnets[u.uid], obj);
@@ -57,7 +58,7 @@ async function show(me) {
     <td class="small liens">${
       u.uid === me.uid
         ? '<span class="muted">vous</span>'
-        : `<button class="linkish" type="button" data-a="${u.role === 'chef' ? 'demote' : 'promote'}">${u.role === 'chef' ? 'retirer chef' : 'nommer chef'}</button> · <button class="linkish" type="button" data-a="suspend">suspendre</button>`
+        : `<button class="linkish" type="button" data-a="${u.role === 'chef' ? 'demote' : 'promote'}">${u.role === 'chef' ? 'retirer chef' : 'nommer chef'}</button> · <button class="linkish" type="button" data-a="suspend">suspendre</button> · <button class="linkish" type="button" data-a="fusion">fusionner</button>`
     }</td></tr>`;
   };
 
@@ -92,7 +93,7 @@ async function show(me) {
       shown.map(row).join('') || '<tr><td colspan="7" class="muted">Personne pour ces critères.</td></tr>'
     }</tbody></table></div>
     <p class="small muted">Objectif en gris : pas encore choisi par l’inscrit (PE par défaut). Carnet : points validés de la liste de son objectif. CE : chef d’équipage de la saison, nommé sur la page <a href="equipages.html#composition">Équipages</a>. Diplômes : « diplômes » permet d’inscrire ou de retirer directement un diplôme (correction, ancien diplôme).</p>
-    <p class="small muted">« Suspendre » bloque l’accès sans rien effacer (on revalide le compte plus haut). Pour supprimer définitivement l’identifiant d’une personne, passer par la console Firebase (Authentication).</p>`;
+    <p class="small muted">« Suspendre » bloque l’accès sans rien effacer (on revalide le compte plus haut). « Fusionner » réunit les deux comptes d’une même personne (deux adresses e-mail) : résultats, carnet, diplômes, questions et équipage passent sur le compte gardé. Pour supprimer définitivement l’identifiant d’une personne, passer par la console Firebase (Authentication).</p>`;
 
   box.querySelector('#f-eq').onchange = (e) => ((filtre.eq = e.target.value), show(me));
   box.querySelector('#f-obj').onchange = (e) => ((filtre.obj = e.target.value), show(me));
@@ -119,6 +120,7 @@ async function show(me) {
       const uid = tr.dataset.uid;
       const a = b.dataset.a;
       if (a === 'dips') return editDips(me, tr, byUid[uid]);
+      if (a === 'fusion') return editFusion(me, tr, byUid[uid], users);
       const CONF = { refuse: 'Confirmer le refus', suspend: 'confirmer la suspension', promote: 'confirmer : nommer chef', demote: 'confirmer : retirer chef' };
       if (CONF[a] && !deuxClics(b, CONF[a])) return;
       b.disabled = true;
@@ -149,6 +151,77 @@ async function show(me) {
   allerAncre();
   // compteur « à faire » de la barre du haut, avec les données déjà lues
   aFaire(me, { users, qs, compos, decls }).catch(() => {});
+}
+
+// Fusionner deux comptes d'une même personne (voir fb.fusionner). On choisit l'autre compte, puis
+// celui qu'on garde : c'est son adresse qui servira à se connecter. Par défaut, le compte validé le
+// plus ancien. Son propre compte n'est pas proposé.
+function editFusion(me, tr, u, users) {
+  const next = tr.nextElementSibling;
+  if (next && next.classList.contains('dip-edit')) return next.remove();
+  const autres = users.filter((x) => x.uid !== u.uid && x.uid !== me.uid).sort((a, b) => a.name.localeCompare(b.name, 'fr'));
+  const n = tr.children.length;
+  const ed = document.createElement('tr');
+  ed.className = 'dip-edit fusion';
+  const lib = (x) => `${esc(x.name)} · ${esc(x.email || 'sans adresse')}${x.approved ? '' : ' (en attente)'}`;
+  ed.innerHTML = `<td colspan="${n}"><form class="fusion-f">
+    <p><b>${esc(u.name)}</b> <span class="small muted">${esc(u.email || '')}</span> est la même personne que
+    <select name="autre" aria-label="Autre compte de la même personne"><option value="">choisir le compte…</option>${autres
+      .map((x) => `<option value="${x.uid}">${lib(x)}</option>`)
+      .join('')}</select></p>
+    <fieldset class="fusion-garde" hidden><legend class="small">Compte gardé : la personne se connectera avec cette adresse</legend><div></div></fieldset>
+    <p class="small muted">Tout passe sur le compte gardé : résultats et défis, statistiques, carnet, demandes, diplômes, questions et réponses, équipage. L’autre compte est désactivé ; s’il se reconnecte, on lui indique l’adresse à utiliser. Irréversible.</p>
+    <div class="btns"><button class="btn small" type="submit" disabled>Fusionner</button> <button class="linkish" type="button" data-x="annuler">annuler</button> <span class="small" role="status"></span></div>
+  </form></td>`;
+  tr.after(ed);
+  const f = ed.querySelector('form');
+  const sel = f.querySelector('select');
+  const fs = f.querySelector('fieldset');
+  const go = f.querySelector('button[type=submit]');
+  const out = f.querySelector('[role=status]');
+  ed.querySelector('[data-x=annuler]').onclick = () => ed.remove();
+  const cree = (x) => (x.createdAt && x.createdAt.toMillis ? x.createdAt.toMillis() : 0);
+  sel.onchange = () => {
+    const o = users.find((x) => x.uid === sel.value);
+    fs.hidden = !o;
+    go.disabled = !o;
+    if (!o) return;
+    // par défaut : le compte validé, sinon le plus ancien
+    const garde = u.approved !== o.approved ? (u.approved ? u : o) : cree(u) <= cree(o) ? u : o;
+    fs.querySelector('div').innerHTML = [u, o]
+      .map(
+        (x) => `<label class="small"><input type="radio" name="garde" value="${x.uid}"${x === garde ? ' checked' : ''}> ${esc(x.email || 'sans adresse')} <span class="muted">(${esc(x.name)}${x.approved ? '' : ', en attente'}${x.role === 'chef' ? ', chef' : ''})</span></label>`
+      )
+      .join('');
+  };
+  f.onsubmit = async (e) => {
+    e.preventDefault();
+    const o = users.find((x) => x.uid === sel.value);
+    const g = f.querySelector('input[name=garde]:checked');
+    if (!o || !g) return;
+    const garde = g.value === u.uid ? u : o;
+    const doublon = garde === u ? o : u;
+    if (!deuxClics(go, `confirmer : garder ${garde.email || garde.name}`)) return;
+    go.disabled = true;
+    sel.disabled = true;
+    out.textContent = 'Fusion en cours, ne fermez pas la page…';
+    try {
+      const b = await fb.fusionner(garde, doublon);
+      await publier(me, saisonDe()).catch(() => {});
+      const det = [
+        b.resultats && `${b.resultats} QCM`,
+        b.carnet && `${b.carnet} point${b.carnet > 1 ? 's' : ''} de carnet`,
+        b.questions + b.reponses && `${b.questions + b.reponses} question${b.questions + b.reponses > 1 ? 's' : ''} ou réponse${b.questions + b.reponses > 1 ? 's' : ''}`,
+      ].filter(Boolean);
+      dire(`Comptes fusionnés : ${garde.name} se connecte avec ${garde.email || 'son adresse'}${det.length ? ` (repris : ${det.join(', ')})` : ''}.`);
+      show(me);
+    } catch (err) {
+      out.textContent = fb.message(err) + ' Vous pouvez relancer la fusion : elle reprend là où elle s’est arrêtée.';
+      out.className = 'small err-t';
+      go.disabled = false;
+      sel.disabled = false;
+    }
+  };
 }
 
 // Inscrire ou retirer directement un diplôme (correction, reprise d'un ancien « A le PE »)

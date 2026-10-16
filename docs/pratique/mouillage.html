@@ -43,6 +43,13 @@ try {
     var cur = function (d) { return location.pathname.indexOf('/' + d + '/') >= 0 ? ' aria-current="page"' : ''; };
     var dt = new Date(), sa = String(dt.getMonth() >= 8 ? dt.getFullYear() : dt.getFullYear() - 1);
     var h = '';
+    var vu = null;
+    try { vu = JSON.parse(localStorage.getItem('pe-vue') || 'null'); } catch (err) {}
+    if (pp.role === 'chef' && vu && (vu.mode === 'scout' || vu.mode === 'ce')) {
+      pp.role = 'eleve';
+      pp.ce = pp.ce || {};
+      if (vu.mode === 'ce') pp.ce[sa] = vu.eq; else delete pp.ce[sa];
+    }
     if (pp.role === 'chef') {
       document.documentElement.classList.add('is-chef');
       var n = 0;

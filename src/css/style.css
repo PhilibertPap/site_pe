@@ -3025,3 +3025,78 @@ table.roles td:not(:first-child) {
     border-top: 1px solid var(--rule);
   }
 }
+
+/* Vue simulée d'un chef (« voir comme » : vue.js) */
+.vue-bandeau {
+  background: var(--amber-soft);
+  border-bottom: 1px solid var(--amber);
+  color: var(--ink);
+  font-family: var(--sans);
+  font-size: 0.86rem;
+}
+.vue-in {
+  max-width: 82rem;
+  margin: 0 auto;
+  padding: 0.5rem 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem 1rem;
+}
+.vue-act {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+}
+.vue-sel {
+  font: inherit;
+  font-size: 0.88rem;
+  padding: 0.25rem 0.4rem;
+  border: 1px solid var(--rule-2);
+  background: var(--card);
+  color: var(--ink);
+}
+.vue-li {
+  font-family: var(--sans);
+  font-size: 0.93rem;
+}
+.vue-li .small {
+  display: block;
+  margin-top: 0.2rem;
+}
+
+/* Fusion de deux comptes (page Inscrits) */
+.fusion-f {
+  font-family: var(--sans);
+  font-size: 0.92rem;
+  padding: 0.3rem 0;
+}
+.fusion-f p {
+  margin: 0.3rem 0 0.5rem;
+}
+.fusion-f select {
+  font: inherit;
+  max-width: 100%;
+  padding: 0.25rem 0.4rem;
+  border: 1px solid var(--rule-2);
+  background: var(--card);
+  color: var(--ink);
+}
+.fusion-garde {
+  border: 1px solid var(--rule);
+  background: var(--card);
+  padding: 0.4rem 0.8rem 0.5rem;
+  margin: 0 0 0.5rem;
+}
+.fusion-garde label {
+  display: block;
+  margin: 0.2rem 0;
+}
+
+/* Composition de l'équipage par son chef d'équipage */
+.compo-ce li {
+  display: inline-block;
+  margin: 0.2rem 1.2rem 0.2rem 0;
+}

@@ -1,6 +1,7 @@
 // Accès réservé : connexion, inscription, compte en attente de validation.
 // Chargé sur toutes les pages quand Firebase est configuré.
 import * as fb from './fb.js';
+import { lireVue, simuler, libelle, vueSelect, brancher, choisirVue } from './vue.js';
 
 const html = document.documentElement;
 const ROOT = document.body.dataset.root || '';
@@ -32,7 +33,8 @@ const cache = {
 };
 
 window.PE = window.PE || {};
-window.PE.saveProfile = (p) => cache.set(p);
+// en vue simulée (vue.js), on garde en mémoire le vrai profil, avec les changements faits par la page
+window.PE.saveProfile = (p) => cache.set(p && p._vrai ? { ...p._vrai, name: p.name, unite: p.unite, objectif: p.objectif } : p);
 let resolveUser;
 window.PE.userReady = new Promise((r) => (resolveUser = r));
 
@@ -123,6 +125,37 @@ function waitingPanel(profile) {
   g.querySelector('[data-a=logout]').onclick = () => fb.logout();
 }
 
+// Compte fusionné dans un autre : la personne doit se connecter avec l'autre adresse
+function mergedPanel(profile) {
+  lock();
+  const g = panel(`
+    <p class="kicker">Compte rattaché</p>
+    <h1>Bonjour ${esc(profile.name)}</h1>
+    <p>Ce compte n'est plus utilisé : un chef l'a rattaché à votre autre compte, qui garde tous vos résultats.${
+      profile.mergedEmail ? ` Connectez-vous avec l'adresse <b>${esc(profile.mergedEmail)}</b>.` : ''
+    }</p>
+    <div class="btns"><button class="btn" type="button" data-a="logout">Se déconnecter</button></div>`);
+  g.querySelector('[data-a=logout]').onclick = () => fb.logout();
+}
+
+// Bandeau de la vue simulée (« voir comme »), sous la barre du haut, sur toutes les pages
+function bandeau(v) {
+  const b = document.createElement('div');
+  b.className = 'vue-bandeau';
+  b.innerHTML = `<div class="vue-in"><span>Vous voyez le site comme <b>${esc(libelle(v))}</b>. Vos actions comptent vraiment : elles sont faites avec votre compte de chef.</span>
+    <span class="vue-act">${vueSelect([], v)} <button type="button" class="btn small">Revenir à la vue chef</button></span></div>`;
+  document.body.insertBefore(b, document.querySelector('main'));
+  b.querySelector('button').onclick = () => choisirVue(null);
+  brancher(b);
+  // les équipages de la saison, pour passer de l'un à l'autre
+  fb.compositions(saisonS())
+    .then((c) => {
+      b.querySelector('.vue-sel').outerHTML = vueSelect(c, v);
+      brancher(b);
+    })
+    .catch(() => {});
+}
+
 // Saison en cours, en chaîne ('2026' de septembre 2026 à août 2027)
 const saisonS = () => {
   const d = new Date();
@@ -158,6 +191,7 @@ function header(profile) {
     store.set(null);
     try {
       sessionStorage.removeItem('pe-afaire');
+      localStorage.removeItem('pe-vue');
     } catch (e) {}
     await fb.logout();
   };
@@ -196,6 +230,12 @@ if (!fb.enabled) {
       const c = cache.get();
       profile = c && c.uid === u.uid ? c : null;
     }
+    if (profile && profile.mergedInto) {
+      store.set(null);
+      cache.set(null);
+      mergedPanel(profile);
+      return;
+    }
     if (!profile || !profile.approved) {
       store.set(null);
       cache.set(null);
@@ -204,6 +244,12 @@ if (!fb.enabled) {
     }
     store.set(u.uid);
     unlock();
+    // un chef peut regarder le site comme un scout ou un chef d'équipage (vue.js)
+    const vue = profile.role === 'chef' ? lireVue() : null;
+    if (vue) {
+      profile = simuler(profile, vue);
+      bandeau(vue);
+    }
     header(profile);
     window.PE.user = profile;
     resolveUser(profile);

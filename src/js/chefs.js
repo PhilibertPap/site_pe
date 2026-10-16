@@ -4,6 +4,7 @@ import * as fb from './fb.js';
 import { aFaire } from './afaire.js';
 import { publier, lire, majLe } from './agregats.js';
 import { saisonLabel } from './saison.js';
+import { vueSelect, brancher } from './vue.js';
 
 const box = document.getElementById('chefs-accueil');
 const ROOT = document.body.dataset.root || '../';
@@ -48,12 +49,14 @@ async function show(me) {
 
   <h2 id="outils">Les outils</h2>
   <ul class="outils">${OUTILS.map(([h, t, d]) => `<li><a href="${ROOT}${h}"><span class="pt">${t}</span><span class="pd">${d}</span></a></li>`).join('')}</ul>
+  <p class="vue-li" id="vue">Voir le site comme ${vueSelect(r.compos)} <span class="small muted">L’affichage devient celui d’un scout ou d’un chef d’équipage, sur toutes les pages, jusqu’à « Revenir à la vue chef ». Vos droits ne changent pas.</span></p>
 
   <h2 id="classement">Classement des équipages</h2>
   <p>Les scouts ne voient que le classement publié. Il est recalculé automatiquement quand un chef consulte le site (au plus toutes les 30 minutes), et à chaque enregistrement de la composition.</p>
   <p class="small muted" id="pub-etat">${maj ? `Dernière mise à jour : ${quand(maj)}.` : r.compos.length ? 'Pas encore calculé.' : 'Rien à calculer tant que les équipages ne sont pas composés.'}</p>
   ${r.compos.length ? '<div class="btns"><button class="btn small ghost" type="button" id="pub-go">Recalculer maintenant</button></div>' : ''}`;
 
+  brancher(box);
   const go = box.querySelector('#pub-go');
   if (go)
     go.onclick = async () => {

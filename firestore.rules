@@ -4,12 +4,15 @@ rules_version = '2';
 // À copier dans la console Firebase : Firestore Database > Règles > Publier.
 //
 // Qui modifie quoi :
-// - Chefs (role = 'chef', compte validé) : les comptes (validation, rôle, suspension), les diplômes
-//   confirmés, les équipages et leur composition (dont le chef d'équipage), les points bonus,
-//   le classement publié, la suppression des résultats, la modération des questions.
+// - Chefs (role = 'chef', compte validé) : les comptes (validation, rôle, suspension, fusion de deux
+//   comptes d'une même personne), les diplômes confirmés, les équipages et leur composition (dont le
+//   chef d'équipage), les points bonus, le classement publié, la suppression des résultats, la
+//   modération des questions.
 // - Chef d'équipage (CE) de la saison : rien d'autre que son équipage. Il lit les statistiques, le
 //   carnet, les demandes et le profil de ses équipiers, valide leur carnet et traite leurs demandes.
-//   Il ne compose pas l'équipage, ne donne pas de bonus et ne publie pas le classement.
+//   Il ajoute à son équipage un scout qui n'est dans aucun équipage de la saison, ou en retire un,
+//   un à la fois ; pour cela il voit la liste des scouts validés. Il ne nomme pas de chef d'équipage,
+//   ne prend pas un scout à un autre équipage, ne donne pas de bonus et ne publie pas le classement.
 //   Les affectations sont recopiées sur les profils par les chefs : users/{uid}.eq = { '2026': '<id>' },
 //   users/{uid}.ce = { '2026': '<id>' } (saison en chaîne).
 // - Scout : son nom, son unité, son objectif, ses déclarations de diplômes, ses demandes de validation,
@@ -48,6 +51,21 @@ service cloud.firestore {
         && profile().get('ce', {}).get(s, '-')
            == get(/databases/$(database)/documents/users/$(uid)).data.get('eq', {}).get(s, '');
     }
+    // équipage dont je suis le chef d'équipage cette saison ('' sinon)
+    function ceEquipage() { return profile().get('ce', {}).get(saisonS(), ''); }
+    // le CE ajoute ou retire un seul scout (modif = { uid, name, op }) ; le profil du scout change dans
+    // le même lot d'écritures : équipage = celui-ci après un ajout, aucun après un retrait
+    function membreModifie(id, s) {
+      let m = request.resource.data.modif;
+      let av = resource.data.get('membres', []);
+      let ap = request.resource.data.membres;
+      let e = { 'uid': m.uid, 'name': m.name };
+      let apres = getAfter(/databases/$(database)/documents/users/$(m.uid)).data.get('eq', {}).get(s, '');
+      return m is map && m.keys().hasOnly(['uid', 'name', 'op']) && m.uid != request.auth.uid
+        && ap is list
+        && ((m.op == 'ajout' && ap.size() == av.size() + 1 && ap.hasAll(av) && e in ap && apres == id)
+          || (m.op == 'retrait' && ap.size() == av.size() - 1 && av.hasAll(ap) && e in av && !(e in ap) && apres == ''));
+    }
     function str(v, max) { return v is string && v.size() > 0 && v.size() <= max; }
     function mois(m) { return m is string && m.matches('^[0-9]{4}-(0[1-9]|1[0-2])$'); }
     function moisOk(d, k) { return !(k in d) || mois(d[k]); }
@@ -63,7 +81,10 @@ service cloud.firestore {
       // soi-même, un chef, ou le chef d'équipage de la saison en cours (badges, nom)
       allow get: if signedIn() && (request.auth.uid == uid || chef()
         || (approved() && resource.data.get('eq', {}).get(saisonS(), '') == profile().get('ce', {}).get(saisonS(), '-')));
-      allow list: if chef();
+      // chef d'équipage : liste des scouts validés (pour en ajouter un à son équipage) ; la requête
+      // doit filtrer role == 'eleve' et approved == true
+      allow list: if chef()
+        || (approved() && ceEquipage() != '' && resource.data.role == 'eleve' && resource.data.approved == true);
       // inscription : uniquement son propre profil, en attente, rôle élève
       allow create: if signedIn() && request.auth.uid == uid
         && request.resource.data.keys().hasOnly(['name', 'unite', 'email', 'role', 'approved', 'createdAt'])
@@ -78,7 +99,18 @@ service cloud.firestore {
             && request.resource.data.diff(resource.data).affectedKeys().hasOnly(['name', 'unite', 'objectif'])
             && str(request.resource.data.name, 80)
             && request.resource.data.unite is string && request.resource.data.unite.size() <= 80
-            && (!('objectif' in request.resource.data) || request.resource.data.objectif in ['PE', 'CQ', 'CF']));
+            && (!('objectif' in request.resource.data) || request.resource.data.objectif in ['PE', 'CQ', 'CF']))
+        // chef d'équipage : met dans son équipage un scout qui n'en a pas cette saison, ou l'en retire,
+        // avec la composition dans le même lot (voir membreModifie)
+        || (approved() && ceEquipage() != '' && request.auth.uid != uid
+            && resource.data.role == 'eleve' && resource.data.approved == true
+            && request.resource.data.diff(resource.data).affectedKeys().hasOnly(['eq'])
+            && request.resource.data.get('eq', {}).diff(resource.data.get('eq', {})).affectedKeys().hasOnly([saisonS()])
+            && ((resource.data.get('eq', {}).get(saisonS(), '') == ''
+                  && request.resource.data.get('eq', {}).get(saisonS(), '') == ceEquipage())
+              || (resource.data.get('eq', {}).get(saisonS(), '') == ceEquipage()
+                  && request.resource.data.get('eq', {}).get(saisonS(), '') == ''))
+            && getAfter(/databases/$(database)/documents/saisons/$(saisonS())/equipages/$(ceEquipage())).data.get('modif', {}).get('uid', '') == uid);
       allow delete: if chef();
     }
 
@@ -142,6 +174,13 @@ service cloud.firestore {
         && request.resource.data.ok is list && request.resource.data.ko is list
         && request.resource.data.ok.size() + request.resource.data.ko.size() <= 400
         && request.resource.data.at == request.time;
+      // fusion de deux comptes : un chef recopie les résultats du doublon sous le compte gardé
+      allow create: if chef()
+        && request.resource.data.keys().hasOnly(['uid', 'name', 'unite', 'mode', 'score', 'total', 'dur',
+             'themes', 'ok', 'ko', 'at', 'semaine'])
+        && request.resource.data.uid is string
+        && request.resource.data.mode in ['examen', 'entrainement', 'defi']
+        && (request.resource.data.mode != 'defi' || rid == 'defi_' + request.resource.data.semaine + '_' + request.resource.data.uid);
       allow update: if false;
       allow delete: if chef();
     }
@@ -154,6 +193,10 @@ service cloud.firestore {
     match /saisons/{saison}/equipages/{id} {
       allow read: if approved();
       allow write: if chef();
+      // chef d'équipage de la saison en cours : un scout de plus ou de moins dans son équipage
+      allow update: if approved() && saison == saisonS() && ceEquipage() == id
+        && request.resource.data.diff(resource.data).affectedKeys().hasOnly(['membres', 'modif'])
+        && membreModifie(id, saison);
     }
     match /bonus/{id} {
       allow read: if approved();
@@ -180,6 +223,12 @@ service cloud.firestore {
       allow create, update: if approved()
         && sid == string(request.resource.data.saison) + '_' + request.auth.uid
         && request.resource.data.uid == request.auth.uid
+        && request.resource.data.keys().hasOnly(['uid', 'saison', 'mois', 'defis', 'epreuves'])
+        && request.resource.data.mois is map && request.resource.data.defis is map
+        && request.resource.data.epreuves is list && request.resource.data.epreuves.size() <= 200;
+      // fusion de deux comptes : un chef réunit les deux résumés sous le compte gardé
+      allow create, update: if chef()
+        && sid == string(request.resource.data.saison) + '_' + request.resource.data.uid
         && request.resource.data.keys().hasOnly(['uid', 'saison', 'mois', 'defis', 'epreuves'])
         && request.resource.data.mois is map && request.resource.data.defis is map
         && request.resource.data.epreuves is list && request.resource.data.epreuves.size() <= 200;
@@ -223,6 +272,10 @@ service cloud.firestore {
         && request.resource.data.keys().hasOnly(['uid', 'name', 'eq', 'item', 'saison', 'at'])
         && request.resource.data.eq == profile().get('eq', {}).get(saisonS(), '')
         && request.resource.data.name == profile().name;
+      // fusion de deux comptes : un chef recopie les demandes du doublon sous le compte gardé
+      allow create: if chef()
+        && did == request.resource.data.uid + '_' + request.resource.data.item
+        && request.resource.data.keys().hasOnly(['uid', 'name', 'eq', 'item', 'saison', 'at']);
       allow update: if false;
       // resource == null : valider un point sans demande supprime une demande absente (même lot d'écritures)
       allow delete: if approved()

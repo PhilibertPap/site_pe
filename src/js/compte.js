@@ -6,6 +6,7 @@ import { LISTES, TOTAUX, valides } from './attendus.js';
 import { DIPLOMES, CODES, OBJECTIFS, MOIS_RE, objectifDe, diplomesDe, estFormateur, estChefEq, ceDe, badges, etapesHTML, plusMois, moisRestants, VALIDITE_MODULE } from './diplomes.js';
 import { courbe } from './courbe.js';
 import { allerAncre } from './ui.js';
+import { vueSelect, brancher } from './vue.js';
 
 const box = document.getElementById('compte');
 const ROOT = document.body.dataset.root || '../';
@@ -132,6 +133,7 @@ async function show(me) {
     ? `<div class="mes-outils"><p class="mes-outils-h">Vos outils de chef</p><ul>
       <li><a href="${ROOT}chefs/index.html"><b>Espace chefs</b></a>${nAfaire ? ` <span class="acct-n">${nAfaire}</span> ${nAfaire > 1 ? 'choses' : 'chose'} à faire` : ' : ce qui attend, et tous les outils'}</li>
       <li><a href="${ROOT}chefs/inscrits.html">Inscrits</a> · <a href="${ROOT}chefs/equipages.html">Équipages</a> · <a href="${ROOT}chefs/resultats.html">Résultats</a> · <a href="${ROOT}equipage/index.html">Tableaux de bord</a> · <a href="${ROOT}questions/index.html?ouvertes=1">Questions</a> · <a href="${ROOT}chefs/guide.html">Guide des chefs</a></li>
+      <li class="vue-li">Voir le site comme ${vueSelect(compos)} <span class="small muted">pour vérifier ce qu’un scout ou un chef d’équipage voit</span></li>
       </ul></div>`
     : chefEq
     ? `<div class="mes-outils"><p class="mes-outils-h">Chef d’équipage${monEq ? ` · ${esc(monEq.nom)}` : ''}</p><ul>
@@ -199,6 +201,7 @@ async function show(me) {
     };
   });
   wireDips(me);
+  brancher(box);
   allerAncre();
 }
 

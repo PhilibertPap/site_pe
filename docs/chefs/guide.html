@@ -43,6 +43,13 @@ try {
     var cur = function (d) { return location.pathname.indexOf('/' + d + '/') >= 0 ? ' aria-current="page"' : ''; };
     var dt = new Date(), sa = String(dt.getMonth() >= 8 ? dt.getFullYear() : dt.getFullYear() - 1);
     var h = '';
+    var vu = null;
+    try { vu = JSON.parse(localStorage.getItem('pe-vue') || 'null'); } catch (err) {}
+    if (pp.role === 'chef' && vu && (vu.mode === 'scout' || vu.mode === 'ce')) {
+      pp.role = 'eleve';
+      pp.ce = pp.ce || {};
+      if (vu.mode === 'ce') pp.ce[sa] = vu.eq; else delete pp.ce[sa];
+    }
     if (pp.role === 'chef') {
       document.documentElement.classList.add('is-chef');
       var n = 0;
@@ -90,6 +97,7 @@ try {
   <li><a href="inscrits.html#attente">Inscrits, Comptes à valider</a> : <b>Valider</b>, ou <b>Refuser</b> (second clic pour confirmer). Ne validez que des personnes que vous connaissez : le nom affiché est celui qu'elles ont tapé.</li>
   <li><b>Nommer un chef</b> : page Inscrits, colonne Compte, « nommer chef ». Un chef a tous les droits du site.</li>
   <li><b>Suspendre</b> bloque l'accès sans rien effacer ; le compte revient dans « Comptes à valider ».</li>
+  <li><b>Deux comptes pour une même personne</b> (inscrite avec une autre adresse, ou qui s'est trompée d'adresse) : « Doublon… » dans Comptes à valider, ou « fusionner » sur sa ligne. Choisissez l'autre compte, puis l'adresse à garder : résultats, carnet, diplômes, questions et équipage passent sur ce compte, l'autre est désactivé. Si la personne se reconnecte avec l'ancienne adresse, le site lui indique la bonne.</li>
 </ul>
 
 <h2 id="rentree">La rentrée de septembre</h2>
@@ -98,6 +106,7 @@ try {
   <li><a href="equipages.html#registre">Équipages</a> : créez les nouveaux équipages, fermez ceux qui disparaissent.</li>
   <li><a href="equipages.html#composition">Composition</a> de la saison : « Reprendre la composition de la saison précédente » si peu de choses changent, puis choisissez l'équipage de chaque scout et cochez son chef d'équipage (un par équipage).</li>
   <li><b>Enregistrez la composition.</b> C'est l'enregistrement qui ouvre aux chefs d'équipage leur tableau de bord et les demandes de leurs équipiers.</li>
+  <li>Il suffit de placer les chefs d'équipage : chacun peut ensuite ajouter lui-même à son équipage les scouts qui ne sont dans aucun (Mon équipage, Composer l'équipage), ou en retirer. Passer un scout d'un équipage à un autre reste l'affaire d'un chef.</li>
   <li>Demandez aux scouts de choisir leur objectif (PE, CQ ou CF) dans Mon espace, « Je prépare » : le carnet et le parcours s'y adaptent. L'accueil de l'espace chefs indique combien ne l'ont pas encore fait.</li>
   <li>Demandez-leur aussi de déclarer leurs diplômes (Mon espace, Mes diplômes), pour que vous puissiez les confirmer.</li>
 </ol>
@@ -110,6 +119,7 @@ try {
   <li><b>Résultats</b> : <a href="resultats.html">Résultats aux QCM</a> pour les thèmes faibles et les questions les plus ratées (de quoi préparer une séance) ; <a href="../equipage/index.html">Tableaux de bord</a> pour voir qui s'entraîne chaque semaine.</li>
   <li><b>Défi de la semaine</b> : rien à préparer. Chaque lundi, dix questions identiques pour tous, un seul essai. Il suffit de le rappeler aux scouts.</li>
   <li><b>Points bonus</b> : <a href="equipages.html#bonus">Équipages, Points bonus</a>, de −20 à +20 pour un mois, avec un motif visible de tous.</li>
+  <li><b>Voir le site comme un scout ou un chef d'équipage</b> : <a href="index.html#vue">accueil de l'espace chefs</a>, ou Mon espace. Un bandeau rappelle la vue choisie sur toutes les pages, avec « Revenir à la vue chef ». Seul l'affichage change : ce que vous faites dans cette vue (valider un point de carnet, par exemple) compte vraiment.</li>
   <li><b>Classement</b> : calculé à partir des QCM faits en étant connecté, et publié par les chefs seulement. C'est automatique : au plus toutes les 30 minutes quand un chef consulte le site, et à chaque composition ou bonus. Pour forcer : « Recalculer maintenant » sur l'<a href="index.html#classement">accueil de l'espace chefs</a>.</li>
 </ul>
 
@@ -139,6 +149,8 @@ try {
 <tr><td>Confirmer un diplôme</td><td>oui</td><td>non</td><td>déclare les siens</td></tr>
 <tr><td>Créer, renommer, fermer un équipage</td><td>oui</td><td>non</td><td>non</td></tr>
 <tr><td>Composer les équipages, nommer les chefs d'équipage</td><td>oui</td><td>non</td><td>non</td></tr>
+<tr><td>Ajouter à son équipage un scout sans équipage, retirer un équipier</td><td>oui</td><td>le sien</td><td>non</td></tr>
+<tr><td>Fusionner deux comptes d'une même personne</td><td>oui</td><td>non</td><td>non</td></tr>
 <tr><td>Donner ou retirer des points bonus</td><td>oui</td><td>non</td><td>non</td></tr>
 <tr><td>Publier le classement</td><td>oui (automatique)</td><td>non</td><td>non</td></tr>
 <tr><td>Voir le classement</td><td>oui</td><td>oui</td><td>oui</td></tr>
@@ -151,6 +163,7 @@ try {
 <tr><td>Modifier son nom, son unité, son objectif</td><td>oui</td><td>oui</td><td>oui</td></tr>
 </tbody></table></div>
 <p>Les titulaires confirmés du PE, du CQ ou du CF sont <b>formateurs</b> : leurs réponses aux questions sont mises en avant. Ils n'ont aucun autre droit.</p>
+<p>Pour ajouter quelqu'un à son équipage, un chef d'équipage voit la liste des scouts validés : nom et unité à l'écran, mais la base lui ouvre aussi leur fiche (adresse e-mail comprise).</p>
 
 <h2 id="faq">Questions fréquentes</h2>
 <dl class="faq">
@@ -165,7 +178,9 @@ try {
   <dt>Un scout change d'équipage en cours d'année.</dt>
   <dd>Modifiez la composition et enregistrez. Ses points comptent alors pour son nouvel équipage, y compris ceux des mois passés : le classement est recalculé à partir des statistiques de chacun.</dd>
   <dt>Un scout s'est inscrit deux fois.</dt>
-  <dd>Refusez le doublon dans Comptes à valider (ou suspendez-le s'il était déjà validé).</dd>
+  <dd>Fusionnez les deux comptes (« Doublon… » ou « fusionner », page Inscrits) : rien n'est perdu, il garde l'adresse de son choix. S'il n'a rien fait avec le second compte, le refuser suffit aussi.</dd>
+  <dt>Un chef d'équipage ne trouve pas un scout à ajouter.</dt>
+  <dd>Seuls les scouts validés et sans équipage cette saison sont proposés. Si le scout est déjà dans un autre équipage, ou si son compte n'est pas validé, c'est à un chef de faire le changement.</dd>
   <dt>Supprimer définitivement une personne.</dt>
   <dd>Suspendez ou refusez son compte sur le site, puis supprimez son identifiant dans la console Firebase, Authentication.</dd>
   <dt>Le contenu du site est-il protégé ?</dt>

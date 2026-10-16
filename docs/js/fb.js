@@ -81,10 +81,11 @@ export async function getProfile(uid) {
   return s.exists() ? { uid, ...s.data() } : null;
 }
 
+// Les comptes fusionnés dans un autre (mergedInto) n'apparaissent plus nulle part
 export async function listUsers() {
   const { F, db } = await sdk();
   const s = await F.getDocs(F.query(F.collection(db, 'users'), F.orderBy('createdAt', 'desc')));
-  return s.docs.map((d) => ({ uid: d.id, ...d.data() }));
+  return s.docs.map((d) => ({ uid: d.id, ...d.data() })).filter((u) => !u.mergedInto);
 }
 
 export async function updateUser(uid, data) {
@@ -138,8 +139,9 @@ export async function askQuestion({ title, body, theme }, me) {
 
 export async function answer(q, body, me) {
   const { F, db } = await sdk();
-  const byChef = estFormateur(me); // réponse de formateur : chef, ou titulaire du PE, du CQ ou du CF
-  const t = titre(me); // plus haut diplôme confirmé, affiché à côté du nom
+  const p = me._vrai || me; // vrai profil, même quand un chef regarde le site « comme » un scout
+  const byChef = estFormateur(p); // réponse de formateur : chef, ou titulaire du PE, du CQ ou du CF
+  const t = titre(p); // plus haut diplôme confirmé, affiché à côté du nom
   const batch = F.writeBatch(db);
   batch.set(F.doc(F.collection(db, 'questions', q.id, 'answers')), {
     body,
@@ -394,6 +396,31 @@ export async function setAffectations(saison, list) {
   }
 }
 
+// Chef d'équipage : ajoute un scout sans équipage au sien, ou en retire un, un à la fois.
+// La composition et le profil du scout changent dans le même lot : les règles vérifient l'un par l'autre.
+// Un chef peut aussi s'en servir (page du tableau de bord, en vue chef d'équipage).
+export async function modifierEquipage(saison, eq, m, op) {
+  const { F, db } = await sdk();
+  const S = String(saison);
+  const av = eq.membres || [];
+  const ap = op === 'ajout' ? [...av, { uid: m.uid, name: m.name }] : av.filter((x) => x.uid !== m.uid);
+  const batch = F.writeBatch(db);
+  batch.update(F.doc(db, 'saisons', S, 'equipages', eq.id), { membres: ap, modif: { uid: m.uid, name: m.name, op } });
+  batch.update(F.doc(db, 'users', m.uid), { [`eq.${S}`]: op === 'ajout' ? eq.id : F.deleteField() });
+  await batch.commit();
+  return ap;
+}
+// Scouts validés qui ne sont dans aucun équipage cette saison (chefs et chefs d'équipage)
+export async function scoutsLibres(saison) {
+  const { F, db } = await sdk();
+  const S = String(saison);
+  const s = await F.getDocs(F.query(F.collection(db, 'users'), F.where('role', '==', 'eleve'), F.where('approved', '==', true)));
+  return s.docs
+    .map((d) => ({ uid: d.id, ...d.data() }))
+    .filter((u) => !u.mergedInto && !(u.eq && u.eq[S]))
+    .sort((a, b) => a.name.localeCompare(b.name, 'fr'));
+}
+
 // ---------------------------------------------- classement publié
 // classement/{saison}_{eqId} = { saison, eq, nom, membres, mois: { '2026-10': { niveau, regularite, defi,
 //   bonus, total } }, total, sem: { w, ep, df }, at }  (agrégats d'équipage, lisibles par tous les inscrits)
@@ -447,4 +474,217 @@ export async function confirmerDiplome(uid, code, mois, ok = true) {
 export async function setDiplome(uid, code, mois) {
   const { F, db } = await sdk();
   await F.updateDoc(F.doc(db, 'users', uid), { [`dip.${code}`]: mois || F.deleteField() });
+}
+
+// ---------------------------------------------------------- fusion de comptes
+// Une même personne a deux comptes (deux adresses e-mail). Tout ce qui appartient au doublon passe au
+// compte gardé : résultats et défis, statistiques, carnet, demandes, déclarations de diplômes, questions
+// et réponses, places dans les équipages, diplômes confirmés. Le doublon est ensuite désactivé
+// (mergedInto) : s'il se reconnecte, on lui indique l'adresse à utiliser. Son identifiant reste dans
+// Firebase Authentication (à supprimer depuis la console si on veut).
+// Réservé aux chefs. Chaque étape se refait sans dommage si la fusion est interrompue.
+
+// Écritures par lots de 400 au plus ; ops : fonctions (batch) => nombre d'écritures ajoutées
+async function lots(F, db, ops) {
+  let batch = F.writeBatch(db);
+  let n = 0;
+  for (const op of ops) {
+    n += op(batch);
+    if (n >= 400) {
+      await batch.commit();
+      batch = F.writeBatch(db);
+      n = 0;
+    }
+  }
+  if (n) await batch.commit();
+}
+
+// Résumés de saison : meilleure note et défis au plus haut, nombres et thèmes additionnés
+function fusionStats(a, b) {
+  const out = structuredClone(a);
+  Object.entries(b.mois || {}).forEach(([m, x]) => {
+    const y = (out.mois[m] = out.mois[m] || {});
+    y.best = Math.max(y.best || 0, x.best || 0);
+    y.n = (y.n || 0) + (x.n || 0);
+    y.sem = { ...(y.sem || {}) };
+    Object.entries(x.sem || {}).forEach(([w, k]) => (y.sem[w] = (y.sem[w] || 0) + k));
+    y.th = { ...(y.th || {}) };
+    Object.entries(x.th || {}).forEach(([t, [ok, n]]) => {
+      const z = y.th[t] || [0, 0];
+      y.th[t] = [z[0] + ok, z[1] + n];
+    });
+  });
+  Object.entries(b.defis || {}).forEach(([w, k]) => (out.defis[w] = Math.max(out.defis[w] ?? 0, k)));
+  out.epreuves = [...(out.epreuves || []), ...(b.epreuves || [])].sort((p, q) => p.t - q.t).slice(-200);
+  return out;
+}
+
+// Diplômes confirmés : le plus ancien mois quand les deux comptes ont le même
+function fusionDip(a = {}, b = {}) {
+  const d = { ...b };
+  Object.entries(a).forEach(([c, m]) => (d[c] = d[c] && d[c] < m ? d[c] : m));
+  return d;
+}
+
+export async function fusionner(garde, doublon) {
+  const { F, db } = await sdk();
+  const A = garde.uid;
+  const B = doublon.uid;
+  if (!A || !B || A === B) throw { message: 'Choisissez deux comptes différents.' };
+  const nom = garde.name;
+  const bilan = { resultats: 0, saisons: 0, carnet: 0, demandes: 0, questions: 0, reponses: 0 };
+  const parUid = (col, champ, uid) => F.getDocs(F.query(F.collection(db, col), F.where(champ, '==', uid)));
+
+  // équipage et chef d'équipage de chaque saison : ceux du compte gardé, sinon ceux du doublon
+  const eq = { ...(doublon.eq || {}), ...(garde.eq || {}) };
+  const ce = { ...(doublon.ce || {}), ...(garde.ce || {}) };
+
+  // 1. résultats : copiés sous le compte gardé, puis effacés (un seul défi par semaine)
+  const [rB, rA] = await Promise.all([parUid('results', 'uid', B), parUid('results', 'uid', A)]);
+  const defisA = new Set(rA.docs.filter((d) => d.data().mode === 'defi').map((d) => d.data().semaine));
+  await lots(
+    F,
+    db,
+    rB.docs.map((d) => (batch) => {
+      const r = d.data();
+      if (r.mode === 'defi' && defisA.has(r.semaine)) {
+        batch.delete(d.ref);
+        return 1;
+      }
+      const ref = r.mode === 'defi' ? F.doc(db, 'results', `defi_${r.semaine}_${A}`) : F.doc(F.collection(db, 'results'));
+      batch.set(ref, { ...r, uid: A, name: nom });
+      batch.delete(d.ref);
+      bilan.resultats++;
+      return 2;
+    })
+  );
+
+  // 2. statistiques de chaque saison
+  const sB = await parUid('stats', 'uid', B);
+  for (const d of sB.docs) {
+    const b = d.data();
+    const refA = F.doc(db, 'stats', `${b.saison}_${A}`);
+    const a = await F.getDoc(refA);
+    const st = a.exists() ? fusionStats(a.data(), b) : { ...b };
+    const batch = F.writeBatch(db);
+    batch.set(refA, { uid: A, saison: b.saison, mois: st.mois || {}, defis: st.defis || {}, epreuves: st.epreuves || [] });
+    batch.delete(d.ref);
+    await batch.commit();
+    bilan.saisons++;
+  }
+
+  // 3. carnet : les validations des deux comptes (celle du compte gardé si les deux ont le même point)
+  const [cA, cB] = await Promise.all([F.getDoc(F.doc(db, 'carnets', A)), F.getDoc(F.doc(db, 'carnets', B))]);
+  const vA = cA.exists() ? cA.data().v || {} : {};
+  if (cB.exists()) {
+    const vB = cB.data().v || {};
+    bilan.carnet = Object.keys(vB).filter((k) => !vA[k]).length;
+    const batch = F.writeBatch(db);
+    if (bilan.carnet) batch.set(F.doc(db, 'carnets', A), { v: { ...vB, ...vA } });
+    batch.delete(cB.ref);
+    await batch.commit();
+    Object.keys(vB).forEach((k) => vA[k] || (vA[k] = vB[k]));
+  }
+
+  // 4. demandes de validation (inutiles si le point est déjà validé)
+  const dB = await parUid('demandes', 'uid', B);
+  await lots(
+    F,
+    db,
+    dB.docs.map((d) => (batch) => {
+      const x = d.data();
+      batch.delete(d.ref);
+      if (vA[x.item]) return 1;
+      batch.set(F.doc(db, 'demandes', `${A}_${x.item}`), { ...x, uid: A, name: nom, eq: eq[String(x.saison)] || x.eq || '' });
+      bilan.demandes++;
+      return 2;
+    })
+  );
+
+  // 5. diplômes déclarés en attente (sauf ceux déjà confirmés)
+  const dip = fusionDip(garde.dip, doublon.dip);
+  const [gA, gB] = await Promise.all([F.getDoc(F.doc(db, 'diplomes', A)), F.getDoc(F.doc(db, 'diplomes', B))]);
+  if (gB.exists()) {
+    const d = { ...(gB.data().d || {}), ...(gA.exists() ? gA.data().d || {} : {}) };
+    Object.keys(d).forEach((c) => dip[c] && delete d[c]);
+    const batch = F.writeBatch(db);
+    batch.set(F.doc(db, 'diplomes', A), { d, at: F.serverTimestamp() });
+    batch.delete(gB.ref);
+    await batch.commit();
+  }
+
+  // 6. questions posées et réponses données
+  const qB = await parUid('questions', 'authorId', B);
+  await lots(
+    F,
+    db,
+    qB.docs.map((d) => (batch) => {
+      batch.update(d.ref, { authorId: A, authorName: nom });
+      bilan.questions++;
+      return 1;
+    })
+  );
+  const qs = await F.getDocs(F.query(F.collection(db, 'questions'), F.where('answers', '>', 0)));
+  const rep = await Promise.all(qs.docs.map((q) => F.getDocs(F.query(F.collection(db, 'questions', q.id, 'answers'), F.where('authorId', '==', B)))));
+  await lots(
+    F,
+    db,
+    rep.flatMap((s) => s.docs).map((d) => (batch) => {
+      batch.update(d.ref, { authorId: A, authorName: nom });
+      bilan.reponses++;
+      return 1;
+    })
+  );
+
+  // 7. compositions des saisons où l'un des deux comptes apparaît : une seule place, celle de eq
+  const saisons = [...new Set([...Object.keys(eq), ...Object.keys(ce)])];
+  for (const S of saisons) {
+    const compos = await F.getDocs(F.collection(db, 'saisons', S, 'equipages'));
+    for (const c of compos.docs) {
+      const x = c.data();
+      const membres = x.membres || [];
+      const touche = membres.some((m) => m.uid === A || m.uid === B) || x.chefEq === A || x.chefEq === B;
+      if (!touche) continue;
+      const nv = membres.filter((m) => m.uid !== A && m.uid !== B);
+      if (eq[S] === c.id) nv.push({ uid: A, name: nom });
+      const estCE = (x.chefEq === A || x.chefEq === B) && eq[S] === c.id;
+      if (x.chefEq === A || x.chefEq === B) {
+        if (estCE) ce[S] = c.id;
+        else if (ce[S] === c.id) delete ce[S];
+      }
+      await F.setDoc(c.ref, {
+        nom: x.nom,
+        membres: nv,
+        chefEq: x.chefEq === A || x.chefEq === B ? (estCE ? A : null) : x.chefEq || null,
+        chefEqName: x.chefEq === A || x.chefEq === B ? (estCE ? nom : '') : x.chefEqName || '',
+      });
+    }
+  }
+  // un chef d'équipage sans équipage cette saison-là n'en est plus un
+  Object.keys(ce).forEach((S) => eq[S] !== ce[S] && delete ce[S]);
+
+  // 8. profils : le compte gardé reçoit ce qui lui manquait, le doublon est désactivé
+  const batch = F.writeBatch(db);
+  batch.update(F.doc(db, 'users', A), {
+    unite: garde.unite || doublon.unite || '',
+    role: garde.role === 'chef' || doublon.role === 'chef' ? 'chef' : 'eleve',
+    approved: !!(garde.approved || doublon.approved),
+    ...(garde.objectif || doublon.objectif ? { objectif: garde.objectif || doublon.objectif } : {}),
+    ...(garde.pe === true || doublon.pe === true ? { pe: true } : {}),
+    dip,
+    eq,
+    ce,
+  });
+  batch.update(F.doc(db, 'users', B), {
+    approved: false,
+    role: 'eleve',
+    mergedInto: A,
+    mergedEmail: garde.email || '',
+    mergedAt: F.serverTimestamp(),
+    eq: F.deleteField(),
+    ce: F.deleteField(),
+    dip: F.deleteField(),
+  });
+  await batch.commit();
+  return bilan;
 }

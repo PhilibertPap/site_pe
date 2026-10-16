@@ -17,9 +17,12 @@ En résumé :
   suivante à préparer en août), chacun avec un lien vers l'endroit où agir. Onglets : Accueil, Inscrits,
   Équipages, Résultats, Tableaux de bord, Guide.
 - **Inscriptions** : chaque scout crée son compte, un chef le valide (Inscrits). Un chef nomme les
-  autres chefs depuis la même page.
+  autres chefs depuis la même page, et y fusionne les deux comptes d'une même personne.
+- **Voir comme** : un chef peut regarder le site comme un scout ou comme le chef d'équipage d'un
+  équipage (accueil de l'espace chefs ou Mon espace). Seul l'affichage change, pas les droits.
 - **Rentrée** : créer ou fermer les équipages, composer la saison (« Reprendre la composition de la
-  saison précédente »), cocher un chef d'équipage par équipage, **enregistrer** ; demander aux scouts
+  saison précédente »), cocher un chef d'équipage par équipage, **enregistrer** (chaque chef d'équipage
+  peut ensuite ajouter lui-même les scouts sans équipage) ; demander aux scouts
   de choisir leur objectif (PE, CQ, CF) et de déclarer leurs diplômes dans Mon espace.
 - **Au fil de l'année** : confirmer les diplômes, répondre aux questions, suivre les résultats et les
   tableaux de bord, donner des points bonus. Le classement se met à jour tout seul.
@@ -35,6 +38,8 @@ Imposé par `firestore.rules` (et reproduit par l'interface) :
 |---|---|---|---|
 | Valider les comptes, nommer un chef, confirmer un diplôme | oui | non | non (déclare les siens) |
 | Créer, composer les équipages, nommer les CE, points bonus | oui | non | non |
+| Ajouter un scout sans équipage à son équipage, retirer un équipier | oui | le sien | non |
+| Fusionner deux comptes d'une même personne | oui | non | non |
 | Publier le classement | oui (automatique) | non | non |
 | Tableau de bord, résultats et carnet d'un scout | tous | ses équipiers | les siens |
 | Valider un point de carnet | tous (sauf le sien) | ses équipiers | non (il demande) |
@@ -68,7 +73,7 @@ src/js/               figures.js, qcm.js, exos.js, outils.js, site.js (thème, m
                       classement.js (points), agregats.js (classement publié), afaire.js (à faire
                       des chefs), compte.js, carnet.js, accueil.js, questions.js, equipage.js,
                       equipages.js, chefs.js (accueil chefs), inscrits.js, chefs-equipages.js,
-                      resultats.js ; firebase-config.js
+                      resultats.js, vue.js (« voir comme » des chefs) ; firebase-config.js
 docs/                 site généré (ne pas modifier à la main)
 docs/fichiers/        fichiers servis tels quels (annales PDF), conservés par le build
 ```
@@ -94,7 +99,9 @@ Les exercices sont générés aléatoirement par `src/js/exos.js`.
 
 - `users/{uid}` : nom, unité, rôle (`eleve` ou `chef`), `approved`, objectif, diplômes confirmés
   `dip`, et par saison l'équipage `eq` et le rôle de chef d'équipage `ce` (`{ '2026': '<id>' }`),
-  recopiés par les chefs à l'enregistrement de la composition.
+  recopiés par les chefs à l'enregistrement de la composition (ou par le CE, un scout à la fois, avec
+  `saisons/{s}/equipages/{id}.modif`). Un compte fusionné garde `mergedInto` (uid du compte gardé) et
+  `mergedEmail`, et n'apparaît plus dans les listes.
 - `diplomes/{uid}` : déclarations du scout en attente ; `carnets/{uid}` : points validés ;
   `demandes/{uid}_{point}` : demandes de validation.
 - `results/` : un document par QCM ; `stats/{saison}_{uid}` : résumé de saison d'un scout.

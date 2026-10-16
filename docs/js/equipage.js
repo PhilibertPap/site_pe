@@ -4,7 +4,7 @@
 import * as fb from './fb.js';
 import { classement, scoreMois, BAREME } from './classement.js';
 import { statsEquipage, lire, pts } from './agregats.js';
-import { toast, allerAncre } from './ui.js';
+import { toast, allerAncre, deuxClics } from './ui.js';
 import { saisonDe, saisonLabel, moisDe, moisLabel, moisCourt, semaineDe, moisDeSaison } from './saison.js';
 import { THEMES } from './qcm/index.js';
 import { ITEMS, TOTAUX, valides } from './attendus.js';
@@ -113,6 +113,15 @@ async function show(me, eqId) {
         ? `<figure class="courbe-fig">${courbe([{ nom: eq.nom, pts: mois.map((x, i) => ({ x: i, y: moi.parMois[x].total })) }], { labels: mois.map(moisCourt), ymax: 100 })}<figcaption>Points de l’équipage, mois par mois.</figcaption></figure>`
         : ''
     }`;
+    // le chef d'équipage complète lui-même son équipage ; un chef passe par la page Équipages
+    html += chef
+      ? `<p class="small"><a href="${ROOT}chefs/equipages.html#composition">Modifier la composition des équipages</a></p>`
+      : `<h2 id="composer">Composer l’équipage</h2>
+    <p class="small muted">Ajoutez un scout qui n’est encore dans aucun équipage cette saison, ou retirez l’un de vos équipiers. Pour faire passer quelqu’un d’un autre équipage au vôtre, ou pour changer de chef d’équipage, demandez à un chef.</p>
+    <ul class="decl-list compo-ce">${membres
+      .map((x) => `<li data-uid="${x.uid}">${esc(x.name)}${x.uid === eq.chefEq ? ' <span class="tag">CE</span>' : ' <button class="linkish" type="button" data-a="retirer">retirer</button>'}</li>`)
+      .join('')}</ul>
+    <form class="inline-form" id="ce-ajout"><select name="uid" aria-label="Scout à ajouter" disabled><option>Chargement…</option></select><button class="btn small" type="submit" disabled>Ajouter à l’équipage</button> <span class="small" id="ce-msg"></span></form>`;
   } else if (!chef) {
     html += '<p class="vide">Votre équipage n’a pas encore été composé pour cette saison. Les chefs s’en occupent.</p>';
   } else {
@@ -144,6 +153,7 @@ async function show(me, eqId) {
       })
   );
   allerAncre();
+  if (eq && !chef) composer(me, saison, eq);
   box.querySelectorAll('.demandes [data-a]').forEach((b) => {
     b.onclick = async () => {
       const li = b.closest('li');
@@ -161,6 +171,59 @@ async function show(me, eqId) {
       } catch (e) {
         b.disabled = false;
         toast(fb.message(e), true);
+      }
+    };
+  });
+}
+
+// Chef d'équipage : ajouter un scout sans équipage, retirer un équipier (un à la fois, voir fb.modifierEquipage)
+function composer(me, saison, eq) {
+  const fa = box.querySelector('#ce-ajout');
+  const sel = fa.querySelector('select');
+  const btn = fa.querySelector('button');
+  const msg = fa.querySelector('#ce-msg');
+  fb.scoutsLibres(saison)
+    .then((libres) => {
+      if (!libres.length) {
+        sel.innerHTML = '<option>Aucun scout sans équipage</option>';
+        return;
+      }
+      sel.innerHTML = libres.map((u) => `<option value="${u.uid}">${esc(u.name)}${u.unite ? ' · ' + esc(u.unite) : ''}</option>`).join('');
+      sel.disabled = false;
+      btn.disabled = false;
+      fa.onsubmit = async (e) => {
+        e.preventDefault();
+        const u = libres.find((x) => x.uid === sel.value);
+        if (!u) return;
+        btn.disabled = true;
+        try {
+          await fb.modifierEquipage(saison, eq, { uid: u.uid, name: u.name }, 'ajout');
+          toast(`${u.name} fait maintenant partie de l’équipage ${eq.nom}.`);
+          await show(me, eq.id);
+        } catch (err) {
+          btn.disabled = false;
+          msg.textContent = fb.message(err);
+          msg.className = 'small err-t';
+        }
+      };
+    })
+    .catch((err) => {
+      sel.innerHTML = '<option>Liste indisponible</option>';
+      msg.textContent = fb.message(err);
+      msg.className = 'small err-t';
+    });
+  box.querySelectorAll('.compo-ce [data-a=retirer]').forEach((b) => {
+    b.onclick = async () => {
+      const x = (eq.membres || []).find((m) => m.uid === b.closest('li').dataset.uid);
+      if (!x || !deuxClics(b, `confirmer : retirer ${x.name}`)) return;
+      b.disabled = true;
+      try {
+        await fb.modifierEquipage(saison, eq, x, 'retrait');
+        toast(`${x.name} ne fait plus partie de l’équipage ${eq.nom}.`);
+        await show(me, eq.id);
+      } catch (err) {
+        b.disabled = false;
+        toast(fb.message(err), true);
       }
     };
   });
