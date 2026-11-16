@@ -35,12 +35,12 @@
 
 <h3>Ce que l'on voit d'un navire qui fait route</h3>
 <div class="figrow" style="justify-content:flex-start">
-  <div><x-nuit preset="moteur-face" w="180" />Navire à moteur, de face :<br><span class="muted">il vient vers moi</span></div>
-  <div><x-nuit preset="moteur-tribord" w="180" />Je vois son tribord (vert) :<br><span class="muted">il va vers ma droite</span></div>
-  <div><x-nuit preset="moteur-babord" w="180" />Je vois son bâbord (rouge) :<br><span class="muted">il va vers ma gauche</span></div>
-  <div><x-nuit preset="moteur50-tribord" w="180" />Plus de 50 m, vu de tribord :<br><span class="muted">deux feux de mât, l'arrière plus haut</span></div>
-  <div><x-nuit preset="voilier-face" w="180" />Voilier, de face :<br><span class="muted">pas de feu de mât</span></div>
-  <div><x-nuit preset="arriere" w="180" />Un seul feu blanc :<br><span class="muted">je le vois par l'arrière</span></div>
+  <div><x-nuit preset="moteur-face" w="200" />Navire à moteur, de face :<br><span class="muted">il vient vers moi</span></div>
+  <div><x-nuit preset="moteur-tribord" w="200" />Je vois son tribord (vert) :<br><span class="muted">il va vers ma droite</span></div>
+  <div><x-nuit preset="moteur-babord" w="200" />Je vois son bâbord (rouge) :<br><span class="muted">il va vers ma gauche</span></div>
+  <div><x-nuit preset="moteur50-tribord" w="200" />Plus de 50 m, vu de tribord :<br><span class="muted">deux feux de mât, l'arrière plus haut</span></div>
+  <div><x-nuit preset="voilier-face" w="200" />Voilier, de face :<br><span class="muted">pas de feu de mât</span></div>
+  <div><x-nuit preset="arriere" w="200" />Un seul feu blanc :<br><span class="muted">je le vois par l'arrière</span></div>
 </div>
 
 <div class="box prop" data-title="Feux des navires faisant route">
@@ -68,17 +68,17 @@
 <div class="tbl-wrap"><table>
 <thead><tr><th>Situation</th><th>Jour</th><th>Nuit</th><th>À retenir</th></tr></thead>
 <tbody>
-<tr><td><strong>Au mouillage</strong></td><td><x-marques seq="boule" w="34" /></td><td><x-nuit preset="mouillage" w="110" /></td><td>une boule à l'avant ; un feu blanc 360° (deux au-delà de 50 m, l'avant plus haut)</td></tr>
-<tr><td><strong>Non maître de sa manœuvre</strong></td><td><x-marques seq="boule,boule" w="34" /></td><td><x-nuit preset="nuc" w="110" /></td><td>deux boules ; deux feux rouges superposés</td></tr>
-<tr><td><strong>Échoué</strong></td><td><x-marques seq="boule,boule,boule" w="34" /></td><td><x-nuit preset="echoue" w="110" /></td><td>trois boules ; deux feux rouges + feux de mouillage</td></tr>
-<tr><td><strong>Capacité de manœuvre restreinte</strong></td><td><x-marques seq="boule,losange,boule" w="34" /></td><td><x-nuit preset="ram" w="110" /></td><td>boule, losange, boule ; rouge, blanc, rouge</td></tr>
-<tr><td><strong>Handicapé par son tirant d'eau</strong></td><td><x-marques seq="cylindre" w="34" /></td><td><x-nuit preset="tirant-eau" w="110" /></td><td>un cylindre ; trois feux rouges superposés (+ feux de route)</td></tr>
-<tr><td><strong>Chalutier en pêche</strong></td><td><x-marques seq="sablier" w="34" /></td><td><x-nuit preset="chalutier" w="110" /></td><td>deux cônes pointe à pointe ; vert sur blanc</td></tr>
-<tr><td><strong>Autre navire en pêche</strong></td><td><x-marques seq="sablier" w="34" /></td><td><x-nuit preset="peche" w="110" /></td><td>deux cônes pointe à pointe ; rouge sur blanc</td></tr>
-<tr><td><strong>Bateau pilote en service</strong></td><td><x-pavillon code="H" w="48" /></td><td><x-nuit preset="pilote" w="110" /></td><td>pavillon H ; blanc sur rouge</td></tr>
-<tr><td><strong>Voilier au moteur</strong></td><td><x-marques seq="cone-bas" w="34" /></td><td><x-nuit preset="moteur-face" w="110" /></td><td>cône pointe en bas ; feux d'un navire à moteur</td></tr>
-<tr><td><strong>Remorquage</strong></td><td><x-marques seq="losange" w="34" /></td><td><x-nuit preset="remorqueur-face" w="110" /></td><td>losange si la remorque dépasse 200 m ; deux feux de mât superposés (trois au-delà de 200 m), feu jaune de remorquage au-dessus du feu de poupe</td></tr>
-<tr><td><strong>Déminage</strong></td><td>trois boules en triangle</td><td><x-nuit preset="deminage-face" w="110" /></td><td>trois feux verts ; rester à plus de 1 000 m</td></tr>
+<tr><td><strong>Au mouillage</strong></td><td><x-marques seq="boule" w="34" /></td><td><x-nuit preset="mouillage" w="150" /></td><td>une boule à l'avant ; un feu blanc 360° (deux au-delà de 50 m, l'avant plus haut)</td></tr>
+<tr><td><strong>Non maître de sa manœuvre</strong></td><td><x-marques seq="boule,boule" w="34" /></td><td><x-nuit preset="nuc" w="150" /></td><td>deux boules ; deux feux rouges superposés</td></tr>
+<tr><td><strong>Échoué</strong></td><td><x-marques seq="boule,boule,boule" w="34" /></td><td><x-nuit preset="echoue" w="150" /></td><td>trois boules ; deux feux rouges + feux de mouillage</td></tr>
+<tr><td><strong>Capacité de manœuvre restreinte</strong></td><td><x-marques seq="boule,losange,boule" w="34" /></td><td><x-nuit preset="ram" w="150" /></td><td>boule, losange, boule ; rouge, blanc, rouge</td></tr>
+<tr><td><strong>Handicapé par son tirant d'eau</strong></td><td><x-marques seq="cylindre" w="34" /></td><td><x-nuit preset="tirant-eau" w="150" /></td><td>un cylindre ; trois feux rouges superposés (+ feux de route)</td></tr>
+<tr><td><strong>Chalutier en pêche</strong></td><td><x-marques seq="sablier" w="34" /></td><td><x-nuit preset="chalutier" w="150" /></td><td>deux cônes pointe à pointe ; vert sur blanc</td></tr>
+<tr><td><strong>Autre navire en pêche</strong></td><td><x-marques seq="sablier" w="34" /></td><td><x-nuit preset="peche" w="150" /></td><td>deux cônes pointe à pointe ; rouge sur blanc</td></tr>
+<tr><td><strong>Bateau pilote en service</strong></td><td><x-pavillon code="H" w="48" /></td><td><x-nuit preset="pilote" w="150" /></td><td>pavillon H ; blanc sur rouge</td></tr>
+<tr><td><strong>Voilier au moteur</strong></td><td><x-marques seq="cone-bas" w="34" /></td><td><x-nuit preset="moteur-face" w="150" /></td><td>cône pointe en bas ; feux d'un navire à moteur</td></tr>
+<tr><td><strong>Remorquage</strong></td><td><x-marques seq="losange" w="34" /></td><td><x-nuit preset="remorqueur-face" w="150" /></td><td>losange si la remorque dépasse 200 m ; deux feux de mât superposés (trois au-delà de 200 m), feu jaune de remorquage au-dessus du feu de poupe</td></tr>
+<tr><td><strong>Déminage</strong></td><td>trois boules en triangle</td><td><x-nuit preset="deminage-face" w="150" /></td><td>trois feux verts ; rester à plus de 1 000 m</td></tr>
 </tbody></table></div>
 
 <div class="box rem" data-title="petits bateaux">
@@ -151,7 +151,7 @@
 <tr><td><x-port seq="R,R,R" exempt="Y" w="40" /></td><td>Feu jaune à gauche du feu supérieur : le signal ne s'applique pas aux navires qui naviguent en dehors du chenal principal (typiquement les petits bateaux).</td></tr>
 </tbody></table></div>
 
-<p>Dans les ports, un navire qui charge, décharge ou transporte des matières dangereuses le signale de jour par le pavillon B, de nuit par un feu rouge visible sur tout l'horizon. Ce signal relève des règlements portuaires, pas du RIPAM : on s'en tient à l'écart. <x-nuit preset="dangereux" w="110" /></p>
+<p>Dans les ports, un navire qui charge, décharge ou transporte des matières dangereuses le signale de jour par le pavillon B, de nuit par un feu rouge visible sur tout l'horizon. Ce signal relève des règlements portuaires, pas du RIPAM : on s'en tient à l'écart. <x-nuit preset="dangereux" w="150" /></p>
 
 <p>Les <dfn>sémaphores</dfn> de la Marine nationale, postés sur les caps, surveillent la côte à vue et veillent le canal 16. Ils hissaient autrefois des signaux d'avis de coup de vent, que l'on rencontre encore dans les QCM (<a href="08-meteo.html#semaphores">chapitre 8</a>).</p>
 

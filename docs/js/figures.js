@@ -242,7 +242,8 @@ ${g}
 
 // ------------------------------------------------------ feux de navires
 
-// Positions dans un cadre 200 x 120. Chaque feu : [x, y, couleur]
+// Positions dans un cadre 200 x 120 (les feux occupent x 62-146, y 18-88 ; l'eau commence à y = 96).
+// Le dessin est recadré sur cette zone (NUIT_CADRE) sans changer les positions. Chaque feu : [x, y, couleur]
 const NIGHT_PRESETS = {
   // Navire à moteur < 50 m vu de face : feu de mât + deux feux de côté
   'moteur-face': [[100, 38, 'W'], [88, 84, 'G'], [112, 84, 'R']],
@@ -301,19 +302,22 @@ export const NIGHT_LIST = Object.keys(NIGHT_PRESETS);
 /**
  * Ce que l'on voit de nuit. preset : clé de NIGHT_PRESETS, ou liste de feux.
  */
+// Cadre affiché : [x, y, largeur, hauteur] dans le repère 200 x 120
+const NUIT_CADRE = [44, 6, 114, 100];
 export function nuit(preset, o = {}) {
   const lights = Array.isArray(preset) ? preset : NIGHT_PRESETS[preset];
   if (!lights) throw new Error('Feux inconnus : ' + preset);
   const w = +(o.w || 220);
-  const h = Math.round((w * 120) / 200);
+  const h = Math.round((w * NUIT_CADRE[3]) / NUIT_CADRE[2]);
   const id = nid('g');
+  // feux superposés espacés de 16 unités : rayon 5, pour qu'ils restent nettement séparés
   const dots = lights
     .map(
       ([x, y, c]) =>
-        `<circle cx="${x}" cy="${y}" r="10" fill="${NIGHT[c]}" opacity=".18" filter="url(#${id})"/><circle cx="${x}" cy="${y}" r="3.6" fill="${NIGHT[c]}"/>`
+        `<circle cx="${x}" cy="${y}" r="11" fill="${NIGHT[c]}" opacity=".2" filter="url(#${id})"/><circle cx="${x}" cy="${y}" r="5" fill="${NIGHT[c]}"/>`
     )
     .join('');
-  return `<svg class="nuit" viewBox="0 0 200 120" width="${w}" height="${h}" role="img" aria-label="${esc(
+  return `<svg class="nuit" viewBox="${NUIT_CADRE.join(' ')}" width="${w}" height="${h}" role="img" aria-label="${esc(
     o.aria || 'Feux observés de nuit'
   )}" xmlns="http://www.w3.org/2000/svg">
 <defs><filter id="${id}" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="3"/></filter></defs>
