@@ -1,9 +1,10 @@
 // Tableau de bord d'un équipage et demandes de validation du carnet.
 // Chefs : tous les équipages, au choix. Chef d'équipage : le sien seulement (les règles Firestore l'imposent).
 // Lecture seule pour le classement : seuls les chefs le publient (en arrière-plan, voir auth.js).
+// Pas de cache entre deux visites : la page contient des notes individuelles et des demandes à traiter.
 import * as fb from './fb.js';
 import { classement, scoreMois, BAREME } from './classement.js';
-import { statsEquipage, lire, pts } from './agregats.js';
+import { statsEquipage, assembler, pts } from './agregats.js';
 import { toast, allerAncre, deuxClics } from './ui.js';
 import { saisonDe, saisonLabel, moisDe, moisLabel, moisCourt, semaineDe, moisDeSaison } from './saison.js';
 import { THEMES } from './qcm/index.js';
@@ -18,32 +19,46 @@ const f1 = (x) => (Math.round(x * 10) / 10).toLocaleString('fr-FR');
 const pct = (a, n) => (n ? Math.round((100 * a) / n) : 0);
 const date = (d) => (d ? d.toLocaleDateString('fr-FR', { day: 'numeric', month: 'short' }) : '');
 
-async function show(me, eqId) {
+// Lectures qui ne dépendent pas de l'équipage choisi, toutes en parallèle. Un chef les garde le
+// temps de la page : passer d'un équipage à l'autre ne relit que les carnets.
+let commun = null;
+async function charger(me, saison, chef) {
+  const [compos, bonus, pub, stats, demandes, users] = await Promise.all([
+    fb.compositions(saison),
+    fb.listBonus(saison),
+    fb.listClassement(saison).catch(() => null),
+    chef ? fb.statsSaison(saison) : null,
+    chef ? fb.toutesDemandes() : null,
+    chef ? fb.listUsers() : null,
+  ]);
+  return { compos, bonus, tabPub: pub && assembler(compos, pub), stats, demandes, profils: users && Object.fromEntries(users.map((u) => [u.uid, u])) };
+}
+
+async function show(me, eqId, reutiliser = false) {
   const saison = saisonDe();
   const chef = me.role === 'chef';
-  let compos, stats, bonus, demandes, profils, tabPub;
+  let compos, stats, bonus, demandes, profils, tabPub, carnets;
   let visibles, eq;
   try {
-    [compos, bonus] = await Promise.all([fb.compositions(saison), fb.listBonus(saison)]);
+    if (!(reutiliser && chef && commun)) commun = await charger(me, saison, chef);
+    ({ compos, bonus, tabPub, stats, demandes, profils } = commun);
     visibles = chef ? compos : compos.filter((c) => c.id === ceDe(me, saison));
     eq = visibles.find((c) => c.id === eqId) || visibles.find((c) => c.chefEq === me.uid) || visibles[0];
-    const uids = ((eq && eq.membres) || []).map((x) => x.uid);
-    if (chef) {
-      let users;
-      [stats, demandes, users] = await Promise.all([fb.statsSaison(saison), fb.toutesDemandes(), fb.listUsers()]);
-      profils = Object.fromEntries(users.map((u) => [u.uid, u]));
-    } else {
-      // chef d'équipage : uniquement ses équipiers, document par document
-      const [st, dem, pr] = await Promise.all([
-        eq ? statsEquipage(saison, eq) : [],
-        eq ? fb.demandesEquipage(eq.id).catch(() => []) : [],
-        Promise.all(uids.map((u) => fb.getProfile(u).catch(() => null))),
-      ]);
+    const membres = (eq && eq.membres) || [];
+    const uids = membres.map((x) => x.uid);
+    // ce qui dépend de l'équipage : carnets, et pour un chef d'équipage ses équipiers seulement, document par document
+    const [cn, st, dem, pr] = await Promise.all([
+      Promise.all(membres.map((x) => fb.getCarnet(x.uid).catch(() => ({})))),
+      chef ? stats : eq ? statsEquipage(saison, eq) : [],
+      chef ? demandes : eq ? fb.demandesEquipage(eq.id).catch(() => []) : [],
+      chef ? null : Promise.all(uids.map((u) => fb.getProfile(u).catch(() => null))),
+    ]);
+    carnets = cn;
+    if (!chef) {
       stats = st;
       demandes = dem.filter((d) => uids.includes(d.uid));
       profils = Object.fromEntries(pr.filter(Boolean).map((u) => [u.uid, u]));
     }
-    tabPub = await lire(saison, compos).catch(() => null);
   } catch (e) {
     box.innerHTML = `<p>${esc(fb.message(e))}</p>`;
     return;
@@ -65,7 +80,6 @@ async function show(me, eqId) {
   let html = `${sel}<p class="small muted">Saison ${saisonLabel(saison)}${chef ? ' · vous voyez tous les équipages ; un chef d’équipage ne voit que le sien' : ''}</p>`;
   if (eq) {
     const membres = eq.membres || [];
-    const carnets = await Promise.all(membres.map((x) => fb.getCarnet(x.uid).catch(() => ({}))));
     const moi = classement([eq], stats, bonus, saison, now)[0];
     const s = scoreMois(eq, st, m, bonus, now);
     // rang d'après les agrégats publiés des autres équipages
@@ -149,7 +163,7 @@ async function show(me, eqId) {
     (b) =>
       (b.onclick = () => {
         history.replaceState(null, '', `?eq=${encodeURIComponent(b.dataset.eq)}`);
-        show(me, b.dataset.eq);
+        show(me, b.dataset.eq, true);
       })
   );
   allerAncre();
@@ -162,6 +176,7 @@ async function show(me, eqId) {
       try {
         if (b.dataset.a === 'ok') await fb.valider(li.dataset.uid, li.dataset.item, me, true);
         else await fb.annulerDemande(li.dataset.uid, li.dataset.item);
+        if (commun) commun.demandes = (commun.demandes || []).filter((d) => !(d.uid === li.dataset.uid && d.item === li.dataset.item));
         li.remove();
         toast(b.dataset.a === 'ok' ? `Point validé dans le carnet de ${nom}.` : `Demande de ${nom} retirée : il pourra la refaire.`);
         const h = box.querySelector('#demandes');

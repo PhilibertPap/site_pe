@@ -1,8 +1,10 @@
 // Classement des équipages (visible par tous les inscrits), lu dans les agrégats publiés.
-// Un chef recalcule et publie tous les équipages en ouvrant la page (et en arrière-plan ailleurs).
+// Affiché tout de suite : d'abord le dernier classement lu sur cet appareil (localStorage), puis les
+// agrégats publiés. Un chef le recalcule en arrière-plan s'il date de plus de 30 minutes
+// (et en arrière-plan ailleurs sur le site, voir auth.js).
 import * as fb from './fb.js';
 import { BAREME } from './classement.js';
-import { publier, lire, pts, majLe } from './agregats.js';
+import { publier, assembler, aRepublier, cacheLire, cacheEcrire, pts, majLe } from './agregats.js';
 import { saisonDe, saisonLabel, moisDe, moisLabel, moisCourt, semaineDe, moisDeSaison } from './saison.js';
 import { courbe } from './courbe.js';
 
@@ -13,19 +15,48 @@ const f1 = (x) => (Math.round(x * 10) / 10).toLocaleString('fr-FR');
 const quand = (d) =>
   d ? d.toLocaleDateString('fr-FR', { day: 'numeric', month: 'long' }) + ' à ' + d.toLocaleTimeString('fr-FR', { hour: '2-digit', minute: '2-digit' }) : '';
 
+// Toutes les lectures en parallèle : compositions, bonus et agrégats publiés
+async function charger(saison) {
+  const [compos, bonus, pub] = await Promise.all([fb.compositions(saison), fb.listBonus(saison), fb.listClassement(saison)]);
+  return { compos, bonus, pub };
+}
+
+let jeton = 0; // un changement de saison rend caducs les affichages en attente
 async function show(me, saison) {
-  box.innerHTML = '<p class="muted">Chargement…</p>';
-  const cur = saisonDe();
-  let compos, bonus, tab;
+  const j = ++jeton;
+  const chef = me.role === 'chef';
+  const cache = cacheLire(saison);
+  if (cache) rendre(me, saison, cache, 'actualisation…');
+  else box.innerHTML = '<p class="muted">Chargement…</p>';
+  let d;
   try {
-    [compos, bonus] = await Promise.all([fb.compositions(saison), fb.listBonus(saison)]);
-    // seuls les chefs publient le classement
-    if (me.role === 'chef') await publier(me, saison, { compos, bonus }).catch(() => {});
-    tab = await lire(saison, compos);
+    d = await charger(saison);
   } catch (e) {
-    box.innerHTML = `<p>${esc(fb.message(e))}</p>`;
+    if (j !== jeton) return;
+    if (cache) rendre(me, saison, cache, 'actualisation impossible : ' + fb.message(e));
+    else box.innerHTML = `<p>${esc(fb.message(e))}</p>`;
     return;
   }
+  if (j !== jeton) return;
+  cacheEcrire(saison, d);
+  // seuls les chefs publient le classement, et seulement s'il a vieilli
+  const recalcul = chef && aRepublier(assembler(d.compos, d.pub));
+  rendre(me, saison, d, recalcul ? 'recalcul en cours…' : '');
+  if (!recalcul) return;
+  try {
+    await publier(me, saison, { compos: d.compos, bonus: d.bonus });
+    d.pub = await fb.listClassement(saison);
+  } catch (e) {
+    return;
+  }
+  if (j !== jeton) return;
+  cacheEcrire(saison, d);
+  rendre(me, saison, d);
+}
+
+function rendre(me, saison, { compos, bonus, pub }, etat = '') {
+  const cur = saisonDe();
+  const tab = assembler(compos, pub);
   const sel = `<label class="small">Saison <select id="eq-saison">${[cur, cur - 1, cur - 2]
     .map((s) => `<option value="${s}"${s === saison ? ' selected' : ''}>${saisonLabel(s)}</option>`)
     .join('')}</select></label>`;
@@ -53,7 +84,7 @@ async function show(me, saison) {
   box.innerHTML = `
   <div class="res-tools">${sel}<span class="small muted">${
     maj ? `Classement mis à jour le ${quand(maj)}` : 'Classement pas encore calculé : il le sera dès qu’un chef consultera le site'
-  }${maj && jamais ? ` (${jamais} équipage${jamais > 1 ? 's' : ''} pas encore calculé${jamais > 1 ? 's' : ''})` : ''}</span></div>
+  }${maj && jamais ? ` (${jamais} équipage${jamais > 1 ? 's' : ''} pas encore calculé${jamais > 1 ? 's' : ''})` : ''}${etat ? ` · ${esc(etat)}` : ''}</span></div>
   <h2 id="mois">${cap(moisLabel(m))}</h2>
   <div class="tbl-wrap"><table class="classement"><thead><tr><th class="num">#</th><th>Équipage</th><th class="num">Total</th><th class="num">Niveau /${BAREME.niveau}</th><th class="num">Régularité /${BAREME.regularite}</th><th class="num">Défi /${BAREME.defi}</th><th class="num">Bonus</th></tr></thead><tbody>${parMois
     .map(

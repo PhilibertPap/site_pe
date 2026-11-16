@@ -3,6 +3,8 @@
 // republie en ouvrant les pages Équipages ou l'espace chefs, et en arrière-plan quand il consulte
 // n'importe quelle page du site, au plus une fois toutes les 30 minutes (voir auth.js).
 // Les autres inscrits ne lisent que ces agrégats : les notes individuelles ne leur sont pas exposées.
+// La page Équipages garde en localStorage le dernier classement lu (compositions, bonus et agrégats,
+// tous visibles par tous les inscrits) pour l'afficher sans attendre, puis le rafraîchit.
 import * as fb from './fb.js';
 import { classement } from './classement.js';
 import { saisonDe, semaineDe } from './saison.js';
@@ -18,7 +20,7 @@ export async function statsEquipage(saison, eq) {
 
 // Date de la dernière publication faite depuis cet appareil (localStorage, peut manquer)
 const CLE = 'pe-classement-pub';
-const INTERVALLE = 30 * 60 * 1000;
+export const INTERVALLE = 30 * 60 * 1000;
 function marquer(t) {
   try {
     if (t) localStorage.setItem(CLE, String(t));
@@ -34,8 +36,16 @@ function derniere() {
 }
 
 // Recalcule et publie tous les équipages de la saison (chefs seulement).
-// Renvoie { stats, compos, bonus } pour éviter de relire.
-export async function publier(me, saison = saisonDe(), pre = {}) {
+// Renvoie { stats, compos, bonus } pour éviter de relire. Si une publication de la même saison est
+// déjà en cours (page Équipages et tâche d'arrière-plan d'auth.js, par exemple), on s'y joint.
+const enCours = {};
+export function publier(me, saison = saisonDe(), pre = {}) {
+  if (enCours[saison]) return enCours[saison];
+  const p = publierVraiment(me, saison, pre).finally(() => delete enCours[saison]);
+  enCours[saison] = p;
+  return p;
+}
+async function publierVraiment(me, saison, pre) {
   const compos = pre.compos || (await fb.compositions(saison));
   const bonus = pre.bonus || (await fb.listBonus(saison));
   if (!me || me.role !== 'chef') return { compos, bonus, stats: pre.stats || [] };
@@ -79,7 +89,10 @@ export async function publierSiBesoin(me) {
 // Classement lu depuis les agrégats publiés : [{ ...composition, pub, mois, saison, sem, at }],
 // trié par total de la saison. Un équipage sans agrégat a des points nuls.
 export async function lire(saison, compos) {
-  const pub = await fb.listClassement(saison);
+  return assembler(compos, await fb.listClassement(saison));
+}
+// Même chose à partir d'agrégats déjà lus (fb.listClassement)
+export function assembler(compos, pub) {
   const par = Object.fromEntries(pub.map((p) => [p.eq, p]));
   return compos
     .map((c) => {
@@ -93,3 +106,28 @@ const VIDE = { niveau: 0, regularite: 0, defi: 0, bonus: 0, total: 0 };
 export const pts = (e, m) => e.mois[m] || VIDE;
 // Date de la plus ancienne publication (le classement est au moins à jour à cette date)
 export const majLe = (tab) => tab.filter((e) => e.at).reduce((d, e) => (!d || e.at < d ? e.at : d), null);
+// Le classement mérite-t-il d'être recalculé ? (jamais publié, ou plus vieux que l'intervalle)
+export const aRepublier = (tab) => tab.length > 0 && Date.now() - (majLe(tab) || 0) > INTERVALLE;
+
+// ------------------------------------------------- dernier classement lu, par saison (localStorage)
+// { compos, bonus, pub, t } : ce que la page Équipages affiche, tel que tous les inscrits le voient.
+const cleCache = (saison) => 'pe-classement-' + saison;
+export function cacheLire(saison) {
+  try {
+    const c = JSON.parse(localStorage.getItem(cleCache(saison)) || 'null');
+    if (!c || !Array.isArray(c.compos) || !Array.isArray(c.bonus) || !Array.isArray(c.pub)) return null;
+    const date = (x) => (x ? new Date(x) : null);
+    return { ...c, bonus: c.bonus.map((b) => ({ ...b, at: date(b.at) })), pub: c.pub.map((p) => ({ ...p, at: date(p.at) })) };
+  } catch (e) {
+    return null;
+  }
+}
+export function cacheEcrire(saison, d) {
+  try {
+    const ms = (x) => (x instanceof Date ? x.getTime() : x || null);
+    localStorage.setItem(
+      cleCache(saison),
+      JSON.stringify({ compos: d.compos, bonus: d.bonus.map((b) => ({ ...b, at: ms(b.at) })), pub: d.pub.map((p) => ({ ...p, at: ms(p.at) })), t: Date.now() })
+    );
+  } catch (e) {}
+}
